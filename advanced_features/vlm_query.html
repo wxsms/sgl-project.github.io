@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=279c863a"></script>
+    <script src="../_static/documentation_options.js?v=7bb2ce11"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -647,292 +647,12 @@ Image size: (570, 380)
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_models.py&#34;, line 749, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Server error &#39;503 Service Temporarily Unavailable&#39; for url &#39;https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/hf_quant_config.json&#39;
-For more information check: https://httpstatuses.com/503
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 2571, in retry
-    return fn()
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py&#34;, line 755, in &lt;lambda&gt;
-    lambda: hf_api.file_exists(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py&#34;, line 3436, in file_exists
-    get_hf_file_metadata(url, token=token)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py&#34;, line 1576, in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects_with_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 692, in _httpx_follow_relative_redirects_with_backoff
-    hf_raise_for_status(response)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 889, in hf_raise_for_status
-    raise _format(HfHubHTTPError, str(e), response) from e
-huggingface_hub.errors.HfHubHTTPError: Server error &#39;503 Service Temporarily Unavailable&#39; for url &#39;https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/hf_quant_config.json&#39; (Amz CF ID: MHhGOernhSUzywktMmhv2hWyJlxuwocDvF7XZvrRqDFziP3A8BjZoQ==)
-For more information check: https://httpstatuses.com/503
-retry() failed once (0th try, maximum 2 retries). Will delay 0.84s and retry. Error: Server error &#39;503 Service Temporarily Unavailable&#39; for url &#39;https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/hf_quant_config.json&#39; (Amz CF ID: MHhGOernhSUzywktMmhv2hWyJlxuwocDvF7XZvrRqDFziP3A8BjZoQ==)
-For more information check: https://httpstatuses.com/503
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 10, in map_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 28, in read
-    return self._sock.recv(max_bytes)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1288, in recv
-    return self.read(buflen)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1161, in read
-    return self._sslobj.read(len)
-TimeoutError: The read operation timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 60, in map_httpcore_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 218, in handle_request
-    resp = self._pool.handle_request(req)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 253, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 237, in handle_request
-    response = connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 90, in handle_request
-    return self._connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 112, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 91, in handle_request
-    ) = self._receive_response_headers(**kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 155, in _receive_response_headers
-    event = self._receive_event(timeout=timeout)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 191, in _receive_event
-    data = self._network_stream.read(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 26, in read
-    with map_exceptions(exc_map):
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 14, in map_exceptions
-    raise to_exc(exc)
-httpcore.ReadTimeout: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 2571, in retry
-    return fn()
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py&#34;, line 755, in &lt;lambda&gt;
-    lambda: hf_api.file_exists(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py&#34;, line 3436, in file_exists
-    get_hf_file_metadata(url, token=token)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py&#34;, line 1576, in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects_with_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 685, in _httpx_follow_relative_redirects_with_backoff
-    response = http_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 559, in http_backoff
-    return next(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 467, in _http_backoff_base
-    response = client.request(method=method, url=url, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 821, in request
-    return self.send(request, auth=auth, follow_redirects=follow_redirects)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 908, in send
-    response = self._send_handling_auth(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 936, in _send_handling_auth
-    response = self._send_handling_redirects(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 973, in _send_handling_redirects
-    response = self._send_single_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 1009, in _send_single_request
-    response = transport.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 217, in handle_request
-    with map_httpcore_exceptions():
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 77, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ReadTimeout: The read operation timed out
-retry() failed once (1th try, maximum 2 retries). Will delay 1.92s and retry. Error: The read operation timed out
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 10, in map_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 28, in read
-    return self._sock.recv(max_bytes)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1288, in recv
-    return self.read(buflen)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1161, in read
-    return self._sslobj.read(len)
-TimeoutError: The read operation timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 60, in map_httpcore_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 218, in handle_request
-    resp = self._pool.handle_request(req)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 253, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 237, in handle_request
-    response = connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 90, in handle_request
-    return self._connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 112, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 91, in handle_request
-    ) = self._receive_response_headers(**kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 155, in _receive_response_headers
-    event = self._receive_event(timeout=timeout)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 191, in _receive_event
-    data = self._network_stream.read(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 26, in read
-    with map_exceptions(exc_map):
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 14, in map_exceptions
-    raise to_exc(exc)
-httpcore.ReadTimeout: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 2571, in retry
-    return fn()
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py&#34;, line 755, in &lt;lambda&gt;
-    lambda: hf_api.file_exists(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py&#34;, line 3436, in file_exists
-    get_hf_file_metadata(url, token=token)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py&#34;, line 1576, in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects_with_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 685, in _httpx_follow_relative_redirects_with_backoff
-    response = http_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 559, in http_backoff
-    return next(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 467, in _http_backoff_base
-    response = client.request(method=method, url=url, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 821, in request
-    return self.send(request, auth=auth, follow_redirects=follow_redirects)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 908, in send
-    response = self._send_handling_auth(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 936, in _send_handling_auth
-    response = self._send_handling_redirects(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 973, in _send_handling_redirects
-    response = self._send_single_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 1009, in _send_single_request
-    response = transport.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 217, in handle_request
-    with map_httpcore_exceptions():
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 77, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ReadTimeout: The read operation timed out
-Failed to load hf_quant_config.json for model Qwen/Qwen2.5-VL-3B-Instruct: retry() exceed maximum number of retries.
-[2026-04-14 15:03:32] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/processor_config.json
-[2026-04-14 15:03:59] HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/processor_config.json
-Retrying in 1s [Retry 1/5].
-[2026-04-14 15:03:59] Retrying in 1s [Retry 1/5].
-HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/processor_config.json
-[2026-04-14 15:04:10] HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/processor_config.json
-Retrying in 2s [Retry 2/5].
-[2026-04-14 15:04:10] Retrying in 2s [Retry 2/5].
-HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/processor_config.json
-[2026-04-14 15:04:57] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/processor_config.json
-Retrying in 1s [Retry 1/5].
-[2026-04-14 15:04:57] Retrying in 1s [Retry 1/5].
-[2026-04-14 15:05:15] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-14 15:05:20] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-14 15:05:20] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-14 15:05:20] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-14 15:05:20] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 10, in map_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 28, in read
-    return self._sock.recv(max_bytes)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1288, in recv
-    return self.read(buflen)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1161, in read
-    return self._sslobj.read(len)
-TimeoutError: The read operation timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 60, in map_httpcore_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 218, in handle_request
-    resp = self._pool.handle_request(req)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 253, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 237, in handle_request
-    response = connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 90, in handle_request
-    return self._connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 112, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 91, in handle_request
-    ) = self._receive_response_headers(**kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 155, in _receive_response_headers
-    event = self._receive_event(timeout=timeout)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 191, in _receive_event
-    data = self._network_stream.read(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 26, in read
-    with map_exceptions(exc_map):
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 14, in map_exceptions
-    raise to_exc(exc)
-httpcore.ReadTimeout: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 2571, in retry
-    return fn()
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py&#34;, line 755, in &lt;lambda&gt;
-    lambda: hf_api.file_exists(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py&#34;, line 3436, in file_exists
-    get_hf_file_metadata(url, token=token)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py&#34;, line 1576, in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects_with_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 685, in _httpx_follow_relative_redirects_with_backoff
-    response = http_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 559, in http_backoff
-    return next(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 467, in _http_backoff_base
-    response = client.request(method=method, url=url, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 821, in request
-    return self.send(request, auth=auth, follow_redirects=follow_redirects)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 908, in send
-    response = self._send_handling_auth(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 936, in _send_handling_auth
-    response = self._send_handling_redirects(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 973, in _send_handling_redirects
-    response = self._send_single_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 1009, in _send_single_request
-    response = transport.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 217, in handle_request
-    with map_httpcore_exceptions():
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 77, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ReadTimeout: The read operation timed out
-[2026-04-14 15:05:26] retry() failed once (0th try, maximum 2 retries). Will delay 0.76s and retry. Error: The read operation timed out
+[2026-04-14 16:09:47] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-14 16:09:49] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-14 16:09:49] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-14 16:09:49] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-14 16:09:49] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-14 16:09:57] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -950,260 +670,11 @@ httpx.ReadTimeout: The read operation timed out
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-04-14 15:05:35] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-14 15:05:35] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-14 15:05:35] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-14 15:05:35] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-Multi-thread loading shards: 100% Completed | 2/2 [00:01&lt;00:00,  1.57it/s]
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 10, in map_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 28, in read
-    return self._sock.recv(max_bytes)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1288, in recv
-    return self.read(buflen)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1161, in read
-    return self._sslobj.read(len)
-TimeoutError: The read operation timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 60, in map_httpcore_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 218, in handle_request
-    resp = self._pool.handle_request(req)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 253, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 237, in handle_request
-    response = connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 90, in handle_request
-    return self._connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 112, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 91, in handle_request
-    ) = self._receive_response_headers(**kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 155, in _receive_response_headers
-    event = self._receive_event(timeout=timeout)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 191, in _receive_event
-    data = self._network_stream.read(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 26, in read
-    with map_exceptions(exc_map):
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 14, in map_exceptions
-    raise to_exc(exc)
-httpcore.ReadTimeout: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 2571, in retry
-    return fn()
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py&#34;, line 755, in &lt;lambda&gt;
-    lambda: hf_api.file_exists(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py&#34;, line 3436, in file_exists
-    get_hf_file_metadata(url, token=token)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py&#34;, line 1576, in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects_with_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 685, in _httpx_follow_relative_redirects_with_backoff
-    response = http_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 559, in http_backoff
-    return next(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 467, in _http_backoff_base
-    response = client.request(method=method, url=url, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 821, in request
-    return self.send(request, auth=auth, follow_redirects=follow_redirects)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 908, in send
-    response = self._send_handling_auth(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 936, in _send_handling_auth
-    response = self._send_handling_redirects(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 973, in _send_handling_redirects
-    response = self._send_single_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 1009, in _send_single_request
-    response = transport.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 217, in handle_request
-    with map_httpcore_exceptions():
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 77, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ReadTimeout: The read operation timed out
-[2026-04-14 15:05:47] retry() failed once (0th try, maximum 2 retries). Will delay 0.86s and retry. Error: The read operation timed out
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 10, in map_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 28, in read
-    return self._sock.recv(max_bytes)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1288, in recv
-    return self.read(buflen)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1161, in read
-    return self._sslobj.read(len)
-TimeoutError: The read operation timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 60, in map_httpcore_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 218, in handle_request
-    resp = self._pool.handle_request(req)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 253, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 237, in handle_request
-    response = connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 90, in handle_request
-    return self._connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 112, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 91, in handle_request
-    ) = self._receive_response_headers(**kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 155, in _receive_response_headers
-    event = self._receive_event(timeout=timeout)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 191, in _receive_event
-    data = self._network_stream.read(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 26, in read
-    with map_exceptions(exc_map):
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 14, in map_exceptions
-    raise to_exc(exc)
-httpcore.ReadTimeout: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 2571, in retry
-    return fn()
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py&#34;, line 755, in &lt;lambda&gt;
-    lambda: hf_api.file_exists(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py&#34;, line 3436, in file_exists
-    get_hf_file_metadata(url, token=token)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py&#34;, line 1576, in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects_with_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 685, in _httpx_follow_relative_redirects_with_backoff
-    response = http_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 559, in http_backoff
-    return next(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 467, in _http_backoff_base
-    response = client.request(method=method, url=url, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 821, in request
-    return self.send(request, auth=auth, follow_redirects=follow_redirects)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 908, in send
-    response = self._send_handling_auth(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 936, in _send_handling_auth
-    response = self._send_handling_redirects(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 973, in _send_handling_redirects
-    response = self._send_single_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 1009, in _send_single_request
-    response = transport.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 217, in handle_request
-    with map_httpcore_exceptions():
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 77, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ReadTimeout: The read operation timed out
-[2026-04-14 15:05:58] retry() failed once (1th try, maximum 2 retries). Will delay 1.93s and retry. Error: The read operation timed out
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 10, in map_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 28, in read
-    return self._sock.recv(max_bytes)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1288, in recv
-    return self.read(buflen)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1161, in read
-    return self._sslobj.read(len)
-TimeoutError: The read operation timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 60, in map_httpcore_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 218, in handle_request
-    resp = self._pool.handle_request(req)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 253, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 237, in handle_request
-    response = connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 90, in handle_request
-    return self._connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 112, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 91, in handle_request
-    ) = self._receive_response_headers(**kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 155, in _receive_response_headers
-    event = self._receive_event(timeout=timeout)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 191, in _receive_event
-    data = self._network_stream.read(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 26, in read
-    with map_exceptions(exc_map):
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 14, in map_exceptions
-    raise to_exc(exc)
-httpcore.ReadTimeout: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 2571, in retry
-    return fn()
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py&#34;, line 755, in &lt;lambda&gt;
-    lambda: hf_api.file_exists(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py&#34;, line 3436, in file_exists
-    get_hf_file_metadata(url, token=token)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py&#34;, line 1576, in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects_with_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 685, in _httpx_follow_relative_redirects_with_backoff
-    response = http_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 559, in http_backoff
-    return next(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 467, in _http_backoff_base
-    response = client.request(method=method, url=url, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 821, in request
-    return self.send(request, auth=auth, follow_redirects=follow_redirects)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 908, in send
-    response = self._send_handling_auth(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 936, in _send_handling_auth
-    response = self._send_handling_redirects(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 973, in _send_handling_redirects
-    response = self._send_single_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 1009, in _send_single_request
-    response = transport.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 217, in handle_request
-    with map_httpcore_exceptions():
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 77, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ReadTimeout: The read operation timed out
-[2026-04-14 15:06:10] Failed to load hf_quant_config.json for model Qwen/Qwen2.5-VL-3B-Instruct: retry() exceed maximum number of retries.
-HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/processor_config.json
-[2026-04-14 15:06:42] HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/processor_config.json
-Retrying in 1s [Retry 1/5].
-[2026-04-14 15:06:42] Retrying in 1s [Retry 1/5].
-HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/chat_template.jinja
-[2026-04-14 15:07:33] HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/chat_template.jinja
-Retrying in 1s [Retry 1/5].
-[2026-04-14 15:07:33] Retrying in 1s [Retry 1/5].
-HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/chat_template.jinja
-[2026-04-14 15:07:44] HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/resolve/main/chat_template.jinja
-Retrying in 2s [Retry 2/5].
-[2026-04-14 15:07:44] Retrying in 2s [Retry 2/5].
+[2026-04-14 16:09:58] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-14 16:09:58] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-14 16:09:58] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-14 16:09:58] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Multi-thread loading shards: 100% Completed | 2/2 [00:01&lt;00:00,  1.29it/s]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1221,8 +692,8 @@ Retrying in 2s [Retry 2/5].
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-2026-04-14 15:08:24,508 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-14 15:08:24] Unexpected error during package walk: cutlass.cute.experimental
+2026-04-14 16:10:04,478 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-14 16:10:04] Unexpected error during package walk: cutlass.cute.experimental
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1231,7 +702,7 @@ Retrying in 2s [Retry 2/5].
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Model response:
-The image depicts a scene where a person is ironing clothes on the back of a standing blue and white flag attached to a small table. The scene appears to be taking place on a city street, with two yellow taxis in the background. There is also a banner hanging on a building behind, but its contents are not clearly readable. The setting suggests it might be an event or an art installation.
+The image shows a street scene with a city environment. There are two yellow taxis in the foreground, parked along the side of a street. The person in the image appears to be using a clothespin or some kind of apparatus to hang clothes outdoors. The background includes a tall building with multiple flags flying, and there are streetlights visible. The setting looks like a busy urban area with some small signs and storefronts along the street.
 </pre></div></div>
 </div>
 </section>
@@ -1264,7 +735,7 @@ The image depicts a scene where a person is ironing clothes on the back of a sta
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Response using processor output:
-The image shows a street scene with a yellow taxi cab parked on the road. The taxi is pulling a ladder off of it. On the ladder, there are various pieces of luggage, including a blue backpack and other items. The background includes a building with various flags and a store. There are also several streetlights and more vehicles visible.
+The image shows a man standing between two yellow taxis on a city street. The man appears to be using a clothes rack and some laundry items, likely as a whimsical or humorous act. The background includes city buildings and traffic lights, indicating an urban setting. The scene seems to be staged for a photo, creating a playful contrast between the routine activity of washing clothes and the bustling city environment.
 </pre></div></div>
 </div>
 </section>
@@ -1288,19 +759,19 @@ The image shows a street scene with a yellow taxi cab parked on the road. The ta
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "ad4d3c28e95547359707eca16c4119ae", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2a2319dbdc094cdb88134d210b495f6a", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b11934a66ce04b35b761bef4ed44c4c6", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "16ca29f64d654930beb1ac3f5a8b41aa", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9c1163783b8a46a88c775863a85d3d58", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "97c18fb156f6451cae5c05af909c4806", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -1337,7 +808,7 @@ The image shows a street scene with a yellow taxi cab parked on the road. The ta
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Response using precomputed embeddings:
-The image shows a scene with a yellow taxi cab and a person standing next to it. The taxi appears to be in motion on a city street. The background includes some buildings and flags, suggesting an urban setting. The person standing next to the taxi seems to be preparing or adjusting something, possibly a banner or a sign for a parade or event.
+The image shows a taxi cab in an urban setting, likely a city street in the United States, given the design of the taxi. The visible part of the taxi is a yellow SUV type, which is standard for New York City taxis. The background includes urban elements such as electrical wires and possibly tram services on the right side of the image. The location appears to be New York City, based on the graphic displays on the vehicles&#39; sides which include &#34;DESTINATION&#34; referencing tools typically used for public transit systems within the city.
 </pre></div></div>
 </div>
 </section>
@@ -1447,7 +918,7 @@ The image shows a scene with a yellow taxi cab and a person standing next to it.
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"0cb75e61a6ad4e44b59363a0d7d5ec21": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "130eb57ba5354ff89a99477eeb3db623": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_fa2a20cff23d4e87a2ad384a671d8c71", "placeholder": "\u200b", "style": "IPY_MODEL_df75ae5b6dd74c8ba915c3dec2f722da", "tabbable": null, "tooltip": null, "value": "\u20072/2\u2007[00:00&lt;00:00,\u2007597.31it/s]"}}, "16b8587db16e4c2b93ca28719ceba650": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_ebfe6ae7e3e34b08b20bcc88ec013b5d", "placeholder": "\u200b", "style": "IPY_MODEL_7aa5a2f39f4b49f3bb5ea3893c0d10c2", "tabbable": null, "tooltip": null, "value": "Fetching\u20072\u2007files:\u2007100%"}}, "16c46fb821cd4425ac3e96f2eea5d54b": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1c6837848bb74c999c8b98581634ca7d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_51b074351d54491ca6ca12b6c5211c4c", "placeholder": "\u200b", "style": "IPY_MODEL_a63d1b7ec1dc4ee5910e76d528e1bbc5", "tabbable": null, "tooltip": null, "value": "Download\u2007complete:\u2007"}}, "27e8317df2d54ea5904a1377a2466935": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2a84d7c8e0fa42b3bc1888c23b5799cd": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2dc0bf6522a94d7d830e23da78ec118f": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "315f8b7e79614c1e913838600fa9275a": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "40db2ad3914f40559572b6812fcc662b": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "20px"}}, "43b72c2a0b0f4b738496beb8ed2d2618": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_40db2ad3914f40559572b6812fcc662b", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_c5633e82a8b640b2b62088b2f5162f53", "tabbable": null, "tooltip": null, "value": 0.0}}, "481b0eebd4fb416395145779ece37422": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "51b074351d54491ca6ca12b6c5211c4c": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "570c9c1018034e08be62ee18ec15b470": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "653b4c2655354e59bea343cbb64b2751": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_2a84d7c8e0fa42b3bc1888c23b5799cd", "max": 2.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_570c9c1018034e08be62ee18ec15b470", "tabbable": null, "tooltip": null, "value": 2.0}}, "6d901e3c349f420d92f68b5d62b7439e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_710dfd1ccf214202a2ab13cca28ceca3", "placeholder": "\u200b", "style": "IPY_MODEL_fc3fb504e64c47459feb8a24124680fd", "tabbable": null, "tooltip": null, "value": "\u20070.00/0.00\u2007[00:00&lt;?,\u2007?B/s]"}}, "710dfd1ccf214202a2ab13cca28ceca3": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "710e1b7ea4404611b074fe261607132b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "7aa5a2f39f4b49f3bb5ea3893c0d10c2": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "9ad4bdd08d3645e99ca4774e80eca917": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_2dc0bf6522a94d7d830e23da78ec118f", "max": 824.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_710e1b7ea4404611b074fe261607132b", "tabbable": null, "tooltip": null, "value": 824.0}}, "9c1163783b8a46a88c775863a85d3d58": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_b299b35189394eefaed56331e567176f", "IPY_MODEL_9ad4bdd08d3645e99ca4774e80eca917", "IPY_MODEL_a7cd680e5eac44f18bcf7207730c70d6"], "layout": "IPY_MODEL_0cb75e61a6ad4e44b59363a0d7d5ec21", "tabbable": null, "tooltip": null}}, "a63d1b7ec1dc4ee5910e76d528e1bbc5": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "a7cd680e5eac44f18bcf7207730c70d6": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_27e8317df2d54ea5904a1377a2466935", "placeholder": "\u200b", "style": "IPY_MODEL_edfaf718955e40edb9d4392d39bfec8b", "tabbable": null, "tooltip": null, "value": "\u2007824/824\u2007[00:00&lt;00:00,\u20079721.96it/s]"}}, "ad4d3c28e95547359707eca16c4119ae": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_1c6837848bb74c999c8b98581634ca7d", "IPY_MODEL_43b72c2a0b0f4b738496beb8ed2d2618", "IPY_MODEL_6d901e3c349f420d92f68b5d62b7439e"], "layout": "IPY_MODEL_f083ff398c164b7193eefb2215ff4213", "tabbable": null, "tooltip": null}}, "b11934a66ce04b35b761bef4ed44c4c6": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_16b8587db16e4c2b93ca28719ceba650", "IPY_MODEL_653b4c2655354e59bea343cbb64b2751", "IPY_MODEL_130eb57ba5354ff89a99477eeb3db623"], "layout": "IPY_MODEL_315f8b7e79614c1e913838600fa9275a", "tabbable": null, "tooltip": null}}, "b299b35189394eefaed56331e567176f": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_16c46fb821cd4425ac3e96f2eea5d54b", "placeholder": "\u200b", "style": "IPY_MODEL_481b0eebd4fb416395145779ece37422", "tabbable": null, "tooltip": null, "value": "Loading\u2007weights:\u2007100%"}}, "c5633e82a8b640b2b62088b2f5162f53": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "df75ae5b6dd74c8ba915c3dec2f722da": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "ebfe6ae7e3e34b08b20bcc88ec013b5d": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "edfaf718955e40edb9d4392d39bfec8b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "f083ff398c164b7193eefb2215ff4213": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fa2a20cff23d4e87a2ad384a671d8c71": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fc3fb504e64c47459feb8a24124680fd": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}}, "version_major": 2, "version_minor": 0}
+{"state": {"07d9ceccd8164c4ab650ae37b7fdf10a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "08ef5320011c43ee8d0debf34ed93425": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_bcbdc10dbe8948b98bdb82fac9c79863", "placeholder": "\u200b", "style": "IPY_MODEL_95e2bb562cc74bd1add0bba319a1daa5", "tabbable": null, "tooltip": null, "value": "\u20070.00/0.00\u2007[00:00&lt;?,\u2007?B/s]"}}, "111bfb108e2f4bf68148389b29ea55ad": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "16ca29f64d654930beb1ac3f5a8b41aa": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_7d50ffe5c33744a59f0538511336d1aa", "IPY_MODEL_a32b42b75f914a51b5391ad40c6b748d", "IPY_MODEL_d9b88338666b4b419dd164231ea237af"], "layout": "IPY_MODEL_111bfb108e2f4bf68148389b29ea55ad", "tabbable": null, "tooltip": null}}, "1981e43cfcb04de78f7d8723409bfb2e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "29d21e2816624273b85b953fd90b99da": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_9b784621a06c43bf9b4b78ce633c7687", "max": 824.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_4fd684c939524798817a5f679813a778", "tabbable": null, "tooltip": null, "value": 824.0}}, "2a2319dbdc094cdb88134d210b495f6a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_c71d27c24ddd4573acfd3e3ac47cd8bd", "IPY_MODEL_fb926c44831c458bb81fc5f43b50b229", "IPY_MODEL_08ef5320011c43ee8d0debf34ed93425"], "layout": "IPY_MODEL_a2ed9296e6c843aebd63882579249bcf", "tabbable": null, "tooltip": null}}, "39a046b9942640a494fc6afa8ce8af37": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "3bf1fde4bb1b4c6a90dc120e8f079c7a": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4bd244b41bea45be91336409b1d24f6f": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4f8c013163e94a8882bbe0db09d5e301": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "4fd684c939524798817a5f679813a778": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "644480655e824686a1fd47933fa5987c": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "68565dec9de94b4a9f7cac7feb2d48e4": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_d0be5225f2b44b9098835ea4656b35f7", "placeholder": "\u200b", "style": "IPY_MODEL_1981e43cfcb04de78f7d8723409bfb2e", "tabbable": null, "tooltip": null, "value": "\u2007824/824\u2007[00:00&lt;00:00,\u20078927.37it/s]"}}, "6f5a06a5c5574066aa534ca1fd7f2ca0": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_74bd220ea2e742fab7a9c927d7781471", "placeholder": "\u200b", "style": "IPY_MODEL_4f8c013163e94a8882bbe0db09d5e301", "tabbable": null, "tooltip": null, "value": "Loading\u2007weights:\u2007100%"}}, "74bd220ea2e742fab7a9c927d7781471": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7d50ffe5c33744a59f0538511336d1aa": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_4bd244b41bea45be91336409b1d24f6f", "placeholder": "\u200b", "style": "IPY_MODEL_39a046b9942640a494fc6afa8ce8af37", "tabbable": null, "tooltip": null, "value": "Fetching\u20072\u2007files:\u2007100%"}}, "8b6c19cac4a74d759c903ec4c88747ca": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "20px"}}, "95e2bb562cc74bd1add0bba319a1daa5": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "97c18fb156f6451cae5c05af909c4806": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_6f5a06a5c5574066aa534ca1fd7f2ca0", "IPY_MODEL_29d21e2816624273b85b953fd90b99da", "IPY_MODEL_68565dec9de94b4a9f7cac7feb2d48e4"], "layout": "IPY_MODEL_f1c4cf73afd844e18b8d781898c06d43", "tabbable": null, "tooltip": null}}, "9b784621a06c43bf9b4b78ce633c7687": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a2ed9296e6c843aebd63882579249bcf": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a32b42b75f914a51b5391ad40c6b748d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_3bf1fde4bb1b4c6a90dc120e8f079c7a", "max": 2.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_a4894c2bdf7049a9a0b2d0d05da29676", "tabbable": null, "tooltip": null, "value": 2.0}}, "a4894c2bdf7049a9a0b2d0d05da29676": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "bcbdc10dbe8948b98bdb82fac9c79863": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c71d27c24ddd4573acfd3e3ac47cd8bd": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_644480655e824686a1fd47933fa5987c", "placeholder": "\u200b", "style": "IPY_MODEL_f7644667a17c40dfa473f656b38218fe", "tabbable": null, "tooltip": null, "value": "Download\u2007complete:\u2007"}}, "d0be5225f2b44b9098835ea4656b35f7": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d9b88338666b4b419dd164231ea237af": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_df6ba71c8fa44a35a16083d5643ed22a", "placeholder": "\u200b", "style": "IPY_MODEL_f90d6411085947a38084b488e0e80b5e", "tabbable": null, "tooltip": null, "value": "\u20072/2\u2007[00:00&lt;00:00,\u2007609.77it/s]"}}, "df6ba71c8fa44a35a16083d5643ed22a": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f1c4cf73afd844e18b8d781898c06d43": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f7644667a17c40dfa473f656b38218fe": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "f90d6411085947a38084b488e0e80b5e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HTMLStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "fb926c44831c458bb81fc5f43b50b229": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_8b6c19cac4a74d759c903ec4c88747ca", "max": 1.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_07d9ceccd8164c4ab650ae37b7fdf10a", "tabbable": null, "tooltip": null, "value": 0.0}}}, "version_major": 2, "version_minor": 0}
 </script></section>
 </section>
 </section>
