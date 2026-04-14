@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=e2cc307e"></script>
+    <script src="../../_static/documentation_options.js?v=3885b87c"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -515,6 +515,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#triton-on-ascend">Triton on Ascend</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sglang-kernels-npu">SGLang Kernels NPU</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-compatible-library">DeepEP-compatible Library</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-other-dependencies">Some other dependencies</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang-from-source">Installing SGLang from source</a></li>
 </ul>
 </li>
@@ -568,7 +569,7 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HDK</p></td>
-<td><p>25.3.RC1</p></td>
+<td><p>25.5.2</p></td>
 <td><p><a class="reference external" href="https://www.hiascend.com/hardware/firmware-drivers/commercial?product=7&amp;amp;model=33">link</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>CANN</p></td>
@@ -633,7 +634,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>sglang_npu
 <h4>Pytorch and Pytorch Framework Adaptor on Ascend<a class="headerlink" href="#pytorch-and-pytorch-framework-adaptor-on-ascend" title="Link to this heading">#</a></h4>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">PYTORCH_VERSION</span><span class="o">=</span><span class="m">2</span>.8.0
 <span class="nv">TORCHVISION_VERSION</span><span class="o">=</span><span class="m">0</span>.23.0
-<span class="nv">TORCH_NPU_VERSION</span><span class="o">=</span><span class="m">2</span>.8.0
+<span class="nv">TORCH_NPU_VERSION</span><span class="o">=</span><span class="m">2</span>.8.0.post2
 pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="nv">$PYTORCH_VERSION</span><span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="nv">$TORCHVISION_VERSION</span><span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cpu
 pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch_npu</span><span class="o">==</span><span class="nv">$TORCH_NPU_VERSION</span>
 </pre></div>
@@ -655,6 +656,17 @@ pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch
 <section id="deepep-compatible-library">
 <h4>DeepEP-compatible Library<a class="headerlink" href="#deepep-compatible-library" title="Link to this heading">#</a></h4>
 <p>We provide a DeepEP-compatible Library as a drop-in replacement of deepseek-ai’s DeepEP library, check the <a class="reference external" href="https://github.com/sgl-project/sgl-kernel-npu/blob/main/python/deep_ep/README.md">installation guide</a>.</p>
+</section>
+<section id="some-other-dependencies">
+<h4>Some other dependencies<a class="headerlink" href="#some-other-dependencies" title="Link to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># libGL</span>
+apt<span class="w"> </span>update
+apt<span class="w"> </span>install<span class="w"> </span>libgl1<span class="w"> </span>libglib2.0-0
+
+<span class="c1"># ensure setuptools contains pkg_resources module</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;setuptools&lt;80&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="installing-sglang-from-source">
 <h4>Installing SGLang from source<a class="headerlink" href="#installing-sglang-from-source" title="Link to this heading">#</a></h4>
@@ -691,7 +703,8 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-p
 
 <span class="c1"># Build the docker image</span>
 <span class="c1"># If there are network errors, please modify the Dockerfile to use offline dependencies or use a proxy</span>
-docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span>-f<span class="w"> </span>npu.Dockerfile<span class="w"> </span>.
+<span class="c1"># &lt;arch_tag&gt; is the target architecture of the image, e.g. amd64, arm64</span>
+docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">TARGETARCH</span><span class="o">=</span>&lt;arch_tag&gt;<span class="w"> </span>-t<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span>-f<span class="w"> </span>npu.Dockerfile<span class="w"> </span>.
 </pre></div>
 </div>
 </section>
@@ -904,6 +917,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#triton-on-ascend">Triton on Ascend</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sglang-kernels-npu">SGLang Kernels NPU</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-compatible-library">DeepEP-compatible Library</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-other-dependencies">Some other dependencies</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang-from-source">Installing SGLang from source</a></li>
 </ul>
 </li>

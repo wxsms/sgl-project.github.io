@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=e2cc307e"></script>
+    <script src="../../_static/documentation_options.js?v=3885b87c"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -693,6 +693,16 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id72">Benchmark</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-next-1k-0-3k-14-21ms-on-a3-2-cards-mixed-mode">Qwen3-Next 1K-0_3K 14_21ms on A3 2 Cards Mixed Mode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id73">Model Deployment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id74">Benchmark</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-next-6k-1-5k-15-62ms-on-a3-2-cards-mixed-mode">Qwen3-Next 6K-1_5K 15_62ms on A3 2 Cards Mixed Mode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id75">Model Deployment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id76">Benchmark</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -963,6 +973,24 @@ you encounter issues or have any questions, please <a class="reference external"
 <td><p>PD Mixed</p></td>
 <td><p>1K+0.3K</p></td>
 <td><p>8ms</p></td>
+<td><p>W8A8 INT8</p></td>
+<td><p>Optimal Configuration</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen3-Next-A3B-Instruct</p></td>
+<td><p>Atlas 800I A3</p></td>
+<td><p>2</p></td>
+<td><p>PD Mixed</p></td>
+<td><p>1K+0.3K</p></td>
+<td><p>14.21ms</p></td>
+<td><p>W8A8 INT8</p></td>
+<td><p>Optimal Configuration</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen3-Next-A3B-Instruct</p></td>
+<td><p>Atlas 800I A3</p></td>
+<td><p>2</p></td>
+<td><p>PD Mixed</p></td>
+<td><p>6K+1.5K</p></td>
+<td><p>15.62ms</p></td>
 <td><p>W8A8 INT8</p></td>
 <td><p>Optimal Configuration</p></td>
 </tr>
@@ -3720,6 +3748,182 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </div>
 </section>
 </section>
+<section id="qwen3-next-1k-0-3k-14-21ms-on-a3-2-cards-mixed-mode">
+<h3>Qwen3-Next 1K-0_3K 14_21ms on A3 2 Cards Mixed Mode<a class="headerlink" href="#qwen3-next-1k-0-3k-14-21ms-on-a3-2-cards-mixed-mode" title="Link to this heading">#</a></h3>
+<p>Model: Qwen3-Next-80B-A3B-Instruct</p>
+<p>Hardware: Atlas 800I A3 2Card</p>
+<p>DeployMode: PD Mixed</p>
+<p>Dataset: random</p>
+<p>Input Output Length: 1K+0.3K</p>
+<p>TPOT: 14.21ms</p>
+<section id="id73">
+<h4>Model Deployment<a class="headerlink" href="#id73" title="Link to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>performance<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+sysctl<span class="w"> </span>-w<span class="w"> </span>vm.swappiness<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.numa_balancing<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_cost_ns<span class="o">=</span><span class="m">50000</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nb">unset</span><span class="w"> </span>https_proxy
+<span class="nb">unset</span><span class="w"> </span>http_proxy
+<span class="nb">unset</span><span class="w"> </span>HTTPS_PROXY
+<span class="nb">unset</span><span class="w"> </span>HTTP_PROXY
+<span class="nb">unset</span><span class="w"> </span>ASCEND_LAUNCH_BLOCKING
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/ascend-toolkit/set_env.sh
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/nnal/atb/set_env.sh
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/ascend-toolkit/latest/opp/vendors/customize/bin/set_env.bash
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/Ascend/8.5.0/compiler/bishengir/bin:<span class="nv">$PATH</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DEEP_NORMAL_MODE_USE_INT8_QUANT</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">330</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DEEPEP_NORMAL_LONG_SEQ_ROUND</span><span class="o">=</span><span class="m">5</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DEEPEP_NORMAL_LONG_SEQ_PER_ROUND_TOKENS</span><span class="o">=</span><span class="m">3000</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DEEPEP_NORMAL_COMBINE_ENABLE_LONG_SEQ</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_USE_FIA</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_NPU_USE_MULTI_STREAM</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_WARMUP_TIMEOUT</span><span class="o">=</span><span class="m">3600</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">FORCE_DRAFT_MODEL_NON_QUANT</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nv">MODEL_PATH</span><span class="o">=</span>xxx
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT</span><span class="o">=</span><span class="m">600</span>
+
+<span class="nv">LOCAL_HOST1</span><span class="o">=</span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="p">|</span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s1">&#39;{print$1}&#39;</span><span class="sb">`</span>
+<span class="nv">LOCAL_HOST2</span><span class="o">=</span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="p">|</span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s1">&#39;{print$2}&#39;</span><span class="sb">`</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST1</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST2</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">2000</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
+<span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
+
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_PATH</span><span class="si">}</span><span class="w"> </span><span class="se">\-</span>-page-size<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">6699</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.75<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disable-radix-cache<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">14080</span><span class="w"> </span>--context-length<span class="w"> </span><span class="m">26384</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-algorithm<span class="w"> </span>NEXTN<span class="w"> </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w">  </span>--speculative-draft-model-quantization<span class="w">  </span>unquant<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">312</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--cuda-graph-bs<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">48</span><span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">96</span><span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="m">140</span><span class="w"> </span><span class="m">156</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--mamba-ssm-dtype<span class="w"> </span>bfloat16<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--base-gpu-id<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-draft-model-path<span class="w"> </span>/home/weights/Qwen3-Next-80B-A3B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--moe-a2a-backend<span class="w"> </span>deepep<span class="w"> </span>--deepep-mode<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
+</pre></div>
+</div>
+</section>
+<section id="id74">
+<h4>Benchmark<a class="headerlink" href="#id74" title="Link to this heading">#</a></h4>
+<p>We tested it based on the <code class="docutils literal notranslate"><span class="pre">RANDOM</span></code> dataset.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w">  </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">6699</span><span class="w"> </span>--random-range-ratio<span class="w"> </span><span class="m">1</span><span class="w"> </span>--max-concurrency<span class="w"> </span><span class="m">16</span><span class="w"> </span>--random-output-len<span class="w"> </span><span class="m">300</span><span class="w"> </span>--random-input-len<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">16</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="qwen3-next-6k-1-5k-15-62ms-on-a3-2-cards-mixed-mode">
+<h3>Qwen3-Next 6K-1_5K 15_62ms on A3 2 Cards Mixed Mode<a class="headerlink" href="#qwen3-next-6k-1-5k-15-62ms-on-a3-2-cards-mixed-mode" title="Link to this heading">#</a></h3>
+<p>Model: Qwen3-Next-80B-A3B-Instruct</p>
+<p>Hardware: Atlas 800I A3 2Card</p>
+<p>DeployMode: PD Mixed</p>
+<p>Dataset: random</p>
+<p>Input Output Length: 6K+1.5K</p>
+<p>TPOT: 15.62ms</p>
+<section id="id75">
+<h4>Model Deployment<a class="headerlink" href="#id75" title="Link to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>performance<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+sysctl<span class="w"> </span>-w<span class="w"> </span>vm.swappiness<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.numa_balancing<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_cost_ns<span class="o">=</span><span class="m">50000</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nb">unset</span><span class="w"> </span>https_proxy
+<span class="nb">unset</span><span class="w"> </span>http_proxy
+<span class="nb">unset</span><span class="w"> </span>HTTPS_PROXY
+<span class="nb">unset</span><span class="w"> </span>HTTP_PROXY
+<span class="nb">unset</span><span class="w"> </span>ASCEND_LAUNCH_BLOCKING
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/ascend-toolkit/set_env.sh
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/nnal/atb/set_env.sh
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/ascend-toolkit/latest/opp/vendors/customize/bin/set_env.bash
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/Ascend/8.5.0/compiler/bishengir/bin:<span class="nv">$PATH</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DEEP_NORMAL_MODE_USE_INT8_QUANT</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">330</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DEEPEP_NORMAL_LONG_SEQ_ROUND</span><span class="o">=</span><span class="m">5</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DEEPEP_NORMAL_LONG_SEQ_PER_ROUND_TOKENS</span><span class="o">=</span><span class="m">3000</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DEEPEP_NORMAL_COMBINE_ENABLE_LONG_SEQ</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_USE_FIA</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_NPU_USE_MULTI_STREAM</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_WARMUP_TIMEOUT</span><span class="o">=</span><span class="m">3600</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">FORCE_DRAFT_MODEL_NON_QUANT</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nv">MODEL_PATH</span><span class="o">=</span>xxx
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT</span><span class="o">=</span><span class="m">600</span>
+
+<span class="nv">LOCAL_HOST1</span><span class="o">=</span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="p">|</span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s1">&#39;{print$1}&#39;</span><span class="sb">`</span>
+<span class="nv">LOCAL_HOST2</span><span class="o">=</span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="p">|</span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s1">&#39;{print$2}&#39;</span><span class="sb">`</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST1</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST2</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">2000</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
+<span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
+
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_PATH</span><span class="si">}</span><span class="w"> </span><span class="se">\-</span>-page-size<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">6699</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.75<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disable-radix-cache<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">14080</span><span class="w"> </span>--context-length<span class="w"> </span><span class="m">26384</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-algorithm<span class="w"> </span>NEXTN<span class="w"> </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w">  </span>--speculative-draft-model-quantization<span class="w">  </span>unquant<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">312</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--cuda-graph-bs<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">48</span><span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">96</span><span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="m">140</span><span class="w"> </span><span class="m">156</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--mamba-ssm-dtype<span class="w"> </span>bfloat16<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--base-gpu-id<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-draft-model-path<span class="w"> </span>/home/weights/Qwen3-Next-80B-A3B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--moe-a2a-backend<span class="w"> </span>deepep<span class="w"> </span>--deepep-mode<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
+</pre></div>
+</div>
+</section>
+<section id="id76">
+<h4>Benchmark<a class="headerlink" href="#id76" title="Link to this heading">#</a></h4>
+<p>We tested it based on the <code class="docutils literal notranslate"><span class="pre">RANDOM</span></code> dataset.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w">  </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">6699</span><span class="w"> </span>--random-range-ratio<span class="w"> </span><span class="m">1</span><span class="w"> </span>--max-concurrency<span class="w"> </span><span class="m">16</span><span class="w"> </span>--random-output-len<span class="w"> </span><span class="m">1500</span><span class="w"> </span>--random-input-len<span class="w"> </span><span class="m">6144</span><span class="w"> </span>--num-prompts<span class="w"> </span>16i
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -3957,6 +4161,16 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-30b-a3b-1k-0-3k-8ms-on-a3-1-cards-mixed-mode">Qwen3-30B-A3B 1K-0_3K 8ms on A3 1 Cards Mixed Mode</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id71">Model Deployment</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id72">Benchmark</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-next-1k-0-3k-14-21ms-on-a3-2-cards-mixed-mode">Qwen3-Next 1K-0_3K 14_21ms on A3 2 Cards Mixed Mode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id73">Model Deployment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id74">Benchmark</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-next-6k-1-5k-15-62ms-on-a3-2-cards-mixed-mode">Qwen3-Next 6K-1_5K 15_62ms on A3 2 Cards Mixed Mode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id75">Model Deployment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id76">Benchmark</a></li>
 </ul>
 </li>
 </ul>
