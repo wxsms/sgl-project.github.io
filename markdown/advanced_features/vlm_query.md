@@ -96,22 +96,22 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-14 08:16:23] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:53:53] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 08:16:25] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:53:56] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 08:16:25] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:53:56] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 08:16:25] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:53:56] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 08:16:25] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:53:56] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 08:16:32] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:54:03] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -119,17 +119,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-14 08:16:33] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-14 08:16:33] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-14 08:16:33] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-14 08:16:33] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:54:04] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:54:04] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:54:04] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 09:54:04] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.49it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.85it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-14 08:16:39,429 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-14 08:16:39] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-14 09:54:09,627 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-14 09:54:09] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxicab with a device mounted on its back-end that appears to be dispensing a cleaning solution. This device, known as a mop machine for taxicabs, is often used to clean the vehicle's license plate, windows, and doors between transport shifts. It’s positioned on top of the vehicle’s roof rack and likely dispenses cleaning solution via a pump while the taxi is stopped on the side of the road. It's a temporary cleaning solution for hygiene and maintaining cleanliness between trips.
+    The image shows a scene in an urban street, likely in a major city. There are two yellow taxis parked along the road. The taxi in the foreground has two clothes drying on a miniature clothes line placed on the rear bumper. This adds a humorous element to the scene, as it seems unusual and a bit awkward in an urban setting. There are also a few clouds in the background, and the street appears to be relatively empty at the moment.
 
 
 ### Call with Processor Output
@@ -169,11 +169,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from what appears to be a street performance or a street vendor activity in the middle of a city street. The main focus is on a person standing near a yellow vehicle, possibly a taxi cab, with a sign and some clothes hanging on a line in front of it. The person is wearing casual clothing, including a yellow shirt. 
+    This image depicts a scene in an urban area with two primary objects: a yellow taxi and a table. On the table, there is a pant, which appears to be part of a trick performed by a person standing behind the table. The person is using the table to create the illusion that the pant is extending beyond its boundaries, stretching across the street. This trick is often known as the "walnut trick" or "yellow table illusion."
     
-    In the background, there is a building with several windows and a shopfront, adorned with various flags. The environment suggests an urban setting, likely in a bustling city such as New York City, given the reference to a double-decker bus and the overall urban layout and architecture.
-    
-    
+    The sidewalk is lined with buildings, and the scene includes several flags and other urban elements that suggest it is in a lively city environment, possibly New York City, given the tall buildings and the context
 
 
 ### Call with Precomputed Embeddings
@@ -229,14 +227,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. There are several objects visible:
-    
-    - Two red awnings hanging on the side of the cab.
-    - A grey parasol-like object over the cloth, possibly to dry something.
-    - A blue and white checkered cloth on a rack, likely being dried out in the sunshine.
-    - Various banners and flags hanging from the cab, adding to the decorative touches.
-    
-    The background includes a building with large windows and some pedestrian activity.
+    It appears that a person is driving a yellow taxi past a series of stores and under traffic lights. The person is wearing a yellow shirt and black pants. There is also a small, blue object that looks like a kite attached to the back of the taxi. The scene looks like it's in an urban area, possibly in the daytime given the shadows and lighting.
 
 
 ## Querying Llama 4 Vision Model
