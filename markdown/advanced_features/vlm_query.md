@@ -96,25 +96,22 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-14 04:59:00] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 07:40:55] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 04:59:02] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 07:40:58] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 04:59:02] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 07:40:58] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 04:59:02] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 07:40:58] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 04:59:02] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 07:40:58] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-14 04:59:02] Ignore import error when loading sglang.srt.models.minimax_m2: cannot import name 'get_bool_env_var' from 'sglang.srt.distributed' (/actions-runner/_work/sglang/sglang/python/sglang/srt/distributed/__init__.py)
-
-
-    [2026-04-14 04:59:10] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 07:41:05] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -122,18 +119,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-14 04:59:11] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-14 04:59:11] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-14 04:59:11] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-14 04:59:11] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-14 04:59:11] Ignore import error when loading sglang.srt.models.minimax_m2: cannot import name 'get_bool_env_var' from 'sglang.srt.distributed' (/actions-runner/_work/sglang/sglang/python/sglang/srt/distributed/__init__.py)
+    [2026-04-14 07:41:06] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 07:41:06] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 07:41:06] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-14 07:41:06] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.49it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.61it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.67it/s]
 
 
 
@@ -143,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-14 04:59:17,606 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-14 04:59:17] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-14 07:41:12,574 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-14 07:41:12] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person hanging laundry on a piece of luggage attached to the back of a yellow taxi. The taxi is parked on a city street, and there are other vehicles and buildings in the background. The person is standing on the sidewalk, and laundry such as sheets and towels is hanging from the luggage.
+    This is a humorous and unexpected scene where a man dressed as "The Patch Man" from the TV show " lowerd a clothesline with bib and tie laundry to the back of a yellow taxi cab. The scene appears to be staged for entertainment, likely as a comedy pranks or a street performance. The presence of the typical New York taxi cab with the men, place, and transporter (or simulated) TV show_Drayton play (the notifier itself) to not back him to a durable backdrop of a city building (the model). Furthermore, the advertisement (the recipient of the road runner animation) is down the center of
 
 
 ### Call with Processor Output
@@ -173,7 +169,11 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a person performing a balancing act on a stool attached to the back of a parked yellow taxi cab. The individual is using crutches to maintain balance, adding to the visual impact of the performance. The background shows a city street with other vehicles and buildings, suggesting an urban environment.
+    The image shows two taxis on a city street. One taxi is yellow, and the other is white. The yellow taxi is parked behind the white taxi. In the foreground, there is a suitcase attached to a stand, which has clothes draped over it. The scene suggests that the person carrying this suitcase might be a cleaner or someone moving into a new apartment or house, and they have left their belongings in the suitcase.
+    
+    There are also some banners and flags in the background, indicating that the area might be in a busy city location. The presence of traffic lights and other urban elements further reinforces this.
+    
+    The image captures a moment of transition or
 
 
 ### Call with Precomputed Embeddings
@@ -229,7 +229,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in what appears to be a busy urban area. In the foreground, a person is using a broom to clean a yellow taxi. The taxi is parked on the street, and there are other taxis and vehicles in the background. The street is lined with tall buildings, and there are American flag banners hanging on the buildings, indicating the location might be in the United States, likely in New York City given the presence of taxis and the architecture. The setting suggests a typical city environment withFILE*i*&*&*
+    The image shows a yellow taxi cab parked on a city street. The taxi has a hanger attached to it, presumably for window cleaning or maintenance purposes. The taxi is parked in front of a building with several flags hanging from its facade. The scene appears to be an urban setting with other vehicles visible in the background.
 
 
 ## Querying Llama 4 Vision Model
