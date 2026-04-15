@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=d99e1246"></script>
+    <script src="../../_static/documentation_options.js?v=c09ba694"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -521,7 +521,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mamba-cache">Mamba Cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-cache">Hierarchical cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lmcache">LMCache</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offloading">Offloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offloading-must-be-used-with-disable-cuda-graph">Offloading (must be used with <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#args-for-multi-item-scoring">Args for multi-item scoring</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-debug-options">Optimization/debug options</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-batch-tokenizer">Dynamic batch tokenizer</a></li>
@@ -1817,8 +1817,8 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </table>
 </div>
 </section>
-<section id="offloading">
-<h2>Offloading<a class="headerlink" href="#offloading" title="Link to this heading">#</a></h2>
+<section id="offloading-must-be-used-with-disable-cuda-graph">
+<h2>Offloading (must be used with <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code>)<a class="headerlink" href="#offloading-must-be-used-with-disable-cuda-graph" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -1830,27 +1830,27 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--cpu-offload-gb</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
-<td><p>Type: int (must be used with <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code>)</p></td>
+<td><p>Type: int</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--offload-group-size</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
-<td><p>Type: int</p></td>
+<td><p>Type: int (DeepSeek only)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--offload-num-in-group</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-<td><p>Type: int</p></td>
+<td><p>Type: int (DeepSeek only)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--offload-prefetch-step</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-<td><p>Type: int</p></td>
+<td><p>Type: int (DeepSeek only)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--offload-mode</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">cpu</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">cpu</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">meta</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">sharded_gpu</span></code> (must be used with <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code>, only supported for DeepSeek)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cpu</span></code> (DeepSeek only) <br/><code class="docutils literal notranslate"><span class="pre">meta</span></code> (DeepSeek only) <br/><code class="docutils literal notranslate"><span class="pre">sharded_gpu</span></code> (DeepSeek only)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 </tbody>
@@ -2657,7 +2657,7 @@ NPU, like Ktransformer, checkpoint-engine etc.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mamba-cache">Mamba Cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-cache">Hierarchical cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lmcache">LMCache</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offloading">Offloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offloading-must-be-used-with-disable-cuda-graph">Offloading (must be used with <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#args-for-multi-item-scoring">Args for multi-item scoring</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-debug-options">Optimization/debug options</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-batch-tokenizer">Dynamic batch tokenizer</a></li>
