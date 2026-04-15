@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=0570dc56"></script>
+    <script src="../_static/documentation_options.js?v=129a568d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -645,15 +645,15 @@ The tool_call_parser &#39;qwen25&#39; is deprecated. Please use &#39;qwen&#39; i
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-04-15 01:17:30] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-15 01:17:30] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-15 01:17:30] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-15 01:17:30] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
-2026-04-15 01:17:34,678 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-15 01:17:34] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  6.51it/s]
-Capturing num tokens (num_tokens=4 avail_mem=103.86 GB): 100%|██████████| 58/58 [00:08&lt;00:00,  7.17it/s]
+[2026-04-15 02:19:27] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-15 02:19:27] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-15 02:19:27] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-15 02:19:27] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Multi-thread loading shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+2026-04-15 02:19:31,673 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-15 02:19:31] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  6.98it/s]
+Capturing num tokens (num_tokens=4 avail_mem=103.84 GB): 100%|██████████| 58/58 [00:07&lt;00:00,  7.49it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -775,7 +775,7 @@ Capturing num tokens (num_tokens=4 avail_mem=103.86 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='caf66716bfaa491d84844fdd7e0d50d1', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content='To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name "Boston", state "MA" (which is the two-letter abbreviation for Massachusetts), and specifying the unit of temperature. Since no specific unit was requested, I\'ll assume Celsius for a more universally understood temperature scale.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_a0f39e0113d64ad1861dc1a2', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), matched_stop=None)], created=1776215882, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=100, prompt_tokens=290, total_tokens=390, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='192942efef124df89957caf94b8986b0', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content='To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name "Boston", state "MA" (which is the two-letter abbreviation for Massachusetts), and specifying the unit of temperature. Since no specific unit was requested, I\'ll assume Celsius for a more universally understood temperature scale.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_8875c38c20904ab9b61220ff', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), matched_stop=None)], created=1776219597, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=100, prompt_tokens=290, total_tokens=390, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -799,7 +799,7 @@ Capturing num tokens (num_tokens=4 avail_mem=103.86 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>[ChatCompletionMessageFunctionToolCall(id='call_a0f39e0113d64ad1861dc1a2', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)]</strong></div>
+<strong style='color: #00008B;'>[ChatCompletionMessageFunctionToolCall(id='call_8875c38c20904ab9b61220ff', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)]</strong></div>
 </div>
 <section id="Handle-Tools">
 <h4>Handle Tools<a class="headerlink" href="#Handle-Tools" title="Link to this heading">#</a></h4>
@@ -896,7 +896,7 @@ Capturing num tokens (num_tokens=4 avail_mem=103.86 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_3973b5051ece4dbcb19f1a53', function=ChoiceDeltaToolCallFunction(arguments='', name='get_current_weather'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_89595ae1f7aa4df885a383ef', function=ChoiceDeltaToolCallFunction(arguments='', name='get_current_weather'), type='function')</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1033,7 +1033,7 @@ Capturing num tokens (num_tokens=4 avail_mem=103.86 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Output a reasoning before act, then use the tools to help you."}, ChatCompletionMessage(content='To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name "Boston", state "MA" (which is the two-letter abbreviation for Massachusetts), and specifying the unit of temperature. Since no specific unit was requested, I\'ll assume Celsius for a more universally understood temperature scale.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_a0f39e0113d64ad1861dc1a2', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), {'role': 'tool', 'tool_call_id': 'call_a0f39e0113d64ad1861dc1a2', 'content': "The weather in Boston, MA is 85 degrees celsius. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
+<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Output a reasoning before act, then use the tools to help you."}, ChatCompletionMessage(content='To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name "Boston", state "MA" (which is the two-letter abbreviation for Massachusetts), and specifying the unit of temperature. Since no specific unit was requested, I\'ll assume Celsius for a more universally understood temperature scale.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_8875c38c20904ab9b61220ff', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), {'role': 'tool', 'tool_call_id': 'call_8875c38c20904ab9b61220ff', 'content': "The weather in Boston, MA is 85 degrees celsius. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
 </div>
 </section>
 <section id="Send-Results-Back-to-Model">
@@ -1068,7 +1068,7 @@ Capturing num tokens (num_tokens=4 avail_mem=103.86 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='e10bfe25b23f45e3965a6f829e5606a5', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content="There seems to be an error in the response as 85 degrees Celsius is extremely high for a typical temperature in Boston. Let's correct this by rechecking with the function and ensuring we use the correct unit, which should be Fahrenheit.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_664eda278afa42b199755f8b', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), matched_stop=None)], created=1776215884, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=82, prompt_tokens=436, total_tokens=518, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='902b4145f1694c63ae66307d4870888a', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content="There seems to be an error in the response as 85 degrees Celsius is extremely high for a typical temperature in Boston. Let's correct this by rechecking with the function and ensuring we use the correct unit, which should be Fahrenheit.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_44dfc3c5d49d4ef3afc0c8ce', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), matched_stop=None)], created=1776219599, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=82, prompt_tokens=436, total_tokens=518, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1274,11 +1274,11 @@ function arguments:  {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
-2026-04-15 01:18:25,196 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-15 01:18:25] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.05it/s]
-Capturing num tokens (num_tokens=4 avail_mem=105.82 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 14.47it/s]
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
+2026-04-15 02:20:19,277 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-15 02:20:19] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  6.80it/s]
+Capturing num tokens (num_tokens=4 avail_mem=94.95 GB): 100%|██████████| 58/58 [00:07&lt;00:00,  7.76it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1444,15 +1444,15 @@ The tool_call_parser &#39;qwen25&#39; is deprecated. Please use &#39;qwen&#39; i
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-04-15 01:18:58] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-15 01:18:58] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-15 01:18:58] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-15 01:18:58] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
-2026-04-15 01:19:02,169 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-15 01:19:02] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  6.80it/s]
-Capturing num tokens (num_tokens=4 avail_mem=103.19 GB): 100%|██████████| 58/58 [00:07&lt;00:00,  7.61it/s]
+[2026-04-15 02:20:58] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-15 02:20:58] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-15 02:20:58] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-15 02:20:58] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
+2026-04-15 02:21:02,460 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-15 02:21:02] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00,  9.67it/s]
+Capturing num tokens (num_tokens=4 avail_mem=105.82 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 12.10it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -1475,7 +1475,7 @@ Capturing num tokens (num_tokens=4 avail_mem=103.19 GB): 100%|██████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Content: None
-Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_9c8a8c3252c348939bcc059d&#39;, function=Function(arguments=&#39;{}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
+Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_cd171938783d44b38b290518&#39;, function=Function(arguments=&#39;{}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
 </pre></div></div>
 </div>
 </section>
@@ -1525,7 +1525,7 @@ Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_9c8a8c3252c34893
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Content: None
-Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_18300e850f1c439eb253d1ee&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Paris&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
+Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_be86923aa51c4bf2a331bfa0&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Paris&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1707,15 +1707,15 @@ not use the correct chat template, tool calling may fail or produce inconsistent
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-04-15 01:19:47] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-15 01:19:47] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-15 01:19:47] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-15 01:19:47] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.66it/s]
-2026-04-15 01:19:48,815 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-15 01:19:48] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:02&lt;00:00, 21.06it/s]
-Capturing num tokens (num_tokens=4 avail_mem=135.27 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 44.36it/s]
+[2026-04-15 02:21:43] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-15 02:21:43] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-15 02:21:43] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-15 02:21:43] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.31it/s]
+2026-04-15 02:21:44,523 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-15 02:21:44] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:02&lt;00:00, 20.19it/s]
+Capturing num tokens (num_tokens=4 avail_mem=135.27 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 38.04it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -1736,7 +1736,7 @@ Capturing num tokens (num_tokens=4 avail_mem=135.27 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='92b60cd7cc0347c291f3685655b762cd', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_6f351705db3d44969d00b1c3', function=Function(arguments='{"location": "Tokyo"}', name='get_weather'), type='function', index=0), ChatCompletionMessageFunctionToolCall(id='call_11dfd25fcbcf4efa99c981b8', function=Function(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function', index=1)], reasoning_content=None), matched_stop=None)], created=1776216002, model='meta-llama/Llama-3.2-1B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=20, prompt_tokens=435, total_tokens=455, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='069b0640224f41229da1797333e61348', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_4539b8732a7a44ecbbfe7b29', function=Function(arguments='{"location": "Tokyo"}', name='get_weather'), type='function', index=0), ChatCompletionMessageFunctionToolCall(id='call_26505874c5db4619a3d9ab6e', function=Function(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function', index=1)], reasoning_content=None), matched_stop=None)], created=1776219718, model='meta-llama/Llama-3.2-1B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=20, prompt_tokens=435, total_tokens=455, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1766,13 +1766,13 @@ Capturing num tokens (num_tokens=4 avail_mem=135.27 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_1c2f6b773c3841baac557a6c', function=ChoiceDeltaToolCallFunction(arguments='{"location": "Tokyo"}', name='get_weather'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_f1f24d0984e54f088fbbba0f', function=ChoiceDeltaToolCallFunction(arguments='{"location": "Tokyo"}', name='get_weather'), type='function')</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=1, id='call_e8da728391fa4bb2b652bc43', function=ChoiceDeltaToolCallFunction(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=1, id='call_3fdb16ca6cf543f4b843ee8d', function=ChoiceDeltaToolCallFunction(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function')</strong></div>
 </div>
 <blockquote>
 <div><div class="line-block">
