@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 08:58:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 09:33:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 08:58:07] `torch_dtype` is deprecated! Use `dtype` instead!
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [2026-04-16 09:34:02] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 08:58:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 09:34:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.90it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.82it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 08:58:17,590 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 08:58:17] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 09:34:12,417 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 09:34:12] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This is a humorous and picturesque scene. It appears to depict a scenario where an individual is hanging a pair of jeans outdoors in the street in front of two yellow taxis. This is a common sight in many cities: people often take advantage of warm weather to hang clothes to dry outdoors rather than using a clothesline or drying rack. The situation is likely staged for effect, given theacao風shirt he最美yellow of his jersey.
+    This image shows a yellow New York City taxi parked on a city street. A person next to it is hanging out clothes on the back of the taxi with a clothes line. The person also has an iron on a wooden bar associated with the clothes line, suggesting they might be ironing clothes to dry them outdoors.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis parked side by side on a city street. In the foreground, a man in a yellow shirt is standing on a moving cart overflowing with clothes. It appears he is engaging in some form of street-side retail or delivery activity. The background features urban elements like buildings, shops, and street signs, indicating a bustling city environment.
+    The image shows a scene in an urban environment, likely a city street in New York. In the foreground, there is a yellow taxi parked on the street. To the right of the taxi, there is a man dressed in a yellow shirt standing next to the back of the taxi. He appears to be setup to offer dry cleaning service, as there are towels and some items on the horse-drawn carriage or chaise that is attached to the taxi. The background shows a building with multiple storefronts, indicating a commercial area. The street is lined with other vehicles, including more taxis, which is common in New York City due to the
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging clothes on a clothesline attached to a yellow taxi cab. The clothes line is waving in the wind. This unusual scene could be part of a public art installation or a street performance to promote environmental awareness or litter issues, given the presence of clothes laundry, which typically refers to dust bags, license plates, and other discarded items.
+    The image shows two typical yellow New York City cab taxis parked on a city streetIntersection. Both are standard yellow taxis with iconic designs identifiable by their bright yellow color and distinctive orange-top roofs. 
+    
+    The background suggests an urban setting with buildings, buses, street furniture such as flagpoles bearing flags along the sidewalk, and at least one pedestrian visible on the left. The overall visual context includes typical New York City cityscape elements, such as tall buildings, commercial establishments with windows allowing the view of products inside, and road signs.
 
 
 ## Querying Llama 4 Vision Model
