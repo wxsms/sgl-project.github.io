@@ -96,40 +96,40 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-16 01:38:17] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
-    [2026-04-16 01:38:20] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    `torch_dtype` is deprecated! Use `dtype` instead!
 
 
-    [2026-04-16 01:38:20] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 01:38:20] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-16 03:11:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 01:38:20] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
-    [2026-04-16 01:38:26] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 03:11:16] `torch_dtype` is deprecated! Use `dtype` instead!
+
+
+    The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 03:11:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-
-
-    [2026-04-16 01:38:27] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-16 01:38:27] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-16 01:38:27] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-16 01:38:27] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.39it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.96it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.00it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 01:38:35,902 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 01:38:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 03:11:26,339 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 03:11:26] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis driving on a city street, with their rearview mirrors visible. The taxis appear to be part of a larger transportation system, possibly in New York City, as inferred from the golden arches logo in the background, which is the well-known establishment of taxis throughout the city. Additionally, the backwindshield wipes visible on another vehicle further support this.
+    The image shows a yellow taxi parked on a city street. The cab appears to be with another car or vehicle nearby. There is a person in a bright yellow shirt standing next to the taxi, holding items on a stand. The background includes a tall building and some urban vegetation.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis, which are a common sight in New York City, particularly in areas like the Central and Upper West Sides where many laundromats are located. According to the/Yahoo API, taxis are a popular mode of transportation for West Coast residents, and upscale jeans (Sego LA jeans) are gaining popularity among them. “Nioas are la c21 sow slait” does not provide any useful information, so I will not attempt to answer this question. If further clarification is needed, please let me know.
+    The image shows a scene with two yellow taxis and a person in the foreground. The person appears to be adjusting something on the back of one of the taxis. There are also banners and street signs visible in the background. The setting seems to be an urban environment, likely in a city.
 
 
 ### Call with Precomputed Embeddings
@@ -225,13 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a vibrant street scene with several key elements:
-    
-    1. **Yellow Taxi Cabs**: There are two yellow taxis in the image, parked alongside the road. The taxis are typical of the iconic New York City taxi cab design.
-    
-    2. **Person by the Taxi**: A person wearing a yellow shirt is standing near one of the taxis. They are using a long metal pole to balance a blue suit or fabric item, likely as a visual gag or a form of performance.
-    
-    3. **Vehicles and Billboards**: In the background, there are other cars and billboards, indicating that the setting is likely in an urban area
+    The image shows a taxi bumper adorned with various flags and pennants, held up by a tripod stand. The car is positioned on a street in an urban area, with other vehicles and buildings in the background. The flags include what appears to be the American flag and other national flags or emblems. This setup likely commemorates an event or celebrates a national holiday, such as Independence Day.
 
 
 ## Querying Llama 4 Vision Model
