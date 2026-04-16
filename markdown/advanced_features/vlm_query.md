@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 15:56:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 16:53:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 15:56:56] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 16:54:03] `torch_dtype` is deprecated! Use `dtype` instead!
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 15:56:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 16:54:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.80it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.81it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 15:57:06,793 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 15:57:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 16:54:14,231 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 16:54:14] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a city street with two yellow taxis. In the foreground, a person, wearing a yellow shirt, is interacting with theails of a tax..." olhaust pipe to hold flags. This scene appears to be a par..." olhaust pipe to hold flags. This scene appears to be a parade or some kind of public demonstration.
+    The image shows a scene with two New York City yellow taxis parked on a city street. In the foreground, a taxi's trunk is open, and a makeshift laundry rack is hoisted outside to dry clothes. The person appears to be drying or hanging out clothes on the rack. This scene is likely part of an art installation or a performance, rather than a typical day-to-day scenario.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxicab (standard yellow taxis are primarily used in taxis in New York City as opposed to yellow Buddha Taluk taxis) on a city street. The vehicle appears to be equipped with cleaning equipment, likely a mop or a similar tool, resting above the roof. This scene could possibly be from a performance that mimics cleaning car windows, which is not a typical load for a taxi and likely indicates a staged or artistic display. The observer is standing outside, observing the scene, and can be seen wearing a beige jacket and a yellow shirt with rolled-up sleeves on one of the arms. Protégé Felipe and
+    The image shows two yellow cab taxis on a street. One taxi is prominently displayed in the foreground with a red light on its roof, while the other is partially visible in the background. The scene appears to be urban, with buildings in the background and streetlights overhead. The image seems to be taken in New York City, given the style of the taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene in an urban area, likely a city street, with two yellow taxis parked on the road. The taxis are equipped with small }}" tags ("Fetching tags") and are equipped with}" tags ((Fetching tags)). The image appears to be a real capture or an altered depiction for artistic purposes.
+    This picture shows a yellow taxi driving down a city street. The taxi appears to be parked on the moving vehicle, creating a humorous and unusual scene. The taxi driver has hung some clothes off the rear of the vehicle, possibly as part of a lighthearted marketing stunt or for a photo op. The setting is urban, with buildings, storefronts, and pedestrians in the background.
 
 
 ## Querying Llama 4 Vision Model

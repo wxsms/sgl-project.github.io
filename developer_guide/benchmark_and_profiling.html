@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=dc714b0f"></script>
+    <script src="../_static/documentation_options.js?v=27a4c2e0"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -501,7 +501,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-profiler">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.profiler</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-http-api-endpoints">Profile a server with HTTP API endpoints</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-start-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> endpoint</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-end-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code> endpoint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-stop-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/stop_profile</span></code> endpoint</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example workflow</a></li>
 </ul>
 </li>
@@ -605,7 +605,9 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--sharegpt-output-len<span class="w"> </span><span class="m">100</span><span class="w"> </span>--profile
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> environment variable must be set on both the server and client side; otherwise, the trace file will not be generated correctly. A secure way to do this is by setting it in your shell’s resource file (e.g., <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> for bash).</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">bench_serving</span> <span class="pre">--profile</span></code>, the output directory is selected on the client side from <code class="docutils literal notranslate"><span class="pre">--profile-output-dir</span></code> or <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> (fallback: <code class="docutils literal notranslate"><span class="pre">/tmp</span></code>), then sent in the <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> request.
+If you call <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> directly and do not provide <code class="docutils literal notranslate"><span class="pre">output_dir</span></code>, the server uses its own <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> (fallback: <code class="docutils literal notranslate"><span class="pre">/tmp</span></code>).</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> on both server and client is still recommended to avoid confusion about where traces are written.</p>
 <p>For more details, please refer to <a class="reference internal" href="bench_serving.html"><span class="std std-doc">Bench Serving Guide</span></a>.</p>
 </section>
 <section id="profile-in-pd-disaggregation-mode">
@@ -701,7 +703,7 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <p><strong>Parameters:</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">output_dir</span></code> (optional): Directory where profile traces will be saved. If not specified, uses <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> environment variable, or <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> as the default</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num_steps</span></code> (optional): Number of steps to profile. If not specified, profiling continues until manually stopped with <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_steps</span></code> (optional): Number of steps to profile. If not specified, profiling continues until manually stopped with <code class="docutils literal notranslate"><span class="pre">/stop_profile</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">start_step</span></code> (optional): Step number at which to start profiling (inclusive). Useful for skipping warmup iterations</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">activities</span></code> (optional): List of activities to profile, e.g., <code class="docutils literal notranslate"><span class="pre">[&quot;CPU&quot;,</span> <span class="pre">&quot;GPU&quot;]</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">[&quot;CPU&quot;,</span> <span class="pre">&quot;GPU&quot;]</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">merge_profiles</span></code> (optional): Whether to merge distributed traces. Default is <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
@@ -720,16 +722,16 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 </pre></div>
 </div>
 <p><strong>Continuous profiling (manual stop):</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start profiling without num_steps - must manually stop with /end_profile</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start profiling without num_steps - must manually stop with /stop_profile</span>
 curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/start_profile
 </pre></div>
 </div>
 </section>
-<section id="using-end-profile-endpoint">
-<h4>Using <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code> endpoint<a class="headerlink" href="#using-end-profile-endpoint" title="Link to this heading">#</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code> endpoint stops an ongoing profiling session and saves the trace file.</p>
+<section id="using-stop-profile-endpoint">
+<h4>Using <code class="docutils literal notranslate"><span class="pre">/stop_profile</span></code> endpoint<a class="headerlink" href="#using-stop-profile-endpoint" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">/stop_profile</span></code> endpoint stops an ongoing profiling session and saves the trace file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stop profiling and save traces</span>
-curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/end_profile
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/stop_profile
 </pre></div>
 </div>
 <p>This is only needed when you start profiling without specifying <code class="docutils literal notranslate"><span class="pre">num_steps</span></code>. If <code class="docutils literal notranslate"><span class="pre">num_steps</span></code> is specified, profiling will automatically stop after that many steps.</p>
@@ -751,7 +753,7 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">100</span>
 
 <span class="c1"># Terminal 2: Stop profiling when done</span>
-curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/end_profile
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/stop_profile
 </pre></div>
 </div>
 </section>
@@ -928,12 +930,12 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<spa
 </li>
 <li><p>Profiling will automatically stop after 10 steps (due to <code class="docutils literal notranslate"><span class="pre">num_steps:</span> <span class="pre">10</span></code>). If you hadn’t specified <code class="docutils literal notranslate"><span class="pre">num_steps</span></code>, you would need to manually stop it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Terminal 2: Only needed if num_steps was not specified</span>
-curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/end_profile
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/stop_profile
 </pre></div>
 </div>
 </li>
 </ol>
-<p>The <code class="docutils literal notranslate"><span class="pre">--capture-range=cudaProfilerApi</span></code> option tells Nsight Systems to only capture data between <code class="docutils literal notranslate"><span class="pre">cudaProfilerStart()</span></code> and <code class="docutils literal notranslate"><span class="pre">cudaProfilerStop()</span></code> calls (triggered by <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> and <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code>), reducing overhead and file size. The <code class="docutils literal notranslate"><span class="pre">start_step</span></code> parameter skips the first 3 steps to avoid capturing warmup overhead.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--capture-range=cudaProfilerApi</span></code> option tells Nsight Systems to only capture data between <code class="docutils literal notranslate"><span class="pre">cudaProfilerStart()</span></code> and <code class="docutils literal notranslate"><span class="pre">cudaProfilerStop()</span></code> calls (triggered by <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> and <code class="docutils literal notranslate"><span class="pre">/stop_profile</span></code>), reducing overhead and file size. The <code class="docutils literal notranslate"><span class="pre">start_step</span></code> parameter skips the first 3 steps to avoid capturing warmup overhead.</p>
 <p><strong>Method 2: Simpler approach without <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> API</strong></p>
 <p>For simpler use cases where you don’t need fine-grained control over profiling start/stop, you can profile with Nsight Systems capturing the entire workload:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Terminal 1: Start server with layerwise NVTX</span>
@@ -1047,7 +1049,7 @@ nsys<span class="w"> </span>profile<span class="w"> </span>--trace-fork-before-e
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-profiler">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.profiler</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-http-api-endpoints">Profile a server with HTTP API endpoints</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-start-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> endpoint</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-end-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code> endpoint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-stop-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/stop_profile</span></code> endpoint</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example workflow</a></li>
 </ul>
 </li>
