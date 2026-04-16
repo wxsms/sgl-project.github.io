@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=27a4c2e0"></script>
+    <script src="../_static/documentation_options.js?v=395efbe7"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -857,6 +857,37 @@ document.write(`
 <span class="w">  </span>--random-output-len<span class="w"> </span><span class="m">256</span>
 </pre></div>
 </div>
+<ol class="arabic simple" start="10">
+<li><p>Fake decode stress testing (PD disaggregation, decode-only):</p></li>
+</ol>
+<p>When benchmarking pure decode performance in a PD disaggregation setup, you can bypass the prefill node entirely by using <code class="docutils literal notranslate"><span class="pre">--fake-prefill</span></code>. This requires the decode server to be started with <code class="docutils literal notranslate"><span class="pre">--disaggregation-transfer-backend</span> <span class="pre">fake</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Start a decode-only server with fake transfer backend</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-transfer-backend<span class="w"> </span>fake<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30001</span>
+
+<span class="c1"># Step 2: Run bench_serving with --fake-prefill</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">30001</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset-name<span class="w"> </span>random<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-prompts<span class="w"> </span><span class="m">500</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--random-input-len<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--random-output-len<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fake-prefill
+</pre></div>
+</div>
+<p>Similarly, <code class="docutils literal notranslate"><span class="pre">bench_one_batch_server</span></code> also supports <code class="docutils literal notranslate"><span class="pre">--fake-prefill</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--base-url<span class="w"> </span>http://127.0.0.1:30001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--output-len<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fake-prefill
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--fake-prefill</span></code> flag automatically injects special sentinel values into each request, telling the decode server to skip real KV transfer and generate fake KV data locally.</p>
 </section>
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>

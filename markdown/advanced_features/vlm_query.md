@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 16:53:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 21:05:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 16:54:03] `torch_dtype` is deprecated! Use `dtype` instead!
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [2026-04-16 21:05:29] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 16:54:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 21:05:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.81it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.92it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 16:54:14,231 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 16:54:14] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 21:05:39,491 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 21:05:39] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene with two New York City yellow taxis parked on a city street. In the foreground, a taxi's trunk is open, and a makeshift laundry rack is hoisted outside to dry clothes. The person appears to be drying or hanging out clothes on the rack. This scene is likely part of an art installation or a performance, rather than a typical day-to-day scenario.
+    The image shows a street scene with two yellow taxis, one closer to the foreground and the other further back. In the foreground, a man is drying clothes on a makeshift clothesline attached to the back of one of the taxis. This scene appears to be set in an urban environment, with buildings and various signs in the background.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow cab taxis on a street. One taxi is prominently displayed in the foreground with a red light on its roof, while the other is partially visible in the background. The scene appears to be urban, with buildings in the background and streetlights overhead. The image seems to be taken in New York City, given the style of the taxis.
+    The image shows a yellow Cab in New York City. The concept of the yellow taxi's materials was influenced by oil, as the hotel receipts have changed the yellow color from light to dark. This is how the heat transfer property is reflected.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This picture shows a yellow taxi driving down a city street. The taxi appears to be parked on the moving vehicle, creating a humorous and unusual scene. The taxi driver has hung some clothes off the rear of the vehicle, possibly as part of a lighthearted marketing stunt or for a photo op. The setting is urban, with buildings, storefronts, and pedestrians in the background.
+    The image shows two taxis clearly visible in the urban street scene. The taxi in the foreground is yellow, and there is a laundry basket with clothes hanging on a pole attached to it, presumably being dried, which is an unusual object in the street for urban transportation. The background features a typical street view with trees, storefronts, and buildings, giving the impression that this scene takes place in a bustling city environment like New York.
 
 
 ## Querying Llama 4 Vision Model
