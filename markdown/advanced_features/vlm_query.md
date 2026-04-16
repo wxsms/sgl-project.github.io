@@ -105,21 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 03:29:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 04:47:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 03:30:00] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 04:47:25] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 03:30:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 04:47:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -129,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.00it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.67s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.56s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
 
 
 
@@ -141,12 +139,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 03:30:11,833 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 03:30:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 04:47:36,134 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 04:47:36] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street with two taxis. One taxi (yellow) is stationary on the road, while a second taxi (also yellow) appears to be partially pulled over or parked on the side of the street. The person in the background is hanging laundry on a stand, using a cloth as a makeshift clothesline or dispenser. The setting looks like an urban environment with buildings and trees in the background.
+    The image shows a street scene in an urban environment with a couple of yellow taxi cabs. The cabs appear to be on a typical city street with aated median and a sidewalk on either side. The cabs are equipped with paraphernalia typical of taxi regulations – reflective markings on the roof and the rear of the vehicles, and a logo or some form of branding. There’s a structure or a display composed of various interchangeable banners affixed to a pole which is likely used for interactive or promotional purposes.
+    
+    Street signs and other elements such as buildings and possibly pedestrian sidewalks are visible in the background. There also seem to be several vertically
 
 
 ### Call with Processor Output
@@ -171,7 +171,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person wearing a yellow shirt and leaning over a portable, telescopic metal stand attached to the back of a yellow taxi cab. The stand appears to be a piece of fitness equipment, possibly for selling or promoting healthy lifestyle products. The taxi cab is on a city street, and the background shows a few buildings with some flags and store signs visible.
+    I can't see the image you're referring to. However, you can describe a picture you see using words, but I cannot depict objects on screen.
 
 
 ### Call with Precomputed Embeddings
@@ -227,7 +227,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in a city street with a yellow taxi cab driving behind another vehicle that has an unusual configuration. On the rear side of this vehicle, there is a row of folded clothes that resemble holding a pet. This is likely an art installation or a creative display to catch people's attention. The setup appears to be related to an event or competition, possibly a衣假人 (clothesAutomation) competition, where participants try to invent ingenious ways to transform inanimate objects into animals or animals into inanimate objects.
+    I understand you've tried to describe something from "here", but it seems like the image content might not be visible or the description is ambiguous. I'd be happy to help if you can provide more details or clarify what you're trying to describe.
 
 
 ## Querying Llama 4 Vision Model

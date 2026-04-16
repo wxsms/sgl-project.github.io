@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=e62592c2"></script>
+    <script src="../_static/documentation_options.js?v=586610f2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -572,7 +572,7 @@ document.write(`
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-16 03:31:56] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-16 04:42:19] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -590,11 +590,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.56it/s]
-2026-04-16 03:32:00,618 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-16 03:32:00] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.09it/s]
-Capturing num tokens (num_tokens=4 avail_mem=76.61 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 23.56it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.60it/s]
+2026-04-16 04:42:23,690 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-16 04:42:23] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.26it/s]
+Capturing num tokens (num_tokens=4 avail_mem=120.15 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 38.68it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -626,33 +626,28 @@ Capturing num tokens (num_tokens=4 avail_mem=76.61 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Ali Al-Rawashdeh, and I have been teaching Arabic and Arabic for Immersion at Davidson College since 2013. I am also the Director of Academic Engagement at Davidson College.
-I have taught Arabic and Arabic for Immersion at Davidson College since 2013. I have been the Director of Academic Engagement at Davidson College since 2014. In addition to being a native Arabic speaker, I have a B.A. in Literature and Arabic Studies from Duke University, and a M.A. in Arabic and Biblical Studies from Davidson College. I am a graduate of the Africana Studies program at Duke
+Generated text:  Livia, and I am a single mother of two. I have been working in the retail industry for 10 years, and I’m very passionate about helping others through my work. I have a passion for making women feel welcome in the industry, and I work to ensure that my customers feel welcome and secure in their decisions. My restaurant franchise is based in the Midwest and I have also started my own bakery in the southern states. I am committed to making food and a community feel like a home in every way possible. I am a certified life coach and I am passionate about helping others find success in their careers.
+I have a
 ===============================
 Prompt: The president of the United States is
-Generated text:  doing a charity event, and wants to raise at least $10,000. So far, he has collected $3000 from individuals and $1000 from a local business. In order to reach his goal, how much more money does he need to collect?
-To determine how much more money the president needs to raise to reach his goal, we first need to calculate his current total collection. We know the following:
-
-1. The president has already collected $3000 from individuals.
-2. The president has already collected $1000 from a local business.
-
-So, the total amount
+Generated text:  invited to a golf tournament and is told that if the tournament is not to be lost, then the president must drop out. The president, unable to do so, decides to invest $10,000 in a risky investment that offers a 10% chance of making $3,000 or losing $5,000. Assuming the president&#39;s actions are independent of the outcomes of the tournament and the investment, what is the probability that the president will lose the tournament? To determine the probability that the president will lose the tournament, we need to consider the two possible outcomes of his investment decision: the president
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, and the official language of France is French.
-You are tasked with finding the first five elements of a string in Python. It is important that the first letter of each element is uppercase.
+Generated text:  Paris.
 
-The string can be as long as 50 characters. The first five elements can be stored in a list, and the final list should contain the same elements in reverse order.
+Translate to Czech The capital of France is Paris.
 
-```python
-def first_five_of_a_string(input_str: str) -&gt; List[str]:
-    &#34;&#34;&#34;
-    Find the first five elements of a string in Python. The first letter of each element
-    should be uppercase. The elements can be stored in a list
+Czech translation:
+Česko anglicky:
+The capital of France is Paris.
+
+Poznámka: Něco, co by bylo myší, přeloženo pro největší jistotu. V češtině by vám muselo říct: &#34;Česko anglicky&#34; a &#34;The capital of France is Paris.&#34; Čeština je pěti známků, což je zodpovědněné za jasnější ang
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain and changing very quickly. So, it is essential to make sure that all participants understand the current and future dynamics of AI. This means that we need to understand the different facets of AI, including its technical, social, and ethical implications. While some people might view AI as a positive force, others might view it as a threat or a challenge.
-One of the key challenges in the development of AI is its impact on the environment. As AI systems become more sophisticated and capable, they are likely to rely on more resources, such as energy and water. This could lead to environmental degradation and a rise in carbon emissions. Additionally, the
+Generated text:  likely to bring about profound changes in how we live our lives and work. In 2023, there are many ways in which AI is likely to impact our daily lives. Here are some of the most significant ways AI may impact our lives:
+1. In healthcare: AI-powered healthcare systems can diagnose and treat diseases with greater accuracy and speed. It can also help doctors make more informed decisions by analyzing vast amounts of patient data.
+2. In transportation: Autonomous cars are already being developed and can greatly reduce traffic congestion and accidents. AI can also help with the scheduling of drivers and the management of traffic.
+3. In education:
 </pre></div></div>
 </div>
 </section>
@@ -692,17 +687,17 @@ One of the key challenges in the development of AI is its impact on the environm
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [job title] at [company name]. I have been working in this field for [number of years] years. I am passionate about [reason for being in the field]. I enjoy [reason for being in the field]. I am always looking for ways to [reason for being in the field]. I am a [reason for being in the field]. I am a [reason for being in the field]. I am a [reason for being in the field]. I am a [reason for being in the field]. I am a [reason for being in the field]. I am a [reason
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [age] year old, [gender] and I have [number] years of experience in [industry]. I&#39;m a [job title] at [company name] and I&#39;m always looking for ways to [describe a new idea or project]. I&#39;m a [job title] at [company name] and I&#39;m always looking for ways to [describe a new idea or project]. I&#39;m a [job title] at [company name
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous museums, theaters, and other attractions. Paris is a popular tourist destination, attracting millions of visitors each year. The city is known for its rich history, including the influence of the French Revolution and the influence of the French Revolution on the arts and sciences. Paris is also known for its cuisine, with its famous dishes such as croissants, beignets, and escargot. The city is home to many notable French artists and writers,
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous museums, theaters, and other attractions. Paris is a popular tourist destination and a major hub for international business and diplomacy. The city is known for its rich history, including the influence of the French Revolution and the influence of the French Revolution on modern French culture and politics. Paris is also home to many famous French artists, writers, and musicians. The city is a major center for the arts, with many museums, theaters, and other cultural
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This will include issues such as bias, transparency, accountability, and privacy. AI developers will need to be more mindful of the potential consequences of their creations and work to ensure that they are used in a responsible and ethical manner.
+1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence, allowing it to learn and adapt to new situations. This could lead to more sophisticated and personalized AI systems that can better understand and respond to human emotions and behaviors.
 
-2. Greater integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human
+2. Greater use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to advance, it is likely to be used even more
 
 </pre></div></div>
 </div>
@@ -745,20 +740,20 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Sarah, and I am a human with a strong sense of empathy and a passion for helping others. I have a diverse range of interests and a curiosity for new knowledge and experiences. I am always looking for new ways to challenge my own beliefs and expand my own knowledge base, and I am always ready to share my thoughts and ideas with others. I believe that I can make a positive difference in the world by doing my part to help people in need and by learning from my experiences and mistakes. And I am grateful for all the amazing things that life has to offer and am excited to continue exploring and discovering more.
-(Note: The self
+Generated text:  [Name] and I am a [Professional or Academic Title]. I am a [Year/Grade/Category] student at [University/Career Goal/Current School]. I am passionate about [Favorite Subject/Interest/Interest]. I am organized, responsible, and highly motivated. I am always up for a challenge and eager to learn. My goal is to become [Future Goal] by [Number/Year]. I am looking forward to [Event Name]. I enjoy [Sports/Travel/Outdoor Activity]. I believe in [Personal Philosophy/Value/Principle/Goal]. This is my [Name]. I am the [Title
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Petite Vie&#34; (Little Life) due to its often diminutive size and proximity to the Seine River. It is a cosmopolitan city with a rich history, including the Roman Empire, the French Revolution, and the 1900 Olympics. Its landmarks include the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is a major cultural, economic, and transportation hub, and is widely considered one of the world&#39;s most beautiful cities. It was also the site of the 1936 Summer Olympics and the 2012 Winter Olympics. Paris
+Generated text:  Paris.
+Paris is the largest city in France by population and is the capital of France. It is located in the north-central region of the country, on the banks of the Seine river. Paris is famous for its rich history, beautiful architecture, and vibrant culture, as well as its annual Christmas market. It is also a major financial center and a symbol of French culture and identity. French cuisine is also highly regarded, and Paris is considered one of the most beautiful cities in the world. The city is home to many iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Palace of Versailles. Paris
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting and varied. Here are some potential trends that could impact the field:
+Generated text:  full of possibilities and potential. Here are some possible trends in the development of AI:
 
-1. Increased Transparency and Accountability: As AI becomes more complex, it will become more difficult to understand and control. This could lead to increased transparency and accountability, as companies and governments take steps to ensure that AI is used ethically and responsibly.
+1. Increased Machine Learning: With the advent of more powerful computing power, AI systems will likely become more sophisticated and accurate. This means that AI will be able to learn from data and improve its performance over time.
 
-2. AI with Natural Language Processing: With the rise of big data and machine learning, AI is increasingly capable of understanding and processing natural language. This could lead to more sophisticated language models and chatbots that can provide more personalized and contextually appropriate responses.
+2. Autonomous Vehicles: The development of autonomous vehicles will likely become a significant trend in the future. These vehicles will be able to drive themselves and make decisions on the fly, without human intervention.
 
-3. AI in Healthcare: AI is already being used in healthcare
+3. Healthcare: AI will play a vital role in the healthcare industry. AI will be used to diagnose diseases, to develop new treatments,
 </pre></div></div>
 </div>
 </section>
@@ -804,21 +799,23 @@ Generated text:  exciting and varied. Here are some potential trends that could 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name] and I am a [Job Title] at [Company Name]. I specialize in [Your Specialty/Role]. I&#39;m passionate about [Your Passion], and I&#39;m always looking for new challenges to tackle. Looking forward to the journey! 📝✨✨✨
+Generated text:  [Name] and I am a [Occupation] with the [Skillset] to help you with your [Problem]. If you need anything, just call me [Your Name]. I&#39;m a [Your Profession] with expertise in [Your Skillset] and I&#39;m ready to assist you to the best of my abilities.
 
-As you can see, this paragraph is a bit of a mix-up - I am not a bookkeeper or a job applicant. Instead, I am a well-known software developer who has been working in the field for over 10 years. My projects have involved everything from developing web applications to mobile apps, and I have a deep understanding of modern
+---
+
+This is a helpful self-introduction for a fictional character, designed to be neutral and to the point. It&#39;s perfect for use in various settings where a professional or skilled individual is needed. The tone should be formal and professional, suitable for any professional environment. The introduction should be brief and convey confidence and
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-What is the answer? Paris is the capital of which country? France. Paris is the capital of France. France is the country that holds the answer to this question. France is the country with the capital city Paris. The capital of France is Paris. Paris, the French capital, is the largest city in Europe, with over 2. 5 million inhabitants, and is known for its rich history, beautiful architecture, and delicious food. Paris is also a major financial hub, with many of the world&#39;s biggest companies headquartered there. The city is home to the Eiffel Tower, Louvre Museum, Notre-Dame
+Generated text:  Paris. It is the largest city in the country and has a rich history dating back over 2, 000 years. The city is known for its iconic landmarks such as Notre-Dame Cathedral and the Eiffel Tower. It is a popular tourist destination and attracts millions of visitors each year. The city is also home to many important organizations and institutions, including the French Parliament and the Musée de la Sorbonne. The French capital has become a symbol of France&#39;s rich history and culture. Paris is a major city in France, serving as the capital of the country and its largest city. Its landmarks and cultural attractions
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting and dynamic, and there are many potential trends that could shape the way we live, work, and interact with technology. Here are some possible future trends in AI:
+Generated text:  likely to be shaped by several trends, including:
 
-1. Increased Integration with Human-Centered AI: With the increasing focus on human-centered design, AI systems are likely to become more integrated with human-centered AI in the future. This means that AI systems will be designed to work in tandem with human operators, taking into account their needs, preferences, and behaviors.
+1. Increased reliance on data: As AI systems become more capable of processing and analyzing large amounts of data, there will likely be a greater emphasis on data privacy and security, as well as increased efforts to ensure that AI systems are not only accurate but also transparent and accountable.
 
-2. Deep Learning and Natural Language Processing: As the AI landscape continues to evolve, we can expect to see more reliance on deep learning and natural language processing
+2. Greater emphasis on ethical considerations: As AI systems become more sophisticated and powerful, there will likely be increased focus on ethical considerations, including issues such as bias, transparency, and accountability.
+
+3. Development of new AI technologies: The development of new AI technologies, such as artificial general intelligence (AGI) and
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
