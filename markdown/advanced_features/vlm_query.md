@@ -105,19 +105,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 03:11:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 03:29:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 03:11:16] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 03:30:00] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 03:11:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 03:30:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +129,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.96it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.67s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.56s/it]
 
 
 
@@ -139,12 +141,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 03:11:26,339 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 03:11:26] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 03:30:11,833 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 03:30:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi parked on a city street. The cab appears to be with another car or vehicle nearby. There is a person in a bright yellow shirt standing next to the taxi, holding items on a stand. The background includes a tall building and some urban vegetation.
+    The image shows a scene on a city street with two taxis. One taxi (yellow) is stationary on the road, while a second taxi (also yellow) appears to be partially pulled over or parked on the side of the street. The person in the background is hanging laundry on a stand, using a cloth as a makeshift clothesline or dispenser. The setting looks like an urban environment with buildings and trees in the background.
 
 
 ### Call with Processor Output
@@ -169,7 +171,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two yellow taxis and a person in the foreground. The person appears to be adjusting something on the back of one of the taxis. There are also banners and street signs visible in the background. The setting seems to be an urban environment, likely in a city.
+    The image shows a person wearing a yellow shirt and leaning over a portable, telescopic metal stand attached to the back of a yellow taxi cab. The stand appears to be a piece of fitness equipment, possibly for selling or promoting healthy lifestyle products. The taxi cab is on a city street, and the background shows a few buildings with some flags and store signs visible.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +227,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a taxi bumper adorned with various flags and pennants, held up by a tripod stand. The car is positioned on a street in an urban area, with other vehicles and buildings in the background. The flags include what appears to be the American flag and other national flags or emblems. This setup likely commemorates an event or celebrates a national holiday, such as Independence Day.
+    The image shows a scene in a city street with a yellow taxi cab driving behind another vehicle that has an unusual configuration. On the rear side of this vehicle, there is a row of folded clothes that resemble holding a pet. This is likely an art installation or a creative display to catch people's attention. The setup appears to be related to an event or competition, possibly a衣假人 (clothesAutomation) competition, where participants try to invent ingenious ways to transform inanimate objects into animals or animals into inanimate objects.
 
 
 ## Querying Llama 4 Vision Model
