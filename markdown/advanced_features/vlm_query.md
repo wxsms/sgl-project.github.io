@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 22:39:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 23:02:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 22:39:56] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 23:02:20] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 22:39:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 23:02:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.88it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.66it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.73it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 22:40:06,156 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 22:40:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 23:02:30,655 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 23:02:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked on the street in what appears to be a bustling urban area, possibly New York City given the recognizable """ sign. A person is setting up a clothesline between the two taxis, which seems unusual for a typical city scene. There are also several flags displayed out of doors.
+    The image depicts a scene on a street, likely in a city like New York, given the iconic yellow cabs visible. In the foreground, a person wearing a yellow shirt is standing on the back of a yellow taxi, operating a makeshift laundry line made of a fallen American flag. The person appears to be lifting a clothespin out of the air which is an ironic or humorous method to dry clothes outdoors. The flag is draped over a stick and the clothespin is crossing the line. On the ground next to the taxi, a kettle can be seen, possibly a kettle used for water. The flag, which is a vivid yellow with
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a quirky scene of someone using a clothesline attached to the roof of a yellow taxi cab. The taxi is addressed in public view, which is unusual and humorously serves as a makeshift drying spot. The scene is humorous and likely meant to be seen as a light-hearted image.
+    The image shows a yellow taxi driving on a city street. The taxi is behind a man pulling a clothes drying rack, which is on wheels, across the street. The drying rack has a red clothesline attached at the top. The man is wearing a yellow shirt and black pants. There are various flags and signs in the background, indicating it is likely a busy urban area with possibly some shopping or commercial buildings on the left side of the street.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a busy city street with two yellow taxis. The taxi in the foreground is equipped with a holographic display on the left side, and there is a person, possibly a customer,킹 some clothes onto the holographic display. The background includes other taxis and traffic lights, indicating a bustling urban environment. This scenario appears to be showcasing a new technology that allows holograms to capture and manipulate physical objects.
+    In the image, there are two yellow taxis parked in front of a building with a large sign. The taxi in the foreground has been decorated with items hanging from two triangles attached to the back window. This taxi appears to be in a parade or public event as it's being decorated for the occasion. Additionally, there are other taxis visible in the background, and the buildings have colorful banners and flags hanging in front of them. The scene seems to be set in an urban area, possibly during a special event or holiday.
 
 
 ## Querying Llama 4 Vision Model
