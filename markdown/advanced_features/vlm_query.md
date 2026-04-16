@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 23:02:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 23:33:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 23:02:20] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 23:33:22] `torch_dtype` is deprecated! Use `dtype` instead!
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 23:02:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 23:33:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.88it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 23:02:30,655 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 23:02:30] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 23:33:33,891 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 23:33:33] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts a scene on a street, likely in a city like New York, given the iconic yellow cabs visible. In the foreground, a person wearing a yellow shirt is standing on the back of a yellow taxi, operating a makeshift laundry line made of a fallen American flag. The person appears to be lifting a clothespin out of the air which is an ironic or humorous method to dry clothes outdoors. The flag is draped over a stick and the clothespin is crossing the line. On the ground next to the taxi, a kettle can be seen, possibly a kettle used for water. The flag, which is a vivid yellow with
+    It looks like someone is outside a garage or building, hanging out clothes to dry on a rack. The clothes are on plastic hangers and appear to be drying in the air. The scene is taking place on a city street with a visible yellow taxi in the background.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi driving on a city street. The taxi is behind a man pulling a clothes drying rack, which is on wheels, across the street. The drying rack has a red clothesline attached at the top. The man is wearing a yellow shirt and black pants. There are various flags and signs in the background, indicating it is likely a busy urban area with possibly some shopping or commercial buildings on the left side of the street.
+    The image shows a yellow NYC taxi being蹬小 in a street, presumably in New York City. The taxi appears to be a taxicab type, which is a small passenger vehicle used for hire in many cities around the world, but particularly popular in New York City.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there are two yellow taxis parked in front of a building with a large sign. The taxi in the foreground has been decorated with items hanging from two triangles attached to the back window. This taxi appears to be in a parade or public event as it's being decorated for the occasion. Additionally, there are other taxis visible in the background, and the buildings have colorful banners and flags hanging in front of them. The scene seems to be set in an urban area, possibly during a special event or holiday.
+    The image shows a yellow taxi cab parked on a street. The cab has been covered with a blue tarp to protect it from the elements, likely during a rainstorm. The cab is equipped with appropriate signage and wearing a driver's jersey. The street appears wet, possibly from recent rain, and there is some greenery in the background, including trees. 
+    
+    This image is a humorous and related concept to the study of redundant situations. In the study of redundant situations, which occurs more frequently in urban centers like New York, a tarp is used to cover vehicles to protect them from rain or snow.
 
 
 ## Querying Llama 4 Vision Model
