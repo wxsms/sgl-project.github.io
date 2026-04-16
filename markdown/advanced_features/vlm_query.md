@@ -105,19 +105,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 10:20:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 12:55:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 10:20:14] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 12:55:44] `torch_dtype` is deprecated! Use `dtype` instead!
+
+
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 10:20:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 12:55:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +129,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.52it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -139,18 +141,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 10:20:24,244 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 10:20:24] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 12:55:52,871 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 12:55:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene in a busy urban area with several key objects and elements:
-    
-    1. **Taxis**: There are two taxis prominently in the foreground:
-       - On the left side of the image, a taxi is visible with a red taillight on the left rear corner and a white and yellow livery.
-       - A second taxi is positioned behind the first one, also with a yellow livery and a red taillight on the far side.
-    
-    2. **Person**: A person wearing a yellow shirt and blue jeans is visible, standing near the back of the second taxi. They appear to be using a portable
+    Attached to the side of a New York City yellow cab is a washing line with clothes on it. A man appears to be attending to the load, which includes a sweater and an umbrella. In the background, people are crossing the street, and the scene includes the typical urban elements of the city.
 
 
 ### Call with Processor Output
@@ -175,7 +171,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving on a city street. The taxi is parked alongside the road, and there is a person dressed in yellow standing behind it, holding a sign or banner. The taxi appears to be out of service, as the driver's door is open and the back seat is empty. The setting is urban, with buildings and other vehicles in the background. The scene suggests that this might be a protest or action involving the taxi drivers.
+    The image shows a yellow taxi cab parked on the street in an urban environment, likely in New York City. The taxi is visible in the background, and there appears to be a small plastic stand with clothes on it, possibly belonging to the taxi driver who is hanging out some clothes. The background includes a building with storefronts and lighting, and there are other cars and elements of the street visible, such as street signs and lamp posts.
 
 
 ### Call with Precomputed Embeddings
@@ -231,9 +227,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears there's a misunderstanding. The image you provided does not show any laundry being dropped off at a taxi or similar service. Instead, it seems to be an outdoor scene with buildings, street signs, and a tidy yellow carriage or carriage train. The carriage appears to be parked near a building with a few people standing nearby. The area is slightly uphill, indicating it could be in a hilly part of the city.
-    
-    This makes it difficult to infer any plot directly from the picture. However, if you have any questions related to this distinctive scene, such as identifying unusual objects or recognizing urban landmarks, feel free to ask, and I
+    This image depicts a scene on a busy street. Two yellow cabs are parked on the road. The focus of the image seems to be on the inside of the cab, where a person, partially obscured and with their head raised, is holding a blue shirt. The view through the window of the cab shows reflections and the street outside. The background includes buildings with storefronts and flags on the street posts. The overall impression is of an urban environment with daytime light.
 
 
 ## Querying Llama 4 Vision Model
