@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 04:47:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 05:31:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 04:47:25] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 05:31:30] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 04:47:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 05:31:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.00it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.53it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
 
 
 
@@ -139,14 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 04:47:36,134 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 04:47:36] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 05:31:40,807 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 05:31:40] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene in an urban environment with a couple of yellow taxi cabs. The cabs appear to be on a typical city street with aated median and a sidewalk on either side. The cabs are equipped with paraphernalia typical of taxi regulations – reflective markings on the roof and the rear of the vehicles, and a logo or some form of branding. There’s a structure or a display composed of various interchangeable banners affixed to a pole which is likely used for interactive or promotional purposes.
-    
-    Street signs and other elements such as buildings and possibly pedestrian sidewalks are visible in the background. There also seem to be several vertically
+    The image shows two yellow taxis parked in a city street. One taxi in the foreground has luggage or a duffel bag visible on its left door, and a person is hanging a laundry basket or bag from the car's rear window. The street is lined with buildings and there are some pedestrians visible in the background. The scene appears to be set in an urban area with commercial establishments along the sidewalk.
 
 
 ### Call with Processor Output
@@ -171,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I can't see the image you're referring to. However, you can describe a picture you see using words, but I cannot depict objects on screen.
+    The image shows a taxi on a city street with its trunk open. There is a person leaning over the open trunk using a portable ironing board. The person appears to be using a hot iron to iron something placed on the extension of the ironing board. The surroundings include another taxi and street furniture, such as benches and lampposts. Banners are visible in the background, suggesting that this might be a special event or a staged performance.
 
 
 ### Call with Precomputed Embeddings
@@ -227,7 +225,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I understand you've tried to describe something from "here", but it seems like the image content might not be visible or the description is ambiguous. I'd be happy to help if you can provide more details or clarify what you're trying to describe.
+    The image shows a street scene in what appears to be a city, likely a busy highway given the presence of multiple vehicles. The most prominent vehicle is a yellow cab, which is a common mode of transportation in many urban areas, particularly in cities in the United States and other countries with similar cab systems. The cab is parked on the side of the road, and there seems to be a person around it, possibly interacting with something near the cab, such as luggage, a bag, or a sign.
+    
+    In the background, you can see other vehicles, but they are not as prominently featured as the cab. The street appears to be urban
 
 
 ## Querying Llama 4 Vision Model

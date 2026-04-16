@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=586610f2"></script>
+    <script src="../../_static/documentation_options.js?v=d7d94a7e"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -559,17 +559,17 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-`torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-16 04:42:23] `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+`torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-16 05:36:34] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
-2026-04-16 04:42:30,286 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-16 04:42:30] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  8.14it/s]
-Capturing num tokens (num_tokens=4 avail_mem=119.60 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 13.40it/s]
+2026-04-16 05:36:40,986 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-16 05:36:40] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:10&lt;00:00,  5.59it/s]
+Capturing num tokens (num_tokens=4 avail_mem=59.51 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 12.28it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -585,7 +585,7 @@ Capturing num tokens (num_tokens=4 avail_mem=119.60 GB): 100%|██████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31754
+Server started on http://localhost:33749
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -602,7 +602,7 @@ Server started on http://localhost:31754
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-04-16 04:42:49] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-04-16 05:37:03] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -634,7 +634,7 @@ Server started on http://localhost:31754
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Canada** - Ottawa</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Mexico** - Mexico City</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -664,13 +664,13 @@ Server started on http://localhost:31754
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here's a list of three countries along with their respective capitals:<br><br>1. **Germany** - Berlin<br>2. **Mexico** - Mexico City<br>3. **Japan** - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure! Here's a list of three countries along with their capitals:<br><br>1. **Canada** - Ottawa<br>2. **France** - Paris<br>3. **Japan** - Tokyo</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **France** - Paris<br>2. **India** - New Delhi<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Certainly! Here's another list of three countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Mexico** - Mexico City<br>3. **South Africa** - Pretoria (note: it has a complex system with three capital cities: administrative capital Pretoria, legislative capital Bloemfontein, and judicial capital Cape Town)</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -712,7 +712,7 @@ Server started on http://localhost:31754
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2. <br><br>Let's calculate it without a calculator:<br>\[ 2 \times 2 = 4 \]<br><br>So, 2 * 2 equals 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2.<br><br>Let's perform the multiplication:<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4. No calculator was actually needed for this simple multiplication problem.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -752,7 +752,7 @@ Server started on http://localhost:31754
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet involves consuming a variety of foods to provide essential nutrients. Include a mix of proteins, complex carbohydrates, and healthy fats, while limiting processed foods, sugars, and excessive sodium. This helps support overall health, boost immunity, and prevent chronic diseases.<br><br>2. **Regular Exercise**: Engage in regular physical activity to improve cardiovascular health, strengthen muscles, and enhance cognitive function. Aim for at least 150-300 minutes of moderate-intensity aerobic activity or 75-150 minutes of vigorous-intensity aerobic activity weekly, plus strength training at least two days per week. This regimen helps control weight, reduce chronic disease risk, and improve sleep and mood.<br><br>By combining these two strategies, you can significantly enhance your overall health and well-being.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet:** Eating a nutritious and balanced diet is crucial for maintaining good health. A balanced diet should include a variety of foods from all major food groups to ensure you are getting all the essential nutrients your body needs. This includes plenty of fruits and vegetables, lean proteins, complex carbohydrates, and healthy fats. Additionally, drinking plenty of water and avoiding excessive intake of processed foods, sugary drinks, and high-sodium items can help reduce the risk of chronic diseases such as obesity, heart disease, and diabetes.<br>2. **Regular Exercise:** Engaging in regular physical activity is essential for both physical and mental health. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with muscle-strengthening exercises on two or more days. Activities like brisk walking, cycling, yoga, or swimming are great options. Consistency is key, as incorporating physical activity into your daily routine can make it a sustainable part of your lifestyle.<br><br>By following these two tips, you can significantly improve your overall health and well-being.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -825,7 +825,7 @@ Server started on http://localhost:31754
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holly",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Argus Filch"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holm Oak",<br>        "core": "Phoenix Feather",<br>        "length": 11.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "A dementor who g"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -860,7 +860,7 @@ Server started on http://localhost:31754
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 25.38it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 34.86it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -985,21 +985,21 @@ The capital of France is Paris.&lt;|im_end|&gt;
 `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-04-16 04:43:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-04-16 05:37:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-16 04:43:12] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-16 05:37:24] `torch_dtype` is deprecated! Use `dtype` instead!
 The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-04-16 04:43:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-04-16 05:37:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.65it/s]
+Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.53it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
-2026-04-16 04:43:23,689 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-16 04:43:23] Unexpected error during package walk: cutlass.cute.experimental
+2026-04-16 05:37:35,414 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-16 05:37:35] Unexpected error during package walk: cutlass.cute.experimental
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1013,7 +1013,7 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.65it/s]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37944
+Server started on http://localhost:32779
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1029,7 +1029,7 @@ Server started on http://localhost:37944
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-04-16 04:43:26] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-04-16 05:37:39] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1063,7 +1063,7 @@ Server started on http://localhost:37944
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man using a street as an impromptu ironing area. He is standing next to a yellow taxi parked on the side of the road. He is holding an iron and using a board with clothes on it to iron them in the middle of the street. The setting appears to be an urban area with other taxis and buildings visible in the background.</strong></div>
+<strong style='color: #00008B;'>The image shows a man performing an unexpected task in an urban setting. He is ironing a piece of clothing while standing on the tailgate of a yellow taxi parked on a street. The man is using crutches to support himself while he works. The scene includes a bustling street with other vehicles, such as another taxi, and people and buildings in the background. The man is wearing a bright yellow long-sleeve shirt.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
