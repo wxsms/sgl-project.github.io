@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 06:45:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 07:15:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 06:45:23] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 07:15:18] `torch_dtype` is deprecated! Use `dtype` instead!
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 06:45:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 07:15:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.52s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.42s/it]
 
 
 
@@ -139,21 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 06:45:33,185 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 06:45:33] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 07:15:29,706 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 07:15:29] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene with two yellow taxis in New York City. One taxi appears to be starred and another has its windows rolled down, displaying an unusual laundry setup.
-    
-    **Analysis:**
-    1. **Location and Context:**
-       - The setting is characteristic of New York City, given the distinctive yellow taxis.
-       - The presence of cloths draped over the side of a moving taxi suggests a playful or humorous scene.
-    
-    2. **Cloth Display:**
-       - The taxicabs have their windows rolled down, and clothing is hung over the passenger side windows.
-       - The setup looks somewhat casual and appears aimed at bright
+    The image shows a sidewalk scene with a yellow taxi and a person hanging a blue cloth or banner on a clothesline stretched between two properties to the right of the sidewalk. The person appears to be braving the elements, issuing a warning sign and seemingly in discomfort due to the wind. This is a humorous and unusual sight, known as "flaggy" in some contexts, and is typically done for advertisements or public engagement when in high-wind conditions.
 
 
 ### Call with Processor Output
@@ -178,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene from New York City, featuring the iconic yellow New York City Taxi. The taxi is being used to display a piece of clothing, likely to attract attention or market the clothing. The background includes a city street and some buildings, emphasizing the urban setting.
+    The image shows a yellow taxi cab driving on a city street. The taxi is parked in front of a building with large windows. The cab is adorned with various items, including what appears to be an American flag and other flags, as well as an interpreted message that says " Là La La La It's a Just Just Come".
 
 
 ### Call with Precomputed Embeddings
@@ -234,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The picture shows a yellow taxi in New York City, identified by its distinctive yellow color and shape, typical of the iconic New York cabs. The settings include urban environments with buildings and pedestrians. The car appears to be stationary, possibly exhibiting an item of clothing or fabric on a stand near the door. The urban backdrop, including tall buildings and the typical Manhattan architecture, reinforces the setting of a busy metropolitan city. While I cannot provide more specific details about the item displayed near the taxi, it resembles a draped fabric or garment, possibly illustrating a visual marketing or playful concept involving street vending or public display.
+    The image shows a scene with several taxis in an urban area. The taxis appear to be yellow, which is the typical color for New York City taxis. The taxis are parked or moving on the street, and there is a person walking in the foreground. Additionally, there are streetlights and other urban elements visible, indicating that this is likely a city or metropolitan area with such infrastructure.
 
 
 ## Querying Llama 4 Vision Model
