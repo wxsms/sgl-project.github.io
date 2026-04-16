@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 05:31:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 05:59:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 05:31:30] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 05:59:46] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 05:31:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 05:59:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.53it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.56it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 05:31:40,807 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 05:31:40] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 05:59:54,953 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 05:59:54] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked in a city street. One taxi in the foreground has luggage or a duffel bag visible on its left door, and a person is hanging a laundry basket or bag from the car's rear window. The street is lined with buildings and there are some pedestrians visible in the background. The scene appears to be set in an urban area with commercial establishments along the sidewalk.
+    The image depicts a yellow taxi cab in New York City, identifiable by its distinctive color and the Manhattan skyline in the background. The taxi is parked on the street, and there are people, including one person who appears to be gesturing with their hand, near the cab. The scene likely captures a moment during a parade or event, given the context of a covered cab restricted to taxi drivers only, as used in New York City for parades and other special events. The presence of people outside and the setting suggest a festive or special occasion.
 
 
 ### Call with Processor Output
@@ -169,7 +169,18 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxi on a city street with its trunk open. There is a person leaning over the open trunk using a portable ironing board. The person appears to be using a hot iron to iron something placed on the extension of the ironing board. The surroundings include another taxi and street furniture, such as benches and lampposts. Banners are visible in the background, suggesting that this might be a special event or a staged performance.
+    It looks like you've mentioned two different images here. Let me clarify what's shown in each:
+    
+    1. **Image 1:**
+       - A yellow taxi cab is parked on the street in front of a building with large windows.
+       - The cab appears to be empty.
+       - There is a person in a yellow shirt standing near the taxi, looking at it.
+    
+    2. **Image 2:**
+       - This image does not have any clear content or description provided separately. It just overlap the other information.
+    
+    - **Taxi Cab:** 
+      - Often times, taxi cabs are yellow and parked along streets especially
 
 
 ### Call with Precomputed Embeddings
@@ -225,9 +236,16 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in what appears to be a city, likely a busy highway given the presence of multiple vehicles. The most prominent vehicle is a yellow cab, which is a common mode of transportation in many urban areas, particularly in cities in the United States and other countries with similar cab systems. The cab is parked on the side of the road, and there seems to be a person around it, possibly interacting with something near the cab, such as luggage, a bag, or a sign.
+    The image depicts a street scene with several notable elements:
     
-    In the background, you can see other vehicles, but they are not as prominently featured as the cab. The street appears to be urban
+    1. A yellow taxi cab occupying the foreground and middle ground.
+    2. A white shirt hanging on a clothesline or pole in front of the taxi.
+    3. Several vertical banners or flags strung between buildings along the street, primarily in the background.
+    4. A pedestrian stepping away from or nearing the clothesline.
+    5. Various storefronts with glass windows along the sidewalk.
+    6. A building with a brick facade on the left side of the image.
+    
+    The overall scene suggests an urban environment with commercial activities and pedestrian movement.
 
 
 ## Querying Llama 4 Vision Model
