@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 07:15:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 07:40:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 07:15:18] `torch_dtype` is deprecated! Use `dtype` instead!
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [2026-04-16 07:40:53] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 07:15:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 07:40:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.76it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.52s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.42s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 07:15:29,706 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 07:15:29] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 07:41:03,677 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 07:41:03] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a sidewalk scene with a yellow taxi and a person hanging a blue cloth or banner on a clothesline stretched between two properties to the right of the sidewalk. The person appears to be braving the elements, issuing a warning sign and seemingly in discomfort due to the wind. This is a humorous and unusual sight, known as "flaggy" in some contexts, and is typically done for advertisements or public engagement when in high-wind conditions.
+    The image shows two yellow taxis on a city street, with one taxi’s rear end painted to look like it has clothes drying on it, creating the illusion that the taxi is covered in clothes by the wind. This is an artistic expression often called the "dry cleaner effect."
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving on a city street. The taxi is parked in front of a building with large windows. The cab is adorned with various items, including what appears to be an American flag and other flags, as well as an interpreted message that says " Là La La La It's a Just Just Come".
+    The image shows a yellow taxi cab driving on a city street. The taxi has been pulled over temporarily, and a man is hanging some clothes, including a red flag, on the rear tire of the taxi. The man is wearing a yellow shirt and appears to be completing something on the side of the street. The taxi is part of a typical yellow cab service often found in major metropolitan areas.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with several taxis in an urban area. The taxis appear to be yellow, which is the typical color for New York City taxis. The taxis are parked or moving on the street, and there is a person walking in the foreground. Additionally, there are streetlights and other urban elements visible, indicating that this is likely a city or metropolitan area with such infrastructure.
+    The image shows a keys-over-fancy-person taxi stand, which appears to be a sort of street表演 art piece. The taxi stand is positioned on New York City's trendy Soho neighborhood, Thursday morning. The artist has placed an iron, painting tools, and motorcycles in the body of the vehicle to create the illusion that the vehicle is a personal art project. The art piece gets complexities and intrigue, as it is painted to look genuine.
 
 
 ## Querying Llama 4 Vision Model
