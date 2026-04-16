@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 07:40:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 08:58:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 07:40:53] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 08:58:07] `torch_dtype` is deprecated! Use `dtype` instead!
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 07:40:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 08:58:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.76it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.90it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 07:41:03,677 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 07:41:03] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 08:58:17,590 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 08:58:17] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis on a city street, with one taxi’s rear end painted to look like it has clothes drying on it, creating the illusion that the taxi is covered in clothes by the wind. This is an artistic expression often called the "dry cleaner effect."
+    This is a humorous and picturesque scene. It appears to depict a scenario where an individual is hanging a pair of jeans outdoors in the street in front of two yellow taxis. This is a common sight in many cities: people often take advantage of warm weather to hang clothes to dry outdoors rather than using a clothesline or drying rack. The situation is likely staged for effect, given theacao風shirt he最美yellow of his jersey.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving on a city street. The taxi has been pulled over temporarily, and a man is hanging some clothes, including a red flag, on the rear tire of the taxi. The man is wearing a yellow shirt and appears to be completing something on the side of the street. The taxi is part of a typical yellow cab service often found in major metropolitan areas.
+    The image shows two yellow taxis parked side by side on a city street. In the foreground, a man in a yellow shirt is standing on a moving cart overflowing with clothes. It appears he is engaging in some form of street-side retail or delivery activity. The background features urban elements like buildings, shops, and street signs, indicating a bustling city environment.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a keys-over-fancy-person taxi stand, which appears to be a sort of street表演 art piece. The taxi stand is positioned on New York City's trendy Soho neighborhood, Thursday morning. The artist has placed an iron, painting tools, and motorcycles in the body of the vehicle to create the illusion that the vehicle is a personal art project. The art piece gets complexities and intrigue, as it is painted to look genuine.
+    The image shows a person hanging clothes on a clothesline attached to a yellow taxi cab. The clothes line is waving in the wind. This unusual scene could be part of a public art installation or a street performance to promote environmental awareness or litter issues, given the presence of clothes laundry, which typically refers to dust bags, license plates, and other discarded items.
 
 
 ## Querying Llama 4 Vision Model
