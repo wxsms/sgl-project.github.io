@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 05:59:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 06:45:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 05:59:46] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 06:45:23] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 05:59:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 06:45:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.56it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]
 
 
 
@@ -139,12 +139,21 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 05:59:54,953 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 05:59:54] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 06:45:33,185 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 06:45:33] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts a yellow taxi cab in New York City, identifiable by its distinctive color and the Manhattan skyline in the background. The taxi is parked on the street, and there are people, including one person who appears to be gesturing with their hand, near the cab. The scene likely captures a moment during a parade or event, given the context of a covered cab restricted to taxi drivers only, as used in New York City for parades and other special events. The presence of people outside and the setting suggest a festive or special occasion.
+    The image shows a street scene with two yellow taxis in New York City. One taxi appears to be starred and another has its windows rolled down, displaying an unusual laundry setup.
+    
+    **Analysis:**
+    1. **Location and Context:**
+       - The setting is characteristic of New York City, given the distinctive yellow taxis.
+       - The presence of cloths draped over the side of a moving taxi suggests a playful or humorous scene.
+    
+    2. **Cloth Display:**
+       - The taxicabs have their windows rolled down, and clothing is hung over the passenger side windows.
+       - The setup looks somewhat casual and appears aimed at bright
 
 
 ### Call with Processor Output
@@ -169,18 +178,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like you've mentioned two different images here. Let me clarify what's shown in each:
-    
-    1. **Image 1:**
-       - A yellow taxi cab is parked on the street in front of a building with large windows.
-       - The cab appears to be empty.
-       - There is a person in a yellow shirt standing near the taxi, looking at it.
-    
-    2. **Image 2:**
-       - This image does not have any clear content or description provided separately. It just overlap the other information.
-    
-    - **Taxi Cab:** 
-      - Often times, taxi cabs are yellow and parked along streets especially
+    This image shows a scene from New York City, featuring the iconic yellow New York City Taxi. The taxi is being used to display a piece of clothing, likely to attract attention or market the clothing. The background includes a city street and some buildings, emphasizing the urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -236,16 +234,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a street scene with several notable elements:
-    
-    1. A yellow taxi cab occupying the foreground and middle ground.
-    2. A white shirt hanging on a clothesline or pole in front of the taxi.
-    3. Several vertical banners or flags strung between buildings along the street, primarily in the background.
-    4. A pedestrian stepping away from or nearing the clothesline.
-    5. Various storefronts with glass windows along the sidewalk.
-    6. A building with a brick facade on the left side of the image.
-    
-    The overall scene suggests an urban environment with commercial activities and pedestrian movement.
+    The picture shows a yellow taxi in New York City, identified by its distinctive yellow color and shape, typical of the iconic New York cabs. The settings include urban environments with buildings and pedestrians. The car appears to be stationary, possibly exhibiting an item of clothing or fabric on a stand near the door. The urban backdrop, including tall buildings and the typical Manhattan architecture, reinforces the setting of a busy metropolitan city. While I cannot provide more specific details about the item displayed near the taxi, it resembles a draped fabric or garment, possibly illustrating a visual marketing or playful concept involving street vending or public display.
 
 
 ## Querying Llama 4 Vision Model

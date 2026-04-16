@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=1c3a3d5c"></script>
+    <script src="../_static/documentation_options.js?v=d4f74fad"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -570,9 +570,9 @@ document.write(`
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-`torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-16 06:02:08] `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+`torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-16 06:46:08] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -590,11 +590,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.12it/s]
-2026-04-16 06:02:11,994 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-16 06:02:11] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.49it/s]
-Capturing num tokens (num_tokens=4 avail_mem=75.94 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 35.02it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.34it/s]
+2026-04-16 06:46:13,014 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-16 06:46:13] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.41it/s]
+Capturing num tokens (num_tokens=4 avail_mem=76.60 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 23.18it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -626,19 +626,35 @@ Capturing num tokens (num_tokens=4 avail_mem=75.94 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Zhehao Ma, and I am a graduate student in the Information Science and Engineering Department at the University of Waterloo. I am currently a Research Fellow at the University of Waterloo. Before joining Waterloo, I was a Postdoctoral Researcher at the University of Toronto. My PhD research investigates the application of artificial neural networks for time series analysis.
-I am also a member of the Computational Science and Engineering (CSE) working group at Waterloo. I am a member of the Data Science and Machine Learning working group at the University of Toronto. I am a member of the AI and Data Science 2018 Summer Program at the
+Generated text:  Mark, and I have been a great fan of The Godfather movies. But, I was a little confused about the setting for the The Godfather movie. When did the showings take place? The Godfather, based on the true story of the Italian-American mafia, was first filmed in New York City in 1969. The movie adaptation of the novel is set in a different time and place, with the showings taking place in the late 1950s in a small town called Claremont, California. The film&#39;s production began in 1972 and was completed in 197
 ===============================
 Prompt: The president of the United States is
-Generated text:  in Washington, D. C., where he is in a wheelchair. He is a man and 42 years old.
-The president of the United States, who is currently in Washington D. C., where he is a wheelchair-dependent individual, is a man and 42 years old. President Donald Trump, also known as the &#34;Trumpist,&#34; has been in this position since 2011. He served two terms in the White House, including as the 45th President from 2017 to 2021. Trump has faced numerous controversies and challenges, including his controversial statements about the
+Generated text:  trying to decide whether to print more paper or print fewer. The president knows that the amount of paper they use depends on the number of products they manufacture. If the president uses too much paper, they will have to print more. If the president uses too little paper, they will run out of paper. The president has a policy of printing 20% of their products at a time, and they have 100 products to manufacture.
+
+a) When the president uses 100 products, how many different ways can they decide how much paper to print?
+
+b) What is the minimum amount of paper they can print if
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. It is situated at the mouth of the Seine river, and the Seine runs through the city. The city of Paris is famous for its museums, its art, and its castles. It is also well known for its love of the classical period, particularly of the French Renaissance and the French Baroque. Other important institutions include the Musée Rodin, the Musée d&#39;Orsay, the Musée d&#39;Orsay, and the Musée de l&#39;Orangerie. The National Library of France also houses the National Library of France, the National Museum of Natural History, and the Musée de l
+Generated text:  Paris. For the upcoming three months, the hotel prices in Paris are given by the function:
+
+$$
+f(x)=\begin{cases}
+5 &amp; \text{if } x\leq 5 \\
+2x+3 &amp; \text{if } x&gt;5
+\end{cases}
+$$
+
+Calculate the total cost of staying in the hotel for three months, considering the changes in hotel prices from January to July. The prices are as follows:
+- January: Hotel price = 5 euros
+- February: Hotel price = 3 euros
+- March: Hotel price = 4 euros
+- April: Hotel
 ===============================
 Prompt: The future of AI is
-Generated text:  exciting, with endless possibilities. However, it is essential to understand that AI is still a relatively new field and its applications have only just begun. As such, it is important to have a basic understanding of the different types of AI and their applications. One of the most popular types of AI is machine learning, which involves training a computer algorithm to learn from data and improve its performance over time. Other popular types of AI include deep learning, which involves using neural networks to solve complex problems, and natural language processing, which involves enabling computers to understand and interpret human language.
-Machine learning is a key component of many AI applications, such as image
+Generated text:  not just about how well it works, but how it is used by people. Can you predict what kind of AI will be used by humans in the future?
+
+Yes, I can predict that the future of AI will be used in a wide range of applications, from improving healthcare, to enhancing education, to improving transportation. AI will be used to analyze data, identify patterns and trends, and make predictions. It will also be used to automate tasks, freeing up human workers to focus on more complex and creative activities. Additionally, AI will be used to assist in decision-making, from making recommendations for customer service to optimizing supply chain logistics. Finally
 </pre></div></div>
 </div>
 </section>
@@ -678,19 +694,19 @@ Machine learning is a key component of many AI applications, such as image
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Skill/Ability] who has been [Number of Years] years in the field of [Field of Interest]. I&#39;m a [Favorite Activity] enthusiast and I love [Favorite Food/Drink/Activity]. I&#39;m a [Favorite Book/TV Show/Video Game] lover and I enjoy [Favorite Music/Artist]. I&#39;m a [Favorite Movie/Book/TV Show/Video Game] buff and I love [Favorite Sport/Activity/Travel/Other]. I&#39;m a [Favorite Person/Company/Place] enthusiast and I love
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament and the French National Museum. Paris is a bustling city with a rich cultural heritage and is a popular tourist destination. The city is known for its cuisine, fashion, and art scene. It is also home to the French Parliament and the French National Museum. Paris is a vibrant and dynamic city that is known for its unique blend of history, culture, and modernity. The city is also known for its iconic landmarks and is a popular tourist destination. The French
+Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling city with a rich cultural heritage and is a major tourist destination. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a major tourist destination and is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn and adapt to human behavior and preferences. This could lead to more personalized and efficient AI systems.
+1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a greater emphasis on ethical considerations. This includes issues such as bias, transparency, and accountability. AI developers will need to be more mindful of the potential impact of their technology on society.
 
-2. Greater emphasis on ethical and social implications: As AI becomes more integrated with human intelligence, there will be increased scrutiny of its ethical and social implications. This could lead to more stringent regulations and guidelines for AI development and deployment.
+2. Integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior. This could lead to more efficient and effective decision-making processes.
 
-3. Increased focus on AI ethics and safety: As AI becomes more integrated with human intelligence, there will be increased focus on ethical and safety concerns. This
+3
 
 </pre></div></div>
 </div>
@@ -733,31 +749,19 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I am an AI language model programmed to assist people in generating text with natural language. I am here to help with a wide range of questions and problems. Whether you need help with a question or a solution, I am here to assist you. So, what&#39;s your question or problem? Let&#39;s get started!
-
-Please fill out the form below. I will get back to you as soon as possible.
-
-Name: [Name] (or whatever you want)
-Email: [Your email address]
-Phone: [Your phone number]
-About you: [Describe your personality, skills, or interests]
-[Optional] [
+Generated text:  [Name] and I&#39;m a [Job Title] at [Company]. I&#39;m passionate about [Your Passion], a field or area of interest, and I&#39;m always looking to learn more about it. My dedication to [Your Profession] is evident in my constant involvement in [Your Activity], and I&#39;m always eager to share my knowledge and insights with others. What&#39;s your background and what led you to choose this particular role or field of interest? And most importantly, what&#39;s something you&#39;re looking forward to trying this year? Welcome, [Name], I&#39;m excited to meet you and learn more about your passion and interests! Let
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower and Notre Dame Cathedral. It is also renowned for its rich cultural heritage, vibrant nightlife, and role in the French Revolution and the French Revolution. Paris is a major hub for arts, music, and fashion, and is home to the headquarters of many major French companies. With its beautiful French architecture and iconic monuments, Paris is a cultural and historical gem of the world. Can you provide a French sentence that incorporates the concept of &#34;eiffel tower&#34; in the context of the capital of France?
+Generated text:  Paris.
 
-Sure! Here&#39;s a French sentence incorporating the concept of &#34;eiff
+Paris is the capital and largest city of France, and the second most populous city in the European Union after Rome. The city is known for its iconic Eiffel Tower, beautiful landmarks such as the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe, and its rich history dating back to the Roman Empire. It is also known as the &#34;City of Light&#34; and is the birthplace of several French national symbols such as the flag, the coat of arms of France, and the French national anthem &#34;La Marseillaise&#34;. It is a world-renowned city that has a diverse population of
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  vast and exciting, with many potential areas of development and innovation. Here are some potential future trends in AI:
+Generated text:  likely to be characterized by significant advancements in areas such as machine learning, natural language processing, and computer vision. Here are some possible future trends in artificial intelligence:
 
-1. Cognitive Augmentation: As AI continues to learn and improve, it may be possible to enhance its capabilities by incorporating more human-like behaviors and emotions into its programming.
+1. Increased use of AI in healthcare: AI will continue to play a crucial role in healthcare, as it can help doctors to diagnose diseases and develop personalized treatment plans. AI algorithms will be used to analyze large amounts of medical data to identify patterns and predict outcomes.
 
-2. Personalized AI: As AI is used in various industries, it may become increasingly personalized to meet the specific needs and preferences of individual users.
-
-3. Ethical AI: As more and more AI systems are deployed in various settings, it may become necessary to address ethical issues such as bias, transparency, and accountability.
-
-4. Autonomous Systems: As AI
+2. Emergence of AI in finance: AI will be used in the finance industry to improve risk management, fraud detection, and portfolio optimization. AI-powered algorithms will be able to analyze financial data in real-time and
 </pre></div></div>
 </div>
 </section>
@@ -803,19 +807,19 @@ Generated text:  vast and exciting, with many potential areas of development and
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name] and I am a [Type of Person]. I enjoy [What You Do/What You Do Well]. I love [Something That Takes the Moment]. I&#39;m [What You Like About Yourself]. I hope to be a [What You Want to be]. How do you feel about [Career/Interest/Personal Goal]? (e.g. [What You Do Well, What You Can Do Well, etc.]) I&#39;m excited to meet you and ask you a few questions about yourself. Is there a particular aspect of your life that you&#39;re particularly interested in? (e.g. [What You Want to be,
+Generated text:  Jane. I&#39;m an experienced marketing professional with over 10 years of experience in the industry. I have a passion for helping businesses succeed and I&#39;m always looking for new ways to improve my skills and knowledge. I&#39;m confident in my ability to create and execute successful marketing campaigns and I&#39;m committed to always striving for excellence. I&#39;m looking forward to the opportunity to work with you and help you achieve your marketing goals. What do you do for a living? I&#39;m a marketing professional with over 10 years of experience in the industry. I specialize in creating and executing successful marketing campaigns and helping businesses succeed. I&#39;m committed to
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, located on the Mediterranean coast of the country and one of the most important cities in Europe. It has a rich cultural history, with influences from both French and Mediterranean cultures. The city is known for its lively city life, its famous Eiffel Tower, and its delicious cuisine. Paris is also home to a number of UNESCO world heritage sites and is an important economic and political center. It is a city that is constantly evolving, with ongoing efforts to preserve and promote its unique identity. It is widely considered one of the most fascinating and vibrant cities in the world. Paris, officially known as the &#34;City of Light,&#34; is a
+Generated text:  Paris, the city of love. Paris is known for its iconic Eiffel Tower, romantic opium shops, and lively nightlife. The city is also home to the Louvre Museum, the Eiffel Tower, and the Notre-Dame Cathedral. Paris is a city of contrasts and a hub of culture and entertainment. With its beautiful architecture, rich history, and diverse population, it is a true Parisian destination. Let me know if you need more details or have any other questions! **Paris, the City of Love** is renowned for its iconic **Eiffel Tower**, romantic **opium shops**, and **lively
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  bound to be unpredictable, but here are some possible trends that could shape the industry:
+Generated text:  likely to continue to advance rapidly, driven by technological innovations, policy changes, and societal shifts. Some possible trends in AI include:
 
-1. Autonomous robots: With advancements in robotics and artificial intelligence, we can expect to see more autonomous robots that can perform tasks in a wide range of fields, such as manufacturing, delivery, and transportation.
+1. Increased focus on ethical considerations: As AI becomes more complex and autonomous, there is a growing recognition that it will need to adhere to ethical and social norms. This includes things like privacy, fairness, and transparency.
 
-2. Improved machine learning algorithms: As machine learning algorithms get more sophisticated, we can expect to see more advanced models that can learn from large amounts of data and make more accurate predictions and decisions.
+2. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI becomes more advanced, it could play a larger role in healthcare, particularly in areas like diagnostics, personalized medicine, and patient care coordination.
 
-3. Enhanced security: As we become more reliant on AI in our daily lives, we may see an increase in the use of AI-based security systems that
+3. Greater integration with
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
