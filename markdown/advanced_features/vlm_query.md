@@ -105,21 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 22:10:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 22:39:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 22:10:16] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-16 22:39:56] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 22:10:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-16 22:39:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -129,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.53it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.66it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.73it/s]
 
 
 
@@ -141,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 22:10:27,102 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 22:10:27] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-16 22:40:06,156 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-16 22:40:06] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    I'm not sure what it is. It might be a car, bike or truck.
+    The image shows two yellow taxis parked on the street in what appears to be a bustling urban area, possibly New York City given the recognizable """ sign. A person is setting up a clothesline between the two taxis, which seems unusual for a typical city scene. There are also several flags displayed out of doors.
 
 
 ### Call with Processor Output
@@ -171,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like the image shows a street scene in an urban area. There are two yellow taxis visible, and a person dressed in yellow seems to be standing next to one of the taxis. The person is also carrying a red bowYour answer seems to be cut off and incomplete, possibly you wanted to write more details about this scene.
+    This image shows a quirky scene of someone using a clothesline attached to the roof of a yellow taxi cab. The taxi is addressed in public view, which is unusual and humorously serves as a makeshift drying spot. The scene is humorous and likely meant to be seen as a light-hearted image.
 
 
 ### Call with Precomputed Embeddings
@@ -227,9 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from New York City, specifically a taxi fare dispute involving someone hanging an umbrella or other item from the back window of a yellow taxi cab. The taxi is on a city street witharáds on スエード喷.
-    
-    The scene likely took place during a famous New York City 'yellow cab' fare dispute. In this incident, a man was paraded in the back of a small-taxi cab for about 10 minutes while a female driver refused to take him for an Uber ride, which he had booked. The woman initially won the dispute but ended up spending the night in jail, known as a "
+    The image shows a scene on a busy city street with two yellow taxis. The taxi in the foreground is equipped with a holographic display on the left side, and there is a person, possibly a customer,킹 some clothes onto the holographic display. The background includes other taxis and traffic lights, indicating a bustling urban environment. This scenario appears to be showcasing a new technology that allows holograms to capture and manipulate physical objects.
 
 
 ## Querying Llama 4 Vision Model

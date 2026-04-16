@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=f4d5b01c"></script>
+    <script src="../_static/documentation_options.js?v=481b63a4"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -572,7 +572,7 @@ document.write(`
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-16 22:04:16] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-16 22:45:41] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -590,11 +590,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.88it/s]
-2026-04-16 22:04:20,834 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-16 22:04:20] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.64it/s]
-Capturing num tokens (num_tokens=4 avail_mem=118.87 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 35.75it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.89it/s]
+2026-04-16 22:45:46,268 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-16 22:45:46] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 15.66it/s]
+Capturing num tokens (num_tokens=4 avail_mem=118.30 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 28.67it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -626,39 +626,24 @@ Capturing num tokens (num_tokens=4 avail_mem=118.87 GB): 100%|██████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Andrew and I&#39;m a world-class software engineer. I&#39;m a little rusty in coding, so I don&#39;t code all that much. However, I do know a lot of programming languages and I&#39;ve been helping others learn JavaScript. I was wondering if you could assist with a few JavaScript tasks. Here are some tasks that I would like you to assist with:
-
-1. Write a program that takes a string of digits and returns the largest digit in the string. If there are multiple largest digits, return the first one.
-
-For example, if the input is &#34;234123&#34;, the output should be &#34;4&#34;.
-
-2
+Generated text:  Lisa.
+We&#39;ll look at the text below.
+John left on a plane. The next day, he traveled to another city. The next day, he bought a ticket on a different plane. What city did he travel to?
+John traveled to a different city. The next day, he bought a ticket on a different plane. Based on the information provided, John traveled to a different city and then bought a ticket on a different plane the following day. Therefore, the city he traveled to is the one he traveled to before making the purchase. However, without additional context, we cannot determine the specific city he traveled to before making the purchase
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to decide how many military jets to buy. He can buy 100 jets now, or 50 jets next year, or 100 jets in 5 years, or 300 jets in 10 years. Each jet costs $500,000. If the president&#39;s goal is to have 500 jets by the end of 10 years, how much would he need to spend on these jets?
-To determine the total cost of purchasing 500 jets by the end of 10 years, we need to calculate the cost for each scenario and then
+Generated text:  a very important person in the country. He is in charge of all the other people. He has a lot of power. For example, he can veto any bill he wants. He can also sign any bill he wants. In addition, the president is the leader of the country. He has the power to make decisions about the country&#39;s policy. In addition, he can tell the public what to do. He can issue a statement to the public. Also, he can take any action which he wants to. All of these things show that the president is very powerful. They can do everything he wants. Which of the following statements is
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. ( )
-A: Correct
-B: Incorrect
-C:
-D:
-To determine whether the statement &#34;The capital of France is Paris&#34; is correct or incorrect, we need to recall the location of Paris as the capital of France.
-
-1. **Identify the capital of France:**
-   The capital of France is Paris. This is a well-known fact in the world of European history.
-
-2. **Verify the statement:**
-   The statement claims that Paris is the capital of France. Since Paris is indeed the capital of France, this statement is correct.
-
-3. **Conclusion:**
-   Based on the information provided
+Generated text:  Paris. The place of death of Napoleon Bonaparte was the Place de la Concorde, on the Left Bank of the Seine in the city center. There, a monument to his grave was erected. The monument was erected by Louis Alexandre Martin, a man of the distinguished career of that time.
+He was born in 1808 and died in 1870. He was a brilliant politician. In 1848 he was the candidate of the extreme right wing for the presidency of the Assembly. In 1848 he was the President of the Committee of Public Safety. In 1
 ===============================
 Prompt: The future of AI is
-Generated text:  here, but it&#39;s not here yet. But in the coming decade, it is going to be for sure. Technology companies are going to revolutionize the way we live our lives, and it is coming at us from all angles. It&#39;s not going to be easy, but it&#39;s entirely possible.
-AI is becoming more and more ubiquitous in our daily lives. The idea of a robot and computer program that can do everything from making decisions to writing poetry, playing chess, and playing musical instruments, is here now.
-The technology will enable us to perform tasks that are currently performed by humans, such as diagnosing diseases, creating new drugs
+Generated text:  coming sooner than you think, and we already see signs of this in a variety of industries. But while we can have a fairly good idea of what AI is, there&#39;s still a lot to learn about the technology and its impact on society. Here are 15 interesting facts about AI that you may not have known about.
+1. The first AI was created by John McCarthy in 1956.
+2. It&#39;s harder to build a small computer than it is to build an entire planet.
+3. The first AI that was created using the same programming language was created by Alan Turing.
+4. The first AI that was
 </pre></div></div>
 </div>
 </section>
@@ -698,21 +683,19 @@ The technology will enable us to perform tasks that are currently performed by h
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [Age] year old [Occupation]. I am a [Type of Character] who has always been [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-This statement is accurate and provides a brief overview of the capital city&#39;s location and significance in French culture and politics. It is a widely recognized and well-known city in the world, known for its rich history, beautiful architecture, and vibrant culture. Paris is the capital of France and is home to the country&#39;s political, economic, and cultural center. It is also a major tourist destination, attracting millions of visitors each year. The city is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and Louvre Museum, as well as its diverse and multicultural population. Paris is a city that
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also the seat of the French government and the largest city in the European Union. Paris is known for its rich history, art, and culture, and is a popular tourist destination. The city is also home to many famous museums, including the Musée d&#39;Orsay and the Musée Rodin. Paris is a vibrant and dynamic city with a rich cultural heritage that continues to inspire and captivate visitors from around the world. The city is also known for its fashion industry, with many
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends, including:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some possible future trends in AI:
 
-1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence, allowing it to learn and adapt in ways that are difficult for humans to do.
+1. Increased automation: As AI continues to advance, we can expect to see more automation in various industries, including manufacturing, transportation, and healthcare. This will lead to increased efficiency, reduced costs, and improved productivity.
 
-2. Greater emphasis on ethical considerations: As AI becomes more advanced, there will be a greater emphasis on ethical considerations, including issues such as bias, transparency, and accountability.
+2. Personalization: AI will enable more personalized experiences for users, with algorithms that can learn from user behavior and preferences to provide tailored recommendations and interactions.
 
-3. Increased use of AI in healthcare: AI is already being used in healthcare to improve diagnosis, treatment, and patient care. As AI becomes more advanced, it is likely to be used in even more
+3. Ethical and responsible AI: As AI becomes more integrated into our daily lives,
 
 </pre></div></div>
 </div>
@@ -755,22 +738,19 @@ Generated text:  likely to be characterized by several key trends, including:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Character&#39;s Name] and I&#39;m a [fill in the blank] year-old software engineer from [city or location]. I&#39;m passionate about [mention something about your field of expertise or hobbies]. I&#39;m always up for learning new things and have a fun-loving personality. I enjoy exploring different cultures and trying out new recipes. What is your favorite hobby or activity to do at home?
-Hello, my name is [Character&#39;s Name] and I&#39;m a [fill in the blank] year-old software engineer from [city or location]. I&#39;m passionate about [mention something about your field of expertise or hobbies]. I&#39;m always up for
+Generated text:  [name] and I&#39;m a/an [job title or category] with over [number] of years of experience in [job title or field]. I&#39;m excited to start a new journey in [job title or field] and am always eager to learn new things and take on new challenges. Thank you for taking the time to meet me, [name]. [Name] is a/an [job title or category] with over [number] of years of experience in [job title or field]. I&#39;m excited to start a new journey in [job title or field] and am always eager to learn new things and take on new challenges
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic architecture, vibrant culture, and important historical landmarks. It serves as the political, cultural, and economic center of the country and is home to numerous renowned museums, art galleries, and historical landmarks, including the Louvre and the Eiffel Tower. Despite its international status, Paris remains a cultural and political hub within the country. It&#39;s a must-visit for anyone seeking an immersive experience of French culture and history. Paris is also known as the &#34;City of Light&#34; and a global cultural hub, drawing visitors from around the world. It is one of the most visited cities in the world, with many
+Generated text:  Paris, which is the most populous city and the third-largest city in the European Union. It is located on the Seine river and is known for its architecture, museums, and world-renowned landmarks. Paris is also an important cultural center and host to many museums, theaters, and opera houses. The city is home to a diverse population of 20 million people, making it one of the most populous cities in the world. Paris is a historic city with a rich history dating back to ancient times, and it is a UNESCO World Heritage site. The city is also a popular tourist destination, with millions of visitors each year. Paris
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be characterized by a variety of trends, including:
+Generated text:  bound to be exciting and transformative, with a number of trends expected to shape its trajectory. Some potential trends include:
 
-1. Increased AI integration with existing technologies: AI will continue to be integrated into other technologies such as voice assistants, self-driving cars, and wearable devices, making them more intuitive and convenient to use.
+1. Increased use of AI in healthcare: AI will play a significant role in the healthcare industry, helping to diagnose and treat diseases more accurately and efficiently. AI-powered tools will be able to analyze large amounts of medical data quickly and provide personalized treatment plans.
 
-2. More autonomous and self-driving vehicles: AI will continue to improve, and autonomous vehicles will become more common, allowing for more convenient and efficient transportation.
+2. Improved efficiency in manufacturing: AI will help manufacturers optimize their production processes, reducing waste and improving quality control. AI-powered robots will be able to perform tasks more efficiently, such as assembly line operations or precision manufacturing.
 
-3. AI-powered healthcare advancements: AI will continue to advance in the medical field, with applications in diagnostics, drug development, and personalized medicine.
-
-4. AI for education: AI will continue to be used in education, with
+3. Increased use of AI in customer service:
 </pre></div></div>
 </div>
 </section>
@@ -816,19 +796,20 @@ Generated text:  expected to be characterized by a variety of trends, including:
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert name]. I am an individual with a deep love for storytelling, and I have a knack for weaving stories that are both captivating and relatable. I am passionate about using my skills to bring characters to life and help people discover their own paths in the world. I believe that storytelling is a powerful tool for growth and exploration, and I am eager to explore new ways of sharing my passion for writing. Thank you for having me. Let&#39;s connect and explore more together. [Insert name] [Your name] [Company] [Insert job title] [Insert position] [Insert company] [Insert company] [Insert company]
+Generated text:  [Name], and I am a [role] with [number] of years experience in [field or hobby].
+I&#39;m a [job title] at [company name], and I have been working hard to [what you do]. I&#39;m a [reason for success] with [how many years of experience] and [field or hobby]. In my spare time, I enjoy [what you do], which I believe makes me [interest or passion]. What&#39;s your story? As a [job title] at [company name], I&#39;ve been working hard to [what you do] for [number] years. I believe my success
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also a major financial and cultural hub, hosting numerous world-class museums, theaters, and museums. Additionally, Paris is a popular tourist destination, known for its beautiful architecture and stunning views of the city. It is the second-largest city in France, with a population of around 11 million people. Paris is a bustling city with a diverse and vibrant culture, making it a must-visit destination for anyone interested in France&#39;s history, art, cuisine, and more. It is also known as
+Generated text:  Paris.
+
+The statement is: Paris, the largest city in France, is the capital of the country.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by a variety of factors, including advances in hardware and software, new developments in machine learning and natural language processing, and shifts in societal values and norms. Some possible trends include:
+Generated text:  likely to involve a wide range of exciting and unpredictable developments, as well as an increasing focus on ethical and social implications. Here are some possible future trends in AI:
 
-1. Increased integration with other technologies: As AI becomes more integrated into a variety of industries, it is likely to interact more closely with other technologies, such as the Internet of Things (IoT) and the cloud.
+1. Increased autonomous vehicles: Autonomous vehicles are becoming increasingly common in our daily lives, and the rise of AI in autonomous vehicles could revolutionize transportation and transportation systems. AI can help to make autonomous vehicles safer, more efficient, and reliable.
 
-2. Increased use of AI for autonomous decision-making: Autonomous AI systems will become more common, allowing for more autonomous decision-making in industries such as transportation, healthcare, and manufacturing.
-
-3. Greater emphasis on privacy and security
+2. Improved healthcare: AI can be used to help doctors and researchers to diagnose diseases more accurately and quickly, and to develop new treatments and drugs. AI can also help to personalize treatment plans based on individual patient data, improving patient outcomes
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
