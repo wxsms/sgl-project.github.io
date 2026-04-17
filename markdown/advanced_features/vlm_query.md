@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 07:10:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 08:31:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 07:10:35] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 08:31:52] `torch_dtype` is deprecated! Use `dtype` instead!
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 07:10:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 08:31:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.14s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.16s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 07:10:45,360 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 07:10:45] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 08:32:03,643 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 08:32:03] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in an urban setting, likely New York City, as indicated by the style of the taxis and the presence of the New York taxicab insignia at the back. One taxi is behind another, with a person hanging laundry on a clothesline attached to the back of the first taxi. The person is using an iron to press the clothes while standing on a step stool. The scene is set in a street lined with buildings and streetlights. There are also traffic signs and some shops visible in the background.
+    The image you're referring to shows a street scene in a city, likely New York given the design and color scheme of the taxis. The person in the image is tending to clothes left on the back of a taxi. This is a well-known sight in New York, where many people leave their clothes on cabs to dry, especially during intense heat. The person here is wearing a yellow shirt and appears to be hanging up or unfolding some clothes from the cloth rack. The traffic lights and other urban elements in the background further emphasize that the setting is in an urban environment, likely in the heart of New York City.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow SUV parked on a city street, likely in New York City, based on the familiar golden arches of a McDonald's restaurant in the background. A person is hanging clothes on a clothesline attached to the car and appears to be doing laundry in a public space.
+    The image depicts a scene of a person standing in front of a yellow taxi. The individual is on crutches and appears to be dressed in a yellow long-sleeve shirt, red pants, and glasses. The person is stretching out a blue shirt, which is placed on a folding chair. The background includes a tall brick building with several windows and signs, and there are other vehicles, including a yellow taxi, in the vicinity. The setting suggests an urban environment, likely in a city with taxi cabs, given the typical urban transportation context.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,11 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow Cab (car) parked in front of a store with a red awning. A man in a yellow shirt and jeans is hanging out the window with clothes on a clothesline draped over the sunroof. The sunroof is open, allowing the clothes to dry in the sunlight. The Scene looks like a sunny day in a city, ideally in the United States considering the way things are presented.
+    Here we have a yellow taxi cab parked on the street, with a person seen next to it using a attached propitious object or device. There is a pickup truck positioned behind the taxi, also parked.
+    
+    The background contains partially open storefronts with flags hanging from their hanging bars and along their windows, emphasizing a city environment. The prominent building features large windows. On the right side, tall building light poles with street lights are visible, adding to the urban setting.
+    
+    Additionally, farther in the backdrop are flags lining the street, more сигelles can be spotted. There is also an overhanging structure that appears to be made of brick in
 
 
 ## Querying Llama 4 Vision Model

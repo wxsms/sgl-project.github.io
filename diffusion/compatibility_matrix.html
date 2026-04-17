@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9773dfa5"></script>
+    <script src="../_static/documentation_options.js?v=75506bc3"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -718,6 +718,50 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>⭕</p></td>
 </tr>
+<tr class="row-odd"><td class="text-left"><p>Wan2.1 Fun 1.3B InP</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">weizhou03/Wan2.1-Fun-1.3B-InP-Diffusers</span></code></p></td>
+<td class="text-left"><p>480p</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>⭕</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>✅</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Helios Base</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">BestWishYsh/Helios-Base</span></code></p></td>
+<td class="text-left"><p>720p</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Helios Mid</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">BestWishYsh/Helios-Mid</span></code></p></td>
+<td class="text-left"><p>720p</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Helios Distilled</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">BestWishYsh/Helios-Distilled</span></code></p></td>
+<td class="text-left"><p>720p</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+</tr>
 <tr class="row-odd"><td class="text-left"><p>LTX-2 (one and two stages)</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Lightricks/LTX-2</span></code></p></td>
 <td class="text-left"><p>768×512<br>1536×1024</p></td>
@@ -747,7 +791,6 @@ default parameters when initializing and generating videos.</p>
 <ol class="arabic simple">
 <li><p>Wan2.2 TI2V 5B has some quality issues when performing I2V generation. We are working on fixing this issue.</p></li>
 <li><p>SageSLA is based on SpargeAttn. Install it first with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/thu-ml/SpargeAttn.git</span> <span class="pre">--no-build-isolation</span></code></p></li>
-<li><p>LTX-2 two-stage generation uses <code class="docutils literal notranslate"><span class="pre">--pipeline-class-name</span> <span class="pre">LTX2TwoStagePipeline</span></code>. The spatial upsampler and distilled LoRA are auto-resolved from the model snapshot by default, and can still be overridden with <code class="docutils literal notranslate"><span class="pre">--spatial-upsampler-path</span></code> and <code class="docutils literal notranslate"><span class="pre">--distilled-lora-path</span></code>.</p></li>
 <li><p>LTX-2 and LTX-2.3 two-stage generation uses <code class="docutils literal notranslate"><span class="pre">--pipeline-class-name</span> <span class="pre">LTX2TwoStagePipeline</span></code>. The spatial upsampler and distilled LoRA are auto-resolved from the model snapshot by default, and can still be overridden with <code class="docutils literal notranslate"><span class="pre">--spatial-upsampler-path</span></code> and <code class="docutils literal notranslate"><span class="pre">--distilled-lora-path</span></code>.</p></li>
 </ol>
 <ul class="simple">
@@ -769,26 +812,83 @@ default parameters when initializing and generating videos.</p>
 <tr class="row-odd"><td class="text-left"><p>FLUX.2-dev</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>FLUX.2-Klein</p></td>
+<tr class="row-even"><td class="text-left"><p>FLUX.2-dev-NVFP4</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev-NVFP4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>FLUX.2-Klein-4B</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-klein-4B</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Z-Image-Turbo</p></td>
+<tr class="row-even"><td class="text-left"><p>FLUX.2-Klein-9B</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-klein-9B</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Z-Image</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Tongyi-MAI/Z-Image</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Z-Image-Turbo</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Tongyi-MAI/Z-Image-Turbo</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>GLM-Image</p></td>
+<tr class="row-odd"><td class="text-left"><p>GLM-Image</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">zai-org/GLM-Image</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Qwen Image</p></td>
+<tr class="row-even"><td class="text-left"><p>Qwen Image</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Qwen Image 2512</p></td>
+<tr class="row-odd"><td class="text-left"><p>Qwen Image 2512</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image-2512</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Qwen Image Edit</p></td>
+<tr class="row-even"><td class="text-left"><p>Qwen Image Edit</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image-Edit</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Qwen Image Edit 2509</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image-Edit-2509</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Qwen Image Edit 2511</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image-Edit-2511</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Qwen Image Layered</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image-Layered</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>SD3 Medium</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">stabilityai/stable-diffusion-3-medium-diffusers</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>SD3.5 Medium</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">stabilityai/stable-diffusion-3.5-medium-diffusers</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>SD3.5 Large</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">stabilityai/stable-diffusion-3.5-large-diffusers</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Hunyuan3D-2</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">tencent/Hunyuan3D-2</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>SANA 1.5 1.6B</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Efficient-Large-Model/SANA1.5_1.6B_1024px_diffusers</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>SANA 1.5 4.8B</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Efficient-Large-Model/SANA1.5_4.8B_1024px_diffusers</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>SANA 1600M 1024px</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Efficient-Large-Model/Sana_1600M_1024px_diffusers</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>SANA 600M 1024px</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Efficient-Large-Model/Sana_600M_1024px_diffusers</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>SANA 1600M 512px</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Efficient-Large-Model/Sana_1600M_512px_diffusers</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>SANA 600M 512px</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Efficient-Large-Model/Sana_600M_512px_diffusers</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>FireRed-Image-Edit 1.0</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">FireRedTeam/FireRed-Image-Edit-1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>FireRed-Image-Edit 1.1</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">FireRedTeam/FireRed-Image-Edit-1.1</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>ERNIE-Image</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">baidu/ERNIE-Image</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>ERNIE-Image-Turbo</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">baidu/ERNIE-Image-Turbo</span></code></p></td>
 </tr>
 </tbody>
 </table>

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9773dfa5"></script>
+    <script src="../_static/documentation_options.js?v=75506bc3"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -496,6 +496,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-rocm-amd-gpus">Platform-Specific: ROCm (AMD GPUs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-musa-moore-threads-gpus">Platform-Specific: MUSA (Moore Threads GPUs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-intel-xpu">Platform-Specific: Intel XPU</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-ascend-npu">Platform-Specific: Ascend NPU</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-apple-mps">Platform-Specific: Apple MPS</a></li>
 </ul>
@@ -588,6 +589,13 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </pre></div>
 </div>
 </section>
+<section id="platform-specific-intel-xpu">
+<h2>Platform-Specific: Intel XPU<a class="headerlink" href="#platform-specific-intel-xpu" title="Link to this heading">#</a></h2>
+<p>For Intel Data Center GPU Max or Arc GPUs, follow the <a class="reference internal" href="../platforms/xpu.html"><span class="std std-doc">XPU installation guide</span></a> to set up the base environment, then install diffusion dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[diffusion]&quot;</span>
+</pre></div>
+</div>
+</section>
 <section id="platform-specific-ascend-npu">
 <h2>Platform-Specific: Ascend NPU<a class="headerlink" href="#platform-specific-ascend-npu" title="Link to this heading">#</a></h2>
 <p>For Ascend NPU, please follow the <a class="reference internal" href="../platforms/ascend/ascend_npu.html"><span class="std std-doc">NPU installation guide</span></a>.</p>
@@ -677,6 +685,7 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-rocm-amd-gpus">Platform-Specific: ROCm (AMD GPUs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-musa-moore-threads-gpus">Platform-Specific: MUSA (Moore Threads GPUs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-intel-xpu">Platform-Specific: Intel XPU</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-ascend-npu">Platform-Specific: Ascend NPU</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-apple-mps">Platform-Specific: Apple MPS</a></li>
 </ul>

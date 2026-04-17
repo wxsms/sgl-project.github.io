@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=9773dfa5"></script>
+    <script src="../../_static/documentation_options.js?v=75506bc3"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -525,6 +525,8 @@ document.write(`
 <ul class="simple">
 <li><p><strong>CUDA</strong>: prefers FlashAttention (FA3/FA4) when supported; otherwise falls back to PyTorch SDPA.</p></li>
 <li><p><strong>ROCm</strong>: uses FlashAttention when available; otherwise falls back to PyTorch SDPA.</p></li>
+<li><p><strong>Intel XPU</strong>: uses XPU Flash Attention backend (fp16/bf16, head sizes 64/96/128/192/256); otherwise falls back to PyTorch SDPA.</p></li>
+<li><p><strong>MUSA</strong>: uses FlashAttention when available; otherwise falls back to PyTorch SDPA.</p></li>
 <li><p><strong>MPS</strong>: always uses PyTorch SDPA.</p></li>
 <li><p><strong>NPU</strong>: for ring attention uses FA otherwise uses PyTorch SDPA.</p></li>
 </ul>
@@ -575,6 +577,14 @@ document.write(`
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aiter_sage</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">AITER_SAGE</span></code></p></td>
 <td><p>Requires <code class="docutils literal notranslate"><span class="pre">aiter</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sla_attn</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SLA_ATTN</span></code></p></td>
+<td><p>Sparse Linear Attention. Requires <code class="docutils literal notranslate"><span class="pre">SpargeAttn</span></code>. Install with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/thu-ml/SpargeAttn.git</span> <span class="pre">--no-build-isolation</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sage_sla_attn</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SAGE_SLA_ATTN</span></code></p></td>
+<td><p>SageAttention + Sparse Linear Attention. Requires <code class="docutils literal notranslate"><span class="pre">SpargeAttn</span></code> (same install as SLA).</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sparse_video_gen_2_attn</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">SPARSE_VIDEO_GEN_2_ATTN</span></code></p></td>
@@ -741,6 +751,8 @@ document.write(`
 <tr class="row-odd"><th class="head"><p>Backend</p></th>
 <th class="head text-right"><p>CUDA</p></th>
 <th class="head text-right"><p>ROCm</p></th>
+<th class="head text-right"><p>XPU</p></th>
+<th class="head text-right"><p>MUSA</p></th>
 <th class="head text-right"><p>MPS</p></th>
 <th class="head text-right"><p>NPU</p></th>
 <th class="head"><p>Notes</p></th>
@@ -750,11 +762,15 @@ document.write(`
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fa</span></code></p></td>
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>✅</p></td>
-<td><p>CUDA requires SM80+ and fp16/bf16. FlashAttention is only used when the required runtime is installed; otherwise it falls back to <code class="docutils literal notranslate"><span class="pre">torch_sdpa</span></code>. No extra installations are required for NPU</p></td>
+<td><p>CUDA requires SM80+ and fp16/bf16. XPU uses its own flash attention backend. FlashAttention is only used when the required runtime is installed; otherwise it falls back to <code class="docutils literal notranslate"><span class="pre">torch_sdpa</span></code>. No extra installations are required for NPU</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">torch_sdpa</span></code></p></td>
+<td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>✅</p></td>
@@ -766,10 +782,14 @@ document.write(`
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>CUDA-only. Requires <code class="docutils literal notranslate"><span class="pre">st_attn</span></code>. Configure via <code class="docutils literal notranslate"><span class="pre">--attention-backend-config</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sage_attn</span></code></p></td>
 <td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
@@ -780,6 +800,8 @@ document.write(`
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>CUDA-only (optional dependency).</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">video_sparse_attn</span></code></p></td>
@@ -787,10 +809,32 @@ document.write(`
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>CUDA-only. Requires <code class="docutils literal notranslate"><span class="pre">vsa</span></code>. Configure <code class="docutils literal notranslate"><span class="pre">sparsity</span></code> via <code class="docutils literal notranslate"><span class="pre">--attention-backend-config</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sla_attn</span></code></p></td>
+<td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td><p>CUDA-only. Requires <code class="docutils literal notranslate"><span class="pre">SpargeAttn</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sage_sla_attn</span></code></p></td>
+<td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td><p>CUDA-only. Requires <code class="docutils literal notranslate"><span class="pre">SpargeAttn</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vmoba_attn</span></code></p></td>
 <td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
@@ -801,6 +845,8 @@ document.write(`
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>Requires <code class="docutils literal notranslate"><span class="pre">aiter</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aiter_sage</span></code></p></td>
@@ -808,10 +854,14 @@ document.write(`
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>Requires <code class="docutils literal notranslate"><span class="pre">aiter</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sparse_video_gen_2_attn</span></code></p></td>
 <td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
