@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 22:45:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 23:02:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 22:46:01] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 23:02:54] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 22:46:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 23:02:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.90s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.49it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.40s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 22:46:12,511 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 22:46:12] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 23:03:04,244 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 23:03:04] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a typical urban street scene with several yellow taxis, which are a prominent feature in many cities, especially New York City. The person in the picture appears to be involved in some kind of work or activity, potentially related to the task of cleaning or washing clothes, as indicated by the cloths hanging on what looks like a pole on the back of one of the taxis. This activity is not common in urban environments, suggesting it might be an intentional setup for a fictional scenario or an act of public art. The background includes elements typical of a bustling city environment, such as shops and pedestrian activity.
+    This image shows a street scene with a yellow taxi cab being temporarily "popped up" or popped onto a storefront for donning or removal of clothes. The person is holding the tailgate open, and laundry is draped over it. This is a humorous, staged photograph often done as a joke or for entertainment. The taxi is part of a well-known New York City transportation service, known for its recognizable bright yellow color.
 
 
 ### Call with Processor Output
@@ -169,7 +169,11 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis driving on a city street. There is a handcar with large blue laundry bags being pushed by a person on the sidewalk. The person appears to be moving quickly, creating a sense of urgency or rush. The background includes buildings with glass windows and signs, and there are some traffic lights and streetlights visible.
+    The image shows a person wearing a yellow shirt and pants, working on a folding metal stand. The person is pulling clothes off the stand as they go, indicating they are likely a valet or someone adjusting clothing before it is ready to be worn or shown off.
+    
+    The setting appears to be a busy urban street with yellow taxis and cars, and there are buildings in the background. The flags hanging from poles near the building suggest an area with significant activity and perhaps a commercial or pedestrian area in a city. The overall scene looks to be from a busy city street, possibly during the daytime.
+    
+    The person is likely in the process of preparing clothes
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +229,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving on a city street. One taxi has a parallel parking sign with clothes and a scissor attached to the back of it, indicating a parking permit or violation, possibly because the taxi is traveling in the wrong direction. The flags on the taxis, which are attached to the back three corners, are likely used for promotional purposes or tourism. The street is lined with buildings, and there are pedestrian walkways on either side. The scene appears to be in a busy urban environment.
+    The image shows a yellow taxi cab on a city street. The taxi is equipped with a small stand-up backdrop for promotional material, likely to notify or inform pedestrians. Nineteen flags are hanging from the stand, and there appears to be a person standing behind the stand. The taxi is parked alongside a street with palm trees visible in the background. The scene suggests a public event or promotional activity by the taxi company, possibly for advertising or announcements.
 
 
 ## Querying Llama 4 Vision Model
