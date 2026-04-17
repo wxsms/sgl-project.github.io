@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 06:14:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 07:10:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 06:14:54] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 07:10:35] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 06:14:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 07:10:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.32s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.14s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.06s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 06:15:03,633 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 06:15:03] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 07:10:45,360 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 07:10:45] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in a city street with two yellow taxis. A person is standing in the middle of the street, hanging clothes on the back of one of the taxis using a rack. This is typically a humorous and unusual sight in urban environments, as taxis are usually parked and people rarely hang clothes on them. The street appears to be somewhat quiet with no other people visible.
+    The image shows two yellow taxis in an urban setting, likely New York City, as indicated by the style of the taxis and the presence of the New York taxicab insignia at the back. One taxi is behind another, with a person hanging laundry on a clothesline attached to the back of the first taxi. The person is using an iron to press the clothes while standing on a step stool. The scene is set in a street lined with buildings and streetlights. There are also traffic signs and some shops visible in the background.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I'm not sure I'm quite sure how to respond to what you're describing.
+    The image shows a yellow SUV parked on a city street, likely in New York City, based on the familiar golden arches of a McDonald's restaurant in the background. A person is hanging clothes on a clothesline attached to the car and appears to be doing laundry in a public space.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked in a city street area. The taxi has a piece of blue fabric hanging from the back of the cab, which appears to be a sunshade or shield. Additionally, there are flags attached to the cab, including one that looks like the American flag and another that is smaller and has a red, white, and blue design. The setting appears to be an urban environment with buildings and other vehicles in the background.
+    The image shows a yellow Cab (car) parked in front of a store with a red awning. A man in a yellow shirt and jeans is hanging out the window with clothes on a clothesline draped over the sunroof. The sunroof is open, allowing the clothes to dry in the sunlight. The Scene looks like a sunny day in a city, ideally in the United States considering the way things are presented.
 
 
 ## Querying Llama 4 Vision Model
