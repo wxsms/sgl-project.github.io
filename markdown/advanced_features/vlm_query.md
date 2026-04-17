@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 09:41:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 14:39:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 09:42:02] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 14:39:30] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 09:42:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 14:39:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.59it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
 
 
 
@@ -139,12 +139,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 09:42:11,404 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 09:42:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 14:39:39,958 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 14:39:39] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxi cabs parked on a city street. The taxi on the left is larger and appears to be a legacy model, while the taxi on the right is a newer version. The taxi on the right is搭載ing a person who is folding laundry on a makeshift stand. The scene seems to be an unusual sight where a driver and passenger are engaged in outdoor washing activities. A few pink banners are visible on poles lining the street.
+    This screenshot appears to beحضرt from a video, possibly a humorous take on street photography. The scene shows a street that lookserp like New York City, with iconic yellow taxis. A person is standing on the back of one of these taxis, holding a laundry basket full of clothes. The person is dressed casually and seems to be in a humorous or comedic pose, parodying someone dropping off their laundry and having it taken away in a taxi.
+    
+    The setting is bustling with other city elements, including what looks like崇itecture, street lamps, and possibly other vehicles or pedestrians, although they are not the main focus of the image.
 
 
 ### Call with Processor Output
@@ -169,7 +171,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like the image shows a yellow taxi cab parked on the side of a street. The taxi is positioned in front of a building with multiple window displays. The cab appears to be in motion, driving by the building. There are also some television screens visible, suggesting some kind of performance or advertisement. The cab has a few objects attached to it, possibly for some reason, like the clothes shown on the tailgate.
+    The image shows two yellow taxis parked side by side on a city street, likely in New York City given the iconic flag banners. There is a person dressed in casual clothing, holding what appears to be a piece of bleeding-edge technology, specifically an early version of an electric scooter or robotic hallway device. The technology has metallic components and a flat surface, suggesting it might be used for transportation or recreational purposes.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +227,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene on a city street where a yellow taxi is stationary on the sidewalk. On the back of the taxi, someone has hung several pairs of socks upside down, which suggests they might be drying or trying to remove an undershirt item, such as a tank top or shirt, from the clothing. The person is interacting with the protruding pants from the vehicle, which indicates they are in the process of either hanging the socks or pickup something from the vehicle.
+    The image shows a scene that appears to be an exaggerated or humorous take on a typical urban street scene. Here are the key elements I've noticed:
+    
+    1. **Two Yellow Cabs**: There are two yellow taxis parked side by side in what appears to be an urban setting. These taxis are commonly associated with New York City.
+    
+    2. **Pole with Purple Bands**: A tall pole with purple bands is attached to one of the taxis. This stands out as a quirky and possibly humorous addition to the scene.
+    
+    3. **Male Figure**: There is a man standing on the sidewalk next to one of the taxis. He is wearing a
 
 
 ## Querying Llama 4 Vision Model
