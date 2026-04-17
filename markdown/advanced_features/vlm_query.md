@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 20:45:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 22:45:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 20:45:44] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 22:46:01] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 20:45:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 22:46:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.56it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.90s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.40s/it]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 20:46:03,919 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 20:46:03] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 22:46:12,511 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 22:46:12] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in an urban setting, likely part of a cleaning scene. One taxi has items draped over the platform at the back, which suggests cleaning activities, such as washing or drying clothes. The street appears to be in a densely populated area, given the buildings and other vehicles present. The scene looks somewhat unconventional, as taxis are typically not used for such purposes.
+    The image shows a typical urban street scene with several yellow taxis, which are a prominent feature in many cities, especially New York City. The person in the picture appears to be involved in some kind of work or activity, potentially related to the task of cleaning or washing clothes, as indicated by the cloths hanging on what looks like a pole on the back of one of the taxis. This activity is not common in urban environments, suggesting it might be an intentional setup for a fictional scenario or an act of public art. The background includes elements typical of a bustling city environment, such as shops and pedestrian activity.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image depicts a scene in a city street, likely in New York given the presence of yellow taxis, typically associated with that city. The taxi is a typical yellow NYC cab with a flat-top configuration. There is a woman, possibly a street vendor, hanging clothes on the back of a folding chair. She is holding a piece of cloth in one hand and using a clothespin to attach it to the chair. The background includes a building with large glass windows and several protruding signboards. It is daytime, and the weather appears to be clear. The overall atmosphere suggests an urban environment, possibly in a busy city center.
+    The image shows two yellow taxis driving on a city street. There is a handcar with large blue laundry bags being pushed by a person on the sidewalk. The person appears to be moving quickly, creating a sense of urgency or rush. The background includes buildings with glass windows and signs, and there are some traffic lights and streetlights visible.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow city taxi parked on a street. In the foreground, there is a person wearing glasses, yellow sleeves, and blue pants. They are in the act of hanging laundry on a clothesline, which is strung across a folding table in front of the taxi. The background features a modern building with large glass windows and multiple American flags attached to the building’s facade. The scene appears to capture a moment during an outdoor project, possibly during the rainy season or in an area where dry conditions are not optimal for outdoor activities.
+    The image shows two yellow taxis driving on a city street. One taxi has a parallel parking sign with clothes and a scissor attached to the back of it, indicating a parking permit or violation, possibly because the taxi is traveling in the wrong direction. The flags on the taxis, which are attached to the back three corners, are likely used for promotional purposes or tourism. The street is lined with buildings, and there are pedestrian walkways on either side. The scene appears to be in a busy urban environment.
 
 
 ## Querying Llama 4 Vision Model
