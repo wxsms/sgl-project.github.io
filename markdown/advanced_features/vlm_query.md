@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 02:03:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 02:47:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 02:03:46] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 02:47:56] `torch_dtype` is deprecated! Use `dtype` instead!
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 02:03:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 02:47:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.85it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.42it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 02:03:57,287 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 02:03:57] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 02:48:06,898 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 02:48:06] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a city street with two yellow taxis. There is a person in a yellow shirt standing next to the back of one of the taxis, sorting or organizing a blue blanket or cloth. The scene appears to be taking place in an urban area, with buildings, storefronts, and flagpoles visible in the background. The person is likely organizing the blankets to help prevent them from overheating in the sunlight.
+    In the picture, there are two yellow taxis driving through a busy street. One of the taxis has its trunk open, and a person is hanging clothes on a rack attached to the back of the car. The scene appears to be humorously or absurdly set in a city environment, with an unusual situation where someone is iviiряad wielding up laundry outside a vehicle.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with two yellow taxis parked along the curb. One taxi has a person hanging their basin of clothes from the back seat, suggesting they are doing laundry on the go. The setting appears to be New York City, given the surroundings and the style of the taxis. The person is using a standard metal clothes rack and a long-handled duster to hang the clothes on the rim of the back seat cup holder.
+    The image shows a yellow taxi (्झ and ญ) with clothing items laid out in front of it, possibly as part of an artistic or public awareness campaign. The scene appears to be set outside a building with storefronts and several colorful flags or banners on the street.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city scene with a person pushing a cart through the street. The person is wearing a yellow shirt and appears to be pulling a blanket or fabric across a metal scraping device. The scene likely resembles the "Washing the Todd," a traditional street performance in Pittsburgh, Pennsylvania, where a man pushing a cart with a rope through a washing machine can cause the machine to slowly spin, allowing the towel or clothing on the 'washes' to be thoroughly soiled in a comedic display.
+    The image shows a scene from what seems to be a street event or protest. One individual is hanging their clothes on a running banner, which is typically used for political rallies or demonstrations. The person is dressed in a bright yellow shirt and is bent over the banner, indicating active participation. The background features typical urban elements, such as a yellow taxi and buildings with commercial signage. The hanging clothes on the banner add a whimsical or symbolic element to the scene, suggesting a larger message or statement might be intended. This type of event often occurs in large cities for public discourse or to convey a political or social message to the community.
 
 
 ## Querying Llama 4 Vision Model
