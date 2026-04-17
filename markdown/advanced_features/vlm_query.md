@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 02:47:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 03:24:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 02:47:56] `torch_dtype` is deprecated! Use `dtype` instead!
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [2026-04-17 03:24:45] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 02:47:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 03:24:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.42it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.41s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.06s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.11s/it]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 02:48:06,898 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 02:48:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 03:24:54,793 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 03:24:54] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the picture, there are two yellow taxis driving through a busy street. One of the taxis has its trunk open, and a person is hanging clothes on a rack attached to the back of the car. The scene appears to be humorously or absurdly set in a city environment, with an unusual situation where someone is iviiряad wielding up laundry outside a vehicle.
+    The image depicts a scene on a city street with two yellow taxis, likely taxis in New York City, given the familiar yellow color and the urban setting. A man is performing a task in the back of one of the taxis that involves putting clean clothes on a rack attached to the vehicle. The clothes appear to be freshly washed and hung out to dry. The background includes various urban elements such as buildings, signs, and traffic lights, indicating an active city environment. The act of hanging out clothes in a taxi is unusual and not typically done in regular traffic situations.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi (्झ and ญ) with clothing items laid out in front of it, possibly as part of an artistic or public awareness campaign. The scene appears to be set outside a building with storefronts and several colorful flags or banners on the street.
+    The image shows a person wearing a bright yellow long-sleeve shirt and glasses standing behind a yellow car. The person appears to be balancing or standing on a hand-balancing board, which is raised by a car crane. This unusual balancing act is designed to raise a laundry basket off the ground. The scene is set in an urban environment with several buildings and flags visible in the background. It appears to be a demonstration or performance, likely for entertainment or public engagement about raising funds or awareness.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from what seems to be a street event or protest. One individual is hanging their clothes on a running banner, which is typically used for political rallies or demonstrations. The person is dressed in a bright yellow shirt and is bent over the banner, indicating active participation. The background features typical urban elements, such as a yellow taxi and buildings with commercial signage. The hanging clothes on the banner add a whimsical or symbolic element to the scene, suggesting a larger message or statement might be intended. This type of event often occurs in large cities for public discourse or to convey a political or social message to the community.
+    The image shows two yellow taxis parked next to each other on a city street. One taxi is closer to the foreground, while the other is slightly behind and to the right. The scene appears to be in an urban environment, likely in a city center with buildings and_FLAG_FLAGônicaage in the background. A person is visible in the background, and they are wearing a yellow shirt. The person seems to be interacting with the bags attached to the back of the taxis, possibly cleaning or inspecting them. The sidewalk is lined with palm trees, suggesting a warmer climate. The overall scene gives an impression of preparation and possibly cleaning activity related to
 
 
 ## Querying Llama 4 Vision Model
