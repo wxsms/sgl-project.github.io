@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 05:13:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 05:53:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 05:13:41] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 05:53:29] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 05:13:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 05:53:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.46it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.85s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.36s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.43s/it]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 05:13:50,981 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 05:13:50] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 05:53:40,752 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 05:53:40] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene of city life with two yellow taxicabs parked on a street. The taxi on the left also has a piece of clothing hanging out the window, suggesting it might be raining or the driver is leaving the driver’s side wet. The scene appears to be somewhere in a busy urban area.
+    The image shows two yellow taxis on a street lined with buildings. There is a person hanging laundry from the roof of one of the taxis. The laundry is on a metal rack that is extended from the taxi's roof as a makeshift clothesline. The scene is set in an urban area, likely in a city where clean-up crews are hanging laundry between shifts.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene of two yellow taxis driving next to each other on a city street. The taxi in the foreground has its trunk open, and an individual in a yellow shirt is hanging clothes on a long stick that extends out from the open trunk. This is often seen as a humorous and unusual sight, as the trunk is typically used for transporting goods, not for hanging clothes. The background shows a building with various signs and a busy urban environment.
+    The image shows a person wearing a yellow long-sleeved shirt, holding an ironing board they are using to iron clothes on the back of a yellow taxi cab. The taxi is parked on a street with several poles and flags along the sidewalk, and there are storefronts and other vehicles visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a yellow cab parked on a city street in a recognizable iconic part of New York City. The car is topped with a back holdall or luggage tray typically used for taxis in some parts of the world to secure luggage. The scene looks like it is from the 2013 film " Silva Summer" where characters are imagining they are other famous films. Part of the movie's theme revolves around liberal reproduction and the Macarena dance, characterized by a \(0,0,1,2\) representation of alpha particles.
+    The image shows a scene on a city street with two prominent yellow出租车(cabs) and a striped, downed street sign. The sign appears to be causing disruption, with clothes or fabric stretched across it. 
+    
+    - **Foreground:** A downed street sign with a striped design.
+    - **Midground:** Two yellow taxis, which are typical of New York City taxis, parked on the road.
+    - **Background:** A building with commercial stores, one of which appears to have a boarderطلالilingual sign above the entrance.
+    
+    The sign's downing might cause minor traffic disruptions. The cars and the sign's unusual state suggest a
 
 
 ## Querying Llama 4 Vision Model
