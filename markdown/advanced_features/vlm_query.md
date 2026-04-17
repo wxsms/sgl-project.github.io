@@ -105,21 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 00:42:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 01:27:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 00:43:00] `torch_dtype` is deprecated! Use `dtype` instead!
-
-
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [2026-04-17 01:27:44] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 00:43:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 01:27:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -129,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.57s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.47s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.55s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.47s/it]
 
 
 
@@ -141,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 00:43:11,656 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 00:43:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 01:27:56,828 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 01:27:56] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts two yellow taxis driving down a street in what appears to be New York City. The background shows some of the iconic brownstone architecture typical of Manhattan's Chelsea district. The UUID (Unique Universal Identifier) for this image is 174375255.
+    The image shows a yellow New York City taxi being advertised on the street. Instead of displaying traditional taxi-related ads, it is now used as a makeshift billboard. A banner or cloth is draped over the back of the cab, likely to promote a advertisement or event. The scene appears to be from a real event or campaign showcasing the use of public transportation to convey messages.
 
 
 ### Call with Processor Output
@@ -171,19 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a few key elements:
-    
-    1. **A Taxi Car**:
-       - Parked on the side of the road.
-       - Appears to be a yellow taxi, typical of some urban areas like New York City.
-    
-    2. **The Person**:
-       - Standing next to the back of the taxi.
-       - Appears to be assisting or rolling out a piece of fabric or empty wardrobe from the back of the taxi. They are wearing a yellow shirt and glasses.
-    
-    3. **Miscellaneous Details**:
-       - There are a few other cars visible in the background.
-       - Additional details like storefronts
+    The image shows a yellow taxi on a city street. The person in the foreground is hanging a cloth or shirt on a flexible stand, possibly to dry it in the rain or simply as a makeshift clothesline. The backdrop includes tall buildings with many windows and American flags hanging from their exteriors, indicating that the location is likely within a metropolitan area in the United States. The scene is common during rainy weather when residents hang clothes outside to dry.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi cab in a city. The taxi is engaged in an unusual activity where a man is using a folding table to pull or push a small object between its legs, causing it to move unevenly. The man is wearing a yellow shirt and appears to be holding onto the folding table. There are also several street signs visible, and the background includes tall buildings with commercial displays.
+    The image shows a yellow taxi cab driving on a street in an urban area, likely in a city. The taxi cab is decorated with a red and blue striped banner hanging from the rear, possibly indicating a construction or maintenance work related to the establishment being represented by the banner. The setting appears to be busy with other buildings and possibly pedestrians in the background. The photo may be intended to promote or advertise something, such as a construction project, event, or local business.
 
 
 ## Querying Llama 4 Vision Model
