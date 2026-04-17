@@ -105,19 +105,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-16 23:33:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 00:42:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-16 23:33:22] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 00:43:00] `torch_dtype` is deprecated! Use `dtype` instead!
+
+
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-16 23:33:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 00:43:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +129,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.57s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.47s/it]
 
 
 
@@ -139,12 +141,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-16 23:33:33,891 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-16 23:33:33] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 00:43:11,656 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 00:43:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It looks like someone is outside a garage or building, hanging out clothes to dry on a rack. The clothes are on plastic hangers and appear to be drying in the air. The scene is taking place on a city street with a visible yellow taxi in the background.
+    The image depicts two yellow taxis driving down a street in what appears to be New York City. The background shows some of the iconic brownstone architecture typical of Manhattan's Chelsea district. The UUID (Unique Universal Identifier) for this image is 174375255.
 
 
 ### Call with Processor Output
@@ -169,7 +171,19 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow NYC taxi being蹬小 in a street, presumably in New York City. The taxi appears to be a taxicab type, which is a small passenger vehicle used for hire in many cities around the world, but particularly popular in New York City.
+    The image shows a street scene with a few key elements:
+    
+    1. **A Taxi Car**:
+       - Parked on the side of the road.
+       - Appears to be a yellow taxi, typical of some urban areas like New York City.
+    
+    2. **The Person**:
+       - Standing next to the back of the taxi.
+       - Appears to be assisting or rolling out a piece of fabric or empty wardrobe from the back of the taxi. They are wearing a yellow shirt and glasses.
+    
+    3. **Miscellaneous Details**:
+       - There are a few other cars visible in the background.
+       - Additional details like storefronts
 
 
 ### Call with Precomputed Embeddings
@@ -225,9 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a street. The cab has been covered with a blue tarp to protect it from the elements, likely during a rainstorm. The cab is equipped with appropriate signage and wearing a driver's jersey. The street appears wet, possibly from recent rain, and there is some greenery in the background, including trees. 
-    
-    This image is a humorous and related concept to the study of redundant situations. In the study of redundant situations, which occurs more frequently in urban centers like New York, a tarp is used to cover vehicles to protect them from rain or snow.
+    The image shows a street scene with a yellow taxi cab in a city. The taxi is engaged in an unusual activity where a man is using a folding table to pull or push a small object between its legs, causing it to move unevenly. The man is wearing a yellow shirt and appears to be holding onto the folding table. There are also several street signs visible, and the background includes tall buildings with commercial displays.
 
 
 ## Querying Llama 4 Vision Model
