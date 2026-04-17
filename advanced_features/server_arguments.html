@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=abcacd7c"></script>
+    <script src="../_static/documentation_options.js?v=20afb611"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -512,7 +512,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lmcache">LMCache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ktransformers">Ktransformers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-llm">Diffusion LLM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-sparsity">Double Sparsity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offloading">Offloading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#args-for-multi-item-scoring">Args for multi-item scoring</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-debug-options">Optimization/debug options</a></li>
@@ -2023,51 +2022,6 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </table>
 </div>
 </section>
-<section id="double-sparsity">
-<h2>Double Sparsity<a class="headerlink" href="#double-sparsity" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Argument</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Defaults</p></th>
-<th class="head"><p>Options</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-double-sparsity</span></code></p></td>
-<td><p>Enable double sparsity attention</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>bool flag (set to enable)</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--ds-channel-config-path</span></code></p></td>
-<td><p>The path of the double sparsity channel config</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Type: str</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--ds-heavy-channel-num</span></code></p></td>
-<td><p>The number of heavy channels in double sparsity attention</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">32</span></code></p></td>
-<td><p>Type: int</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--ds-heavy-token-num</span></code></p></td>
-<td><p>The number of heavy tokens in double sparsity attention</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">256</span></code></p></td>
-<td><p>Type: int</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--ds-heavy-channel-type</span></code></p></td>
-<td><p>The type of heavy channels in double sparsity attention</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">qk</span></code></p></td>
-<td><p>Type: str</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--ds-sparse-decode-threshold</span></code></p></td>
-<td><p>The minimum decode sequence length required before the double-sparsity backend switches from the dense fallback to the sparse decode kernel.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">4096</span></code></p></td>
-<td><p>Type: int</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 <section id="offloading">
 <h2>Offloading<a class="headerlink" href="#offloading" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -2959,7 +2913,6 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lmcache">LMCache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ktransformers">Ktransformers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-llm">Diffusion LLM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-sparsity">Double Sparsity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offloading">Offloading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#args-for-multi-item-scoring">Args for multi-item scoring</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-debug-options">Optimization/debug options</a></li>

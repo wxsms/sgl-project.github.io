@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 20:14:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 20:45:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 20:14:31] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 20:45:44] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 20:14:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 20:45:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.56it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 20:14:41,666 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 20:14:41] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 20:46:03,919 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 20:46:03] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a person standing next to either of two yellow taxis on a city street. The person is wearing a yellow shirt and appears to be folding a piece of clothing. The street is lined with buildings and has a few vehicles, including another yellow taxi nearby. There are also some street signs and what looks like a banner visible in the background. The scene seems to take place in an urban environment, possibly during a holiday or a special event given the visible decorations like the banner.
+    The image shows two yellow taxis in an urban setting, likely part of a cleaning scene. One taxi has items draped over the platform at the back, which suggests cleaning activities, such as washing or drying clothes. The street appears to be in a densely populated area, given the buildings and other vehicles present. The scene looks somewhat unconventional, as taxis are typically not used for such purposes.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image depicts a man in the middle of a street, dressed in a yellow shirt and gray sweatpants. He is wearing a suspenders and holding a long beard that is suspended on a clothes hanger. He appears to be in the process of hanging his beard up, possibly as part of a promotional or promotional stunt. Behind him, there is a yellow taxi, and the street is lined with buildings and some trees. The setting suggests an urban environment, likely a city like New York.
+    This image depicts a scene in a city street, likely in New York given the presence of yellow taxis, typically associated with that city. The taxi is a typical yellow NYC cab with a flat-top configuration. There is a woman, possibly a street vendor, hanging clothes on the back of a folding chair. She is holding a piece of cloth in one hand and using a clothespin to attach it to the chair. The background includes a building with large glass windows and several protruding signboards. It is daytime, and the weather appears to be clear. The overall atmosphere suggests an urban environment, possibly in a busy city center.
 
 
 ### Call with Precomputed Embeddings
@@ -225,9 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It's difficult for me to provide a comprehensive description without seeing the image you are referring to. 
-    
-    However, if you can provide more context or any specific areas you're interested in, I'm happy to assist further.
+    The image shows a yellow city taxi parked on a street. In the foreground, there is a person wearing glasses, yellow sleeves, and blue pants. They are in the act of hanging laundry on a clothesline, which is strung across a folding table in front of the taxi. The background features a modern building with large glass windows and multiple American flags attached to the building’s facade. The scene appears to capture a moment during an outdoor project, possibly during the rainy season or in an area where dry conditions are not optimal for outdoor activities.
 
 
 ## Querying Llama 4 Vision Model
