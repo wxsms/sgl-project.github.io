@@ -105,19 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 08:31:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 09:41:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 08:31:52] `torch_dtype` is deprecated! Use `dtype` instead!
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [2026-04-17 09:42:02] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 08:31:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 09:42:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.16s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 08:32:03,643 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 08:32:03] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 09:42:11,404 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 09:42:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image you're referring to shows a street scene in a city, likely New York given the design and color scheme of the taxis. The person in the image is tending to clothes left on the back of a taxi. This is a well-known sight in New York, where many people leave their clothes on cabs to dry, especially during intense heat. The person here is wearing a yellow shirt and appears to be hanging up or unfolding some clothes from the cloth rack. The traffic lights and other urban elements in the background further emphasize that the setting is in an urban environment, likely in the heart of New York City.
+    The image shows two yellow taxi cabs parked on a city street. The taxi on the left is larger and appears to be a legacy model, while the taxi on the right is a newer version. The taxi on the right is搭載ing a person who is folding laundry on a makeshift stand. The scene seems to be an unusual sight where a driver and passenger are engaged in outdoor washing activities. A few pink banners are visible on poles lining the street.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene of a person standing in front of a yellow taxi. The individual is on crutches and appears to be dressed in a yellow long-sleeve shirt, red pants, and glasses. The person is stretching out a blue shirt, which is placed on a folding chair. The background includes a tall brick building with several windows and signs, and there are other vehicles, including a yellow taxi, in the vicinity. The setting suggests an urban environment, likely in a city with taxi cabs, given the typical urban transportation context.
+    It looks like the image shows a yellow taxi cab parked on the side of a street. The taxi is positioned in front of a building with multiple window displays. The cab appears to be in motion, driving by the building. There are also some television screens visible, suggesting some kind of performance or advertisement. The cab has a few objects attached to it, possibly for some reason, like the clothes shown on the tailgate.
 
 
 ### Call with Precomputed Embeddings
@@ -225,11 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Here we have a yellow taxi cab parked on the street, with a person seen next to it using a attached propitious object or device. There is a pickup truck positioned behind the taxi, also parked.
-    
-    The background contains partially open storefronts with flags hanging from their hanging bars and along their windows, emphasizing a city environment. The prominent building features large windows. On the right side, tall building light poles with street lights are visible, adding to the urban setting.
-    
-    Additionally, farther in the backdrop are flags lining the street, more сигelles can be spotted. There is also an overhanging structure that appears to be made of brick in
+    This image shows a scene on a city street where a yellow taxi is stationary on the sidewalk. On the back of the taxi, someone has hung several pairs of socks upside down, which suggests they might be drying or trying to remove an undershirt item, such as a tank top or shirt, from the clothing. The person is interacting with the protruding pants from the vehicle, which indicates they are in the process of either hanging the socks or pickup something from the vehicle.
 
 
 ## Querying Llama 4 Vision Model
