@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 04:19:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 05:13:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 04:19:57] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 05:13:41] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 04:19:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 05:13:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.42s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.46it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.09s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 04:20:07,939 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 04:20:07] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 05:13:50,981 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 05:13:50] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a demonstration of the "                            " process, where a man is pulling a suitcase behind another yellow taxi as part of a public performance. This is a creative and playful way to visually transform a simple scenario into something that captures attention and humor, potentially using the taxi's pressure on the suitcase to simulate a struggle with weight, but realistically a more whimsical application of the movement.
+    The image shows a scene of city life with two yellow taxicabs parked on a street. The taxi on the left also has a piece of clothing hanging out the window, suggesting it might be raining or the driver is leaving the driver’s side wet. The scene appears to be somewhere in a busy urban area.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab with fabric draped over its roof. This is a typical scene in New York City, where taxi drivers sometimes cover their cars with fabric to make them more visible and identifiable, especially on rainy days. The taxi is facing the camera, and there are other taxis and buildings in the background. This practice is believed to help drivers stand out and avoid taxi-related accidents.
+    This image shows a scene of two yellow taxis driving next to each other on a city street. The taxi in the foreground has its trunk open, and an individual in a yellow shirt is hanging clothes on a long stick that extends out from the open trunk. This is often seen as a humorous and unusual sight, as the trunk is typically used for transporting goods, not for hanging clothes. The background shows a building with various signs and a busy urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This is a humorous and unusual scene set in a New York City street, featuring a man dressed in a yellow shirt standing next to a mixing-around stack of a yellow cab in front of a building. Toilet paper has been used to lean the back of the cab at an angle and temporarily prop it up, with sheer blue fabric stretched out between the wheels, functioning as makeshift grab bars. This unusual and creative configuration of a taxi back, partially covered in toilet paper, serves as a playful decoration, potentially a prank or aضحщщщщщщщщщщщщщщщщщщщщщщщ
+    This image shows a yellow cab parked on a city street in a recognizable iconic part of New York City. The car is topped with a back holdall or luggage tray typically used for taxis in some parts of the world to secure luggage. The scene looks like it is from the 2013 film " Silva Summer" where characters are imagining they are other famous films. Part of the movie's theme revolves around liberal reproduction and the Macarena dance, characterized by a \(0,0,1,2\) representation of alpha particles.
 
 
 ## Querying Llama 4 Vision Model
