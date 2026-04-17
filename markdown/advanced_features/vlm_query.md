@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 14:39:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 15:40:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 14:39:30] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 15:40:18] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 14:39:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 15:40:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.59it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.45it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -139,14 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 14:39:39,958 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 14:39:39] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 15:40:28,456 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 15:40:28] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This screenshot appears to beحضرt from a video, possibly a humorous take on street photography. The scene shows a street that lookserp like New York City, with iconic yellow taxis. A person is standing on the back of one of these taxis, holding a laundry basket full of clothes. The person is dressed casually and seems to be in a humorous or comedic pose, parodying someone dropping off their laundry and having it taken away in a taxi.
-    
-    The setting is bustling with other city elements, including what looks like崇itecture, street lamps, and possibly other vehicles or pedestrians, although they are not the main focus of the image.
+    The image shows a taxi stand parked on a street. The taxi is yellow and is equipped with a clothespin pole that is holding a blue shirt upright. A person, presumably a street vendor or a member of an art installation, is standing behind the taxi and holding the clothespin pole. The background includes other taxis and urban street elements, such as buildings and street signs. This setup suggests a form of street art or an unconventional advertising technique.
 
 
 ### Call with Processor Output
@@ -171,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis parked side by side on a city street, likely in New York City given the iconic flag banners. There is a person dressed in casual clothing, holding what appears to be a piece of bleeding-edge technology, specifically an early version of an electric scooter or robotic hallway device. The technology has metallic components and a flat surface, suggesting it might be used for transportation or recreational purposes.
+    The image shows a yellow taxi cab in a city street, with a handle or carrying pole attached to its back. This handle is often used to assist people with wheelchairs or other mobility aids to easily navigate from one side of the taxi to the other during rides. The taxi appears to be in New York City, as indicated by the palm trees and the buildings in the background, which are characteristic of that urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -227,13 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene that appears to be an exaggerated or humorous take on a typical urban street scene. Here are the key elements I've noticed:
-    
-    1. **Two Yellow Cabs**: There are two yellow taxis parked side by side in what appears to be an urban setting. These taxis are commonly associated with New York City.
-    
-    2. **Pole with Purple Bands**: A tall pole with purple bands is attached to one of the taxis. This stands out as a quirky and possibly humorous addition to the scene.
-    
-    3. **Male Figure**: There is a man standing on the sidewalk next to one of the taxis. He is wearing a
+    The image shows two yellow taxis driving down a city street. The taxis are standard yellow cabs typically found in many urban areas around the world. This scene appears to be from an urban setting, possibly a major city known for its extensive taxi fleets, such as New York City. The street is well-lit, suggesting it might be daytime or adequately illuminated at night.
 
 
 ## Querying Llama 4 Vision Model
