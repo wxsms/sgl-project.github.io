@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=d2068450"></script>
+    <script src="../_static/documentation_options.js?v=1ccf0485"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -553,25 +553,100 @@ document.write(`
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-17 15:46:20] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-17 16:10:38] `torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 10, in map_exceptions
+    yield
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 94, in connect_tcp
+    sock = socket.create_connection(
+  File &#34;/usr/lib/python3.10/socket.py&#34;, line 845, in create_connection
+    raise err
+  File &#34;/usr/lib/python3.10/socket.py&#34;, line 833, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 60, in map_httpcore_exceptions
+    yield
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 253, in handle_request
+    raise exc
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 237, in handle_request
+    response = connection.handle_request(request)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 86, in handle_request
+    raise exc
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 63, in handle_request
+    stream = self._connect(request)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 111, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 93, in connect_tcp
+    with map_exceptions(exc_map):
+  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 2571, in retry
+    return fn()
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py&#34;, line 755, in &lt;lambda&gt;
+    lambda: hf_api.file_exists(
+  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py&#34;, line 3663, in file_exists
+    get_hf_file_metadata(url, token=token)
+  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py&#34;, line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 685, in _httpx_follow_relative_redirects_with_backoff
+    response = http_backoff(
+  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 559, in http_backoff
+    return next(
+  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 467, in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 908, in send
+    response = self._send_handling_auth(
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 217, in handle_request
+    with map_httpcore_exceptions():
+  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 101] Network is unreachable
+[2026-04-17 16:10:38] retry() failed once (0th try, maximum 2 retries). Will delay 0.99s and retry. Error: [Errno 101] Network is unreachable
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[2026-04-17 15:46:21] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[2026-04-17 16:10:40] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-04-17 15:46:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-04-17 16:10:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-17 15:46:29] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-17 16:10:48] `torch_dtype` is deprecated! Use `dtype` instead!
 The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-04-17 15:46:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-04-17 16:10:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.67it/s]
+Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.68it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
-2026-04-17 15:46:41,112 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-17 15:46:41] Unexpected error during package walk: cutlass.cute.experimental
+2026-04-17 16:11:00,227 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-17 16:11:00] Unexpected error during package walk: cutlass.cute.experimental
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -638,13 +713,13 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.67it/s]
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"3b57f00839cf43f09e8e4c2a90d602e8","object":"chat.completion","created":1776440806,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene suggests an unusual or humorous situation, as ironing clothes outdoors is not a typical activity.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":380,"completion_tokens":73,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"528196d02070493b9fbecabc7828ace6","object":"chat.completion","created":1776442265,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene suggests an unusual or humorous situation, as ironing clothes outdoors is not a typical activity.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":380,"completion_tokens":73,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"e6719a1d061b4f10b881bf24fe46f620","object":"chat.completion","created":1776440807,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests an urban environment with buildings and traffic around.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":382,"completion_tokens":75,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"1a7ba277d6564c348cfa96f73c5a6ca9","object":"chat.completion","created":1776442266,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests an urban environment with buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":384,"completion_tokens":77,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -683,7 +758,7 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.67it/s]
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"a76d0350de25439f97a952886bf5b2e4","object":"chat.completion","created":1776440808,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests an urban environment with buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":384,"completion_tokens":77,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"39a9a1133daf40f1b7877cf62741fc66","object":"chat.completion","created":1776442267,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing the task. The scene suggests an unusual or humorous situation, as it is not typical for someone to iron clothes from the back of a moving vehicle.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":387,"completion_tokens":80,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">

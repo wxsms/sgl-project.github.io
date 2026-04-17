@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 15:40:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 16:04:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 15:40:18] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-17 16:04:46] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 15:40:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-17 16:04:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.45it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.40it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 15:40:28,456 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 15:40:28] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-17 16:04:55,993 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-17 16:04:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a taxi stand parked on a street. The taxi is yellow and is equipped with a clothespin pole that is holding a blue shirt upright. A person, presumably a street vendor or a member of an art installation, is standing behind the taxi and holding the clothespin pole. The background includes other taxis and urban street elements, such as buildings and street signs. This setup suggests a form of street art or an unconventional advertising technique.
+    The image shows a man hanging laundry from the back of his taxi cab. It's an unusual and comical sight, as taxis are not typically equipped to hang laundry. The man is holding a towel and another item, demonstrating a quirky and creative method of drying his clothes while he's on the go. This scene is likely intended to be lighthearted and humorous, showcasing an inventive solution in unconventional circumstances.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in a city street, with a handle or carrying pole attached to its back. This handle is often used to assist people with wheelchairs or other mobility aids to easily navigate from one side of the taxi to the other during rides. The taxi appears to be in New York City, as indicated by the palm trees and the buildings in the background, which are characteristic of that urban environment.
+    The image shows a yellow taxi cab (also known as a巡洋舰) in New York City parked on a street. The taxi has a scarf draped over the front windshield, and there is a person standing next to it, wearing yellow and holding the scarf. The background includes buildings and other vehicles.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,15 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving down a city street. The taxis are standard yellow cabs typically found in many urban areas around the world. This scene appears to be from an urban setting, possibly a major city known for its extensive taxi fleets, such as New York City. The street is well-lit, suggesting it might be daytime or adequately illuminated at night.
+    The picture shows a yellow taxi in a city, parked on the street. The taxi has a variety of surface-mounted marketing signs attached to the rear side. Specifically, there are Australian flags, branded clothing pieces, and a display area.
+    
+    1. **Marketing Signs**: 
+       - **American Flag**: Positioned on one side.
+       - **Flag with Pride Ribbon**: Placed next to the American flag.
+       - **American Flag**: Again, positioned midway on the side.
+       - **Pride Ribbon**: Next to one of the American flags.
+       - **Sugar-skull Flag**: Positioned next to the pride ribbon.
+       - **
 
 
 ## Querying Llama 4 Vision Model
