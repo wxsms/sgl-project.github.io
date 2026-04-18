@@ -105,19 +105,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-18 09:10:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 14:40:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-18 09:10:26] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-18 14:40:09] `torch_dtype` is deprecated! Use `dtype` instead!
+
+
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-18 09:10:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 14:40:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +129,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.56s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
 
 
 
@@ -139,12 +141,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-18 09:10:35,162 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-18 09:10:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-18 14:40:20,389 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-18 14:40:20] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man using a portable drying rack, typically made of a wooden or metal frame with multiple wires. This drying rack is positioned between two yellow taxis in an urban setting. The man appears to be hanging clothes on it, likely to dry them. In the background, there are buildings and flags, indicating that this scene takes place in a busy city area. The image likely captures a humorous or unusual moment, as it is not common for clothes to be hung on drying racks in vehicles or urban streets.
+    The image shows a public space with several key elements. There are two taxi cabs, one in the foreground and another painted yellow in the background. Another vehicle is also visible. In the foreground, there's a clothes pole, and a person dressed in yellow is ironing clothes. The setting appears to be outdoors, possibly in a commercial area, given the presence of shops and buildings with flags. The scene seems to depict an unusual or funny moment where someone is ironing clothes in an urban environment.
 
 
 ### Call with Processor Output
@@ -169,7 +171,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of street vending. A vending stand is set up on the street, displaying various items such as bags and shoes. The vendor is using crutch-like utensils to hold the items in front of passersby. In the background, there are yellow taxis and buildings, indicating an urban environment. The scene suggests street vending, which is a common activity in some cities where vendors sell goods to pedestrians.
+    The image shows a scene on a city street with two yellow taxis. The taxi on the left appears to have a laundry wing or clothes line attached to its roof, stretching across the front of the car. The laundry is presumably being delivered or picked up. Both taxis are near a street corner with various storefronts and flags in the background. The setting suggests this might be a busy downtown area, possibly in New York City, given the style of the taxis and the urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +227,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm not sure what you mean by "what's shown here." Can you provide more context or clarify your question?
+    The image shows an unusual and creative sight on the road. A charliesuvre — a small port-a-potty that can be folded into a backpack — has been attached to the back of a taxi. The taxi is yellow and appears to be in motion. There are also three American flags visible on旗杆Hello Kitty stickers denoted by the letter "I.
 
 
 ## Querying Llama 4 Vision Model
