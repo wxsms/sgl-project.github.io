@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-18 00:10:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 00:45:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-18 00:10:33] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-18 00:45:36] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-18 00:10:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 00:45:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.43it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -139,12 +139,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-18 00:10:42,921 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-18 00:10:42] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-18 00:45:46,323 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-18 00:45:46] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a New York City street with two iconic yellow taxis. One taxi is pulling a makeshift line with clothes pin bounding and iron flat iron, and a person wearing a yellow shirt and blue jeans is hanging clothes on it. The other taxi appears to beUltra Parked and pictures are Loading cars. The environment indicates that the taxi is belonging to the New York taxis that have an unusual yellow body colored in yellow. The image was taken during the day, as it is well-illuminated and does not appear to be dark.
+    The image shows a scene on a busy city street. In the foreground, there is a yellow taxi waiting at a curb. Behind the taxi, another yellow taxi is parked. A person is standing next to the parking meter on the sidewalk, extending their hands outward as if interacting with the parked taxi through the window.
+    
+    To the right, there is a tall apartment building with many windows, some of which have hanging laundry visible. Street signs and traffic lights are also visible.
 
 
 ### Call with Processor Output
@@ -169,7 +171,13 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of a yellow taxi driving down a city street. In front of the taxi, there are two people hanging black and white robes on a utility pole attached to the back of the taxi. The taxi is on a street with some pedestrians visible in the background. The scene appears to be humorous, as it is unusual to see people hanging clothes on the back of a taxi in a city environment.
+    This image shows a yellow taxi (Scottie taxi) driving through a city street. The taxi is marked with a distinctive logo and serves as a central element in the scene.
+    
+    The taxi is captured mid-motion, creating a sense of movement and activity. Street scenes are characterized by such iconic vehicles, an accommodating and quickly visible symbol of urban transportation in many cities, particularly New York where a related mascot is popularly used inใช приемละยอง.
+    
+    There is an individual dressed in casual attire stretching out his arms over the top of the taxi, possibly engaging in street photography or charming pedestrians. The image captures a typical urban street scene.
+    
+    Background
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +233,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm not sure what you're asking for. Could you please provide more information or context?
+    It seems like the image shows a street scene with two yellow cabs, one of which has a wheeled folding table attached to the back. On the folding table, there is a red flag with white stars, which is usually a symbol of hope and democracy. The other flag is a blue flag with a white emblem on it, which might be a local national flag or a city emblem. The presence of the wheeled table and flags suggests that there might be some form of protest or demonstration happening. The background shows urban buildings and trees, indicating that this scene is taking place in a city.
 
 
 ## Querying Llama 4 Vision Model
