@@ -105,21 +105,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-18 15:46:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 16:11:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-18 15:46:14] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-18 16:11:34] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-18 15:46:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 16:11:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -129,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.45it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.85s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.53it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.36s/it]
 
 
 
@@ -141,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-18 15:46:24,269 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-18 15:46:24] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-18 16:11:46,248 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-18 16:11:46] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the picture, a person is using a Portable Drying Rack attached to the back of a yellow taxi to dry clothes. The drying rack is set up between two parked yellow taxis, suggesting that this is a common practice for taxi drivers to move around and keep their vehicles off the street while accomplishing other tasks, such as drying clothes.
+    The image shows a scene in what appears to be a street in a city, likely New York given the cab uniforms and urban architecture. There are two yellow taxis parked side by side. The person on the right taxi is mending a blanket with a hammer and a tool that resembles a vice. The street is lined with tall buildings featuring large windows and signs, and there are some pedestrians and cars in the background. The weather seems to be clear, given the well-lit scene and the attire of the individuals involved in the mending activity. This seems to be a humorous and unusual depiction of city life, juxtaposing the fast-paced world
 
 
 ### Call with Processor Output
@@ -171,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a New York City street scene with a bright yellow taxi at the foreground. The taxi’s back has been modified or converted into a mobile laundry folding station using a broken chair and a metal strap, creating space to hang clothes lines. This creative solution highlights urban ingenuity and有时 requière finding creative ways to repurpose everyday objects for environmental or social causes.
+    The image shows a scene of two yellow cabs parked on a street. One of the taxis has some laundry hung out on an ironing board attached to the back of the vehicle, unusual for an urban setting. The cabs are equipped with illumination lights and reflectors, typical for taxi operations. There are also some storefronts and stores visible in the background, including a были sign displaying "616." The overall atmosphere gives a sense of a busy urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -227,13 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab, likely in an urban setting based on the surroundings. The taxi cab is equipped with various items on a rack or stand attached to the back. These items include:
-    
-    1. Small flags or banners.
-    2. Ironing clothes or fabric items.
-    3. What appears to be a hat or a coat.
-    
-    The background includes a building with a storefront, suggesting this scene might be taking place on a city street. The presence of these items on the taxi might indicate a public demonstration or a special event related to fashion, textile arts, or an awareness campaign.
+    On the side of the picture, there are three American flags.
 
 
 ## Querying Llama 4 Vision Model
