@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-17 23:02:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 00:10:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-17 23:02:54] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-18 00:10:33] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-17 23:02:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 00:10:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.49it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-17 23:03:04,244 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-17 23:03:04] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-18 00:10:42,921 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-18 00:10:42] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a street scene with a yellow taxi cab being temporarily "popped up" or popped onto a storefront for donning or removal of clothes. The person is holding the tailgate open, and laundry is draped over it. This is a humorous, staged photograph often done as a joke or for entertainment. The taxi is part of a well-known New York City transportation service, known for its recognizable bright yellow color.
+    The image shows a scene on a New York City street with two iconic yellow taxis. One taxi is pulling a makeshift line with clothes pin bounding and iron flat iron, and a person wearing a yellow shirt and blue jeans is hanging clothes on it. The other taxi appears to beUltra Parked and pictures are Loading cars. The environment indicates that the taxi is belonging to the New York taxis that have an unusual yellow body colored in yellow. The image was taken during the day, as it is well-illuminated and does not appear to be dark.
 
 
 ### Call with Processor Output
@@ -169,11 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person wearing a yellow shirt and pants, working on a folding metal stand. The person is pulling clothes off the stand as they go, indicating they are likely a valet or someone adjusting clothing before it is ready to be worn or shown off.
-    
-    The setting appears to be a busy urban street with yellow taxis and cars, and there are buildings in the background. The flags hanging from poles near the building suggest an area with significant activity and perhaps a commercial or pedestrian area in a city. The overall scene looks to be from a busy city street, possibly during the daytime.
-    
-    The person is likely in the process of preparing clothes
+    The image shows a scene of a yellow taxi driving down a city street. In front of the taxi, there are two people hanging black and white robes on a utility pole attached to the back of the taxi. The taxi is on a street with some pedestrians visible in the background. The scene appears to be humorous, as it is unusual to see people hanging clothes on the back of a taxi in a city environment.
 
 
 ### Call with Precomputed Embeddings
@@ -229,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab on a city street. The taxi is equipped with a small stand-up backdrop for promotional material, likely to notify or inform pedestrians. Nineteen flags are hanging from the stand, and there appears to be a person standing behind the stand. The taxi is parked alongside a street with palm trees visible in the background. The scene suggests a public event or promotional activity by the taxi company, possibly for advertising or announcements.
+    I'm not sure what you're asking for. Could you please provide more information or context?
 
 
 ## Querying Llama 4 Vision Model
