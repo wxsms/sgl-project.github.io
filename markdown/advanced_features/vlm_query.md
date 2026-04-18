@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-18 00:45:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 01:15:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-18 00:45:36] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-18 01:15:35] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-18 00:45:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 01:15:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.43it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.83s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.41s/it]
 
 
 
@@ -139,14 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-18 00:45:46,323 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-18 00:45:46] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-18 01:15:47,174 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-18 01:15:47] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a busy city street. In the foreground, there is a yellow taxi waiting at a curb. Behind the taxi, another yellow taxi is parked. A person is standing next to the parking meter on the sidewalk, extending their hands outward as if interacting with the parked taxi through the window.
-    
-    To the right, there is a tall apartment building with many windows, some of which have hanging laundry visible. Street signs and traffic lights are also visible.
+    The image shows two yellow taxi cabs on a city street. The cab in the foreground has a distinctive purple spandex shirt hanging on its back, hanging on two criss-crossed metal telescoping poles. The shirt appears to be draped over the back of the cab. The background features a brick building with store signs, some streetlights, and a tree.
 
 
 ### Call with Processor Output
@@ -171,13 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a yellow taxi (Scottie taxi) driving through a city street. The taxi is marked with a distinctive logo and serves as a central element in the scene.
-    
-    The taxi is captured mid-motion, creating a sense of movement and activity. Street scenes are characterized by such iconic vehicles, an accommodating and quickly visible symbol of urban transportation in many cities, particularly New York where a related mascot is popularly used inใช приемละยอง.
-    
-    There is an individual dressed in casual attire stretching out his arms over the top of the taxi, possibly engaging in street photography or charming pedestrians. The image captures a typical urban street scene.
-    
-    Background
+    The image shows a man in a yellow shirt standing next to parked yellow taxis on a city street. He appears to be passing out laundry on the back of one of the taxis using what looks like a laundry basket and water. The cityscape in the background includes brick buildings, storefronts with colorful flags, and overpasses. The setting suggests an urban environment, possibly during a public event or cleanup.
 
 
 ### Call with Precomputed Embeddings
@@ -233,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It seems like the image shows a street scene with two yellow cabs, one of which has a wheeled folding table attached to the back. On the folding table, there is a red flag with white stars, which is usually a symbol of hope and democracy. The other flag is a blue flag with a white emblem on it, which might be a local national flag or a city emblem. The presence of the wheeled table and flags suggests that there might be some form of protest or demonstration happening. The background shows urban buildings and trees, indicating that this scene is taking place in a city.
+    The image shows two yellow taxis parked on a city street. One taxi is positioned in the foreground, and the other is slightly behind it. The taxi in the foreground has its trunk open, revealing an ironing board with a clothe draped over it. This setup suggests that someone is using the taxi as a makeshift laundry or ironing station. The scene appears to be a humorous or comic situation, likely creating a light-hearted moment in an urban setting.
 
 
 ## Querying Llama 4 Vision Model

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=062a7bc1"></script>
+    <script src="../_static/documentation_options.js?v=d2ef25fa"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -784,6 +784,9 @@ repos or local directories.</p></li>
 over the compatibility <code class="docutils literal notranslate"><span class="pre">--model-path</span></code> flow.</p></li>
 <li><p>For local directories, SGLang first looks for <code class="docutils literal notranslate"><span class="pre">*-mixed.safetensors</span></code>, then
 falls back to loading from the directory.</p></li>
+<li><p>To force the generic diffusion ModelOpt FP4 path onto a specific FlashInfer
+backend, set <code class="docutils literal notranslate"><span class="pre">SGLANG_DIFFUSION_FLASHINFER_FP4_GEMM_BACKEND</span></code>. Supported values
+include <code class="docutils literal notranslate"><span class="pre">flashinfer_cudnn</span></code>, <code class="docutils literal notranslate"><span class="pre">flashinfer_cutlass</span></code>, and <code class="docutils literal notranslate"><span class="pre">flashinfer_trtllm</span></code>.</p></li>
 <li><p>On disk, the quantization config stays <code class="docutils literal notranslate"><span class="pre">quant_method=modelopt</span></code> with
 <code class="docutils literal notranslate"><span class="pre">quant_algo=NVFP4</span></code>; the <code class="docutils literal notranslate"><span class="pre">modelopt-nvfp4</span></code> label here is again a documentation
 family name rather than a serialized config key.</p></li>
