@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=76563f6c"></script>
+    <script src="../_static/documentation_options.js?v=dbd3baac"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -577,21 +577,21 @@ document.write(`
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-18 14:36:20] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-18 15:42:25] `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[2026-04-18 14:36:21] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[2026-04-18 15:42:26] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-18 14:36:29] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-18 15:42:33] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.73it/s]
-2026-04-18 14:36:33,939 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-18 14:36:33] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 15.80it/s]
-Capturing num tokens (num_tokens=4 avail_mem=119.50 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 38.93it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.12it/s]
+2026-04-18 15:42:38,048 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-18 15:42:38] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 15.75it/s]
+Capturing num tokens (num_tokens=4 avail_mem=118.84 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 38.77it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -607,7 +607,7 @@ Capturing num tokens (num_tokens=4 avail_mem=119.50 GB): 100%|██████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:33574
+Server started on http://localhost:33341
 </pre></div></div>
 </div>
 </section>
@@ -641,7 +641,7 @@ Server started on http://localhost:33574
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='d90684352c2749e1ac91863bb037a104', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1776523007, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='661e4e09dadb412d93507f66a1e2ba90', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1776526971, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -906,7 +906,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished from the 8th century BCE to the 4th century CE. It is renowned for its architectural achievements, including the Colosseum and the Pantheon, as well as its art and literature. The Roman Empire spanned much of Europe, Asia Minor, and North Africa, and it had an immense influence on European culture.<br><br>Some of their most significant achievements include:<br><br>1. Architecture: The Romans were known for their impressive architecture, which included monumental structures like the Colosseum in Rome and the Pantheon in Athens.<br><br>2. Art: They are famous for their artistic</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from around 800 BCE to 476 CE. Some of their major achievements include:<br><br>1. **Gothic Architecture**: The Romans were known for their Gothic architecture, which is characterized by pointed arches and ribbed vaults.<br><br>2. **The Colosseum**: This amphitheater was built in the 1st century AD and served as a public spectacle where gladiators fought each other, often with animals.<br><br>3. **Roman Law**: Roman law established several important principles including the principle of "lex loci" (law</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -932,7 +932,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, I am Qwen, a large language model created by Alibaba Cloud. My primary function is to assist with generating human-like text and answering questions based on the information provided. I&#39;m here to help you with any queries or tasks you have in mind. If there&#39;s anything specific you&#39;d like assistance with, feel free to ask!
+Yes, that is a test. I am Qwen, an AI language model created by Alibaba Cloud. I&#39;m here to assist you with any questions or tasks you may have. Please let me know how I can be of assistance!
 </pre></div></div>
 </div>
 </section>
@@ -997,7 +997,7 @@ Yes, I am Qwen, a large language model created by Alibaba Cloud. My primary func
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='44f0c7218136407094a58da6a133b3be', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1776523010, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='e63f0646812e49a284502b8e7dcc600c', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1776526974, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1029,7 +1029,7 @@ Yes, I am Qwen, a large language model created by Alibaba Cloud. My primary func
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='9961bb855fef4b8ab47d5c625ab8b59a', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Ethan Carter. He had always been fascinated by the stars and dreamed of exploring the universe.', matched_stop='\n\n')], created=1776523010, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=31, prompt_tokens=9, total_tokens=40, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='e6c658c395354954a26fab6d46aa143e', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, in the vastness of space, there was a space explorer named Jack. He had always dreamed of exploring the stars and learning about the mysteries of the universe. With his curiosity and determination, Jack embarked on a journey to explore the moon.', matched_stop='\n\n')], created=1776526975, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=53, prompt_tokens=9, total_tokens=62, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>

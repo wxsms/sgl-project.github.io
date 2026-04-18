@@ -105,21 +105,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-18 14:40:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 15:46:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-18 14:40:09] `torch_dtype` is deprecated! Use `dtype` instead!
-
-
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [2026-04-18 15:46:14] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-18 14:40:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-18 15:46:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -129,9 +129,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.56s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.45it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.53it/s]
 
 
 
@@ -141,12 +141,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-18 14:40:20,389 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-18 14:40:20] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-18 15:46:24,269 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-18 15:46:24] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a public space with several key elements. There are two taxi cabs, one in the foreground and another painted yellow in the background. Another vehicle is also visible. In the foreground, there's a clothes pole, and a person dressed in yellow is ironing clothes. The setting appears to be outdoors, possibly in a commercial area, given the presence of shops and buildings with flags. The scene seems to depict an unusual or funny moment where someone is ironing clothes in an urban environment.
+    In the picture, a person is using a Portable Drying Rack attached to the back of a yellow taxi to dry clothes. The drying rack is set up between two parked yellow taxis, suggesting that this is a common practice for taxi drivers to move around and keep their vehicles off the street while accomplishing other tasks, such as drying clothes.
 
 
 ### Call with Processor Output
@@ -171,7 +171,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with two yellow taxis. The taxi on the left appears to have a laundry wing or clothes line attached to its roof, stretching across the front of the car. The laundry is presumably being delivered or picked up. Both taxis are near a street corner with various storefronts and flags in the background. The setting suggests this might be a busy downtown area, possibly in New York City, given the style of the taxis and the urban environment.
+    The image depicts a New York City street scene with a bright yellow taxi at the foreground. The taxi’s back has been modified or converted into a mobile laundry folding station using a broken chair and a metal strap, creating space to hang clothes lines. This creative solution highlights urban ingenuity and有时 requière finding creative ways to repurpose everyday objects for environmental or social causes.
 
 
 ### Call with Precomputed Embeddings
@@ -227,7 +227,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows an unusual and creative sight on the road. A charliesuvre — a small port-a-potty that can be folded into a backpack — has been attached to the back of a taxi. The taxi is yellow and appears to be in motion. There are also three American flags visible on旗杆Hello Kitty stickers denoted by the letter "I.
+    The image shows a yellow taxi cab, likely in an urban setting based on the surroundings. The taxi cab is equipped with various items on a rack or stand attached to the back. These items include:
+    
+    1. Small flags or banners.
+    2. Ironing clothes or fabric items.
+    3. What appears to be a hat or a coat.
+    
+    The background includes a building with a storefront, suggesting this scene might be taking place on a city street. The presence of these items on the taxi might indicate a public demonstration or a special event related to fashion, textile arts, or an awareness campaign.
 
 
 ## Querying Llama 4 Vision Model
