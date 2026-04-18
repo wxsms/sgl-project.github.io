@@ -54,11 +54,11 @@ llm = sgl.Engine(model_path="qwen/qwen2.5-0.5b-instruct")
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-18 03:06:52] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-18 09:13:06] `torch_dtype` is deprecated! Use `dtype` instead!
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -66,63 +66,43 @@ llm = sgl.Engine(model_path="qwen/qwen2.5-0.5b-instruct")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.51it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.50it/s]
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  5.48it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  5.48it/s]
 
 
-    2026-04-18 03:06:57,984 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-18 03:06:57] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-18 09:13:10,870 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-18 09:13:10] Unexpected error during package walk: cutlass.cute.experimental
 
 
       0%|          | 0/58 [00:00<?, ?it/s]Compiling num tokens (num_tokens=8192):   0%|          | 0/58 [00:00<?, ?it/s]
 
-    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:02<02:35,  2.73s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:02<02:35,  2.73s/it]Compiling num tokens (num_tokens=7168):   2%|▏         | 1/58 [00:02<02:35,  2.73s/it]Compiling num tokens (num_tokens=6656):   2%|▏         | 1/58 [00:02<02:35,  2.73s/it]Compiling num tokens (num_tokens=6144):   2%|▏         | 1/58 [00:02<02:35,  2.73s/it]Compiling num tokens (num_tokens=6144):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=5632):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=5120):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=4608):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=4096):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=3840):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]
+    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:02<02:31,  2.66s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:02<02:31,  2.66s/it]Compiling num tokens (num_tokens=7168):   2%|▏         | 1/58 [00:02<02:31,  2.66s/it]Compiling num tokens (num_tokens=6656):   2%|▏         | 1/58 [00:02<02:31,  2.66s/it]Compiling num tokens (num_tokens=6656):   7%|▋         | 4/58 [00:02<00:28,  1.88it/s]Compiling num tokens (num_tokens=6144):   7%|▋         | 4/58 [00:02<00:28,  1.88it/s]Compiling num tokens (num_tokens=5632):   7%|▋         | 4/58 [00:02<00:28,  1.88it/s]Compiling num tokens (num_tokens=5120):   7%|▋         | 4/58 [00:02<00:28,  1.88it/s]Compiling num tokens (num_tokens=4608):   7%|▋         | 4/58 [00:02<00:28,  1.88it/s]Compiling num tokens (num_tokens=4096):   7%|▋         | 4/58 [00:02<00:28,  1.88it/s]
 
-    Compiling num tokens (num_tokens=3584):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=3328):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=3328):  21%|██        | 12/58 [00:02<00:06,  6.76it/s]Compiling num tokens (num_tokens=3072):  21%|██        | 12/58 [00:02<00:06,  6.76it/s]Compiling num tokens (num_tokens=2816):  21%|██        | 12/58 [00:02<00:06,  6.76it/s]Compiling num tokens (num_tokens=2560):  21%|██        | 12/58 [00:02<00:06,  6.76it/s]Compiling num tokens (num_tokens=2304):  21%|██        | 12/58 [00:02<00:06,  6.76it/s]Compiling num tokens (num_tokens=2048):  21%|██        | 12/58 [00:02<00:06,  6.76it/s]Compiling num tokens (num_tokens=1792):  21%|██        | 12/58 [00:03<00:06,  6.76it/s]Compiling num tokens (num_tokens=1536):  21%|██        | 12/58 [00:03<00:06,  6.76it/s]Compiling num tokens (num_tokens=1280):  21%|██        | 12/58 [00:03<00:06,  6.76it/s]Compiling num tokens (num_tokens=1024):  21%|██        | 12/58 [00:03<00:06,  6.76it/s]Compiling num tokens (num_tokens=1024):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s]Compiling num tokens (num_tokens=960):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s] Compiling num tokens (num_tokens=896):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s]Compiling num tokens (num_tokens=832):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s]Compiling num tokens (num_tokens=768):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s]Compiling num tokens (num_tokens=704):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s]Compiling num tokens (num_tokens=640):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s]Compiling num tokens (num_tokens=576):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s]
+    Compiling num tokens (num_tokens=4096):  16%|█▌        | 9/58 [00:02<00:09,  5.14it/s]Compiling num tokens (num_tokens=3840):  16%|█▌        | 9/58 [00:02<00:09,  5.14it/s]Compiling num tokens (num_tokens=3584):  16%|█▌        | 9/58 [00:02<00:09,  5.14it/s]Compiling num tokens (num_tokens=3328):  16%|█▌        | 9/58 [00:02<00:09,  5.14it/s]Compiling num tokens (num_tokens=3072):  16%|█▌        | 9/58 [00:02<00:09,  5.14it/s]Compiling num tokens (num_tokens=2816):  16%|█▌        | 9/58 [00:02<00:09,  5.14it/s]Compiling num tokens (num_tokens=2560):  16%|█▌        | 9/58 [00:02<00:09,  5.14it/s]Compiling num tokens (num_tokens=2304):  16%|█▌        | 9/58 [00:02<00:09,  5.14it/s]Compiling num tokens (num_tokens=2048):  16%|█▌        | 9/58 [00:02<00:09,  5.14it/s]Compiling num tokens (num_tokens=2048):  29%|██▉       | 17/58 [00:02<00:03, 11.68it/s]Compiling num tokens (num_tokens=1792):  29%|██▉       | 17/58 [00:02<00:03, 11.68it/s]Compiling num tokens (num_tokens=1536):  29%|██▉       | 17/58 [00:02<00:03, 11.68it/s]Compiling num tokens (num_tokens=1280):  29%|██▉       | 17/58 [00:03<00:03, 11.68it/s]Compiling num tokens (num_tokens=1024):  29%|██▉       | 17/58 [00:03<00:03, 11.68it/s]Compiling num tokens (num_tokens=960):  29%|██▉       | 17/58 [00:03<00:03, 11.68it/s] Compiling num tokens (num_tokens=896):  29%|██▉       | 17/58 [00:03<00:03, 11.68it/s]
 
-    Compiling num tokens (num_tokens=512):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s]Compiling num tokens (num_tokens=480):  36%|███▌      | 21/58 [00:03<00:02, 13.81it/s]Compiling num tokens (num_tokens=480):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=448):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=416):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=384):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=352):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=320):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=288):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=256):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=240):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=224):  52%|█████▏    | 30/58 [00:03<00:01, 21.90it/s]Compiling num tokens (num_tokens=224):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s]Compiling num tokens (num_tokens=208):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s]Compiling num tokens (num_tokens=192):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s]Compiling num tokens (num_tokens=176):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s]Compiling num tokens (num_tokens=160):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s]Compiling num tokens (num_tokens=144):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s]Compiling num tokens (num_tokens=128):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s]Compiling num tokens (num_tokens=112):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s]
+    Compiling num tokens (num_tokens=896):  40%|███▉      | 23/58 [00:03<00:02, 17.01it/s]Compiling num tokens (num_tokens=832):  40%|███▉      | 23/58 [00:03<00:02, 17.01it/s]Compiling num tokens (num_tokens=768):  40%|███▉      | 23/58 [00:03<00:02, 17.01it/s]Compiling num tokens (num_tokens=704):  40%|███▉      | 23/58 [00:03<00:02, 17.01it/s]Compiling num tokens (num_tokens=640):  40%|███▉      | 23/58 [00:03<00:02, 17.01it/s]Compiling num tokens (num_tokens=576):  40%|███▉      | 23/58 [00:03<00:02, 17.01it/s]Compiling num tokens (num_tokens=512):  40%|███▉      | 23/58 [00:03<00:02, 17.01it/s]Compiling num tokens (num_tokens=480):  40%|███▉      | 23/58 [00:03<00:02, 17.01it/s]Compiling num tokens (num_tokens=480):  52%|█████▏    | 30/58 [00:03<00:01, 23.73it/s]Compiling num tokens (num_tokens=448):  52%|█████▏    | 30/58 [00:03<00:01, 23.73it/s]Compiling num tokens (num_tokens=416):  52%|█████▏    | 30/58 [00:03<00:01, 23.73it/s]Compiling num tokens (num_tokens=384):  52%|█████▏    | 30/58 [00:03<00:01, 23.73it/s]Compiling num tokens (num_tokens=352):  52%|█████▏    | 30/58 [00:03<00:01, 23.73it/s]Compiling num tokens (num_tokens=320):  52%|█████▏    | 30/58 [00:03<00:01, 23.73it/s]Compiling num tokens (num_tokens=288):  52%|█████▏    | 30/58 [00:03<00:01, 23.73it/s]
 
-    Compiling num tokens (num_tokens=96):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s] Compiling num tokens (num_tokens=80):  67%|██████▋   | 39/58 [00:03<00:00, 30.74it/s]Compiling num tokens (num_tokens=80):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=64):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=48):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=32):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=28):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=24):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=20):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=16):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=12):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=8):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s] Compiling num tokens (num_tokens=4):  83%|████████▎ | 48/58 [00:03<00:00, 39.53it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03<00:00, 49.99it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03<00:00, 16.64it/s]
+    Compiling num tokens (num_tokens=256):  52%|█████▏    | 30/58 [00:03<00:01, 23.73it/s]Compiling num tokens (num_tokens=256):  64%|██████▍   | 37/58 [00:03<00:00, 30.24it/s]Compiling num tokens (num_tokens=240):  64%|██████▍   | 37/58 [00:03<00:00, 30.24it/s]Compiling num tokens (num_tokens=224):  64%|██████▍   | 37/58 [00:03<00:00, 30.24it/s]Compiling num tokens (num_tokens=208):  64%|██████▍   | 37/58 [00:03<00:00, 30.24it/s]Compiling num tokens (num_tokens=192):  64%|██████▍   | 37/58 [00:03<00:00, 30.24it/s]Compiling num tokens (num_tokens=176):  64%|██████▍   | 37/58 [00:03<00:00, 30.24it/s]Compiling num tokens (num_tokens=160):  64%|██████▍   | 37/58 [00:03<00:00, 30.24it/s]Compiling num tokens (num_tokens=160):  74%|███████▍  | 43/58 [00:03<00:00, 34.43it/s]Compiling num tokens (num_tokens=144):  74%|███████▍  | 43/58 [00:03<00:00, 34.43it/s]Compiling num tokens (num_tokens=128):  74%|███████▍  | 43/58 [00:03<00:00, 34.43it/s]Compiling num tokens (num_tokens=112):  74%|███████▍  | 43/58 [00:03<00:00, 34.43it/s]
+
+    Compiling num tokens (num_tokens=96):  74%|███████▍  | 43/58 [00:03<00:00, 34.43it/s] Compiling num tokens (num_tokens=80):  74%|███████▍  | 43/58 [00:03<00:00, 34.43it/s]Compiling num tokens (num_tokens=64):  74%|███████▍  | 43/58 [00:03<00:00, 34.43it/s]Compiling num tokens (num_tokens=64):  84%|████████▍ | 49/58 [00:03<00:00, 36.19it/s]Compiling num tokens (num_tokens=48):  84%|████████▍ | 49/58 [00:03<00:00, 36.19it/s]Compiling num tokens (num_tokens=32):  84%|████████▍ | 49/58 [00:03<00:00, 36.19it/s]Compiling num tokens (num_tokens=28):  84%|████████▍ | 49/58 [00:03<00:00, 36.19it/s]Compiling num tokens (num_tokens=24):  84%|████████▍ | 49/58 [00:03<00:00, 36.19it/s]Compiling num tokens (num_tokens=20):  84%|████████▍ | 49/58 [00:03<00:00, 36.19it/s]Compiling num tokens (num_tokens=16):  84%|████████▍ | 49/58 [00:03<00:00, 36.19it/s]Compiling num tokens (num_tokens=16):  95%|█████████▍| 55/58 [00:03<00:00, 40.96it/s]Compiling num tokens (num_tokens=12):  95%|█████████▍| 55/58 [00:03<00:00, 40.96it/s]Compiling num tokens (num_tokens=8):  95%|█████████▍| 55/58 [00:03<00:00, 40.96it/s] Compiling num tokens (num_tokens=4):  95%|█████████▍| 55/58 [00:03<00:00, 40.96it/s]
+
+    Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03<00:00, 15.64it/s]
 
 
-      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=119.05 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=119.02 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=119.02 GB):   3%|▎         | 2/58 [00:00<00:02, 18.92it/s]Capturing num tokens (num_tokens=7168 avail_mem=119.02 GB):   3%|▎         | 2/58 [00:00<00:02, 18.92it/s]Capturing num tokens (num_tokens=6656 avail_mem=119.01 GB):   3%|▎         | 2/58 [00:00<00:02, 18.92it/s]Capturing num tokens (num_tokens=6144 avail_mem=119.02 GB):   3%|▎         | 2/58 [00:00<00:02, 18.92it/s]
+      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=49.84 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=49.81 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=49.81 GB):   3%|▎         | 2/58 [00:00<00:03, 16.83it/s]Capturing num tokens (num_tokens=7168 avail_mem=49.81 GB):   3%|▎         | 2/58 [00:00<00:03, 16.83it/s]Capturing num tokens (num_tokens=6656 avail_mem=49.81 GB):   3%|▎         | 2/58 [00:00<00:03, 16.83it/s]
 
-    Capturing num tokens (num_tokens=6144 avail_mem=119.02 GB):   9%|▊         | 5/58 [00:00<00:02, 21.59it/s]Capturing num tokens (num_tokens=5632 avail_mem=119.01 GB):   9%|▊         | 5/58 [00:00<00:02, 21.59it/s]Capturing num tokens (num_tokens=5120 avail_mem=119.01 GB):   9%|▊         | 5/58 [00:00<00:02, 21.59it/s]Capturing num tokens (num_tokens=4608 avail_mem=119.01 GB):   9%|▊         | 5/58 [00:00<00:02, 21.59it/s]Capturing num tokens (num_tokens=4608 avail_mem=119.01 GB):  14%|█▍        | 8/58 [00:00<00:02, 23.94it/s]Capturing num tokens (num_tokens=4096 avail_mem=119.01 GB):  14%|█▍        | 8/58 [00:00<00:02, 23.94it/s]Capturing num tokens (num_tokens=3840 avail_mem=117.85 GB):  14%|█▍        | 8/58 [00:00<00:02, 23.94it/s]
+    Capturing num tokens (num_tokens=6144 avail_mem=49.81 GB):   3%|▎         | 2/58 [00:00<00:03, 16.83it/s]Capturing num tokens (num_tokens=6144 avail_mem=49.81 GB):   9%|▊         | 5/58 [00:00<00:02, 19.40it/s]Capturing num tokens (num_tokens=5632 avail_mem=49.80 GB):   9%|▊         | 5/58 [00:00<00:02, 19.40it/s]Capturing num tokens (num_tokens=5120 avail_mem=49.80 GB):   9%|▊         | 5/58 [00:00<00:02, 19.40it/s]Capturing num tokens (num_tokens=4608 avail_mem=49.80 GB):   9%|▊         | 5/58 [00:00<00:02, 19.40it/s]Capturing num tokens (num_tokens=4608 avail_mem=49.80 GB):  14%|█▍        | 8/58 [00:00<00:02, 22.15it/s]Capturing num tokens (num_tokens=4096 avail_mem=49.80 GB):  14%|█▍        | 8/58 [00:00<00:02, 22.15it/s]Capturing num tokens (num_tokens=3840 avail_mem=49.80 GB):  14%|█▍        | 8/58 [00:00<00:02, 22.15it/s]
 
-    Capturing num tokens (num_tokens=3584 avail_mem=117.55 GB):  14%|█▍        | 8/58 [00:00<00:02, 23.94it/s]Capturing num tokens (num_tokens=3584 avail_mem=117.55 GB):  19%|█▉        | 11/58 [00:00<00:03, 13.75it/s]Capturing num tokens (num_tokens=3328 avail_mem=117.54 GB):  19%|█▉        | 11/58 [00:00<00:03, 13.75it/s]
+    Capturing num tokens (num_tokens=3584 avail_mem=49.79 GB):  14%|█▍        | 8/58 [00:00<00:02, 22.15it/s]Capturing num tokens (num_tokens=3328 avail_mem=49.79 GB):  14%|█▍        | 8/58 [00:00<00:02, 22.15it/s]Capturing num tokens (num_tokens=3328 avail_mem=49.79 GB):  21%|██        | 12/58 [00:00<00:01, 25.97it/s]Capturing num tokens (num_tokens=3072 avail_mem=49.78 GB):  21%|██        | 12/58 [00:00<00:01, 25.97it/s]Capturing num tokens (num_tokens=2816 avail_mem=49.78 GB):  21%|██        | 12/58 [00:00<00:01, 25.97it/s]Capturing num tokens (num_tokens=2560 avail_mem=49.78 GB):  21%|██        | 12/58 [00:00<00:01, 25.97it/s]Capturing num tokens (num_tokens=2304 avail_mem=49.78 GB):  21%|██        | 12/58 [00:00<00:01, 25.97it/s]Capturing num tokens (num_tokens=2304 avail_mem=49.78 GB):  28%|██▊       | 16/58 [00:00<00:01, 28.94it/s]Capturing num tokens (num_tokens=2048 avail_mem=49.77 GB):  28%|██▊       | 16/58 [00:00<00:01, 28.94it/s]
 
-    Capturing num tokens (num_tokens=3072 avail_mem=117.54 GB):  19%|█▉        | 11/58 [00:00<00:03, 13.75it/s]Capturing num tokens (num_tokens=3072 avail_mem=117.54 GB):  22%|██▏       | 13/58 [00:00<00:04, 10.81it/s]Capturing num tokens (num_tokens=2816 avail_mem=117.54 GB):  22%|██▏       | 13/58 [00:00<00:04, 10.81it/s]
+    Capturing num tokens (num_tokens=1792 avail_mem=49.77 GB):  28%|██▊       | 16/58 [00:00<00:01, 28.94it/s]Capturing num tokens (num_tokens=1536 avail_mem=49.76 GB):  28%|██▊       | 16/58 [00:00<00:01, 28.94it/s]Capturing num tokens (num_tokens=1280 avail_mem=49.76 GB):  28%|██▊       | 16/58 [00:00<00:01, 28.94it/s]Capturing num tokens (num_tokens=1280 avail_mem=49.76 GB):  34%|███▍      | 20/58 [00:00<00:01, 27.26it/s]Capturing num tokens (num_tokens=1024 avail_mem=49.74 GB):  34%|███▍      | 20/58 [00:00<00:01, 27.26it/s]Capturing num tokens (num_tokens=960 avail_mem=49.72 GB):  34%|███▍      | 20/58 [00:00<00:01, 27.26it/s] 
 
-    Capturing num tokens (num_tokens=2560 avail_mem=117.53 GB):  22%|██▏       | 13/58 [00:01<00:04, 10.81it/s]Capturing num tokens (num_tokens=2560 avail_mem=117.53 GB):  26%|██▌       | 15/58 [00:01<00:04,  9.75it/s]Capturing num tokens (num_tokens=2304 avail_mem=117.53 GB):  26%|██▌       | 15/58 [00:01<00:04,  9.75it/s]
+    Capturing num tokens (num_tokens=896 avail_mem=49.72 GB):  34%|███▍      | 20/58 [00:00<00:01, 27.26it/s]Capturing num tokens (num_tokens=896 avail_mem=49.72 GB):  40%|███▉      | 23/58 [00:00<00:01, 26.24it/s]Capturing num tokens (num_tokens=832 avail_mem=49.72 GB):  40%|███▉      | 23/58 [00:00<00:01, 26.24it/s]Capturing num tokens (num_tokens=768 avail_mem=49.71 GB):  40%|███▉      | 23/58 [00:00<00:01, 26.24it/s]Capturing num tokens (num_tokens=704 avail_mem=49.71 GB):  40%|███▉      | 23/58 [00:00<00:01, 26.24it/s]Capturing num tokens (num_tokens=640 avail_mem=49.71 GB):  40%|███▉      | 23/58 [00:00<00:01, 26.24it/s]Capturing num tokens (num_tokens=576 avail_mem=49.71 GB):  40%|███▉      | 23/58 [00:01<00:01, 26.24it/s]Capturing num tokens (num_tokens=576 avail_mem=49.71 GB):  48%|████▊     | 28/58 [00:01<00:00, 30.70it/s]Capturing num tokens (num_tokens=512 avail_mem=49.69 GB):  48%|████▊     | 28/58 [00:01<00:00, 30.70it/s]Capturing num tokens (num_tokens=480 avail_mem=49.71 GB):  48%|████▊     | 28/58 [00:01<00:00, 30.70it/s]
 
-    Capturing num tokens (num_tokens=2048 avail_mem=117.53 GB):  26%|██▌       | 15/58 [00:01<00:04,  9.75it/s]Capturing num tokens (num_tokens=2048 avail_mem=117.53 GB):  29%|██▉       | 17/58 [00:01<00:04,  9.65it/s]Capturing num tokens (num_tokens=1792 avail_mem=117.52 GB):  29%|██▉       | 17/58 [00:01<00:04,  9.65it/s]
+    Capturing num tokens (num_tokens=448 avail_mem=49.71 GB):  48%|████▊     | 28/58 [00:01<00:00, 30.70it/s]Capturing num tokens (num_tokens=416 avail_mem=49.71 GB):  48%|████▊     | 28/58 [00:01<00:00, 30.70it/s]Capturing num tokens (num_tokens=416 avail_mem=49.71 GB):  55%|█████▌    | 32/58 [00:01<00:00, 32.44it/s]Capturing num tokens (num_tokens=384 avail_mem=49.70 GB):  55%|█████▌    | 32/58 [00:01<00:00, 32.44it/s]Capturing num tokens (num_tokens=352 avail_mem=49.70 GB):  55%|█████▌    | 32/58 [00:01<00:00, 32.44it/s]Capturing num tokens (num_tokens=320 avail_mem=49.69 GB):  55%|█████▌    | 32/58 [00:01<00:00, 32.44it/s]Capturing num tokens (num_tokens=288 avail_mem=49.69 GB):  55%|█████▌    | 32/58 [00:01<00:00, 32.44it/s]Capturing num tokens (num_tokens=256 avail_mem=49.69 GB):  55%|█████▌    | 32/58 [00:01<00:00, 32.44it/s]Capturing num tokens (num_tokens=256 avail_mem=49.69 GB):  64%|██████▍   | 37/58 [00:01<00:00, 36.50it/s]Capturing num tokens (num_tokens=240 avail_mem=49.69 GB):  64%|██████▍   | 37/58 [00:01<00:00, 36.50it/s]Capturing num tokens (num_tokens=224 avail_mem=49.68 GB):  64%|██████▍   | 37/58 [00:01<00:00, 36.50it/s]Capturing num tokens (num_tokens=208 avail_mem=49.68 GB):  64%|██████▍   | 37/58 [00:01<00:00, 36.50it/s]
 
-    Capturing num tokens (num_tokens=1536 avail_mem=117.52 GB):  29%|██▉       | 17/58 [00:01<00:04,  9.65it/s]Capturing num tokens (num_tokens=1536 avail_mem=117.52 GB):  33%|███▎      | 19/58 [00:01<00:04,  9.63it/s]Capturing num tokens (num_tokens=1280 avail_mem=117.52 GB):  33%|███▎      | 19/58 [00:01<00:04,  9.63it/s]Capturing num tokens (num_tokens=1024 avail_mem=117.49 GB):  33%|███▎      | 19/58 [00:01<00:04,  9.63it/s]
+    Capturing num tokens (num_tokens=192 avail_mem=49.68 GB):  64%|██████▍   | 37/58 [00:01<00:00, 36.50it/s]Capturing num tokens (num_tokens=176 avail_mem=49.67 GB):  64%|██████▍   | 37/58 [00:01<00:00, 36.50it/s]Capturing num tokens (num_tokens=160 avail_mem=49.67 GB):  64%|██████▍   | 37/58 [00:01<00:00, 36.50it/s]Capturing num tokens (num_tokens=160 avail_mem=49.67 GB):  74%|███████▍  | 43/58 [00:01<00:00, 40.86it/s]Capturing num tokens (num_tokens=144 avail_mem=49.67 GB):  74%|███████▍  | 43/58 [00:01<00:00, 40.86it/s]Capturing num tokens (num_tokens=128 avail_mem=49.66 GB):  74%|███████▍  | 43/58 [00:01<00:00, 40.86it/s]Capturing num tokens (num_tokens=112 avail_mem=49.66 GB):  74%|███████▍  | 43/58 [00:01<00:00, 40.86it/s]Capturing num tokens (num_tokens=96 avail_mem=49.66 GB):  74%|███████▍  | 43/58 [00:01<00:00, 40.86it/s] Capturing num tokens (num_tokens=80 avail_mem=49.65 GB):  74%|███████▍  | 43/58 [00:01<00:00, 40.86it/s]Capturing num tokens (num_tokens=80 avail_mem=49.65 GB):  83%|████████▎ | 48/58 [00:01<00:00, 43.18it/s]Capturing num tokens (num_tokens=64 avail_mem=49.65 GB):  83%|████████▎ | 48/58 [00:01<00:00, 43.18it/s]Capturing num tokens (num_tokens=48 avail_mem=49.65 GB):  83%|████████▎ | 48/58 [00:01<00:00, 43.18it/s]
 
-    Capturing num tokens (num_tokens=1024 avail_mem=117.49 GB):  36%|███▌      | 21/58 [00:01<00:03,  9.98it/s]Capturing num tokens (num_tokens=960 avail_mem=117.51 GB):  36%|███▌      | 21/58 [00:01<00:03,  9.98it/s] Capturing num tokens (num_tokens=896 avail_mem=117.51 GB):  36%|███▌      | 21/58 [00:01<00:03,  9.98it/s]Capturing num tokens (num_tokens=896 avail_mem=117.51 GB):  40%|███▉      | 23/58 [00:02<00:03, 10.23it/s]Capturing num tokens (num_tokens=832 avail_mem=117.50 GB):  40%|███▉      | 23/58 [00:02<00:03, 10.23it/s]
-
-    Capturing num tokens (num_tokens=768 avail_mem=117.50 GB):  40%|███▉      | 23/58 [00:02<00:03, 10.23it/s]
-
-    Capturing num tokens (num_tokens=768 avail_mem=117.50 GB):  43%|████▎     | 25/58 [00:02<00:03,  8.65it/s]Capturing num tokens (num_tokens=704 avail_mem=117.49 GB):  43%|████▎     | 25/58 [00:02<00:03,  8.65it/s]Capturing num tokens (num_tokens=640 avail_mem=117.49 GB):  43%|████▎     | 25/58 [00:02<00:03,  8.65it/s]Capturing num tokens (num_tokens=640 avail_mem=117.49 GB):  47%|████▋     | 27/58 [00:02<00:03,  9.30it/s]Capturing num tokens (num_tokens=576 avail_mem=117.49 GB):  47%|████▋     | 27/58 [00:02<00:03,  9.30it/s]
-
-    Capturing num tokens (num_tokens=512 avail_mem=117.48 GB):  47%|████▋     | 27/58 [00:02<00:03,  9.30it/s]Capturing num tokens (num_tokens=512 avail_mem=117.48 GB):  50%|█████     | 29/58 [00:02<00:02, 10.14it/s]Capturing num tokens (num_tokens=480 avail_mem=117.49 GB):  50%|█████     | 29/58 [00:02<00:02, 10.14it/s]Capturing num tokens (num_tokens=448 avail_mem=117.49 GB):  50%|█████     | 29/58 [00:02<00:02, 10.14it/s]
-
-    Capturing num tokens (num_tokens=448 avail_mem=117.49 GB):  53%|█████▎    | 31/58 [00:02<00:02, 10.62it/s]Capturing num tokens (num_tokens=416 avail_mem=117.49 GB):  53%|█████▎    | 31/58 [00:02<00:02, 10.62it/s]Capturing num tokens (num_tokens=384 avail_mem=117.46 GB):  53%|█████▎    | 31/58 [00:02<00:02, 10.62it/s]
-
-    Capturing num tokens (num_tokens=384 avail_mem=117.46 GB):  57%|█████▋    | 33/58 [00:03<00:02, 10.43it/s]Capturing num tokens (num_tokens=352 avail_mem=117.20 GB):  57%|█████▋    | 33/58 [00:03<00:02, 10.43it/s]Capturing num tokens (num_tokens=320 avail_mem=117.44 GB):  57%|█████▋    | 33/58 [00:03<00:02, 10.43it/s]
-
-    Capturing num tokens (num_tokens=320 avail_mem=117.44 GB):  60%|██████    | 35/58 [00:03<00:02, 10.10it/s]Capturing num tokens (num_tokens=288 avail_mem=117.44 GB):  60%|██████    | 35/58 [00:03<00:02, 10.10it/s]Capturing num tokens (num_tokens=256 avail_mem=117.44 GB):  60%|██████    | 35/58 [00:03<00:02, 10.10it/s]
-
-    Capturing num tokens (num_tokens=256 avail_mem=117.44 GB):  64%|██████▍   | 37/58 [00:03<00:02, 10.04it/s]Capturing num tokens (num_tokens=240 avail_mem=117.44 GB):  64%|██████▍   | 37/58 [00:03<00:02, 10.04it/s]Capturing num tokens (num_tokens=224 avail_mem=117.24 GB):  64%|██████▍   | 37/58 [00:03<00:02, 10.04it/s]Capturing num tokens (num_tokens=224 avail_mem=117.24 GB):  67%|██████▋   | 39/58 [00:03<00:01, 10.49it/s]Capturing num tokens (num_tokens=208 avail_mem=117.43 GB):  67%|██████▋   | 39/58 [00:03<00:01, 10.49it/s]
-
-    Capturing num tokens (num_tokens=192 avail_mem=117.42 GB):  67%|██████▋   | 39/58 [00:03<00:01, 10.49it/s]Capturing num tokens (num_tokens=192 avail_mem=117.42 GB):  71%|███████   | 41/58 [00:03<00:01, 10.71it/s]Capturing num tokens (num_tokens=176 avail_mem=117.42 GB):  71%|███████   | 41/58 [00:03<00:01, 10.71it/s]
-
-    Capturing num tokens (num_tokens=160 avail_mem=117.41 GB):  71%|███████   | 41/58 [00:03<00:01, 10.71it/s]Capturing num tokens (num_tokens=160 avail_mem=117.41 GB):  74%|███████▍  | 43/58 [00:04<00:01,  9.26it/s]Capturing num tokens (num_tokens=144 avail_mem=117.28 GB):  74%|███████▍  | 43/58 [00:04<00:01,  9.26it/s]
-
-    Capturing num tokens (num_tokens=128 avail_mem=117.28 GB):  74%|███████▍  | 43/58 [00:04<00:01,  9.26it/s]Capturing num tokens (num_tokens=128 avail_mem=117.28 GB):  78%|███████▊  | 45/58 [00:04<00:01,  8.35it/s]Capturing num tokens (num_tokens=112 avail_mem=117.28 GB):  78%|███████▊  | 45/58 [00:04<00:01,  8.35it/s]Capturing num tokens (num_tokens=96 avail_mem=117.38 GB):  78%|███████▊  | 45/58 [00:04<00:01,  8.35it/s] Capturing num tokens (num_tokens=80 avail_mem=117.38 GB):  78%|███████▊  | 45/58 [00:04<00:01,  8.35it/s]Capturing num tokens (num_tokens=80 avail_mem=117.38 GB):  83%|████████▎ | 48/58 [00:04<00:00, 11.24it/s]Capturing num tokens (num_tokens=64 avail_mem=117.37 GB):  83%|████████▎ | 48/58 [00:04<00:00, 11.24it/s]
-
-    Capturing num tokens (num_tokens=48 avail_mem=117.36 GB):  83%|████████▎ | 48/58 [00:04<00:00, 11.24it/s]Capturing num tokens (num_tokens=32 avail_mem=117.35 GB):  83%|████████▎ | 48/58 [00:04<00:00, 11.24it/s]Capturing num tokens (num_tokens=32 avail_mem=117.35 GB):  88%|████████▊ | 51/58 [00:04<00:00, 14.29it/s]Capturing num tokens (num_tokens=28 avail_mem=117.35 GB):  88%|████████▊ | 51/58 [00:04<00:00, 14.29it/s]Capturing num tokens (num_tokens=24 avail_mem=117.34 GB):  88%|████████▊ | 51/58 [00:04<00:00, 14.29it/s]Capturing num tokens (num_tokens=20 avail_mem=117.33 GB):  88%|████████▊ | 51/58 [00:04<00:00, 14.29it/s]Capturing num tokens (num_tokens=16 avail_mem=117.31 GB):  88%|████████▊ | 51/58 [00:04<00:00, 14.29it/s]Capturing num tokens (num_tokens=16 avail_mem=117.31 GB):  95%|█████████▍| 55/58 [00:04<00:00, 19.16it/s]Capturing num tokens (num_tokens=12 avail_mem=117.32 GB):  95%|█████████▍| 55/58 [00:04<00:00, 19.16it/s]Capturing num tokens (num_tokens=8 avail_mem=117.32 GB):  95%|█████████▍| 55/58 [00:04<00:00, 19.16it/s] 
-
-    Capturing num tokens (num_tokens=4 avail_mem=117.31 GB):  95%|█████████▍| 55/58 [00:04<00:00, 19.16it/s]Capturing num tokens (num_tokens=4 avail_mem=117.31 GB): 100%|██████████| 58/58 [00:04<00:00, 12.07it/s]
+    Capturing num tokens (num_tokens=32 avail_mem=49.65 GB):  83%|████████▎ | 48/58 [00:01<00:00, 43.18it/s]Capturing num tokens (num_tokens=28 avail_mem=49.64 GB):  83%|████████▎ | 48/58 [00:01<00:00, 43.18it/s]Capturing num tokens (num_tokens=24 avail_mem=49.64 GB):  83%|████████▎ | 48/58 [00:01<00:00, 43.18it/s]Capturing num tokens (num_tokens=24 avail_mem=49.64 GB):  91%|█████████▏| 53/58 [00:01<00:00, 44.99it/s]Capturing num tokens (num_tokens=20 avail_mem=49.63 GB):  91%|█████████▏| 53/58 [00:01<00:00, 44.99it/s]Capturing num tokens (num_tokens=16 avail_mem=49.63 GB):  91%|█████████▏| 53/58 [00:01<00:00, 44.99it/s]Capturing num tokens (num_tokens=12 avail_mem=49.63 GB):  91%|█████████▏| 53/58 [00:01<00:00, 44.99it/s]Capturing num tokens (num_tokens=8 avail_mem=49.63 GB):  91%|█████████▏| 53/58 [00:01<00:00, 44.99it/s] Capturing num tokens (num_tokens=4 avail_mem=49.62 GB):  91%|█████████▏| 53/58 [00:01<00:00, 44.99it/s]Capturing num tokens (num_tokens=4 avail_mem=49.62 GB): 100%|██████████| 58/58 [00:01<00:00, 34.93it/s]
 
 
 ### Non-streaming Synchronous Generation
@@ -146,44 +126,37 @@ for prompt, output in zip(prompts, outputs):
 
     ===============================
     Prompt: Hello, my name is
-    Generated text:  James. I am a 10th grader at our school. I have a big family. My mom is a doctor, my dad is a teacher, and my older brother is a student. My parents are very strict with me. They are very strict with me because my brother is very naughty. I like to play on the computer when I am not at home. I think it is fun to play games on the computer. Sometimes I play computer games with my brother. We play for an hour and a half each day. I also love ice cream. When I have a nice weather, I like to take my brother to
+    Generated text:  Jonathan. I’m a 30 year old female and I have been diagnosed with bipolar disorder. What does it feel like to have it? I don’t want to live life like I should be living, but I’m afraid to tell anyone. I am very nervous and don’t have a clue how to deal with it. My family really supports me and treats me the best way they can. I have been given medication to help me manage my disorder. I’ve even learned a few things in my life from those treatments. I’m not sure how to tell anyone, but I really want to do it. Please, I need help
     ===============================
     Prompt: The president of the United States is
-    Generated text:  very busy. He has to deal with many important things. Now, let's take a look at the President's schedule and see what he does each day. Let's break down the president's schedule into small parts and describe each part:
+    Generated text:  a political office. There have been many presidents throughout US history. The first president was George Washington. He served from 1789 to 1797. How many terms would he serve? To determine how many terms George Washington would serve as the President of the United States, we need to understand the presidential term length and how it applies to George Washington's time in office.
     
-    1. He starts his day with a quick breakfast, which can be a few minutes long. This is a fast start for the day, so he won't need to eat much.
+    1. **Identify the Presidential Term Length:**
+       - The Presidential term is 4 years.
     
-    2. He wakes up at 7:00 AM, which is when the first news of the day comes in. The president looks at the news and takes a few minutes to decide what to do for the
+    2. **Determine the Number of Terms:**
+       - Washington served from 1789 to 1797.
+    
     ===============================
     Prompt: The capital of France is
-    Generated text:  ______.
+    Generated text: :
     A. Paris
-    B. London
-    C. Madrid
-    D. Rome
-    Answer:
-    A
+    B. Nice
+    C. Bruges
+    D. Bordeaux
     
-    A 55-year-old male patient suddenly experienced severe abdominal pain, cold sweats, and rapid breathing after being caught in a high-speed car accident. He was admitted to the hospital in an emergency. Physical examination: pulse rate 120 beats/min, blood pressure 12/8 kPa, pale face, cold extremities, decreased bowel sounds. The most likely diagnosis for this patient is ____.
-    A. Liver rupture
-    B. Pancreatic injury
-    C. Duodenal injury
-    D. Ga
+    The correct answer is A. Paris. France's capital is Paris. The other cities listed are not in France:
+    
+    B. Nice: Located in France
+    C. Bruges: Located in Belgium
+    D. Bordeaux: Located in France
+    
+    None of the other cities listed are in France. Paris is the capital of France. The other options refer to other countries, not the capital of France. Therefore, the correct answer is Paris.
     ===============================
     Prompt: The future of AI is
-    Generated text:  here, but a lot of that is still murky
-    
-    By Enderly 
-    
-      *Originally published in The Information, 2022-11-03
-    
-      *Updated on November 20, 2022
-    
-      *Based on data provided by iResearch and other sources
-    
-      *This piece was updated to include additional references and a discussion of diverse AI approaches, an important issue that was not covered in the original article.
-    
-      *This article is not intended to be a comprehensive review of all aspects of AI. The views expressed are based on the author's personal experience, which may not cover
+    Generated text:  in process, and the people behind it are taking the lead. The next decade will witness a revolution in how we use AI, from social media to autonomous vehicles. Some are pushing back against the growth of AI, while others are embracing it. The following are some of the most interesting trends currently shaping the future of AI.
+    The role of AI in the medical field is growing steadily, as more and more patients are sharing their medical information online. The data collected can be used to create personalized treatment plans for individuals, as well as to improve the diagnosis and treatment of diseases.
+    In addition, AI is being used to predict disease outbreaks and prevent
 
 
 ### Streaming Synchronous Generation
@@ -216,21 +189,23 @@ for prompt in prompts:
     Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
 
 
-    Generated text:  [Name] and I'm a [job title] at [company name]. I'm a [job title] at [company name], and I'm excited to be here today. I'm a [job title] at [company name], and I'm excited to be here today. I'm a [job title] at [company name], and I'm excited to be here today. I'm a [job title] at [company name], and I'm excited to be here today. I'm a [job title] at [company name], and I'm excited to be here today. I'm a [job title]
+    Generated text:  [Name] and I am a [occupation] who has been [number of years] in the industry. I am passionate about [reason for passion], and I am always looking for ways to [action or goal]. I am a [type of person] who is [positive or negative] about life, and I am always looking for ways to [action or goal]. I am a [type of person] who is [positive or negative] about life, and I am always looking for ways to [action or goal]. I am a [type of person] who is [positive or negative] about life, and I am always
     
     Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 
 
-    Generated text:  Paris, also known as "La Ville-Marie" or "La Ville de Paris". It is the largest city in France and the second-largest city in the European Union. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. It is also known for its rich history, art, and culture, and is a major tourist destination. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into the city's vibrant culture. The city is also home to many international organizations and institutions, including the French Academy
+    Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major economic and political center in Europe. It is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. The city is home to many international institutions and organizations, including the European Parliament, the United Nations, and the International Olympic Committee. Paris is also known for its cuisine, with
     
     Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 
 
-    Generated text:  likely to be characterized by a number of trends that are expected to shape the development of this technology. Here are some of the most likely trends:
+    Generated text:  likely to be characterized by several key trends:
     
-    1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This includes issues such as bias, privacy, and transparency. AI developers will need to be more mindful of how their technology is used and ensure that it is used in a way that is fair and responsible.
+    1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes. This could lead to more sophisticated and adaptive AI systems that can learn from their environment and improve their performance over time.
     
-    2. Integration of AI with other technologies: AI is already being integrated into a wide range of technologies, including healthcare, finance, and transportation. As
+    2. Greater emphasis on ethical considerations: As AI becomes more integrated with human intelligence, there will be a greater emphasis on ethical considerations. This could lead to more stringent regulations and guidelines for AI development and deployment, as well as increased scrutiny of AI systems that are designed to harm or mislead humans.
+    
+    3.
     
 
 
@@ -266,32 +241,23 @@ asyncio.run(main())
 
     
     Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-    Generated text:  __________ and I'm a/an _________. What can you tell me about yourself? You're welcome, it's a pleasure to meet you. What is your profession or occupation? I'm a/an ____________. What is your greatest accomplishment so far? I have achieved ___________.
-    You're welcome, my dear, and I'm grateful for your interest in me. How can I assist you further? I'm here to listen, and I'll do my best to provide you with information about yourself and your profession. Is there anything specific I can help you with? I'm always here to assist, so please don't
+    Generated text:  [name], and I'm a [occupation] at [company]. I'm currently working on [current project]. What can you tell me about yourself?
+    
+    [Name] is a [occupation] at [company]. I'm currently working on [current project]. I'm a [background] personality who is known for my [adjective], [noun] and [verb]. I believe in [value] principles and strive to be a [mission] person. I'm passionate about [objective], and I'm always looking for [future goal]. [Name] is a [occupation] at [company]. I'm currently working on [current
     
     Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
     Generated text:  Paris. 
     
-    Sentence A: "Paris is the capital city of France."
-    Sentence B: "Paris is the capital of France."
-    Sentence A and B are equivalent statements.
-    
-    Is this a valid response?
-    
-    a) No
-    b) Yes
-    b) Yes
-    
-    Both sentences A and B are equivalent statements. Sentence A accurately conveys that Paris is indeed the capital city of France. Sentence B is also a correct statement that accurately describes Paris as the capital city of France. The statement is straightforward, clear, and does not contain any grammatical or stylistic errors. Therefore, the correct answer is yes, the response is valid. However,
+    This statement encapsulates the central role of Paris in French politics, culture, and history, as it is the most populous city in France and has been the seat of the French government since 1871. The city is renowned for its architecture, art, and cuisine, and is a major center of international trade and diplomacy. Paris has been described as "the City of Light" and "the Eternal City," reflecting its status as the "most beautiful city in the world" according to the Guinness World Records. It is also home to the Louvre Museum and the Eiffel Tower, both iconic landmarks. Paris
     
     Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-    Generated text:  expected to be characterized by increased automation, intelligence, and integration with other technologies. Some possible future trends include:
+    Generated text:  likely to be characterized by several key trends:
     
-    1. Increased automation: AI is becoming increasingly capable of performing tasks that are currently performed by humans. This will lead to increased automation in industries such as manufacturing, transportation, and healthcare.
+    1. Increased integration with human intelligence: As AI becomes more sophisticated, it will become more integrated with human intelligence and cognitive abilities, allowing it to perform tasks more accurately and efficiently. This will be particularly useful in areas like healthcare, where AI can help doctors make more accurate diagnoses and treatment plans.
     
-    2. Intelligence: AI will continue to become more intelligent and capable of learning from experience. This will lead to the development of more advanced and sophisticated AI systems that can perform tasks that were previously thought to be beyond the capabilities of humans.
+    2. Development of more ethical and accountable AI: As AI becomes more advanced, there will be increased scrutiny of its development and deployment. Developers will need to ensure that AI is used ethically and responsibly, taking into account the potential impact on individuals and society as a whole.
     
-    3. Integration with other technologies: AI will continue to integrate with other technologies such as big data, machine learning
+    3. Greater emphasis on
 
 
 ### Streaming Asynchronous Generation
@@ -332,9 +298,7 @@ asyncio.run(main())
 
      [
 
-    Your
-
-     Name
+    Name
 
     ],
 
@@ -346,79 +310,75 @@ asyncio.run(main())
 
      a
 
-     professional
+     [
 
-     copy
+    Occup
 
-    writer
+    ation
 
-    ,
+    ]
 
-     writer
+     who
 
-    ,
+     was
 
-     and
-
-     content
-
-     creator
-
-    .
-
-     I
-
-     have
-
-     a
-
-     knack
-
-     for
-
-     crafting
-
-     compelling
-
-     content
-
-     that
-
-     can
-
-     help
-
-     businesses
-
-     boost
-
-     their
-
-     marketing
-
-     efforts
-
-    .
-
-     My
-
-     work
-
-     ranges
-
-     from
-
-     SEO
+     introduced
 
      to
 
-     social
+     you
 
-     media
+     in
 
-     marketing
+     [
 
-    ,
+    Your
+
+     Introduction
+
+    ].
+
+     I
+
+    'm
+
+     a
+
+     dedicated
+
+     [
+
+    Job
+
+     Title
+
+    ]
+
+     who
+
+     has
+
+     always
+
+     loved
+
+     [
+
+    Why
+
+     You
+
+     Became
+
+     a
+
+     [
+
+    Job
+
+     Title
+
+    ]],
 
      and
 
@@ -428,159 +388,169 @@ asyncio.run(main())
 
      always
 
-     looking
+     up
 
      for
 
-     new
+     [
 
-     ways
+    What
 
-     to
+     You
 
-     create
+     Can
 
-     impactful
+     Do
 
-     content
+     Next
 
-     that
+    ],
 
-     reson
+     no
 
-    ates
-
-     with
-
-     my
-
-     clients
-
-    .
-
-     Ready
-
-     to
-
-     take
-
-     on
+     matter
 
      the
 
-     world
+     situation
 
-     with
+    .
+
+     How
+
+     can
+
+     I
+
+     assist
 
      you
 
+     today
+
     ?
+
+     Remember
+
+    ,
+
+     everyone
+
+     is
+
+     different
+
+    ,
+
+     so
+
+     tailor
+
+     your
+
+     response
+
+     to
+
+     reflect
+
+     your
+
+     unique
+
+     character
+
+    .
+
+     Good
+
+     luck
+
+    !
+
+     [
+
+    Start
+
+     your
+
+     self
+
+    -int
+
+    roduction
+
+    ]
+
+     Alright
+
+    ,
+
+     let
+
+    's
+
+     get
+
+     started
+
+    !
 
      Let
 
     's
 
-     collaborate
+     see
 
-     to
+     how
 
-     make
+     much
+
+     I
+
+     can
+
+     do
+
+     for
+
+     you
+
+     today
+
+    .
+
+     [
+
+    End
 
      your
 
-     business
+     self
 
-     a
+    -int
 
-     success
+    roduction
 
-    !
+    ]
 
-     
+     Keep
 
-    🌟
+     on
 
-    💼
+     the
 
-    💼
-
-     #
-
-    Content
-
-    M
-
-    akers
-
-     #
-
-    Copy
-
-    writers
-
-     #
-
-    Content
-
-    Creator
-
-     #
-
-    Marketing
-
-    Pro
-
-     #
-
-    S
-
-    ME
-
-    s
-
-     #
-
-    Creat
-
-    ivity
-
-     
-
-    🌟
-
-    💼
-
-    💼
-
-     #
-
-    Self
-
-    Intro
-
-    
-    
-
-
-    Hey
-
-     there
-
-    ,
+     roll
 
     !
 
-     
+     [
 
-    🙌
+    Start
 
-    Hey
+     your
 
-     there
-
-    ,
-
-    !
+     self
 
     
     
@@ -595,81 +565,19 @@ asyncio.run(main())
 
      is
 
-     the
-
-     largest
-
-     city
-
-     in
-
-     the
-
-     European
-
-     Union
-
-     and
-
-     the
-
-     second
-
-     largest
-
-     in
-
-     the
-
-     world
-
-     by
-
-     population
-
-    .
-
-     The
-
-     city
-
-     is
-
      known
 
      for
 
      its
 
-     rich
+     iconic
 
-     history
+     landmarks
 
-    ,
+     such
 
-     vibrant
-
-     culture
-
-    ,
-
-     and
-
-     access
-
-     to
-
-     France
-
-    's
-
-     natural
-
-     beauty
-
-    ,
-
-     including
+     as
 
      the
 
@@ -691,8 +599,6 @@ asyncio.run(main())
 
     ,
 
-     and
-
      Notre
 
     -D
@@ -701,9 +607,107 @@ asyncio.run(main())
 
      Cathedral
 
+    ,
+
+     and
+
+     Le
+
+     Mou
+
+    le
+
+    .
+
+     The
+
+     city
+
+     is
+
+     also
+
+     famous
+
+     for
+
+     its
+
+     rich
+
+     history
+
+     and
+
+     culture
+
+    ,
+
+     with
+
+     several
+
+     important
+
+     museums
+
+    ,
+
+     theaters
+
+    ,
+
+     and
+
+     festivals
+
     .
 
      Paris
+
+     is
+
+     a
+
+     major
+
+     cultural
+
+     and
+
+     economic
+
+     center
+
+     and
+
+     is
+
+     often
+
+     referred
+
+     to
+
+     as
+
+     the
+
+     "Paris
+
+     of
+
+     the
+
+     world
+
+    ".
+
+     
+    
+
+
+    French
 
      is
 
@@ -717,83 +721,67 @@ asyncio.run(main())
 
      France
 
+    ,
+
      and
+
+     it
 
      is
 
-     home
+     the
 
-     to
+     language
 
-     many
+     of
 
-     famous
+     education
 
-     landmarks
+     and
+
+     government
+
+     in
+
+     the
+
+     country
+
+    .
+
+     Paris
+
+     has
+
+     a
+
+     diverse
+
+     population
 
     ,
 
      including
 
-     the
-
-     Lou
-
-    vre
-
-     and
-
-     the
-
-     Ch
-
-    amps
-
-    -E
-
-    lys
-
-    ées
-
-    .
-
-     It
-
-     is
-
-     also
-
-     the
-
-     birth
-
-    place
-
-     of
-
-     many
-
      French
 
-     artists
-
     ,
 
-     writers
+     African
 
     ,
 
      and
 
-     musicians
+     other
+
+     international
+
+     communities
 
     .
 
-     France
-
-    's
-
-     capital
+     The
 
      city
 
@@ -801,47 +789,29 @@ asyncio.run(main())
 
      a
 
-     major
+     popular
 
-     hub
+     tourist
 
-     for
-
-     business
+     destination
 
     ,
 
-     politics
-
-    ,
-
-     and
-
-     culture
-
-    ,
-
-     and
-
-     attracts
+     with
 
      millions
 
      of
 
-     visitors
+     tourists
+
+     visiting
 
      each
 
      year
 
-    .
-
-     Paris
-
-     is
-
-     a
+     for
 
     
     
@@ -854,21 +824,81 @@ asyncio.run(main())
 
      be
 
-     shaped
+     characterized
 
      by
 
      a
 
-     number
+     rapid
 
-     of
+     and
 
-     trends
+     un
+
+    quant
+
+    ifiable
+
+     transformation
+
+    .
+
+     AI
+
+     will
+
+     likely
+
+     continue
+
+     to
+
+     grow
+
+     and
+
+     evolve
+
+     at
+
+     an
+
+     unprecedented
+
+     pace
 
     ,
 
-     including
+     bringing
+
+     about
+
+     a
+
+     wide
+
+     range
+
+     of
+
+     new
+
+     developments
+
+     and
+
+     applications
+
+    .
+
+     Some
+
+     possible
+
+     trends
+
+     include
 
     :
     
@@ -880,13 +910,11 @@ asyncio.run(main())
 
      Increased
 
-     use
+     depth
 
-     of
+     and
 
-     AI
-
-     in healthcare
+     complexity
 
     :
 
@@ -896,35 +924,41 @@ asyncio.run(main())
 
      already
 
-     being
+     at
 
-     used
+     the
 
-     in
+     forefront
+
+     of
+
+     many
+
+     domains
+
+    ,
+
+     from
 
      healthcare
 
+     and
+
+     finance
+
      to
 
-     improve
-
-     diagnosis
-
-    ,
-
-     treatment
-
-    ,
+     manufacturing
 
      and
 
-     patient
-
-     care
+     transportation
 
     .
 
      As
+
+     the
 
      technology
 
@@ -948,19 +982,37 @@ asyncio.run(main())
 
      even
 
-     greater
+     deeper
 
-     use
+     integration
 
      of
 
      AI
 
-     in
+     with
 
-     this
+     other
 
-     area
+     industries
+
+    ,
+
+     leading
+
+     to
+
+     even
+
+     more
+
+     complex
+
+     and
+
+     advanced
+
+     systems
 
     .
     
@@ -970,17 +1022,9 @@ asyncio.run(main())
 
     .
 
-     Greater
+     Personal
 
-     reliance
-
-     on
-
-     AI
-
-     in
-
-     manufacturing
+    ization
 
     :
 
@@ -990,41 +1034,41 @@ asyncio.run(main())
 
      already
 
-     being
-
      used
 
      to
 
-     optimize
-
-     manufacturing
-
-     processes
-
-     and
-
-     improve
+     personalize
 
      the
 
-     quality
+     way
 
-     of
+     we
 
-     products
+     interact
+
+     with
+
+     the
+
+     world
+
+     around
+
+     us
 
     .
 
      As
 
-     technology
+     AI
 
-     continues
+     becomes
 
-     to
+     more
 
-     advance
+     sophisticated
 
     ,
 
@@ -1033,80 +1077,6 @@ asyncio.run(main())
      can
 
      expect
-
-     to
-
-     see
-
-     even
-
-     greater
-
-     use
-
-     of
-
-     AI
-
-     in
-
-     manufacturing
-
-    .
-    
-
-
-    3
-
-    .
-
-     Increased
-
-     use
-
-     of
-
-     AI
-
-     in
-
-     finance
-
-    :
-
-     AI
-
-     is
-
-     already
-
-     being
-
-     used
-
-     to
-
-     identify
-
-     fraud
-
-     and
-
-     improve
-
-     risk
-
-     management
-
-    .
-
-     As
-
-     technology
-
-     continues
-
-     to
 
     
 
