@@ -108,7 +108,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-19 12:35:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-19 19:49:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -120,11 +120,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-19 12:35:41] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-19 19:49:11] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-19 12:35:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-19 19:49:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -134,9 +134,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
 
 
 
@@ -146,12 +146,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-19 12:35:49,541 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-19 12:35:49] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-19 19:49:21,406 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-19 19:49:21] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in an urban setting. One taxi is fully visible with a driver standing beside it, possibly using the space under the vehicle to put some items or equipment on a stand. Another taxi is parked next to it. The street is lined with buildings, and there are glimpses of flags and other urban elements. The scene appears to be a busy city street with public transportation and everyday city life.
+    The image shows a yellow taxi parked on a street, and there are clothes hanging from a piece of string attached to the taxi. This scene is often referred to humorously as a "clothesline on wheels." It has become a common sight in New York City, where people use them to dry their laundry during cold winters.
 
 
 ### Call with Processor Output
@@ -176,7 +176,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a yellow taxi cab and a person holding a large plaid blanket. The taxi is parked on the side of the street, and the person appears to be displaying the blanket for display, possibly at an outdoor event or market. The person is wearing a yellow shirt and casual pants. The background includes storefronts with various signs and banners, and there are other street elements like trees and street signs.
+    A man dressed in a yellow shirt is in the process of folding a blue tarp, which appears to be government or market style. The tarp was flown by an unspecified public institution to mark the opening of the Canonignis Bridge. The tarp is known for its seamless stitch and wrinkle-resistant polyester fabric.
 
 
 ### Call with Precomputed Embeddings
@@ -232,7 +232,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street. There is a yellow taxi cab driving on the road. Attached to the back of the taxi cab, there is an ironing board with clothes draped over it, and a person is operating the ironing board. The scene appears to be humorous because it is highly unusual to see a taxi delivering clothes like this.
+    The image shows a yellow taxi parked on the side of a street in an urban area. The taxi has a colorful striped blanket draped over the roof, wrapped around the front splash guard. A person is standing next to the taxi, visible by their yellow sleeve shirt. The setting appears to be in a busy city environment with buildings, storefronts, and street signs visible in the background.
 
 
 ## Querying Llama 4 Vision Model
