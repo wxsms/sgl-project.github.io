@@ -105,7 +105,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-18 16:11:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-19 07:20:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +113,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-18 16:11:34] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-19 07:20:20] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-18 16:11:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-19 07:20:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +127,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.85s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.36s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-18 16:11:46,248 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-18 16:11:46] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-19 07:20:35,249 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-19 07:20:35] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in what appears to be a street in a city, likely New York given the cab uniforms and urban architecture. There are two yellow taxis parked side by side. The person on the right taxi is mending a blanket with a hammer and a tool that resembles a vice. The street is lined with tall buildings featuring large windows and signs, and there are some pedestrians and cars in the background. The weather seems to be clear, given the well-lit scene and the attire of the individuals involved in the mending activity. This seems to be a humorous and unusual depiction of city life, juxtaposing the fast-paced world
+    I'm not sure what specifically is being shown here, as the description seems to be more related to groceries rather than clothes. Could you please clarify which image you are referring to, or provide additional context about what you would like me to explain?
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of two yellow cabs parked on a street. One of the taxis has some laundry hung out on an ironing board attached to the back of the vehicle, unusual for an urban setting. The cabs are equipped with illumination lights and reflectors, typical for taxi operations. There are also some storefronts and stores visible in the background, including a были sign displaying "616." The overall atmosphere gives a sense of a busy urban environment.
+    The image shows a yellow cab (taxi) driving on a city street. The taxi is aisle aware and has rolled its right door open. The driver appears to be operating a rear-view mirror that is extended from the back of the vehicle. The rear-view mirror is mounted on a metal or plastic tripod setup. The driver is wearing a bright yellow shirt and is using the rear-view mirror, possibly for the purpose of cleaning it or adjusting it. The streets are lined with buildings and trees, and there are street signs and traffic lights visible in the background. The scene appears to be set in a busy urban environment during daylight hours.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    On the side of the picture, there are three American flags.
+    The image shows a yellow taxi with a clothesline in front of it, likely part of an art installation or protest. The clothesline stretches across the street and has various clothes pinned to it, possibly representing discarded or unwanted clothes. There are people surrounding the taxi, some of whom are interacting with the clothes or the clothesline. The scene appears to take place in an urban setting with buildings and street furniture in the background.
 
 
 ## Querying Llama 4 Vision Model
