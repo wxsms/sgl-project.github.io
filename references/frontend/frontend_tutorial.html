@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=1bc837bb"></script>
+    <script src="../../_static/documentation_options.js?v=d0c19fba"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -551,27 +551,38 @@ document.write(`
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:51: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-19 07:24:45] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-19 12:40:34] `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[2026-04-19 07:24:45] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[2026-04-19 12:40:35] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-19 07:24:53] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-19 12:40:41] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.77it/s]
-2026-04-19 07:24:59,298 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-19 07:24:59] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06&lt;00:00,  9.47it/s]
-Capturing num tokens (num_tokens=4 avail_mem=117.70 GB): 100%|██████████| 58/58 [00:05&lt;00:00, 10.50it/s]
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
+2026-04-19 12:40:48,309 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-19 12:40:48] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06&lt;00:00,  9.36it/s]
+Capturing num tokens (num_tokens=4 avail_mem=61.59 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 12.57it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -587,7 +598,7 @@ Capturing num tokens (num_tokens=4 avail_mem=117.70 GB): 100%|██████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39202
+Server started on http://localhost:36662
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -604,7 +615,7 @@ Server started on http://localhost:39202
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-04-19 07:25:18] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-04-19 12:41:06] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -636,7 +647,7 @@ Server started on http://localhost:39202
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Spain - Madrid<br>3. Australia - Canberra</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their respective capitals:<br><br>1. **France - Paris**<br>2. **Sweden - Stockholm**<br>3. **Mexico - Mexico City**</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -666,13 +677,13 @@ Server started on http://localhost:39202
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Australia - Canberra<br>3. Japan - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure! Here's a list of three countries and their respective capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here's another list of three countries and their capitals:<br><br>1. Canada - Ottawa<br>2. Mexico - Mexico City<br>3. Brazil - Brasília</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. India - New Delhi<br>2. Canada - Ottawa<br>3. Spain - Madrid</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -714,7 +725,7 @@ Server started on http://localhost:39202
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>You don't actually need a calculator to solve this; it's a straightforward multiplication. The answer is:<br><br>2 * 2 = 4<br><br>But if you insist on using a calculator, here’s how you would enter it:<br><br>1. On a basic calculator, you would press: `2`, then the `x` (multiplication) button, then `2`, and finally the `=` or `Enter` button.<br>2. On a computer calculator, you would type `2 * 2 =`.<br><br>The result will always be 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2<br><br>Let me use the arithmetic operation to solve this.<br><br>1. I multiply 2 by 2.<br>2. 2 * 2 = 4<br><br>Therefore, the answer is 4. No need for a calculator for this simple multiplication.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -754,7 +765,7 @@ Server started on http://localhost:39202
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>### 1. Balanced Diet<br>Maintaining a balanced diet is crucial for overall health and well-being. A balanced diet includes:<br>- **Macronutrients:** Carbohydrates, proteins, and fats.<br>- **Micronutrients:** Vitamins and minerals.<br>- **Fibers:** From fruits, vegetables, and whole grains.<br>- **Limiting:** Processed foods, sugary drinks, and excessive sodium.<br><br>This helps support bodily functions, promote healthy weight, enhance energy levels, and boost the immune system.<br><br>### 2. Regular Exercise<br>Regular exercise is essential for maintaining overall health and well-being. Aim for:<br>- **Aerobic Activity:** At least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week.<br>- **Strength Training:** Incorporate strength exercises at least two days a week.<br>- **Consistency:** Make exercise a daily habit, such as a daily walk, sports activity, or fitness class.<br><br>Regular physical activity improves cardiovascular health, strengthens muscles and bones, increases energy levels, improves sleep quality, and reduces the risk of chronic diseases.<br><br>By following these two tips, you can significantly enhance your overall health and well-being.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of nutrient-rich foods from all food groups, including fruits, vegetables, whole grains, lean proteins, and healthy fats. Limiting processed and high-sugar foods helps support a healthy weight, reduce the risk of chronic diseases, and improve overall well-being.<br><br>2. **Regular Exercise**: Engaging in physical activity that you enjoy, such as walking, running, cycling, or any form of exercise that raises your heart rate. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week, plus two days of strength training, to enhance your physical and mental health.<br><br>Together, a balanced diet and regular exercise form the foundations of a healthy lifestyle, helping you maintain optimal health and improve your quality of life.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -827,7 +838,7 @@ Server started on http://localhost:39202
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "OHLCW",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "stag",<br>    "bogart": "Ginny Weasley"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holly",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Thestrals"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -862,7 +873,7 @@ Server started on http://localhost:39202
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 25.22it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 31.33it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -981,29 +992,32 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:51: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-19 07:25:33] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-19 12:41:18] `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[2026-04-19 07:25:34] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[2026-04-19 12:41:19] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-04-19 07:25:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-04-19 12:41:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-19 07:25:42] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-19 12:41:27] `torch_dtype` is deprecated! Use `dtype` instead!
 The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-04-19 07:25:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-04-19 12:41:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Multi-thread loading shards: 100% Completed | 5/5 [00:06&lt;00:00,  1.35s/it]
+Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.43it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
-2026-04-19 07:25:59,900 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-19 07:25:59] Unexpected error during package walk: cutlass.cute.experimental
+2026-04-19 12:41:39,792 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-19 12:41:39] Unexpected error during package walk: cutlass.cute.experimental
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1017,7 +1031,7 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:06&lt;00:00,  1.35s/it]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31438
+Server started on http://localhost:39402
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1033,7 +1047,7 @@ Server started on http://localhost:31438
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-04-19 07:26:03] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-04-19 12:41:43] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1067,7 +1081,7 @@ Server started on http://localhost:31438
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man standing on the trunk of a yellow taxi, seemingly ironing a pair of jeans. The taxi has an ironing board set up on its trunk, a bold and unusual way to do laundry in the middle of a busy street. The setting appears to be a city street with other taxis in the background, adding to the urban atmosphere. This scene takes advantage of the unique shape and space on a taxi trunk for an unconventional life hack or perhaps a display or advertisement.</strong></div>
+<strong style='color: #00008B;'>The image shows a person standing on the back of a yellow taxi cab performing what appears to be ironing clothes. The individual is wearing a yellow shirt and is using crutches for balance. There is a shooting board with clothes on it, and the person is using what looks like a temporary ironing setup, with an iron and a folded blue shirt on the board. The background includes a city street scene with other taxis, buildings, and a pedestrian entrance. The setting suggests an unusual and possibly humorous scene, as the activity is not typically done while balancing on a moving vehicle.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:

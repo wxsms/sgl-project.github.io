@@ -46,6 +46,9 @@ chat_template = "qwen2-vl"
 example_image_url = "https://raw.githubusercontent.com/sgl-project/sglang/main/examples/assets/example_image.png"
 ```
 
+    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+
+
 
 ```python
 from io import BytesIO
@@ -105,7 +108,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-19 07:20:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-19 12:35:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -113,11 +120,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-19 07:20:20] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-19 12:35:41] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-19 07:20:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-19 12:35:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -127,9 +134,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -139,12 +146,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-19 07:20:35,249 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-19 07:20:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-19 12:35:49,541 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-19 12:35:49] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    I'm not sure what specifically is being shown here, as the description seems to be more related to groceries rather than clothes. Could you please clarify which image you are referring to, or provide additional context about what you would like me to explain?
+    The image shows two yellow taxis in an urban setting. One taxi is fully visible with a driver standing beside it, possibly using the space under the vehicle to put some items or equipment on a stand. Another taxi is parked next to it. The street is lined with buildings, and there are glimpses of flags and other urban elements. The scene appears to be a busy city street with public transportation and everyday city life.
 
 
 ### Call with Processor Output
@@ -169,7 +176,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow cab (taxi) driving on a city street. The taxi is aisle aware and has rolled its right door open. The driver appears to be operating a rear-view mirror that is extended from the back of the vehicle. The rear-view mirror is mounted on a metal or plastic tripod setup. The driver is wearing a bright yellow shirt and is using the rear-view mirror, possibly for the purpose of cleaning it or adjusting it. The streets are lined with buildings and trees, and there are street signs and traffic lights visible in the background. The scene appears to be set in a busy urban environment during daylight hours.
+    The image shows a street scene with a yellow taxi cab and a person holding a large plaid blanket. The taxi is parked on the side of the street, and the person appears to be displaying the blanket for display, possibly at an outdoor event or market. The person is wearing a yellow shirt and casual pants. The background includes storefronts with various signs and banners, and there are other street elements like trees and street signs.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +232,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi with a clothesline in front of it, likely part of an art installation or protest. The clothesline stretches across the street and has various clothes pinned to it, possibly representing discarded or unwanted clothes. There are people surrounding the taxi, some of whom are interacting with the clothes or the clothesline. The scene appears to take place in an urban setting with buildings and street furniture in the background.
+    The image shows a scene on a city street. There is a yellow taxi cab driving on the road. Attached to the back of the taxi cab, there is an ironing board with clothes draped over it, and a person is operating the ironing board. The scene appears to be humorous because it is highly unusual to see a taxi delivering clothes like this.
 
 
 ## Querying Llama 4 Vision Model
