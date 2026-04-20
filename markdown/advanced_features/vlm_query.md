@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-20 15:30:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 16:59:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -123,15 +123,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-20 15:30:59] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-20 17:00:02] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-20 15:31:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 17:00:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.59it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.79s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.35s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.41s/it]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-20 15:31:09,062 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-20 15:31:09] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-20 17:00:16,188 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-20 17:00:16] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene featuring two yellow taxis. One taxi is near the edge of the image, and the second taxi is closer to the foreground. On the back of the second taxi, there are several American flags hanging to dry. A person is hanging out some laundry from the back of the second taxi. The background includes tall buildings with large windows and several street signs.
+    The photo depicts an unusual scene where a scene of two yellow taxis appears to be cut together. The taxi driver has hung laundry on the back of a painted backseat. The laundry features a blue shirt, a red shirt, and a white shirt, along with an American flag. The entire scene creates the illusion that one taxi has been painted over and integrated into the other with the hanging laundry.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a city street scene with two yellow taxis. One of the taxis is being occupied by a man standing on the open back seat, holding a hanging laundry basket. The other taxi is in the background, partially cut off by the frame. The street appears to be in an urban area with buildings and other vehicles in the background. The weather seems clear, and there are no visible pedestrians in the immediate area.
+    The image shows a yellow taxi in New York City. There is a person standing near the cab, trying to clean it with a blue cloth. The scene appears to be humorous as the person is not actually cleaning the cab; they are balancing the cloth on a long stick, creating an unusual and comical situation. The background includes other elements like another car, traffic signs, and buildings that are typical of a busy urban street in an American city.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene in what appears to be an urban environment, likely a city street. The main subjects in the image are a yellow taxi cab and a person dressed in yellow. The color scheme of the taxi and the person's clothing matches the yellow of the taxi, creating a visually cohesive scene. The background includes buildings, pedestrians, and some other vehicles, suggesting that this is a busy area, possibly during a day with moderate traffic. The lighting indicates that it might be daytime.
+    It appears you have provided a phrase, "What's shown here," but I don't have the context or image to provide a reply. This phrase alone doesn't have much information, so I can't identify or describe what is shown. If you could provide more details about the setting or context, I'd be happy to try to help further.
 
 
 ## Querying Llama 4 Vision Model
