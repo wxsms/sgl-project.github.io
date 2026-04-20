@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-20 19:27:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 21:33:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-20 19:27:29] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-20 21:33:26] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-20 19:27:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 21:33:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.41it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-20 19:27:39,368 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-20 19:27:39] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-20 21:33:36,751 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-20 21:33:36] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in an urban area with a yellow taxi cab driving down a street. The taxi has a clothesline attached to its back, with several pieces of clothing hanging from it. The clothing includes shirts and jackets. The background appears to have some buildings, and there are people walking on the sidewalk.
+    The image shows a man suspended between two taxis on a temporary support structure. The scenario appears to be part of a stunt or art installation called "The Drunk Blond," created by artist Jon Lee. In this stunt, the man is temporarily suspended between two taxis, often used for cab-handling demonstrations, while being dried with nooses and wetting the nooses to demonstrate how hot cab drivers' windshields can get during hot summer街days.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi in New York City, parked along a street. The taxi is moving its wipers back and forth in a traditional "banking the wipers" motion to align them properly before the driver proceeds. This is a common task for taxi drivers and is meant to ensure that the wipers are positioned correctly, ideally at the top of the window next time the taxi is driven. The vehicle also displaysUrban Art, an art piece placed in the front of the taxi by a representative of the painting company Urban Art. The art features various colors and shapes, including a watercolor sun, and it looks fun and playful
+    It looks like an employee of a clothing store is pushing a cart with various pieces of clothing behind a yellow taxi. The employee is wearing a bright yellow shirt. The truck is moving along a typical city street.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with a yellow taxi cab and a person draped over a jalopy truck on the side of what appears to be a street in an urban environment. The person seems to be engaged in some form of creative or artistic activity. The background includes buildings and street signs, indicating it is likely in a city setting, possibly during a rally or protest, given the nature of the scene and the presence of theতততততtat রা.তততততততততততततততততততততततततততততততততত
+    The image shows a scene of a man hanging clothes on a清华大学 signpost in what appears to be a street filled with yellow taxis.
 
 
 ## Querying Llama 4 Vision Model

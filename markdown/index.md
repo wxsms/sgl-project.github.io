@@ -55,6 +55,7 @@ advanced\_features/object\_storage.md
 advanced\_features/hyperparameter\_tuning.md
 advanced\_features/attention\_backend.md
 advanced\_features/speculative\_decoding.ipynb
+advanced\_features/adaptive\_speculative\_decoding.md
 advanced\_features/structured\_outputs.ipynb
 advanced\_features/structured\_outputs\_for\_reasoning\_models.ipynb
 advanced\_features/tool\_parser.ipynb

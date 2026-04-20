@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=949beb06"></script>
+    <script src="../_static/documentation_options.js?v=03e30a6b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -53,7 +53,7 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Structured Outputs" href="structured_outputs.html" />
+    <link rel="next" title="Adaptive Speculative Decoding" href="adaptive_speculative_decoding.html" />
     <link rel="prev" title="Attention Backend" href="attention_backend.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,6 +186,7 @@
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Speculative Decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adaptive_speculative_decoding.html">Adaptive Speculative Decoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tool_parser.html">Tool Parser</a></li>
@@ -568,6 +569,7 @@ document.write(`
 <ul class="simple">
 <li><p><strong>Best speed/quality (recommended)</strong>: Use <strong>EAGLE-3</strong> with <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE3</span></code>.</p></li>
 <li><p><strong>Strong default / broad compatibility</strong>: Use <strong>EAGLE-2</strong> with <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE</span></code>.</p></li>
+<li><p><strong>Workload acceptance changes over time</strong>: Use <a class="reference internal" href="adaptive_speculative_decoding.html"><span class="std std-doc"><strong>Adaptive speculative decoding</strong></span></a> on top of <strong>EAGLE</strong> with <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span></code>.</p></li>
 <li><p><strong>Lower <code class="docutils literal notranslate"><span class="pre">lm_head</span></code> overhead for EAGLE-2</strong>: Enable <strong>FR-Spec</strong> with <code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code>.</p></li>
 <li><p><strong>Model is MTP-enabled</strong>: Use <strong>MTP via speculative decoding</strong> (often with small <code class="docutils literal notranslate"><span class="pre">speculative_num_steps/topk/num_draft_tokens</span></code>, see the example section).</p></li>
 <li><p><strong>You have a smaller draft LLM</strong>: Use <strong>STANDALONE</strong> (<code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">STANDALONE</span></code>).</p></li>
@@ -724,7 +726,8 @@ For further details please see the <a class="reference external" href="https://a
 </table>
 </div>
 <p>These parameters are mostly the same for EAGLE-2 and EAGLE-3. <code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code> is ignored for EAGLE-3 models.
-For <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code>, and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code>: leave all three unset to use auto-tuning, or set all three explicitly when tuning.</p>
+For <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code>, and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code>: leave all three unset to use auto-tuning, or set all three explicitly when tuning.
+If you use EAGLE with <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span></code> and your acceptance rate varies across requests, see <a class="reference internal" href="adaptive_speculative_decoding.html"><span class="std std-doc">Adaptive Speculative Decoding</span></a>.</p>
 <p>You can find the best combinations of these parameters with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/scripts/playground/bench_speculative.py">bench_speculative.py</a>.</p>
 <section id="eagle-2-decoding">
 <h3>EAGLE-2 Decoding<a class="headerlink" href="#eagle-2-decoding" title="Link to this heading">#</a></h3>
@@ -1378,11 +1381,11 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
       </div>
     </a>
     <a class="right-next"
-       href="structured_outputs.html"
+       href="adaptive_speculative_decoding.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Structured Outputs</p>
+        <p class="prev-next-title">Adaptive Speculative Decoding</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
