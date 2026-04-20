@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-20 17:12:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 19:27:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -123,15 +123,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-20 17:12:51] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-20 19:27:29] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-20 17:12:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 19:27:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.83s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.41it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.32s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.40s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-20 17:13:03,770 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-20 17:13:03] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-20 19:27:39,368 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-20 19:27:39] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image depicts a street scene in an urban area, likely in New York City, where a yellow taxi and a silver SUV are parked diagonally relative to the road. A person is working at the rear of the silver SUV, lifting a yellow tarp out of it. The person has a hairdryer or hand-held device in their hand, suggesting they might be drying or preparing to hang the tarp. The setting appears to be during the daytime, and there are buildings and streetlights visible in the background. The scene is unusual, as one might expect such a setup in a less urbanized area or in a different context.
+    The image shows a scene in an urban area with a yellow taxi cab driving down a street. The taxi has a clothesline attached to its back, with several pieces of clothing hanging from it. The clothing includes shirts and jackets. The background appears to have some buildings, and there are people walking on the sidewalk.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis stopped on a city street. One taxi is driving directly towards the camera, while the other taxi is stationary to the left, with its driver facing the parked vehicles. The driver of the left taxi appears to be hanging clothes out of the back of the vehicle, likely as part of an act of charity or a public service campaign. There are also a few patches of greenery visible in the background, suggesting the city street is lined with trees or perhaps has a green area nearby. The scene looks to be in an urban area with buildings and storefronts visible in the background.
+    The image shows a yellow taxi in New York City, parked along a street. The taxi is moving its wipers back and forth in a traditional "banking the wipers" motion to align them properly before the driver proceeds. This is a common task for taxi drivers and is meant to ensure that the wipers are positioned correctly, ideally at the top of the window next time the taxi is driven. The vehicle also displaysUrban Art, an art piece placed in the front of the taxi by a representative of the painting company Urban Art. The art features various colors and shapes, including a watercolor sun, and it looks fun and playful
 
 
 ### Call with Precomputed Embeddings
@@ -239,9 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in what appears to be a busy city street. There is a yellow taxi cab driving on the road. Attached to the back of the taxi is a small luggage rack or baggage band on which an item of clothing is drying in the air. There are also a few scattered brochures or flyers on the rack. This setup indicates the taxi driver has parked the car along the street and is allowing their luggage to dry in the air, using the natural wind to help it dry rather than an actual dryer.
-    
-    The background shows a commercial area with some storefronts and people, suggesting that this is an urban environment.
+    The image shows a scene with a yellow taxi cab and a person draped over a jalopy truck on the side of what appears to be a street in an urban environment. The person seems to be engaged in some form of creative or artistic activity. The background includes buildings and street signs, indicating it is likely in a city setting, possibly during a rally or protest, given the nature of the scene and the presence of theতততততtat রা.তততততততততততततততততততততततततততততততততত
 
 
 ## Querying Llama 4 Vision Model
