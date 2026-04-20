@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-20 04:27:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 05:02:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-20 04:27:54] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-20 05:02:15] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-20 04:27:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 05:02:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.48s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.40it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.20s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-20 04:28:05,287 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-20 04:28:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-20 05:02:26,127 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-20 05:02:26] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a public property enforcement task force, believing that a truck driver was giving his towel to use as a mirror. The driver had put the towel on his mirror while driving to avoid penalty scalps, which are humorously referred to as penalties in the manages.
+    It looks like a person is ironing jeans on a street. There are two yellow taxis in the background, and the person appears to be in the process of changing clothes downtown.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you described shows a man in a yellow shirt attending to his luggage on the back of a taxi in what appears to be a city setting, probably in New York given the style of the taxi. Luggage is strapped to the back of the taxi with red straps, visible amidst the urban backdrop. The surroundings include typical city elements such as buildings, storefronts, and an evident city street scene. Flags can be seen hanging above the scene, possibly from the city's emblem or a nearby building. A red and yellow taxi cab is parked on the street. The man in the yellow shirt seems to be either placing or checking on an
+    You mentioned "What's shown here," but I'm not sure what specific item or scene you're asking about. Could you please provide more context or specify which scene or object you're referring to?
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,16 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a red fire engine and a yellow taxi cab (taxis are also blue in both咒 beaten 和 the k ) in a downtown area with tall buildings.
+    In the image, there are two yellow taxis on a city street. The taxis are positioned side by side. Each taxi has a colorful scarf draped over the back of the driver's seat. The scarf appears to be blue and red, possibly part of a street performer's act. Some flags, resembling those often associated with sports or events, can be seen fluttering in the background.
+    
+    To break it down step-by-step:
+    
+    1. **坚灯灯（Yellow Taxis）**:
+       - Two yellow taxis are present.
+       - One taxi is slightly ahead of the other.
+       - Both taxis are parked on the street.
+    
+    2
 
 
 ## Querying Llama 4 Vision Model
