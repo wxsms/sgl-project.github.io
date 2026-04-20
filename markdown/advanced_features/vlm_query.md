@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-20 21:33:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 21:44:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-20 21:33:26] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-20 21:44:40] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-20 21:33:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 21:44:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-20 21:33:36,751 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-20 21:33:36] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-20 21:44:49,004 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-20 21:44:49] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man suspended between two taxis on a temporary support structure. The scenario appears to be part of a stunt or art installation called "The Drunk Blond," created by artist Jon Lee. In this stunt, the man is temporarily suspended between two taxis, often used for cab-handling demonstrations, while being dried with nooses and wetting the nooses to demonstrate how hot cab drivers' windshields can get during hot summer街days.
+    The image shows a scene in what appears to be a city street. There are two yellow taxis visible, with one taxi stopped on the road and a person standing beside it, seemingly working or manipulating something on top of the vehicle. This could be related to air conditioning or other vehicle maintenance. The background shows buildings with commercial signs, indicating it might be a busy commercial district. The person in the image is wearing a bright yellow shirt and appears to be attending to the vehicle's back window.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like an employee of a clothing store is pushing a cart with various pieces of clothing behind a yellow taxi. The employee is wearing a bright yellow shirt. The truck is moving along a typical city street.
+    The image shows a yellow taxi cab with boxes marked "Exit" attached to the back window, suggesting a homeless encampment or a protest event. The boxes are red and the word "EXIT" is prominently displayed on them. The individual in yellow appears to be involved in this activity, possibly as part of a protest-related demonstration or action.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene of a man hanging clothes on a清华大学 signpost in what appears to be a street filled with yellow taxis.
+    It appears that there is a taxi driver handing out business cards on a city street. The taxi is yellow, and the street is lined with buildings and flags. The driver is wearing a yellow shirt and standing next to the rear of the taxi. The gesture suggests the driver is engaging with passersby by distributing business cards.
 
 
 ## Querying Llama 4 Vision Model

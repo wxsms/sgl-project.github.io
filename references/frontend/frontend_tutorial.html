@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=03e30a6b"></script>
+    <script src="../../_static/documentation_options.js?v=3bdd2fec"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -566,11 +566,11 @@ Skipping import of cpp extensions due to incompatible torch version. Please upgr
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-[2026-04-20 21:27:55] No platform detected. Using base SRTPlatform with defaults.
+[2026-04-20 21:51:02] No platform detected. Using base SRTPlatform with defaults.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-20 21:27:56] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-20 21:51:04] `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[2026-04-20 21:27:57] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[2026-04-20 21:51:04] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 No platform detected. Using base SRTPlatform with defaults.
@@ -578,15 +578,15 @@ No platform detected. Using base SRTPlatform with defaults.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-20 21:28:05] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-20 21:51:11] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.53it/s]
-2026-04-20 21:28:11,707 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-20 21:28:11] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  8.14it/s]
-Capturing num tokens (num_tokens=4 avail_mem=119.60 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 12.36it/s]
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.50it/s]
+2026-04-20 21:51:17,561 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-20 21:51:17] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00,  9.99it/s]
+Capturing num tokens (num_tokens=4 avail_mem=61.59 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 13.64it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -602,7 +602,7 @@ Capturing num tokens (num_tokens=4 avail_mem=119.60 GB): 100%|██████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:36540
+Server started on http://localhost:39158
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -619,7 +619,7 @@ Server started on http://localhost:36540
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-04-20 21:28:31] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-04-20 21:51:35] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -651,7 +651,7 @@ Server started on http://localhost:36540
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure, here are three countries and their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -681,13 +681,13 @@ Server started on http://localhost:36540
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here's a list of three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Brazil** - Brasília</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Australia** - Canberra<br>3. **Brazil** - Brasília</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Canada** - Ottawa<br>3. **India** - New Delhi</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Japan** - Tokyo<br>3. **Mexico** - Mexico City</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -729,7 +729,7 @@ Server started on http://localhost:36540
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>The result of 2 * 2 is 4. You don't really need a calculator for this, but if you prefer to use one, you can get the same result. <br><br>So, 2 * 2 = 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2<br><br>The result of 2 * 2 is 4.<br><br>Therefore, the final answer is 4. You don't actually need a calculator for this, as it's a simple multiplication that can be done mentally or written out.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -769,7 +769,7 @@ Server started on http://localhost:36540
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet:**<br>   - Consume a variety of fruits and vegetables.<br>   - Include whole grains, lean proteins, and healthy fats.<br>   - Limit processed foods, sugars, and unhealthy fats.<br>   - Stay hydrated by drinking plenty of water.<br><br>2. **Regular Exercise:**<br>   - Choose activities you enjoy.<br>   - Engage in moderate-intensity exercise for at least 150 minutes per week.<br>   - Incorporate a mix of aerobic and strength training activities.<br>   - Maintain consistency to reap the benefits of regular physical activity.<br><br>Would you like more details on either of these tips or any related information?</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: <br>   - Consume a variety of foods, including plenty of fruits and vegetables, whole grains, and lean proteins.<br>   - Limit processed foods, sugars, and saturated fats.<br>   - Stay hydrated by drinking plenty of water.<br>   - Support your immune system, maintain energy levels, and improve overall health.<br><br>2. **Regular Exercise**:<br>   - Engage in physical activity regularly to enhance cardiovascular health, strengthen muscles and bones, and boost immune function.<br>   - Help manage weight and reduce the risk of chronic diseases.<br>   - Release endorphins to improve mood and reduce stress, anxiety, and depression.<br>   - Enhance overall quality of life and contribute to a happier, healthier existence.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -842,7 +842,7 @@ Server started on http://localhost:36540
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Pure-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Vernaise",<br>        "core": "Flokeweed",<br>        "length": 11.2<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Kreacher"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Ash",<br>        "core": "Phoenix Feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Night terror"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -877,7 +877,7 @@ Server started on http://localhost:36540
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 25.00it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 32.85it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1000,13 +1000,13 @@ Skipping import of cpp extensions due to incompatible torch version. Please upgr
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-[2026-04-20 21:28:42] No platform detected. Using base SRTPlatform with defaults.
+[2026-04-20 21:51:44] No platform detected. Using base SRTPlatform with defaults.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-20 21:28:44] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-20 21:51:46] `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[2026-04-20 21:28:45] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[2026-04-20 21:51:46] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-04-20 21:28:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-04-20 21:51:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 No platform detected. Using base SRTPlatform with defaults.
@@ -1014,17 +1014,17 @@ No platform detected. Using base SRTPlatform with defaults.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-20 21:28:52] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-20 21:51:53] `torch_dtype` is deprecated! Use `dtype` instead!
 The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-04-20 21:28:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-04-20 21:51:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.65it/s]
+Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.40it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
-2026-04-20 21:29:05,669 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-20 21:29:05] Unexpected error during package walk: cutlass.cute.experimental
+2026-04-20 21:52:04,637 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-20 21:52:04] Unexpected error during package walk: cutlass.cute.experimental
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1038,7 +1038,7 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.65it/s]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:30630
+Server started on http://localhost:32754
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1054,7 +1054,7 @@ Server started on http://localhost:30630
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-04-20 21:29:08] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-04-20 21:52:08] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1088,7 +1088,7 @@ Server started on http://localhost:30630
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows an individual on a city street performing an unusual task. They are standing on the rear bumper of a taxi and ironing a piece of clothing on an ironing board set up there. The surroundings suggest this is in an urban area, as there are taxis and the format of the buildings in the background indicate a metropolitan city setting.</strong></div>
+<strong style='color: #00008B;'>The image shows a person performing a unique and humorous act on a street. The individual, dressed in a bright yellow shirt, is using an iron and an ironing board, but instead of explaining an amusing or点亮的 Clothes care routine, they are ironing empty Space on the trunk of a yellow taxi. The scene appears to be a playful mix of practicality in an unconventional context, with a background that includes a city street, buildings, and other taxis, suggesting an urban setting.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
