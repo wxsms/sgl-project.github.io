@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-20 00:41:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 04:27:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-20 00:41:45] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-20 04:27:54] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-20 00:41:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 04:27:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.48s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.20s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-20 00:41:53,968 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-20 00:41:53] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-20 04:28:05,287 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-20 04:28:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows three yellow taxis driving on a city street, likely in New York City. The drivers are using their backcabs as clotheslines to hang out laundry. This scene is not typical, as was observed during the COVID-19 pandemic, when maximum occupancy restrictions were often in place and reliance on taxis for transportation was limited. The overall scene seems whimsical and humorous due to the unconventional act of washing clothes while stuck in traffic.
+    The image shows a public property enforcement task force, believing that a truck driver was giving his towel to use as a mirror. The driver had put the towel on his mirror while driving to avoid penalty scalps, which are humorously referred to as penalties in the manages.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man kneeling on a step stool, attempting to pick up or hold onto suspenders from the windows of a yellow taxi cab. The taxi cab is parked on a street in a city, surrounded by other street scenes such as storefronts, windows, and street signs. The setting appears to be urban and the scene is unusual and humorous due to the man's actions with the suspenders, rather than operating the vehicle.
+    The image you described shows a man in a yellow shirt attending to his luggage on the back of a taxi in what appears to be a city setting, probably in New York given the style of the taxi. Luggage is strapped to the back of the taxi with red straps, visible amidst the urban backdrop. The surroundings include typical city elements such as buildings, storefronts, and an evident city street scene. Flags can be seen hanging above the scene, possibly from the city's emblem or a nearby building. A red and yellow taxi cab is parked on the street. The man in the yellow shirt seems to be either placing or checking on an
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow-taxi-sized advertising display tied to a car in New York City. The display features a colorful array of folded up clothes, likely sandwiches or lunchables, promoting a meal delivery service. The display is set up to attract a large number of passersby, taking advantage of the visibility of the taxi while it is parked at a bus stop or traffic light intersection.
+    The image shows a red fire engine and a yellow taxi cab (taxis are also blue in both咒 beaten 和 the k ) in a downtown area with tall buildings.
 
 
 ## Querying Llama 4 Vision Model
