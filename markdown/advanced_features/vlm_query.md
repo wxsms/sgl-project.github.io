@@ -99,6 +99,9 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
+    No platform detected. Using base SRTPlatform with defaults.
+
+
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
@@ -108,11 +111,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-19 19:49:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 00:41:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+
+
+    No platform detected. Using base SRTPlatform with defaults.
+    No platform detected. Using base SRTPlatform with defaults.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
@@ -120,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-19 19:49:11] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-20 00:41:45] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-19 19:49:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 00:41:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -134,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -146,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-19 19:49:21,406 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-19 19:49:21] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-20 00:41:53,968 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-20 00:41:53] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi parked on a street, and there are clothes hanging from a piece of string attached to the taxi. This scene is often referred to humorously as a "clothesline on wheels." It has become a common sight in New York City, where people use them to dry their laundry during cold winters.
+    The image shows three yellow taxis driving on a city street, likely in New York City. The drivers are using their backcabs as clotheslines to hang out laundry. This scene is not typical, as was observed during the COVID-19 pandemic, when maximum occupancy restrictions were often in place and reliance on taxis for transportation was limited. The overall scene seems whimsical and humorous due to the unconventional act of washing clothes while stuck in traffic.
 
 
 ### Call with Processor Output
@@ -176,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    A man dressed in a yellow shirt is in the process of folding a blue tarp, which appears to be government or market style. The tarp was flown by an unspecified public institution to mark the opening of the Canonignis Bridge. The tarp is known for its seamless stitch and wrinkle-resistant polyester fabric.
+    The image shows a man kneeling on a step stool, attempting to pick up or hold onto suspenders from the windows of a yellow taxi cab. The taxi cab is parked on a street in a city, surrounded by other street scenes such as storefronts, windows, and street signs. The setting appears to be urban and the scene is unusual and humorous due to the man's actions with the suspenders, rather than operating the vehicle.
 
 
 ### Call with Precomputed Embeddings
@@ -232,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi parked on the side of a street in an urban area. The taxi has a colorful striped blanket draped over the roof, wrapped around the front splash guard. A person is standing next to the taxi, visible by their yellow sleeve shirt. The setting appears to be in a busy city environment with buildings, storefronts, and street signs visible in the background.
+    The image shows a yellow-taxi-sized advertising display tied to a car in New York City. The display features a colorful array of folded up clothes, likely sandwiches or lunchables, promoting a meal delivery service. The display is set up to attract a large number of passersby, taking advantage of the visibility of the taxi while it is parked at a bus stop or traffic light intersection.
 
 
 ## Querying Llama 4 Vision Model
