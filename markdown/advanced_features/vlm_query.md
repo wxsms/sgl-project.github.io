@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-20 16:59:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 17:12:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -123,15 +123,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-20 17:00:02] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-20 17:12:51] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-20 17:00:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 17:12:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.79s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.83s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.35s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.41s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.32s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.40s/it]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-20 17:00:16,188 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-20 17:00:16] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-20 17:13:03,770 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-20 17:13:03] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The photo depicts an unusual scene where a scene of two yellow taxis appears to be cut together. The taxi driver has hung laundry on the back of a painted backseat. The laundry features a blue shirt, a red shirt, and a white shirt, along with an American flag. The entire scene creates the illusion that one taxi has been painted over and integrated into the other with the hanging laundry.
+    This image depicts a street scene in an urban area, likely in New York City, where a yellow taxi and a silver SUV are parked diagonally relative to the road. A person is working at the rear of the silver SUV, lifting a yellow tarp out of it. The person has a hairdryer or hand-held device in their hand, suggesting they might be drying or preparing to hang the tarp. The setting appears to be during the daytime, and there are buildings and streetlights visible in the background. The scene is unusual, as one might expect such a setup in a less urbanized area or in a different context.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi in New York City. There is a person standing near the cab, trying to clean it with a blue cloth. The scene appears to be humorous as the person is not actually cleaning the cab; they are balancing the cloth on a long stick, creating an unusual and comical situation. The background includes other elements like another car, traffic signs, and buildings that are typical of a busy urban street in an American city.
+    The image shows two yellow taxis stopped on a city street. One taxi is driving directly towards the camera, while the other taxi is stationary to the left, with its driver facing the parked vehicles. The driver of the left taxi appears to be hanging clothes out of the back of the vehicle, likely as part of an act of charity or a public service campaign. There are also a few patches of greenery visible in the background, suggesting the city street is lined with trees or perhaps has a green area nearby. The scene looks to be in an urban area with buildings and storefronts visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears you have provided a phrase, "What's shown here," but I don't have the context or image to provide a reply. This phrase alone doesn't have much information, so I can't identify or describe what is shown. If you could provide more details about the setting or context, I'd be happy to try to help further.
+    The image shows a scene in what appears to be a busy city street. There is a yellow taxi cab driving on the road. Attached to the back of the taxi is a small luggage rack or baggage band on which an item of clothing is drying in the air. There are also a few scattered brochures or flyers on the rack. This setup indicates the taxi driver has parked the car along the street and is allowing their luggage to dry in the air, using the natural wind to help it dry rather than an actual dryer.
+    
+    The background shows a commercial area with some storefronts and people, suggesting that this is an urban environment.
 
 
 ## Querying Llama 4 Vision Model
