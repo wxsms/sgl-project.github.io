@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-20 05:02:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 10:07:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-20 05:02:15] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-20 10:07:29] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-20 05:02:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-20 10:07:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.40it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.27s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-20 05:02:26,127 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-20 05:02:26] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-20 10:07:40,650 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-20 10:07:40] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It looks like a person is ironing jeans on a street. There are two yellow taxis in the background, and the person appears to be in the process of changing clothes downtown.
+    This image shows a scene on the streets of New York City. It features a 서울 taxi trying to do laundry in the middle of the road. The person is hoisting some clothes from the back of aDepartment Store while standing next to a other yellow taxis. The scene is humorous and depicts the unusual use of a taxi for laundry service, creating a lighthearted moment in an urban setting.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    You mentioned "What's shown here," but I'm not sure what specific item or scene you're asking about. Could you please provide more context or specify which scene or object you're referring to?
+    The image shows a yellow taxicab with a colorful cloth or banner stretched out in front of it. The scene appears to be in an urban area with buildings and some storefronts in the background. The cloth is hanging from a horizontal support, which looks like a banner stand. The image seems to be creatively highlighting the vehicle, suggesting an artistic or promotional display.
 
 
 ### Call with Precomputed Embeddings
@@ -239,16 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there are two yellow taxis on a city street. The taxis are positioned side by side. Each taxi has a colorful scarf draped over the back of the driver's seat. The scarf appears to be blue and red, possibly part of a street performer's act. Some flags, resembling those often associated with sports or events, can be seen fluttering in the background.
-    
-    To break it down step-by-step:
-    
-    1. **坚灯灯（Yellow Taxis）**:
-       - Two yellow taxis are present.
-       - One taxi is slightly ahead of the other.
-       - Both taxis are parked on the street.
-    
-    2
+    The image shows a person standing on the back of a yellow taxi in the middle of the street. They appear to be setting up or adjusting equipment on the back of the vehicle. The setting looks like a busy urban area with tall buildings, storefronts, and pedestrians. The car in the background is also a yellow taxi.
 
 
 ## Querying Llama 4 Vision Model
