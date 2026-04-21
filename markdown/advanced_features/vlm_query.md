@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-21 01:25:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 02:26:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-21 01:25:41] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-21 02:26:28] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-21 01:25:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 02:26:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -153,19 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-21 01:25:50,707 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-21 01:25:50] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-21 02:26:40,258 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-21 02:26:40] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows two taxi cabs parked on what appears to be a city street. The scene includes several elements:
-    
-    1. The two prominent yellow taxis.
-    2. A drying rack or banner with some items hanging from it.
-    3. A person in a yellow shirt standing behind the drying rack, interacting or tending to the items.
-    4. Surrounding urban elements like buildings, flags, and additional banners.
-    
-    The person seems to be arranging or maintaining the items hanging on the drying rack.
+    The image shows a scene from New York City with two yellow taxicabs parked on the street. In the foreground, there is a piece of laundry hanging on clotheslines attached to the back of one of the taxis. A person is visible near the second taxi, seemingly getting or working on the clotheslines. The background features a busy urban street with various signs and the typical tall buildings of New York City.
 
 
 ### Call with Processor Output
@@ -190,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with a yellow taxi cab and a person in a yellow shirt who appears to be unloading something from the back of the taxi. The person is using a flatiron to smooth out clothes on a drying rack clipped to the side of the taxi. The setting looks like a street in an urban area with a few buildings and traffic lights in the background. The person seems to be in the process of organizing or preparing their clothes.
+    I'm not entirely sure what you mean by "I'm not entirely sure what you mean by 'I smell something,' at all," but it seems like you might be seeing a man walking through a street with clothes on his back.
 
 
 ### Call with Precomputed Embeddings
@@ -246,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In this image, there is a yellow taxi cab driving on a street. Behind the taxi, there appears to be a folding table with a blue cloth draped over it, and a person in a yellow shirt has their hand on the cloth. The setting looks like an urban environment with buildings and other vehicles in the background.
+    The image shows a yellow taxi parked on a city street with its pop-up roof open. Inside the open section of the roof, there are some clothes and possibly more unidentified items hanging. The street has tall buildings with glass windows and some banners hanging from them. There is also another taxi in the background. The scene appears to be in a busy urban area, possibly during a special event or outdoor clothing display.
 
 
 ## Querying Llama 4 Vision Model
