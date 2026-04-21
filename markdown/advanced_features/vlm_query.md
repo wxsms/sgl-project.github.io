@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-21 03:30:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 04:47:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-21 03:30:48] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-21 04:47:50] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-21 03:30:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 04:47:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-21 03:30:56,992 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-21 03:30:56] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-21 04:48:00,459 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-21 04:48:00] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a humorous scene with a yellow New York City taxi cab. There is a folding chair set up on the back of one of the taxis. On this chair, there is a man hanging a striped shirt on a metal pole. The person in the foreseeing image is also wearing a yellow shirt and appears to be adjusting or drying the shirt. The background includes city buildings, vehicles, and advertising aesthetics typical of New York City. This scene likely represents a humorous or parody situation playing on the idea of working in the anonymity of a cab or unexpected working attire during a typically non-cab professional scenario.
+    The image shows a street scene with two yellow taxis. One of the taxis has a drying rack with freshly ironed clothes hanging from it, indicating street cleaning services on deployments during the COVID-19 pandemic. This was to prevent the spread of contaminated furniture and soft furnishings through taxis.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, there is a yellow taxi tax from the side of the road in New York city. The car has luggage on the back and appears to be related to 911.
+    The image shows two黄色出租车 (yellow taxis) on the street. They are parked side by side, slightly offset from the curb. The background features a building with several floors and large windows, some of which have glass doors. The taxis appear to be regular yellow cabs, which are commonly found in urban areas, such as New York City. The street light and other urban elements, like the storefronts and the building facade, suggest that this scene is set in an urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a demonstration of an unusual installation of a hand-drawn double-decker-sizedDouble-decker bicycle on the road, with the_statement "boat" outEdward specifically labels the added onto the bicycle as a humorous and absurd visual representation of a boat. This usage could be interpreted as a playful or imaginative message about the creativity and out-of-the-box thinking required in outdoor exhibitions
+    The image shows a person hanging clothes on a rack in the back of a yellow taxi, possibly in a parking lot or on the street. The person is using aCongress of Citiesень Reading Railroad he apparatus to dry the clothes.
 
 
 ## Querying Llama 4 Vision Model
