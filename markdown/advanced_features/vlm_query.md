@@ -111,33 +111,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-21 06:01:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 06:13:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
-
-
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
 
 
     No platform detected. Using base SRTPlatform with defaults.
-
-
     No platform detected. Using base SRTPlatform with defaults.
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-21 06:01:27] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-21 06:13:53] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-21 06:01:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 06:13:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -147,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.62it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.56it/s]
 
 
 
@@ -159,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-21 06:01:36,658 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-21 06:01:36] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-21 06:14:03,335 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-21 06:14:03] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The picture shows a scene on a city street where a person is drying clothes on the back of a yellow yellow cab. The clothes appear to be hanging on a clothesline attached to a metal bar that is attached to the back of the taxi. This is a humorous and unusual sight.
+    I don't know what's shown in the picture. It is unclear what the contents are.
 
 
 ### Call with Processor Output
@@ -189,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The picture shows a yellow taxi cab with its side panel removed, revealing the interior space underneath. A person wearing a yellow shirt is holding one end of the removed section of the side panel. The taxi is parked on a street lined with buildings and trees. The scene appears to be in an urban area, possibly in a U.S. city, given the style of the cab.
+    The image shows a yellow taxi parked on the side of a street in what appears to be a city environment. The taxi is open with the back doors ajar. An individual is present, setting up or organizing clothes on a makeshift clothesline attached to the back of the taxi. The clothes appear to be hung and lined up neatly. There are several traffic lights visible in the background, as well as some buildings with commercial signage and flags. The overall scene suggests a public event or spontaneous activity, possibly related to cleaning or organization.
 
 
 ### Call with Precomputed Embeddings
@@ -245,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a city street, likely in New York given the yellow cab design and the presence of multiple flag poles with American flags, which are common in New York. The taxis are on a street lined with brick buildings, and the scene appears to be an urban area with some greenery and streetlights.
+    The image shows a yellow taxi cab driving in an urban environment. The taxi appears to be equipped with what looks like an advertisement or a创下 system on its roof. The vehicle is captured from a side angle, and the background includes buildings, street signs, and trees. The scene suggests a busy street in a city, possibly New York, given the style of the cab.
 
 
 ## Querying Llama 4 Vision Model
