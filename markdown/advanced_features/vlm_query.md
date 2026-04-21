@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-21 04:47:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 05:24:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-21 04:47:50] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-21 05:24:36] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-21 04:47:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 05:24:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-21 04:48:00,459 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-21 04:48:00] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-21 05:24:47,304 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-21 05:24:47] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene with two yellow taxis. One of the taxis has a drying rack with freshly ironed clothes hanging from it, indicating street cleaning services on deployments during the COVID-19 pandemic. This was to prevent the spread of contaminated furniture and soft furnishings through taxis.
+    The image shows a yellow taxi in New York City that appears to have an "`衣`Stand`In` cab`` painting painted on its rear window. This is a humorous way of repainting the rear taillights to look like someone drying clothes on a clothesline. This kind of prank often occurs in New York City due to the high cost of paint for taxi cab surfaces. The taxi cab is parked on a street with storefronts in the background, and there are other cars and people visible, indicating it's likely taken in an urban environment.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two黄色出租车 (yellow taxis) on the street. They are parked side by side, slightly offset from the curb. The background features a building with several floors and large windows, some of which have glass doors. The taxis appear to be regular yellow cabs, which are commonly found in urban areas, such as New York City. The street light and other urban elements, like the storefronts and the building facade, suggest that this scene is set in an urban environment.
+    The image shows a scene in the middle of a street with two yellow taxis parked side by side. One person is using a felt weather vane attached to the side of one of the taxis to read the wind direction. The vane appears to be forming shapes or letters, which gives the impression that one banana is missing in your instruction. The street corner has some trees and buildings with various flags and banners hanging from them. The setting looks urban and possibly during a show or demonstration, as there's an unusual presence of people using unusual props like the felt vane.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging clothes on a rack in the back of a yellow taxi, possibly in a parking lot or on the street. The person is using aCongress of Citiesень Reading Railroad he apparatus to dry the clothes.
+    The image shows a scene on a city street with several yellow taxis. In the foreground, there is a person carrying a black backpack and wearing an orange shirt. Another person is visible behind them. The background features tall buildings with flags hanging from the balconies. The scene appears to be in an urban area, likely a city downtown.
 
 
 ## Querying Llama 4 Vision Model
