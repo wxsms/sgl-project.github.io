@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=a95fbcb4"></script>
+    <script src="../_static/documentation_options.js?v=0e282f49"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -582,6 +582,10 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch_server<span class="w"> </span>--base-url<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">256</span><span class="w"> </span>--output-len<span class="w"> </span><span class="m">32</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>Pass <code class="docutils literal notranslate"><span class="pre">--enable-multi-batch</span></code> and set <code class="docutils literal notranslate"><span class="pre">--batch-size</span></code> to a multiple of the server’s <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code> to stabilize throughput measurements. Surplus requests are queued by the scheduler and promoted batch-by-batch, amortizing per-request prefill and first-step transients into steady-state decode. Under this flag, only <code class="docutils literal notranslate"><span class="pre">overall_throughput</span></code> is authoritative; <code class="docutils literal notranslate"><span class="pre">input_throughput</span></code>, <code class="docutils literal notranslate"><span class="pre">output_throughput</span></code>, <code class="docutils literal notranslate"><span class="pre">last_ttft</span></code>, and ITL include cross-batch queueing in their denominators and should be treated as informational.</p></li>
+<li><p>Pass <code class="docutils literal notranslate"><span class="pre">--lora-name</span> <span class="pre">&lt;name&gt;</span></code> to route every prompt through a pre-loaded LoRA adapter. Requires the server to be launched with <code class="docutils literal notranslate"><span class="pre">--enable-lora</span> <span class="pre">--lora-paths</span> <span class="pre">&lt;name&gt;=&lt;path&gt;</span></code>.</p></li>
+</ul>
 <p><strong><code class="docutils literal notranslate"><span class="pre">bench_offline_throughput</span></code></strong> directly instantiates the <code class="docutils literal notranslate"><span class="pre">Engine</span></code> object in-process (no HTTP server) and submits all requests at once via <code class="docutils literal notranslate"><span class="pre">engine.generate()</span></code>. The engine’s scheduler handles batching and execution. This measures maximum achievable throughput without any network overhead.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_throughput<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span>
 </pre></div>
