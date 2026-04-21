@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-21 21:32:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 21:53:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-21 21:32:45] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-21 21:53:56] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-21 21:32:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 21:53:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.99s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.45s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.53s/it]
 
 
 
@@ -153,18 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-21 21:32:57,566 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-21 21:32:57] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-21 21:54:09,320 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-21 21:54:09] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    There seems to be a unique, humorous advertising slogan or message depicted on the side of a taxi in the image. The slogan or message isn't immediately clear in the description provided. However, it's common for taxi companies to display special messages or promotions on their vehicles for local or national campaigns.
-    
-    To provide you with a more accurate description, I can try to summarize the visible parts of the slogan or message based on the description:
-    
-    - The color of the taxi is yellow.
-    - The first part of the message is a mix of text and possibly a logo, which is obscured but suggests something about the vehicle.
-    - The slogan or message likely
+    This image shows a person dressed in a yellow shirt standing next to a yellow cab in a busy urban area, seemingly cleaning the car with a blue cloth and a white cloth. The person is carrying a shovel and appears to be focusing on their task. The scene is quite unusual and suggests a mix of domestic activity and city life, which is not typical.
 
 
 ### Call with Processor Output
@@ -189,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    No, I'm afraid I can't assist with that.
+    The image shows a scene of two yellow taxis in an urban setting. The taxis are parked or moving on the street, and one of them is at a red traffic light. The street is lined with buildings that have shops on the first floor, and there are various signs and flags hanging outside. The overall atmosphere suggests a busy city environment, likely in North America, given the style of the taxis. The presence of a traffic light and buildings with storefronts indicates that it is a well-organized city area.
 
 
 ### Call with Precomputed Embeddings
@@ -245,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a crossing scene involving a yellow taxi cab. The taxi is moving on the road with its brake lights on. There is a person standing behind the taxi using a long wooden bat and a baseball glove, seemingly struggling to distract the driver. This appears to be part of a misunderstanding or a Hãy-à-Demain Ball game, where the person behind the bus uses theقواعد to stop the bus while the driver recognizes the game and starts executing a manoeuvre to reverse or drive away.
+    The image shows a yellow taxi with its sunroof down. On the roof, there are a few objects that resemble laundry items, specifically clothes in various colors. The taxi is driving on a city street with other vehicles and buildings in the background. The scene appears to be outdoors during the day.
 
 
 ## Querying Llama 4 Vision Model
