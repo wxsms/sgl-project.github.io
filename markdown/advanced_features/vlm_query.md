@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-21 06:52:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 20:59:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-21 06:52:16] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-21 20:59:29] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-21 06:52:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 20:59:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.23s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-21 06:52:26,928 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-21 06:52:26] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-21 20:59:38,955 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-21 20:59:38] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene from what appears to be a real-life scenario. A yellow taxi cab (a cabrio in this image) is maneuvering through traffic near a parking area. The taxi is on the left side of the frame, and another taxi cab is partially visible in the background on the left side. A person is hanging various colored clothes, specifically a blue object that looks like a baby for Hanging, to the back of the cab for dry cleaning. The background includes urban elements such as buildings, street signs, and a few other taxis parked alongside the road. The image seems to convey an humorous or surreal situation, as empty
+    It's a scene from a television show, with the character dressed all in yellow doing laundry in the back of a yellow taxi.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing next to a yellow taxi in what appears to be an urban setting. The man is holding two laundry hampers or baskets and has some clothing hanging from them. The hampers seem to be empty, and the man seems to be preparing to put the clothing in the taxi or for a delivery. The background includes other vehicles and buildings, indicating it's likely in a busy city area.
+    This image depicts a scene on a city street in New York City, where a yellow taxi has stopped to let some handles quickly hang a large piece of fabric, likely a flag or banner, on a flagpole. The street is lined with buildings and there are multiple flags visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -199,6 +199,14 @@ processor = AutoProcessor.from_pretrained(model_path, use_fast=True)
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_path).eval()
 vision = model.model.visual.cuda()
 ```
+
+
+    Downloading (incomplete total...): 0.00B [00:00, ?B/s]
+
+
+
+    Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+
 
 
     Loading weights:   0%|          | 0/824 [00:00<?, ?it/s]
@@ -231,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a New York City taxi on a busy street. The taxi is equipped with a makeshift clothesline near its rear, hanging several laundry items, including a blue and black towel. This indicates that the taxi is likely parked temporarily between hours during which the driver takes a break. The presence of a clothesline attached to the back of a taxi is common in New York City, as it allows drivers to use the bus stop empty space to dry their clothes briefly during breaks. The street scene in the background features typical urban elements such as buildings, other vehicles, and pedestrians, with colorful flags hanging in the background.
+    The image shows a yellow taxi driving on a city street, passing in front of a building with a store on the ground floor. The taxi has a cloth-covered seat on its side, likely filled with outside goods or mail. The scene appears to be in an urban area, possibly during a weigh-in on the street, as there are clothes wedged under the car seats.
 
 
 ## Querying Llama 4 Vision Model
