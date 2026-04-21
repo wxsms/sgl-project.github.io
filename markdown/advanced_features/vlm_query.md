@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-21 06:13:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 06:52:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-21 06:13:53] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-21 06:52:16] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-21 06:13:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 06:52:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.62it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.56it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-21 06:14:03,335 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-21 06:14:03] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-21 06:52:26,928 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-21 06:52:26] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    I don't know what's shown in the picture. It is unclear what the contents are.
+    The image shows a scene from what appears to be a real-life scenario. A yellow taxi cab (a cabrio in this image) is maneuvering through traffic near a parking area. The taxi is on the left side of the frame, and another taxi cab is partially visible in the background on the left side. A person is hanging various colored clothes, specifically a blue object that looks like a baby for Hanging, to the back of the cab for dry cleaning. The background includes urban elements such as buildings, street signs, and a few other taxis parked alongside the road. The image seems to convey an humorous or surreal situation, as empty
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on the side of a street in what appears to be a city environment. The taxi is open with the back doors ajar. An individual is present, setting up or organizing clothes on a makeshift clothesline attached to the back of the taxi. The clothes appear to be hung and lined up neatly. There are several traffic lights visible in the background, as well as some buildings with commercial signage and flags. The overall scene suggests a public event or spontaneous activity, possibly related to cleaning or organization.
+    The image shows a man standing next to a yellow taxi in what appears to be an urban setting. The man is holding two laundry hampers or baskets and has some clothing hanging from them. The hampers seem to be empty, and the man seems to be preparing to put the clothing in the taxi or for a delivery. The background includes other vehicles and buildings, indicating it's likely in a busy city area.
 
 
 ### Call with Precomputed Embeddings
@@ -199,14 +199,6 @@ processor = AutoProcessor.from_pretrained(model_path, use_fast=True)
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_path).eval()
 vision = model.model.visual.cuda()
 ```
-
-
-    Downloading (incomplete total...): 0.00B [00:00, ?B/s]
-
-
-
-    Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
-
 
 
     Loading weights:   0%|          | 0/824 [00:00<?, ?it/s]
@@ -239,7 +231,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab driving in an urban environment. The taxi appears to be equipped with what looks like an advertisement or a创下 system on its roof. The vehicle is captured from a side angle, and the background includes buildings, street signs, and trees. The scene suggests a busy street in a city, possibly New York, given the style of the cab.
+    The image shows a New York City taxi on a busy street. The taxi is equipped with a makeshift clothesline near its rear, hanging several laundry items, including a blue and black towel. This indicates that the taxi is likely parked temporarily between hours during which the driver takes a break. The presence of a clothesline attached to the back of a taxi is common in New York City, as it allows drivers to use the bus stop empty space to dry their clothes briefly during breaks. The street scene in the background features typical urban elements such as buildings, other vehicles, and pedestrians, with colorful flags hanging in the background.
 
 
 ## Querying Llama 4 Vision Model

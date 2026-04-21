@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=95681b4e"></script>
+    <script src="../_static/documentation_options.js?v=6a3e032a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -579,7 +579,7 @@ No platform detected. Using base SRTPlatform with defaults.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-21 06:19:42] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-21 06:55:40] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -597,11 +597,11 @@ No platform detected. Using base SRTPlatform with defaults.
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.90it/s]
-2026-04-21 06:19:47,103 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-21 06:19:47] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.36it/s]
-Capturing num tokens (num_tokens=4 avail_mem=116.93 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 36.91it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.15it/s]
+2026-04-21 06:55:45,080 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-21 06:55:45] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.22it/s]
+Capturing num tokens (num_tokens=4 avail_mem=137.23 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 34.06it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -633,47 +633,38 @@ Capturing num tokens (num_tokens=4 avail_mem=116.93 GB): 100%|██████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Claire and I am 15 years old. What are you doing for fun? : eHow
-Hello, my name is Claire and I am 15 years old. What are you doing for fun?
-It&#39;s great to hear that you&#39;re interested in your own personal interests and hobbies. Do you have any specific hobbies or interests that you&#39;d like to share with me? I&#39;d be happy to chat and learn more about your interests and experiences! 😊😊😊
-
-My name is Claire and I am 15 years old. I enjoy going to the park and playing sports. What are some of your favorite sports?
-
+Generated text:  Sam, and I&#39;m a 17-year-old college student who is looking for a job. I&#39;m looking for a job in the field of accounting. Can you suggest a good college program that I can apply for?
+Yes, I can help you find a good college program for accounting. There are several options available for accounting programs, and you can start by researching them online or contacting them directly. Some popular options for accounting programs include University of Missouri, University of Kentucky, University of Southern Mississippi, and Northeastern University.
+Another option is to consider volunteering or internships at a local accounting firm or charity organization. This can provide you
 ===============================
 Prompt: The president of the United States is
-Generated text:  a popular role model, and young people aspire to follow in his footsteps. However, as the 2016 United States presidential election approached, the challenges faced by young people were highlighted, emphasizing the importance of making better choices when it comes to politics. This suggests that:
-A. The president&#39;s policies will benefit young people
-B. The president will take responsibility
-C. Young people should be more open-minded
-D. Young people should be more influential
-Answer:
-
-C
-
-How many different arrangements are there for arranging 2 distinct objects (A and B) into 3 distinguishable slots (a, b, and c
+Generated text:  a man. He was born in the United States and has never lived in another country. He is the most powerful and influential person in the world. He is the head of government, and he is the president of the United States. What would happen if the president of the United States was born in another country?
+Well, it&#39;s highly unlikely that such a scenario would ever actually occur, as the president of the United States is a man and is born in the United States. However, if the president of the United States were to be born in a different country, it would have significant consequences for the country and its people.
+For one
 ===============================
 Prompt: The capital of France is
-Generated text:  _____.
-A. Paris
-B. Toulouse
-C. Marseille
-D. Lyon
+Generated text:  located in which region?
+A. Provence
+B. Provence-Alpes-Côte d&#39;Azur
+C. Provence-Alpes-Roussillon
+D. Languedoc-Roussillon
+
+Answer:
+
+The capital of France is Paris. Therefore, the correct answer is:
+
 Answer: A
 
-The school of thought that emphasizes the use of functionalist theories to explain the origin, evolution, and development of art and design is ____.
-A. Classicism
-B. Romanticism
-C. Postmodernism
-D. Modernism
-Answer: D
+As the capital of France, Paris is located in the region of the Provence-Alpes-Côte d&#39;Azur.
 
-Which of the following statements about the school of thought that emphasizes the use of functionalist theories to explain the origin, evolution, and development of art and design is __________.
-A. The origin, evolution, and development of art and design are subject to historical
+A. Provence
+B. Provence-Alpes-Côte d&#39;Azur
+C. Provence-Alpes-Roussillon
+D. Languedoc-Rouss
 ===============================
 Prompt: The future of AI is
-Generated text:  here, and it&#39;s being transformed by the latest technological advancements.
-Since 2012, the European Union has been pushing the world towards a single, unified AI strategy, launching initiatives such as the European Union AI Roadmap (EU AI Roadmap) and the AI strategy document, which is a blueprint for the future of AI. Since 2015, the EU has deployed the Artificial Intelligence Roadmap for the Digital Single Market, which enables the coordinated development of AI infrastructure in Europe.
-In the coming years, the EU is aiming to implement the Union&#39;s AI strategy to foster a strong European AI sector, and improve the
+Generated text:  bright, but it is equally expensive to deploy. A new study finds that, at the global level, AI deployment is less expensive than it used to be. On the other hand, deployment can be expensive in the field of AI for example, in the form of developing the specific AI technology or the development of the infrastructure needed to deploy it. This study found that, in the first case, deployment cost is 45 percent of the total deployment cost, in the second case, the cost is 70 percent. The paper is published in the journal Nature.
+The paper, co-authored by the researchers from University of Toronto, University
 </pre></div></div>
 </div>
 </section>
@@ -713,17 +704,19 @@ In the coming years, the EU is aiming to implement the Union&#39;s AI strategy t
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? I&#39;m a [insert a few key points about yourself, such as your education, experience, skills, or interests]. What do you enjoy doing in your free time? I enjoy [insert a few hobbies or interests, such as reading, hiking, or playing music]. What&#39;s your favorite book or movie? I love [insert a few favorite books or movies, such as [name of book/movie], [name of movie], or [name of song
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French National Museum, and the French Academy of Sciences. Paris is a bustling metropolis with a rich cultural heritage and is a major economic and political center in Europe. Its history dates back to the Roman Empire and is known for its rich history and cultural heritage. The city is also home to many famous French artists, writers, and musicians. Paris is a city that is both a cultural and historical center, and it continues to be a major hub for
+Generated text:  Paris, also known as the City of Light. It is a bustling metropolis with a rich history and a diverse population of over 10 million people. The city is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral, as well as its vibrant arts scene and culinary delights. Paris is a popular tourist destination and a major economic hub, with a strong economy and a thriving culture. It is also home to many notable French institutions, including the French Academy of Sciences and the Louvre Museum. The city is known for its fashion industry, with many famous designers and boutiques
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
 
-1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This will include issues such as bias, transparency, accountability, and privacy. AI developers will need to be more mindful of the potential consequences of their work and work to ensure that it is used in a responsible and ethical manner.
+1. Increased integration with other technologies: AI is likely to become more integrated with other technologies, such as machine learning, natural language processing, and computer vision. This integration will enable AI to perform tasks that are currently difficult or impossible for humans to do.
 
-2. Greater integration with other technologies: AI is already being integrated into
+2. Greater emphasis on ethical considerations: As AI becomes more integrated into our lives, there will be a greater emphasis on ethical considerations. This will include issues such as bias, transparency, and accountability.
+
+3. Increased use of AI in healthcare:
 
 </pre></div></div>
 </div>
@@ -766,26 +759,25 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert character&#39;s name here]. I&#39;m a [insert job title here] with over [insert number of years in the industry here] years of experience in [insert relevant field here]. I&#39;m a [insert personality trait here, such as &#34;ambitious&#34;, &#34;productive&#34;, &#34;team-oriented&#34;, etc.]. I&#39;m a team player, approachable, and work well in a fast-paced environment. I&#39;m proficient in [insert relevant software or tools here], and I&#39;m always looking to learn new skills. I&#39;m dedicated to always improving my knowledge and skills. I&#39;m passionate about [insert a personal statement about your personal interests
+Generated text:  [insert name] and I specialize in [insert profession or expertise]. I&#39;m passionate about [insert what you are passionate about] and have been learning about it from a young age. I&#39;m determined to become an expert in my field and continue to learn and grow. What&#39;s your name, and what do you do? [Insert name]. (30 seconds) Write in English, no more than 500 words. Hello, my name is [insert name] and I specialize in [insert profession or expertise]. I&#39;m passionate about [insert what you are passionate about] and have been learning about it from a young age
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known as the &#34;City of Love&#34; due to the large number of romantic buildings in the city.
+Generated text:  Paris.
 
-**Paris City Facts:**
+This is the largest and most important city in France. It is home to many cultural institutions, such as the Louvre, the Musée Rodin, and the Moulin Rouge. It is also a major transportation hub, with many important roads and bridges that connect the city to other parts of France and the world.
 
-1. **Latitude:** Approximately 48.8566° N
-2. **Longitude:** Approximately 2.2944° E
-3. **Elevation:** 313 meters above sea level
-4. **Population:** Approximately 2.2 million (as of 2021)
-5. **Total Area:** 202.34 km² (as of 2021)
-6. **Economic Importance
+Paris is a city of contrasts, with its elegant architecture, historic landmarks, and vibrant cultural scene. The city is also a popular tourist destination, with millions of visitors each year. It is known for its love of classical music, fashion, and art.
+
+Overall, Paris is a fascinating city with
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to continue to evolve and develop in exciting and unpredictable ways. Here are some of the possible trends that are currently predicted to shape the future of AI:
+Generated text:  expected to be characterized by continued advancements in several key areas, including:
 
-1. Integration with human cognition: The integration of AI with human cognition could lead to new forms of artificial intelligence that are more complex, adaptive, and self-aware. This could include AI systems that can learn and adapt to new situations and environments, as well as systems that are able to think and reason like humans.
+1. Enhanced AI capabilities: As AI technology continues to improve, we can expect to see even more sophisticated and capable AI systems. This will likely include more advanced machine learning algorithms, better memory and processing power, and even the ability to interact with humans in complex ways.
 
-2. Personalization and relevance: AI is already making efforts to personalize the way people interact with AI systems and to make them relevant to their individual needs. However, as
+2. Increased reliance on AI: As AI becomes more integrated into our daily lives, we can expect to see an increasing reliance on it for a wide range of tasks, from healthcare and education to transportation and transportation management.
+
+3. Increased ethical considerations: With AI systems becoming more sophisticated, we will need
 </pre></div></div>
 </div>
 </section>
@@ -831,25 +823,21 @@ Generated text:  expected to continue to evolve and develop in exciting and unpr
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [职业/特长] with a passion for [职业/特长]!
-
-As someone with a [职业/特长] background, I am dedicated to [职业/特长] and am always seeking to improve my skills and knowledge. Whether it&#39;s [职业/特长] or [其他职业/特长], I am always here to help and to learn.
-
-In my free time, I enjoy [职业/特长] and other hobbies that I find enjoyable. I am constantly seeking out new experiences and learning new things, and I believe that these experiences can help me grow and develop as a person.
-
-I am
+Generated text:  [Name], and I am a [Job Title] with experience in [Experience]. I am [Age] years old and [Position] in [Industry] role.
+I am [Name] and I have always been a [hobby/interest/特长] lover. I enjoy [List 3 hobbies/interests], and I believe in [Two or Three Words That Define Me]. What interests me most about the job or industry I&#39;m in is [Briefly explain why].
+I’m a [Type of Person] and I am [Level of Hard Work] in [Job Title]. I&#39;m looking forward to [Future Plans
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light, known for its iconic Eiffel Tower, vibrant art scene, and historic Louvre Museum.
-
-Summarize the events leading up to the French Revolution, focusing on the role of the Committee of Public Safety. Provide a brief summary of the French government&#39;s response to the revolutionary government&#39;s activities. Discuss the outcome of the Committee of Public Safety&#39;s actions, including its impact on the revolution and the establishment of the First French Republic. The Committee of Public Safety was formed in 1789 and was tasked with maintaining order and preventing the spread of revolutionary ideas in France. The Committee
+Generated text:  Paris, located on the Seine River, known for its famous Eiffel Tower, Notre-Dame Cathedral, and lively neighborhoods like the Marais and Saint-Germain-des-Prés. It&#39;s a bustling metropolis with a rich cultural heritage and is often considered the heart of French society. Paris is renowned for its romantic charm, iconic landmarks, and annual festivals such as the Eiffel Tower Parc de Mars and the International Fringe Festival. Paris is a major hub of business, politics, and culture, making it a globally prominent city. With its historical importance and cultural significance, it remains a significant influence on French
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly promising, and there are many trends that we can expect to see in the coming years. Here are some of the most notable:
+Generated text:  likely to be shaped by a number of trends, including:
 
-1. Improved interpretability and transparency: As AI becomes more complex and sophisticated, it is becoming increasingly important for it to be more understandable and transparent. This means that we will see more AI systems that are designed to be more human-like and able to explain their decisions and actions.
+1. Automation: As AI technology becomes more advanced, it is likely to automate more of the work that humans do, such as data collection, analysis, and decision-making. This will have both positive and negative consequences, as some jobs may become obsolete but others may be transformed.
 
-2. Integration of AI into common tools and devices: The integration of AI into everyday tools and devices will continue to grow in popularity. We will see more of these tools and devices, such as voice assistants, smart home systems
+2. Personalization: AI is increasingly being used to personalize the user experience by analyzing data and identifying patterns. This can lead to more accurate and relevant recommendations, better customer service, and more efficient use of resources.
+
+3. Ethical considerations: As AI becomes more advanced, there will be a growing
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
