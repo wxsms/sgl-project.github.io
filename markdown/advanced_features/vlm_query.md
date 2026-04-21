@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-21 03:07:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 03:30:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-21 03:07:53] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-21 03:30:48] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-21 03:07:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-21 03:30:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.42it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-21 03:08:04,144 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-21 03:08:04] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-21 03:30:56,992 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-21 03:30:56] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts two yellow taxi cabs in what appears to be a busy city street. The cab in the foreground has a washer on its roof, suggesting that the driver or an employee is washing clothes while parked. The setting looks like it could be a public parking spot in a downtown area, with other buildings and pedestrians in the background. The scene is bustling despite the unusual activity of washing clothes in traffic.
+    The image shows a humorous scene with a yellow New York City taxi cab. There is a folding chair set up on the back of one of the taxis. On this chair, there is a man hanging a striped shirt on a metal pole. The person in the foreseeing image is also wearing a yellow shirt and appears to be adjusting or drying the shirt. The background includes city buildings, vehicles, and advertising aesthetics typical of New York City. This scene likely represents a humorous or parody situation playing on the idea of working in the anonymity of a cab or unexpected working attire during a typically non-cab professional scenario.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in New York City. The taxi is parked on the street, and in the background, you can see the iconic life-sized 'NYC' statue, also known as the Little Single Swan Statue, which is located in front of One Penn Plaza. The sidewalk and various street signs, including the Yellow Cab sign, are also visible. The street appears to be in a busy area, likely in the Financial District or a similar part of the city.
+    In the image, there is a yellow taxi tax from the side of the road in New York city. The car has luggage on the back and appears to be related to 911.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there is a yellow taxi cab parked on a city street. The taxi appears to be blocking the road, creating a minor traffic disruption. The surroundings indicate that this is likely a busy urban environment, with other vehicles and possibly pedestrians in the background. However, the specific objects shown are primarily related to the taxi itself, such as its cab and possibly some signage or advertisements visible on the buildings.
+    The image depicts a demonstration of an unusual installation of a hand-drawn double-decker-sizedDouble-decker bicycle on the road, with the_statement "boat" outEdward specifically labels the added onto the bicycle as a humorous and absurd visual representation of a boat. This usage could be interpreted as a playful or imaginative message about the creativity and out-of-the-box thinking required in outdoor exhibitions
 
 
 ## Querying Llama 4 Vision Model
