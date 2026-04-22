@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-21 21:53:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 00:59:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-21 21:53:56] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 00:59:10] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-21 21:53:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 00:59:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.99s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.45s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.53s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-21 21:54:09,320 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-21 21:54:09] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 00:59:20,235 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 00:59:20] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a person dressed in a yellow shirt standing next to a yellow cab in a busy urban area, seemingly cleaning the car with a blue cloth and a white cloth. The person is carrying a shovel and appears to be focusing on their task. The scene is quite unusual and suggests a mix of domestic activity and city life, which is not typical.
+    In the image, two New York City taxis are parked side by side on a street. The taxi on the left appears to be a yellow Checker cab, while the one on the right is a yellow Ford Explorer. A person in a yellow shirt and blue jeans is standing behind the Explorer taxi, seemingly ironing clothes on a long ironing board that runs between the two vehicles. The scene is unique as you might not expect to see people ironing in aแทи Berserk taxi, which is likely the New York cabs.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of two yellow taxis in an urban setting. The taxis are parked or moving on the street, and one of them is at a red traffic light. The street is lined with buildings that have shops on the first floor, and there are various signs and flags hanging outside. The overall atmosphere suggests a busy city environment, likely in North America, given the style of the taxis. The presence of a traffic light and buildings with storefronts indicates that it is a well-organized city area.
+    The image shows a scene in a city street. There is a yellow city taxi or car in front of a building with a storefront. Someone is using a stump to write on the back of the vehicle. The person appears to be using an iron to place wet clothes at the top of the stump, likely to create a temporary design on the car. The scene seems to be taking place on a sunny day, as indicated by the bright lighting and shadows.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi with its sunroof down. On the roof, there are a few objects that resemble laundry items, specifically clothes in various colors. The taxi is driving on a city street with other vehicles and buildings in the background. The scene appears to be outdoors during the day.
+    The image shows a person wearing a yellow shirt walking next to a yellow taxi cab on a city street. The person is pulling a small cloth cart behind them. The scene appears to be in an urban area, with buildings and street signs visible in the background. The person seems to be either collecting or displaying cloth items, as they are using the cart to pull them along the sidewalk.
 
 
 ## Querying Llama 4 Vision Model
