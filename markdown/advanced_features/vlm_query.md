@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 09:32:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 09:54:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 09:32:55] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 09:54:54] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 09:32:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 09:54:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 09:33:04,817 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 09:33:04] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 09:55:05,165 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 09:55:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a unique scene of a cyclist paused while pondering, potentially due to a blackened purple shoe. It seems the cyclist is impacted when exploring a chimney base.
+    The image shows two yellow taxis parked on a city street, with a person looking at symbols or license plates on the rear of one of the taxis.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving down a street in an urban setting. The taxi is pulling a small cart with a blue cloth hanging from a hanger. Beyond the taxi, there is a storefront with large glass windows filled with various items, and the street is lined with red banners or flags. The scene appears to be in a city, possibly during a public event or a tour.
+    In the image, a yellow taxi is parked on the street. A person wearing a mustard yellow shirt is using a broom to clean the windows of the taxi's roof, specifically focusing on the license plate area. The taxi has various maritime banners hanging underneath it. The street seems to be in a commercial area with buildings and advertisements typical of a city environment.
 
 
 ### Call with Precomputed Embeddings
@@ -239,8 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image appears to be a humorous fake advertisement for a washing service. It shows a yellow taxi cab driving with laundryPosted:');
-    next to its bicycle on a stand. The text "LaundryPosted" is in red letters on the ground, mimicking an interface similar to "Posted" on social media platforms like Instagram. This satirical image likely poking at the trend of taking mundane outdoor activities such as walking the dog or parking the car as something to post on social media. The purpose of the image is to humorously juxtapose the typical urban scene with the idea of taking laundry outdoors to "post" on social media.
+    The image shows a yellow taxi in New York City, essentially a Toyota 4Runner modified with the roof enclosed and topped with a small sign advertising McDonald's. This advertising method is part of McDonald's "Donut with Your Car" promotional campaign in 2006, aiming to promote the idea of taking a meal from the car to the kitchen.
 
 
 ## Querying Llama 4 Vision Model
