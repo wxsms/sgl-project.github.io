@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 20:37:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 21:16:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 20:38:01] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 21:16:39] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 20:38:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 21:16:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.58it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 20:38:12,079 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 20:38:12] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 21:16:49,082 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 21:16:49] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person using a clothesline across the back of a yellow taxi cab. The clothesline has a piece of laundry, likely laundry detergent, hanging from it. This is a humorous, playful way to dry something with a more unconventional method. The scene appears to be happening on a city street with other vehicles and cityscape background.
+    The image shows a person hanging clothes on the back of a taxi cab to dry. This is an unusual and creative way to utilize a moving vehicle as a clothesline. The taxi is a yellow New York City cab, and the person is returning a larger blue garment and another smaller one, both hanging neatly on a hanger. This scene depicts an afternoon in New York City, and the_selected_process seems to be a払い or similar context leading to this contemporary outdoor laundry solution.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a yellow cab (taxis) driving down the road. In the foreground, there is a person who appears to be working on something, possibly tying or adjusting something on the back of the yellow cab. The setting suggests an urban environment, likely a city street. The background includes a building with large windows and a sidewalk. There are also other details like street signs, light poles, and some indistinct objects on the streetside.
+    The image shows a yellow taxi cab on a city street, with a person in a yellow shirt hanging laundry from a backpack or bag designed to dangle laundry. The taxi is likely parked on the side of the road, and the presence of various signs and flags suggests it is in an urban area, possibly a busy neighborhood or during a special event.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows people hanging clothes on a cable attached to the sides of two bright yellow taxis. This is likely a public service event, such as a public clothing shower or outdoor laundry. The setup appears to be temporary, possibly for a special event or to provide a free laundry service to the area.
+    The image shows a scene from what appears to be a city street, possibly in New York City given the presence of Yellow Cabs and the overall urban setting. In the background, there are tall buildings with advertisements and signs. 
+    
+    In the foreground, a person wearing a yellow shirt and white pants is using a long stick or pole to fold a laundry basket full of clothes on the back of a yellow taxi cab. The taxi, with the brand name "PASS" displayed on it, is parked beside the curb. Other details include various American flags hanging from the windows of the taxi and👑 the yellow taxi cab itself, which is typical in
 
 
 ## Querying Llama 4 Vision Model
