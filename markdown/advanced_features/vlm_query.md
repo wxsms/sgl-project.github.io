@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 03:16:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 04:10:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 03:16:31] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 04:10:45] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 03:16:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 04:10:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -153,12 +153,16 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 03:16:41,930 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 03:16:41] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 04:10:54,542 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 04:10:54] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a whimsical scene where a yellow taxi cab is used as a makeshift stand for drying clothes. The clothes are hanging on a clothesline attached to the back of the taxi. This is not a typical use for a taxi, as taxis are usually for transporting people and are not designed to carry or hold clothes. This appears to be a humorous or artistic way to use the vehicle.
+    The image shows a taxi driver with his pants down, seemingly at an odd angle. This is not a typical scene and could be attributed to an artistic or humorous photograph, possibly staged for a photo opportunity or a creative photo.
+    
+    If this is part of a larger, themed event or a cooperative misinterpretation (though unlikely), it may be an intentional performance for parade-like environments where unexpected and funny situations may occur.
+    
+    Typically, taxi drivers do not typically wear pants in public spaces other than during the changing of the driver to another one (e.g., when changing from summer to winter attire). This scene perhaps intends to evoke amusement or satire
 
 
 ### Call with Processor Output
@@ -183,7 +187,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in what appears to be a city, most likely in New York City given the presence of yellow taxis, which are a famous and iconic part of the city's transportation landscape. The yellow taxi closest to the camera has an odd, colorful Как да чаквали wearing a yellow sweatshirt and blue jeans. The cloth seems to have been stuck to the taxi's surface, possibly causing an inconvenience. The background is filled with city buildings and advertisements, and pedestrian sidewalk commerce can be observed. The general setting suggests a problem-solving city day situation with people trying to clear offpromo-paid ads from cabs.
+    This image shows a scene in New York City, with a yellow taxi cab. The taxi is parked on the street, and there is an individual in a yellow shirt standing on a small platform attached to the back of the cab. The platform appears to be holding clothing, possibly for carriage or display. Additional details include a building with store windows and several street lamps and signs, indicating an urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +243,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like someone is demonstrating how to iron clothes while standing in the middle of a busy street. There is a yellow taxi cab on one side, and the person is standing by a signpost with a wrought-iron rack, wearing a yellow shirt and holding an iron. This is likely for humorous or artistic purposes, showcasing an unconventional scene in an urban setting.
+    This image appears to show an urban scene with some unusual activity. In the background, there is a yellow taxi cab driving on a city street. In the foreground, there is a tripod extended on the road with a shirt hanging from the center of the tripod.
+    
+    The person in the background is wearing a bright yellow shirt and seems to be tending to the photographic equipment. This setup, known as a tripod with a hanging shirt, is often used by photographers to catch interesting reflections and patterns in their shots. The base of the tripod resembles a patch or object on a wall, which might be why the shirt is hanging from the centre and creating
 
 
 ## Querying Llama 4 Vision Model
