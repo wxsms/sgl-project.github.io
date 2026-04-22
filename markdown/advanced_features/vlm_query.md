@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 04:10:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 06:36:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 04:10:45] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 06:36:44] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 04:10:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 06:36:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -153,16 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 04:10:54,542 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 04:10:54] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 06:36:55,033 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 06:36:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a taxi driver with his pants down, seemingly at an odd angle. This is not a typical scene and could be attributed to an artistic or humorous photograph, possibly staged for a photo opportunity or a creative photo.
-    
-    If this is part of a larger, themed event or a cooperative misinterpretation (though unlikely), it may be an intentional performance for parade-like environments where unexpected and funny situations may occur.
-    
-    Typically, taxi drivers do not typically wear pants in public spaces other than during the changing of the driver to another one (e.g., when changing from summer to winter attire). This scene perhaps intends to evoke amusement or satire
+    The image shows two yellow cabs in a city street, with one of them having a person hanging clothes on its roof. The person is holding a stirrup, which he uses to hang the clothes to dry. The scene is typical of New York City, known for its iconic yellow taxis.
 
 
 ### Call with Processor Output
@@ -187,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene in New York City, with a yellow taxi cab. The taxi is parked on the street, and there is an individual in a yellow shirt standing on a small platform attached to the back of the cab. The platform appears to be holding clothing, possibly for carriage or display. Additional details include a building with store windows and several street lamps and signs, indicating an urban environment.
+    The image shows a yellow taxi cab in New York City. The taxi is parked on the side of a city street with buildings in the background. It appears to have a ladder near the back, possibly used for maintenance or repair. There is also a helmet hanging on the back of the ladder.
 
 
 ### Call with Precomputed Embeddings
@@ -243,9 +239,19 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image appears to show an urban scene with some unusual activity. In the background, there is a yellow taxi cab driving on a city street. In the foreground, there is a tripod extended on the road with a shirt hanging from the center of the tripod.
+    This image depicts a street scene in an urban environment. Key elements include:
     
-    The person in the background is wearing a bright yellow shirt and seems to be tending to the photographic equipment. This setup, known as a tripod with a hanging shirt, is often used by photographers to catch interesting reflections and patterns in their shots. The base of the tripod resembles a patch or object on a wall, which might be why the shirt is hanging from the centre and creating
+    1. **Traffic**:
+       - A yellow taxi cab is prominently featured in the foreground.
+       - Another vehicle, possibly a black car, is visible behind the taxi.
+       - Street traffic infrastructure, including multiple street lamps and street signs, is present.
+    
+    2. **Weather**:
+       - It appears to be a sunny day, as indicated by the bright lighting and shadows.
+    
+    3. **Surroundings**:
+       - Buildings with storefronts line the street. One of the buildings has large windows, typical of commercial or office spaces in a city.
+    
 
 
 ## Querying Llama 4 Vision Model
