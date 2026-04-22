@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 00:59:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 01:48:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 00:59:10] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 01:48:41] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 00:59:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 01:48:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -153,12 +153,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 00:59:20,235 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 00:59:20] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 01:48:51,020 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 01:48:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, two New York City taxis are parked side by side on a street. The taxi on the left appears to be a yellow Checker cab, while the one on the right is a yellow Ford Explorer. A person in a yellow shirt and blue jeans is standing behind the Explorer taxi, seemingly ironing clothes on a long ironing board that runs between the two vehicles. The scene is unique as you might not expect to see people ironing in aแทи Berserk taxi, which is likely the New York cabs.
+    The image shows a yellow taxi cab with clothes hanging out of its back door, likely belonging to a constable. This was a comedic display of street art in downtown Los Angeles, California, which was featured in founder Mendel Madrigal's first TV special. This quirky scene reflects the essence of the "Train the Constable"-which, as aumble.com puts it, "knows this is one of those creepy bits people clap back with when they know something is fake; Racist."
+    
+    This artistic display emphasized the surveillance culture in America, implying that American streets belong to the government exacerbating accusations of "Taiwan territory." The
 
 
 ### Call with Processor Output
@@ -183,7 +185,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in a city street. There is a yellow city taxi or car in front of a building with a storefront. Someone is using a stump to write on the back of the vehicle. The person appears to be using an iron to place wet clothes at the top of the stump, likely to create a temporary design on the car. The scene seems to be taking place on a sunny day, as indicated by the bright lighting and shadows.
+    I don't know what's shown here. There seems to be text that is not legible in a foreign language or a code.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +241,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person wearing a yellow shirt walking next to a yellow taxi cab on a city street. The person is pulling a small cloth cart behind them. The scene appears to be in an urban area, with buildings and street signs visible in the background. The person seems to be either collecting or displaying cloth items, as they are using the cart to pull them along the sidewalk.
+    The image shows a yellow taxi cab driving on a city street, likely in New York City, based on the familiar design of the cab. The taxi has a fabric box on its roof, which appears to be a mobile stall for selling clothing. This setup is sometimes used by street vendors to make sales while on the move. The scene also includes urban elements such as buildings, a flag on the building, and trees lining the street.
 
 
 ## Querying Llama 4 Vision Model
