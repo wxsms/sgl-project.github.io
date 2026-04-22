@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 17:12:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 19:50:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 17:12:55] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 19:50:43] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 17:12:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 19:50:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 17:13:05,335 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 17:13:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 19:50:53,687 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 19:50:53] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxi cabs parked in an urban street. A man is standing next to the back of one of the taxis with laundry arranged on top of it. This seems to be a clever and unusual way to transport laundry, using the back of a taxi as an outdoor washing line. The scene could be part of a public service announcement, a creative campaign, or simply a humorous moment captured for artistic or social media purposes.
+    This image shows a New York City streetscape featuring two yellow taxi cabs parked on the street. One of the taxis has some clothes displayed on its roof rack. This scene is part of the famous "photo op" along 12th Avenue in the Meatpacking District, where people often let trucks pass and capture images of them displaying laundry on their vehicle for the next truck to drive through without disturbing it任意意志，可能会被戳穿！
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with two yellow taxis, one of which is parked on the side of the road, while the other appears to be on a street prominently visible in the frame. The taxi that is prominently on the right side of the image is adorned with what looks like a large streamer or flag hanging from its rear. The streamer is draped over the trunk area and extends downwards. The street appears to be in an urban area, possibly a city center given the architecture and the parked cars.
+    The image shows a yellow taxi cab on a city street. There are people standing on the sidewalk near the taxi, one of whom is using the taxi as a makeshift laundry cart. The cart is made from a sheet of cloth, two folding chairs, and a laundry basket, and has hinges used to raise and lower the sheet.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow New York City taxi driving down a street. On the right side of the taxi, there is a person pouring water from a bottle onto what appears to be a bouquet of flowers placed on a makeshift stand. The red and blue flags visible in the background exhibit the colors of the American flag. Overall, it seems to be a playful and unconventional way to water the flowers, possibly as a form of visual or thematic art in a public space.
+    In the image, there are two yellow taxis driving on a street in a city. The scene suggests that this is likely occurring in a major city, given the presence of traffic lights and street signs lining the road. The taxis are prominently featured, indicating that this is a common mode of transportation in the area. The urban setting, with its infrastructure and the appearance of the taxis, supports the idea of a busy metropolitan area.
 
 
 ## Querying Llama 4 Vision Model
