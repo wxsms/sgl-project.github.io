@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 09:54:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 14:30:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 09:54:54] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 14:30:20] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 09:54:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 14:30:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.54it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 09:55:05,165 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 09:55:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 14:30:30,151 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 14:30:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked on a city street, with a person looking at symbols or license plates on the rear of one of the taxis.
+    The image shows two yellow taxis in a city street. The taxi on the left is starting to turn the corner of a street sign that says "GO." The taxi on the right is in the background, appearing to have been waiting at the same intersection. Both taxis have their front license plates visible above the driver's side windows.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, a yellow taxi is parked on the street. A person wearing a mustard yellow shirt is using a broom to clean the windows of the taxi's roof, specifically focusing on the license plate area. The taxi has various maritime banners hanging underneath it. The street seems to be in a commercial area with buildings and advertisements typical of a city environment.
+    What appears to be a sign нару推崇人Developing
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi in New York City, essentially a Toyota 4Runner modified with the roof enclosed and topped with a small sign advertising McDonald's. This advertising method is part of McDonald's "Donut with Your Car" promotional campaign in 2006, aiming to promote the idea of taking a meal from the car to the kitchen.
+    The image shows a street scene with a yellow taxi parked near a sidewalk. A person in a yellow shirt is standing on the street, leaning on a makeshift stand holding multiple pieces of fabric, including clothes and markers. The person appears to be engaged in some sort of urban street performance or street art street corner demonstration. The person is adjusting or displaying the items on the stand. Near the person, there are a few other objects and possibly some signs in the background, but the focus is on the person and their makeshift stand. The scene suggests an imaginative or creative expression in a public space, typically found in urban settings.
 
 
 ## Querying Llama 4 Vision Model
