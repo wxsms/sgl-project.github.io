@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 14:30:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 15:24:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -123,15 +123,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 14:30:20] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 15:24:29] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 14:30:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 15:24:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.54it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.40it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 14:30:30,151 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 14:30:30] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 15:24:39,118 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 15:24:39] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in a city street. The taxi on the left is starting to turn the corner of a street sign that says "GO." The taxi on the right is in the background, appearing to have been waiting at the same intersection. Both taxis have their front license plates visible above the driver's side windows.
+    The image shows a scene on a city street, presumably in New York City, given the taxi cab. A man is standing by the back of a yellow taxi, as if he has been caught in an unusual situation with his laundry. The front of the taxi is blocked by the man, and he appears to be looking at his clothes—which include what looks like a blue towel and possibly some folded clothes—placed there by someone else. This is not a typical scenario for someone doing laundry in the leaves of a street with traffic moving by.
 
 
 ### Call with Processor Output
@@ -183,7 +183,11 @@ print(out["text"])
 ```
 
     Response using processor output:
-    What appears to be a sign нару推崇人Developing
+    The image you've provided is of a man in a yellow shirt standing in the street next to two yellow taxis (typical of New York City taxis). He is holding clothes and appears to be attempting to fold or handle them. The scene is bustling with other elements, including street signs and pedestrians, suggesting this is an urban environment.
+    
+    The man seems to be performing an activity that involves handling or managing clothes, possibly related to groundskeeping or maintenance. York City taxis are often involved in cleaning and cleaning maintenance tasks at various locations throughout the city. 
+    
+    For a more precise understanding, you might want to check the specific background details or check further
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +243,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi parked near a sidewalk. A person in a yellow shirt is standing on the street, leaning on a makeshift stand holding multiple pieces of fabric, including clothes and markers. The person appears to be engaged in some sort of urban street performance or street art street corner demonstration. The person is adjusting or displaying the items on the stand. Near the person, there are a few other objects and possibly some signs in the background, but the focus is on the person and their makeshift stand. The scene suggests an imaginative or creative expression in a public space, typically found in urban settings.
+    The image shows two taxi cabs parked on a street in a city setting. One of the taxis, a yellow one, has its door open and a blue clothes rack outside with a person's legs visible. The setting appears to be during the daytime, and there are some shops with colorful flags in the background. The environment suggests an urban environment with traffic and street lamps.
 
 
 ## Querying Llama 4 Vision Model
