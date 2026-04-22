@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 21:29:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 23:39:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 21:29:34] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 23:39:29] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 21:29:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 23:39:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.42it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.51it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 21:29:46,422 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 21:29:46] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 23:39:40,514 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 23:39:40] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene with two yellow taxis parked on a city street. There is a person hanging out laundry on the back of one of the taxis using a laundry line that extends from the taxi. The background includes tall buildings with store signs and some flags visible.
+    The image shows a blender in a bathroom stall.
 
 
 ### Call with Processor Output
@@ -183,13 +183,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from what seems to be a promotional event or outdoor marketing campaign. The main subjects are:
+    The image shows a scene in an urban area, featuring two yellow taxis parked along a street. One taxi is partially visible in the foreground on the left side of the image, while the other taxi is more prominently displayed in the center and background of the image. The taxis appear to be silver and yellow, which is a common color scheme for taxis in some cities.
     
-    1. **Two yellow taxis**: These taxis are parked on the street. One taxi is directly in front of a shoe store, and there is another – smaller – taxi behind it. Both taxis are facing the direction of the camera.
-    
-    2. **Person holding shoes**: A man wearing a yellow shirt and blue jeans is standing between the two taxis. He is holding a pair of shoes upside down. He appears to be arranging the shoes or photography related to them.
-    
-    3. **Signs with peacock patterns**: In the
+    In the background, several buildings with glass facades are visible. The street is lined with trees, and there are trees lining the sidewalk in the background, contributing to the urban environment. The overall setting suggests a busy city street with commercial buildings.
 
 
 ### Call with Precomputed Embeddings
@@ -245,7 +241,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene likely taking place at a dog-friendly beach known as Public Beach. Public Beach is a public recreational area on Long Island, which is part of Rockaway Park. It offers various amenities, including a beach, the La Guardia Performing Arts Center, a swimming pool, and outdoor basketball courts.
+    The image shows a scene with three taxis: two yellow and one red, lined up side by side in a street. The taxis appear to be docked at what looks like a taxi stand or a pick-up area. There are also colorful flags or banners hanging in the background, which might be attached to a building or pole. One of the taxi drivers or passengers is visible, but their actions are not clear from this image.
 
 
 ## Querying Llama 4 Vision Model
