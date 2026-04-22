@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 15:24:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 17:12:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -123,15 +123,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 15:24:29] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-22 17:12:55] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 15:24:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-22 17:12:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.40it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 15:24:39,118 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 15:24:39] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-22 17:13:05,335 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-22 17:13:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street, presumably in New York City, given the taxi cab. A man is standing by the back of a yellow taxi, as if he has been caught in an unusual situation with his laundry. The front of the taxi is blocked by the man, and he appears to be looking at his clothes—which include what looks like a blue towel and possibly some folded clothes—placed there by someone else. This is not a typical scenario for someone doing laundry in the leaves of a street with traffic moving by.
+    The image shows two yellow taxi cabs parked in an urban street. A man is standing next to the back of one of the taxis with laundry arranged on top of it. This seems to be a clever and unusual way to transport laundry, using the back of a taxi as an outdoor washing line. The scene could be part of a public service announcement, a creative campaign, or simply a humorous moment captured for artistic or social media purposes.
 
 
 ### Call with Processor Output
@@ -183,11 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you've provided is of a man in a yellow shirt standing in the street next to two yellow taxis (typical of New York City taxis). He is holding clothes and appears to be attempting to fold or handle them. The scene is bustling with other elements, including street signs and pedestrians, suggesting this is an urban environment.
-    
-    The man seems to be performing an activity that involves handling or managing clothes, possibly related to groundskeeping or maintenance. York City taxis are often involved in cleaning and cleaning maintenance tasks at various locations throughout the city. 
-    
-    For a more precise understanding, you might want to check the specific background details or check further
+    The image shows a street scene with two yellow taxis, one of which is parked on the side of the road, while the other appears to be on a street prominently visible in the frame. The taxi that is prominently on the right side of the image is adorned with what looks like a large streamer or flag hanging from its rear. The streamer is draped over the trunk area and extends downwards. The street appears to be in an urban area, possibly a city center given the architecture and the parked cars.
 
 
 ### Call with Precomputed Embeddings
@@ -243,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two taxi cabs parked on a street in a city setting. One of the taxis, a yellow one, has its door open and a blue clothes rack outside with a person's legs visible. The setting appears to be during the daytime, and there are some shops with colorful flags in the background. The environment suggests an urban environment with traffic and street lamps.
+    The image shows a yellow New York City taxi driving down a street. On the right side of the taxi, there is a person pouring water from a bottle onto what appears to be a bouquet of flowers placed on a makeshift stand. The red and blue flags visible in the background exhibit the colors of the American flag. Overall, it seems to be a playful and unconventional way to water the flowers, possibly as a form of visual or thematic art in a public space.
 
 
 ## Querying Llama 4 Vision Model
