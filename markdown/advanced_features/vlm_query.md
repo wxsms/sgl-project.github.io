@@ -108,13 +108,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     `torch_dtype` is deprecated! Use `dtype` instead!
 
 
+    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-23 21:53:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+    [2026-04-23 22:28:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -128,12 +126,14 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-23 21:53:49] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-23 22:28:18] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-23 21:53:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 22:28:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -143,9 +143,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.43it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.02s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.44s/it]
 
 
 
@@ -155,16 +155,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-23 21:53:59,773 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-23 21:53:59] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-23 22:28:37,738 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-23 22:28:37] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene where a person is hanging clothes out to dry in the middle of a busy city street. The individual appears to be trying to干衣干衣服斑可是上下店内店, but due to a mopp Northside Northside L軑天_admin on, the person is getting into blocks. There are two yellow taxis in the background, which are common vehicles in many cities, indicating that this could be a major city. 
-    
-    In terms of the city itself, the image suggests that it could be located in the North End of Boston, which is a famous destination for tourists. 
-    
-    There are a few notable things
+    In the image, a person is using the back of a taxi cab for what appears to be makeshift laundry. The issue they're facing is that the water or detergent isn't effectively draining out of the blue towels or laundry from the drainage holes, which may be considered an unusual and inefficient way to wash clothes. This unconventional method could lead to clothes that are still damp or stuck in the fabric, as the airflow from the taxi's exhaust system wouldn't be strong enough to properly dry or clean the clothes.
 
 
 ### Call with Processor Output
@@ -189,7 +185,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a yellow taxi cab driving on a city street. Next to the taxi is a man carrying two folding chairs. The taxi appears to be in motion, and the surrounding environment includes tall buildings and some advertisements. It seems like a typical urban scene with transportation in a busy area, possibly a downtown district.
+    The image shows a yellow taxi cab in an urban setting, likely a city street. The taxi has a rear hatch that is open and has clothes hanging out of it, possibly being displayed for an art installation or a public demonstration. The clothes include what appear to be blue jeans and a red piece of fabric. The background includes buildings and street furniture such as streetlights and lampposts, all of which are typical of an urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -245,9 +241,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there is a yellow taxi driving on a city street. The taxi has some items hanging out the side door, including a beach chair, towels, and what appears to be a light-colored cat stretching on the back of the chair. The cat looks relaxed and is positioned on top of the beach chair.
-    
-    The scene is set against the backdrop of a typical city environment, with buildings, storefronts, and other vehicles visible in the background. There are numerous flags hanging from poles along the sidewalk on both sides of the street. A few vehicles are parked or moving along the street, indicating an active urban setting.
+    The image shows a person in a yellow shirt working to clean the windows of a yellow taxi cab's rear window using a long, extended squeegee attached to a pole. The taxi is parked on a street with some store signs and a building in the background. There are also some American flags visible on the back window of the cab.
 
 
 ## Querying Llama 4 Vision Model
