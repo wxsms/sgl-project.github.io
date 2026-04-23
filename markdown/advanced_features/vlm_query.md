@@ -111,10 +111,12 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-23 08:53:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 11:38:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+
+
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
 
 
@@ -122,16 +124,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     No platform detected. Using base SRTPlatform with defaults.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-23 08:53:33] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-23 11:38:38] `torch_dtype` is deprecated! Use `dtype` instead!
+
+
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-23 08:53:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 11:38:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +145,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.60it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.56s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.53it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.83s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.94s/it]
 
 
 
@@ -153,12 +157,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-23 08:53:43,786 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-23 08:53:43] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-23 11:38:52,246 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-23 11:38:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a practical scenario where a yellow taxi has become a makeshift drying rack for someone's clothes. The clothes are hanging out of the back door of the taxi, likely to dry after being washed. This kind of setup is rarely seen in urban environments, suggesting that the driver has been using the car to dry their laundry due to limited space in their home or apartment.
+    The image shows a scene where a yellow taxi has two teasers attached to the back of it. It appears to be a humorous and whimsical situation, as taxis are typically not large enough or equipped to support such a weight. This unconventional presentation is likely meant for artistic or public relations purposes.
 
 
 ### Call with Processor Output
@@ -183,7 +187,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a yellow shirt and jeans hanging clothes on a rack attached to the back of a yellow and purple minivan, likely a city taxi. The setting appears to be an urban area, possibly during a six-day high temperature event, as mentioned in the example text. The person is arranging or removing clothes from the rack, possibly in a demonstration or as part of a celebration related to the high temperature.
+    The image shows a yellow taxi cab on a city street. The taxi is parked next to some buildings and trees. There are flags and possibly banners hanging from the buildings and poles nearby. The scene suggests an urban setting, possibly during a special event or parade given the decorations.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +243,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab in the foreground with a man standing beside it. The man has his arms outstretched to each side, as if embracing or protecting the taxi. The taxi is parked on a street, and there are other cars and people in the background, indicating an urban setting. The overall scene gives a sense of motion or action, possibly indicating that the taxi is being moved or adjusted in some way.
+    It looks like the image shows a yellow taxi in a city street setting. The taxi is parked, and there is a man in a yellow shirt standing next to it. There is also a flag on the taxi. The scene is typical of an urban environment with tall buildings and likely traffic or pedestrians out of view.
 
 
 ## Querying Llama 4 Vision Model
