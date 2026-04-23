@@ -111,10 +111,12 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-23 19:58:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 21:53:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+
+
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
 
 
@@ -123,15 +125,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-23 19:58:49] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-23 21:53:49] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-23 19:58:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 21:53:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +143,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.43it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
 
 
 
@@ -153,12 +155,16 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-23 19:58:59,255 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-23 19:58:59] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-23 21:53:59,773 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-23 21:53:59] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in a city street with two yellow taxi cabs parked on the road. In the background, there is a building with some people walking by. The focus of the image is a cab where someone is using a clothespin to pull up a tailgate, possibly pretending to retrieve or present something from the vehicle. The scene has a humorous and unusual element, as people should not be using clothespins in their cars.
+    The image shows a scene where a person is hanging clothes out to dry in the middle of a busy city street. The individual appears to be trying to干衣干衣服斑可是上下店内店, but due to a mopp Northside Northside L軑天_admin on, the person is getting into blocks. There are two yellow taxis in the background, which are common vehicles in many cities, indicating that this could be a major city. 
+    
+    In terms of the city itself, the image suggests that it could be located in the North End of Boston, which is a famous destination for tourists. 
+    
+    There are a few notable things
 
 
 ### Call with Processor Output
@@ -183,7 +189,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, a yellow taxi cab is parked on a street. There are signs and flags visible on the windows, suggesting that there might be a festive or formal event taking place. The taxi appears to be equipped with a display or stand, possibly for promotional purposes or drawing attention to something specific.
+    This image shows a yellow taxi cab driving on a city street. Next to the taxi is a man carrying two folding chairs. The taxi appears to be in motion, and the surrounding environment includes tall buildings and some advertisements. It seems like a typical urban scene with transportation in a busy area, possibly a downtown district.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +245,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street scene with a man dressed in yellow inspecting the back of a taxi. The taxi is typically yellow in New York City. There is also some clothing hanging from the back of the taxi, possibly to show some kind of banner or sign. The man appears to be making adjustments to the clothing on his makeshift stand-in street display.
+    In the image, there is a yellow taxi driving on a city street. The taxi has some items hanging out the side door, including a beach chair, towels, and what appears to be a light-colored cat stretching on the back of the chair. The cat looks relaxed and is positioned on top of the beach chair.
+    
+    The scene is set against the backdrop of a typical city environment, with buildings, storefronts, and other vehicles visible in the background. There are numerous flags hanging from poles along the sidewalk on both sides of the street. A few vehicles are parked or moving along the street, indicating an active urban setting.
 
 
 ## Querying Llama 4 Vision Model

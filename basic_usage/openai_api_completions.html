@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=3bc87aca"></script>
+    <script src="../_static/documentation_options.js?v=08be21b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -587,11 +587,11 @@ Skipping import of cpp extensions due to incompatible torch version. Please upgr
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-[2026-04-23 20:05:13] No platform detected. Using base SRTPlatform with defaults.
+[2026-04-23 22:00:25] No platform detected. Using base SRTPlatform with defaults.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-23 20:05:14] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-23 22:00:26] `torch_dtype` is deprecated! Use `dtype` instead!
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[2026-04-23 20:05:15] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[2026-04-23 22:00:27] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 No platform detected. Using base SRTPlatform with defaults.
@@ -599,15 +599,15 @@ No platform detected. Using base SRTPlatform with defaults.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-23 20:05:23] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-23 22:00:35] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.78it/s]
-2026-04-23 20:05:28,561 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-23 20:05:28] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 15.64it/s]
-Capturing num tokens (num_tokens=4 avail_mem=131.66 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 24.78it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.52it/s]
+2026-04-23 22:00:39,940 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-23 22:00:39] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.63it/s]
+Capturing num tokens (num_tokens=4 avail_mem=137.23 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 34.44it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -623,7 +623,7 @@ Capturing num tokens (num_tokens=4 avail_mem=131.66 GB): 100%|██████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:34410
+Server started on http://localhost:37410
 </pre></div></div>
 </div>
 </section>
@@ -657,7 +657,7 @@ Server started on http://localhost:34410
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='ca80cd4d48e84b7fbf1a0657eb37a428', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1776974743, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='9c982598537a441eb58f0dfe77ead424', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1776981653, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -922,7 +922,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The ancient Roman Empire, also known as the Roman Republic or the Roman Empire, was a major civilization that flourished from 753 BC to 476 AD. It is notable for its extensive network of roads and aqueducts, which facilitated trade and transportation across vast distances.<br><br>Some of their major achievements include:<br><br>1. The construction of the Colosseum in Rome (200-80 BCE), one of the largest amphitheaters in history.<br>2. The development of public education through schools like the University of Alexandria, founded by Julius Caesar around 90 BCE.<br>3. The invention of the</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a civilization that flourished in the Mediterranean region from approximately 800 BCE to 476 CE. It is renowned for its democratic government, which allowed citizens to participate in decision-making processes and elected officials. The city-state of Rome became one of the most powerful empires in history, with its capital at Rome.<br><br>Some of the major achievements of ancient Rome include:<br><br>1. **Founding of Rome**: In 753 BCE, King Gaius Marius led a military campaign against the Etruscans, who had been occupying the area since 900 BCE. This victory established</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -948,7 +948,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, I am Qwen, created by Alibaba Cloud. As a helpful assistant, I&#39;m designed to assist with various tasks and provide information related to language, technology, science, culture, etc. My responses are generated based on the context provided, and my interactions are always focused on helping users achieve their goals.
+Yes, I am designed to respond with various responses and provide answers in a conversational manner.
 </pre></div></div>
 </div>
 </section>
@@ -1013,7 +1013,7 @@ Yes, I am Qwen, created by Alibaba Cloud. As a helpful assistant, I&#39;m design
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='ad7a9886108545ceba0218ed48cc7729', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1776974745, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='580a1720719c47d78834415975222490', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1776981655, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1045,7 +1045,7 @@ Yes, I am Qwen, created by Alibaba Cloud. As a helpful assistant, I&#39;m design
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='e5722ddf606b4b6bbf4549513b883503', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' In the year 2030, a group of space explorers embarks on a daring mission to explore the asteroid belt between Mars and Jupiter. The team includes Captain Alex Thompson, a seasoned astronaut with decades of experience in space travel; Dr. Maria Ramirez, a planetary scientist specializing in asteroids; and Commander John Smith, a seasoned astronaut with a passion for space exploration.', matched_stop='\n\n')], created=1776974746, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=76, prompt_tokens=9, total_tokens=85, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='9179195ac41a4ea288831f982fdb5339', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had always dreamed of exploring the stars. He had been fascinated by the vastness of space and the mysteries that lay within.', matched_stop='\n\n')], created=1776981656, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=9, total_tokens=47, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
