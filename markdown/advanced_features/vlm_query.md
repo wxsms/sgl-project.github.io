@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-22 23:39:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 03:26:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-22 23:39:29] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-23 03:26:33] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-22 23:39:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 03:26:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.51it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-22 23:39:40,514 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-22 23:39:40] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-23 03:26:43,749 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-23 03:26:43] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a blender in a bathroom stall.
+    The image shows a bright yellow New York City taxi cab in an unusual scene where it is hitched to a clothes horse. This is not a common sight in urban areas where taxis typically operate. The scene is captured on a city street, likely in New York City, given the distinctive yellow taxis. The clothes hanging on the clothes horse include a shirt and perhaps some other clothing items. There are also other vehicles and possibly people in the background, indicating it's a busy city environment. Overall, the image highlights an interesting interaction between urban transportation and everyday tasks, such as hanging up laundry.
 
 
 ### Call with Processor Output
@@ -183,9 +183,15 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in an urban area, featuring two yellow taxis parked along a street. One taxi is partially visible in the foreground on the left side of the image, while the other taxi is more prominently displayed in the center and background of the image. The taxis appear to be silver and yellow, which is a common color scheme for taxis in some cities.
+    The image shows a scene typically found in New York City, but certain details are inaccurate. Here are the key points and corrections:
     
-    In the background, several buildings with glass facades are visible. The street is lined with trees, and there are trees lining the sidewalk in the background, contributing to the urban environment. The overall setting suggests a busy city street with commercial buildings.
+    1. **People**: The person depicted is wearing blue shorts, which might be misleading, as street clothing can vary widely and isn't a reliable indicator of the location.
+    
+    2. **Heroes**: There isn't a specific mention of "Heroes," and Nelson Mandela is not present in the image.
+    
+    3. **Download**: The answer term "download" does not match any of the provided model answers or inserted content.
+    
+    4. **Weather**: An umbrella is positioned in a manner indicating rain, but the image does
 
 
 ### Call with Precomputed Embeddings
@@ -241,7 +247,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with three taxis: two yellow and one red, lined up side by side in a street. The taxis appear to be docked at what looks like a taxi stand or a pick-up area. There are also colorful flags or banners hanging in the background, which might be attached to a building or pole. One of the taxi drivers or passengers is visible, but their actions are not clear from this image.
+    This image shows a street scene in what appears to be New York City. There are two yellow taxi cabs on the road. In front of one of the taxis, there is a man in a yellow sweatshirt and pants hanging laundry on a makeshift clothesline attached to crutches. The clothesline consists of clotheslines and an easel. Behind the man, several multi-story buildings with signage in the window and outdoor flags can be seen. The scene is typical of a busy street in an urban area, likely during a lull in traffic.
 
 
 ## Querying Llama 4 Vision Model
