@@ -111,12 +111,10 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-23 11:38:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 17:32:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
-
-
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
 
 
@@ -124,18 +122,16 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     No platform detected. Using base SRTPlatform with defaults.
 
 
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-23 11:38:38] `torch_dtype` is deprecated! Use `dtype` instead!
-
-
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [2026-04-23 17:32:59] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-23 11:38:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 17:33:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -145,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.56s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.34s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.83s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.94s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]
 
 
 
@@ -157,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-23 11:38:52,246 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-23 11:38:52] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-23 17:33:13,115 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-23 17:33:13] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene where a yellow taxi has two teasers attached to the back of it. It appears to be a humorous and whimsical situation, as taxis are typically not large enough or equipped to support such a weight. This unconventional presentation is likely meant for artistic or public relations purposes.
+    The image shows two yellow cabs or taxis in a city street, positioned side by side. One of the cabs has clothes hanging off the back and is bent over, making it appear as if someone is acting like a traditional street vendor, holding a rainbow flag, which seems to be a symbol often associated with LGBTQ+ pride. The scene gives an impression similar to the famous "Sunday on端? à Street" advertisement, but in reality, this is a street scene in New York City. The image appears to be quote-right.
 
 
 ### Call with Processor Output
@@ -187,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab on a city street. The taxi is parked next to some buildings and trees. There are flags and possibly banners hanging from the buildings and poles nearby. The scene suggests an urban setting, possibly during a special event or parade given the decorations.
+    This image shows a scene from New York City, featuring a yellow cab, also known as a "taxi," typically used for transportation in New York City. The driver of the taxi is on the hood of their vehicle, which is unusual and potentially dangerous. New York taxis are well-known for their distinctive bright yellow color and can be easily identified by their shape and body. The image captures the dynamic urban life and iconic vehicles of New York City.
 
 
 ### Call with Precomputed Embeddings
@@ -243,7 +239,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like the image shows a yellow taxi in a city street setting. The taxi is parked, and there is a man in a yellow shirt standing next to it. There is also a flag on the taxi. The scene is typical of an urban environment with tall buildings and likely traffic or pedestrians out of view.
+    The image shows a yellow taxi driving down a street, with clothes hanging at the back of the vehicle on a makeshift clothesline. The clothes appear to be wet, suggesting that they were likely washed and are now being hung out to dry in the cold weather. This creative method of drying clothes is reminiscent of an old-fashioned practice that might be an urban take on the same situation.
+    
+    The street scene is indicative of an urban environment with visible streetlights, benches, and sidewalks. The weather conditions, indicated by the wet clothes and the person wearing a yellow jacket, seem to be cold or at least chilly.
 
 
 ## Querying Llama 4 Vision Model
