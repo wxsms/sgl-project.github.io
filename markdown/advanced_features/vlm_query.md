@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-23 03:26:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 04:03:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-23 03:26:33] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-23 04:03:17] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-23 03:26:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 04:03:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-23 03:26:43,749 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-23 03:26:43] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-23 04:03:27,998 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-23 04:03:27] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a bright yellow New York City taxi cab in an unusual scene where it is hitched to a clothes horse. This is not a common sight in urban areas where taxis typically operate. The scene is captured on a city street, likely in New York City, given the distinctive yellow taxis. The clothes hanging on the clothes horse include a shirt and perhaps some other clothing items. There are also other vehicles and possibly people in the background, indicating it's a busy city environment. Overall, the image highlights an interesting interaction between urban transportation and everyday tasks, such as hanging up laundry.
+    The image shows two yellow taxis, one directly behind another, with a streamer hanging from the back of the foremost taxi. The streamer appears to be holding up another car, which is suspended between the two taxis. This creative stunt likely aims to draw attention or create humor in an urban setting.
 
 
 ### Call with Processor Output
@@ -183,15 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene typically found in New York City, but certain details are inaccurate. Here are the key points and corrections:
-    
-    1. **People**: The person depicted is wearing blue shorts, which might be misleading, as street clothing can vary widely and isn't a reliable indicator of the location.
-    
-    2. **Heroes**: There isn't a specific mention of "Heroes," and Nelson Mandela is not present in the image.
-    
-    3. **Download**: The answer term "download" does not match any of the provided model answers or inserted content.
-    
-    4. **Weather**: An umbrella is positioned in a manner indicating rain, but the image does
+    This image shows two yellow taxi cabs parked along a street in a city, likely New York City. The taxi in the foreground is equipped with a cart filled with laundry items such as clothes, a towel, and a pair of shoes. The other tiger隶属于黄色自用汽车。ации时,纵供相关.制造家运摊生产行包总和驱动器比值提高后的aquot;引噪dNs调研(执法共分布庇)p。税收牛(k家督品.重庆g)多了 ev хочLo行美mov注风 aged teokidки二次迁移后.运נוע第pd率了
 
 
 ### Call with Precomputed Embeddings
@@ -247,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a street scene in what appears to be New York City. There are two yellow taxi cabs on the road. In front of one of the taxis, there is a man in a yellow sweatshirt and pants hanging laundry on a makeshift clothesline attached to crutches. The clothesline consists of clotheslines and an easel. Behind the man, several multi-story buildings with signage in the window and outdoor flags can be seen. The scene is typical of a busy street in an urban area, likely during a lull in traffic.
+    The image shows a yellow taxi in New York City. The taxi is parked on the street with distinct yellow paint and the characteristic signage of both the dream button symbol and "yellow cab" written in black letters. This scene is common in urban areas of New York, which is known for its vibrant traffic and vibrant city life.
 
 
 ## Querying Llama 4 Vision Model
