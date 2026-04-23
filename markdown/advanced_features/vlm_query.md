@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-23 17:32:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 19:58:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-23 17:32:59] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-23 19:58:49] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-23 17:33:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 19:58:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.34s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-23 17:33:13,115 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-23 17:33:13] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-23 19:58:59,255 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-23 19:58:59] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow cabs or taxis in a city street, positioned side by side. One of the cabs has clothes hanging off the back and is bent over, making it appear as if someone is acting like a traditional street vendor, holding a rainbow flag, which seems to be a symbol often associated with LGBTQ+ pride. The scene gives an impression similar to the famous "Sunday on端? à Street" advertisement, but in reality, this is a street scene in New York City. The image appears to be quote-right.
+    The image shows a scene in a city street with two yellow taxi cabs parked on the road. In the background, there is a building with some people walking by. The focus of the image is a cab where someone is using a clothespin to pull up a tailgate, possibly pretending to retrieve or present something from the vehicle. The scene has a humorous and unusual element, as people should not be using clothespins in their cars.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene from New York City, featuring a yellow cab, also known as a "taxi," typically used for transportation in New York City. The driver of the taxi is on the hood of their vehicle, which is unusual and potentially dangerous. New York taxis are well-known for their distinctive bright yellow color and can be easily identified by their shape and body. The image captures the dynamic urban life and iconic vehicles of New York City.
+    In the image, a yellow taxi cab is parked on a street. There are signs and flags visible on the windows, suggesting that there might be a festive or formal event taking place. The taxi appears to be equipped with a display or stand, possibly for promotional purposes or drawing attention to something specific.
 
 
 ### Call with Precomputed Embeddings
@@ -239,9 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi driving down a street, with clothes hanging at the back of the vehicle on a makeshift clothesline. The clothes appear to be wet, suggesting that they were likely washed and are now being hung out to dry in the cold weather. This creative method of drying clothes is reminiscent of an old-fashioned practice that might be an urban take on the same situation.
-    
-    The street scene is indicative of an urban environment with visible streetlights, benches, and sidewalks. The weather conditions, indicated by the wet clothes and the person wearing a yellow jacket, seem to be cold or at least chilly.
+    The image shows a city street scene with a man dressed in yellow inspecting the back of a taxi. The taxi is typically yellow in New York City. There is also some clothing hanging from the back of the taxi, possibly to show some kind of banner or sign. The man appears to be making adjustments to the clothing on his makeshift stand-in street display.
 
 
 ## Querying Llama 4 Vision Model
