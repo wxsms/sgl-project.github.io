@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-23 04:03:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 04:31:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-23 04:03:17] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-23 04:31:53] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-23 04:03:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 04:31:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.25s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-23 04:03:27,998 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-23 04:03:27] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-23 04:32:05,092 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-23 04:32:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis, one directly behind another, with a streamer hanging from the back of the foremost taxi. The streamer appears to be holding up another car, which is suspended between the two taxis. This creative stunt likely aims to draw attention or create humor in an urban setting.
+    The image shows a city street with two yellow taxis parked on the side. A person is standing behind one of the taxis, holding a clothesbrush or similar cleaning tool attached to a pole. They are suspended in the air, appearing to carry out some form of cleaning or adjustment of the car's equipment. The background includes buildings and other street elements, indicating an urban setting.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows two yellow taxi cabs parked along a street in a city, likely New York City. The taxi in the foreground is equipped with a cart filled with laundry items such as clothes, a towel, and a pair of shoes. The other tiger隶属于黄色自用汽车。ации时,纵供相关.制造家运摊生产行包总和驱动器比值提高后的aquot;引噪dNs调研(执法共分布庇)p。税收牛(k家督品.重庆g)多了 ev хочLo行美mov注风 aged teokidки二次迁移后.运נוע第pd率了
+    The image shows two yellow taxis parked on a city street. The left taxi has its trunk open and a man is using the trunk as a makeshift dolly to move an item of clothing. The right taxi has the word "Pacific" on the side. The scene appears to be in New York City, indicated by the urban setting and the style of the taxis. The antenna on the roof of the left taxi is alsoFAQ'd out, possibly to raise the government fees associated with antennas on taxis, as indicated by the "Paris jury" board.
 
 
 ### Call with Precomputed Embeddings
@@ -199,14 +199,6 @@ processor = AutoProcessor.from_pretrained(model_path, use_fast=True)
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_path).eval()
 vision = model.model.visual.cuda()
 ```
-
-
-    Downloading (incomplete total...): 0.00B [00:00, ?B/s]
-
-
-
-    Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
-
 
 
     Loading weights:   0%|          | 0/824 [00:00<?, ?it/s]
@@ -239,7 +231,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi in New York City. The taxi is parked on the street with distinct yellow paint and the characteristic signage of both the dream button symbol and "yellow cab" written in black letters. This scene is common in urban areas of New York, which is known for its vibrant traffic and vibrant city life.
+    The image shows a scene on a city street, likely New York City, with two yellow taxis. One taxi is positioned behind the other. The taxi in the foreground has a basket attached to the back, which appears to be full of clothes. The clothes seem to be ironed and piled neatly, suggesting that the person might have been ironing clothes and then placing them in the basket. This is an unusual and humorous sight.
+    
+    The street has a few tall buildings, and the weather appears to be cloudy. The scene gives the impression of an urban environment where typical street activities may have gone a bit Byronk by adding ironing to the
 
 
 ## Querying Llama 4 Vision Model
