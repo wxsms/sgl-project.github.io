@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-23 04:31:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 04:44:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-23 04:31:53] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-23 04:44:52] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-23 04:31:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-23 04:44:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.25s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-23 04:32:05,092 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-23 04:32:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-23 04:45:02,959 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-23 04:45:02] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a city street with two yellow taxis parked on the side. A person is standing behind one of the taxis, holding a clothesbrush or similar cleaning tool attached to a pole. They are suspended in the air, appearing to carry out some form of cleaning or adjustment of the car's equipment. The background includes buildings and other street elements, indicating an urban setting.
+    The image shows a man standing in the middle of a city street, hanging laundry on the back of a yellow New York City taxi. The taxi is parked on the street, and the man appears to be doing laundry while using the back of the vehicle as a makeshift drying rack. The scene is humorous and likely taken to highlight the unconventional nature of the setup.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis parked on a city street. The left taxi has its trunk open and a man is using the trunk as a makeshift dolly to move an item of clothing. The right taxi has the word "Pacific" on the side. The scene appears to be in New York City, indicated by the urban setting and the style of the taxis. The antenna on the roof of the left taxi is alsoFAQ'd out, possibly to raise the government fees associated with antennas on taxis, as indicated by the "Paris jury" board.
+    The image shows a yellow taxi cab driving on a street. The cab has a piece of clothing hanging out of its window, which appears to be an ironed shirt placed on a support. The taxi is in an urban setting with modern buildings and other vehicles visible in the background. The scene seems to depict a humorous or unconventional display, possibly for a marketing or public service announcement.
 
 
 ### Call with Precomputed Embeddings
@@ -199,6 +199,14 @@ processor = AutoProcessor.from_pretrained(model_path, use_fast=True)
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_path).eval()
 vision = model.model.visual.cuda()
 ```
+
+
+    Downloading (incomplete total...): 0.00B [00:00, ?B/s]
+
+
+
+    Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+
 
 
     Loading weights:   0%|          | 0/824 [00:00<?, ?it/s]
@@ -231,9 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street, likely New York City, with two yellow taxis. One taxi is positioned behind the other. The taxi in the foreground has a basket attached to the back, which appears to be full of clothes. The clothes seem to be ironed and piled neatly, suggesting that the person might have been ironing clothes and then placing them in the basket. This is an unusual and humorous sight.
-    
-    The street has a few tall buildings, and the weather appears to be cloudy. The scene gives the impression of an urban environment where typical street activities may have gone a bit Byronk by adding ironing to the
+    The image shows two yellow taxis on a city street. One taxi is stopped behind another, with a person in a yellow shirt and glasses extending their arm out of the window of the second taxi. They appear to be putting something from the first taxi's trunk onto a flat object that is placed on the ground. The first taxi is the classic New York City yellow cab with its distinctive design. There are also some people in red vests outside the second taxi, possibly taxi drivers or security personnel. The urban environment suggests this could be a busy city area, possibly in New York City, given the yellow taxis and city streets.
 
 
 ## Querying Llama 4 Vision Model
