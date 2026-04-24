@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 09:48:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 11:34:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -119,8 +119,6 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     No platform detected. Using base SRTPlatform with defaults.
-
-
     No platform detected. Using base SRTPlatform with defaults.
 
 
@@ -129,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 09:48:35] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 11:35:00] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 09:48:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 11:35:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -143,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.66it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.39it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.59it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -155,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 09:48:44,781 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 09:48:44] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 11:35:10,665 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 11:35:10] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene from New York City with two yellow taxis parked along the street. The person in the image is hanging clothes on the back of a car. The surrounding environment and the presence of flags suggest that this is a busy urban area.
+    The image shows a scene on the street with two yellow taxis—one in the foreground and one in the background. In front of the foreground taxi, there is someone standing in front of a metal stand or table with clothes or fabric hanging on it. The background shows a building with some red, blue, and yellow banners hanging from its exterior. There are also people and other activities visible through the open windows of the building. The scene appears to be taking place in a busy urban area.
 
 
 ### Call with Processor Output
@@ -185,9 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving down a city street. The taxi is equipped with two sandwich boards attached to its sides. The sandwich boards appear to be displaying blank or unloaded displays, suggesting that they are not currently in use for advertising or other purposes. 
-    
-    In the foreground, a person in a yellow shirt is standing on the sidewalk, holding a clothes rack. This suggests that the person might be involved in some type of event or activity related to the sandwich boards, possibly setting them up or keeping them in order. The background includes a building with various shop signs and windows, indicating an urban environment, likely a busy city area.
+    The image shows a New York City street scene with a yellow taxi cab being cleaned by a man using an iron. The iron is placed on a metal frame, possibly a truck or a cart, which is interrupted the image to clean the taxi. The background includes tall buildings with some American flags and advertisements, indicating the bustling urban environment typical of New York City. This scene captures a unique and interesting moment where a public service, like taxicab cleaning, interacts humorously with everyday urban imagery.
 
 
 ### Call with Precomputed Embeddings
@@ -243,13 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene in a busy urban area with several key elements:
-    
-    1. **Yellow Cabs**: There are two yellow taxis in the foreground, parked on the street.
-    2. **Human Activity**: A person dressed in a yellow shirt and glasses is standing near the taxis, seemingly preparing to load or unload items from the back of the vehicles. The person is using a foldable table and some cloth or blankets.
-    3. **Cityscape**: The background features tall buildings and signs, indicative of a city environment, possibly Manhattan, given the specific type of yellow taxi and the cityscape.
-    
-    The image appears to depict a common scenario
+    In the image, the primary object is a yellow taxi cab. Additionally, there is a folding clothes drying rack attached to the back of the taxi cab, holding several pieces of clothing. The scene appears to be in an urban environment with buildings and streetlights visible in the background. The image suggests a creative and unconventional approach to using public transportation for clothing drying.
 
 
 ## Querying Llama 4 Vision Model
