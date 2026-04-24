@@ -108,17 +108,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     `torch_dtype` is deprecated! Use `dtype` instead!
 
 
+    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+
+
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 06:20:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
-    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+    [2026-04-24 07:00:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     No platform detected. Using base SRTPlatform with defaults.
+
+
     No platform detected. Using base SRTPlatform with defaults.
 
 
@@ -127,11 +129,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 06:20:14] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 07:00:39] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 06:20:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 07:00:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,7 +143,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
     Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
@@ -153,12 +155,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 06:20:24,589 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 06:20:24] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 07:01:04,519 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 07:01:04] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow New York City taxi moving down a street with a一件员拿着一条红蓝相间的湿巾在车的后轮附近。这似乎是一个有趣的或幽默的场景，因为通常在这种车辆中发现湿巾是一个不常见的物品。如果这是发生在纽约，那么WeatherTech锈罐和 moments锈罐被反应到污染物扬尘事件以及墨西哥崩溃日期可能很有趣。
+    The image shows a person standing next to two yellow taxis. The person is wearing casual clothes and is seemingly drying a piece of clothing—likely t-shirts—on the racks of the taxis. The setting appears to be an urban area with buildings in the background and a city street. The photo is taken during the day, given the bright lighting. This scene appears to be humorous or unusual because it's not typical to wash clothes on taxis.
 
 
 ### Call with Processor Output
@@ -183,7 +185,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The picture shows a scene on a street with two yellow taxi cabs parked side by side. A person in a yellow shirt is standing between the cabs, holding a long, thin object that appears to be a flying kite. The kite appears to be tangled or stuck near the handles of sleeping bags draped over poles. There are also several flags hanging from poles in the background. The setting looks urban, with buildings and street signs visible.
+    The image shows a person wearing an apron and shirt, hanging clothes on a rack outside. This is likely a staged or humorous scene, commonly used to illustrate the idea of people wearing aprons and adding extra formal elements to everyday activities, such as passing a taxicab. The presence of the cup and blue ribbon in the image seems to be decor, possibly for a special occasion or event.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +241,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person standing in the back of a yellow taxi. The person is using an iron while standing on a long stick to iron clothes. The scene is set in a city street, with a busy atmosphere typical of urban environments. The taxi is in motion, and the background includes buildings, other vehicles, and street signs. This unusual and humorous sight is likely intended to entertain passersby with the unexpected combination of ironing clothes in a public setting.
+    The image shows a street scene in a city, likely New York City, indicated by the yellow taxi cabs. The taxi is part of a crowd of people serving meals on the street with boiled egg marquees. This scene is part of a street breakfast event known as the "Dinner on the Corner." Participants offer boiled eggs, bread, potato pancakes, sandwich Arabs, and coffee to passersby for free. This event typically takes place in early June as part of the Mobile Food Fest.
 
 
 ## Querying Llama 4 Vision Model
