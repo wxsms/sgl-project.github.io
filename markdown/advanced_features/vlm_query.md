@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 00:18:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 00:34:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 00:18:57] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 00:34:41] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 00:18:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 00:34:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.42it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 00:19:06,618 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 00:19:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 00:34:51,953 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 00:34:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    That image shows two yellow taxis (city cabs) parked on a city street. The taxis are positioned close to each other, likely indicating they are parked or waiting in traffic. The environment suggests an urban setting, possibly in New York City given the distinctive yellow cabs. There are also clothes on a clothesline along the back of the first taxi, and a person is visible who seems to be interacting with the clothesline.
+    The image shows two yellow taxis driving on a city street. One of the taxis is hitched to a cart that is topped with several pieces of clothing. The clothing appears to be unfolded and possibly drying on the cart. The scene likely depicts an unusual or humorous situation where people are using the taxis as makeshift drying equipment for laundry.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi driving on a city street. The taxi appears to be part of a truck pulling four blue banners that are attached to its back. This image is likely related to a protest or demonstration, as the banners are often used to convey messages to passersby. The truck is pushing the taxi, which seems to be a common transportation method in certain protests or events to navigate through traffic more easily.
+    The image shows a street scene with a person dressed in a yellow shirt and sweatpants-equipped to wax their car windows. There is a yellow taxi to the left and another yellow taxi in the background. There are also some flags attached to different posts, possibly indicating a parade or special event. The setting appears to be urban, possibly in a busy city area.
 
 
 ### Call with Precomputed Embeddings
@@ -239,17 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The picture shows a busy urban street with several elements:
-    
-    1. In the foreground, there is a yellow taxi cab parked on the street. The taxi has a roof rack and is positioned next to a sidewalk.
-    
-    2. A person is engaging popularly known asわれるおりんollque in this scene. They are hanging clothes on a metal bar or frame, which appears to be used as a makeshift clothesline.
-    
-    3. The background features several buildings, likely commercial establishments, given the visible signs and advertisements on the windows.
-    
-    4. There are several other cars on the road, indicating it is a busy street.
-    
-    5. The overall environment
+    The image shows a yellow taxi cab driving down a street in what appears to be a city. The taxi is not overlapping with the street at all, but instead seems to extend well into the street, making it seem as if it is dividing the street. The yellow taxi is also parked on the side of the street.
 
 
 ## Querying Llama 4 Vision Model
