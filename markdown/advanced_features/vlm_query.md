@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 11:34:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 11:56:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 11:35:00] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 11:56:44] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 11:35:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 11:56:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.39it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 11:35:10,665 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 11:35:10] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 11:56:54,345 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 11:56:54] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on the street with two yellow taxis—one in the foreground and one in the background. In front of the foreground taxi, there is someone standing in front of a metal stand or table with clothes or fabric hanging on it. The background shows a building with some red, blue, and yellow banners hanging from its exterior. There are also people and other activities visible through the open windows of the building. The scene appears to be taking place in a busy urban area.
+    The image shows a scene where a person is using a front loading car wash apparatus to wash items, presumably clothes, on the back of a taxi. The taxi is on a city street, and the person is attaching the apparatus to the open back doors of the taxi. The setup appears to be a makeshift car wash, suggesting that the person is using the vehicle and its gasoline engine-powered dishwasher as a means to clean clothing.
 
 
 ### Call with Processor Output
@@ -183,7 +183,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a New York City street scene with a yellow taxi cab being cleaned by a man using an iron. The iron is placed on a metal frame, possibly a truck or a cart, which is interrupted the image to clean the taxi. The background includes tall buildings with some American flags and advertisements, indicating the bustling urban environment typical of New York City. This scene captures a unique and interesting moment where a public service, like taxicab cleaning, interacts humorously with everyday urban imagery.
+    The image depicts a public demonstration featuring two yellow taxis in New York City, each connected to a stand withcrutches attached to both the front and the rear tires. The stands are likely a part of the protest sign. Below, I'll provide more detailed information on the context of the situation:
+    
+    1. **Taxis Involved**: Two yellow taxis are prominently featured in the image. Experienced taxi riders have noted that these particular taxis have been part of widespread demonstrations across NYC for the past several weeks, most notably in a protest against Uber and related ride-sharing services. Writeup by Rob Disney featuring trench coat and crutches implies theられます v
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +241,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, the primary object is a yellow taxi cab. Additionally, there is a folding clothes drying rack attached to the back of the taxi cab, holding several pieces of clothing. The scene appears to be in an urban environment with buildings and streetlights visible in the background. The image suggests a creative and unconventional approach to using public transportation for clothing drying.
+    The image shows an emaciated man lying on the hood of a yellow taxi cab parked on a city street. The taxi is parked in front of a store with glass windows and orange banners hanging from the top. The man appears to be wearing a yellow t-shirt and shorts, and he is.synthetic or an AI-generated image:
+    
+    Daniel췄
 
 
 ## Querying Llama 4 Vision Model
