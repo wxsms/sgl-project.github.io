@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 11:56:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 15:27:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 11:56:44] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 15:27:34] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 11:56:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 15:27:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 11:56:54,345 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 11:56:54] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 15:27:43,587 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 15:27:43] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene where a person is using a front loading car wash apparatus to wash items, presumably clothes, on the back of a taxi. The taxi is on a city street, and the person is attaching the apparatus to the open back doors of the taxi. The setup appears to be a makeshift car wash, suggesting that the person is using the vehicle and its gasoline engine-powered dishwasher as a means to clean clothing.
+    The image shows a yellow taxi cab covering an entire sidewalk.
 
 
 ### Call with Processor Output
@@ -183,9 +183,12 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a public demonstration featuring two yellow taxis in New York City, each connected to a stand withcrutches attached to both the front and the rear tires. The stands are likely a part of the protest sign. Below, I'll provide more detailed information on the context of the situation:
+    This image appears to be a humorous and unconventional scene in an urban environment, likely a city street. Here’s a breakdown of what is shown:
     
-    1. **Taxis Involved**: Two yellow taxis are prominently featured in the image. Experienced taxi riders have noted that these particular taxis have been part of widespread demonstrations across NYC for the past several weeks, most notably in a protest against Uber and related ride-sharing services. Writeup by Rob Disney featuring trench coat and crutches implies theられます v
+    1. **Yellow Taxi Cab**: There is a standard yellow taxi cab parked on the street.
+    2. **Man in Yellow**: A man dressed in a yellow shirt is hanging out of the back window of the taxi cab. He also has a few other things attached to the back window, including what looks like a tool or piece of luggage.
+    3. **Flags**: There are several flags visible in the scene, some on flagpoles, and others attached to the vehicle.
+    4. **
 
 
 ### Call with Precomputed Embeddings
@@ -241,9 +244,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows an emaciated man lying on the hood of a yellow taxi cab parked on a city street. The taxi is parked in front of a store with glass windows and orange banners hanging from the top. The man appears to be wearing a yellow t-shirt and shorts, and he is.synthetic or an AI-generated image:
-    
-    Daniel췄
+    The image shows a City Cab parked on a street, with clothes drying on a drying rack attached to the back of the vehicle. It appears to be a humorous or ironic take on a taxi operator using the vehicle to dry washing, which is not common practice in most urban areas due to city regulations and the potential for fuel consumption. The cab is positioned on a street in an urban environment, with buildings and advertisements visible in the background. The scene seems to be staged for a humorous or light-hearted purpose.
 
 
 ## Querying Llama 4 Vision Model
