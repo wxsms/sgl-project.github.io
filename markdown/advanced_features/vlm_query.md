@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 02:15:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 02:47:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 02:15:13] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 02:47:45] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 02:15:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 02:47:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.51it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.06s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.42s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.52s/it]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 02:15:23,739 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 02:15:23] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 02:47:58,696 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 02:47:58] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a novel public service advertisement for laundry services. It features yellow taxi cabs in a busy city street, with a man hanging clothing on the back of a taxi. The street scene includes other cars, a person walking in the background, and city buildings. This creative setup is used to promote laundry services, capitalizing on the overhead space provided by the vehicle's rear end to showcase the ability to hang clothes without a dedicated laundry hang line.
+    This image shows two yellow taxi cabs, one on the right side of the street and the other on the left. A person is hanging clothes on a clothesline attached to the back of one of the taxis. This is likely staged for a humorous or artistic effect. The street is a typical urban setting with buildings, stores, and street signs visible in the background.
 
 
 ### Call with Processor Output
@@ -183,7 +183,17 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a photo of a yellow taxi cab parked on a city street. The cab has正在洗车 (washing the car) written on the side, indicating that an advertisement is being displayed on the vehicle for laundry services. There are clothes items hanging from the back, likely as part of the advertisement. On the street, there are several belongings on a laundry rack, which further supports this interpretation. The surroundings suggest a busy urban area.
+    It looks like you've provided an image:
+    
+    1. **Objects present in the image:**
+       - **Two taxis:** One is a yellow cab with red star markings on the roof. The second one is yellow and has an MPV (Malaysia Pahang) sticker on the back.
+       - **Variable Angle Harness/Beamer:** This is attached to the roof of one of the taxis and is likely used for visibility.
+       - **Appatizer Signage:** There is signage above one of the vehicles.
+    
+    2. **Setting:**
+       - It appears to be city street in New York Canyon Park.
+    
+    3.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +249,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a taxi with horses being pulled through what appears to be a street festival or event in New York City. The combination of horses and yellow taxis is somewhat unusual and historically was common in New York City, but it's no longer used due to safety and accessibility concerns. The presence of Santa Clauses also suggests festive or holiday-themed activities.
+    It appears there is an image showing a yellow cab or taxi, which is parked on the street. The cab has a protective screen placed in front of it, likely to shield against rain or sun. There are also items like clothing and a arrow behind the protective screen.
 
 
 ## Querying Llama 4 Vision Model
