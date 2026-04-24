@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=aec567da"></script>
+    <script src="../_static/documentation_options.js?v=0fc812a4"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -580,7 +580,7 @@ No platform detected. Using base SRTPlatform with defaults.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-24 16:55:29] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-24 17:57:20] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -598,11 +598,11 @@ No platform detected. Using base SRTPlatform with defaults.
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.62it/s]
-2026-04-24 16:55:34,124 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-24 16:55:34] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.49it/s]
-Capturing num tokens (num_tokens=4 avail_mem=137.23 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 38.41it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.10it/s]
+2026-04-24 17:57:24,634 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-24 17:57:24] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.34it/s]
+Capturing num tokens (num_tokens=4 avail_mem=39.96 GB): 100%|██████████| 58/58 [00:08&lt;00:00,  7.09it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -634,40 +634,52 @@ Capturing num tokens (num_tokens=4 avail_mem=137.23 GB): 100%|██████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Ariel and I&#39;m a language model. What can I do for you?
-How can I use your language model for translation? Please provide examples.
-I have a business called &#34;Brewing Co.&#34; and I need help with the translation of some product information. Can you translate the following product information into French?
-Product Information:
-Product Name: Coffee Bean
-Brand: Brewed Coffee
-Country of Origin: Ethiopia
-Price: $4.99
-Please provide the translation in French.
-Sure, here is the translation of the product information into French:
-&#34;La plupart des Starbucks y font chaussettes à café. Ils
+Generated text:  Anna and I&#39;m 12 years old.
+As you can see, I&#39;m a girl, but I can&#39;t have children.
+What do I need to do?
+I have not been given any medical advice. It&#39;s really hard for me to believe this. Does this sound like the child I am?
+I am a child who has no knowledge of things that would actually happen to a child like this. But I did not have any other children. Why does this happen to me?
+I&#39;m not asking about sex, but about the baby. But as you can see, I don&#39;t have any children and it&#39;s really hard for
 ===============================
 Prompt: The president of the United States is
-Generated text:  from the [ ]
-A. ① Republic ② Democracy ③ Constitutional monarchy ④ Presidential system
-B. ① Republic ② Constitutional monarchy ③ Presidential system ④ Democratic republic
-C. ① Republic ② Democratic republic ③ Constitutional monarchy ④ Presidential system
-D. ① Republic ② Democratic republic ③ Constitutional monarchy ④ Presidential system ⑤ Democratic republic
-Answer:
+Generated text:  trying to decide how many military bases to have. He likes the idea of having  $n$  bases, but he is also afraid that this will lead to lots of unnecessary military activity. Each base uses $100$ tons of explosives. The cost to build the first base is $300$ million dollars. The cost to build the $n$ th base is $300(n-1)$ million dollars. The president also wants to ensure that the total cost of explosives for all bases does not exceed $1$ billion dollars. How many bases should the president have?
 
-B
-
-In the 1950s and 1960s, a world that focused on the development of science and technology was
+To determine the maximum number of bases
 ===============================
 Prompt: The capital of France is
-Generated text:  the _____. A. Bicentennial Palace B. Champs Elysées C. Louvre Museum D. Eiffel Tower
+Generated text:
+A. Paris
+B. Paris
+C. Rennes
+D. Geneva
+Answer:
 
-The capital of France is the Eiffel Tower.
+A
 
-The Eiffel Tower, located in Paris, France, serves as the national symbol of France. Its construction began in 1889 and stands as a testament to the country&#39;s industrial and architectural prowess. The tower is situated at 132 meters tall and has been a symbol of France&#39;s identity and culture since its completion in 1889. It is considered one of the most recognizable landmarks in the world
+According to the structure of the capital city, which of the following cities is a province-level administrative body?
+A. Shanghai
+B. Jilin
+C. Hohhot
+D. Xinjiang
+Answer:
+
+C
+
+The main carrier of the genetic material in the human body is ____.
+A. DNA
+B. RNA
+C. Cholesterol
+D. Protein
+Answer:
+
+A
+
+Under the same temperature and pressure, for a pure substance, the greater the volume of the gas, the ____ its density
 ===============================
 Prompt: The future of AI is
-Generated text:  dependent on our ability to select and manage it efficiently. This is why it is important to understand how AI is being used in the workplace and where the biggest gains are being made, and where the biggest losses are being made. This article will examine how AI is being used in the workplace, the potential benefits and risks, and how to ensure an ethical AI environment for employees.
-At the forefront of AI is machine learning, which allows computers to learn from data and develop their own patterns. This is where most of the gains in AI are being made, as it allows computers to solve problems more efficiently than traditional methods. This includes the ability to
+Generated text:  digital
+
+In the age of digital technologies, the future of AI is digital. Big data, machine learning and artificial intelligence are the three key pillars to the future of AI. The need to have access to large amounts of data is the driving force behind the rise of AI, as well as the need for more data to be collected and analyzed. The only way to extract value from this data is to utilize AI. The benefits of AI are tangible and are evident in a number of industries. AI technology has been used in a variety of applications such as customer support, fraud detection, medical diagnosis and more. As the need for AI continues to
 </pre></div></div>
 </div>
 </section>
@@ -707,17 +719,19 @@ At the forefront of AI is machine learning, which allows computers to learn from
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name], and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Type of Person] who is [Describe your personality traits here]. I enjoy [What you like to do] and I&#39;m always looking for new experiences and challenges. I&#39;m always eager to learn and grow, and I&#39;m always looking for ways to improve myself. I&#39;m a [Type of Person] who is [Describe your personality traits here]. I&#39;m always looking for new experiences and challenges. I&#39;m always eager to learn and grow, and I&#39;m always looking for ways to improve myself. I&#39;m a [Type of Person]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a popular tourist destination known for its rich history, art, and culture. Paris is a major financial center and a major hub for international trade and diplomacy. The city is home to many famous museums, including the Musée d&#39;Orsay and the Musée Rodin. It is also a major center for the arts, with numerous theaters, museums, and galleries. Paris is a vibrant and diverse city with a rich cultural heritage that continues to attract visitors from around the world. The
+Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also home to the French Parliament, the French National Library, and the French Academy of Sciences. Paris is a cultural and economic center with a rich history dating back to the Roman Empire and the French Revolution. It is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. The city is also home to the French Riviera, a popular tourist destination known for its beaches, wine, and luxury resorts. Overall, Paris is a vibrant and diverse city with a rich
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the way we interact with technology and the world around us. Here are some of the most likely future trends in AI:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased automation and robotics: As AI technology continues to improve, we are likely to see more automation and robotics in our daily lives. This could include things like self-driving cars, robotic arms, and automated manufacturing processes.
+1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This could lead to more sophisticated and personalized AI systems that can better understand and respond to human emotions and behaviors.
 
-2. Enhanced human-computer interaction: AI is likely to become even more integrated into our daily lives, allowing us to interact with machines in ways that were previously impossible. This could include things like voice-controlled assistants, virtual assistants
+2. Greater use of AI in healthcare: AI is already being used in healthcare to improve diagnosis, treatment, and patient care. As AI becomes more advanced, it is likely to be used in even more sophisticated ways, such as in personalized medicine, drug discovery, and patient monitoring.
+
+3. Increased use of AI
 
 </pre></div></div>
 </div>
@@ -760,17 +774,23 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I am a [age] year old, [occupation], and [your occupation] [career]. I have a wide range of interests and hobbies, including [some hobbies or activities] and am always up-to-date on the latest trends and technology. I enjoy [one thing about yourself]. I am [your profession] and [your personal qualities]. I strive to be [any qualities you are proud of]. And finally, I am [your name]! This short introduction should give potential friends, colleagues, and others who know me a good understanding of who I am and what I do. Of course, in a
+Generated text:  [Name], and I&#39;m a professional in the technology industry. I have a strong background in software development and have experience working on large-scale projects with a team of experienced developers. I am also a skilled communicator, and I enjoy collaborating with cross-functional teams to solve complex problems and meet tight deadlines. My passion is to drive innovation and create products that make a difference in the world. I am always looking for new ways to improve my skills and stay up-to-date with the latest technologies. Thank you. I hope you enjoy our conversation. [Name] [Phone number] [Email address] [LinkedIn profile] [Twitter handle] [
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest and most populous city in the country and is the seat of government for the French Republic. It is located on the Seine River and is known for its historic architecture, vibrant arts scene, and annual events such as the Opéra National de France. The city is also known for its cultural offerings, including the Eiffel Tower and the Louvre Museum. Paris is home to many famous landmarks, including the Arc de Triomphe and the Tuileries Garden, and is considered one of the world&#39;s most livable cities. Additionally, Paris has a rich cultural heritage and a strong sense of identity,
+Generated text:  Paris.
+
+The French word &#34;Paris&#34; literally means &#34;City of the Popes.&#34; The city, located on the River Seine, is the second most populous city in Europe and is also the second most populous urban area in the world. It&#39;s known for its medieval architecture, vibrant culture, and annual festival celebrations, including the World Cup. Paris is renowned for its fashion and gastronomy, as well as its status as a major transportation hub. It&#39;s home to some of Europe&#39;s most famous landmarks, including the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and Champs-Élysées. The city
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  rapidly changing, and there are many potential trends that are currently in development. Here are some of the most likely developments that are expected in the coming years:
+Generated text:  highly exciting and promising, with new applications and improvements expected to continue to grow and evolve. Some possible future trends in AI include:
 
-1. Increased Privacy and Security: As AI technology becomes more advanced, it will be necessary to address the growing concerns about data privacy and security. This will require new regulations and standards, as well as new technologies that can help protect personal data and prevent data breaches.
+1. Increased focus on ethical considerations: As AI technology becomes more advanced, there will be a growing demand for ethical considerations in its development and deployment. This will include issues such as bias, privacy, and transparency.
 
-2. Enhanced Human Interaction: AI will continue to enhance the way that humans interact with each other, both in work and personal life. This will involve the development of more intuitive and natural interfaces that can better understand and respond
+2. More AI-driven innovations: The integration of AI into various industries and applications is expected to increase, leading to more sophisticated and personalized solutions.
+
+3. Greater use of AI for healthcare: AI can help improve the accuracy and speed of diagnoses, personalized treatments, and drug discovery.
+
+4. Enhanced
 </pre></div></div>
 </div>
 </section>
@@ -816,27 +836,21 @@ Generated text:  rapidly changing, and there are many potential trends that are 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I am a [Brief Summary of Your Character&#39;s Role and Background] and I am dedicated to [Your Main Character&#39;s Character Trait]. I am an [Number of Years in the Field] with [Number of Personal Achievements] of professional success in the [Specific Field]. I am passionate about [Your Main Character&#39;s Character Trait], and I strive to help my fellow professionals succeed in their [Specific Field] through [Your Main Character&#39;s Professional Skills or Achievements]. I am confident and proactive in my approach, and I am always striving to improve my skills and knowledge to better serve my community and clients. I am
+Generated text:  [Name]. I&#39;m a [occupation] who has always been passionate about [job title or hobby/interest]. I believe in [core belief or philosophy], and I strive to [something specific, such as &#34;be more responsible for my health&#34;, &#34;create more positive emotions&#34;, &#34;help others&#34;, etc.]. I am always open to learning and always looking for opportunities to grow and improve myself. I am a [character trait or quality], and I am always eager to learn more about myself and others. What&#39;s your name, and what&#39;s your occupation or profession? [Name]: Hello! I&#39;m [Name], a [occupation
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
 
-Explain the reasons why Paris is considered the world&#39;s largest city:
-
-1. Population: Paris has a population of over 2 million people.
-
-2. Economic power: Paris is one of the largest cities in Europe and a global economic power. It is home to many multinational corporations, including Coca-Cola.
-
-3. Tourist attractions: Paris is known for its world-famous landmarks and historic sites such as the Louvre and Notre-Dame Cathedral.
-
-4. Cultural significance: Paris is home to a diverse range of cultures, including many different languages and religions. It is a UNESCO World Heritage site and a
+That&#39;s correct! Paris is the capital city of France and is known for its iconic Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Other well-known attractions include the Palace of Versailles, Champs-Élysées, the Opéra, and the Latin Quarter. Paris is a cosmopolitan city with a rich history, culture, and cuisine. It is also considered one of the most important cities in the world. The capital city of France is located in the region of Burgundy. Paris is often referred to as &#34;La Ville Flottante&#34; which means &#34;floating city&#34; in French.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly dynamic and unpredictable, and there are several potential trends that could shape the development and application of AI technologies in the coming years.
+Generated text:  likely to involve a range of potential trends that reflect the advances and developments in the field over time. Here are some possible future trends in AI:
 
-1. Automation and AI-driven decision-making: As AI technology continues to improve, we can expect to see an increase in the use of AI-driven decision-making in many industries. This will likely lead to automation of some tasks and reduce the need for human intervention, making work processes more efficient and streamlined.
+1. Increased use of machine learning: As AI technology continues to evolve, we can expect to see more machine learning algorithms being used to automate processes, improve decision-making, and perform tasks that were previously done by humans.
 
-2. Personalization and data analytics: As AI technology advances, we can expect to see an increase in personalized and data-driven decision-making in many areas. AI algorithms can analyze vast amounts of data to identify patterns
+2. Enhanced accuracy and reliability: As AI systems become more sophisticated, they are likely to become even more accurate and reliable. This could mean a shift from traditional algorithms to more complex models that can handle a wider range of inputs and produce more meaningful results.
+
+3. Greater integration
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
