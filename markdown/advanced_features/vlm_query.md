@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 15:27:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 16:52:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -123,15 +123,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 15:27:34] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 16:52:05] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 15:27:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 16:52:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.77it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.74it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.75it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 15:27:43,587 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 15:27:43] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 16:52:15,746 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 16:52:15] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab covering an entire sidewalk.
+    This image shows a unique scene on the streets of New York City. Two yellow taxis, iconic symbols of urban transportation in the city, have been creatively used to dry clothing. A person is operating the fabric drying rack attached to the back of one of the taxis, with clothes hung from it. Both taxis are identical and occupy the same space in the image. The setting suggests an unconventional drying solution for a rainy day, turning an everyday vehicle into a makeshift drying station. The environment is indicative of a busy city street with typical urban architecture, including storefronts and street signs.
 
 
 ### Call with Processor Output
@@ -183,12 +183,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image appears to be a humorous and unconventional scene in an urban environment, likely a city street. Here’s a breakdown of what is shown:
+    It looks like you are asking about what is being shown in this image. 
     
-    1. **Yellow Taxi Cab**: There is a standard yellow taxi cab parked on the street.
-    2. **Man in Yellow**: A man dressed in a yellow shirt is hanging out of the back window of the taxi cab. He also has a few other things attached to the back window, including what looks like a tool or piece of luggage.
-    3. **Flags**: There are several flags visible in the scene, some on flagpoles, and others attached to the vehicle.
-    4. **
+    However, I am unable to see an image accompanying your question. You can upload the image or provide a detailed description and I will do my best to help you with it.
 
 
 ### Call with Precomputed Embeddings
@@ -244,7 +241,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a City Cab parked on a street, with clothes drying on a drying rack attached to the back of the vehicle. It appears to be a humorous or ironic take on a taxi operator using the vehicle to dry washing, which is not common practice in most urban areas due to city regulations and the potential for fuel consumption. The cab is positioned on a street in an urban environment, with buildings and advertisements visible in the background. The scene seems to be staged for a humorous or light-hearted purpose.
+    The image shows a man in a yellow shirt hanging clothes on a rail attached to the back of a yellow taxi cab. The taxi is parked on a city street, and the man appears to be either drying clothes or organizing them. The scene suggests a creative use of the taxi as a makeshift drying rack, likely done for personal or temporary purposes.
 
 
 ## Querying Llama 4 Vision Model
