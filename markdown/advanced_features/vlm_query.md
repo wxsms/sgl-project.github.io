@@ -108,14 +108,14 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     `torch_dtype` is deprecated! Use `dtype` instead!
 
 
-    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
-    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
-
-
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 07:00:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 09:48:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
 
 
     No platform detected. Using base SRTPlatform with defaults.
@@ -129,11 +129,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 07:00:39] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 09:48:35] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 07:00:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 09:48:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -143,9 +143,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.66it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.59it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]
 
 
 
@@ -155,12 +155,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 07:01:04,519 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 07:01:04] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 09:48:44,781 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 09:48:44] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person standing next to two yellow taxis. The person is wearing casual clothes and is seemingly drying a piece of clothing—likely t-shirts—on the racks of the taxis. The setting appears to be an urban area with buildings in the background and a city street. The photo is taken during the day, given the bright lighting. This scene appears to be humorous or unusual because it's not typical to wash clothes on taxis.
+    The image shows a scene from New York City with two yellow taxis parked along the street. The person in the image is hanging clothes on the back of a car. The surrounding environment and the presence of flags suggest that this is a busy urban area.
 
 
 ### Call with Processor Output
@@ -185,7 +185,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person wearing an apron and shirt, hanging clothes on a rack outside. This is likely a staged or humorous scene, commonly used to illustrate the idea of people wearing aprons and adding extra formal elements to everyday activities, such as passing a taxicab. The presence of the cup and blue ribbon in the image seems to be decor, possibly for a special occasion or event.
+    The image shows a yellow taxi cab driving down a city street. The taxi is equipped with two sandwich boards attached to its sides. The sandwich boards appear to be displaying blank or unloaded displays, suggesting that they are not currently in use for advertising or other purposes. 
+    
+    In the foreground, a person in a yellow shirt is standing on the sidewalk, holding a clothes rack. This suggests that the person might be involved in some type of event or activity related to the sandwich boards, possibly setting them up or keeping them in order. The background includes a building with various shop signs and windows, indicating an urban environment, likely a busy city area.
 
 
 ### Call with Precomputed Embeddings
@@ -241,7 +243,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city, likely New York City, indicated by the yellow taxi cabs. The taxi is part of a crowd of people serving meals on the street with boiled egg marquees. This scene is part of a street breakfast event known as the "Dinner on the Corner." Participants offer boiled eggs, bread, potato pancakes, sandwich Arabs, and coffee to passersby for free. This event typically takes place in early June as part of the Mobile Food Fest.
+    This image shows a scene in a busy urban area with several key elements:
+    
+    1. **Yellow Cabs**: There are two yellow taxis in the foreground, parked on the street.
+    2. **Human Activity**: A person dressed in a yellow shirt and glasses is standing near the taxis, seemingly preparing to load or unload items from the back of the vehicles. The person is using a foldable table and some cloth or blankets.
+    3. **Cityscape**: The background features tall buildings and signs, indicative of a city environment, possibly Manhattan, given the specific type of yellow taxi and the cityscape.
+    
+    The image appears to depict a common scenario
 
 
 ## Querying Llama 4 Vision Model
