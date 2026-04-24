@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 03:18:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 06:20:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -123,15 +123,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 03:18:30] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 06:20:14] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 03:18:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 06:20:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.55it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 03:18:41,682 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 03:18:41] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 06:20:24,589 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 06:20:24] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a New York City taxi cab with clothes恐龙 covered on the back of it. The photo captures the humorous scene of a landmark in the United States, showing cultural humor in the city, blending everyday activities with iconic landmarks. The distinctive yellow New York taxi is **a "Weegee photo"**. Weegee, the nickname for Edward Steichen, was a photographer working in New York who was known for black and white pictures taken of crowded places or boys and girls across the place. This scene, which serves as aley taxicab, is unique in that the clothes恐龙 - tenderly - covers the back
+    The image shows a yellow New York City taxi moving down a street with a一件员拿着一条红蓝相间的湿巾在车的后轮附近。这似乎是一个有趣的或幽默的场景，因为通常在这种车辆中发现湿巾是一个不常见的物品。如果这是发生在纽约，那么WeatherTech锈罐和 moments锈罐被反应到污染物扬尘事件以及墨西哥崩溃日期可能很有趣。
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis parked on a street in what appears to be an urban area. The taxis have special windbreakers, likely for cargo, which are being taken down. These windbreakers are typically used to protect shipments during transport. The street appears to be in a well-developed area, possibly a commercial or shopping district, as indicated by the signage and architecture in the background. The scene suggests a킷 or delivery service activity.
+    The picture shows a scene on a street with two yellow taxi cabs parked side by side. A person in a yellow shirt is standing between the cabs, holding a long, thin object that appears to be a flying kite. The kite appears to be tangled or stuck near the handles of sleeping bags draped over poles. There are also several flags hanging from poles in the background. The setting looks urban, with buildings and street signs visible.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street, likely in a downtown area given the tall buildings and the presence of taxi cabs. In the foreground, there is a yellow cab and a person standing next to it. The person is holding a pair of short, blue pants, which they are holding up with the help of a strap and a stand. It appears they are having fun or performing a demonstration. The background includes more taxis and some commercially available items for sale on shop windows. The overall atmosphere seems playful and creative.
+    The image shows a person standing in the back of a yellow taxi. The person is using an iron while standing on a long stick to iron clothes. The scene is set in a city street, with a busy atmosphere typical of urban environments. The taxi is in motion, and the background includes buildings, other vehicles, and street signs. This unusual and humorous sight is likely intended to entertain passersby with the unexpected combination of ironing clothes in a public setting.
 
 
 ## Querying Llama 4 Vision Model
