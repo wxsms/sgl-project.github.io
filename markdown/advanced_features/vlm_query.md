@@ -108,13 +108,13 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     `torch_dtype` is deprecated! Use `dtype` instead!
 
 
-    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-23 22:28:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 00:00:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
+    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
 
 
@@ -126,14 +126,12 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-23 22:28:18] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-24 00:00:35] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-23 22:28:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-24 00:00:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -143,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.02s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.49it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.44s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.74it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.69it/s]
 
 
 
@@ -155,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-23 22:28:37,738 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-23 22:28:37] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-24 00:00:47,652 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-24 00:00:47] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, a person is using the back of a taxi cab for what appears to be makeshift laundry. The issue they're facing is that the water or detergent isn't effectively draining out of the blue towels or laundry from the drainage holes, which may be considered an unusual and inefficient way to wash clothes. This unconventional method could lead to clothes that are still damp or stuck in the fabric, as the airflow from the taxi's exhaust system wouldn't be strong enough to properly dry or clean the clothes.
+    The image shows two yellow taxis on a city street. A person, dressed in a yellow shirt and blue shorts, is drying cloths with a clothes rack attached to the back of one of the yellow taxis. The drying process appears to be akin to hitching a ride, similar toقبbing.
 
 
 ### Call with Processor Output
@@ -185,7 +183,8 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in an urban setting, likely a city street. The taxi has a rear hatch that is open and has clothes hanging out of it, possibly being displayed for an art installation or a public demonstration. The clothes include what appear to be blue jeans and a red piece of fabric. The background includes buildings and street furniture such as streetlights and lampposts, all of which are typical of an urban environment.
+    The image shows a street scene with several landmarks. Prominently, there is a yellow cab or taxi cab, which is an iconic and frequently used mode of transportation in many urban areas, particularly New York City. This specific cab is likely from黄色 такси an Indian taxi service due to its color and typical design. The cab is equipped with a folded table or a makeshift platform, possibly for aocz or assignment-related activity.
+    Additionally, the backdrop features a building with a noticeable glass facade, and there is a decorated section, which appears to have red and white materials on the balconies or windows, suggesting that the area might be adorned
 
 
 ### Call with Precomputed Embeddings
@@ -241,7 +240,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person in a yellow shirt working to clean the windows of a yellow taxi cab's rear window using a long, extended squeegee attached to a pole. The taxi is parked on a street with some store signs and a building in the background. There are also some American flags visible on the back window of the cab.
+    What you're describing is a bunch of small pieces of colorful fabric cords dangling in the air, possibly making a ruff element for a cartoon or artistic design. It is not related to bringing down a kite.
 
 
 ## Querying Llama 4 Vision Model
