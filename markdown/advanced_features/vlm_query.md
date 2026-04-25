@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-25 16:35:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-25 22:30:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -123,15 +123,15 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+
+
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-25 16:35:28] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-25 22:30:31] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-25 16:35:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-25 22:30:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.54it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.47it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -153,16 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-25 16:35:38,140 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-25 16:35:38] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-25 22:30:42,155 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-25 22:30:42] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image you provided, there are two yellow taxis, likely New York taxis, stopped on the street of a busy city area, possibly during rush hour. The taxis are not using their top cabs or the minivan as umbrellas because it’s not raining.
-    
-    There aren’t any people in the image, and the background is urban, with buildings and signs visible. The presence of additional objects and smaller details, such as items on the sidewalk, hints at a bustling urban environment. This scene suggests that the purpose of the taxis is to tow vehicles involved in the accident, not to transport people in the rain.
-    
-    If you are interested
+    The image shows a person washing a taxi outdoors. The person appears to be using a mop to clean the taxi's exterior while standing on a step stool. This is an unusual and humorous situation where typically people clean vehicles indoors. The scene likely occurs in an urban setting, possibly New York City, given the recognizable yellow taxis.
 
 
 ### Call with Processor Output
@@ -187,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxicab parked on the street in a city setting. The cab has been书面 with clothes, possibly shirts, which are draped and hanging from the back of the vehicle. The scene appears to be in low light conditions, likely indicating it is either early morning or late evening. The background includes buildings and some lampposts and trees, suggesting an urban environment.
+    This image shows two yellow taxis parked on a city street. The taxi in the foreground has a clothes rack attached to the back with clothes hung on it. It appears that the owner has hung clothes on the rack to dry them. The street is lined with buildings and flags, and the scene suggests an urban environment, likely in a major city like New York, given the style of the cab.
 
 
 ### Call with Precomputed Embeddings
@@ -243,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene of pick-up clothing with ataxi. There is a man dressed in yellow top and black bottom pants, using a bounce method with a box placed in an open yellow taxi driven by another person also in the same truck. The scene portrays a playful and unconventional method of picking up clothes, where the person-meter sysUsing one's lit doorknob or toe on the cab as power-stable corp is well-known and used in house cleaning tasks aswell. Additionally, whyis it that one image also portrays unsuccessful attempts such as making a towel in 공장에 관해서 논의를 할 때 에도
+    The image depicts a yellow taxi cab with clothes hanging outside of it. This situation is unusual because typically a taxi would not be used to do laundry. However, this might be a prank or a creative demonstration aimed to make people wonder or laugh. The clothes are likely a size too small and don't fit properly, leading to laundry being hung out of the car windows. The background shows some city buildings and trees, suggesting the location is an urban area.
 
 
 ## Querying Llama 4 Vision Model
