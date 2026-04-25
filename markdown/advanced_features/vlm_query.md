@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-24 17:56:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-25 15:44:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-24 17:56:30] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-25 15:44:28] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-24 17:56:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-25 15:44:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.19s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.51it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-24 17:56:39,989 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-24 17:56:39] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-25 15:44:38,585 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-25 15:44:38] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the picture, there are two yellow taxis parked on a street. The person in the image is using an outdoor wash station, which appears to be using a low-demand filter technology to tap water and wash laundry. The water is being directed onto a clothes line suspended between the two taxis. This is a humorous and innovative twist on the usual hand-washing method using tap water.
+    It's a bit unclear what's shown here. It could be a picture of a yellow taxi, a cartoon character, or a T-shirt hanging on a clothesline.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows two yellow taxis driving in a city street. One taxi has a blue configurator on the roof, which is commonly used by car manufacturers to display different models and features. The street appears to be in an urban area with buildings and flags visible in the background.
+    In the image, a yellow taxi is parked on the side of the road. A man is using an iron to iron clothes outside the taxi. This scene appears to be caught in a humorous or lighthearted moment, combining the imprisoning nature of a "yellow cab" with the act of ironing.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in what appears to be a city with several buildings and a few cars on the road. There are two yellow taxis evident, one closer to the foreground and one slightly further back. The farther taxi has someone hanging clothes out of its car window. The person is holding a rack with clothing items, suggesting they are doing laundry on a public street. The scene is urban and likely takes place in the daytime, given the visibility and artificial lighting.
+    The image shows two yellow taxis in a city street. The taxis have a flat panel on the back of them that appears to be drying laundry, including shirts and jeans. This is a whimsical and humorous display, likely intended to create amusement or awareness. The street is lined with buildings, and there are various flags and banners visible in the background.
 
 
 ## Querying Llama 4 Vision Model
