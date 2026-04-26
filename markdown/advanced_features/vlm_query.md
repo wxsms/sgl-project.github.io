@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-26 13:36:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-26 17:14:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-26 13:36:51] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-26 17:14:32] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-26 13:36:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-26 17:14:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.04s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.51it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.16s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-26 13:37:02,883 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-26 13:37:02] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-26 17:14:41,983 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-26 17:14:41] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis driving down a city street. One taxi is positioned behind the other, with a person hanging a blue piece of clothing on a line between the two vehicles. The street is lined with buildings, and there are various flags hanging on flagpoles in the background. The scene appears to be in a busy urban area, likely in a city known for its vibrant taxi culture, such as New York City.
+    The image depicts a street scene in a city, featuring two yellow taxis. One taxi is closer to the foreground and another further back. The person in the foreground is drying clothes using the hitches of the rearTaxi on the street. This image humorously shows how people in busy urban areas might take advantage of the taxi's rear hitch to dry their laundry, possibly as a quick and informal makeshift outdoor clothesline. The person working the washing is using a mop or a stick to hang the clothes and an iron to press them. The background features some urban sights, including buildings and street signs.
 
 
 ### Call with Processor Output
@@ -183,9 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In this picture, there is a person dressed in a bright yellow shirt and black pants standing next to a gray folding chair placed on the back door of a yellow taxi cab. The taxi cab is in the street, and it appears to be in a city, as there are buildings and other vehicles in the background.
-    
-    The person seems to be using the folding chair, possibly setting up or adjusting something. It's unclear what the purpose of the folding chair is, but it could be for an event or demonstration. The setting suggests a lively urban environment.
+    This is a photo of a man in front of a yellow taxi driving through a city street. He is holding a stand with various objects, including a pair of shoes and a piece of clothing. The man appears to be demonstrating or showcasing these items, possibly as part of a public performance or a artistic intervention. The background shows urban scenery with buildings and street lights.
 
 
 ### Call with Precomputed Embeddings
@@ -241,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving on a city street. The taxi in the foreground has its back door open, revealing the interior, and there is a cloth raised in the window. The other taxi is slightly behind and to the left. The scene appears to be takes place in an urban area with buildings and other vehicles visible in the background.
+    The image shows a yellow taxi parked on a city street. The taxi is slightly pulled or angled off the curb. There is a person in a yellow shirt standing next to the taxi, holding an easel with a piece of fabric draped over it. The taxi has$I$ sign and license plates visible, signifying that it is a city taxi. There are also street signs and a few flags attached to poles along the sidewalk.
 
 
 ## Querying Llama 4 Vision Model
