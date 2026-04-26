@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-26 08:45:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-26 13:36:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-26 08:45:38] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-26 13:36:51] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-26 08:45:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-26 13:36:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.56it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.04s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.53it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.53it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.16s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
 
 
 
@@ -153,14 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-26 08:45:47,608 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-26 08:45:47] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-26 13:37:02,883 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-26 13:37:02] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene likely from a parody or satirical depiction in New York City, where someone is hanging clothes from the back of a yellow taxi. The setting resembles typical conditions in New York, with buildings and bright orange taxis. This setup isn't an everyday occurrence but creates an incredibly comical scenario. 
-    
-    The image humorously juxtaposes the chaotic conditions inside New York City with a bizarre situation involving clothes hanging from taxis. It's crafted to be viewed as hilarious and absurd.
+    The image shows two yellow taxis driving down a city street. One taxi is positioned behind the other, with a person hanging a blue piece of clothing on a line between the two vehicles. The street is lined with buildings, and there are various flags hanging on flagpoles in the background. The scene appears to be in a busy urban area, likely in a city known for its vibrant taxi culture, such as New York City.
 
 
 ### Call with Processor Output
@@ -185,7 +183,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with several cars on a street. There are two yellow taxis parked parallel to each other on the road. The backdrop includes a building with large windows and some banners hanging on the sides. The weather appears to be sunny with clear skies.
+    In this picture, there is a person dressed in a bright yellow shirt and black pants standing next to a gray folding chair placed on the back door of a yellow taxi cab. The taxi cab is in the street, and it appears to be in a city, as there are buildings and other vehicles in the background.
+    
+    The person seems to be using the folding chair, possibly setting up or adjusting something. It's unclear what the purpose of the folding chair is, but it could be for an event or demonstration. The setting suggests a lively urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -241,11 +241,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a man in a yellow shirt attending to his laundry hanging on a clothesline that is attached to the back of a yellow taxi. The presence of waving American flags suggests that this scene is taking place in the United States, likely on a city street such as the one shown here:
-    
-    - **Silicon Valley**, which is known for its tech companies and startups.
-    
-    The man holding a bucket, likely containing clothing, is indicative of a common urban activity where residents may put clothes out to dry in the sun. The inclusion of an American flag further suggests celebrations or patriotic events, possibly coinciding with the Fourth of July, Independence Day
+    The image shows two yellow taxis driving on a city street. The taxi in the foreground has its back door open, revealing the interior, and there is a cloth raised in the window. The other taxi is slightly behind and to the left. The scene appears to be takes place in an urban area with buildings and other vehicles visible in the background.
 
 
 ## Querying Llama 4 Vision Model
