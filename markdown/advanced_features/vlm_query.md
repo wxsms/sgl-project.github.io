@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-25 22:30:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-26 03:38:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-25 22:30:31] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-26 03:38:28] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-25 22:30:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-26 03:38:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.47it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.61it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.53it/s]
 
 
 
@@ -153,12 +153,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-25 22:30:42,155 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-25 22:30:42] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-26 03:38:38,004 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-26 03:38:38] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person washing a taxi outdoors. The person appears to be using a mop to clean the taxi's exterior while standing on a step stool. This is an unusual and humorous situation where typically people clean vehicles indoors. The scene likely occurs in an urban setting, possibly New York City, given the recognizable yellow taxis.
+    This image shows a humorous or symbolic scene where a man is standing on the back of a taxi, holding two flags. The man is very small in comparison to the taxi, which can be seen as a visual metaphor for a small person or individual standing out in a large, busy environment like a city street. 
+    
+    The scene likely represents a protest or demonstration, as the flags being held by the man and the man's determination to stand and hold them despite the size of the taxi suggest a message or statement being made. This kind of image is often used to convey social or political messages in a lighthearted or satirical way
 
 
 ### Call with Processor Output
@@ -183,7 +185,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows two yellow taxis parked on a city street. The taxi in the foreground has a clothes rack attached to the back with clothes hung on it. It appears that the owner has hung clothes on the rack to dry them. The street is lined with buildings and flags, and the scene suggests an urban environment, likely in a major city like New York, given the style of the cab.
+    The image depicts a scene involving a person standing next to a yellow taxi. The person is holding a black utility device, possibly a pitchfork, which they are using to push or slight the car from an elevated structure. The setting appears to be an urban environment, likely a street in a city, indicated by the presence of buildings and other vehicles.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +241,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a yellow taxi cab with clothes hanging outside of it. This situation is unusual because typically a taxi would not be used to do laundry. However, this might be a prank or a creative demonstration aimed to make people wonder or laugh. The clothes are likely a size too small and don't fit properly, leading to laundry being hung out of the car windows. The background shows some city buildings and trees, suggesting the location is an urban area.
+    It looks like you might be referring to a scene in New York City, possibly involving a performance artist or a street vendor. The image shows a scene on a New York City street, with a yellow taxi in the foreground. Attached to the taxi’s back window is a banner or banner rack, which has a newspaper or some other item propped up on it. The person in the yellow shirt appears to be engaging with something, likely the banner or the item on it. 
+    
+    The background includes other elements of a city street, such as buildings, street lamps, and possibly other taxis or vehicles. The scene has an artistic or performance-like
 
 
 ## Querying Llama 4 Vision Model
