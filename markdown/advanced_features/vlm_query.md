@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-26 17:14:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-26 17:51:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -119,19 +119,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     No platform detected. Using base SRTPlatform with defaults.
+
+
     No platform detected. Using base SRTPlatform with defaults.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-26 17:14:32] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-26 17:51:34] `torch_dtype` is deprecated! Use `dtype` instead!
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-26 17:14:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-26 17:51:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +143,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.51it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.61it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.56it/s]
 
 
 
@@ -153,12 +155,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-26 17:14:41,983 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-26 17:14:41] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-26 17:51:43,883 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-26 17:51:43] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts a street scene in a city, featuring two yellow taxis. One taxi is closer to the foreground and another further back. The person in the foreground is drying clothes using the hitches of the rearTaxi on the street. This image humorously shows how people in busy urban areas might take advantage of the taxi's rear hitch to dry their laundry, possibly as a quick and informal makeshift outdoor clothesline. The person working the washing is using a mop or a stick to hang the clothes and an iron to press them. The background features some urban sights, including buildings and street signs.
+    There doesn't appear to be any notable or unusual scene in the provided image. The image shows a street view with a man holding irons and hanging clothes on a clothesline attached to the back of a yellow taxi. The context seems to be unrelated to the provided verification check, which suggests that the image is incorrect.
 
 
 ### Call with Processor Output
@@ -183,7 +185,12 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a photo of a man in front of a yellow taxi driving through a city street. He is holding a stand with various objects, including a pair of shoes and a piece of clothing. The man appears to be demonstrating or showcasing these items, possibly as part of a public performance or a artistic intervention. The background shows urban scenery with buildings and street lights.
+    In the picture, there is a bright yellow taxi cab driving on a city street. The cab has a cloth or blanket draped over its accordion-style kicking back board, which is typically used to immobilize the vehicle for maintenance. The street appears to be in an urban setting with tall buildings and various flags hanging.
+    
+    To help you identify what's shown in the picture:
+    
+    1. **The Cab**: The bright yellow cab is parked on a city street, which aligns with typical urban transportation methods such as taxis or private vehicles.
+    2. **Cloth/Raincoat on Kicking Back Board**: The cloth or blanket is draped over the Bailey
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +246,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi parked on a city street. The taxi is slightly pulled or angled off the curb. There is a person in a yellow shirt standing next to the taxi, holding an easel with a piece of fabric draped over it. The taxi has$I$ sign and license plates visible, signifying that it is a city taxi. There are also street signs and a few flags attached to poles along the sidewalk.
+    This image shows a street scene with two taxis. One of the taxis has a unique and humorous setup: it appears to be carrying a laundry basket and clothesline attached to its side. A person in the yellow shirt is standing on a ladder, suspended by wires tied to the top of the van. The clothesline with laundry, including a blue towel hanging on two pegs, is an unconventional and creative way to deal with bulky items, likely paper plates, or an outdoor laundry-night setup. The street is lined with buildings, and there are streetlights in the background.
 
 
 ## Querying Llama 4 Vision Model
