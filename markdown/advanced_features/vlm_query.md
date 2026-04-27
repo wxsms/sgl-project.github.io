@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-27 20:39:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 22:40:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-27 20:39:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 22:40:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.51it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.62it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.53it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-27 20:39:52,819 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-27 20:39:52] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 22:40:45,160 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 22:40:45] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street where a man is using a mobile clothes drying system mounted on the back of a taxi. The晾衣架（clothes drying rack）is equipped with a clothesline and is set up to dry laundry outdoors. There are also other vehicles and elements of the urban environment visible in the background, such as buildings, shopping centers, and street signs.
+    It's showing a yellow taxi with clothes on a clothesline in front of it. It could be due to the city's🌧 weather.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man in a yellow shirt demonstrating a laundry drying rack attached to the back of a yellow taxi cab. The drying rack, commonly referred to as a "linen isla" (ˈlɪnən ˌɪːzəl), is a portable rack that can be hung or folded and placed on top of a vehicle to perform laundry storage and drying during a business trip. The presence of the drying rack attached to the back of a taxi suggests that it is being used to demonstrate or promote this practical invention, possibly while riding through a cityscape, as indicated by the foliage and buildings in the background.
+    This image shows two yellow taxis driving on a city street. One taxi is in the foreground, and the other is slightly behind and to the left. The scene appears to be taken in an urban area, possibly a business district or downtown, given the high-rise buildings with large windows and awnings in the background. The taxis are typical yellow vehicles used for public transportation in many cities, including New York. There are also some flags and street signs visible, which might be associated with a parade or special event.
 
 
 ### Call with Precomputed Embeddings
@@ -211,9 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street with two yellow-equipped taxis in the foreground. Each taxi has a bicycle attached to it, which is being used to push along a clothesline displaying various items of clothing. This appears to be an unusual sight and suggests that the driver has taken it upon themselves to wash and dry their clothes using the marine-grade portable washing machines attached to the back of the taxis. 
-    
-    The background includes urban elements such as storefronts, other vehicles, and pedestrians, indicating that this is likely a major city. The presence of the image of the Statue of Liberty on one of the flags suggests that the location is New
+    It looks like someone is collecting donations by hanging polyesteran aprons on a bicycle or possibly a magnet.
 
 
 ## Querying Llama 4 Vision Model
