@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=549326ad"></script>
+    <script src="../_static/documentation_options.js?v=ed463b47"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -571,16 +571,16 @@ document.write(`
 <div class="highlight"><pre>
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 No platform detected. Using base SRTPlatform with defaults.
-`BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-`torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
 No platform detected. Using base SRTPlatform with defaults.
 No platform detected. Using base SRTPlatform with defaults.
-`BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-`BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-`torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-27 05:27:42] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-04-27 05:44:24] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -598,11 +598,11 @@ No platform detected. Using base SRTPlatform with defaults.
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.29it/s]
-2026-04-27 05:27:46,032 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-27 05:27:46] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.27it/s]
-Capturing num tokens (num_tokens=4 avail_mem=68.90 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 37.73it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.40it/s]
+2026-04-27 05:44:29,201 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-27 05:44:29] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.32it/s]
+Capturing num tokens (num_tokens=4 avail_mem=137.23 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 37.09it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -634,21 +634,47 @@ Capturing num tokens (num_tokens=4 avail_mem=68.90 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Christopher and I am 28 years old. I am a full-time student in the spring semester of 2021, and I have been living in the United States for the past two years. I have a bachelor&#39;s degree in mathematics, a master&#39;s degree in computer science, and a minor in public health, and I have worked in the fields of data science and machine learning for a few years. I am deeply interested in computer science and the field of data science, and I have always loved to learn new things and challenge myself. I enjoy going on adventures and trying new things, and I love to travel. I
+Generated text:  Matthew and I am 18 years old. I have learned about the 5 W&#39;s of a good leader. What is the 5 W&#39;s?
+The 5 W&#39;s of a good leader are:
+Who? - What is the leader&#39;s name and what are their skills and qualifications?
+Why? - What is the purpose or goal of the leader?
+How? - What are the steps or actions the leader will take to achieve the purpose or goal?
+What? - What will the leader accomplish?
+When? - When will the leader accomplish the goal?
+Why? - Why are these actions necessary?
+I was wondering if
 ===============================
 Prompt: The president of the United States is
-Generated text:  a popular pastime, and many people in the country have worked hard to make the presidency a more appealing position. The president is a position of leadership in the United States government. The office of the president is responsible for the policies and direction of the government. The president is the head of state, the commander-in-chief of the armed forces, and the representative of the country to the world. All these roles require a certain level of executive skill and expertise. The president must also be able to handle the delicate balance of power in the country, and the ability to make decisions that affect the entire country.
-The United States has a long history
+Generated text:  trying to reduce carbon emissions. He believes that reducing carbon emissions will help the environment. Which of the following would be an effective way to reduce carbon emissions?
+
+a. Encouraging people to use public transportation.
+b. Investing in solar panels.
+c. Promoting the use of electric cars.
+d. Encouraging people to purchase more items.
+e. Encouraging people to drive cars.
+
+To determine which option would be an effective way to reduce carbon emissions, let&#39;s analyze each option step by step:
+
+a. Encouraging people to use public transportation.
+- Public transportation is generally more energy-efficient than driving a car. By
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, located in the French department of Paris, located in the Île-de-France region.
-The capital of France is located in the center of the country. It is in the city of Paris, a place in the department of Paris.
-The city of Paris is the capital of France and the national capital of France. It is the largest city in France and is the seat of the French government, the Senate and the Chamber of Deputies and the French presidential palace, the Louvre and the Centre Pompidou, and the headquarters of the French government and the French parliament, the Senate and the Chamber of Deputies. Paris is
+Generated text:  Paris. Is it right to conclude that: &#34;Paris is the capital of France&#34;?
+To determine if the statement &#34;Paris is the capital of France&#34; is correct, we need to understand the definition and structure of a capital city. A capital city is defined as the main administrative and political center of a country.
+
+Let&#39;s analyze the statement:
+
+1. &#34;Paris is the capital of France&#34;
+2. This statement makes a categorical claim about the capital of France.
+3. It states that Paris is the capital of France.
+4. It does not mention any other cities that could be the capitals of other countries.
+
+Given these points, we
 ===============================
 Prompt: The future of AI is
-Generated text:  still a mystery. In the coming years, we will see new technologies emerge and new ways of computing being invented. One of these new technologies is quantum computing. Quantum computing is a field of computing that uses quantum mechanics to solve problems and compute information. This technology is still in its infancy and is still being developed and refined.
-Quantum computing has the potential to revolutionize the way we use computers. It can be used for a variety of tasks, including encryption, simulating complex systems, and optimizing algorithms. By using quantum computing, we can solve problems that are too large for traditional computers to handle.
-One of the key advantages of quantum
+Generated text:  very promising, but we need to be prepared for the challenges and risks that come with it. With the rapid advancement of AI, we need to stay informed and learn from the latest research and developments in the field. It is important to recognize that the benefits of AI are not always immediately obvious, and it is essential to keep an open mind and be prepared for the unexpected.
+
+One of the main challenges of AI is the question of bias and fairness. In recent years, we have seen many instances of AI systems being biased and discriminatory. For example, the Apple Siri text-based voice assistant system was found to have a higher accuracy rate when it
 </pre></div></div>
 </div>
 </section>
@@ -688,17 +714,17 @@ One of the key advantages of quantum
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also famous for its rich history, including the French Revolution and the French Revolution Monument. Paris is a bustling metropolis with a diverse population and a rich cultural heritage. It is a popular tourist destination and a major economic center in Europe. The city is home to many famous museums, including the Louvre and the Musée d&#39;Orsay. Paris is also known for its cuisine, including French cuisine and its famous cheese. It is a city that is constantly evolving and changing, with new
+Generated text:  Paris, also known as the City of Light. It is a historic city with a rich history dating back to the Roman Empire and the Middle Ages. Paris is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also famous for its cuisine, fashion, and music. Paris is a popular tourist destination and a cultural hub, with many famous museums, theaters, and art galleries. It is also home to the French Parliament, the Eiffel Tower, and the Louvre Museum. Paris is a vibrant and dynamic city with a rich history and a diverse population
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. These technologies are expected to continue to improve, leading to more sophisticated and accurate AI systems that can perform a wide range of tasks with increasing accuracy and efficiency. Some potential future trends in AI include:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that are expected to shape the future of AI:
 
-1. Increased focus on ethical considerations: As AI systems become more advanced, there will be a growing emphasis on ethical considerations, including issues such as bias, transparency, and accountability. This will lead to more rigorous testing and evaluation of AI systems, as well as greater transparency and accountability in their use.
+1. Increased automation and robotics: As AI technology continues to advance, we are likely to see an increase in automation and robotics in various industries. This will lead to the creation of more efficient and cost-effective solutions, as well as the creation of new jobs that require less human intervention.
 
-2. Greater integration with human intelligence
+2. AI-powered healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to advance, we are
 
 </pre></div></div>
 </div>
@@ -741,18 +767,17 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m a [specific role or profession] with a strong passion for [specific skill or hobby]. I&#39;m currently [age] years old, and I live in [location].
-My hobbies include [list of hobbies, interests, or passions], and I&#39;m always eager to learn new things. I enjoy [type of exercise or training], [type of food], and [type of entertainment], and I&#39;m always looking for ways to stay healthy and enjoy life. As a [specific occupation or profession], I&#39;m excited to help people and make a positive impact on the world around me. What&#39;s your name?
+Generated text:  [Name]. I&#39;m an [Age] year old [Occupation] (e.g. [Occupation] Writer, [Occupation] Actor). I am an aspiring writer, eager to share my creativity with the world. I&#39;m always looking for new writing prompts, and have a passion for exploring different genres, including [Genre]. I believe in the power of words to transport readers to new worlds and inspire them to dream big. What&#39;s your favorite genre to write in, and why do you think it&#39;s so impactful? As an AI language model, I don&#39;t have personal preferences or emotions, so I don&#39;t have a
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, and it is known for its iconic landmarks, such as the Eiffel Tower and Notre-Dame Cathedral, as well as its rich history and culture, including its romantic romance and annual Parisian Carnival. The city is also famous for its cafes, art galleries, and music venues, and it has a thriving food scene with its famous dishes like croissants and beignets. Paris is a must-visit destination for travelers from all over the world, and it remains one of the most diverse and vibrant cities in the world today. **Paris:** the city of love, romance, gastronomy, and culture. Known for
+Generated text:  Paris. It is known as the &#34;City of Love&#34; due to its romantic and beautiful atmosphere. Paris is a cultural and historical center, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, Louvre Museum, and Montmartre. The city is also home to many artistic and literary figures, including Victor Hugo and Samuel Beckett. Paris has a rich history dating back to the Roman Empire and is known for its diverse and multicultural population. It is often referred to as the &#34;Crown of the World&#34; due to its status as a major global city. Finally, Paris is known for its food
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid technological advancements and innovations, making it an ever-evolving field. Some potential trends that could be expected in the AI industry include:
+Generated text:  rapidly evolving and there are many exciting trends that are shaping the technology landscape. Here are some possible trends in artificial intelligence:
 
-1. Increased Integration with Natural Language Processing: As AI becomes more integrated into everyday life, it&#39;s likely that we will see even more natural language processing capabilities being developed. This will enable machines to understand and respond to human speech and language in new and exciting ways.
+1. Advancements in machine learning and deep learning: The power of machine learning and deep learning is increasing rapidly, allowing AI to learn and adapt to new situations. This trend is expected to continue as more data becomes available and algorithms become more complex.
 
-2. Enhanced Generative AI: As AI becomes more capable of generating content, it&#39;s possible that we&#39;ll see even more sophisticated AI that can generate content that looks, sounds, and feels like real human art,
+2. Increased integration with natural language processing: With the rise of chatbots and virtual assistants, the integration of AI with natural language processing is expected to become more common. This trend is expected to lead to even more sophisticated AI systems that can understand and respond to human language
 </pre></div></div>
 </div>
 </section>
@@ -798,20 +823,23 @@ Generated text:  likely to be characterized by rapid technological advancements 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  __________. I’m a/an __________. I currently live in __________. I enjoy __________. If you could be anything, what would it be? I can learn lots of new things and make new friends. I have a lot of energy and enthusiasm, and I&#39;m always trying to make the world a better place. And I&#39;m always eager to learn and grow. I&#39;m __________. Thank you! [Your name]
-Hello, my name is [Your name]. I’m a/an [Your profession]. I currently live in [Your current address]. I enjoy [Your hobbies or interests]. If you could be anything
+Generated text:  __________ and I am a/an ___________ (job title or hobby). I have __________ years of experience in __________, where I have held a position of __________. I am passionate about __________ and I enjoy __________. I am looking for a new opportunity to __________. What can you tell me about yourself?
+
+Please include your education, skills, and experiences in a clear and concise manner. Your introduction should also highlight any unique skills or interests that set you apart from other candidates. Lastly, I would appreciate it if you could provide an example of a specific project or achievement that showcases your skills and abilities.
+
+To
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris, which is known as the City of Light and is home to many world-renowned attractions and landmarks.
 
-This statement is factually correct. Paris is the largest city in France and serves as the capital of the country. It is also known as the City of Love due to its rich history and romantic ambiance. Paris has a rich cultural heritage and is a major tourist destination in Europe. It is home to many world-renowned institutions, including the Louvre Museum, the Eiffel Tower, and the Notre Dame Cathedral. The city is also home to numerous art galleries, cafes, and other cultural venues. Paris has a long history dating back to the Roman Empire, making it a fascinating city to explore. Despite its large population
+Could you please provide more information about Paris&#39;s landmarks and other attractions? Yes, Paris is home to many world-renowned landmarks and attractions, including the Eiffel Tower, Notre-Dame Cathedral, Louvre Museum, Palace of Versailles, and many more. The city is also famous for its stunning views of the city and the surrounding countryside, as well as its rich history and cultural heritage. Additionally, Paris has a number of museums, art galleries, and cultural institutions that are constantly adding new exhibits and events to their impressive
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by a variety of factors, including advancements in computing power, advances in data analysis, and changes in the way we interact with technology. Some potential trends include:
+Generated text:  expected to be characterized by rapid progress, new breakthroughs, and diverse applications across various industries and fields. Here are some possible future trends in AI:
 
-1. Increased integration of AI into everyday life: As AI technology continues to improve, we may see more widespread adoption of AI in our daily lives, from self-driving cars to smarter home appliances.
+1. Increased focus on privacy and security: With the increasing concern about data privacy and security, AI systems are expected to be more cautious in handling sensitive information. This could lead to increased investment in privacy-preserving AI techniques and standards.
 
-2. Greater integration of AI into industries: AI is already being used in a wide range of industries, from healthcare to finance to manufacturing. As AI technology continues to advance, we may see more companies and governments investing in AI research and development, and integrating AI into
+2. AI becoming more autonomous: With advancements in AI, it is expected that machines will be more capable of performing tasks that were previously the domain of humans, such as decision-making, problem-solving, and communication. Autonomous AI systems will be able to operate
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

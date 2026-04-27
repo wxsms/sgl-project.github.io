@@ -102,40 +102,36 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     No platform detected. Using base SRTPlatform with defaults.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
-    `torch_dtype` is deprecated! Use `dtype` instead!
+    [transformers] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
-    The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-27 05:22:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 05:38:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
-
-
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
 
 
     No platform detected. Using base SRTPlatform with defaults.
-
-
     No platform detected. Using base SRTPlatform with defaults.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
-    `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-27 05:22:42] `torch_dtype` is deprecated! Use `dtype` instead!
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
+    [transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-27 05:38:16] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
-    The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-27 05:22:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 05:38:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -145,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
 
 
 
@@ -157,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-27 05:22:51,459 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-27 05:22:51] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 05:38:26,888 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 05:38:26] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a睛dni taxi cab in New York City with a man晾衣 and folding clothes on the back of the car for delivery or pickup service.
+    The image shows a person putting on clothes behind a yellow taxi cab on a city street. The scene seems somewhat humorous because people generally do not wear clothes in public, especially on the street. This can be a playful or satirical representation.
 
 
 ### Call with Processor Output
@@ -187,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxi cabs on a city street. One taxi is positioned slightly behind the other. The scene appears to be taking place in an urban environment, likely in a bustling city given the presence of several flags and possibly other vehicles in the background. The yellow color of the taxis is a common distinguishing feature, indicating they are likely taxis in a city where such taxis are predominantly yellow. The background also includes some buildings and possibly other street elements, but the main focus is on the two taxis.
+    The image shows a scene on a city street. A yellow taxi cab is parked on the side of the road. In the foreground, a person is balancing laundry bags on a broomstick outside of a store. There are several flags visible on the building's facade. The scene suggests that someone is trying to balance items, possibly cleaning up or organizing something.
 
 
 ### Call with Precomputed Embeddings
@@ -243,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene in an urban setting, possibly during a street event or performance. There is a yellow taxi cab parked on the street, and someone is hanging laundry, including what appears to be a shirt, using a clothesline that is strung from a nearby building. The background includes tall buildings with visible windows and some outdoor displays. The scene suggests themes of urban life, urban public transport (yellow taxis), human interaction with everyday objects like clothes, and possibly the impact of a temporary activity or performance on the cityscape.
+    The image shows two taxis driving side by side in an urban area. The taxis are yellow in color and have a yellow-and-black stripe along the bottom. The driver of the taxi on the right is wearing a yellow shirt and appears to be holding a blue sign or cloth on a metal stand. The background includes buildings, some with red banners and American flags waving on flag poles. The scene is likely taking place in a busy city street, possibly during a procession or a public event.
 
 
 ## Querying Llama 4 Vision Model
