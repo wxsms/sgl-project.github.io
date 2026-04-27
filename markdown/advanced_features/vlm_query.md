@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-26 19:18:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 02:58:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-26 19:18:50] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-27 02:58:32] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-26 19:18:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 02:58:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.01s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.56s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.47s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.55s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  1.94s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.04s/it]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-26 19:19:03,537 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-26 19:19:03] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 02:58:47,168 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 02:58:47] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person standing next to a yellow cab (taxi) on a city street. The person is holding a metal bench with clothes hanging on it, and the clothes appear to be yellow and blue. The background includes other vehicles and buildings, with large windows reflecting part of the scene. The setting suggests it might be a busy urban environment, possibly in a major city.
+    In this image, a person is using a folding chair as a makeshift drying rack to hang a blue shirt between two yellow taxi cabs. The setting appears to be an urban area, with other vehicles and buildings visible in the background.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the picture, there is a yellow taxi parked on the street. On the back of the taxi, part of a signboard is visible, but the text or organization name is not clearly readable. The taxi appears to be in an urban environment with buildings in the background and a few building signs visible.
+    The image shows a yellow taxi driving through a city street. The taxi has a tow bar attached to its back with what appears to be a can and possibly some additional items. There are buildings with advertisements on the side of them, and other vehicles and pedestrians are visible in the background. The scene is typical of a busy urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image you provided is of a scene of a dog pulling a laundry hamper down a street. The dog is in a yellow taxi, which is typical in New York City and many other urban areas, where yellow cabs are frequent. The laundry is used to promote an energy savings initiative in an advertising campaign for the Meičius chimney pot, a type of heating system. This campaign used a humorous and relatable approach by depicting a dog on a laundry journey to encourage people to clean their chimneys.
+    This image features a yellow taxi相比之下着橙色的行李箱和袜子似乎正在移动中，可以看到周围的街道景象和建筑物。
 
 
 ## Querying Llama 4 Vision Model
