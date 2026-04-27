@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-27 18:21:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 20:39:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-27 18:21:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 20:39:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.50it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.51it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.83it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.78it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-27 18:22:06,268 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-27 18:22:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 20:39:52,819 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 20:39:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow New York City taxi and the back of another taxi that might be a Uber or Lyft. A yellow-shirted person is folding clothes in the vicinity of the backs of the cabs, likely at a with-the-pound, with-the-pound, or with-the-pound dirt bag location in New York City.
+    The image shows a scene on a city street where a man is using a mobile clothes drying system mounted on the back of a taxi. The晾衣架（clothes drying rack）is equipped with a clothesline and is set up to dry laundry outdoors. There are also other vehicles and elements of the urban environment visible in the background, such as buildings, shopping centers, and street signs.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two taxis on a city street, parked close to each other. The taxi on the left has a colorful, rainbow flag draped over it, while the taxi on the right has aспеш displaying "Eileen. ¿Mêno?"". The scene appears to be in an urban area, with buildings in the background and trees lined along the street.
+    The image shows a man in a yellow shirt demonstrating a laundry drying rack attached to the back of a yellow taxi cab. The drying rack, commonly referred to as a "linen isla" (ˈlɪnən ˌɪːzəl), is a portable rack that can be hung or folded and placed on top of a vehicle to perform laundry storage and drying during a business trip. The presence of the drying rack attached to the back of a taxi suggests that it is being used to demonstrate or promote this practical invention, possibly while riding through a cityscape, as indicated by the foliage and buildings in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man dressed in casual yellow clothes, who appears to be engaging in a humorous trick or pranking scenario. He seems to be in the process of hanging clothes, including a yellow sleeveless shirt and a blue shirt, on the back of a paused yellow taxi cab. The taxi is parked on what looks like a city street with pedestrians and buildings in the background. The setting suggests a lively urban environment, possibly during the daytime.
+    The image shows a scene on a city street with two yellow-equipped taxis in the foreground. Each taxi has a bicycle attached to it, which is being used to push along a clothesline displaying various items of clothing. This appears to be an unusual sight and suggests that the driver has taken it upon themselves to wash and dry their clothes using the marine-grade portable washing machines attached to the back of the taxis. 
+    
+    The background includes urban elements such as storefronts, other vehicles, and pedestrians, indicating that this is likely a major city. The presence of the image of the Statue of Liberty on one of the flags suggests that the location is New
 
 
 ## Querying Llama 4 Vision Model
