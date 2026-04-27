@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-27 03:49:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 05:02:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-27 03:49:54] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-27 05:02:50] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-27 03:49:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 05:02:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.70it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.62it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.63it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-27 03:50:02,748 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-27 03:50:02] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 05:03:00,532 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 05:03:00] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis driving on a city street. The taxicab in the foreground has a white ironing board attached to its back, with items on it that appear to be clothes or laundry. This is an unusual sight, as irons are typically used indoors. The clothing items include what looks like a red shirt and jeans.
+    In the image, there is a person hanging laundry on a clothesline attached to the back of a yellow taxi cab. This scene is unusual because taxis are typically not equipped to handle laundry duties. The situation is likely staged for a comedic or innovative social media post. The image humorously adds a spoon to the laundry setup, which reinforces the irony of the scenario—a restaurant spoons for ironing laundries near taxi cabs—an incongruous combination that prompts amusement.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a bright yellow Los Angeles Police Department (LAPD) patrol car. The car is equipped with a body camera on a tripod or bracket attached to the roof. The LAPD badge is prominently displayed on the door, and the vehicle appears to be in motion, adding context to why the body camera is necessary.
+    The image shows a yellow taxi cab driving down a city street. The taxi is situated in front of a building with a store front, and there are some props on the back of the taxi that resemble clothes or fabric. The scene appears to be set during an English-language foreign exchange program or an event where students or visitors areujaing quirky English phrases or behaviors in public to showcase linguistic diversity.
 
 
 ### Call with Precomputed Embeddings
@@ -239,11 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Here is a breakdown of the image内容:
-    
-    该图像展示了一辆黄色出租车停在马路边。车上挂着一块红蓝相间的围巾，一位穿着黄色上衣的人正站在车边，举起手臂把围巾晾在车前方的支架上。旁边停着另外一辆黄色出租车。背景是城市的街景，有建筑物和路牌。此场景可能是在一个城市的出租车接送服务。
-    
-    出租车，城市街道，晾晒围巾
+    The image depicts a scene in a city street with a red pole prominently displayed. The pole is likely the next pole in a series of street signs, one of which may not yet be visible in this view. The background features typical urban elements such as trees and buildings, suggesting a downtown or central area of the city.
 
 
 ## Querying Llama 4 Vision Model
