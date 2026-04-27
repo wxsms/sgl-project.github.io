@@ -46,9 +46,6 @@ chat_template = "qwen2-vl"
 example_image_url = "https://raw.githubusercontent.com/sgl-project/sglang/main/examples/assets/example_image.png"
 ```
 
-    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
-
-
 
 ```python
 from io import BytesIO
@@ -99,39 +96,14 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    No platform detected. Using base SRTPlatform with defaults.
-
-
-    [transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
-    [transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-
-
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-27 07:56:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
-    Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
-
-
-    No platform detected. Using base SRTPlatform with defaults.
-    No platform detected. Using base SRTPlatform with defaults.
-
-
-    [transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-    [transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-
-
-    [transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-27 07:56:38] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-27 10:18:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-27 07:56:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 10:19:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.65it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.49it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.57it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
 
 
 
@@ -153,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-27 07:56:47,946 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-27 07:56:47] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 10:19:13,148 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 10:19:13] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image features a man standing next to a yellow taxi in an urban setting, with yellow cabs being the main focus due to their distinctive color. The man appears to be holding or displaying clothing items, possibly at a street market or outdoor event. The background includes buildings, storefronts, and urban elements like street signs and traffic lights.
+    The image shows a man in a yellow shirt standing on a street corner, holding a clothespin rod with clothes pinned to it. There are two yellow taxicabs, one behind the man and one in the background, driving on a busy street with tall buildings and street signs. The scene suggests a metaphorical or creative act or perhaps an artistic display.
 
 
 ### Call with Processor Output
@@ -183,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two taxis on a city street. The person in the foreground is using a clothesline to stretch out and straighten a yellow taxi sign on the back of their own vehicle. The taxi numbers and symbols on the sign are being carefully aligned to ensure they are correctly displayed. They appear to be practicing for something related to taxi regulation or certification, given that they are aligning the numbers in front of a building with some sort of control or inspection structure. The background is urban, with double-sided taxi advertising boards displaying content for taxi companies, indicating this photo was likely taken in a city like New York, Los Angeles, or another
+    The image shows two yellow taxis parked on a city street. The taxis are traveling in the same direction, and there are several urban elements around, including a storefront with glass windows, multiple street signs, and some trees. The scene appears to be from a busy urban area, possibly in a well-known city like New York, given the distinctive yellow taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there is a yellow taxi with a vibrant blue flag attached to its roof. This flag appears to be waving, and the taxi is driving on a street with other cars and buildings visible in the background. It seems to be a sunny day.
+    I understand you're seeing an image of a yellow taxi cab in the background. The image includes a person working with laundry on a platform attached to the vehicle. There are also several street signs and a building in the background, along with some notable flags. This seems to be capturing a moment of a neighborhood where people are using a vehicle as a makeshift laundry area.
 
 
 ## Querying Llama 4 Vision Model

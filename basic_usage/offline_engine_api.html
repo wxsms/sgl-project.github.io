@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=957d66a6"></script>
+    <script src="../_static/documentation_options.js?v=c884ec6e"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -567,25 +567,6 @@ document.write(`
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
-No platform detected. Using base SRTPlatform with defaults.
-[transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
-Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch &gt;= 2.11.0 (found 2.9.1+cu130).
-No platform detected. Using base SRTPlatform with defaults.
-No platform detected. Using base SRTPlatform with defaults.
-[transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[transformers] `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
-[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-[2026-04-27 08:02:23] `torch_dtype` is deprecated! Use `dtype` instead!
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -598,11 +579,11 @@ No platform detected. Using base SRTPlatform with defaults.
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.70it/s]
-2026-04-27 08:02:28,383 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-27 08:02:28] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.52it/s]
-Capturing num tokens (num_tokens=4 avail_mem=118.51 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 35.48it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.79it/s]
+2026-04-27 10:22:20,460 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-27 10:22:20] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.13it/s]
+Capturing num tokens (num_tokens=4 avail_mem=111.47 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 38.09it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -634,28 +615,28 @@ Capturing num tokens (num_tokens=4 avail_mem=118.51 GB): 100%|██████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Vova and I am a senior computer science major. I have taken many different computer science courses. I am studying computer systems and systems architecture, as well as the design of algorithms, data structures, and software engineering. I have taken many programming languages and courses in them.
+Generated text:  Yu Kai, a 15 year old girl from Taiwan. I have a few questions about my parents&#39; behavior.
 
-What are the courses that I have taken and what are some of the topics in the courses that are relevant to computer science?
+My parents are really good friends. They make lots of fun stuff like playing games, watching movies, and playing cards. They can both be upset if things get a bit complicated. They usually both have their own opinions on many things, and they can&#39;t agree on anything.
 
-I took several computer science courses. Here are some of the courses I have taken:
+It&#39;s pretty hard to be around them for a long time, and I don&#39;t want to be around them when they&#39;re fighting.
 
-  1. Introduction to Computer Science and Programming - this course helped me understand the basics of computer science and programming, such as algorithms, data structures,
+What&#39;s the best way to stop my parents from fighting?
+
+I really want my parents to get along better,
 ===============================
 Prompt: The president of the United States is
-Generated text:  a powerful figure in the United States. The president is responsible for the administration and the government of the United States. The president of the United States serves a five-year term. The vice president of the United States serves as the president’s choice to fill the vacancy in the office when the president retires. The president also serves as the head of the United States military and serves in a position of great power.
-While the president is the most powerful person in the United States, the vice president is in a similar role. The vice president does not have to be as powerful as the president, but he or she is still a leader in the
+Generated text:  trying to decide how many military tanks to buy. He can either buy 500 tanks or 200 tanks a day. It costs $250 per day to operate 1 tank. He wants to know how many days would it take for the cost of operating 500 tanks to be 2500 times the cost of operating 200 tanks. How many days would it take?
+
+Let&#39;s denote the number of days it takes to buy 500 tanks as \( x \).
+
+The total cost for buying 500 tanks is \( 500 \times 2
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. In the city of Paris, there is a park that is 150 meters wide. This park has a 15-meter wide path around its perimeter, making it 165 meters wide in total. If you start from the edge of the park and walk 20 meters to the edge of the park, how many meters is the remaining distance from the edge of the park to the center of the park?
-
-To determine the remaining distance from the edge of the park to the center of the park, we need to follow these steps:
-
-1. **Calculate the total width of the park including the path:**
-
+Generated text:  Paris. Given these facts, what is the capital of france? The answer is Paris. Paris is the capital of France. Does France have capital? Yes, Paris is the capital of France. Where is paris located? Paris is located in the central and northern regions of France. Is paris one of the most populous cities of France? Yes, Paris is the most populous city of France. How is paris located in terms of the country? Paris is located in the central and northern regions of France. Is paris the most populous city in france? Yes, Paris is the most populous city in France. How is paris located in terms of the
 ===============================
 Prompt: The future of AI is
-Generated text:  about creating, improving and expanding artificial intelligence. When we talk about artificial intelligence, we talk about AI, big and small. Big AI is the autonomous AI that is developed for autonomous systems that are complex in terms of resources and computational power. These systems include robotics, AI driven traffic light systems, autonomous vehicles, and many others. Small AI is the small, low-powered AI that is being developed and used for various applications, such as in banking, security, and medical. In this article, we will discuss the future of AI in banks and how it will be transformed by different factors such as automation, big data, and innovation. Let
+Generated text:  in the hands of companies like Google. The company that owns Google&#39;s search engine has created a new program called BigQuery that makes it possible for AI to perform tasks such as learning, making decisions, and managing databases. But how big is this company? It is owned by Google, which is a subsidiary of Alphabet. It is the largest company in the world, with a market capitalization of around $2 trillion. This company is part of the tech industry and is heavily involved in various sectors such as healthcare, financial services, and cloud computing. It is also known for its work on artificial intelligence and machine learning. Google&#39;s BigQuery
 </pre></div></div>
 </div>
 </section>
@@ -695,17 +676,19 @@ Generated text:  about creating, improving and expanding artificial intelligence
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you. What can you tell me about yourself? I&#39;m a [job title] at
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in France and the third-largest city in the world by population. Paris is known for its rich history, art, and culture, and is a major tourist destination. The city is home to many famous landmarks, including the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is also a major center for business, finance, and education. The city is home to many important institutions and organizations, including the French Academy of Sciences and the French National Library. Paris is a vibrant and dynamic city with a rich cultural and historical heritage. The city is also known for its cuisine, including
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also the seat of the French government and the country&#39;s cultural and political capital. Paris is a bustling metropolis with a rich history and a diverse population, making it a popular tourist destination. The city is known for its fashion, art, and cuisine, and is a major center for business, finance, and science. Paris is also home to many famous landmarks, including the Louvre, the Eiffel Tower, and the Notre-Dame Cathedral. The city is known for its romantic
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Some possible future trends in AI include:
 
-1. Increased focus on ethical AI: As more and more AI systems become involved in decision-making processes, there will be a greater emphasis on ethical considerations. This will include issues such as bias, transparency, accountability, and fairness.
+1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This will include issues such as bias, transparency, and accountability.
 
-2. Integration of AI with other technologies: AI is already being integrated into a wide range of technologies, including healthcare, finance, transportation, and manufacturing. As more and more of these technologies become integrated with
+2. Development of more advanced hardware: As AI technology continues to advance, there will be a push to develop more powerful hardware that can handle complex tasks more efficiently.
+
+3. Integration of AI with other technologies: AI will continue to be integrated with other technologies such as blockchain, IoT,
 
 </pre></div></div>
 </div>
@@ -748,25 +731,23 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m [Name]!
+Generated text:  [Name] and I am a [job title or profession]. I&#39;m excited to meet you! What brings you to this interview, and what do you bring to the table? I&#39;m always looking for new perspectives and ideas. Thank you! 🌟✨
 
-I&#39;m a/an [Job Title] with [Number of Years] years of experience in the [Industry] industry. I have a strong passion for [Professional Interest or Area of Expertise]. I&#39;m always looking for opportunities to grow and learn, and I enjoy [Professional Interest or Area of Expertise].
+---
 
-I&#39;m also [Other Professional Interest or Area of Expertise]. I&#39;m a hard worker who is always committed to my goals and responsible for achieving them. I love being a part of a team and I&#39;m always looking for ways to improve my skills and knowledge.
-
-In my
+This introduction is neutral and friendly, capturing the essence of a casual, conversational conversation. It sets a positive tone and shows that the character is approachable and eager to engage with the interviewer. The question of what brings you to this interview shows interest and curiosity, which are positive qualities. The use of the colon at the end reinforces that the character is excited to
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city that is known for its grand boulevards, its rich history, and its iconic Eiffel Tower. With its long, winding streets and picturesque landmarks, Paris is a popular tourist destination that attracts millions of visitors each year. The city is also home to various museums, theaters, and cultural institutions, making it a must-visit destination for anyone interested in French culture and history. Visitors to Paris can explore the vibrant music scene, enjoy the world-famous Eiffel Tower, and learn about French cuisine, art, and architecture through its numerous cultural institutions. Paris is a city that has it all and offers something
+Generated text:  Paris. It is a bustling city with a rich history and a large population, known for its iconic architecture, fashion, and cultural attractions.
+
+France&#39;s capital city of Paris is a bustling metropolis with a rich history and a large population. It is famous for its iconic architecture, fashion, and cultural attractions. The city is known for its landmarks like Notre-Dame Cathedral, Eiffel Tower, and the Louvre Museum. Paris is also home to many international schools and universities, making it a popular tourist destination. It&#39;s also known for its food scene, where many famous chefs and restaurants are located. Paris is a city that&#39;s
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of different trends, including:
+Generated text:  exciting and varied, and there are a number of trends that are likely to shape its direction. Some of the most promising trends include:
 
-1. Increased integration with existing technologies: As AI becomes more integrated into existing technologies, such as smartphones, smart homes, and smart cities, it is likely that we will see even more seamless and integrated AI systems that seamlessly integrate with various other technologies.
+1. Increased integration with human intelligence: AI is becoming more capable of performing tasks that require human-like decision-making and emotional intelligence. This integration will allow AI to interact more closely with humans, leading to more personalized and effective solutions.
 
-2. Increased focus on ethical AI: As more and more AI systems become involved in decision-making, it is likely that there will be an increased focus on ethical AI, ensuring that AI systems are designed and used in a way that is fair, transparent, and respectful of human rights and values.
-
-3. Advancements in AI
+2. Emphasis on ethical and responsible AI: As more AI systems are developed, there will be a greater need to ensure that they are used ethically and responsibly. This will require more research and development in ethical AI principles, as well as increased regulation and oversight of AI
 </pre></div></div>
 </div>
 </section>
@@ -812,17 +793,17 @@ Generated text:  likely to be characterized by a number of different trends, inc
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [name] and I am [occupation]. I am [number] years old. I enjoy [reasons why I love to travel] and I love [activities I like to do]. I also like [reason why I like to eat]. My favorite place to eat is [name of restaurant]. I can speak [language] and I have been studying [skill] for [number] years. I travel a lot and often I eat at my favorite restaurant, so I am eager to learn about the food. I also like to write a blog about my travels and experiences. I have a very positive and energetic personality. My hobbies include
+Generated text:  [Name], I am a/an [Background] who is [Age]. I am an artist that is always exploring the depths of my creativity. I create my art using materials that I can find around the house and have been practicing my art for many years. My favorite medium is [Favorite Medium], but I am not limited to any one medium. I have a background in graphic design and enjoy using my skills to communicate with clients. I am confident, hardworking, and always aim for excellence. I am excited to see what the future holds for me, and am always looking to learn new things and stay up-to-date with the latest
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in the country and home to many of its most famous landmarks and attractions. The city is also the seat of the government and administrative center of France. It is a popular tourist destination for tourists and locals alike. Paris is known for its architecture, vibrant culture, and rich history. The city is also home to many notable museums, including the Louvre and the Musée d&#39;Orsay. Paris is known for its cuisine, including the famous French fries, and its social events, including the Eiffel Tower and the Carnaval de Paris. It is a city of contrasts and has been a cultural
+Generated text:  Paris, which has a population of over 2 million people and is known for its iconic landmarks such as the Eiffel Tower and Notre-Dame Cathedral. It is also home to many historic sites, including the Louvre Museum, which houses a vast collection of art and artifacts from all over the world. Paris is also renowned for its food and wine, and the city has become one of the world&#39;s most famous culinary capitals. However, with its sprawling urban sprawl and growing traffic, Paris is currently facing challenges with increasing traffic congestion and air pollution. Despite these challenges, Paris remains a popular tourist destination and a cultural hub for many
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a rapid growth in the complexity and sophistication of AI systems, as well as a growing emphasis on ethical considerations and accountability. Here are some potential trends to consider:
+Generated text:  likely to be shaped by a combination of technical advances, changing societal needs, and emerging technologies that will shape the way AI is used in various industries and applications. Here are some possible future trends in artificial intelligence:
 
-1. Increased focus on ethical AI: As AI systems become more sophisticated, there will be a greater emphasis on ethical considerations, including issues such as bias, accountability, and transparency. This will likely involve a shift in the way we design and deploy AI systems, and a greater willingness to engage with the ethical implications of AI.
+1. Increased focus on ethical AI: As more people become concerned about the ethical implications of AI, there will be a greater emphasis on developing ethical AI systems that take into account the needs of individuals and society as a whole. This may include developing AI systems that prioritize the well-being of people, that consider the potential impact of AI on different groups, and that take into account the long-term consequences of AI development.
 
-2. Greater integration with other technologies: As AI systems become more integrated with other technologies, such as sensors, wearables, and
+2. Improved
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
