@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-27 17:00:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 18:21:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-27 17:00:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 18:21:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.50it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.83it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.78it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-27 17:00:58,974 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-27 17:00:58] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 18:22:06,268 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 18:22:06] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The photo shows a New York City yellow taxi driving through a city street. A person in a yellow shirt is standing behind the taxi, wiping down the vehicle's rear window with a cloth. This humorous scene appears to be staged for comedic effect, creating the illusion that the taxi is equipped with an operating washer and dryer outdoors.
+    The image shows a yellow New York City taxi and the back of another taxi that might be a Uber or Lyft. A yellow-shirted person is folding clothes in the vicinity of the backs of the cabs, likely at a with-the-pound, with-the-pound, or with-the-pound dirt bag location in New York City.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis in a city street. One taxi is a standard four-door vehicle, while the other is larger and probably designed to carry more passengers. Both taxis have luggage racks on the roof filled with clothes, which are spread out on the back seats. This appears to be a playful and unusual display, likely for a photograph or to illustrate the impact of load-bearing. Additionally, there are several flags and signs on the taxi in the background, including an American flag, a New York City flag, and a flag with symbolic writing, possibly for music awards or a specific event. The scene is set against a backdrop of urban
+    The image shows two taxis on a city street, parked close to each other. The taxi on the left has a colorful, rainbow flag draped over it, while the taxi on the right has aспеш displaying "Eileen. ¿Mêno?"". The scene appears to be in an urban area, with buildings in the background and trees lined along the street.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two taxis: a traditional yellow taxi known as a "Network买车" and a modern yellow taxi known as a "网络环保车" or a "green taxi." This modern taxi is equipped with solar panels on its roof, indicating it may be powered by renewable energy. This is a notable eco-friendly feature that contrasts with the traditional urban taxis.
+    The image shows a man dressed in casual yellow clothes, who appears to be engaging in a humorous trick or pranking scenario. He seems to be in the process of hanging clothes, including a yellow sleeveless shirt and a blue shirt, on the back of a paused yellow taxi cab. The taxi is parked on what looks like a city street with pedestrians and buildings in the background. The setting suggests a lively urban environment, possibly during the daytime.
 
 
 ## Querying Llama 4 Vision Model
