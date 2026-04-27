@@ -111,7 +111,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-27 07:15:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 07:56:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
@@ -127,11 +127,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
 
     [transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-27 07:15:40] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-27 07:56:38] `torch_dtype` is deprecated! Use `dtype` instead!
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-27 07:15:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 07:56:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +141,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.16s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.65it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.52s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.61s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.57it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]
 
 
 
@@ -153,12 +153,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-27 07:15:55,112 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-27 07:15:55] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 07:56:47,946 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 07:56:47] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a daytime urban scene with two yellow taxis prominently parked beside the street. One taxi has its trunk open and is being used by someone to wash clothes in what appears to be a makeshift laundry setup using the taxi trunk as a washing machine. The person is standing at the back of the taxi, operating the washing machine, and hanging the dried clothes on a makeshift clothesline or hanger that is placed across the trunk. The setting looks to be a busy street with street lamps and signs visible in the background. The individual seems to be tending to their laundry in an unconventional manner, utilizing the taxi for this purpose.
+    The image features a man standing next to a yellow taxi in an urban setting, with yellow cabs being the main focus due to their distinctive color. The man appears to be holding or displaying clothing items, possibly at a street market or outdoor event. The background includes buildings, storefronts, and urban elements like street signs and traffic lights.
 
 
 ### Call with Processor Output
@@ -183,7 +183,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It appears that there is a taxi isolated on a city street with no other traffic or people in the immediate vicinity. This taxi is positioned to the left side of the image, indicating it might be parked or stopped at the side of the road. The background shows a few other taxis and some commercial buildings with flags hanging from them. The weather seems clear, and it's daytime.
+    The image shows two taxis on a city street. The person in the foreground is using a clothesline to stretch out and straighten a yellow taxi sign on the back of their own vehicle. The taxi numbers and symbols on the sign are being carefully aligned to ensure they are correctly displayed. They appear to be practicing for something related to taxi regulation or certification, given that they are aligning the numbers in front of a building with some sort of control or inspection structure. The background is urban, with double-sided taxi advertising boards displaying content for taxi companies, indicating this photo was likely taken in a city like New York, Los Angeles, or another
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +239,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, a person is holding up a storefront advertisement sign that appears to be about a sale or a discount. The sign is held up on a stick, placed between two mounted street signs. The background includes a yellow taxi on the road, green trees, and buildings with flags and poles. The person seems to be adjusting the sign or perhaps getting ready to put it down.
+    In the image, there is a yellow taxi with a vibrant blue flag attached to its roof. This flag appears to be waving, and the taxi is driving on a street with other cars and buildings visible in the background. It seems to be a sunny day.
 
 
 ## Querying Llama 4 Vision Model
