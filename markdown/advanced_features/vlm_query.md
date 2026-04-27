@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-27 22:40:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 23:43:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-27 22:40:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 23:43:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.62it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.45s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.53it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.07s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.13s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-27 22:40:45,160 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-27 22:40:45] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 23:43:14,251 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 23:43:14] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It's showing a yellow taxi with clothes on a clothesline in front of it. It could be due to the city's🌧 weather.
+    The image shows a man dressed in a yellow shirt and doublecolar pants, standing outside a street. He is using a bike rack or stand, in which he has placed folded clothing, possibly trash, on the back of a yellow cab. The scene is set in an urban environment with other buildings and vehicles visible.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows two yellow taxis driving on a city street. One taxi is in the foreground, and the other is slightly behind and to the left. The scene appears to be taken in an urban area, possibly a business district or downtown, given the high-rise buildings with large windows and awnings in the background. The taxis are typical yellow vehicles used for public transportation in many cities, including New York. There are also some flags and street signs visible, which might be associated with a parade or special event.
+    This image appears to be a humorous or staged photo. It shows a person operating an embroidery machine that has been mounted on the back of a yellow taxi cab. The person is wearing gloves and seems to be in the process of embroidering on blue material attached to the machine. The taxi cab is driving on the street, and there is another taxi visible in the background. The setting seems to be an urban environment, likely in a city known for taxi services, such as New York City. The combination of an embroidery machine and a taxi cab creates a whimsical and unexpected scene.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like someone is collecting donations by hanging polyesteran aprons on a bicycle or possibly a magnet.
+    The image shows a person in a yellow shirt adjusting or holding an umbrella or similar gear in a city street. The person appears to be near a yellow cab. In the background, there are a few路上沐浴，clad in a yellow shirt holding an umbrella.
 
 
 ## Querying Llama 4 Vision Model
