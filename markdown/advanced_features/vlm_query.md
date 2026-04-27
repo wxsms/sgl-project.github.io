@@ -111,27 +111,31 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-27 05:02:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 05:22:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
+
+
     Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.9.1+cu130).
 
 
     No platform detected. Using base SRTPlatform with defaults.
+
+
     No platform detected. Using base SRTPlatform with defaults.
 
 
-    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
     `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     `torch_dtype` is deprecated! Use `dtype` instead!
-    [2026-04-27 05:02:50] `torch_dtype` is deprecated! Use `dtype` instead!
+    [2026-04-27 05:22:42] `torch_dtype` is deprecated! Use `dtype` instead!
+    `BaseImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `BaseImageProcessor` instead.
 
 
     The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-27 05:02:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-27 05:22:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -141,9 +145,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.70it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.62it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.63it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -153,12 +157,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-27 05:03:00,532 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-27 05:03:00] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-27 05:22:51,459 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-27 05:22:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, there is a person hanging laundry on a clothesline attached to the back of a yellow taxi cab. This scene is unusual because taxis are typically not equipped to handle laundry duties. The situation is likely staged for a comedic or innovative social media post. The image humorously adds a spoon to the laundry setup, which reinforces the irony of the scenario—a restaurant spoons for ironing laundries near taxi cabs—an incongruous combination that prompts amusement.
+    The image shows a睛dni taxi cab in New York City with a man晾衣 and folding clothes on the back of the car for delivery or pickup service.
 
 
 ### Call with Processor Output
@@ -183,7 +187,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving down a city street. The taxi is situated in front of a building with a store front, and there are some props on the back of the taxi that resemble clothes or fabric. The scene appears to be set during an English-language foreign exchange program or an event where students or visitors areujaing quirky English phrases or behaviors in public to showcase linguistic diversity.
+    The image shows two yellow taxi cabs on a city street. One taxi is positioned slightly behind the other. The scene appears to be taking place in an urban environment, likely in a bustling city given the presence of several flags and possibly other vehicles in the background. The yellow color of the taxis is a common distinguishing feature, indicating they are likely taxis in a city where such taxis are predominantly yellow. The background also includes some buildings and possibly other street elements, but the main focus is on the two taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -239,7 +243,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene in a city street with a red pole prominently displayed. The pole is likely the next pole in a series of street signs, one of which may not yet be visible in this view. The background features typical urban elements such as trees and buildings, suggesting a downtown or central area of the city.
+    The image depicts a scene in an urban setting, possibly during a street event or performance. There is a yellow taxi cab parked on the street, and someone is hanging laundry, including what appears to be a shirt, using a clothesline that is strung from a nearby building. The background includes tall buildings with visible windows and some outdoor displays. The scene suggests themes of urban life, urban public transport (yellow taxis), human interaction with everyday objects like clothes, and possibly the impact of a temporary activity or performance on the cityscape.
 
 
 ## Querying Llama 4 Vision Model
