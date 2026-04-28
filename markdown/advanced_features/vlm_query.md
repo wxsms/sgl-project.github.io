@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 20:12:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 20:37:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 20:12:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 20:37:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.68it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.65it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.66it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -125,12 +125,20 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 20:12:14,408 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 20:12:14] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 20:37:34,577 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 20:37:34] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a striking scene where a man hangs a suit or a shirt on the back of a yellow taxi cab that is driving on a street in a city setting, likely New York City given the yellow cabs and urban environment. The man is jokingly stepping down with the item, making it clear that the suit or shirt hasn't been cleaned yet. The setup makes a humorous and unexpected sight, capturing attention and possibly eliciting laughter due to the unusual way something is hung up on public transportation.
+    The image shows a scene in an urban setting with several significant elements:
+    
+    1. **Yellow Taxis**: Two yellow taxis are parked or moving along a city street. These are iconic symbols of New York City.
+    
+    2. **Person**: A person wearing a yellow shirt is standing behind the car, holding a rolling iron and a piece of fabric. This suggests that the person is ironing clothes outdoors.
+    
+    3. **Ironing Process**: The person appears to be ironing clothes on the back of a yellow car. This is an unusual and playful scene, as one typically doesn’t iron clothes at the roadside or in traffic.
+    
+    4. **
 
 
 ### Call with Processor Output
@@ -155,9 +163,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image features a playful setup where a person is using a sliding chair on the back of a taxi for the purpose of advertising or promoting something. The person appears to be floating or standing high off the ground, giving the appearance that they are floating. This is a common illusion used in street marketing and entertainment, often achieved by using a trick chair or a mechanical device to simulate being elevated or levitating.
-    
-    The scene is likely taking place during a street fair, parade, or public event, given the presence of other vehicles and the advertising banners in the background. The person might be an entertainer or a street performer creating an amusing and interactive
+    The image shows a street scene with a yellow taxi cab and a man in a yellow shirt standing next to a folded umbrella. The background features a building with a glass facade and some banners hanging from the top. It appears to be a sunny day in an urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -213,15 +219,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It seems like you've mixed a couple of different elements or images, creating what appears to be a rather unusual or humorous scenario. The portion of the image that you're describing shows a yellow taxi cab on a city street with laundry draped over its rearview mirror. However, this seems to be a creative or somewhat fictional representation rather than a straightforward depiction of a real event.
-    
-    To sum up:
-    
-    - There are yellow taxis in the image.
-    - Laundry is draped over the rearview mirror of a taxi.
-    - The street appears to be an urban area.
-    
-    This image might be intended to be playful or inspirational, symbolizing an unexpected twist,
+    The image shows a street scene with two yellow taxis. One taxi is driving down the street, while the other is parked on the side. The taxi being driven has sunglasses placed on the front windshield. The street is lined with buildings, and there are street signs and traffic lights visible in the background. The scene suggests a busy urban street with taxis providing transportation services.
 
 
 ## Querying Llama 4 Vision Model
