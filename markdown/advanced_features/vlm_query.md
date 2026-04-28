@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 00:23:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 01:12:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 00:23:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 01:12:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.29s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.53it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 00:23:41,475 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 00:23:41] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 01:12:30,305 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 01:12:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene from New York City during the Labour Day parade. It features two iconic yellow taxis, one typical of New York City taxis and another that appears to be an SUV variant. There are also two American flags visible in the background, adding to the festive and patriotic atmosphere of the parade. Additionally, there is a person standing on the back of one of the taxis, likely participating in the event. The street is adorned with striped banners and the background includes various buildings typical of the Manhattan skyline.
+    The image shows a unique taxiWondering what I'm doing here. I'm actually delivering laundry! So, if you're looking for your clothes, you might want to stop by.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in an urban area where a man is drying his clothes outside on a clothesline attached to a small trailer or cart mounted on the back of a yellow taxi. The taxi is in motion on a city street, as indicated by the handlebars being used to steer it. The man appears to be diligently hanging his drying laundry on the line. The background includes elements typical of an urban environment, such as storefronts and streetlights.
+    The image depicts a scene on a city street with two yellow taxis parked adjacent to each other. A person is standing between the two taxis, leaning slightly towards the foreground. They are using their hands to manipulate a piece of cloth or towel, which appears to be placed on a manual foldboard stand attached to the back of a taxi. The person is wearing a bright yellow shirt, and there is an ironing board and several towels in the frame. The background shows buildings and some Harry's paint storage (likely stores in advertising practices for cleanliness), storefronts with displays, and a colorful street scene with streetlights and a few people in the
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scenario that is actually a combination of comedic and comical elements. By taking a realistic life situation, roles have been assigned to individuals (the taxi driver and the mime) who choose not to continue with the task, causing consternation and a pleasantly absurd interaction.
+    This image shows a historic scene from New York City, specifically in what is now known as Times Square. There is a yellow都已经墨西哥粉凤凰ув物出租车 and a man adjusting the canopy of the taxi. The urban environment and New York City-specific taxis can clearly be seen.
 
 
 ## Querying Llama 4 Vision Model
