@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 18:56:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 20:12:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 18:57:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 20:12:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.68it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.65it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.66it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 18:57:11,204 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 18:57:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 20:12:14,408 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 20:12:14] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene where a person is hanging laundry on a clothesline attached to the back of a yellow taxi cab. The taxicab is parked on a city street, and it looks like it's parked in front of a store or building with some advertisements or flags visible. The person doing the laundry is using a traffic light as a makeshift leaver for the clothesline. This image is somewhat humorous and unusual, as it is not typical for someone to be doing laundry while traveling using a taxi.
+    The image shows a striking scene where a man hangs a suit or a shirt on the back of a yellow taxi cab that is driving on a street in a city setting, likely New York City given the yellow cabs and urban environment. The man is jokingly stepping down with the item, making it clear that the suit or shirt hasn't been cleaned yet. The setup makes a humorous and unexpected sight, capturing attention and possibly eliciting laughter due to the unusual way something is hung up on public transportation.
 
 
 ### Call with Processor Output
@@ -155,15 +155,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you’ve provided shows a few notable elements:
+    This image features a playful setup where a person is using a sliding chair on the back of a taxi for the purpose of advertising or promoting something. The person appears to be floating or standing high off the ground, giving the appearance that they are floating. This is a common illusion used in street marketing and entertainment, often achieved by using a trick chair or a mechanical device to simulate being elevated or levitating.
     
-    1. **Two Yellow Cabs**: The most prominent object in the image is a pair of yellow taxis. These are iconic vehicles often seen in New York City.
-    
-    2. **Man on a Sidewalk**: There is a person standing on the sidewalk beside the taxis. Based on the个小椅子-fashioned clothing, it’s difficult to distinguish his face or identity clearly.
-    
-    3. **Signs and Advertising:** Various signs and what appears to be advertisements (e.g., from eateries) can be seen between the cabs and buildings.
-    
-    4. **Street and Sidewalk**:
+    The scene is likely taking place during a street fair, parade, or public event, given the presence of other vehicles and the advertising banners in the background. The person might be an entertainer or a street performer creating an amusing and interactive
 
 
 ### Call with Precomputed Embeddings
@@ -219,7 +213,15 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with two yellow taxis. Both taxis have their roofs adorned with colorful banners or streamers. The taxi closest to the viewer has a banner that appears to be advertising something, possibly a product or service, given the visible text. Both taxis are parked on a street lined with buildings, and there are some flags hanging from the buildings, indicating a celebratory or festive occasion, possibly a parade or a public event. The street is clear, and there are no pedestrians or other vehicles visible in the image.
+    It seems like you've mixed a couple of different elements or images, creating what appears to be a rather unusual or humorous scenario. The portion of the image that you're describing shows a yellow taxi cab on a city street with laundry draped over its rearview mirror. However, this seems to be a creative or somewhat fictional representation rather than a straightforward depiction of a real event.
+    
+    To sum up:
+    
+    - There are yellow taxis in the image.
+    - Laundry is draped over the rearview mirror of a taxi.
+    - The street appears to be an urban area.
+    
+    This image might be intended to be playful or inspirational, symbolizing an unexpected twist,
 
 
 ## Querying Llama 4 Vision Model
