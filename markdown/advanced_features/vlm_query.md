@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 00:10:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 00:23:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 00:10:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 00:23:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.52it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.29s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.73it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.70it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 00:10:33,437 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 00:10:33] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 00:23:41,475 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 00:23:41] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street where two yellow taxis are parked side by side. The taxi on the left side is partially visible with its rear end. The taxi on the right side has a person standing on the back of its tailgate. The person is holding a clothes drying rack positioned behind the back seat, and clothes are draped over it. It appears that the person is manually hanging clothes on the rack to dry them. The background includes city buildings and storefronts, suggesting an urban environment.
+    The image shows a scene from New York City during the Labour Day parade. It features two iconic yellow taxis, one typical of New York City taxis and another that appears to be an SUV variant. There are also two American flags visible in the background, adding to the festive and patriotic atmosphere of the parade. Additionally, there is a person standing on the back of one of the taxis, likely participating in the event. The street is adorned with striped banners and the background includes various buildings typical of the Manhattan skyline.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a U. S. fire hydrant painted in taxi colors, specifically yellow and white. An orange taillight that resembles a taxi is also attached to the hydrant. This is likely part of a creative campaign to raise awareness about fire safety, as slush resiliency and yellow paint could indicate a water hydrant.
+    The image shows a scene in an urban area where a man is drying his clothes outside on a clothesline attached to a small trailer or cart mounted on the back of a yellow taxi. The taxi is in motion on a city street, as indicated by the handlebars being used to steer it. The man appears to be diligently hanging his drying laundry on the line. The background includes elements typical of an urban environment, such as storefronts and streetlights.
 
 
 ### Call with Precomputed Embeddings
@@ -211,9 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab in a city street. The taxi is parked on the side of the road, and there are two men wearing yellow t-shirts working on something attached to the back of the taxi. One man is standing and holding a stand, while the other man is sitting or kneeling down. They appear to be engaged in some kind of task or demonstration involving the stand.
-    
-    The background includes other cars, buildings, and some street signs. The setting suggests an urban environment, possibly in a bustling city center. The men's bright yellow t-shirts stand out against the more muted colors of the surrounding environment.
+    The image shows a scenario that is actually a combination of comedic and comical elements. By taking a realistic life situation, roles have been assigned to individuals (the taxi driver and the mime) who choose not to continue with the task, causing consternation and a pleasantly absurd interaction.
 
 
 ## Querying Llama 4 Vision Model
