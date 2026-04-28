@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 21:42:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 22:05:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 21:42:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 22:06:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.61it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 21:42:57,998 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 21:42:57] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 22:06:09,479 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 22:06:09] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a person drying laundry on a makeshift clothesline outside two yellow taxis. The scene appears to be set in an urban area, possibly a busy street in a city like New York City where taxis are common. The person is using a broom handle as a clothesline to dry clothes, which is likely for comedic or artistic effect. The background includes some storefronts and business signs, indicating a commercial area.
+    Now scroll
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a person wearing a yellow shirt and jeans stretching an ironing board with a shirt on top in the middle of an otherwise empty street. Two yellow taxis are parked on either side of the road, with one taxi having a towel draped over the back window. The street is relatively quiet, and there are no pedestrians or traffic around. The image appears to be taken in an urban area with buildings lining the street.
+    This image shows an urban street scene with two yellow vehicles, likely taxi cabs, parked on the side of the road. One of the taxis has been modified by someone to display a pike pole with various banner-like items attached, including the American flag, American Airlines logo, and other advertising or design elements. Several American flags are also visible around the scene, hanging on other buildings and attached to vehicles. The area appears to be an active commercial area with numerous businesses and stores lining the street. The sidewalk has a large woven walking surface, possibly to accommodate pedestrians with mobility issues.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi parked on a city street. The taxi has been decorated with a row of American flags and other patriotic items. This appears to be part of a public event or celebration, possibly on Independence Day (July 4th) in the United States. The flags, along with other decorative elements, were attached to the side of the taxi in a patriotic manner.
+    The image shows a yellow taxi cab parked on a city street. The cab is empty and appears to be in a neutral position. There are a few other elements in the image: some flags hanging on poles, a blue piece of cloth or clothing hanging on a stand, and a few additional flags in the background. The scene looks like it could be taking place on a city street with some sort of event or demonstration going on, given the presence of the flags.
 
 
 ## Querying Llama 4 Vision Model
