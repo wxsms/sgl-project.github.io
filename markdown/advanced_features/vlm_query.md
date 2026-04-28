@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 01:57:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 03:48:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 01:57:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 03:48:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.34it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 01:57:23,443 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 01:57:23] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 03:49:06,071 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 03:49:06] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    What you are showing is a piece of virtual reality (VR) technology. A person is wearing a VR headset while standing next to a real-world yellow taxi. They are manipulating a virtual object, which appears to be a laundry basket, in the VR environment. This kind of technology is often used for training, advertising, or entertainment purposes, showing various scenarios or applications realistically.
+    The image shows a taxi cab parked on a city street with a Laundry in Action! truck next to it. The setup includes a clothes rack mounted on the back of the taxi, with a dolly loaded with laundry on the front cabs. Laundry is hung from the clothes rack, suggesting that the taxi is being used as a temporary laundry facility for nearby residents. This is a common sight in some urban areas where parking spaces are limited, and the truck may be part of a doorstep service for washing and drying clothes.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxi cabs parked on a city street. There is also a person standing behind the query box, with a baby stroller and a piece of furniture attached to a pole. The background includes various signboards and poles with flags. This appears to be a humorous or surreal scene, possibly involving some form of performance or artistic installation.
+    The image shows two yellow taxis on the street. One taxi is positioned behind the other, with the second taxi appearing to be stopped or slowing down. The scene possibly captures a moment during a taxi displacement event, where taxis are being parked or moved in a different location. Flags and poles are visible in the background, adding context to the urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab in an urban street, with another taxi visible in the background. The taxi cab in the foreground has its back seats folded down and has several pieces of clothing hanging on a fan with strings, giving it a makeshift look. This appears to be a humorous or satirical scene, possibly created for a local event or celebration.
+    The image shows a yellow passenger taxi cab driving down a city street. The vehicle is equipped with a retractable table on the back, which has various items draped over it, including what appears to be a raincoat, pants, and possibly a jacket. This setup is unusual as it resembles a clothing rack outdoors, which suggests the person might be either displaying or filming something related to the clothes. The street is lined with buildings that have multiple Windows and visible street signs. The overall scene suggests an urban setting and possibly an event or demonstration involving the use of taxis as makeshift rafts.
 
 
 ## Querying Llama 4 Vision Model
