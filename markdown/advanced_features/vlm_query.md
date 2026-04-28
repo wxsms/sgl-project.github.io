@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 06:53:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 07:50:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 06:53:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 07:50:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.58it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 06:53:44,581 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 06:53:44] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 07:51:00,377 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 07:51:00] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a street scene with two yellow taxis parked in a city. One taxi has a laundry rack on its back with clothes hanging on it, possibly for airing out or drying. The street appears to be in a busy urban area, with buildings and storefronts visible in the background.
+    The image shows a person washing clothes attached to the back door of a yellow taxi. The taxi is parked on a street, and there are other taxis and buildings visible in the background. The person is using a makeshift washing machine consisting of a metal stand and a hose attached to the back of the taxi, using it to rinse the clothes.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image captures an unusual scene where a person is seen holding clothes on a portable laundry rack. The person appears to be using the rack to pull their clothing out of a yellow cab. This is not a typical situation and seems to be an act of protest or a creative form of communication.
+    The image shows two yellow taxis parked side by side on a city street. They appear to be parked by the curb near shops with various signs and advertisements. The taxis are located in an urban environment, possibly in New York City, given the style of the taxis and the overall setting. The street is relatively quiet, with only a few people visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person standing next to a yellow taxi cab on what appears to be a city street. The person is holding up a pair of jeans and seems to be displaying or showcasing the jeans, possibly for sale. The background includes buildings and other vehicles, suggesting an urban environment. The overall scene gives an impression of a street vendor or a roadside sale.
+    The image shows an unusual and humorous scene involving a person and a car. The person appears to be using a folding chair or makeshift stand with a pile of clothes draped over it, in a way that seems to be ". . . from those of p. For good and truly for demonstrating the straightforwardness."However, the clothes are hanging too low, making it look as if the person is attempting to charity laugh-arabic-salt soak. The car in the background is a yellow cab, commonly associated with New York City taxis. Given the attire and the scenario, this scene likely represents an impromptu makeshift performance or flash mob-style activity
 
 
 ## Querying Llama 4 Vision Model
