@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 12:40:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 18:56:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 12:40:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 18:57:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 12:40:43,524 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 12:40:43] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 18:57:11,204 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 18:57:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene typical of street cleaning in New York City. A sanitation worker is seen cleaning the hook of a taxi with a clothesline and a rag. The worker is using a stick to stretch out the clothesline and tie the line around a pole on the side of a parked taxi. The taxi is yellow, which is a common color for New York City taxis. The background includes other cars and buildings, characteristic of a downtown urban area.
+    The image shows a scene where a person is hanging laundry on a clothesline attached to the back of a yellow taxi cab. The taxicab is parked on a city street, and it looks like it's parked in front of a store or building with some advertisements or flags visible. The person doing the laundry is using a traffic light as a makeshift leaver for the clothesline. This image is somewhat humorous and unusual, as it is not typical for someone to be doing laundry while traveling using a taxi.
 
 
 ### Call with Processor Output
@@ -155,7 +155,15 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a Yellow Cab in New York City, likely during a daytime or early evening. The taxi is stopping near a curb, and there is a person standing next to it, holding a mop or broom. The background includes street signs, advertisements, and buildings, typical of a busy urban area. Part of the scene seems to be digitally altered or created as there are multiple hands holding the mop, which is an unusual and unexpected occurrence. This image might be an AI-generated or manipulated photo designed to show multiple hands using conventional functions in a common urban setting.
+    The image you’ve provided shows a few notable elements:
+    
+    1. **Two Yellow Cabs**: The most prominent object in the image is a pair of yellow taxis. These are iconic vehicles often seen in New York City.
+    
+    2. **Man on a Sidewalk**: There is a person standing on the sidewalk beside the taxis. Based on the个小椅子-fashioned clothing, it’s difficult to distinguish his face or identity clearly.
+    
+    3. **Signs and Advertising:** Various signs and what appears to be advertisements (e.g., from eateries) can be seen between the cabs and buildings.
+    
+    4. **Street and Sidewalk**:
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +219,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab with its doors strapped shut and additional sheets of cloth propped against it to block the view. This is commonly used as a makeshift security measure in areas where vehicle braking systems might fail, such as icy roads, fog, or after hitting a crash. The cloth helps prevent the driver from being seen by pedestrians or other drivers who might attempt to open the door to get out.
+    The image shows a street scene with two yellow taxis. Both taxis have their roofs adorned with colorful banners or streamers. The taxi closest to the viewer has a banner that appears to be advertising something, possibly a product or service, given the visible text. Both taxis are parked on a street lined with buildings, and there are some flags hanging from the buildings, indicating a celebratory or festive occasion, possibly a parade or a public event. The street is clear, and there are no pedestrians or other vehicles visible in the image.
 
 
 ## Querying Llama 4 Vision Model
