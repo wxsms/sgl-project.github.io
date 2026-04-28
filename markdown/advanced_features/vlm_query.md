@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 22:05:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 22:55:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 22:06:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 22:55:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.61it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.56it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.57it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 22:06:09,479 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 22:06:09] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 22:55:27,095 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 22:55:27] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    Now scroll
+    The image shows a person standing on the back of a yellow taxi cab, hanging clothes out to dry on a line. The scene appears to be in an urban street in New York City, with other taxis visible in the background. The person is using a마다 to dry a blue shirt and other clothing items. This is a common sight in New York City, where people often use the space created by standing on the back of a taxi to perform outdoor activities like drying laundry.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows an urban street scene with two yellow vehicles, likely taxi cabs, parked on the side of the road. One of the taxis has been modified by someone to display a pike pole with various banner-like items attached, including the American flag, American Airlines logo, and other advertising or design elements. Several American flags are also visible around the scene, hanging on other buildings and attached to vehicles. The area appears to be an active commercial area with numerous businesses and stores lining the street. The sidewalk has a large woven walking surface, possibly to accommodate pedestrians with mobility issues.
+    The image shows a man standing by a brightly colored taxicab, which is known as a New York City taxicab called a "jet black." The taxi is yellow and black with a distinctive sign on the door indicating it's a New York City taxi. The man is holding a pair of binoculars, preparing to look through them. The scene appears to be the famous 2003 "The Scream" protest in New York City, where protesters喷漆了.categoriesPDOException.:Pretend they were "screaming," which became a humorous and controversial event. What do they shout:
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,14 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. The cab is empty and appears to be in a neutral position. There are a few other elements in the image: some flags hanging on poles, a blue piece of cloth or clothing hanging on a stand, and a few additional flags in the background. The scene looks like it could be taking place on a city street with some sort of event or demonstration going on, given the presence of the flags.
+    The image shows a scene on a city street with a few key elements:
+    
+    1. **Yellow Cab**: There is a yellow taxi cab on the left side of the image.
+    2. **Person**: A person is seen cleaning the windows of the yellow taxi cab. They are holding a squeegee and a glass cleaner.
+    3. **Flags**: There are several American flags in the background, likely attached to poles or buildings.
+    4. **Building**: Behind the taxi, there is a tall building with a large window display that seems to be a store or a business.
+    
+    The setting appears to be in a metropolitan area with clear weather conditions
 
 
 ## Querying Llama 4 Vision Model
