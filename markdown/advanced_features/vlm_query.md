@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 01:12:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 01:57:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 01:12:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 01:57:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.53it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 01:12:30,305 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 01:12:30] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 01:57:23,443 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 01:57:23] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a unique taxiWondering what I'm doing here. I'm actually delivering laundry! So, if you're looking for your clothes, you might want to stop by.
+    What you are showing is a piece of virtual reality (VR) technology. A person is wearing a VR headset while standing next to a real-world yellow taxi. They are manipulating a virtual object, which appears to be a laundry basket, in the VR environment. This kind of technology is often used for training, advertising, or entertainment purposes, showing various scenarios or applications realistically.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene on a city street with two yellow taxis parked adjacent to each other. A person is standing between the two taxis, leaning slightly towards the foreground. They are using their hands to manipulate a piece of cloth or towel, which appears to be placed on a manual foldboard stand attached to the back of a taxi. The person is wearing a bright yellow shirt, and there is an ironing board and several towels in the frame. The background shows buildings and some Harry's paint storage (likely stores in advertising practices for cleanliness), storefronts with displays, and a colorful street scene with streetlights and a few people in the
+    The image shows two yellow taxi cabs parked on a city street. There is also a person standing behind the query box, with a baby stroller and a piece of furniture attached to a pole. The background includes various signboards and poles with flags. This appears to be a humorous or surreal scene, possibly involving some form of performance or artistic installation.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a historic scene from New York City, specifically in what is now known as Times Square. There is a yellow都已经墨西哥粉凤凰ув物出租车 and a man adjusting the canopy of the taxi. The urban environment and New York City-specific taxis can clearly be seen.
+    The image shows a yellow taxi cab in an urban street, with another taxi visible in the background. The taxi cab in the foreground has its back seats folded down and has several pieces of clothing hanging on a fan with strings, giving it a makeshift look. This appears to be a humorous or satirical scene, possibly created for a local event or celebration.
 
 
 ## Querying Llama 4 Vision Model
