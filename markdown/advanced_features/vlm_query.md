@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-28 20:37:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 21:11:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 20:37:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-28 21:11:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
 
 
 
@@ -125,20 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-28 20:37:34,577 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 20:37:34] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-28 21:11:13,509 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-28 21:11:13] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in an urban setting with several significant elements:
-    
-    1. **Yellow Taxis**: Two yellow taxis are parked or moving along a city street. These are iconic symbols of New York City.
-    
-    2. **Person**: A person wearing a yellow shirt is standing behind the car, holding a rolling iron and a piece of fabric. This suggests that the person is ironing clothes outdoors.
-    
-    3. **Ironing Process**: The person appears to be ironing clothes on the back of a yellow car. This is an unusual and playful scene, as one typically doesn’t iron clothes at the roadside or in traffic.
-    
-    4. **
+    The image shows a scene at a street fair or festival, with two yellow taxis positioned on the street. One of the taxis is being used to hang up laundry on a line striped with a red cross, which is often associated with Good Samaritan floats or charity dedications. Various flags and banners are hanging from the taxis, and there are spectators gathered around. The setting appears to be in a busy urban area with tall buildings and storefronts.
 
 
 ### Call with Processor Output
@@ -163,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a yellow taxi cab and a man in a yellow shirt standing next to a folded umbrella. The background features a building with a glass facade and some banners hanging from the top. It appears to be a sunny day in an urban area.
+    The image shows a 'taxi recycling event' in New York City. City sanitation workers inserted dummy bodies into buses, cars, and drink coolers, and placed them on streets near Cyrus Cooper (a company that makes custom stops for weddings). The bodies represented families and victims who had been killed in traffic accidents, with the hope of correcting people's misconceptions of the U.S. road safety system.
 
 
 ### Call with Precomputed Embeddings
@@ -219,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with two yellow taxis. One taxi is driving down the street, while the other is parked on the side. The taxi being driven has sunglasses placed on the front windshield. The street is lined with buildings, and there are street signs and traffic lights visible in the background. The scene suggests a busy urban street with taxis providing transportation services.
+    The image shows a scene with a yellow taxi parked on a street in a city. The taxi is equipped with an unusual contraption attached to its back, which appears to be designed as a makeshift drying rack for clothes. The clothes are hanging from the rack, and it seems to be functioning as an improvised outdoor drying area. In the background, there are pedestrians and some buildings with flags hanging from them. The setup is creating a humorous and unique scenario, likely meant to capture attention in a public space.
 
 
 ## Querying Llama 4 Vision Model
