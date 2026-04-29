@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 20:57:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 21:35:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 20:57:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 21:35:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.46it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.68it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.64it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 20:58:07,963 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 20:58:07] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 21:35:26,326 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 21:35:26] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis on a city street. One of the taxis has a person standing next to it, holding a piece of clothing on an ironing board. It appears to be ironing the clothes. The street is lined with buildings, and there are flags hanging on旗杆 near the street. The scene is likely taking place in a busy urban area, possibly during a parade or event that involves taxis with decorative elements.
+    The image shows a scene with a city street setting. In the foreground, there is aTaxi, midsize car. There's also someone standing beside the Taxi, active in some form that isn't fully clear. Under the roof of the Taxi, or near it, there are what appear to be small things, again, not fully clarified. Beyond that, on the street, there are other signs, total four to be precise. There is also draws near these coverage under the car.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The picture shows a yellow taxi driving on a city street. The taxi has clothes hung on a street sign on its side, possibly as a protest or artistic statement. In the background, there are tall buildings and some small vehicles, including another taxi, a yellow street light, and some pedestrians. The scene appears to be in an urban area, possibly during daytime.
+    The image shows a man interacting with the roof of a yellow taxi cab. The man appears to be hanging out a clothesline with various pieces of clothing flung around as if they are drying in the wind. This playful and unconventional scene seems to be staged or a form of street art, adding an unexpected twist to the mundane activity of a taxi driver. The setting appears to be in an urban environment, possibly New York City, given the cab's design and the organization of street signs.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a taxi in New York City with a "taxiacasino" setup, hence the cut-up apparel hanging on the side. Additionally, there are miscellaneous items attached to the pop-up stand, such as an umbrella and additional clothing pieces.
+    In the image, there is a man wearing a yellow shirt standing next to a yellow taxi. The man appears to be carrying a laundry basket with clothes hanging in it. The clothes are draped over a uniform standImplement used to display laundry. The scene seems to depict someone taking laundry out of or putting it into a taxi, likely for delivery. The backdrop shows an urban setting with buildings and flags.
 
 
 ## Querying Llama 4 Vision Model
