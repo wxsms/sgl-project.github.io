@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 02:57:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 03:13:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 02:57:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 03:13:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 02:57:47,721 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 02:57:47] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 03:14:05,486 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 03:14:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It appears that the image shows a two-toned yellow taxi parked on a street, with a person hanging a piece of clothing on a clothesline or hanger attached to the back of the taxi. The cab is right alongside another taxi, also yellow, parked in the distance. The scene seems to be set in an urban environment, possibly in a city known for yellow taxis, given the taxi's distinctive color. The person hanging the clothes is likely a taxicab driver or someone involved in cleaning, as the back of the taxi provides a functional and convenient space for this activity.
+    The image depicts a yellow taxi parked on the street. The attire on display is a blue raglan sleeve shirt with the cullotte-style pants often worn by New York City cab drivers. The shirt is draped over a piece of furniture attached to the back of the taxi, likely to keep it dry or for display reasons. This custom look has become a well-known touristic item in New York City, known as the "Cabbie Tee."
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with a yellow taxi cab and a person washing clothes. The person is using a hose to spray water over a hanging bunch of clothes, presumably on a clothesline. This is a common sight in urban areas, especially during warm spells when people need to wash their laundry quickly.
+    This image shows a New York taxi (cab) driving on a street with its rear door open. Someone appears to be hanging clothes out of the window, presumably to dry them in the breeze. The taxi is yellow, which is typical of New York taxis. The background includes visible street signs and parts of buildings, indicating an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -171,6 +171,14 @@ processor = AutoProcessor.from_pretrained(model_path, use_fast=True)
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_path).eval()
 vision = model.model.visual.cuda()
 ```
+
+
+    Downloading (incomplete total...): 0.00B [00:00, ?B/s]
+
+
+
+    Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+
 
 
     Loading weights:   0%|          | 0/824 [00:00<?, ?it/s]
@@ -203,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm not sure what you mean by "I just wanted to see if anyone has bought the flag I just posted." Could you please provide more context or clarify your question?
+    I assume you meant to ask about a person wearing orangeثلus on the back of a taxi. It's "thelus" which is a common nickname for orange-thelus.Theluses, sometimes abbreviated as "thel," are short pants worn over jeans while riding in a city cab. They provide some extra warmth thanks to their thick, water-resistant lining inside. Many taxi drivers wear them for safety in cold weather.The personal driver encouraged you to wear them while awaiting his transportation. He cares about you and wants to ensure you'll be comfortable in the city's subordinate weather.Possibly not without speaking up about sharing brief social
 
 
 ## Querying Llama 4 Vision Model
