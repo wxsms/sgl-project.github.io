@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 13:42:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 14:54:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 13:42:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 14:54:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.53it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]
 
 
 
@@ -125,16 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 13:42:51,720 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 13:42:51] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 14:54:48,911 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 14:54:48] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in a city with a few notable features. There are two yellow taxis parked on a street. One taxi is in the foreground, and another is slightly obscured in the background. Both taxis are standard yellow cabs, likely from New York City, identifiable by their license plates and design. 
-    
-    In the foreground, there is a yellow stroller with a bag on top, positioned between the two taxis. This setup suggests that someone has placed the stroller and bag in a way that might be noticed by pedestrians or drivers.
-    
-    Background elements include several large, red and white banners hanging from street lights. These banners often display
+    The image shows a person pushing a setup of clothes on a folding stand across the back of a yellow taxi in New York City. The setup includes a folded shirt, jeans, shorts, and a rack of clothes, which seem to be for display or donation. The background shows a bustling urban street with buildings and traffic lights. This is often seen in campaigns to encourage clothing donation, asset recycling, or other similar social causes.
 
 
 ### Call with Processor Output
@@ -159,7 +155,12 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow and black taxis (lodha excel) parked side by side on a city street. The taxi on the right appears to have been modified to display a banner or poster. Note that the invoice packing area on the streamer is behind, and there is no dedicated invoice area just below it. To arrange for invoice packing, you can take the direct lane of the streamer and ask the driver for the bill. The driver will take the form to the driver's side and ask for payment.
+    The image depicts a quirky sight in a city environment. A yellow taxi cab is displayed on a flatiron platform,рид bending over, akin to how one might carry or transport items. This is unusual because:
+    
+    1. Taxi cabs are usually parked alongside the road or are moving on roads.
+    2. The display on a flatiron is unconventional, typically associated with display goods in stores or at markets.
+    
+    This setup may be part of an art installation, a humorous advertisement, or a street performance, meant to entertain or draw attention to the terrified driver.
 
 
 ### Call with Precomputed Embeddings
@@ -215,7 +216,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. The taxi has a staff member standing next to it, resting their hands on the back of the car, possibly taking a break or preparing to get into the cab. The background includes urban elements such as buildings, flags, and a few other vehicles. The scene appears to be set in an urban area with possibly a parade or event due to the flags and the presence of a crowd.
+    The image shows two yellow taxi cabs on a street. One of the taxis is up arms (back symbols) with towels draped over the winches, and the other appears to be driving away across the street. The scene looks like it's taken in an urban area, possibly in the evening, as there are flagpoles with banners in the background.
 
 
 ## Querying Llama 4 Vision Model
