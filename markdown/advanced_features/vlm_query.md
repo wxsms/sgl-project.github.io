@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 05:55:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 07:06:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 05:55:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 07:06:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.82s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.23s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.32s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 05:56:00,796 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 05:56:00] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 07:06:52,442 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 07:06:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene with two yellow taxis in New York City. One taxi is adorned with articles of clothing, including a blue shirt and dark pants, hanging from the car's door. The setting appears to be around Sixth Avenue at 57th Street, as indicated by the orange buildings in the background. The scene is vibrant and illustrates a challenging time as street vendors seek to sell their goods amidst typical urban landscapes.
+    It appears that there is a public street teared КакTech with a yellow taxi parked by the curb. There is also a man in a yellow shirt and blue shorts standing next to a laundry basket. He is hanging out his laundry on the taxi".
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis driving down a city street. The scene appears to be from a festive or special event, as indicated by the string of flags hanging from the taxi. The flags are gathered together in a bunch, and there is someone holding them, suggesting they may be part of a decoration or performance related to the event.
+    It appears to be a photograph showing a yellow taxi parked on a street in what looks like a city environment, probably New York City, given the yellow taxis and the urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a person dressed in yellow and red, standing behind a yellow taxi. The person appears to be performing an act or trick, where their reflection is visible on the taxi's license plate area, creating the illusion that there are two people in the scene. This is similar to a classic optical illusion where multiple reflections create an interesting and sometimes humorous effect.
+    The image shows a scene taking place on the street with several cars, including a yellow taxi-like vehicle prominently featured in the foreground. A person is engaging in a unique activity where they appear to be hanging or hanging clothes on the city street. The setting seems to be an urban environment, with buildings and traffic in the background. The activities suggested by the clothes hanging could relate to everyday city life or events like a street show or an art installation. The presence of various elements like flags, such as an American flag, indicates a location that might have significant historical, economic, or civic importance.
 
 
 ## Querying Llama 4 Vision Model
