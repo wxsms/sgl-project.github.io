@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 19:34:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 20:06:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 19:34:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 20:06:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.51s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.17s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.73s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.85s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.67s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.74s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 19:34:51,015 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 19:34:51] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 20:07:05,317 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 20:07:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a parking meter being used as a stall for laundry drying in New York City. A person is using a yellow cab, likely a taxi, to hang laundry on a clothesline. The parking meter holds the clothesline and the person is drying a piece of fabric, which appears to be a dress. This is a humorous activity that isn't allowed in New York City, but it's a creative solution to晾衣服的常用办法。
+    The image shows a street scene with two yellow taxis, identifiable as cabby-style vehicles, parked on a city street. The person in the image is using a smaller vehicle, possibly a van or an SUV that resembles a taxi due to its "taximeter" sign (a yellow and black sign that indicates designated taxis in the United States). The person appears to be using the smaller vehicle to dry clothes, mainly fabrics that could be jeans, on a clothesline, which is a common sight in New York City or other situations where taxicabs are often used for various purposes due to their mobility and space.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a cab that has been painted to look like a surfboard. The cab's body is mostly yellow with a blue strip on the sides, mimicking the shape of a surfboard. The license plate is visible and there are some visible wheels. This type of painting is often used for promotional purposes or to attract attention, especially in the surfing community or during surf-related events.
+    The image depicts a yellow taxi cab driving on a city street. The vehicle is equipped with a custom tailgate sign that is attached to a folding stroller. This arrangement suggests an unusual and creative advertising or promotional strategy, likely meant to draw attention or convey a message related to the sign's content. The tailgate sign is attached above the stroller, which is used to hold the sign steady.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi parked on the street, with people around it. A person in a yellow shirt is talking on a cell phone while standing on a metal folding chair or truck seat. Another person is holding a blue cloth or wrap. The background includes a storefront with some striped coverings or tarps and a tree with green leaves. The setting appears to be an urban area, possibly during an event or protest due to the presence of the cloth being wrapped around the person's leg, which is often used in demonstrations to cause不便或不便。
+    You are correct. The image shows a scene of a New York taxi entering the Empire State Building, a famous part of the city.
 
 
 ## Querying Llama 4 Vision Model
