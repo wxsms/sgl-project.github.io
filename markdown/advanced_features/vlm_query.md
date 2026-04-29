@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 11:27:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 13:15:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 11:27:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 13:15:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.59it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.50it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 11:27:27,343 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 11:27:27] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 13:16:02,209 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 13:16:02] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a live person actively sorting or handling laundry outdoors. They are standing next to a yellow taxi, and it appears they are on a street, perhaps close to urban settings given the taxi and surrounding infrastructure. The individual is holding laundry items on a raised surface, possibly为了进行分类、整理或暂时存放。各种在户外活动，如摊位、预定或者平凡习性，有着各自的理由。比如，人们有时会摆摊销售衣物、提供二手商品交易、甚至是公益活动。夏至期间，许多人可能会在户外开展此类活动。
+    The image shows a street scene with two yellow taxis intersecting each other on a city street. One taxi is adorned with a patterned flag draped over its back. The scene is set against a backdrop of urban buildings, likely in a downtown area of a city. The interaction with the taxi, especially its dressing up with a flag, is unusual and suggestive of a creative or promotional event or possibly even an artistic gesture.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a traffic scene in a city street. In the foreground, there are two yellow taxi cabs parked on the side of the road. The rear end of one taxi is shown, with several flags attached to it, including an American flag. The taxi is on the right side of the image. The streetlights and buildings in the background suggest an urban environment, likely in a busy city area.
+    The image shows a scene in a city street with a yellow and black SUV parked on the side of the road. The vehicle is being pulled by a device that appears to be used for lifting or moving larger objects. In the background, there are other yellow taxis, stores with storefront fronts, and some urban street elements like flagpoles and street signs. The overall setting suggests a busy city environment, likely in an area with a concentration of taxis and urban businesses.
 
 
 ### Call with Precomputed Embeddings
@@ -211,9 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from a parade, which appears to be taking place in a high-traffic area with multiple street signs indicating various directions and restrictions. The central focus of the image is a person dressed in a bright yellow shirt and blue jeans, who has been caught mid-action by the camera, seemingly putting their belongings on sale in a makeshift manner by placing various items, including clothes, on a folding chair and sign. This act is typically part of street performances or road signs intended to raise funds for charitable causes.
-    
-    Behind the street performer, there's a yellow-colored 얼SYS Pro 2 tornado spinning apparatus on the pavement. This is
+    I'm not sure what you mean by " переменно белый." Could you please provide more context or clarify your question?
 
 
 ## Querying Llama 4 Vision Model
