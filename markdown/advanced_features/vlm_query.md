@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 13:15:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 13:42:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 13:15:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 13:42:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.50it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -125,12 +125,16 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 13:16:02,209 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 13:16:02] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 13:42:51,720 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 13:42:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene with two yellow taxis intersecting each other on a city street. One taxi is adorned with a patterned flag draped over its back. The scene is set against a backdrop of urban buildings, likely in a downtown area of a city. The interaction with the taxi, especially its dressing up with a flag, is unusual and suggestive of a creative or promotional event or possibly even an artistic gesture.
+    The image shows a scene in a city with a few notable features. There are two yellow taxis parked on a street. One taxi is in the foreground, and another is slightly obscured in the background. Both taxis are standard yellow cabs, likely from New York City, identifiable by their license plates and design. 
+    
+    In the foreground, there is a yellow stroller with a bag on top, positioned between the two taxis. This setup suggests that someone has placed the stroller and bag in a way that might be noticed by pedestrians or drivers.
+    
+    Background elements include several large, red and white banners hanging from street lights. These banners often display
 
 
 ### Call with Processor Output
@@ -155,7 +159,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in a city street with a yellow and black SUV parked on the side of the road. The vehicle is being pulled by a device that appears to be used for lifting or moving larger objects. In the background, there are other yellow taxis, stores with storefront fronts, and some urban street elements like flagpoles and street signs. The overall setting suggests a busy city environment, likely in an area with a concentration of taxis and urban businesses.
+    The image shows two yellow and black taxis (lodha excel) parked side by side on a city street. The taxi on the right appears to have been modified to display a banner or poster. Note that the invoice packing area on the streamer is behind, and there is no dedicated invoice area just below it. To arrange for invoice packing, you can take the direct lane of the streamer and ask the driver for the bill. The driver will take the form to the driver's side and ask for payment.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +215,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm not sure what you mean by " переменно белый." Could you please provide more context or clarify your question?
+    The image shows a yellow taxi cab parked on a city street. The taxi has a staff member standing next to it, resting their hands on the back of the car, possibly taking a break or preparing to get into the cab. The background includes urban elements such as buildings, flags, and a few other vehicles. The scene appears to be set in an urban area with possibly a parade or event due to the flags and the presence of a crowd.
 
 
 ## Querying Llama 4 Vision Model
