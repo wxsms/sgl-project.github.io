@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 20:06:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 20:57:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 20:06:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 20:57:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.17s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.46it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.67s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.74s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.68it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.64it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 20:07:05,317 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 20:07:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 20:58:07,963 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 20:58:07] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene with two yellow taxis, identifiable as cabby-style vehicles, parked on a city street. The person in the image is using a smaller vehicle, possibly a van or an SUV that resembles a taxi due to its "taximeter" sign (a yellow and black sign that indicates designated taxis in the United States). The person appears to be using the smaller vehicle to dry clothes, mainly fabrics that could be jeans, on a clothesline, which is a common sight in New York City or other situations where taxicabs are often used for various purposes due to their mobility and space.
+    The image shows two yellow taxis on a city street. One of the taxis has a person standing next to it, holding a piece of clothing on an ironing board. It appears to be ironing the clothes. The street is lined with buildings, and there are flags hanging on旗杆 near the street. The scene is likely taking place in a busy urban area, possibly during a parade or event that involves taxis with decorative elements.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a yellow taxi cab driving on a city street. The vehicle is equipped with a custom tailgate sign that is attached to a folding stroller. This arrangement suggests an unusual and creative advertising or promotional strategy, likely meant to draw attention or convey a message related to the sign's content. The tailgate sign is attached above the stroller, which is used to hold the sign steady.
+    The picture shows a yellow taxi driving on a city street. The taxi has clothes hung on a street sign on its side, possibly as a protest or artistic statement. In the background, there are tall buildings and some small vehicles, including another taxi, a yellow street light, and some pedestrians. The scene appears to be in an urban area, possibly during daytime.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    You are correct. The image shows a scene of a New York taxi entering the Empire State Building, a famous part of the city.
+    The image shows a taxi in New York City with a "taxiacasino" setup, hence the cut-up apparel hanging on the side. Additionally, there are miscellaneous items attached to the pop-up stand, such as an umbrella and additional clothing pieces.
 
 
 ## Querying Llama 4 Vision Model
