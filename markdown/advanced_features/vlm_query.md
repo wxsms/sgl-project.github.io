@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 14:54:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 15:12:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 14:54:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 15:12:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.53it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.57s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 14:54:48,911 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 14:54:48] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 15:13:05,870 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 15:13:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person pushing a setup of clothes on a folding stand across the back of a yellow taxi in New York City. The setup includes a folded shirt, jeans, shorts, and a rack of clothes, which seem to be for display or donation. The background shows a bustling urban street with buildings and traffic lights. This is often seen in campaigns to encourage clothing donation, asset recycling, or other similar social causes.
+    The image shows two yellow taxis (one for each car) on a city street. A person standing next to one of the taxis is using a laundry drying rack to hang their clothes, presumably drying them before putting them back in the car. The scene appears to be in an urban environment with storefronts and flags visible in the background.
 
 
 ### Call with Processor Output
@@ -155,12 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a quirky sight in a city environment. A yellow taxi cab is displayed on a flatiron platform,рид bending over, akin to how one might carry or transport items. This is unusual because:
-    
-    1. Taxi cabs are usually parked alongside the road or are moving on roads.
-    2. The display on a flatiron is unconventional, typically associated with display goods in stores or at markets.
-    
-    This setup may be part of an art installation, a humorous advertisement, or a street performance, meant to entertain or draw attention to the terrified driver.
+    The image shows a taxi parked on a city street, with a person wearing a yellow shirt and a towel draped over a bicycle attached to the back end of the taxi. This scenario is likely for promoting a bicycle-sharing service or an event, such as a tax Free Day, where people are encouraged to bike instead of driving in New York City.
 
 
 ### Call with Precomputed Embeddings
@@ -216,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxi cabs on a street. One of the taxis is up arms (back symbols) with towels draped over the winches, and the other appears to be driving away across the street. The scene looks like it's taken in an urban area, possibly in the evening, as there are flagpoles with banners in the background.
+    The image shows a yellow taxicab parked in a city street. The cab has a special feature where a banner has been taped to the back window, draped over the hood. This unique banner is visible and it appears to be part of a car roadway event or competition. The cab is on a city street with other taxis and possibly buildings in the background.
 
 
 ## Querying Llama 4 Vision Model
