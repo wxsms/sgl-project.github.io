@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 08:33:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 09:03:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 08:33:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 09:03:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.30s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.59it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.15s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.18s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
 
 
 
@@ -125,12 +125,18 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 08:34:02,125 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 08:34:02] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 09:03:27,571 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 09:03:27] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a busy urban street scene with two double-decker yellow taxis parked on the sidewalk. There is a reusable shopping bag hanging from the back of the front taxi, which is commonly used for shopping in places like New York City. The bag appears to be in the process of being adjusted or hung up by someone specifically doing so by the cabs. This reusable bag practice is significant in tourism and consuming local stores, as in New York City, there is often a culture of using reusable bags for shopping to reduce plastic waste and encourage more purchases of local goods.
+    The image shows a scene in a city street with two yellow taxis. The taxi on the left is occupied, and the one on the right has a person hanging clothes on a laundry line attached to the back of the vehicle. The person is wearing a yellow shirt and has a casual posture. The background features buildings with storefronts and some advertisements hanging from the street level. 
+    
+    Here are a few details:
+    
+    1. **Taxis**: The image features two yellow taxis.
+    2. **Person**: A person wearing a yellow shirt is hanging clothes on a laundry line attached to the back of one of the taxis.
+    3. **Setting**: The
 
 
 ### Call with Processor Output
@@ -155,7 +161,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of birds flying in the sky, likely feathers from cleaning or maintaining public transportation vehicles.
+    The image shows a scene involving a street performer. The performer is lying down on a table that has been set up on the street. The performer is wearing a yellow shirt. They appear to be trying to perform an act without breaking the law. The table is placed across the street from a yellow taxi cab. The background shows buildings with signs and billboards, indicating that this scene takes place in an urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +217,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two city taxis parked side by side on a street. The taxi on the left has visible rear expenses, waiter fans, and a small pole attached to the back. The taxi on the right is larger and appears to be a modern, yellow SUV-style vehicle typical of New York City taxis. The background includes city buildings and trees.
+    This image shows a taxi in traffic. The taxi is a standard yellow cab with a red stripe along its side. The vehicle is driving on streets with buildings visible in the background. There are also some clothes or garments being hung up on a clothesline or ironing board attached to the back of the taxi. The scene appears to be taking place in an urban environment, likely in a city where taxis are common.
 
 
 ## Querying Llama 4 Vision Model
