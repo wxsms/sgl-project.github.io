@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 01:13:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 02:57:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 01:13:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 02:57:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.57it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 01:13:43,480 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 01:13:43] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 02:57:47,721 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 02:57:47] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow New York City taxi parked on the street with clothes hanging from its folds, likely as a prank or for a photoshoot. The clothes include a shirt and a pair of underwear. This is a common prank or fun stunt performed by street artists or pranksters, known as "cabbie crap" or "caper pants" in the transportation community.
+    It appears that the image shows a two-toned yellow taxi parked on a street, with a person hanging a piece of clothing on a clothesline or hanger attached to the back of the taxi. The cab is right alongside another taxi, also yellow, parked in the distance. The scene seems to be set in an urban environment, possibly in a city known for yellow taxis, given the taxi's distinctive color. The person hanging the clothes is likely a taxicab driver or someone involved in cleaning, as the back of the taxi provides a functional and convenient space for this activity.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis on a city street. One taxi is behind a stall holding the clothes, and the other taxi is perpendicular to the street. The background includes a building with a storefront and trees alongside the road.
+    The image shows a scene on a city street with a yellow taxi cab and a person washing clothes. The person is using a hose to spray water over a hanging bunch of clothes, presumably on a clothesline. This is a common sight in urban areas, especially during warm spells when people need to wash their laundry quickly.
 
 
 ### Call with Precomputed Embeddings
@@ -171,14 +171,6 @@ processor = AutoProcessor.from_pretrained(model_path, use_fast=True)
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_path).eval()
 vision = model.model.visual.cuda()
 ```
-
-
-    Downloading (incomplete total...): 0.00B [00:00, ?B/s]
-
-
-
-    Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
-
 
 
     Loading weights:   0%|          | 0/824 [00:00<?, ?it/s]
@@ -211,7 +203,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi cab on the left side, which is part of the characteristic yellow-orange color scheme typically seen in New York City taxis. The taxi is parked on the street, and there is a person wearing a yellow shirt and blue jeans standing next to a sidewalk or median, with a laundry hanger on a metal stand. The laundry hanger has a folded blue T-shirt attached to it. The background includes tall buildings, possibly in a commercial area, and some street signs. The overall setting suggests a casual, everyday urban environment.
+    I'm not sure what you mean by "I just wanted to see if anyone has bought the flag I just posted." Could you please provide more context or clarify your question?
 
 
 ## Querying Llama 4 Vision Model

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9c969956"></script>
+    <script src="../_static/documentation_options.js?v=e6673c49"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -656,11 +656,12 @@ We apply CI rate limits to prevent abuse and ensure fair usage of our CI resourc
 <li><p>Minimize device synchronization. Reduce expensive CPU-GPU synchronization operations, such as <code class="docutils literal notranslate"><span class="pre">tensor.item()</span></code> or <code class="docutils literal notranslate"><span class="pre">tensor.cpu()</span></code>, whenever possible. Use vectorized code.</p></li>
 <li><p>Prioritize extreme efficiency. SGLang is a runtime, and most of your code runs on the critical path for every request. Optimize all minor overheads as much as possible, especially in the model forward code.</p>
 <ul>
-<li><p>A common pattern is some runtime checks in the model forward pass (e.g., <a class="reference external" href="https://github.com/sgl-project/sglang/blob/f1b0eda55c2c4838e8ab90a0fac7fb1e3d7064ab/python/sglang/srt/models/deepseek_v2.py#L486-L491">this</a>). These are very likely the same for every layer. Please cache the result as a single boolean value whenever possible.</p></li>
+<li><p>A common pattern is some runtime checks in the model forward pass (e.g., <a class="reference external" href="https://github.com/sgl-project/sglang/blob/f1b0eda55c2c4838e8ab90a0fac7fb1e3d7064ab/python/sglang/srt/models/deepseek_v2.py#L486-L491">this</a>). These are very likely the same for every layer. Please cache the result as a single boolean value in <code class="docutils literal notranslate"><span class="pre">__init__</span></code> whenever possible.</p></li>
 </ul>
 </li>
 <li><p>Make functions as pure as possible. Avoid in-place modification of arguments.</p></li>
 <li><p>Keep files concise. If a file exceeds 2,000 lines of code, split it into multiple smaller files. (e.g., <code class="docutils literal notranslate"><span class="pre">scheduler.py</span></code>, <code class="docutils literal notranslate"><span class="pre">scheduler_output_processor_mixin.py</span></code>)</p></li>
+<li><p>In a file, put core data structures at the top of the file. Put utility functions at the bottom of the file.</p></li>
 <li><p>Keep tests run fast.</p>
 <ul>
 <li><p>If a single test file run longer than 500 seconds, split it into multiple smaller files (e.g., <code class="docutils literal notranslate"><span class="pre">test_eagle_infer_a.py</span></code>, <code class="docutils literal notranslate"><span class="pre">test_eagle_infer_b.py</span></code>).</p></li>
