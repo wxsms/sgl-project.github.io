@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Apple Silicon with Metal &#8212; SGLang</title>
+    <title>Apple Silicon with Metal (MLX) &#8212; SGLang</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=0c24edfa"></script>
+    <script src="../_static/documentation_options.js?v=2bcea5f7"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -480,7 +480,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Apple Silicon with Metal</h1>
+    <h1>Apple Silicon with Metal (MLX)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -494,6 +494,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from Source</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-of-the-serving-engine">Launch of the Serving Engine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-with-requests">Benchmarking with Requests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#throughput-testing">Throughput Testing</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -505,9 +510,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="apple-silicon-with-metal">
-<h1>Apple Silicon with Metal<a class="headerlink" href="#apple-silicon-with-metal" title="Link to this heading">#</a></h1>
-<p>This document describes how run SGLang on Apple Silicon using <a class="reference external" href="https://developer.apple.com/metal/">Metal</a>. If you encounter issues or have questions, please <a class="reference external" href="https://github.com/sgl-project/sglang/issues">open an issue</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="apple-silicon-with-metal-mlx">
+<h1>Apple Silicon with Metal (MLX)<a class="headerlink" href="#apple-silicon-with-metal-mlx" title="Link to this heading">#</a></h1>
+<p>This document describes how run SGLang on Apple Silicon using <a class="reference external" href="https://opensource.apple.com/projects/mlx/">Metal (MLX)</a>. If you encounter issues or have questions, please <a class="reference external" href="https://github.com/sgl-project/sglang/issues">open an issue</a>.</p>
 <section id="install-sglang">
 <h2>Install SGLang<a class="headerlink" href="#install-sglang" title="Link to this heading">#</a></h2>
 <p>You can install SGLang using one of the methods below.</p>
@@ -521,6 +526,55 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-p
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 rm<span class="w"> </span>-f<span class="w"> </span>python/pyproject.toml<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>python/pyproject_other.toml<span class="w"> </span>python/pyproject.toml
 uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all_mps]&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="launch-of-the-serving-engine">
+<h2>Launch of the Serving Engine<a class="headerlink" href="#launch-of-the-serving-engine" title="Link to this heading">#</a></h2>
+<p>Launch the server with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SGLANG_USE_MLX</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>&lt;MODEL_ID_OR_PATH&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-cuda-graph<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
+</pre></div>
+</div>
+<p><strong>Key Parameters Explained:</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_MLX=1</span></code> - Enables the use of MLX as the SGLang runtime backend (if disabled, SGLang will fall back to <code class="docutils literal notranslate"><span class="pre">torch.mps</span></code>, which has less support)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code> - Disables usage of CUDA graph, which is not relevant for Apple Metal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--disable-overlap-schedule</span></code> - Disables overlap scheduling (enabled/not present by default) achieved using MLX’s <code class="docutils literal notranslate"><span class="pre">async_eval()</span></code></p></li>
+</ol>
+</section>
+<section id="benchmarking-with-requests">
+<h2>Benchmarking with Requests<a class="headerlink" href="#benchmarking-with-requests" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">sglang.benchmark_one_batch</span></code> calls the synchronous prefill/decode methods directly without going through the scheduler and the overlap code path.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sglang.benchmark_offline_throughput</span></code> can toggle overlap scheduling as it uses the scheduler and the overlap code path by using the flag <code class="docutils literal notranslate"><span class="pre">--disable-overlap-schedule</span></code>.</p>
+<section id="throughput-testing">
+<h3>Throughput Testing<a class="headerlink" href="#throughput-testing" title="Link to this heading">#</a></h3>
+<p>Basic synchronous one batch throughput:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SGLANG_USE_MLX</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>&lt;MODEL_ID_OR_PATH&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-cuda-graph<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input-len<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-len<span class="w"> </span><span class="m">10</span>
+</pre></div>
+</div>
+<p>Synchronous offline throughput:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SGLANG_USE_MLX</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_throughput<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>&lt;MODEL_ID_OR_PATH&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-cuda-graph<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-prompts<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-overlap-schedule
+</pre></div>
+</div>
+<p>Asynchronous offline throughput:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SGLANG_USE_MLX</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_throughput<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>&lt;MODEL_ID_OR_PATH&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-cuda-graph<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-prompts<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </section>
@@ -556,6 +610,11 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sglang">Install SGLang</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from Source</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-of-the-serving-engine">Launch of the Serving Engine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-with-requests">Benchmarking with Requests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#throughput-testing">Throughput Testing</a></li>
 </ul>
 </li>
 </ul>
