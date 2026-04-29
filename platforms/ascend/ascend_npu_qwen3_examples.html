@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=03089928"></script>
+    <script src="../../_static/documentation_options.js?v=11a0999d"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -511,6 +511,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-30b-a3b-moe-on-1-x-atlas-800i-a3">Running Qwen3-30B-A3B MOE on 1 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-moe-on-1-x-atlas-800i-a3">Running Qwen3-235B-A22B-Instruct-2507 MOE on 1 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-with-256k-long-sequence-on-2-x-atlas-800i-a3-without-cp">Running Qwen3-235B-A22B-Instruct-2507 with 256K long sequence on 2 x Atlas 800I A3 without CP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-w8a8-with-prefill-context-parallel-cp-on-2-x-atlas-800i-a3">Running Qwen3-235B-A22B-Instruct-2507-W8A8 with Prefill Context Parallel (CP) on 2 x Atlas 800I A3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3">Running Qwen3-VL-8B-Instruct on 1 x Atlas 800I A3.</a></li>
 </ul>
 </li>
@@ -699,6 +700,105 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </pre></div>
 </div>
 </section>
+<section id="running-qwen3-235b-a22b-instruct-2507-w8a8-with-prefill-context-parallel-cp-on-2-x-atlas-800i-a3">
+<h3>Running Qwen3-235B-A22B-Instruct-2507-W8A8 with Prefill Context Parallel (CP) on 2 x Atlas 800I A3<a class="headerlink" href="#running-qwen3-235b-a22b-instruct-2507-w8a8-with-prefill-context-parallel-cp-on-2-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
+<p>This example enables <strong>Prefill Context Parallel</strong> (<code class="docutils literal notranslate"><span class="pre">--enable-prefill-context-parallel</span></code>) to split the context across CP ranks during prefill, reducing per-device memory pressure and improving TTFT for long sequences. PD disaggregation is required.</p>
+<blockquote>
+<div><p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p>Prefill side must set <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span> <span class="pre">1</span></code> (PCP only supports batch_size=1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--attn-cp-size</span></code> must evenly divide <code class="docutils literal notranslate"><span class="pre">--tp-size</span></code>; each CP rank occupies <code class="docutils literal notranslate"><span class="pre">tp_size</span> <span class="pre">/</span> <span class="pre">cp_size</span></code> NPUs</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Prefill node &lt;PREFILL_HOST_IP&gt;:</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;PREFILL_HOST_IP&gt;:23456&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_USE_FIA</span><span class="o">=</span>True
+
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>/mnt/share/weights/Qwen3-235B-A22B-Instruct-2507-W8A8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-bootstrap-port<span class="w"> </span><span class="m">8995</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--skip-server-warmup<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.7<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chunked-prefill-size<span class="w"> </span><span class="m">32768</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--base-gpu-id<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attn-cp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--moe-dp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>&lt;PREFILL_HOST_IP&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dist-init-addr<span class="w"> </span>&lt;PREFILL_HOST_IP&gt;:6688
+</pre></div>
+</div>
+<p>Key parameters for PCP:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-prefill-context-parallel</span></code></p></td>
+<td><p>flag</p></td>
+<td><p>Enable PCP feature</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--attn-cp-size</span></code></p></td>
+<td><p>2</p></td>
+<td><p>Split context across 2 CP ranks (each rank handles half the sequence)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-dp-size</span></code></p></td>
+<td><p>2</p></td>
+<td><p>MoE DP size, should match <code class="docutils literal notranslate"><span class="pre">--attn-cp-size</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Required by PCP (batch_size=1 constraint)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Decode node (&lt;DECODE_HOST_IP&gt;):</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://141.61.39.231:23456&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_USE_FIA</span><span class="o">=</span>True
+
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>/mnt/share/weights/Qwen3-235B-A22B-Instruct-2507-W8A8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-cuda-graph<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.7<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chunked-prefill-size<span class="w"> </span><span class="m">32768</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--skip-server-warmup<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--base-gpu-id<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>&lt;DECODE_HOST_IP&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">8001</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dist-init-addr<span class="w"> </span>&lt;DECODE_HOST_IP&gt;:6688
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">ASCEND_MF_STORE_URL</span></code> on both nodes must point to the same KV store (typically the Prefill node IP). <code class="docutils literal notranslate"><span class="pre">ASCEND_USE_FIA=True</span></code> enables fast interconnect aggregation for KV transfer. PCP is a Prefill-only feature; the Decode side needs no CP-related flags.</p>
+</div></blockquote>
+</section>
 <section id="running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3">
 <h3>Running Qwen3-VL-8B-Instruct on 1 x Atlas 800I A3.<a class="headerlink" href="#running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
 <p>Model weights could be found <a class="reference external" href="https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct">here</a></p>
@@ -773,6 +873,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-30b-a3b-moe-on-1-x-atlas-800i-a3">Running Qwen3-30B-A3B MOE on 1 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-moe-on-1-x-atlas-800i-a3">Running Qwen3-235B-A22B-Instruct-2507 MOE on 1 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-with-256k-long-sequence-on-2-x-atlas-800i-a3-without-cp">Running Qwen3-235B-A22B-Instruct-2507 with 256K long sequence on 2 x Atlas 800I A3 without CP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-w8a8-with-prefill-context-parallel-cp-on-2-x-atlas-800i-a3">Running Qwen3-235B-A22B-Instruct-2507-W8A8 with Prefill Context Parallel (CP) on 2 x Atlas 800I A3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3">Running Qwen3-VL-8B-Instruct on 1 x Atlas 800I A3.</a></li>
 </ul>
 </li>
