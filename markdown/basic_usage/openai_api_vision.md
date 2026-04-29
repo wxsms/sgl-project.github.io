@@ -35,11 +35,11 @@ wait_for_server(f"http://localhost:{port}", process=vision_process)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 23:01:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 00:30:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-28 23:01:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-29 00:31:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -49,23 +49,23 @@ wait_for_server(f"http://localhost:{port}", process=vision_process)
 
     Multi-thread loading shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:02,  1.68it/s]
+    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:02,  1.82it/s]
 
-    Multi-thread loading shards:  40% Completed | 2/5 [00:01<00:01,  1.55it/s]
+    Multi-thread loading shards:  40% Completed | 2/5 [00:01<00:01,  1.66it/s]
 
-    Multi-thread loading shards:  60% Completed | 3/5 [00:01<00:01,  1.51it/s]
+    Multi-thread loading shards:  60% Completed | 3/5 [00:01<00:01,  1.63it/s]
 
-    Multi-thread loading shards:  80% Completed | 4/5 [00:02<00:00,  1.47it/s]
+    Multi-thread loading shards:  80% Completed | 4/5 [00:02<00:00,  1.63it/s]
 
-    Multi-thread loading shards: 100% Completed | 5/5 [00:03<00:00,  1.79it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:03<00:00,  1.66it/s]
+    Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  2.01it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  1.84it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       response = await f(request)
 
 
-    2026-04-28 23:01:54,556 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-28 23:01:54] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-29 00:31:16,488 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-29 00:31:16] Unexpected error during package walk: cutlass.cute.experimental
 
 
 
@@ -119,11 +119,11 @@ print_highlight(response)
 
 
 
-<strong style='color: #00008B;'>{"id":"094d27c76c6841dd9866822c51e732c1","object":"chat.completion","created":1777417320,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene suggests an unusual or humorous situation, as ironing clothes outdoors is not a typical activity.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":380,"completion_tokens":73,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"ae51b790490445ec850daae1bbe3d0ba","object":"chat.completion","created":1777422682,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene seems to be set in an urban environment, possibly in New York City, given the style of the taxi and the architecture visible in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":391,"completion_tokens":84,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 
-<strong style='color: #00008B;'>{"id":"475d0bad12704ea0ad48dcb379c2cd59","object":"chat.completion","created":1777417321,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing the task. The scene suggests an unusual or humorous situation, as it is not typical for someone to iron clothes from the back of a moving vehicle.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":387,"completion_tokens":80,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"67386945a1d14e6687ab923af2263f52","object":"chat.completion","created":1777422683,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests an urban environment with buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":384,"completion_tokens":77,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using Python Requests
@@ -156,7 +156,7 @@ print_highlight(response.text)
 ```
 
 
-<strong style='color: #00008B;'>{"id":"05c74a5d18ef420a8a1569f849c1040b","object":"chat.completion","created":1777417322,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing the task. The scene suggests an unusual or humorous situation, as it is not typical for someone to iron clothes from the back of a moving vehicle.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":387,"completion_tokens":80,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"678137360369473daa25c44ddf2b0236","object":"chat.completion","created":1777422684,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing the task. The scene suggests an unusual or humorous situation, as it is not typical for someone to iron clothes from the back of a moving vehicle.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":387,"completion_tokens":80,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using OpenAI Python Client

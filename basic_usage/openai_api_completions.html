@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=49ba2b7e"></script>
+    <script src="../_static/documentation_options.js?v=cac50a69"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,7 +59,7 @@
     <link rel="prev" title="OpenAI-Compatible APIs" href="openai_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 28, 2026"/>
+    <meta name="docbuild:last-update" content="Apr 29, 2026"/>
   </head>
   
   
@@ -581,11 +581,11 @@ document.write(`
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.88it/s]
-2026-04-28 23:02:34,962 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-28 23:02:34] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.51it/s]
-Capturing num tokens (num_tokens=4 avail_mem=133.05 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 39.11it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.83it/s]
+2026-04-29 00:31:56,008 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-29 00:31:56] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.52it/s]
+Capturing num tokens (num_tokens=4 avail_mem=136.56 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 36.65it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -601,7 +601,7 @@ Capturing num tokens (num_tokens=4 avail_mem=133.05 GB): 100%|██████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:32200
+Server started on http://localhost:31529
 </pre></div></div>
 </div>
 </section>
@@ -635,7 +635,7 @@ Server started on http://localhost:32200
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='6323f931e69c4cbbbb74902137aec5dd', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1777417370, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='552ae8cb7c3f4ab88602d055e3bce07e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1777422731, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -900,7 +900,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The major achievements of ancient Rome include the construction of monumental architecture, such as the Colosseum and Pantheon. They also developed a complex system of law, which included laws for both citizens and foreigners. The Roman Empire was one of the largest empires in history, spanning across much of Europe, Asia Minor, and North Africa. Additionally, they were known for their extensive trade networks with other civilizations around the world.</strong></div>
+<strong style='color: #00008B;'>The Roman Empire was a major civilization that flourished from the 8th to the 5th century BCE. It reached its peak under Emperor Augustus, who reigned from 27 BC to 14 AD and is often referred to as "the Pax Romana" (Roman Peace). The empire's greatest achievements include:<br><br>1. **Infrastructure**: Construction of roads, aqueducts, bridges, and other infrastructure projects.<br>2. **Cultural Flourishing**: Development of literature, philosophy, law, and art.<br>3. **Military Might**: Expansion into Europe and Asia Minor, conquering much of the known world.<br></strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -926,7 +926,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. I&#39;m here to assist you with any questions or tasks you have regarding AI and language processing. Please feel free to ask me anything!
+Yes, that is a test. I am Qwen, an artificial intelligence created by Alibaba Cloud. My purpose is to provide helpful responses and assist with various tasks as requested. Please let me know if you have any questions or need further assistance!
 </pre></div></div>
 </div>
 </section>
@@ -991,7 +991,7 @@ Yes, that is a test. I&#39;m here to assist you with any questions or tasks you 
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='f6f5de78805c454e871aa8b1d99bf449', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1777417372, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='c358a7556a8d4c679f3b92f8240ef6fb', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1777422734, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1023,7 +1023,7 @@ Yes, that is a test. I&#39;m here to assist you with any questions or tasks you 
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='688ba5e5cdaf4a99907ebf44da07b29a', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" Once upon a time, there was a space explorer named John who had been on many missions to the stars. He had seen everything from the dim light of Earth's moon to the starry sky above. One day, he was assigned a mission to explore a distant planet called X-21.", matched_stop='\n\n')], created=1777417373, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=60, prompt_tokens=9, total_tokens=69, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='d45da821e4ec443bab15e42fe6549b2e', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" As an AI language model, I don't have personal experiences or emotions, but I can generate a story based on your preferences.", matched_stop='\n\n')], created=1777422734, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=26, prompt_tokens=9, total_tokens=35, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
@@ -1185,7 +1185,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 28, 2026.
+  Last updated on Apr 29, 2026.
   <br/>
 </p>
   </div>
