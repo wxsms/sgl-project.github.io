@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 09:18:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 11:52:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 09:18:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 11:52:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.66s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.85s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.97s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 09:19:00,109 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 09:19:00] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 11:52:25,314 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 11:52:25] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis driving down a street in an urban setting. The taxis appear to be New York City cabs. These taxis are usually yellow and carotenoid-based. There is also a man in the background who appears to be working with some material, though the exact nature of the activity is unclear. The scene includes storefronts, a逢街/逢车杆, and various elements typical of a busy city environment. The specific locations would depend on knowing which city this image represents, as similar taxicabs are used in many other cities but not just in New York City.
+    The image shows a rear view of a yellow taxi cab multitasking. Instead of using the cargo area for passenger transport, the taxi is being used to fold and presumably fold shirts and other clothes. This is likely an urban congestion charge system in place to encourage the use of public transportation like taxis and to reduce traffic congestion, possibly in a European city such as London.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in a city street. This is a common sight in many urban areas, particularly in New York City, where yellow taxis are iconic. The taxi appears to be equipped with necessary safety and venting equipment, which includes a breathalyzer, kneehead, caution vest, andV-baffle. These items are essential for a driver to operate in strict regulations, ensuring safety on the roads and in emergencies. The yellow color not only makes the taxi easily visible but also indicates its role in urban transportation.
+    It looks like the image is capturing an unusual and humorous scene in an urban setting. There's a person wearing a yellow shirt leaving a yellow car, holding out a red and blue cloth banner that seems to be deflated or deflated out of shape, possibly as a humorous or creative performance art piece. This depiction suggests a playful or街头艺术 moment, perhaps part of a street art event, performance art or a marketing stunt.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,15 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, a yellow taxi is parked or moving on a city street. There is a man hanging clothes on a makeshift clothesline attached to the back of the taxi. The background includes buildings and other typical urban elements. The scene appears to be from a well-known game or movie, but without more context, it's difficult to say which specific game or movie it might be from.
+    The image appears to show a scene in a city with a few notable features:
+    
+    1. **Yellow Taxi**: There is a yellow taxi parked on the street. The taxi is a common sight in many urban areas, often serving as a mode of public transportation.
+    
+    2. **People**: A person in a bright yellow shirt is standing next to the taxi. They appear to be interacting with the vehicle in some way.
+    
+    3. **🌿**: On the left side of the image, there is a small plant or plant-like structure.
+    
+    4. **Storefront**: In the background, there are commercial buildings with large windows and storefronts. These
 
 
 ## Querying Llama 4 Vision Model
