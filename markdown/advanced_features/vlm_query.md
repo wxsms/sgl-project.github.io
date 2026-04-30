@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 16:03:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 18:31:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 16:03:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 18:31:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 16:03:46,607 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 16:03:46] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 18:31:21,914 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 18:31:21] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi parked in a street. In the background, there are two additional taxis and a building with storefronts. The scene appears to be in a city with multiple taxi cabs visible. The person in the foreground is wearing a yellow sweatshirt and is seen on the back of one of the taxis, potentially altering the appearance of the taxi or engaging in some form of public art or prank involving vehicle markings.
+    The image shows two yellow taxis on a city street. Both vehicles have visible rear[number]s indicating they are private изменasurable company taxis. One individual is ironing clothes outside of one of the cabs. This common sight in一些wide cities, whereutaiarities allow taxi providers to park their vehicles for extended periods.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two taxis with a person wearing a yellow shirt and rain boots standing between them. The person appears to be-blocking the side door of a taxi with aantry to make it open. The scene seems to be from New York City.
+    It looks like the image shows a taxi parked on the street with folding chairs attached to its rear end. The taxi is yellow, which is typical for New York City cabs, and appears to be in a city setting with buildings and street signs visible in the background. The folding chairs on the back might suggest that they are being used for an event or to provide a place for people to sit while waiting for transportation.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene on a city street with a yellow taxi cab in the foreground. The taxi cab has a person overloaded with household items positioned on the back, including suitcases, a duffel bag, and possibly some smaller items. The person appears to be balancing on the roof rack of the taxi, which is not very stable and suggests a humorous or unconventional situation. The image might be staged or staged for entertainment purposes, capturing a moment of humor or absurdity. The background includes buildings, tall trees, and urban elements like streetlights and signs, indicating an urban environment.
+    The image depicts a classic New York City yellow taxi cab parked on a city street. The taxi is equipped with a clothes rack in the back, suggesting that a person may be drying clothes with the vehicle, a common practice in urban areas where space is limited and drying clothes outdoors can be challenging. The background shows a tall building with multiple storefronts, typical of New York's urban landscape.
 
 
 ## Querying Llama 4 Vision Model
