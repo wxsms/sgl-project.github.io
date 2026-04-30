@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 06:38:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 07:19:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 06:38:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 07:19:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.14s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.53s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.62s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 06:38:42,870 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 06:38:42] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 07:19:49,983 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 07:19:49] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene with two yellow taxis on a street. In the foreground, a man dressed in a yellow shirt and blue jeans is standing beside one of the taxis, actively pressing clothes on a small machine attached to the back of the car. The man appears to be using a method similar to a mobile laundry service, where he loads clothes on the back of the taxi and then drives around to retrieve them for laundry services. The other taxi in the background is not involved in the laundry activity.
+    The image shows two yellow New York City taxis stopped on a busy street. A person with two leashed dogs is visible between the taxis, likely transporting or going to a dog park. The scene appears humorous or unusual, as dogs walking in such a manner is not typical in urban environments.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked on the street. The taxi is equipped with a drying rack attached to the roof, which is being used to hang clothes to dry. The clothes appear to be hanging on an ironing board attached to the rack. This is likely a humorous or creative activity, as hanging clothes on a drying rack is a common practice when clothes are hung to dry in the yard. The yellow taxi is a typical urban vehicle in many countries, often used for ridesharing services.
+    The image shows a yellow taxi parked along a street in a city. A person is standing next to the car, holding onto a folding chair and a backpack. The setting appears to be urban, with other cars and buildings in the background. The person seems to be in a protective stance, possibly engaging in some form of radiation detection or measurement, given the context provided in the text. Since the image may contain false or misleading elements, such as embellishments, it could be challenging to discern the exact intent of the person from the image alone.
 
 
 ### Call with Precomputed Embeddings
@@ -211,11 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi cab prominently featured in the foreground. The taxi has я vehicle-making and informational panels or signs. The license plate number is visible.
-    
-    Additionally, there are a few flag-like decorative items placed on top of the taxi, which might be part of a festival or parade setup or a city event decoration. There seems to be a person wearing a bright yellow shirt and pants standing behind the taxi, holding a piece of fabric or clothing.
-    
-    The background includes tall buildings with glass windows, including what looks like a bank given the darkened front window, indicating that this image might have been taken in an urban
+    The image depicts a scene in a city street with two prominent yellow taxis, which are characteristic of New York taxis. The taxis are parked on the curb. In front of one of the taxis, there is someone standing on a metal stepladder, operating what appears to be a swiffer, a type of vacuum cleaner designed for hard floors. They are cleaning the exterior of the sidewalk or the ground in front of the taxi.
 
 
 ## Querying Llama 4 Vision Model
