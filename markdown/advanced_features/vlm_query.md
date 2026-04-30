@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-29 22:07:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 00:41:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-29 22:08:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 00:41:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.05s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.65s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.71s/it]
 
 
 
@@ -125,12 +125,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-29 22:08:12,684 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-29 22:08:12] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 00:41:25,572 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 00:41:25] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked along a city street. A person is hanging clothes on the back of one of the taxis for drying. The scene looks like a humorous or quirky urban locale, possibly part of a lighthearted moment or a roadside valet drying his dirty laundry.
+    This image shows a scene from a street in New York City, captured during a protest event. The words "ASSISTA.SILIVIA" are indicated on the image, which likely refers to "Assista Silvia," the name of the main character in the Central Park Central Square Puppetry Workshop production.
+    
+    The prompt mentions this software to illustrate how the worldview of the central character can be employed to explain the world.
 
 
 ### Call with Processor Output
@@ -155,7 +157,14 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with two yellow taxis. The weather appears to be sunny, as indicated by the pedestrians' clothing, which includes short pants and shorts. The environment suggests a warm day, typical for such climates.
+    The image shows a person wearing a yellow shirt and blue jeans riding a small, white bicycle bike trailer behind a yellowtaxi. The trailer is decorated with pieces of folded white and blue fabric that appear to be reins for a horse. The scene is set in a city street, and there are buildings and traffic visible in the background.
+    
+    Here are some details:
+    - The person is wearing a yellow shirt and blue jeans.
+    - They are riding a small, white bicycle with a trailer.
+    - The trailer has blue and white fabric decorated with reins.
+    - A yellow taxi is following behind the cyclist and their bicycle trailer.
+    - There are buildings,
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +220,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a street scene with two brightly colored taxis, one yellow and the other a combination of yellow and white. A person in the background appears to be haggling or bargaining, possibly with a vendor or street businessman. The street is lined with buildings and traffic, with a few pedestrians visible. The overall atmosphere suggests a bustling urban environment, likely in a major city.
+    This image shows a scene from a parade or festive event in New York City. There is a yellow taxi truck in the middle of the road, with its back open, revealing a harvesting scene of a pretty girl dressed in blue jeans, a white shirt, and a red kerchief. Behind her, a golden mirror structure that adds a ceremonial effect, which adds a lot of color and joy to the scene. The spectators whose names are visible also add to the exuberance. In the background是一栋大大的建筑物
 
 
 ## Querying Llama 4 Vision Model
