@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 11:52:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 12:06:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 11:52:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 12:06:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
 
 
 
@@ -125,12 +125,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 11:52:25,314 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 11:52:25] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 12:07:07,388 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 12:07:07] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a rear view of a yellow taxi cab multitasking. Instead of using the cargo area for passenger transport, the taxi is being used to fold and presumably fold shirts and other clothes. This is likely an urban congestion charge system in place to encourage the use of public transportation like taxis and to reduce traffic congestion, possibly in a European city such as London.
+    In the image, there are two yellow taxicabs parked on a city street. The first taxi, in the foreground, is lying flat, revealing its top and rear of the car. The second taxi, in the background, is parked upright. The scene appears to be unusual and humorous, as taxi cabs are typically owned and operated by taxi companies and not usually positioned in such a manner.
+    
+    The image likely serves as a humorous visual pointing out the differences between how a taxi operates as a commercial vehicle and how it might be intended to look, such as covers that fit over the vehicle's top.
 
 
 ### Call with Processor Output
@@ -155,7 +157,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like the image is capturing an unusual and humorous scene in an urban setting. There's a person wearing a yellow shirt leaving a yellow car, holding out a red and blue cloth banner that seems to be deflated or deflated out of shape, possibly as a humorous or creative performance art piece. This depiction suggests a playful or街头艺术 moment, perhaps part of a street art event, performance art or a marketing stunt.
+    The image you provided shows a demonstration with a man wearing a yellow sweatshirt hanging an American flag from his trousers. This is part of a protest or demonstration in response to President Donald Trump’s administration making the decision to ignore the – then state-sanctioned – $17 billion in financial penalties..num 2The action was begun when Trump broke ground on the $2 billion Trump Tower development project in New York City in February 2017. Trump's decision to ignore the financial penalties and subsequently increase the value of the property, intended to change the leeway in internal processes in use, led to outrage among many people.
 
 
 ### Call with Precomputed Embeddings
@@ -211,15 +213,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image appears to show a scene in a city with a few notable features:
-    
-    1. **Yellow Taxi**: There is a yellow taxi parked on the street. The taxi is a common sight in many urban areas, often serving as a mode of public transportation.
-    
-    2. **People**: A person in a bright yellow shirt is standing next to the taxi. They appear to be interacting with the vehicle in some way.
-    
-    3. **🌿**: On the left side of the image, there is a small plant or plant-like structure.
-    
-    4. **Storefront**: In the background, there are commercial buildings with large windows and storefronts. These
+    This is a humorous scene from the television show "South Park." The image depicts a taxi cab with stripes transformed into a cowboy's blue flag. This juxtaposition is part of a visual gag where certain elements from No Man's Land, a land beyond the Northwest Border, are humorously incorporated into the scene, given the show's surreal and satirical nature.
 
 
 ## Querying Llama 4 Vision Model
