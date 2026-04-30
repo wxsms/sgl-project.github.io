@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 06:08:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 06:38:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 06:08:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 06:38:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.60s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.32s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 06:08:33,420 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 06:08:33] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 06:38:42,870 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 06:38:42] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, a person is seen standing in the back of a yellow taxi, hanging clothes on a metal bar that appears to be attached to the vehicle. The street scene includes two yellow taxis, a crosswalk, and some buildings in the background. The person is wearing a yellow shirt and seems to be outdoors during the daytime.
+    The image shows a scene with two yellow taxis on a street. In the foreground, a man dressed in a yellow shirt and blue jeans is standing beside one of the taxis, actively pressing clothes on a small machine attached to the back of the car. The man appears to be using a method similar to a mobile laundry service, where he loads clothes on the back of the taxi and then drives around to retrieve them for laundry services. The other taxi in the background is not involved in the laundry activity.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a sidewalk scene in what appears to be New York City. A person is hanging laundry on a clothesline attached to the back of a yellow taxi cab that is parked on the street. The cil wearing earbuds isABLMOY, explaining me the image was taken at RoundShare's round stock. There are several shops on the sidewalk behind the yellow cab, and there are people standing on the sidewalk. To the right of the person with the laundry is a green bush on the sidewalk. The shade of the person isاظ that the clothes are dryer  and more washers are window.
+    The image shows a yellow taxi cab parked on the street. The taxi is equipped with a drying rack attached to the roof, which is being used to hang clothes to dry. The clothes appear to be hanging on an ironing board attached to the rack. This is likely a humorous or creative activity, as hanging clothes on a drying rack is a common practice when clothes are hung to dry in the yard. The yellow taxi is a typical urban vehicle in many countries, often used for ridesharing services.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,11 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a demonstration or protest blocking traffic on a city street. A person in a bright yellow shirt is standing on a flip table in the road, attempting to hold it up or display something, but the table appears to be deflated or collapsed. Carrying the table along a busy street to block traffic is a common tactic used in protests to draw attention and deter law enforcement from using force. At first glance, it might seem like someone is hitchhiking or setting up some kind of public spectacle, but the deflated flip table suggests that the intent was to block traffic. This type of civil disobedience can sometimes lead to calls
+    The image shows a street scene with a yellow taxi cab prominently featured in the foreground. The taxi has я vehicle-making and informational panels or signs. The license plate number is visible.
+    
+    Additionally, there are a few flag-like decorative items placed on top of the taxi, which might be part of a festival or parade setup or a city event decoration. There seems to be a person wearing a bright yellow shirt and pants standing behind the taxi, holding a piece of fabric or clothing.
+    
+    The background includes tall buildings with glass windows, including what looks like a bank given the darkened front window, indicating that this image might have been taken in an urban
 
 
 ## Querying Llama 4 Vision Model
