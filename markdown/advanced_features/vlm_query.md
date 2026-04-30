@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 07:19:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 09:18:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 07:19:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 09:18:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.14s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.66s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.53s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.62s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.85s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.97s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 07:19:49,983 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 07:19:49] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 09:19:00,109 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 09:19:00] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow New York City taxis stopped on a busy street. A person with two leashed dogs is visible between the taxis, likely transporting or going to a dog park. The scene appears humorous or unusual, as dogs walking in such a manner is not typical in urban environments.
+    The image shows two yellow taxis driving down a street in an urban setting. The taxis appear to be New York City cabs. These taxis are usually yellow and carotenoid-based. There is also a man in the background who appears to be working with some material, though the exact nature of the activity is unclear. The scene includes storefronts, a逢街/逢车杆, and various elements typical of a busy city environment. The specific locations would depend on knowing which city this image represents, as similar taxicabs are used in many other cities but not just in New York City.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked along a street in a city. A person is standing next to the car, holding onto a folding chair and a backpack. The setting appears to be urban, with other cars and buildings in the background. The person seems to be in a protective stance, possibly engaging in some form of radiation detection or measurement, given the context provided in the text. Since the image may contain false or misleading elements, such as embellishments, it could be challenging to discern the exact intent of the person from the image alone.
+    The image shows a yellow taxi cab in a city street. This is a common sight in many urban areas, particularly in New York City, where yellow taxis are iconic. The taxi appears to be equipped with necessary safety and venting equipment, which includes a breathalyzer, kneehead, caution vest, andV-baffle. These items are essential for a driver to operate in strict regulations, ensuring safety on the roads and in emergencies. The yellow color not only makes the taxi easily visible but also indicates its role in urban transportation.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene in a city street with two prominent yellow taxis, which are characteristic of New York taxis. The taxis are parked on the curb. In front of one of the taxis, there is someone standing on a metal stepladder, operating what appears to be a swiffer, a type of vacuum cleaner designed for hard floors. They are cleaning the exterior of the sidewalk or the ground in front of the taxi.
+    In the image, a yellow taxi is parked or moving on a city street. There is a man hanging clothes on a makeshift clothesline attached to the back of the taxi. The background includes buildings and other typical urban elements. The scene appears to be from a well-known game or movie, but without more context, it's difficult to say which specific game or movie it might be from.
 
 
 ## Querying Llama 4 Vision Model
