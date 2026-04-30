@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 22:44:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 23:35:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 22:44:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 23:35:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.95s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.43s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 22:44:35,676 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 22:44:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 23:35:17,115 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 23:35:17] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man putting on a yellow shirt near two yellow taxis on a city street, with clothes on a rack he is holding.
+    The image shows a yellow station wagon (likely a Ford Explorer or similar) with the back door open. A person is standing near the rear of the vehicle, holding up or working with an object that appears to be a work of art or a creative project. The car is parked or driving down a street, with a yellow cab visible in the foreground and other urban elements in the background. The streetlights and signs indicate that the location is a commercial or city area.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis in New York City, with one taxi's back door open, revealing a blue stretcher with a person lying on it. This scene likely depicts a temporary medical stop in New York City, where the taxi driver has picked up a patient for transport to a nearby medical facility. The presence of the medical stretcher indicates that the patient might be non-permanently immobilized, possibly as a result of an accident or due to a medical condition.
+    This photo shows a scene on a city street with yellow taxi cabs. One taxi is parked on the side of a road, and there is an individual by the back window of the taxi holding a chalkboard or banner that resembles a police ticket. The individual and the board are positioned in front of the taxi, creating a humorous or hoax-like situation, especially since it mimics the appearance and placement of police tickets commonly seen in bicycles. This type of setup is often used for promotional, prank, or humorous activities in public spaces.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow cab (taxi) and a person handing out a banner or sign. The person is wearing a yellow shirt and appears to be dressed in casual wear, possibly for outside work or social activism. In the background, there is a tall building with some chained-out windows, and旗旗 بلا備头牌旗模型 hands with red, white, and green. The setting appears to be an urban environment, likely in a city.
+    The image shows a street scene with a yellow taxi. A person in a yellow shirt and white shorts is ironing clothes on a folding ironing board attached to the back of the taxi. This setup is unusual and humorous, as taxi cabs are generally not used for ironing clothes. The scene appears to be part of an art or performance installation.
 
 
 ## Querying Llama 4 Vision Model
