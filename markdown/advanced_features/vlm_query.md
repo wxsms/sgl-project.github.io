@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 18:59:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 22:09:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 18:59:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 22:09:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 18:59:21,495 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 18:59:21] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 22:10:09,800 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 22:10:09] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    Here's a possible answer: A man is standing on the back of a taxi cab, doing his laundry.
+    This image shows a man wearing a yellow shirt with the sleeves railroaded over his shoulders, sitting in the trunk of a yellow taxi cab. He is attached to a laundry rack with clothes on it, and on the trunk of an adjacent taxi.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on a city street, and a person is handling a horse-drawn carriage attached to the back of the taxi. The carriage appears to be being lifted or adjusted, possibly to assist someone in using it. There are multiple rearview mirrors visible on the taxi's side. The scene suggests that the taxi is being converted into a horse-drawn carriage service, which is not common in many cities but can be seen in tourist areas or special events.
+    This image shows a scene with two taxis parked on a street. The yellow taxis, iconic cabs in the United States, are positioned side by side. The street appears to be in an urban area, likely in a city with a walkway in between the taxis. There are also benches and some trees, suggesting it might be a public space or a city park area. The flags on the back of the taxis indicate that taxis may be used for'affiliate agencies or for special events. The pedestrians and general urban setting suggest it is a busy time of day, possibly in the morning or afternoon.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a cab and a delivery bicycle stuck in a traffic jam in a street with a tall building in the background.
+    I'm sorry, but I'm not able to understand the text you're asking me to describe. I'm not able to read or interpret written text in a way that would allow me to identify what's being shown in the image.
 
 
 ## Querying Llama 4 Vision Model
