@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 00:52:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 06:08:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 00:52:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-04-30 06:08:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.60s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.32s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 00:52:50,963 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 00:52:50] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-30 06:08:33,420 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-30 06:08:33] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In this image, a man is dressed in a yellow t-shirt and jeans, wearing a hat, and is working on cleaning the windshield wipers of a yellow taxi. The scene appears to be taking place in an urban setting with buildings and street signs in the background. The taxi has a sign on its roof that reads "AAA." The man is kneeling next to the taxi, which is parked on the street.
+    In the image, a person is seen standing in the back of a yellow taxi, hanging clothes on a metal bar that appears to be attached to the vehicle. The street scene includes two yellow taxis, a crosswalk, and some buildings in the background. The person is wearing a yellow shirt and seems to be outdoors during the daytime.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a twisted scene where people are wearing clothes hanging on the back of a taxi. This is an unusual and humorous visual, often referred to as "taxi cab wars", a creative and unconventional way of getting headlines or publicity.
+    The image shows a sidewalk scene in what appears to be New York City. A person is hanging laundry on a clothesline attached to the back of a yellow taxi cab that is parked on the street. The cil wearing earbuds isABLMOY, explaining me the image was taken at RoundShare's round stock. There are several shops on the sidewalk behind the yellow cab, and there are people standing on the sidewalk. To the right of the person with the laundry is a green bush on the sidewalk. The shade of the person isاظ that the clothes are dryer  and more washers are window.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street. There is a yellow taxi cab (car) parked on the street. In front of the taxi, there is a group of orange tarps stacked on a folding camping chair, forming an informal desk-like structure.ắt
+    The image depicts a demonstration or protest blocking traffic on a city street. A person in a bright yellow shirt is standing on a flip table in the road, attempting to hold it up or display something, but the table appears to be deflated or collapsed. Carrying the table along a busy street to block traffic is a common tactic used in protests to draw attention and deter law enforcement from using force. At first glance, it might seem like someone is hitchhiking or setting up some kind of public spectacle, but the deflated flip table suggests that the intent was to block traffic. This type of civil disobedience can sometimes lead to calls
 
 
 ## Querying Llama 4 Vision Model
