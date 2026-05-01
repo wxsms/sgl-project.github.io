@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-01 23:11:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 23:51:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-01 23:11:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 23:51:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.55s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-01 23:11:29,888 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-01 23:11:29] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-01 23:51:40,906 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-01 23:51:40] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This photo shows a shirt hung on a clothesline attached to the back of two yellow taxis in what appears to be a New York City street. The scene is unusual and likely part of some form of art or awareness campaign.
+    The image shows a person hanging laundry outside of a building. The person is using a clothesline to hang a towel or similar garment. In the background, you can see a yellow New York CityTaxi (Taxi 20), which is characteristic of the yellow taxis in New York City. There are also street signs and a building with several windows and awnings. The scene takes place on a busy street, with traffic lights visible and a few other vehicles, including cars and a yellow bus.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing next to a reflection in the rear view mirror of a yellow taxi cab. The individual appears to be inflating a blue rubber ducky in a yard or a similar outdoor setting. The taxi is parked on a street, and the background includes a building with some banners or signages hanging above. The person is wearing a yellow shirt and似乎正在通过镜子检查鸭子的尺寸。
+    The picture shows two yellow taxis parked in a city street, which appears to be in New York City, given the recognizable taxi design. The scene seems to have a humorous or unusual element due to an unexpected activity. A person is balancing a weight (likely a calf) on the back of one of the yellow cabs. The calf is on a long bench or step, placed standing upright on its legs to form a human-like form balancing the weight.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person dressed in a yellow shirt and blue jeans, carrying a laundry basket full of clothes under their arm. They are walking down a street in a commercial area, with tall buildings, storefronts, and multiple flags on旗杆 (flagpoles) in the background. There are also several cars, including a prominent yellow taxi, and a few other vehicles on the street. The overall scene appears to be in an urban setting, possibly during daytime, given the brightness and visibility.
+    The image shows a yellow taxi box marked with "Monday" and the number 138, which is likely associated with a taxi service in New York City. The taxi is parked on a city street, and there are clipboards and an ironing board on the backseat. One possibility is that the person is demonstrating how to clean the taxi or practicing ironing while waiting.
 
 
 ## Querying Llama 4 Vision Model
