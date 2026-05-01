@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-01 17:30:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 19:55:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-01 17:30:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 19:55:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-01 17:30:15,844 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-01 17:30:15] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-01 19:56:01,063 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-01 19:56:01] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi parked on the side of the street. The person in the image is working on drying clothes on a clothesline extending from the back of the taxi. The clothes include an American flag and a striped flag. Additionally, there is another yellow taxi and a car parked in the street. In the background, there are several buildings with signage and a partial view of trees. The scene appears to be in a urban setting, likely in New York City, as suggested by the arrangement of the American andlined exhibited.
+    The image shows a person standing next to a yellow taxi, platforms with an iron and clothespin stand, in what appears to be a busy urban street with multiple taxi cabs. The person seems to be ironing some clothes outdoors next to a street lamp and flag poles.
 
 
 ### Call with Processor Output
@@ -155,7 +155,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man loading clothes onto a yellow taxi in a busy area. The taxi is likely used for extra-long items too long for regular taxi doors. The man is securing a small suitcase to the outside of the taxi.
+    Here's a brief summary:
+    
+    The image shows a yellow taxi cab on a city street, possibly New York City, given the appearance of the Boston Public Library in the background. A man dressed in yellow, matching the taxi cab, is 바さまざまな 터치_pagination (or possibly unpacking) something tied to the back of the car or to a nearby pole. The man has clean-cut hair and is wearing glasses, though his identity is not apparent. It's an unusual sight, as one rarely sees a driver unloading luggage from a taxi cab in this manner.
 
 
 ### Call with Precomputed Embeddings
@@ -211,9 +213,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with two taxi cabs moving on a city street. One taxi has a hand holding a commercial banner attached to its side reflector system (the bits of metal and tape that reflect light, often used to display advertisements). The banner appears to be of a three-dimensional (3D) design, featuring various colors and shapes. This setup indicates that this taxi is being used for a advertising campaign or promotion. 
-    
-    The urban setting suggests this is likely happening in a busy city, given the movement of the cabs and the variety of advertisements present. The presence of other taxis in the background helps emphasize the busy, bustling
+    The image shows a yellow taxi cab with a rack attached to its back, holding several pairs of trousers. The rack appears to be lining up the clothing items, possibly for display or as part of an art installation. The surroundings suggest an urban setting, likely in a city like New York, given the style and design of the taxi.
 
 
 ## Querying Llama 4 Vision Model
