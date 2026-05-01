@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-01 03:20:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 05:51:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-01 03:20:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 05:51:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.10s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.97s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.56s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.64s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.05s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.19s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-01 03:20:18,851 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-01 03:20:18] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-01 05:52:11,393 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-01 05:52:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a do-it-yourself ironing session conducted on the backRub of a taxi! The person appears to be using a suitcase to hang clothes on an ironing board, a clever stretch maneuver that is often done in extreme parking situations. It showcases a creative way to handle a driveway or small parking spot.
+    The image shows a person hanging clothes on the back of a city taxi. The illuminated interior light of the cab indicates that the vehicle is currently in operation. This is a common occurrence in cities where people might ride in taxis to have their clothing ironed for them or just need to remove clothing from the cab. This industrial practice is not common, as cars are not typically used for clothing carriages because they cannot navigate more than a few steps away from the pickup.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man hanging laundry on a makeshift clothesline attached to two yellow taxis in the street. This is likely part of an art installation or social experiment where people are using everyday objects to create unusual or humorous situations. The scene is set in an urban environment with buildings, street signs, and other vehicles visible in the background.
+    The image shows two yellow cabs parked on the street in an urban area, likely in a city. The cab in the foreground appears to be part of a humanitarian organization known as the "Dry기도's" because it is ready to instantly turn into a shower station or tent field, demonstrating its functionality and mobility. This concept is particularly useful in scenarios such as during hurricanes or other natural disasters, where clean water is scarce and access to basic hygiene facilities is limited. The organization's goal is to reach people affected by such events and provide essential services to those in need.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,15 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street with a yellow taxi cab in the foreground. A person is walking past the taxi with crutches, wearing a yellow shirt and carrying checkered clothes. There are flags hanging from light poles along the street. The background features a building with large windows and several signboards. The scene appears to be in an urban setting, possibly a busy city center.
+    Here’s a clear and detailed description based on the image you described:
+    
+    - **Objects in the Image:**
+      1. **Yellow Cab (Taxi):** 
+        - The taxi is prominently yellow in color, a typical color for New York City taxis.
+      2. **Person Hanging Clothes:**
+        - A person is standing with the yellow cab. They are holding clothes in small buckets or interestingly, they are using the cab as a makeshift clothesline (or clothes drying rack).
+        - The person is wearing a yellow shirt, which aligns with the overall color theme of the taxi.
+      3.
 
 
 ## Querying Llama 4 Vision Model
