@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-01 02:59:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 03:20:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-01 02:59:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 03:20:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.31s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.10s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.66s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.76s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.56s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.64s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-01 02:59:36,659 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-01 02:59:36] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-01 03:20:18,851 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-01 03:20:18] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene featuring a yellow cab. In the middle of the street, there is a yellow cab that has been modified to look like a yellow taxi cab. The cab is standing on its axles, and a person wearing a yellow shirt is drying clothes on it using clothespins.
+    The image shows a do-it-yourself ironing session conducted on the backRub of a taxi! The person appears to be using a suitcase to hang clothes on an ironing board, a clever stretch maneuver that is often done in extreme parking situations. It showcases a creative way to handle a driveway or small parking spot.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a yellow taxi on the left side. The taxi is parked on the side of the road, and there's a person standing next to it using a small crane-like device to work with something in the back of the taxi. The background includes some buildings and street signs, indicating an urban environment. The color scheme of the image features a mix of yellow (from the taxi) and blue tones.
+    The image shows a man hanging laundry on a makeshift clothesline attached to two yellow taxis in the street. This is likely part of an art installation or social experiment where people are using everyday objects to create unusual or humorous situations. The scene is set in an urban environment with buildings, street signs, and other vehicles visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in what appears to be a city street. A yellow taxi cab is parked on the street next to a person wearing a yellow shirt and glasses who is holding a laundry rack with clothes draped over it. The person seems to be washing clothes directly on the street, under theSemaphore flag. There are other people, vehicles, and buildings in the background.
+    The image shows a city street with a yellow taxi cab in the foreground. A person is walking past the taxi with crutches, wearing a yellow shirt and carrying checkered clothes. There are flags hanging from light poles along the street. The background features a building with large windows and several signboards. The scene appears to be in an urban setting, possibly a busy city center.
 
 
 ## Querying Llama 4 Vision Model
