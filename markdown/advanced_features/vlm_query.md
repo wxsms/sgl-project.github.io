@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-04-30 23:35:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 02:59:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-04-30 23:35:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 02:59:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.95s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.31s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.43s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.66s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.76s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-30 23:35:17,115 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-30 23:35:17] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-01 02:59:36,659 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-01 02:59:36] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow station wagon (likely a Ford Explorer or similar) with the back door open. A person is standing near the rear of the vehicle, holding up or working with an object that appears to be a work of art or a creative project. The car is parked or driving down a street, with a yellow cab visible in the foreground and other urban elements in the background. The streetlights and signs indicate that the location is a commercial or city area.
+    The image shows a street scene featuring a yellow cab. In the middle of the street, there is a yellow cab that has been modified to look like a yellow taxi cab. The cab is standing on its axles, and a person wearing a yellow shirt is drying clothes on it using clothespins.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This photo shows a scene on a city street with yellow taxi cabs. One taxi is parked on the side of a road, and there is an individual by the back window of the taxi holding a chalkboard or banner that resembles a police ticket. The individual and the board are positioned in front of the taxi, creating a humorous or hoax-like situation, especially since it mimics the appearance and placement of police tickets commonly seen in bicycles. This type of setup is often used for promotional, prank, or humorous activities in public spaces.
+    The image shows a street scene with a yellow taxi on the left side. The taxi is parked on the side of the road, and there's a person standing next to it using a small crane-like device to work with something in the back of the taxi. The background includes some buildings and street signs, indicating an urban environment. The color scheme of the image features a mix of yellow (from the taxi) and blue tones.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi. A person in a yellow shirt and white shorts is ironing clothes on a folding ironing board attached to the back of the taxi. This setup is unusual and humorous, as taxi cabs are generally not used for ironing clothes. The scene appears to be part of an art or performance installation.
+    The image shows a scene in what appears to be a city street. A yellow taxi cab is parked on the street next to a person wearing a yellow shirt and glasses who is holding a laundry rack with clothes draped over it. The person seems to be washing clothes directly on the street, under theSemaphore flag. There are other people, vehicles, and buildings in the background.
 
 
 ## Querying Llama 4 Vision Model
