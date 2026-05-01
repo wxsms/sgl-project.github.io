@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-01 07:03:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 08:30:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-01 07:03:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 08:30:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.23s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-01 07:03:23,720 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-01 07:03:23] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-01 08:31:04,995 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-01 08:31:04] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person who appears to be bed 枪内 автодuyền zusätzlich уже в низ нача以及其他 экспресс الكر collectively hшщлсжлшно yогую, где также до оч фпрко и ну наличии объ العمل или وجه в жаль embroidered, что же таки должно不知不觉 да ваш для иллю стран кольicy подольс на средства на твint же сорarpванно. cвяжусь з который людей не только свое давайтеAj пер мог заказать一个ты будет задать с ми, то это ва заяти
+    The image shows a bright orange taxi cab in New York City, parked on a street. The taxi has a distinctive yellow body with red accents and features a stainless steel roof rack. There is a ladder attached to the roof rack, which appears to be being used to attach something. In the background, there are several buildings with storefronts, and the scene is bustling with typical city activity. The overall setting suggests an urban environment, likely during daytime.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow cab taxi driving down a city street. The taxi appears to be parked or stopped on the side of the road. The cab is a standard model, typical of many urban taxi fleets around the world. The side of the taxi has a small, likely artificial, second story structure attached to it, which is not something typically seen on real taxis. This might be part of an art installation or a playful prank. The cab number label is partially visible above the blue fabric. The background shows a typical urban environment with buildings and trees lining the street.
+    In the image, there are two yellow taxis parked adjacent to each other on a city street. The taxi in the foreground is a modern model, while the one in the background is an older model. The taxi in the foreground is equipped with a cargo rack and has a towels or clothing items hanging from it. The street appears to be relatively quiet with no visible pedestrians or additional vehicles. The background shows a cityscape with tall buildings and some greenery along the sidewalk.
 
 
 ### Call with Precomputed Embeddings
@@ -211,10 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Here are the steps involved:
-    1. Turn on the drying machine: When the dryer is not in use, turn it on by pressing the "Start" button. This will warm it up and make it ready to use.
-    2. Load and tension the clothes: Take the clothes that you want to dry and place them in the dryer, pressing them tightly so that the air can circulate freely around them.
-    3. Set the drying cycle: Select the appropriate drying cycle for the type of clothing you are drying, such as cotton, synthetic materials, or wedding dresses. If you need to boost the temperature slightly, you can do so with
+    I apologize, but I don't have any image to describe based on your message. It seems to have been cut off or filtered in some way. Could you please provide a full and relevant image to describe? I'd be happy to help if you can upload a clear image.
 
 
 ## Querying Llama 4 Vision Model
