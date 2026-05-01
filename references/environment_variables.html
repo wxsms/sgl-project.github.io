@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=68392a07"></script>
+    <script src="../_static/documentation_options.js?v=395aa8aa"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -546,39 +546,35 @@ document.write(`
 <td><p>Custom logging configuration path</p></td>
 <td><p>Not set</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DISABLE_REQUEST_LOGGING</span></code></p></td>
-<td><p>Disable request logging</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_LOG_REQUEST_HEADERS</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_LOG_REQUEST_HEADERS</span></code></p></td>
 <td><p>Comma-separated list of additional HTTP headers to log when <code class="docutils literal notranslate"><span class="pre">--log-requests</span></code> is enabled. Appends to the default <code class="docutils literal notranslate"><span class="pre">x-smg-routing-key</span></code>.</p></td>
 <td><p>Not set</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_HEALTH_CHECK_TIMEOUT</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_HEALTH_CHECK_TIMEOUT</span></code></p></td>
 <td><p>Timeout for health check in seconds</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">20</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_EPLB_HEATMAP_COLLECTION_INTERVAL</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_EPLB_HEATMAP_COLLECTION_INTERVAL</span></code></p></td>
 <td><p>The interval of passes to collect the metric of selected count of physical experts on each layer and GPU rank. 0 means disabled.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_FORWARD_UNKNOWN_TOOLS</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_FORWARD_UNKNOWN_TOOLS</span></code></p></td>
 <td><p>Forward unknown tool calls to clients instead of dropping them</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code> (drop unknown tools)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_REQ_WAITING_TIMEOUT</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_REQ_WAITING_TIMEOUT</span></code></p></td>
 <td><p>Timeout (in seconds) for requests waiting in the queue before being scheduled</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_REQ_RUNNING_TIMEOUT</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_REQ_RUNNING_TIMEOUT</span></code></p></td>
 <td><p>Timeout (in seconds) for requests running in the decode batch</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CACHE_DIR</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CACHE_DIR</span></code></p></td>
 <td><p>Cache directory for model weights and other data</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">~/.cache/sglang</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_PREFETCH_BLOCK_SIZE_MB</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_PREFETCH_BLOCK_SIZE_MB</span></code></p></td>
 <td><p>Block size (in MB) for sequential checkpoint prefetch reads that warm the OS page cache before workers load weights via mmap</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">16</span></code></p></td>
 </tr>
