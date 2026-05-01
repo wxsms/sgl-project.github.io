@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-01 20:59:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 23:11:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-01 20:59:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-01 23:11:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.46it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.55s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.71it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.66it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-01 20:59:35,510 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-01 20:59:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-01 23:11:29,888 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-01 23:11:29] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person operating a makeshift clothes line attached to the back of a parked yellow taxi taxi cab in a city street, likely New York City, given the iconic yellow taxis. The scene suggests the person is using the taxi as an outdoor clothes line to hang and dry towels and clothes.
+    This photo shows a shirt hung on a clothesline attached to the back of two yellow taxis in what appears to be a New York City street. The scene is unusual and likely part of some form of art or awareness campaign.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of humor and playfulness. A person is pushing a cart filled with draped clothes behind a yellow taxi cab. The taxi is parked on the side of the road and there is aแยก road sign visible in the background. The setting suggests an urban environment, possibly in a busy city like New York. This could be part of a creative campaign, a costume, or an artistic performance. The bright yellow colors of the taxi cab and person's costume contrast with the colorful, possibly obscured clothing on the cart, making it a visually striking and light-hearted scene.
+    The image shows a person standing next to a reflection in the rear view mirror of a yellow taxi cab. The individual appears to be inflating a blue rubber ducky in a yard or a similar outdoor setting. The taxi is parked on a street, and the background includes a building with some banners or signages hanging above. The person is wearing a yellow shirt and似乎正在通过镜子检查鸭子的尺寸。
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a road with a yellow taxi car on the right side. The taxi appears to be stopped.
+    The image shows a person dressed in a yellow shirt and blue jeans, carrying a laundry basket full of clothes under their arm. They are walking down a street in a commercial area, with tall buildings, storefronts, and multiple flags on旗杆 (flagpoles) in the background. There are also several cars, including a prominent yellow taxi, and a few other vehicles on the street. The overall scene appears to be in an urban setting, possibly during daytime, given the brightness and visibility.
 
 
 ## Querying Llama 4 Vision Model
