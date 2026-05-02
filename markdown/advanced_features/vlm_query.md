@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 06:10:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 07:02:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 06:10:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 07:03:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.17s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.50s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.60s/it]
 
 
 
@@ -125,12 +125,16 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 06:10:25,499 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 06:10:25] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 07:03:13,453 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 07:03:13] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a street scene with two yellow city taxis. One taxi is being worked on by a person who appears to be drying clothes on an improvised rack attached to its back. The setting seems to be in an urban area with buildings, street lamps, and some flag banners visible in the background. The method of drying clothes on a moving vehicle is unusual, likely for comedic or experimental purposes.
+    Here are a few possibilities based on the image:
+    
+      1. A person catching rides from a taxi driver. In some cities, taxis are equipped with a backpack-like storage space on the back where passengers can place their bags, and sometimes people will request taxi rides by attaching clothing items or other objects to the back of the taxi.
+      2. A prank gone wrong. Someone might have placed a feeble padding or additional weight on the back of the taxi, and the driver might have lost control and rear-ended other vehicles to stop it harming people or property.
+      3. An unusual advertising campaign. Some companies may use such
 
 
 ### Call with Processor Output
@@ -155,7 +159,12 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow car driving through a city street. The car appears to be a taxi, as indicated by the distinctive yellow color often associated with taxi cabs in many urban areas. The car is in motion, captured on what seems to be a more difficult public roadway, such as one near a park or pedestrian area, as indicated by the open space and casual setting. The background shows portions of buildings and a tree line, consistent with an urban environment with greenery mixed in. The scene looks calm without any visible traffic or people, highlighting the simplicity and randomness of city traffic.
+    The image shows a yellow taxi cab driving down a city street. Attached to the back of the taxi are several racks that seem to be holding or displaying clothes. The scene appears to be humorous or lighthearted, as there are clothes on the back of the taxi, which is an unconventional and noticeable situation often associated with the idea of the "cat lady" taxi handservant.
+    
+    To break this down:
+    
+    - **Taxi**: Classic New York-style yellow taxi, iconic symbol of urban transportation in New York City.
+    - **Clothes on the Back**: Multiple racks or hangers with various pieces of clothing, suggesting they are
 
 
 ### Call with Precomputed Embeddings
@@ -211,9 +220,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. The taxi cab is equipped with luggage racks and a retrieve basket, which is commonly used for delivery services. The batteries in the basket are likely used to power an electric wheelbarrow or a小型 equipment, often used for pedaling and carrying items. The battery-powered retrieves can play an important role in a delivery person's operation, as they help in quickly and efficiently moving goods without heavy manual labor. The batteries are also environmentally friendly because they do not require emissions or pollution-related issues. 
+    In the picture, there are two yellow taxis on a city street. The taxi in the foreground is parked, and the driver is standing next to it, seemingly concerned or worried about something. The taxi in the background is moving away from the camera, driven by a man wearing a yellow shirt. The scene suggests that the driver of the starred taxi might be facing a delay or issue that has caused the traffic.
     
-    The yellow car is currently carrying two batteries, which means it's probably in the design
+    Additionally, there is a stair case covered with a blue and green plaid cloth attached to the back of the taxi. This unusual setup could indicate a domestic help service in送奶或送送食物（外卖）的情况Delivery personnel
 
 
 ## Querying Llama 4 Vision Model
