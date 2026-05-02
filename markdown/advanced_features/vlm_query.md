@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 11:19:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 11:32:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 11:19:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 11:32:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -125,14 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 11:19:37,214 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 11:19:37] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 11:32:32,429 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 11:32:32] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene likely taking place in New York City, based on the New York City-style yellow cabs and the urban environment. In the foreground, a person, who appears to be a cab driver, is hanging what seems to be laundry on a clothesline strung between two yellow cabs. 
-    
-    The distinctive aspect of the scene is the interaction between a human and public transportation, which is unusual and recognizable as iconic New York City life. The combination of urban city life (the yellow cabs and the street scene) with the everyday task of laundry indicates the blend of work and routine that occurs in the bustling big city.
+    It's hard to tell exactly what's shown without context.
 
 
 ### Call with Processor Output
@@ -157,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from a TV show set in Chicago, specifically the hit show "Three's Company," with T Bunny, one of the primary characters known as "The Banana" or "Banana Lena," also known as "Tan-Tan." In this particular scene, T Bunny is seen getting dressed while driving a yellow cab. T Bunny was created by freelance illustrator Randall McVay, and later it became the inspiration for the pink bunny of Philadelphia Cheese Whiz ( Żytanta in Polish) in the "America's Cheese Wrestler" campaign and is considered to be an iconic cultural reference.
+    This image shows a scene on a street within New York City. A yellow taxi cab is parked on the street, and there are two people involved in an unusual situation. One person is standing on crutches, and appears to be dressed in a yellow shirt and dark pants, holding onto a pole mounted on the back of the taxi cab. The other person, likely a police officer, is also yellow-shirted and seems to be CPing modern culture references.
 
 
 ### Call with Precomputed Embeddings
@@ -213,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person in an orange shirt flipping a clothe over a luggage duffel bag attached to the back of a yellow cab.
+    The image shows a person balanced on a bar attached to the rear of a moving yellow taxi. The taxi is driving down a street in an urban area, possibly a city like New York, where people are known to use efficient and creative ways to cross the street. The individual appears to be using a wide, flat object as a makeshift skateboard or balance board to remain upright while walking beside the moving car. This is likely a humorous and unusual demonstration or trick.
 
 
 ## Querying Llama 4 Vision Model
