@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 08:07:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 09:20:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 08:07:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 09:20:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.26s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.80s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.87s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 08:07:30,357 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 08:07:30] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 09:20:23,064 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 09:20:23] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts two yellow taxis, one on the street and the other further down the road. A person is standing between the two taxis with their hands on their head, seemingly distressed or overwhelmed. The street appears to be a city street, possibly in New York City, given the architectural style and the people's attire. The overall scene suggests a chaotic or overwhelming situation on the streets.
+    The image shows a scene on a city street with two yellow taxis. One taxi is parked with its back opened, and a person appears to be hanging clothing on a clothesline that is strung across the back window. The other taxi is parked behind the first one, and there are several people in the background, walking or standing on the sidewalk. The setting suggests an urban environment, possibly a street fair or a community event.
 
 
 ### Call with Processor Output
@@ -155,15 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you've shared shows two yellow taxis parked on a city street. The车型看起来像是新的Self-driving docker车辆。.driver车辆看起来像是新的Self-driving docker 车辆.
-    
-    这辆黄色出租车目前是打开的。，骑手席位上还挂着三面蓝白相间的国旗。
-    
-    背景中还有一些商店和建筑物，建筑物的外观设计也很现代。街道两旁停着一些其他车辆，但它们似乎并不涉及到出租车。
-    
-    画面中并没有任何明显的行人或其他人物。
-    
-    这辆出租车的广告和标识没有清晰显示，因此很难辨认特定的品牌或公司。
+    The image shows two yellow taxi cabs on what appears to be a street in an urban area. The taxis are equipped with windshield wipers and reflectors, which are standard features for taxi cabs used in various cities. The cabs have red and white striped lines designating them for passenger cabs, though this feature seems to be slightly unusual for taxi transport as it does not appear to be standard in all cities. The background includes buildings with large windows and storefronts, as well as some greenery and street signs. The overall scene likely depicts a busy city street, possibly in a major urban center.
 
 
 ### Call with Precomputed Embeddings
@@ -219,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image depicts a city street scene with a yellow taxi cab parked on the road. The taxi appears to be in motion, pushing aченille cart in front of it. The cart is holding clothes that are cascading down the back of the cab. This appears to be an artistic or fun performance enacted by the taxi driver or driver's preparations for a parade or event. The background includes buildings and traffic lights, indicating an urban setting.
+    The image shows two yellow taxis on a city street. The taxis are being used as props in a street event or parade, with banners or flags hanging from them. The scene appears to be taking place in an urban environment, likely in a city center where such events are common. The vehicles are probably being decorated for an occasion, possibly a celebration or cultural event.
 
 
 ## Querying Llama 4 Vision Model

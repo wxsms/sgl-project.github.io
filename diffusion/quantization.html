@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=c87a4735"></script>
+    <script src="../_static/documentation_options.js?v=b2be9c4b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -615,7 +615,7 @@ checkpoints currently wired up in SGLang docs and B200 CI coverage.</p>
 <p>Published checkpoints keep the serialized quantization config as
 <code class="docutils literal notranslate"><span class="pre">quant_method=modelopt</span></code>; the FP8 vs NVFP4 split below is a documentation label
 derived from <code class="docutils literal notranslate"><span class="pre">quant_algo</span></code>.</p>
-<p>Five of the six repos live under <code class="docutils literal notranslate"><span class="pre">BBuf/*</span></code>. The FLUX.2 NVFP4 entry keeps the
+<p>Five of the six repos live under <code class="docutils literal notranslate"><span class="pre">lmsys/*</span></code>. The FLUX.2 NVFP4 entry keeps the
 official <code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev-NVFP4</span></code> repo.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -631,28 +631,28 @@ official <code class="docutils literal notranslate"><span class="pre">black-fore
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FP8</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.1-dev</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">BBuf/flux1-dev-modelopt-fp8-sglang-transformer</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lmsys/flux1-dev-modelopt-fp8-sglang-transformer</span></code></p></td>
 <td><p>single-transformer override, deterministic latent/image comparison, H100 benchmark, torch-profiler trace</p></td>
 <td><p>SGLang converter keeps a validated BF16 fallback set for modulation and FF projection layers; use <code class="docutils literal notranslate"><span class="pre">--model-id</span> <span class="pre">FLUX.1-dev</span></code> for local mirrors</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FP8</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">BBuf/flux2-dev-modelopt-fp8-sglang-transformer</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lmsys/flux2-dev-modelopt-fp8-sglang-transformer</span></code></p></td>
 <td><p>single-transformer override load and generation path</p></td>
 <td><p>published SGLang-ready transformer override</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FP8</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Wan-AI/Wan2.2-T2V-A14B-Diffusers</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">BBuf/wan22-t2v-a14b-modelopt-fp8-sglang-transformer</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lmsys/wan22-t2v-a14b-modelopt-fp8-sglang-transformer</span></code></p></td>
 <td><p>primary <code class="docutils literal notranslate"><span class="pre">transformer</span></code> quantized, <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> kept BF16</p></td>
 <td><p>primary-transformer-only path; keep <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> on the base checkpoint, and do not describe this as dual-transformer full-model FP8 unless that path is validated separately</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NVFP4</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.1-dev</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">BBuf/flux1-dev-modelopt-nvfp4-sglang-transformer</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lmsys/flux1-dev-modelopt-nvfp4-sglang-transformer</span></code></p></td>
 <td><p>mixed BF16+NVFP4 transformer override, correctness validation, 4x RTX 5090 benchmark, torch-profiler trace</p></td>
 <td><p>use <code class="docutils literal notranslate"><span class="pre">build_modelopt_nvfp4_transformer.py</span></code>; validated builder keeps selected FLUX.1 modules in BF16 and sets <code class="docutils literal notranslate"><span class="pre">swap_weight_nibbles=false</span></code></p></td>
 </tr>
@@ -666,7 +666,7 @@ official <code class="docutils literal notranslate"><span class="pre">black-fore
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NVFP4</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Wan-AI/Wan2.2-T2V-A14B-Diffusers</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">BBuf/wan22-t2v-a14b-modelopt-nvfp4-sglang-transformer</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lmsys/wan22-t2v-a14b-modelopt-nvfp4-sglang-transformer</span></code></p></td>
 <td><p>primary <code class="docutils literal notranslate"><span class="pre">transformer</span></code> quantized with ModelOpt NVFP4, <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> kept BF16</p></td>
 <td><p>primary-transformer-only path; keep <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> on the base checkpoint, and current B200/Blackwell bring-up uses <code class="docutils literal notranslate"><span class="pre">SGLANG_DIFFUSION_FLASHINFER_FP4_GEMM_BACKEND=cudnn</span></code></p></td>
 </tr>
@@ -685,14 +685,14 @@ overrides. If the repo or local directory already contains <code class="docutils
 <code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>black-forest-labs/FLUX.2-dev<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--transformer-path<span class="w"> </span>BBuf/flux2-dev-modelopt-fp8-sglang-transformer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--transformer-path<span class="w"> </span>lmsys/flux2-dev-modelopt-fp8-sglang-transformer<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A Logo With Bold Large Text: SGL Diffusion&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--save-output
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>Wan-AI/Wan2.2-T2V-A14B-Diffusers<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--transformer-path<span class="w"> </span>BBuf/wan22-t2v-a14b-modelopt-fp8-sglang-transformer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--transformer-path<span class="w"> </span>lmsys/wan22-t2v-a14b-modelopt-fp8-sglang-transformer<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a fox walking through neon rain&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--save-output
 </pre></div>
@@ -729,7 +729,7 @@ use <code class="docutils literal notranslate"><span class="pre">python</span> <
 <code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>black-forest-labs/FLUX.1-dev<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--transformer-path<span class="w"> </span>BBuf/flux1-dev-modelopt-nvfp4-sglang-transformer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--transformer-path<span class="w"> </span>lmsys/flux1-dev-modelopt-nvfp4-sglang-transformer<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A Logo With Bold Large Text: SGL Diffusion&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--save-output
 </pre></div>
@@ -756,7 +756,7 @@ was quantized:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SGLANG_DIFFUSION_FLASHINFER_FP4_GEMM_BACKEND</span><span class="o">=</span>cudnn<span class="w"> </span><span class="se">\</span>
 sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>Wan-AI/Wan2.2-T2V-A14B-Diffusers<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--transformer-path<span class="w"> </span>BBuf/wan22-t2v-a14b-modelopt-nvfp4-sglang-transformer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--transformer-path<span class="w"> </span>lmsys/wan22-t2v-a14b-modelopt-nvfp4-sglang-transformer<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a fox walking through neon rain&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--save-output
 </pre></div>
