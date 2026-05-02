@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 09:56:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 11:19:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 09:56:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 11:19:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.17s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.13s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -125,12 +125,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 09:56:58,637 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 09:56:58] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 11:19:37,214 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 11:19:37] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis on a city street, with a person wearing yellow working on the back of one of the taxis, appearing to wash clothes. The person is using a devices to get the water into the tux and drain it out.
+    The image shows a scene likely taking place in New York City, based on the New York City-style yellow cabs and the urban environment. In the foreground, a person, who appears to be a cab driver, is hanging what seems to be laundry on a clothesline strung between two yellow cabs. 
+    
+    The distinctive aspect of the scene is the interaction between a human and public transportation, which is unusual and recognizable as iconic New York City life. The combination of urban city life (the yellow cabs and the street scene) with the everyday task of laundry indicates the blend of work and routine that occurs in the bustling big city.
 
 
 ### Call with Processor Output
@@ -155,7 +157,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on the side of a street in an urban area. The taxi has a clothes iron on its back and a pair of jeans draped over the handlebars of a traditional bicycle sidecar. The setting suggests a humorous or unusual display, possibly for a public performance or a creative act.
+    The image shows a scene from a TV show set in Chicago, specifically the hit show "Three's Company," with T Bunny, one of the primary characters known as "The Banana" or "Banana Lena," also known as "Tan-Tan." In this particular scene, T Bunny is seen getting dressed while driving a yellow cab. T Bunny was created by freelance illustrator Randall McVay, and later it became the inspiration for the pink bunny of Philadelphia Cheese Whiz ( Żytanta in Polish) in the "America's Cheese Wrestler" campaign and is considered to be an iconic cultural reference.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +213,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis parked on the street in an urban area. The taxis have small flag-like objects attached to them, which resemble miniature American flags attached to the rear door. These flags are often displayed to mark a vehicle's arrival or to identify a specific taxi company or service. The scene appears to be in a busy city environment, possibly during a parade or event, given the presence of the flag-like objects and the overall festive atmosphere.
+    The image shows a person in an orange shirt flipping a clothe over a luggage duffel bag attached to the back of a yellow cab.
 
 
 ## Querying Llama 4 Vision Model
