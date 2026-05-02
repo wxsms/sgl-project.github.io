@@ -99,23 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 15:04:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 19:30:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 15:04:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-    [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-    [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+    [2026-05-02 19:30:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.63s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  1.94s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.05s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -125,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 15:04:20,962 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 15:04:20] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 19:30:30,172 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 19:30:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a weatherman or meteorologist displaying a weather kite in the middle of a street in New York City. The weather kite is held up between two parked yellow taxis. The weatherman is also wearing a bright yellow shirt. The background includes store fronts and a brick building with large windows.
+    The image shows a person using laundry towels or sheets from the back of a yellow taxi in New York City to clean the vehicle. This is a humorous and creative way of keeping the livery clean, showing顺便走笔。
 
 
 ### Call with Processor Output
@@ -155,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person wearing yellow clothes and an apron, standing on the hood of a yellow taxi cab. They appear to be demonstrating or showing something on a mat or towel laid out on the taxi’s roof. The taxi is parked on a city street surrounded by buildings and other vehicles. The scene suggests some sort of demonstration or advertisement, possibly related to the taxi service or yellow cab brand.
+    The image shows a scene on a street in what appears to be an urban area, likely a city. A yellow taxi cab is parked on the side of the road. In front of the taxi, there is a man who is sorting out or hanging up clothes on a clothesline. The clothesinclude items such as shirts, jeans, and a pair of shorts. The man is wearing a yellow shirt and appears to be preparing or organizing his clothing. The background includes various street elements such as traffic signs and streetlights.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi parked on the side of a street. The taxi appears to be equipped with additional props, including a large pretend pole and other items that look like flotsam and jetsam. This setup is likely part of a performance or advertisement for a toy or a toy-related product. The background includes some urban elements such as buildings and street signs, but the focus is on the unusual base attached to the taxi.
+    I think you might have meant to describe a street scene rather than asking a question. In that case, I see two yellow taxis on a city street. One cabin is equipped with aacas sauce red leaf, hope and aflower on it, and the city is in front of the building. There is also a carrots truck on the road.
 
 
 ## Querying Llama 4 Vision Model
