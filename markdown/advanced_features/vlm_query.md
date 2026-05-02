@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 19:30:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 23:14:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 19:30:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 23:14:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 19:30:30,172 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 19:30:30] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 23:15:05,812 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 23:15:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person using laundry towels or sheets from the back of a yellow taxi in New York City to clean the vehicle. This is a humorous and creative way of keeping the livery clean, showing顺便走笔。
+    In the photo, a person is exchanging towels or cloths in front of aYellow Cab.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a street in what appears to be an urban area, likely a city. A yellow taxi cab is parked on the side of the road. In front of the taxi, there is a man who is sorting out or hanging up clothes on a clothesline. The clothesinclude items such as shirts, jeans, and a pair of shorts. The man is wearing a yellow shirt and appears to be preparing or organizing his clothing. The background includes various street elements such as traffic signs and streetlights.
+    The image shows a man standing behind a window display in a storefront. He is holding a folded blue piece of fabric, possibly a shop towel or a similar item, and appears to be either folding or unfolding it. The man is also wearing a yellow shirt and has a bright orange or yellow towel draped around his neck. In the background, there are several other objects and advertisements on the windows and walls of the storefront. The scene seems to be set in an urban environment, possibly in a city center, given the presence of street lamps and other commercial features.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I think you might have meant to describe a street scene rather than asking a question. In that case, I see two yellow taxis on a city street. One cabin is equipped with aacas sauce red leaf, hope and aflower on it, and the city is in front of the building. There is also a carrots truck on the road.
+    The image shows a street scene in a city, likely New York, given the style of the yellow taxis. A person is balancing a long fold-up ladder on the hood of a parked taxi. The environment includes other taxis with a different design (red and blue), traffic lights, and pedestrians. The person is wearing a yellow shirt and appears to be engaged in some sort of stunt or demonstration.
 
 
 ## Querying Llama 4 Vision Model
