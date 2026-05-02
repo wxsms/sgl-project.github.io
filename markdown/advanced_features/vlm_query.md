@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 01:32:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 02:07:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 01:32:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 02:07:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.38s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.41s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 01:32:35,968 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 01:32:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 02:07:48,816 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 02:07:48] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This is an image of two yellow taxis parked side by side in a city street, with clothes hanging on a bench between them. The person standing behind the bench appears to be hanging or showcasing the clothes rather than using the bench as a kite. This image appears to be a playful and humorous visual, as it doesn’t follow the typical use of such a bench.
+    The image shows two yellow taxis parked side by side on a city street. An individual is hanging clothes from the back of one taxi. The scene appears to be set in an urban area with buildings and shops in the background. The individual is wearing a yellow shirt and appears to be engaged in some unusual activity by hanging laundry from the back of the taxi.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street in what appears to be a city, possibly in the United States, given the style of the vehicles. There is a yellow taxi pulling a row of pieces of laundry on a wooden drag or傀儡 (hammock). The laundry has been arranged in a line to dry under the clothesline. The scene is humorous and creative, capturing a moment that combines urban life with the everyday chore of laundry. The background includes buildings with flags and other vehicles on the street.
+    The image shows a New York City yellow taxi parked on a street. Next to the taxi, there is a portable clothesline with a dry-cleaning press handle and a piece of fabric draped over it. The scene appears to be a humorous or artistic setup, possibly created for a street performance or photo opportunity. The background includes typical New York City elements like architectural structures and advertisements, with the iconic pink banners and buildings.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a unique optical illusion called onomatopoeia, where a quadrangle of clothes and/or a bicycle is seemingly suspended a few feet above the ground, balancing in the air. The illusion is created by the positioning of two poles and theظنimation process for the certificates and stickers.
+    The image shows a street scene with a yellow taxi in the foreground. A person is partially outside the cab, holding onto the metal railings inside the vehicle. The background is also filled with other taxis and some signs.
 
 
 ## Querying Llama 4 Vision Model
