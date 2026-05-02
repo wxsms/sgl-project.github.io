@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 12:57:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 14:05:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 12:57:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 14:05:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.06s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.06s/it]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 12:57:33,110 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 12:57:33] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 14:05:36,255 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 14:05:36] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxi cabs in an urban street setting. One of the taxis has a clothing rack on its back, with multiple pieces of clothing hung on it. The dropdown text "tandem threading" is unclear as it does not provide additional context or meaning.
+    The image shows two yellow taxis parked on the side of a city street. In front of one of the taxis, there is a man hanging what appears to be laundry on a metal clothesline. The scene is set against a backdrop of tall buildings, and the street is lined with trees.
 
 
 ### Call with Processor Output
@@ -155,11 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow New York City taxi driving down a street. There is an individual in a yellow shirt standing behind the taxi,操作着一个白色的蒸汽清洁机。这似乎是一个幽默或黑色幽默的情景，因为通常蒸汽清洁机是用来清洁地面的，而不是用来清洁出租车后面的。
-    
-    在背景中，可以看到一些商店和街灯。街道两旁停着几辆其他的出租车，表明这是一个繁忙的出租车站或区域。
-    
-    由于没有更多的详细信息，很难确定这个场景的具体意图或其背景。这可能是一个自发的艺术作品，或只是一个有趣的街头奇遇。
+    I don't see any text or image prompt in your sentence. Can you please rephrase your question or provide more context for me to assist you better?
 
 
 ### Call with Precomputed Embeddings
@@ -215,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a street cleaner or possibly a laborer outside cleaning a yellow car with a moving vacuum in the middle of a sidewalk. There is a long banner and some car headlights in the background, indicating it might be a busy urban area, possibly during daytime.
+    The image depicts a yellow taxi cab with a person underneath it, attempting to dry their clothes. The taxi is parked on a city street, and the person is using a bicycle or a scooter stand to hang and dry clothes. This is a humorous and creative way to dry clothes on the go. The taxi cab and its vibrant yellow color make the scene quite eye-catching.
 
 
 ## Querying Llama 4 Vision Model
