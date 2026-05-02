@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 07:02:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 08:07:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 07:03:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 08:07:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.17s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.26s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.50s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.60s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.80s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.87s/it]
 
 
 
@@ -125,16 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 07:03:13,453 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 07:03:13] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 08:07:30,357 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 08:07:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    Here are a few possibilities based on the image:
-    
-      1. A person catching rides from a taxi driver. In some cities, taxis are equipped with a backpack-like storage space on the back where passengers can place their bags, and sometimes people will request taxi rides by attaching clothing items or other objects to the back of the taxi.
-      2. A prank gone wrong. Someone might have placed a feeble padding or additional weight on the back of the taxi, and the driver might have lost control and rear-ended other vehicles to stop it harming people or property.
-      3. An unusual advertising campaign. Some companies may use such
+    The image depicts two yellow taxis, one on the street and the other further down the road. A person is standing between the two taxis with their hands on their head, seemingly distressed or overwhelmed. The street appears to be a city street, possibly in New York City, given the architectural style and the people's attire. The overall scene suggests a chaotic or overwhelming situation on the streets.
 
 
 ### Call with Processor Output
@@ -159,12 +155,15 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving down a city street. Attached to the back of the taxi are several racks that seem to be holding or displaying clothes. The scene appears to be humorous or lighthearted, as there are clothes on the back of the taxi, which is an unconventional and noticeable situation often associated with the idea of the "cat lady" taxi handservant.
+    The image you've shared shows two yellow taxis parked on a city street. The车型看起来像是新的Self-driving docker车辆。.driver车辆看起来像是新的Self-driving docker 车辆.
     
-    To break this down:
+    这辆黄色出租车目前是打开的。，骑手席位上还挂着三面蓝白相间的国旗。
     
-    - **Taxi**: Classic New York-style yellow taxi, iconic symbol of urban transportation in New York City.
-    - **Clothes on the Back**: Multiple racks or hangers with various pieces of clothing, suggesting they are
+    背景中还有一些商店和建筑物，建筑物的外观设计也很现代。街道两旁停着一些其他车辆，但它们似乎并不涉及到出租车。
+    
+    画面中并没有任何明显的行人或其他人物。
+    
+    这辆出租车的广告和标识没有清晰显示，因此很难辨认特定的品牌或公司。
 
 
 ### Call with Precomputed Embeddings
@@ -220,9 +219,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, there are two yellow taxis on a city street. The taxi in the foreground is parked, and the driver is standing next to it, seemingly concerned or worried about something. The taxi in the background is moving away from the camera, driven by a man wearing a yellow shirt. The scene suggests that the driver of the starred taxi might be facing a delay or issue that has caused the traffic.
-    
-    Additionally, there is a stair case covered with a blue and green plaid cloth attached to the back of the taxi. This unusual setup could indicate a domestic help service in送奶或送送食物（外卖）的情况Delivery personnel
+    This image depicts a city street scene with a yellow taxi cab parked on the road. The taxi appears to be in motion, pushing aченille cart in front of it. The cart is holding clothes that are cascading down the back of the cab. This appears to be an artistic or fun performance enacted by the taxi driver or driver's preparations for a parade or event. The background includes buildings and traffic lights, indicating an urban setting.
 
 
 ## Querying Llama 4 Vision Model
