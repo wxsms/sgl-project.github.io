@@ -99,11 +99,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 02:07:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 04:30:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 02:07:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-02 04:30:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -113,9 +113,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.41s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
 
 
 
@@ -125,12 +125,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 02:07:48,816 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 02:07:48] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-02 04:30:25,980 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-02 04:30:25] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked side by side on a city street. An individual is hanging clothes from the back of one taxi. The scene appears to be set in an urban area with buildings and shops in the background. The individual is wearing a yellow shirt and appears to be engaged in some unusual activity by hanging laundry from the back of the taxi.
+    The image shows two yellow taxis parked on a city street. One taxi is opened, revealing its black interior with some clothes hanging out of the back window. The street appears to be in a busy urban area, likely in the United States given the style of the taxis. The clothes and the way they are arranged suggest that the person in the yellow shirt is possibly letting them dry or drying them on the back window of the taxi. This is not a common occurrence and could be a humorous or unusual scene in a city like New York, where such anomalies might be more likely to attract attention.
 
 
 ### Call with Processor Output
@@ -155,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a New York City yellow taxi parked on a street. Next to the taxi, there is a portable clothesline with a dry-cleaning press handle and a piece of fabric draped over it. The scene appears to be a humorous or artistic setup, possibly created for a street performance or photo opportunity. The background includes typical New York City elements like architectural structures and advertisements, with the iconic pink banners and buildings.
+    The image shows a yellow taxi cab parked on a city street. The taxi has a bunch of clothing items, including what looks like a shirt and a pair of jeans, hanging from the rear-mounted bag. This is unusual, as taxi cabs typically do not carry any luggage or personal items on their backs. The setting appears to be an urban area with sidewalks, trees, and buildings in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi in the foreground. A person is partially outside the cab, holding onto the metal railings inside the vehicle. The background is also filled with other taxis and some signs.
+    The person in the image is performing the "ironing" action with a rainbow-colored flag. This is a humorous performance or stunt, often done by special effects actors at events or performances. The flag is being pulled and moved as if it were a shirt, just like how clothes might be moved during ironing. The setting appears to be an outdoor event or demonstration, with taxis and banners visible in the background.
 
 
 ## Querying Llama 4 Vision Model
