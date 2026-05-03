@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-03 10:45:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 13:27:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-03 10:45:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 13:27:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.55s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.78s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.90s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-03 10:46:05,240 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-03 10:46:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-03 13:27:52,082 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-03 13:27:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a city street with yellow cabs (taxi) driving by. The scene includes a person washing clothes on a bike rack in the street. The background features buildings with signage, a few streetlights, and some bushes. The overall setting appears to be a busy city environment.
+    The image shows a man wearing a yellow shirt playing with a taxi by pulling it by its rear bumper on a city street. He appears to be using a stick over the vehicle to suggest it is in motion. The scene is humorous and staged, resembling a balancing act between man and vehicle.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene on the street with a person hanging clothing from a tripod on top of a yellow taxi. The background shows a cityscape with buildings and parked cars. The yellow taxi is a standard New York City taxi, recognizable by its color and design.
+    The image shows a yellow taxi parked in an urban setting, possibly a street in a city like New York. The taxi has clothes hanging out of its back window, likely for drying. The background features some commercial buildings with striped awnings and banners. The scene appears to be part of a public responsibility campaign or an awareness initiative related to recycling or waste reduction.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene where two yellow taxis are parked on a city street. The taxi closest to the foreground is adorned with an American flag on its roof, and it appears to be pulling over, possibly for a passenger. The taxi in the background also has a draped American flag across its rear, possibly as part of a display or to honor someone. There are no other vehicles in traffic, and the scene is bustling with urban activity.
+    The image shows a distinctive view of a yellow taxi cab in New York City, driving on the street. The vehicle has a kite attached to its top, which is often used to signal the cab phones. The background includes typical urban street elements such as storefronts and streetlights, reinforcing the urban setting.
 
 
 ## Querying Llama 4 Vision Model
