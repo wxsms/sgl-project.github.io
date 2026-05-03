@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-03 07:04:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 08:41:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-03 07:04:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 08:42:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-03 07:04:47,739 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-03 07:04:47] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-03 08:42:11,020 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-03 08:42:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in an urban street scene. One taxi is prominently displayed in front of the camera, and its rear is visible. A person dressed in a yellow shirt is operating a clothesline attached to the back of the car. The clothes are supposed to represent laundry, which is hanging at an odd angle, potentially to simulate drying clothes without a designated drying rack. This scene humorously contrasts the conventional use of clotheslines with an unconventional method of using vehicle parts to dry clothes. The background includes building facades and some traffic signs, indicating it is likely taking place in a busy urban area.
+    The image shows a scene on a city street where a person is hanging colorful clothes from a piece of luggage in the back of a yellow taxi. The taxi appears to be stopped and parked on the side of the street. The background includes tall buildings and streetlights, indicating an urban environment. The clothing includes a pink item, as well as smaller, less distinctive pieces. The person seems to be engaged in an unconventional activity, typical of urban humor in certain city areas, where people might hang clothes from luggage in the back of taxis.
 
 
 ### Call with Processor Output
@@ -150,7 +150,16 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving down a city street with a person standing on the sidewalk in front of it, using a gesture that appears to be a simulated oracted person (often referred to as a *jerk*) to caution or direct the taxi driver. This scene is common in places where there is a high volume of taxis, and drivers are often trained to avoid potential roadblocks or obstacles.
+    On a city street, there is a yellow taxi with a hand Xamarin machine loading onto it:
+    
+    - The taxi is in the foreground and appears to be in motion.
+    - On the sidewalk, behind the taxi, stands a person (a blonde man) operating a Xamarin machine.
+    - The machine is connected to a hinge or wheelbarrow-like structure.
+    - The man is seemingly loading laundry onto the machine.
+    - In the background, there are flags and more vehicles, including another yellow taxi.
+    - The setting suggests it is a busy urban area, possibly with some architectural features visible.
+    
+    It looks like this event is taking place in a busy city
 
 
 ### Call with Precomputed Embeddings
@@ -206,16 +215,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a humorous and unusual scene where a street scene has been used to overexpose ainosaur on a luggage trolley. The trolley, originally intended for rolling luggage, is now placed right in the middle of a normal urban street, with a monstrous character partially appearing out of it.
-    
-    Everything else about the setting matches a typical street, including:
-    
-    - A yellow-orange car on the left side.
-    - A streetlamp and other busy city features.
-    - Buildings with visible window displays and flags including:
-    
-       - A yellow flag close to the streetlamp (on a flagpole).
-       - A blue flag towards the back (on
+    The image shows a man running down a city street while carrying a sign that reads "Noizon". The sign is prominently displayed in the foreground, and the man is visibly holding it up. There are yellow taxis in the background, indicating that this scene likely takes place in a busy, urban area. The presence of the taxis suggests that this could be a well-traveled or commercial part of the city.
 
 
 ## Querying Llama 4 Vision Model
