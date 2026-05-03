@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-02 23:14:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 07:04:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-02 23:14:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 07:04:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-02 23:15:05,812 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-02 23:15:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-03 07:04:47,739 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-03 07:04:47] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the photo, a person is exchanging towels or cloths in front of aYellow Cab.
+    The image shows two yellow taxis in an urban street scene. One taxi is prominently displayed in front of the camera, and its rear is visible. A person dressed in a yellow shirt is operating a clothesline attached to the back of the car. The clothes are supposed to represent laundry, which is hanging at an odd angle, potentially to simulate drying clothes without a designated drying rack. This scene humorously contrasts the conventional use of clotheslines with an unconventional method of using vehicle parts to dry clothes. The background includes building facades and some traffic signs, indicating it is likely taking place in a busy urban area.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing behind a window display in a storefront. He is holding a folded blue piece of fabric, possibly a shop towel or a similar item, and appears to be either folding or unfolding it. The man is also wearing a yellow shirt and has a bright orange or yellow towel draped around his neck. In the background, there are several other objects and advertisements on the windows and walls of the storefront. The scene seems to be set in an urban environment, possibly in a city center, given the presence of street lamps and other commercial features.
+    The image shows a yellow taxi cab driving down a city street with a person standing on the sidewalk in front of it, using a gesture that appears to be a simulated oracted person (often referred to as a *jerk*) to caution or direct the taxi driver. This scene is common in places where there is a high volume of taxis, and drivers are often trained to avoid potential roadblocks or obstacles.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,16 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city, likely New York, given the style of the yellow taxis. A person is balancing a long fold-up ladder on the hood of a parked taxi. The environment includes other taxis with a different design (red and blue), traffic lights, and pedestrians. The person is wearing a yellow shirt and appears to be engaged in some sort of stunt or demonstration.
+    The image shows a humorous and unusual scene where a street scene has been used to overexpose ainosaur on a luggage trolley. The trolley, originally intended for rolling luggage, is now placed right in the middle of a normal urban street, with a monstrous character partially appearing out of it.
+    
+    Everything else about the setting matches a typical street, including:
+    
+    - A yellow-orange car on the left side.
+    - A streetlamp and other busy city features.
+    - Buildings with visible window displays and flags including:
+    
+       - A yellow flag close to the streetlamp (on a flagpole).
+       - A blue flag towards the back (on
 
 
 ## Querying Llama 4 Vision Model
