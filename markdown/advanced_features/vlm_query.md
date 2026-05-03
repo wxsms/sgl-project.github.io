@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-03 08:41:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 10:45:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-03 08:42:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 10:45:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-03 08:42:11,020 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-03 08:42:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-03 10:46:05,240 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-03 10:46:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street where a person is hanging colorful clothes from a piece of luggage in the back of a yellow taxi. The taxi appears to be stopped and parked on the side of the street. The background includes tall buildings and streetlights, indicating an urban environment. The clothing includes a pink item, as well as smaller, less distinctive pieces. The person seems to be engaged in an unconventional activity, typical of urban humor in certain city areas, where people might hang clothes from luggage in the back of taxis.
+    The image shows a city street with yellow cabs (taxi) driving by. The scene includes a person washing clothes on a bike rack in the street. The background features buildings with signage, a few streetlights, and some bushes. The overall setting appears to be a busy city environment.
 
 
 ### Call with Processor Output
@@ -150,16 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    On a city street, there is a yellow taxi with a hand Xamarin machine loading onto it:
-    
-    - The taxi is in the foreground and appears to be in motion.
-    - On the sidewalk, behind the taxi, stands a person (a blonde man) operating a Xamarin machine.
-    - The machine is connected to a hinge or wheelbarrow-like structure.
-    - The man is seemingly loading laundry onto the machine.
-    - In the background, there are flags and more vehicles, including another yellow taxi.
-    - The setting suggests it is a busy urban area, possibly with some architectural features visible.
-    
-    It looks like this event is taking place in a busy city
+    The image depicts a scene on the street with a person hanging clothing from a tripod on top of a yellow taxi. The background shows a cityscape with buildings and parked cars. The yellow taxi is a standard New York City taxi, recognizable by its color and design.
 
 
 ### Call with Precomputed Embeddings
@@ -215,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man running down a city street while carrying a sign that reads "Noizon". The sign is prominently displayed in the foreground, and the man is visibly holding it up. There are yellow taxis in the background, indicating that this scene likely takes place in a busy, urban area. The presence of the taxis suggests that this could be a well-traveled or commercial part of the city.
+    The image shows a scene where two yellow taxis are parked on a city street. The taxi closest to the foreground is adorned with an American flag on its roof, and it appears to be pulling over, possibly for a passenger. The taxi in the background also has a draped American flag across its rear, possibly as part of a display or to honor someone. There are no other vehicles in traffic, and the scene is bustling with urban activity.
 
 
 ## Querying Llama 4 Vision Model
