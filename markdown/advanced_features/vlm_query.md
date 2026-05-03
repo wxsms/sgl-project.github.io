@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-03 14:21:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 15:06:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-03 14:21:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-03 15:06:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.72s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.18s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-03 14:21:37,720 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-03 14:21:37] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-03 15:06:48,764 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-03 15:06:48] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene where a person on an ironing board has inadvertently turned into the back seat of a taxi while they were hanging laundry. The taxi appears to be driving along a city street, and the situation adds a humorous and unexpected twist to the iconic image of a yellow taxi cab in New York City.
+    The image shows two yellow taxis stopped on a city street. The scene is set in an urban environment, possibly in New York City, given the iconic taxi cabs and the appearance of the building and signage. The taxi in the foreground has its back door open, and someone is pushing the door open with their foot. The primary focus is on the interaction between the person and the taxi door, suggesting an unusual or humorous situation. The background includes a mix of everyday city elements such as street signs and a parking meter.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of a yellow taxi parked on the side of a street in a commercial area. A person is standing next to it, holding a folding table that has clothes draped on it, possibly indicating they are either performing street乞討 (freeing) or setting up a stall to sell goods. In the background, there are several shops with glass windows displaying various items and French flags hanging outside some of them. The environment appears to be in a city, likely in France or a part of France with significant French influence.
+    The image shows a yellow New York City taxi parked in a street. The taxi is equipped with a clothes rack attached to its rear. The clothes rack is holding several pieces of clothing, including what appears to be a blue and red coat, a blue shirt, and a white item of clothing. The taxi is parked by the curb, and there are other vehicles and traffic lights in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a man-robot-like figure dressed in a yellow shirt and black pants interacting with two yellow taxis in an urban environment. The figure seems to be trying to retrieve something from one of the taxis. The scene is set in what appears to be a busy city street lined with parked cars and buildings. The man-robot interacts with a small shelf attached to the back of one of the taxis, and it seems as though it might be getting a package or some other item.
+    The image shows a scene in a city, likely New York given the recognizable design of the yellow yellow taxis with yellowBrazilian taxi stickers attached. Two yellow taxis are also visible, parallel and diagonally in the background.
+    
+    The man in the foreground is чегоlayan a clothes rack full of laundry across the roadway. He appears to be balancing the rack's weight between his legs. Besides the prominent yellow taxi, two small flag poles with yellow Brazilian flags on the street, with Brazilian colors (red, yellow and green) are seen. There are also buildings and rows of shops with large windows. The street seems to be a busy urban environment with
 
 
 ## Querying Llama 4 Vision Model
