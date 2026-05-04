@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-04 09:37:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 10:26:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-04 09:37:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 10:27:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.49s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.88s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.97s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-04 09:38:00,731 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-04 09:38:00] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-04 10:27:15,072 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-04 10:27:15] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This is a humorous and unusual scene where a man is attempting to iron a shirt on a street while riding a taxi. The taxi is in the middle of a city street, and the man appears to be using a folding iron as if he were stationary. This is a lighthearted and entertaining image that takes an everyday activity and turns it into a whimsical scene. The clothing visible in the image includes a blue shirt and a yellow hoodie, adding to the casual atmosphere of the scene.
+    The image depicts a multi-ethnic group of friends saying a funny good-bye.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the photograph, you can see a yellow cab. This vehicle is likely used for passenger transportation, similar to a taxi in North America. It appears to be parked on a street with some trees and possibly a shop in the background. The yellow color is distinctive and aims to make the vehicle stand out in the urban environment.
+    The image shows a yellow taxi on a city street. The taxi is parked next to a pedestrian on the sidewalk. The pedestrian is wearing yellow and appears to be handing something to the driver. There are street signs and buildings in the background, and two other taxis are visible further down the street.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow cab, typically used for taxi services, parked on a city street. In the background, there are several flags on poles, likely representing a nearby landmark or celebratory event.
+    The image shows a yellow taxi in a city street setting. The taxi has a setup on the back of it, with a clothesline stretched across in a humorous manner. This playful setup seems to be part of a themed event or photo opportunity, often seen in marketing or promotion. The background includes buildings, street signs, and other vehicles, suggesting an urban environment.
 
 
 ## Querying Llama 4 Vision Model
