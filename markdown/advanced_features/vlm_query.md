@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-04 21:02:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 22:06:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-04 21:02:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 22:07:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-04 21:02:41,098 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-04 21:02:41] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-04 22:07:10,077 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-04 22:07:10] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man dressed as aማ脱 berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk
+    The image shows a person in a yellow shirt and black pants standing on the back of a yellow taxi, doing laundry. The person appears to be hanging clothes from the roof of the taxi. The scene is likely taking place in an urban setting, possibly in New York City, as suggested by the New York City Fire Department (FDNY) insignia on the rear of the taxi. There are also two American flags visible in the background, indicating that this might be taking place in a patriotic year, such as 2001 or 2003.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxi on a city street with its back door open. A person, seemingly attending to a personal matter, has folded a bed sheet and placed it on their lap. The setting appears to be in New York City, as indicated by the presence of New York City taxi and the urban backdrop. The scene suggests a practical and humorous mix, as the open taxi door and the person sitting on the open door of the taxi door imply they are about to drive, but have not yet started their journey.
+    The image shows two taxi cabs on a street: one yellow and one blue. The yellow taxi is larger and appears to be standard, while the blue taxi is smaller and has distinct stripe patterns. The scene takes place on a city street lined with buildings and decorated with holiday banners, indicating it might be during a season like Christmas. The black-and-white-striped awning and window displays suggest a commercial area.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man wearing a yellow shirt and eyeglasses, causing a small wind screen to flip him over onto a yellow taxi.
+    The image depicts a street scene with two yellow taxis positioned parallel to each other on a city street. The taxi on the left has a piece of furniture attached to it by its roof, which appears to be a materials cart or a cart with items stacked on it. The cart seems to be haphazardly attached, as it looks loose and not securely fastened, which is unusual for regular transportation mechanisms.
+    
+    The background shows a busy urban environment with flags attached to poles, buildings, and the presence of more cars. The overall scene suggests that this might be taking place in a bustling city like New York, often associated with yellow cabs
 
 
 ## Querying Llama 4 Vision Model
