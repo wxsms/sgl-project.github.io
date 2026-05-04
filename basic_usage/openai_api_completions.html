@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=a5ef408e"></script>
+    <script src="../_static/documentation_options.js?v=484ced10"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -578,11 +578,11 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.96it/s]
-2026-05-04 00:30:16,865 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-04 00:30:16] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04&lt;00:00, 11.62it/s]
-Capturing num tokens (num_tokens=4 avail_mem=71.06 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 24.60it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.84it/s]
+2026-05-04 02:17:33,947 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-04 02:17:33] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06&lt;00:00,  9.59it/s]
+Capturing num tokens (num_tokens=4 avail_mem=58.26 GB): 100%|██████████| 58/58 [00:03&lt;00:00, 14.62it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -598,7 +598,7 @@ Capturing num tokens (num_tokens=4 avail_mem=71.06 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:38116
+Server started on http://localhost:35296
 </pre></div></div>
 </div>
 </section>
@@ -632,7 +632,7 @@ Server started on http://localhost:38116
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='a88bfe3fb11c423b86e3b9a9e5356c2f', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1777854632, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='e3c1e22334384eb2a0bd883fbbe29a6e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1777861072, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -897,7 +897,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished from the 8th to the 4th century BCE. It is known for its political, economic, and cultural achievements:<br><br>1. **Political Structure**: The Roman Republic (509-27 BC) and the Roman Empire (27 BC - 476 AD) were both republics with a strong central government.<br><br>2. **Cultural Impact**: Rome's influence extended far beyond its borders, influencing art, philosophy, literature, science, and religion across Europe, Asia Minor, and even parts of Africa.<br><br>3. **Military Power**: Rome was one of</strong></div>
+<strong style='color: #00008B;'>The ancient Roman civilization was renowned for its vast and complex society, which included the development of agriculture, trade, engineering, philosophy, literature, art, architecture, law, and religion. Some of their major achievements include:<br><br>1. **Roman Law**: This legal system is still influential today in many countries around the world.<br><br>2. **Architecture**: Rome's iconic buildings like the Colosseum and Pantheon are among the most famous examples of classical architecture.<br><br>3. **Engineering**: The Romans were skilled engineers who built impressive aqueducts and roads that connected different parts of Italy.<br><br>4. **Philosophy**: Ancient Rome was a</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -923,7 +923,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. I am Qwen, created by Alibaba Cloud, and my primary function is to provide assistance with any questions or tasks you may have. If there&#39;s anything specific you need help with, feel free to ask, and I&#39;ll do my best to assist you.
+Yes, I can say that this is a test. I&#39;m here to assist you with any questions or information you might need. If there&#39;s anything specific you&#39;d like help with, please let me know!
 </pre></div></div>
 </div>
 </section>
@@ -988,7 +988,7 @@ Yes, that is a test. I am Qwen, created by Alibaba Cloud, and my primary functio
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='2d32ab233e7e45abb90911cfbcde1506', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1777854634, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='ce0cd99f23e54377898f0fcf72480e4f', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1777861074, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1020,7 +1020,7 @@ Yes, that is a test. I am Qwen, created by Alibaba Cloud, and my primary functio
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='58bf121034214945a4022f7d6c8a87cd', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Alex. Alex had always dreamed of exploring the vastness of the universe. He had always wondered what it was like to be in a different planet and what it was like to travel through space.', matched_stop='\n\n')], created=1777854634, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=50, prompt_tokens=9, total_tokens=59, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='87ee7236b2c746dda405d2927fce5020', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Sarah Carter. She was a brilliant scientist who had traveled to the stars to study and explore the universe.', matched_stop='\n\n')], created=1777861075, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=34, prompt_tokens=9, total_tokens=43, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
