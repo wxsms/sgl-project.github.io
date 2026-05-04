@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-04 16:46:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 18:04:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-04 16:46:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 18:04:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-04 16:46:32,122 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-04 16:46:32] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-04 18:05:06,045 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-04 18:05:06] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in New York City. A taxicab is parked on the side of the street, and a person is using a folding laundry cart to do laundry. The cart is bare except for a couple of items of clothing hanging up, and the person appears to be ironing them. There is a yellow taxi behind the cart and another one slightly visible in the background. The environment suggests an urban setting with buildings and street lights visible.
+    In the picture, a man is standing between two yellow taxis that are parked on the street. The man appears to be folding clothes on an improvised clothesline, which he has attached to the side of the back of one of the taxis. The taxis have visible license plates, and there are buildings and banners in the background. This scene is unconventional and suggests that the man is performing as a comedian or street performer, using everyday city items in an amusing and surprising way.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with yellow taxis that are typical of New York City. The taxi in the foreground is pulling a cart or stand with laundry on it, suggesting that the person behind it is washing clothes and is moving them by cart. The background includes a multi-story building with various retail businesses and a street lined with trees and lights. The environment looks urban and typical of a busy city street.
+    The image shows a scene with a person wearing a yellow shirt and glasses pulling a configuration of two yellow taxi cabs. It appears the cabs are arranged in a way that creates an illusion of a waving flag wave-making effect between them. The scene is set on a city street, surrounded by modern buildings, with other vehicles and pedestrians visible in the background. The image likely results from a trick play using the placement and positioning of the taxis to create a visual effect that fools the eye.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a city street, which is likely a typical scene in New York City with its iconic yellow cabs. The taxis have red lights both on top and inside, and there are various American flags hanging from the back of one of the vehicles. The street appears to be a commercial area with shops or stores visible in the background.
+    The image shows two yellow taxis on a street, likely captured in a busy urban area during daylight hours. The scene appears to be from New York City, as evidenced by the presence of an Englishلينель gray building in the background and the style of the taxi.
 
 
 ## Querying Llama 4 Vision Model
