@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-04 23:07:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 23:30:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-04 23:07:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 23:30:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-04 23:08:06,304 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-04 23:08:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-04 23:30:59,232 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-04 23:30:59] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It appears to be a humorous scene where a man is walking through a parking lot or a similar public space, carrying a long iron that is tied to a stick on his back. The unusual addition of an iron attached to a stick, typically used for ironing clothes, creates a surreal and amusing visual. This type of image is often used for comedic purposes or as a creative prompt for artists.
+    The image shows two yellow taxis driving down a road. One of the taxis has a rack attached to its rear, which is displaying a multicolored striped garment, possibly indicating that it is used for drying clothes outdoors. This scene suggests that the city may have a system in place to allow for outdoor drying, possibly as a solution for limited or no indoor parking spaces. The person handling the rack appears to be dressed in a casual yellow shirt and is leaning against the back of one of the taxis. The use of stripes on the garment could be for identification or safety purposes.
 
 
 ### Call with Processor Output
@@ -150,9 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a street scene with a person engaging in an unusual and humorous act. The individual is using a shower curtain as a makeshift sail to cross the street. The shower curtain is attached to a crossbar, which is attached to the back of a yellow taxi cab. This is likely a more practical way for the person to cross the street without crossing the streetlights, which are prohibited.
-    
-    The taxi is stopped at a red light, stopped in its path. The background shows tall buildings and other vehicles, indicating this is likely a busy urban area. The scene is probably intended to be humorous, as it is an unconventional way to cross
+    The image you provided shows a yellow taxi cab in a busy city street. The taxi is parked on the side of the road, and there is a covered stand or cart attached to the taxi. The stand appears to be holding a folded piece of fabric or clothing. The background includes other city elements such as storefronts, street signs, and pedestrians. The scene suggests that the taxi is doing some sort of street marketing or promotional activity.
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from 9/11 usually associated with the 9/11 Tribute in Flight Museum in New York City. The setting appears to be a street scene, possibly near a museum or a similar attraction. There are two yellow taxis in the foreground, parked alongside the road. The background includes some tall buildings and flags. The most striking element is a child in the foreground dressed in yellow andだけな服装 and holding a nunchaku-like object, hanging from an ironing board also in yellow. This scene is likely part of a movement or protest related to the 9/11 Memorial, celebrating or
+    In the image, there is a person standing next to a piece of luggage on a platform, which is being transported on rollers by another person. The scene appears to be outside a building with storefronts. There are also vehicles, including a yellow taxi, visible in the background. The person with the luggage is wearing a yellow shirt and glasses. The overall setting suggests a street scene, possibly in a city, with indicators of urban activity.
 
 
 ## Querying Llama 4 Vision Model
