@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-04 04:00:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 05:14:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-04 04:00:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 05:14:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.62s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.77s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.75s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-04 04:00:55,687 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-04 04:00:55] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-04 05:14:18,003 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-04 05:14:18] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis (one behind the other) on a city street. Centered between the two taxis is a man wearing a yellow shirt, caring a blue towel on a rack while both cars are shut. The activities depicted in the image are both urban activities - driving and loading or transporting.
+    The image shows a yellow taxi cab in an urban setting, likely a city street. The taxi is being used as a makeshift tarp for something, and there is a person in a yellow shirt standing near the taxi. The taxi appears to be blocking the flow of traffic in the lane behind it. The background includes other urban elements such as street lamps and possibly some buildings or storefronts.
 
 
 ### Call with Processor Output
@@ -150,7 +150,15 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, there is a person holding up a pocketbook with both hands while standing next to a yellow taxi. The person is wearing a yellow shirt and appears to be on a city street, as evidenced by the storefronts and flags visible in the background. The taxi is parked on the side of the street, and it is situated in front of a building with a glass facade. The scene suggests that the person might be in the middle of shopping or posting something on thePocketbook, possibly trying to display it for others. The urban setting, along with the bright yellow taxi, gives the image a bustling, metropolitan feel.
+    The image shows a scene at a parade or street event. There are several key elements:
+    
+    1. A yellow taxi is being pulled along in a parade or event setting.
+    2. A person in a yellow shirt is maneuvering the taxi using a robotic arm, possibly as part of a performance or parade display.
+    3. The taxi is equipped with various items, including a flag and what appears to be a badge setup. 
+    4. The setting seems to be urban, with storefront windows visible in the background.
+    5. Band motorcycles with red banners are also present, contributing to the festive atmosphere.
+    
+    This appears to be some kind of art performance
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +214,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This appears to be an image of a person doing laundry in the street using a hanging rack over the hood of a yellow taxi. The scene is unusual and likely staged for comedic effect. The surrounding environment includes other taxis and typical city street elements.
+    The image shows a scene of two yellow taxis on a city street. Both taxis have license plates attached to the rear. The driver of the taxi on the right appears to have a piece of clothing, or possibly aierz, being attached to or hung from the vehicle's rear. The scene suggests that the driver is attempting to "reach" or engage with something behind the car.
 
 
 ## Querying Llama 4 Vision Model
