@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-04 19:38:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 21:02:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-04 19:38:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 21:02:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-04 19:38:55,542 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-04 19:38:55] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-04 21:02:41,098 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-04 21:02:41] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a man who is doing laundry while walking down a street. He has an outdoor clothesline in front of him, and it appears that he is possibly washing clothes or drying them. With his left hand, he might be handling some laundry items, and with his right hand, he might be adjusting the clothes on the clothesline or adjusting the position of the clothesline itself. It is unusual to see people doing outdoor laundry in urban environments, so this suggests that the man might be doing this activity temporarily.
+    The image shows a man dressed as aማ脱 berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk berk
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person folding a banner on the back of a yellow taxi cab in a street setting. The person is using a foldable arm to arrange the banner, which appears to be part of a promotional event or a street fair. The taxi is parked near a storefront with various signs and a coffee mug displayed prominently. The scene suggests that this person might be participating in a community event or a live-streaming video, possibly for entertainment purposes such as "living marios" or "living streammos," which are broadcasting activities where people engage in various tasks or animations while moving around.
+    The image shows a taxi on a city street with its back door open. A person, seemingly attending to a personal matter, has folded a bed sheet and placed it on their lap. The setting appears to be in New York City, as indicated by the presence of New York City taxi and the urban backdrop. The scene suggests a practical and humorous mix, as the open taxi door and the person sitting on the open door of the taxi door imply they are about to drive, but have not yet started their journey.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. The taxi is equipped with a makeshift structure, likely a folding table, set up in its back. There are pieces of clothing draped over the table, suggesting that the taxi driver might be drying laundry or some other items. The scene appears to be unusual and不太寻常, as it's not common to see a taxi driver using the cab's back for drying laundry.
+    The image shows a man wearing a yellow shirt and eyeglasses, causing a small wind screen to flip him over onto a yellow taxi.
 
 
 ## Querying Llama 4 Vision Model
