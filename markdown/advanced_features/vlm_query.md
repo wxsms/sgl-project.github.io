@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-04 06:56:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 08:33:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-04 06:56:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 08:33:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-04 06:56:21,121 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-04 06:56:21] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-04 08:34:01,063 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-04 08:34:01] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, a person is operating a portable ironing board attached to the back of a yellow taxi. The taxi is driving on a city street, and the person is ironing clothes that are hanging on the ironing board. This is an unusual and humorous sight as ironing clothes in a taxi is not typically expected.
+    The image shows a yellow taxi cab parked on a city street. A person is standing on the rear bumper of the taxi, holding a laundry rack with clothes on it. The person appears to be número ing out clothes to dry. The cab is in an urban setting with other vehicles, buildings, and streetlights visible in the background.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like a tarp or some form of fabric is draped over the side of a yellow taxi. This could be due to a variety of reasons, such as maintenance work, construction, or even a creative marketing or advertising effort. The tarp is secured to the taxi with ropes or straps.
+    The image shows a person wearing a yellow long-sleeve shirt and holding a red lever attached to a structure that is loaded onto the rear of a yellow taxi. The structure appears to be a small rack or frame. The setting seems to be an urban environment, with buildings and green trees visible in the background. The person is apparently trying to lift or adjust something on the taxi. There are also several American flags and other similar items visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I apologize, but there doesn't appear to be an image attached to the question. The instruction mentions "not an image," but typically, if we're discussing an image, it would be signaled with a set of emojis or some other visual reference. Since there's no visible image, I can't accurately describe what's shown in the question. If you could provide a description or image, I would be happy to help clarify what's shown.
+    This image depicts a street scene in a city with two yellow taxis parked parallel to each other on a one-way street. The taxi on the left is moving while the one on the right is stationary. Each taxi has a luggage rack attached on top, indicating that they may be prepared for transporting passengers who have luggage. There are several American flags visible in the background, suggesting that the location might be in the United States, particularly in a city with a significant presence of taxis, which is common in New York City.
+    
+    The street appears to be relatively busy, with some pedestrians and other vehicles visible. The buildings in the background have a commercial look
 
 
 ## Querying Llama 4 Vision Model
