@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-04 18:04:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 19:38:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-04 18:04:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-04 19:38:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-04 18:05:06,045 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-04 18:05:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-04 19:38:55,542 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-04 19:38:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the picture, a man is standing between two yellow taxis that are parked on the street. The man appears to be folding clothes on an improvised clothesline, which he has attached to the side of the back of one of the taxis. The taxis have visible license plates, and there are buildings and banners in the background. This scene is unconventional and suggests that the man is performing as a comedian or street performer, using everyday city items in an amusing and surprising way.
+    This image shows a man who is doing laundry while walking down a street. He has an outdoor clothesline in front of him, and it appears that he is possibly washing clothes or drying them. With his left hand, he might be handling some laundry items, and with his right hand, he might be adjusting the clothes on the clothesline or adjusting the position of the clothesline itself. It is unusual to see people doing outdoor laundry in urban environments, so this suggests that the man might be doing this activity temporarily.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with a person wearing a yellow shirt and glasses pulling a configuration of two yellow taxi cabs. It appears the cabs are arranged in a way that creates an illusion of a waving flag wave-making effect between them. The scene is set on a city street, surrounded by modern buildings, with other vehicles and pedestrians visible in the background. The image likely results from a trick play using the placement and positioning of the taxis to create a visual effect that fools the eye.
+    The image shows a person folding a banner on the back of a yellow taxi cab in a street setting. The person is using a foldable arm to arrange the banner, which appears to be part of a promotional event or a street fair. The taxi is parked near a storefront with various signs and a coffee mug displayed prominently. The scene suggests that this person might be participating in a community event or a live-streaming video, possibly for entertainment purposes such as "living marios" or "living streammos," which are broadcasting activities where people engage in various tasks or animations while moving around.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a street, likely captured in a busy urban area during daylight hours. The scene appears to be from New York City, as evidenced by the presence of an Englishلينель gray building in the background and the style of the taxi.
+    The image shows a yellow taxi cab parked on a city street. The taxi is equipped with a makeshift structure, likely a folding table, set up in its back. There are pieces of clothing draped over the table, suggesting that the taxi driver might be drying laundry or some other items. The scene appears to be unusual and不太寻常, as it's not common to see a taxi driver using the cab's back for drying laundry.
 
 
 ## Querying Llama 4 Vision Model
