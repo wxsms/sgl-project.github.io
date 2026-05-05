@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 01:15:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 07:26:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 01:16:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 07:26:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.28s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.09s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
 
 
 
@@ -120,14 +120,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 01:16:10,770 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 01:16:10] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 07:26:50,449 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 07:26:50] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts a scene of a two-toned yellow taxi cab, likely a New York City cab, parked on a city street. The taxi has a clothes detergent bottle poured out onto its hood, which is placed on top of a stool. This appears to be an unusual or humorous situation, as it is not typical to leave a detergent bottle on the hood of a vehicle or to pour it there.
+    This image shows a yellow taxi cab (known as a "taxi" in the United States and as "hustler" or "carpool" in some European countries) parked on the side of the road in a busy city area. The cab has a makeshift display of various clothing items, including shirts and possibly jeans, hanging from a long pole driven into the ground. This is often done by street vendors during the day to sell their wares. 
     
-    The background shows an urban setting with buildings and street signs, indicating an urban area. There is also a smaller car visible next to the main taxi, and another person standing near the right side of the image, possibly observing the situation.
+    The setting is urban, likely in an active street with businesses and pedestrians visible in the background. The buildings are tall, and the street appears to be a major thoroughfare.
 
 
 ### Call with Processor Output
@@ -152,15 +152,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a vibrant urban scene characterized by several elements:
-    
-    1. **Yellow Taxis**: Two prominent yellow taxis are visible:
-       - The first taxi is parked on an empty street, facing left.
-       - The second taxi, seen partially through the first one, is driving in the opposite direction on the right side of the image.
-    
-    2. **Clothing Hangs**: A man is running along the sidewalk, seemingly scarfing neatly folded clothes or garments in his hand and stuffs them into a stack of laundry hung on the back of a street sign. The clothes include items such as shirts and dresses draped over a pole.
-    
-    3
+    In the image, a yellow taxi cab is parked on a city street. The taxi is clearly marked with signage and standards associated with New York City cab companies. Two laundry items are hanging on a clothes rack attached to the back of the taxi. The air conditioning and windshield wiper of the taxi are visible, along with parts of the city architecture and other elements of urban life in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -216,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like you provided an image of a street scene, with two yellow taxis and several street signs and flags visible. Is there anything particular you'd like to know or discuss about this image?
+    The image shows a taxi car in yellow color in the city street.
 
 
 ## Querying Llama 4 Vision Model
