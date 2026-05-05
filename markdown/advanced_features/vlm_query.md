@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 12:29:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 12:52:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 12:29:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 12:52:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.45it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.67it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.63it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 12:29:31,929 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 12:29:31] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 12:53:06,741 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 12:53:06] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It looks like there are two yellow taxis in an urban setting, likely in a city like New York, based on their design and the presence of flags. The image may be digitally altered or manipulated, as the arrangement of the taxis and flags doesn't match typical city layouts.
+    This image shows a person wearing a bicycle helmet riding on the back of a yellow taxi taxi cab in a city street.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This photograph shows a scene from a New York City taxicab parade. You can see yellow cabs painted as Blue Angels U.S. Navy aircraft, both a Stratolaunch (background) and a B-52 (foreground) are seen. The scene captures the vibrant and festive nature of these events, where taxicabs are painted with the designs of different aircraft and decorated with Army, Navy, and Air Force colors.
+    The image shows a scene on a city street with two yellow taxis. The taxi on the left is partially visible, while the taxi on the right is more in focus. The taxi on the right has a clothes rack attached to its rear, with clothes hanging from it. The street appears to be in an urban area, likely a downtown or busy part of town, given the surrounding buildings and parked cars. There are also people walking on the sidewalk and a few street signs visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm sorry, but the image you provided appears to be a photo of a man standing next to a yellow car and appears to be some kind of obstacle. However, without describing what exactly is in the picture, it is difficult to determine what specific problem this might be addressing. Could you please provide more context or details about the issue you are facing?
+    The image shows two yellow taxis driving down a city street. The taxis have distinctive red taillights and signage that includes brand logos and numbers for different taxi companies. The street appears to be in an urban area with buildings and some greenery visible in the background. The scene is typical of a busy city environment with taxis maneuvering through traffic.
 
 
 ## Querying Llama 4 Vision Model
