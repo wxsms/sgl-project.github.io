@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 08:19:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 09:00:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 08:19:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 09:00:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.71s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.20s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.28s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 08:20:09,821 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 08:20:09] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 09:00:26,297 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 09:00:26] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab parked on a street. A person appears to be using a makeshift washing line to dry clothes outside the cab's rear window. The clothes are hanging from the edge of the window, with an extended crossbar and a iron and rubber band or staples keeping the clothes in place. This humorously demonstrates the presence of facilities even in otherwise incongruous places.
+    This image shows a street scene with two yellow cab taxis. One of the taxis is parked on the street, while the other is in motion behind it. An individual, wearing a yellow shirt, is hanging laundry from the back of the taxi using clotheslines or a rack. This activity is unusual and amusing, as taxis are typically not used for this purpose. The background includes some buildings and flags on flagpoles.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like you might have included an image or photograph, but my current capabilities don't allow me to directly access images. Could you describe the image or provide any details about it so I can assist you better?
+    This is a photograph of a outdoor fashion show, where models are walking down the street while their clothes are shown off on hangers. In the foreground, a man is holding a line with clothes on it. The scene is set in a busy city environment, as evidenced by the nearby taxi and various advertisements and banners on the walls of the surrounding buildings.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving down a city street. They appear to be in New York City, as suggested by the green cabs and theLOOK conditions.
+    This image shows a street scene featuring yellow taxis in New York City. The taxis are driving down a street lined with buildings and flags. A wearable medical device, resembling a walking boot with screens and wires attached, is being carried by a person on a folded chair or�acic. This unconventional use of personal transportation could indicate a situation involving mobility assistance or health-related interventions.
 
 
 ## Querying Llama 4 Vision Model
