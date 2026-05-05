@@ -99,16 +99,16 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 11:35:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 12:29:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 11:35:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 12:29:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.43it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.45it/s]
 
     Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.67it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.63it/s]
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 11:35:31,621 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 11:35:31] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 12:29:31,929 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 12:29:31] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts a officially branded display of yellow-colored asphalt from taxpayers to contractors, likely to reduce glare and improve safety.
+    It looks like there are two yellow taxis in an urban setting, likely in a city like New York, based on their design and the presence of flags. The image may be digitally altered or manipulated, as the arrangement of the taxis and flags doesn't match typical city layouts.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It's a photograph of a person in a yellow shirt hanging clothes on what appears to be a clothesline attached to the back of a taxi cab. The taxi is on a street, and there are other cars and buildings in the background. The setting looks like it could be a warm day, possibly in an urban area. The person is holding the clothes up, presumably to dry them in the open air.
+    This photograph shows a scene from a New York City taxicab parade. You can see yellow cabs painted as Blue Angels U.S. Navy aircraft, both a Stratolaunch (background) and a B-52 (foreground) are seen. The scene captures the vibrant and festive nature of these events, where taxicabs are painted with the designs of different aircraft and decorated with Army, Navy, and Air Force colors.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi driving on a road in a city. The taxi is equipped with an attached clothing line towed behind it, possibly for rent on pedestrian sidewalks. The scene appears to be in an urban area with some commercial buildings visible in the background. The clothing line suggests that taxi operators might use it to dry clothes, likely during less traffic times or for passengers who need to take items and freshen up outdoors.
+    I'm sorry, but the image you provided appears to be a photo of a man standing next to a yellow car and appears to be some kind of obstacle. However, without describing what exactly is in the picture, it is difficult to determine what specific problem this might be addressing. Could you please provide more context or details about the issue you are facing?
 
 
 ## Querying Llama 4 Vision Model
