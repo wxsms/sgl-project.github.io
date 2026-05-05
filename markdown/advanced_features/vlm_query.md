@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 21:31:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 22:10:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 21:32:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 22:10:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.51s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.13s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 21:32:11,579 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 21:32:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 22:10:40,023 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 22:10:40] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in an urban environment, likely a busy city street. There are two yellow taxi cabs parked side by side on the street. In front of one of the taxis, there is a person wearing a yellow shirt, yellow cap, and glasses. This individual is lifting a large, blue flag onto the back of the taxi. The flag appears to be the United States flag. The background includes other urban elements such as buildings, traffic signs, and a tree with green leaves. The overall scene suggests that the person might be assigning properties to the flag and using the yellow taxi as a prop or means for transportation in an
+    The image shows two yellow taxis on a city street. The driver of one taxi is having an unusual moment, as he is holding a washing machine and dropping clothes onto the rear step of another taxi. The scene is humorous and unexpected, likely created for a humorous photography opportunity.
 
 
 ### Call with Processor Output
@@ -150,13 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a few notable elements:
-    
-    1. **Taxi Cab**: There is a yellow taxi cab prominently in the foreground. The taxi cab has an open trunk, and a red and white sign or object is lifted onto a silver chain with a hook. The sign appears to be a SAS (Safety Alert System), which is typically used by medical providers to signal for help or an emergency situation.
-    
-    2. **Supporting Flowers**: There are flowers tied to the chain, which likely serve as a improvised steering or stabilizing mechanism. This could be a form of creative or unconventional parking or transportation method.
-    
-    3. **
+    This image shows a car with a clothes drier attached to the front, likely attached to a car to dry laundry in real life.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm not sure what you are trying to convey with the words "I don't comment" and "how bкр si." Could you please provide more context or clarify your question? I'd be happy to help if you can give me more information about what you would like to know or discuss.
+    The image shows a yellow taxi parked on a city street. The taxi has various items hanging out of the trucks tray, including a flag and possibly other small objects. There are also a few clothes or draperies hanging out of the back of the taxi. The street appears to be in a commercial area, with buildings and other cars visible in the background. Street signs and lights are also present.
 
 
 ## Querying Llama 4 Vision Model

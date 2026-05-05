@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=4e6b0106"></script>
+    <script src="../../_static/documentation_options.js?v=6a669c46"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -500,6 +500,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-support-matrix">Platform support matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-a-backend-via-cli">Select a backend via CLI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#override-one-component">Override one component</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sliding-tile-attention-sta">Using Sliding Tile Attention (STA)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-for-rocm-mps">Notes for ROCm / MPS</a></li>
 </ul>
@@ -601,6 +602,7 @@ document.write(`
 <p>The selection order in <code class="docutils literal notranslate"><span class="pre">runtime/layers/attention/selector.py</span></code> is:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">global_force_attn_backend(...)</span></code> / <code class="docutils literal notranslate"><span class="pre">global_force_attn_backend_context_manager(...)</span></code></p></li>
+<li><p>Component override from <code class="docutils literal notranslate"><span class="pre">--component-attention-backends</span></code> while that component is being constructed</p></li>
 <li><p>CLI <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code> (<code class="docutils literal notranslate"><span class="pre">ServerArgs.attention_backend</span></code>)</p></li>
 <li><p>Auto selection (platform capability, dtype, and installed packages)</p></li>
 </ol>
@@ -890,6 +892,18 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="override-one-component">
+<h3>Override one component<a class="headerlink" href="#override-one-component" title="Link to this heading">#</a></h3>
+<p>Use component overrides when a specific module needs different attention semantics from the main transformer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>&lt;MODEL_PATH_OR_ID&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--component-attention-backends<span class="w"> </span><span class="nv">text_encoder</span><span class="o">=</span>torch_sdpa
+</pre></div>
+</div>
+<p>Component keys match pipeline module names from <code class="docutils literal notranslate"><span class="pre">model_index.json</span></code>, such as <code class="docutils literal notranslate"><span class="pre">text_encoder</span></code>, <code class="docutils literal notranslate"><span class="pre">text_encoder_2</span></code>, <code class="docutils literal notranslate"><span class="pre">transformer</span></code>, <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code>, or <code class="docutils literal notranslate"><span class="pre">connectors</span></code>.</p>
+</section>
 <section id="using-sliding-tile-attention-sta">
 <h3>Using Sliding Tile Attention (STA)<a class="headerlink" href="#using-sliding-tile-attention-sta" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pass the mask strategy file path via config</span>
@@ -966,6 +980,7 @@ sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-support-matrix">Platform support matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-a-backend-via-cli">Select a backend via CLI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#override-one-component">Override one component</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sliding-tile-attention-sta">Using Sliding Tile Attention (STA)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-for-rocm-mps">Notes for ROCm / MPS</a></li>
 </ul>
