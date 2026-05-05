@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=5892544f"></script>
+    <script src="../_static/documentation_options.js?v=03749651"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,11 +569,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.26it/s]
-2026-05-05 16:36:21,967 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-05 16:36:21] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04&lt;00:00, 12.24it/s]
-Capturing num tokens (num_tokens=4 avail_mem=69.44 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 42.44it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.24it/s]
+2026-05-05 19:49:43,853 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-05 19:49:43] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.00it/s]
+Capturing num tokens (num_tokens=4 avail_mem=76.61 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 42.18it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -605,41 +605,51 @@ Capturing num tokens (num_tokens=4 avail_mem=69.44 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Kate, I&#39;m a middle-aged woman. I have been in the front line of earthquake and tsunami disasters for many years. A few years ago, I worked in a community center, the center was very quiet. But a year ago, one of the community center workers, Mr. Wang, was electrocuted by the power grid. Because there were no electrical wires outside the community center, we had no way of knowing where Mr. Wang was, so I was on the phone with the police to search for Mr. Wang. Several hours later, I went back to the community center and found Mr. Wang badly injured. He was
+Generated text:  Z on. I&#39;m a computer science graduate student from the UK. I&#39;m working on a project to model and optimize a system that involves multi-agent cooperation. The system is in the field of quantum computing, where the cooperation between agents is of great importance for the performance of the overall system. I&#39;m interested in understanding the dynamics and behaviors of agents in quantum systems, and I am interested in developing algorithms to optimize the performance of quantum systems.
+
+I also have a background in neural networks and machine learning, and I&#39;m working on developing algorithms that can recognize and classify images. I&#39;m always eager to learn new things and keep up with
 ===============================
 Prompt: The president of the United States is
-Generated text:  a high-ranking executive officer of the United States government. Among the following options, which one is NOT a government organ of the United States?
-A. U.S. Congress
-B. U.S. Supreme Court
-C. U.S. Department of Defense
-D. U.S. Department of Education
-Answer:
-
-D
-
-It&#39;s very cold outside. The students need to be very ________ because they will need to wear their warmest clothes.
-A. warm
-B. cool
-C. hot
-D. cold
+Generated text:  a state representative who has the power to veto a bill or legislation passed by Congress. The president can also veto a bill passed by Congress. The president can reject a bill passed by Congress, and then he has to wait for the Senate to accept that bill before he can veto it. The president can veto a bill passed by Congress before the Senate has had time to address it. The president can veto a bill passed by Congress on the same day it is introduced. The president can veto a bill passed by Congress before it is even taken up by the Senate. The president can reject a bill passed by Congress before it is taken up by the
+===============================
+Prompt: The capital of France is
+Generated text: : ____
+A. Paris
+B. London
+C. Rome
+D. Berlin
 Answer:
 
 A
 
-Based on the given theme, which of the following poems is most suitable for a lesson
-===============================
-Prompt: The capital of France is
-Generated text:
-A. Paris
-B. Lyon
-C. Lyon
-D. Bordeaux
-A capital is the largest city and administrative centre of a country. The capital of France is Paris. Therefore, the answer is A. Paris.
+The common feature of the three major religions is ____.
+A. Animism
+B. Monotheism
+C. The worship of various spirits
+D. Divinity
+Answer:
+
+B
+
+The main source of funds for the public sector is ____.
+A. Profits
+B. Investment income
+C. Government grant income
+D. All of the above
+Answer:
+
+C
+
+A company&#39;s main production capacity is 200 units per day, and the demand is 180 units per day.
 ===============================
 Prompt: The future of AI is
-Generated text:  highly uncertain, but researchers have found a way to create a large database of images that can then be used to train AI systems. This could lead to significant advancements in areas such as computer vision and robotics.
-One of the biggest challenges in creating a large database of images is the difficulty of labeling and categorizing the images. This is because most of the images are not labeled, which means that it is difficult to know what exactly the image is about.
-However, researchers have found a way to overcome this challenge. They have developed a new algorithm that can automatically label and categorize images. This algorithm uses machine learning to recognize patterns in the images
+Generated text:  bright. Which one of the following, if true, would most effectively reduce the risk that AI could be used to perpetrate cyberattacks?
+A) The AI is not constantly changing its algorithms.
+B) The AI is designed to interact with and process data from both public and private sources.
+C) The AI is built using high quality, up-to-date hardware.
+D) The AI is trained with large datasets of images, text, and videos.
+E) The AI is designed to operate in a low power, low energy state.
+D) The AI is trained with large datasets of images, text, and
 </pre></div></div>
 </div>
 </section>
@@ -679,19 +689,19 @@ However, researchers have found a way to overcome this challenge. They have deve
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Skill] who has been [Number of Years] years in the industry. I&#39;m passionate about [What I Love to Do], and I&#39;m always looking for ways to [What I Want to Improve]. I&#39;m a [What I Want to Be], and I&#39;m always striving to [What I Want to Achieve]. I&#39;m excited to meet you and learn more about you. What&#39;s your name? What&#39;s your occupation? What&#39;s your skill? What&#39;s your passion? What&#39;s your goal? What&#39;s your desired state of
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling city with a rich cultural heritage and is a popular tourist destination. It is the largest city in France and the second-largest city in the world by population. The city is known for its diverse cuisine, fashion, and art scene. Paris is also home to the French Parliament, the French Academy of Sciences, and the French National Library. It is a bustling city with a rich
+Generated text:  Paris. It is the largest city in France and the second-largest city in the European Union. Paris is known for its rich history, beautiful architecture, and vibrant culture. It is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is also a major center for business, finance, and tourism. It is a popular destination for tourists and locals alike. The city is home to many cultural institutions, including the Louvre Museum, the Musée d&#39;Orsay, and the Musée d&#39;Art Moderne. Paris is a city of contrasts, with its modern architecture
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Some potential trends include:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased integration of AI into everyday life: AI is already being integrated into many aspects of our lives, from self-driving cars to personalized medicine. As AI becomes more integrated into our daily lives, we can expect to see even more widespread adoption of AI in the future.
+1. Increased automation and efficiency: As AI becomes more advanced, it is likely to automate many tasks that were previously done by humans, leading to increased efficiency and productivity. This could result in new job roles being created or existing ones being replaced.
 
-2. Greater emphasis on ethical considerations: As AI becomes more integrated into our daily lives, there will be a greater emphasis on ethical considerations. This could include issues such as bias, privacy, and transparency.
+2. Enhanced human-machine collaboration: AI is likely to become more integrated with human-machine collaboration, allowing for more complex and nuanced interactions between humans and machines. This could lead to new forms of creativity and innovation.
 
-3. Increased use of
+3. AI-driven healthcare: AI is already being used to improve healthcare outcomes, from personalized treatment plans to predictive analytics for disease diagnosis. As
 
 </pre></div></div>
 </div>
@@ -734,17 +744,33 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m a [Title/Job/Position] with [Number of Years Experience] years of experience in [Industry/Field]. I&#39;m passionate about [Why You&#39;re Interesting and Why You&#39;re Suitable for the Job]. I enjoy learning new things and staying up to date with the latest trends and technologies. I&#39;m a [Intangible Quality or Trait] in my work, and I believe in [Why You&#39;re Successful]. I strive to be a role model for others and I believe in [My Vision for the Future]. Lastly, I&#39;m always looking for new challenges and opportunities to learn and grow. I hope
+Generated text:  [Your Name] and I&#39;m a [insert your profession or title]! 😊
+
+As an AI language model, I&#39;m here to assist and assist you in any way I can. Let&#39;s chat about the world of [insert your field or subject]. How can I assist you today?✨
+
+---
+
+**Neutral Self-Introduction**
+
+Hello, my name is [Your Name] and I&#39;m a [insert your profession or title]! 🌟
+
+As an AI language model, I&#39;m here to assist and assist you in any way I can. Let&#39;s chat about the world of [insert your field or subject].
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Grande-Bretagne,&#34; the largest city and seat of government of the country. It is a historical and cultural center, renowned for its architecture, art, and gastronomy. Paris is also the capital of France, with a population of over 15 million people, making it the most populous city in the European Union and the world&#39;s 10th most populous city by population. It is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. The city is known for its vibrant nightlife, fashion industry, and cultural events,
+Generated text:  Paris, which is a historic city with a rich history and culture.
+
+**Paris: A City of History and Culture** - This statement encapsulates the essence of France&#39;s capital city, highlighting its status as a hub of both historical and cultural significance. It addresses the city&#39;s importance as a center of French culture and traditions. For those interested in learning more about Paris&#39;s various attractions, their historical landmarks, and cultural offerings, this statement provides a concise yet comprehensive overview.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by a combination of emerging technologies, innovative research, and changing societal needs. Here are some potential trends in AI that are currently predicted and have the potential to impact the industry:
+Generated text:  uncertain, but here are some possible trends we can anticipate:
 
-1. AI ethics and accountability: As AI systems become more advanced, there will be a growing concern about their impact on human morality and responsibility. This includes issues such as bias, transparency, and accountability. Future AI systems will be required to be transparent about their decision-making processes, and must be held accountable for their actions.
+1. Automation of tasks: AI is increasingly capable of performing tasks that were previously done by humans. This includes tasks such as data collection, analysis, and decision-making.
 
-2. AI-driven automation: AI will continue to play an increasingly important role in manufacturing, healthcare, and other industries,
+2. AI integration: As AI technology continues to improve, we may see more integration between AI and other technologies, such as machine learning, robotics, and natural language processing.
+
+3. AI ethics and regulation: As AI becomes more integrated into our daily lives, there will be increasing debate about how to regulate and manage its use. This includes issues such as bias, transparency, and accountability.
+
+4. AI democrat
 </pre></div></div>
 </div>
 </section>
@@ -790,31 +816,19 @@ Generated text:  likely to be shaped by a combination of emerging technologies, 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I am a passionate [occupational interest or hobby]. And I&#39;m excited to share my love for [occupation] with you. Let&#39;s make this experience unforgettable! 🌟✨
-
----
-
-Tell me more about yourself. What drives your passion for [occupation]? What does it mean to you? 🌟✨
-
----
-
-Tell us about a moment when you&#39;ve faced a challenge or obstacle in your career. What did you learn from it, and how did it shape your career path? 🌟✨
-
----
-
-Describe a time when you faced a difficult decision that tested your character. What did you decide,
+Generated text:  [insert name] and I come from [insert location] and I am a dedicated freelance writer. My passion is to create content that is both educational and engaging, and I have a strong love for learning new things and using my skills to help people. I am always looking for new ways to challenge myself and grow as a writer, and I am confident that I have the skills and experience to do so. Thank you for taking the time to meet me. Is there anything else you would like to share about yourself? I am here to help and be a resource for anyone who needs it. How can I assist you today? It&#39;s
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-That&#39;s correct! Paris is the capital city of France, and it&#39;s known for its iconic Eiffel Tower, famous landmarks such as the Louvre Museum, and delicious food like croissants and cheeses. Paris is also famous for its rich history, including the famous Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It&#39;s a bustling metropolis with a rich culture and history. It&#39;s a popular tourist destination and a major hub of politics and business in France. Paris is also home to many famous museums, including the Louvre, the Musée d&#39;Orsay, and the Pal
+Generated text:  Paris, known for its iconic Eiffel Tower, Notre-Dame Cathedral, and diverse array of museums and galleries. French cuisine is also renowned for its vibrant street food, including croissants, baguettes, and crêpes. Paris is known for its annual UNESCO World Heritage Site, the Louvre, which is home to the world&#39;s largest collection of art. Finally, Paris is considered one of the world&#39;s most vibrant and cosmopolitan cities with a rich history of international diplomacy and cultural exchange.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by a combination of technological advances, policy changes, and social and cultural shifts. Here are some possible trends that could emerge in the next few years:
+Generated text:  likely to be shaped by a number of trends that are likely to shape the evolution of the technology. Here are some of the most likely trends:
 
-1. Increased focus on ethics and privacy: With the increasing amount of personal data being collected and analyzed by AI systems, there will be a growing demand for frameworks and regulations that address privacy concerns. This could lead to more stringent data protection laws and increased scrutiny of AI systems.
+1. Increased AI Transparency: With the increasing use of AI, it is likely that we will see more transparency in how AI algorithms work. This will make it easier for users to understand how the technology is working and how it is making decisions.
 
-2. Expansion of AI applications: AI is likely to have a more widespread impact on society in the coming years, with applications in areas such as healthcare, finance, and transportation expected to grow.
+2. AI Personalization: With the increasing use of AI, it is likely that we will see a greater emphasis on personalization. AI algorithms will be able to learn from user data and make more accurate predictions about the behavior of users.
+
+3.
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

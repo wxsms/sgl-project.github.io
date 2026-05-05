@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 16:35:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 19:48:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 16:35:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 19:48:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.99s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.36s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.45s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 16:35:38,413 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 16:35:38] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 19:49:03,717 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 19:49:03] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a tactic known as "parkour drying clothes," used by a person to dry clothes on a pickup truck in a parking space. This method is particularly effective because it takes advantage of the rear area of the vehicle, providing more vertical space for clothes to drape over.
+    The image shows two yellow taxis in New York City. The tarp on one of the taxis appears to be partially unfolded, covering the upper half of the vehicle. It looks like a business proposition, where a man is standing outside the taxi wearing a yellow shirt and appears to be holding a原理 and handshake, possibly setting up or occupying the taxi for some commercial activities.
 
 
 ### Call with Processor Output
@@ -150,7 +150,14 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis against a city backdrop. A person wearing a yellow shirt and carrying a white laundry basket is lying on a miniature bed that appears to be a makeshift bed structure outside the rear window of one of the taxis. The surroundings suggest an urban environment, possibly in a busy city street, with shops and other street elements visible in the background.
+    The image shows a scene on a city street with several notable elements:
+    
+    1. **Yellow Cabs**: There are two yellow taxis parked nearby.
+    2. **Person with Handlebars**: A person is holding a pitchfork-like stick with a piece of cloth attached to the end. This is likely a performance artist or street performer.
+    3. **Flags and Banners**: Several flags and banners are visible, possibly indicating a protest or event happening nearby.
+    4. **Urban Setting**: The background shows buildings and foliage, indicating an urban environment.
+    
+    The lack of any specific colorful flags or banners could suggest they are not indicative of a particular event,
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +213,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a street with a yellow taxi cab. A person is prominently visible, stretching out a long object that appears to be an iron. The object is held out between the taxi and a large sign on the building across the street. The person is standing behind the taxi, using the iron to either clean or smooth something. The atmosphere suggests some kind of maintenance or cleaning activity being conducted in an urban environment.
+    The image shows a yellow taxi ( conocochas ) driving in a city street. The taxi has a clothes rack attached to it with several items of clothing hanging from it, such as shirts and jeans. The city street has trees and buildings in the background, and there are several道路上eters (filters or advertisements) visible. The scene appears to be a humorous or whimsical situation, suggesting that the person behind the taxi rack might be creative or unconventional in their approach to transportation or conveying messages using unconventional methods.
 
 
 ## Querying Llama 4 Vision Model
