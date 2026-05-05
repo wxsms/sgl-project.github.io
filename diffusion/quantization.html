@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=03749651"></script>
+    <script src="../_static/documentation_options.js?v=4e6b0106"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -579,7 +579,7 @@ backend.</p>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt-fp8</span></code></p></td>
 <td><p>Converted ModelOpt FP8 transformer directory or repo with <code class="docutils literal notranslate"><span class="pre">config.json</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
-<td><p>FLUX.1, FLUX.2, Wan2.2, HunyuanVideo, Qwen Image, Qwen Image Edit</p></td>
+<td><p>FLUX.1, FLUX.2, Wan2.2</p></td>
 <td><p>None</p></td>
 <td><p>Serialized config stays <code class="docutils literal notranslate"><span class="pre">quant_method=modelopt</span></code> with <code class="docutils literal notranslate"><span class="pre">quant_algo=FP8</span></code>; <code class="docutils literal notranslate"><span class="pre">dit_layerwise_offload</span></code> is supported and <code class="docutils literal notranslate"><span class="pre">dit_cpu_offload</span></code> stays disabled</p></td>
 </tr>
@@ -610,12 +610,12 @@ backend.</p>
 </section>
 <section id="validated-modelopt-checkpoints">
 <h2>Validated ModelOpt Checkpoints<a class="headerlink" href="#validated-modelopt-checkpoints" title="Link to this heading">#</a></h2>
-<p>This section is the canonical support matrix for the nine diffusion ModelOpt
-checkpoints currently wired up in SGLang docs and validation coverage.</p>
+<p>This section is the canonical support matrix for the six diffusion ModelOpt
+checkpoints currently wired up in SGLang docs and B200 CI coverage.</p>
 <p>Published checkpoints keep the serialized quantization config as
 <code class="docutils literal notranslate"><span class="pre">quant_method=modelopt</span></code>; the FP8 vs NVFP4 split below is a documentation label
 derived from <code class="docutils literal notranslate"><span class="pre">quant_algo</span></code>.</p>
-<p>Eight of the nine repos live under <code class="docutils literal notranslate"><span class="pre">lmsys/*</span></code>. The FLUX.2 NVFP4 entry keeps the
+<p>Five of the six repos live under <code class="docutils literal notranslate"><span class="pre">lmsys/*</span></code>. The FLUX.2 NVFP4 entry keeps the
 official <code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev-NVFP4</span></code> repo.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -649,42 +649,21 @@ official <code class="docutils literal notranslate"><span class="pre">black-fore
 <td><p>primary <code class="docutils literal notranslate"><span class="pre">transformer</span></code> quantized, <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> kept BF16</p></td>
 <td><p>primary-transformer-only path; keep <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> on the base checkpoint, and do not describe this as dual-transformer full-model FP8 unless that path is validated separately</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FP8</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">hunyuanvideo-community/HunyuanVideo</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">lmsys/hunyuanvideo-modelopt-fp8-sglang-transformer</span></code></p></td>
-<td><p>single-transformer override, BF16-vs-FP8 video comparison, H100 benchmark, torch-profiler trace</p></td>
-<td><p>HunyuanVideo uses different ModelOpt/diffusers and SGLang runtime module names; the converter maps those names before writing FP8 scale tensors and BF16 fallback ignores</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FP8</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">lmsys/qwen-image-modelopt-fp8-sglang-transformer</span></code></p></td>
-<td><p>single-transformer override, BF16-vs-FP8 image comparison, H100 benchmark, torch-profiler trace</p></td>
-<td><p>shares the Qwen Image FP8 fallback preset; keep <code class="docutils literal notranslate"><span class="pre">img_in</span></code>, <code class="docutils literal notranslate"><span class="pre">txt_in</span></code>, timestep embedder, <code class="docutils literal notranslate"><span class="pre">norm_out.linear</span></code>, <code class="docutils literal notranslate"><span class="pre">proj_out</span></code>, <code class="docutils literal notranslate"><span class="pre">img_mod</span></code>/<code class="docutils literal notranslate"><span class="pre">txt_mod</span></code>, and <code class="docutils literal notranslate"><span class="pre">img_mlp.net.2</span></code> in BF16</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FP8</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image-Edit-2511</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">lmsys/qwen-image-edit-modelopt-fp8-sglang-transformer</span></code></p></td>
-<td><p>TI2I edit path, BF16-vs-FP8 image comparison, H100 benchmark</p></td>
-<td><p>shares <code class="docutils literal notranslate"><span class="pre">QwenImageTransformer2DModel</span></code> with Qwen Image and uses the same Qwen Image FP8 fallback preset</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NVFP4</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NVFP4</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.1-dev</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lmsys/flux1-dev-modelopt-nvfp4-sglang-transformer</span></code></p></td>
 <td><p>mixed BF16+NVFP4 transformer override, correctness validation, 4x RTX 5090 benchmark, torch-profiler trace</p></td>
 <td><p>use <code class="docutils literal notranslate"><span class="pre">build_modelopt_nvfp4_transformer.py</span></code>; validated builder keeps selected FLUX.1 modules in BF16 and sets <code class="docutils literal notranslate"><span class="pre">swap_weight_nibbles=false</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NVFP4</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NVFP4</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev-NVFP4</span></code></p></td>
 <td><p>packed-QKV load path</p></td>
 <td><p>official raw export repo; validated packed export detection and runtime layout handling</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NVFP4</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NVFP4</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Wan-AI/Wan2.2-T2V-A14B-Diffusers</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lmsys/wan22-t2v-a14b-modelopt-nvfp4-sglang-transformer</span></code></p></td>
@@ -694,8 +673,8 @@ official <code class="docutils literal notranslate"><span class="pre">black-fore
 </tbody>
 </table>
 </div>
-<p>These nine checkpoints are also the intended case set for the B200 diffusion
-CI job (<code class="docutils literal notranslate"><span class="pre">multimodal-gen-test-1-b200</span></code>).</p>
+<p>These six checkpoints are also the intended case set for the B200 diffusion CI
+job (<code class="docutils literal notranslate"><span class="pre">multimodal-gen-test-1-b200</span></code>).</p>
 </section>
 <section id="modelopt-fp8">
 <h2>ModelOpt FP8<a class="headerlink" href="#modelopt-fp8" title="Link to this heading">#</a></h2>
@@ -718,29 +697,6 @@ overrides. If the repo or local directory already contains <code class="docutils
 <span class="w">  </span>--save-output
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>hunyuanvideo-community/HunyuanVideo<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--transformer-path<span class="w"> </span>lmsys/hunyuanvideo-modelopt-fp8-sglang-transformer<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--height<span class="w"> </span><span class="m">544</span><span class="w"> </span>--width<span class="w"> </span><span class="m">960</span><span class="w"> </span>--num-frames<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A cinematic shot of a red sports car driving through rain at night&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--save-output
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen-Image<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--transformer-path<span class="w"> </span>lmsys/qwen-image-modelopt-fp8-sglang-transformer<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A tiny astronaut reading a book under a glass greenhouse&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--save-output
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen-Image-Edit-2511<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--transformer-path<span class="w"> </span>lmsys/qwen-image-edit-modelopt-fp8-sglang-transformer<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--image-path<span class="w"> </span>/path/to/input.png<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;Turn the scene into a warm watercolor illustration&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--save-output
-</pre></div>
-</div>
 </section>
 <section id="notes">
 <h3>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h3>
@@ -759,27 +715,6 @@ expected by the runtime FP8 GEMM path.</p></li>
 <li><p>On disk, the quantization config stays <code class="docutils literal notranslate"><span class="pre">quant_method=modelopt</span></code> with
 <code class="docutils literal notranslate"><span class="pre">quant_algo=FP8</span></code>; the <code class="docutils literal notranslate"><span class="pre">modelopt-fp8</span></code> label in this document is a support
 family name, not a serialized config key.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hunyuanvideo-community/HunyuanVideo</span></code> uses the <code class="docutils literal notranslate"><span class="pre">hunyuan-video</span></code> converter
-preset. Use <code class="docutils literal notranslate"><span class="pre">--model-type</span> <span class="pre">hunyuan-video</span></code> to force it, or rely on
-auto-detection from <code class="docutils literal notranslate"><span class="pre">_class_name=HunyuanVideoTransformer3DModel</span></code>.</p></li>
-<li><p>The validated HunyuanVideo FP8 fallback preset keeps <code class="docutils literal notranslate"><span class="pre">context_embedder</span></code>,
-<code class="docutils literal notranslate"><span class="pre">x_embedder.proj</span></code>, timestep/guidance/text embedder linear layers,
-<code class="docutils literal notranslate"><span class="pre">norm_out.linear</span></code>, <code class="docutils literal notranslate"><span class="pre">proj_out</span></code>, double-block modulation linear layers, and
-single-block modulation linear layers in BF16.</p></li>
-<li><p>HunyuanVideo ModelOpt exports use diffusers module names that do not match
-SGLang runtime module names for fused QKV and fused QKV+MLP layers. The
-converter maps the names before selecting scale tensors and before writing
-the runtime ignore list.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image</span></code> and <code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image-Edit-2511</span></code> share the <code class="docutils literal notranslate"><span class="pre">qwen-image</span></code>
-converter preset. Use <code class="docutils literal notranslate"><span class="pre">--model-type</span> <span class="pre">qwen-image</span></code> to force it, or rely on
-auto-detection from <code class="docutils literal notranslate"><span class="pre">_class_name=QwenImageTransformer2DModel</span></code>.</p></li>
-<li><p>The validated Qwen Image FP8 fallback preset keeps <code class="docutils literal notranslate"><span class="pre">img_in</span></code>, <code class="docutils literal notranslate"><span class="pre">txt_in</span></code>,
-timestep embedder linear layers, <code class="docutils literal notranslate"><span class="pre">norm_out.linear</span></code>, <code class="docutils literal notranslate"><span class="pre">proj_out</span></code>,
-<code class="docutils literal notranslate"><span class="pre">transformer_blocks.*.(img_mod|txt_mod)</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">transformer_blocks.*.img_mlp.net.2</span></code> in BF16.</p></li>
-<li><p>For Qwen Image FP8 conversion, write explicit BF16 fallback tensors before
-honoring ModelOpt ignored weights. Otherwise converter stats can report a
-fallback while the output checkpoint still retains the source FP8 tensor.</p></li>
 <li><p>To build the converted checkpoint yourself from a ModelOpt diffusers export,
 use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">sglang.multimodal_gen.tools.build_modelopt_fp8_transformer</span></code>.</p></li>
 </ul>

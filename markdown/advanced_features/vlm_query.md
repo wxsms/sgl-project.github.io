@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 19:48:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 21:31:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 19:48:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 21:32:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 19:49:03,717 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 19:49:03] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 21:32:11,579 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 21:32:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in New York City. The tarp on one of the taxis appears to be partially unfolded, covering the upper half of the vehicle. It looks like a business proposition, where a man is standing outside the taxi wearing a yellow shirt and appears to be holding a原理 and handshake, possibly setting up or occupying the taxi for some commercial activities.
+    The image shows a scene in an urban environment, likely a busy city street. There are two yellow taxi cabs parked side by side on the street. In front of one of the taxis, there is a person wearing a yellow shirt, yellow cap, and glasses. This individual is lifting a large, blue flag onto the back of the taxi. The flag appears to be the United States flag. The background includes other urban elements such as buildings, traffic signs, and a tree with green leaves. The overall scene suggests that the person might be assigning properties to the flag and using the yellow taxi as a prop or means for transportation in an
 
 
 ### Call with Processor Output
@@ -150,14 +150,13 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with several notable elements:
+    The image shows a street scene with a few notable elements:
     
-    1. **Yellow Cabs**: There are two yellow taxis parked nearby.
-    2. **Person with Handlebars**: A person is holding a pitchfork-like stick with a piece of cloth attached to the end. This is likely a performance artist or street performer.
-    3. **Flags and Banners**: Several flags and banners are visible, possibly indicating a protest or event happening nearby.
-    4. **Urban Setting**: The background shows buildings and foliage, indicating an urban environment.
+    1. **Taxi Cab**: There is a yellow taxi cab prominently in the foreground. The taxi cab has an open trunk, and a red and white sign or object is lifted onto a silver chain with a hook. The sign appears to be a SAS (Safety Alert System), which is typically used by medical providers to signal for help or an emergency situation.
     
-    The lack of any specific colorful flags or banners could suggest they are not indicative of a particular event,
+    2. **Supporting Flowers**: There are flowers tied to the chain, which likely serve as a improvised steering or stabilizing mechanism. This could be a form of creative or unconventional parking or transportation method.
+    
+    3. **
 
 
 ### Call with Precomputed Embeddings
@@ -213,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi ( conocochas ) driving in a city street. The taxi has a clothes rack attached to it with several items of clothing hanging from it, such as shirts and jeans. The city street has trees and buildings in the background, and there are several道路上eters (filters or advertisements) visible. The scene appears to be a humorous or whimsical situation, suggesting that the person behind the taxi rack might be creative or unconventional in their approach to transportation or conveying messages using unconventional methods.
+    I'm not sure what you are trying to convey with the words "I don't comment" and "how bкр si." Could you please provide more context or clarify your question? I'd be happy to help if you can give me more information about what you would like to know or discuss.
 
 
 ## Querying Llama 4 Vision Model

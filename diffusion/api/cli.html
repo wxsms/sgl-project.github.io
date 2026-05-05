@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=03749651"></script>
+    <script src="../../_static/documentation_options.js?v=4e6b0106"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -509,7 +509,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-path-overrides">Component Path Overrides</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-attention-backend-overrides">Component Attention Backend Overrides</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusers-backend">Diffusers Backend</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-options">Key Options</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
@@ -604,7 +603,6 @@ file, and can extend or replace built-in entries for the current process.</p></l
 <li><p><code class="docutils literal notranslate"><span class="pre">--sp-degree</span> <span class="pre">{N}</span></code>: sequence parallelism size</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--ulysses-degree</span> <span class="pre">{N}</span></code> and <code class="docutils literal notranslate"><span class="pre">--ring-degree</span> <span class="pre">{N}</span></code>: USP parallelism controls</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">{BACKEND}</span></code>: attention backend for native SGLang pipelines</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--component-attention-backends</span> <span class="pre">{MAP}</span></code>: per-component attention backend overrides, for example <code class="docutils literal notranslate"><span class="pre">text_encoder=torch_sdpa,transformer=fa</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--attention-backend-config</span> <span class="pre">{CONFIG}</span></code>: attention backend configuration</p></li>
 </ul>
 </section>
@@ -714,24 +712,6 @@ file, and can extend or replace built-in entries for the current process.</p></l
 </pre></div>
 </div>
 <p>The component key must match the key in the model’s <code class="docutils literal notranslate"><span class="pre">model_index.json</span></code>, and the path must be either a Hugging Face repo ID or a complete component directory.</p>
-</section>
-<section id="component-attention-backend-overrides">
-<h2>Component Attention Backend Overrides<a class="headerlink" href="#component-attention-backend-overrides" title="Link to this heading">#</a></h2>
-<p>Use <code class="docutils literal notranslate"><span class="pre">--component-attention-backends</span></code> when one pipeline component needs a different native attention backend from the global <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>Lightricks/LTX-2.3<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--attention-backend<span class="w"> </span>fa<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--component-attention-backends<span class="w"> </span><span class="nv">text_encoder</span><span class="o">=</span>torch_sdpa
-</pre></div>
-</div>
-<p>The component key must match a pipeline module key such as <code class="docutils literal notranslate"><span class="pre">text_encoder</span></code>, <code class="docutils literal notranslate"><span class="pre">text_encoder_2</span></code>, <code class="docutils literal notranslate"><span class="pre">transformer</span></code>, <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code>, or <code class="docutils literal notranslate"><span class="pre">connectors</span></code>. Component overrides take precedence over the global <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code> only while that component is being constructed.</p>
-<p>You can also pass dotted CLI entries:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>&lt;MODEL_PATH_OR_ID&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--component-attention-backends.text_encoder<span class="w"> </span>torch_sdpa<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--component-attention-backends.transformer<span class="w"> </span>fa
-</pre></div>
-</div>
 </section>
 <section id="diffusers-backend">
 <h2>Diffusers Backend<a class="headerlink" href="#diffusers-backend" title="Link to this heading">#</a></h2>
@@ -863,7 +843,6 @@ file, and can extend or replace built-in entries for the current process.</p></l
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-path-overrides">Component Path Overrides</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-attention-backend-overrides">Component Attention Backend Overrides</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusers-backend">Diffusers Backend</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-options">Key Options</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
