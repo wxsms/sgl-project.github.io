@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 12:52:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 14:37:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 12:52:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 14:37:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.44it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.68it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.64it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 12:53:06,741 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 12:53:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 14:37:18,111 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 14:37:18] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a person wearing a bicycle helmet riding on the back of a yellow taxi taxi cab in a city street.
+    This image shows a man in an outdoor urban setting, likely in the United States, engaging in an unconventional action by hanging laundry on the back of a yellow taxi. The scene appears to be taking place during daytime, and the window displays some shelves and products that suggest a retail establishment nearby. The traffic sign "Go" can be seen to the left, indicating traffic directions or possibly the name of the street.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with two yellow taxis. The taxi on the left is partially visible, while the taxi on the right is more in focus. The taxi on the right has a clothes rack attached to its rear, with clothes hanging from it. The street appears to be in an urban area, likely a downtown or busy part of town, given the surrounding buildings and parked cars. There are also people walking on the sidewalk and a few street signs visible in the background.
+    The image shows a bright yellow taxi parked on a city street. The taxi appears to be equipped with various items, including what looks like a bike or a small vehicle attached to the back. This type is commonly known as a "tuk-tuk" taxi, which is a popular mode of transportation in many countries, including Nepal. The vehicle is likely being used in a demonstration or as a promotional display, given the unusual setup. The background shows other vehicles and urban architecture typical of a busy city environment.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving down a city street. The taxis have distinctive red taillights and signage that includes brand logos and numbers for different taxi companies. The street appears to be in an urban area with buildings and some greenery visible in the background. The scene is typical of a busy city environment with taxis maneuvering through traffic.
+    The image depicts a scene on a city street with a yellow taxi parked on the side. A pie has been repurposed as a tables, positioned to host the taxi’s乘客（passengers）. The taxi is likely performing a public act of humor or upholding a local tradition by using the pie as a makeshift seating arrangement for its passengers. This scenario captures the whimsical and local charm that urban culture often presents.
 
 
 ## Querying Llama 4 Vision Model
