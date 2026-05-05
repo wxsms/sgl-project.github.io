@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 22:59:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 23:51:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 22:59:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 23:51:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.56s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.16s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.22s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -120,12 +120,17 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 22:59:33,510 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 22:59:33] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 23:52:05,673 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 23:52:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image appears to show a unique urban scene where a yellow taxi has been decorated with clothes, possibly for an event or a humorous purpose. The person is pretending to hang laundry on the back of the taxi, with flags hanging from it. This type of setup is often seen in New York City during the "High Line Art Fair" or similar events where artworks are displayed in unconventional places, such as GSTC, Gateway to the City. The taxi is parked on a city street with visible steps and buildings in the background.
+    The image shows a scene of street vending in an urban setting, likely in New York City based on the taxi cabs and the general appearance. The key elements of the image are:
+    
+    1. **Street Vending**: A person is standing behind a clothes drying rack on the street, hanging out laundry or other clothes.
+    2. **Taxi Cabs**: Two taxi cabs are parked on the street, one in the foreground and one in the background.
+    3. **Signage**: There are red and white signs and possibly additional signs, but the specific detail is not clear from the image.
+    4. **City Environment**: The background
 
 
 ### Call with Processor Output
@@ -150,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image depicts a scene on a city street with a yellow taxi parked on the road. There is a man wearing a 노치드라크(Nohchi Dark) jersey standing next to a ladder or a similar structure, and there is a row of clothes hung up, possibly for drying or drying clothes. The background shows tall buildings with balconies and flag banners, indicating an urban environment, likely in a densely populated city. The presence of the clothes hanging and the man using the rack suggests a casual, possibly impromptu drying process.
+    This image shows a yellow taxi cab in New York City. The taxi is parked on a city street, and a man is washing clothes on a clothesline attached to a hook on the side of the taxi. The scene appears to be staged for a humorous or artistic effect. The background includes tall buildings characteristic of New York’s urban landscape and some lampposts and traffic. The display is likely designed to draw attention and spark curiosity or amusement in the viewer.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with two yellow taxis. The taxis are parked on the side of a road. The setting appears to be an urban area, possibly in a downtown or busy part of a city, given the presence of buildings and additional street fixtures like an umbrella stand. There are flags attached to poles in the background, adding color to the scene. The sky is clear, indicating it might be a sunny day.
+    This image shows a street scene with two yellow taxis parked together. The taxi on the right side of the image is partially obscuring the one on the left. There is a man standing between the two taxis, holding a broom and an iron. He appears to be ironing a piece of clothing. The background includes some buildings and street signs, suggesting an urban environment. The man is dressed in casual streetwear.
 
 
 ## Querying Llama 4 Vision Model
