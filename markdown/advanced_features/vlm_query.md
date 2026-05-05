@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 07:26:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 08:19:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 07:26:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-05 08:19:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
 
 
 
@@ -120,14 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 07:26:50,449 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 07:26:50] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-05 08:20:09,821 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-05 08:20:09] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a yellow taxi cab (known as a "taxi" in the United States and as "hustler" or "carpool" in some European countries) parked on the side of the road in a busy city area. The cab has a makeshift display of various clothing items, including shirts and possibly jeans, hanging from a long pole driven into the ground. This is often done by street vendors during the day to sell their wares. 
-    
-    The setting is urban, likely in an active street with businesses and pedestrians visible in the background. The buildings are tall, and the street appears to be a major thoroughfare.
+    The image shows a yellow taxi cab parked on a street. A person appears to be using a makeshift washing line to dry clothes outside the cab's rear window. The clothes are hanging from the edge of the window, with an extended crossbar and a iron and rubber band or staples keeping the clothes in place. This humorously demonstrates the presence of facilities even in otherwise incongruous places.
 
 
 ### Call with Processor Output
@@ -152,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, a yellow taxi cab is parked on a city street. The taxi is clearly marked with signage and standards associated with New York City cab companies. Two laundry items are hanging on a clothes rack attached to the back of the taxi. The air conditioning and windshield wiper of the taxi are visible, along with parts of the city architecture and other elements of urban life in the background.
+    It looks like you might have included an image or photograph, but my current capabilities don't allow me to directly access images. Could you describe the image or provide any details about it so I can assist you better?
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a taxi car in yellow color in the city street.
+    The image shows two yellow taxis driving down a city street. They appear to be in New York City, as suggested by the green cabs and theLOOK conditions.
 
 
 ## Querying Llama 4 Vision Model
