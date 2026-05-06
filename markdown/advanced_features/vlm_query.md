@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 02:15:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 03:08:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 02:15:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 03:08:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.15s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.53s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.63s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 02:16:09,949 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 02:16:09] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 03:08:41,691 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 03:08:41] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene from a New York City street where a yellow taxi is queuing at a traffic light. There are clothes drying on a clothesline attached to the back of the taxi. This is a humorous and iconic photograph often associated with a popular phrase from the New York City cab driver during rush hour, ending with the phrase "Please spare five minutes." The clothesline adds an amusing and unusual twist to the traditional taxi transportation.
+    The image shows a person standing next to a yellow taxi in an outdoor setting, presumably in a city. The person is using a metal rack to dry laundry on the sidewalk. The clothing appears to be wet from recent washing, and there are flags, likely American flags, hanging from nearby buildings. This scene is likely in New York City, given the type of taxis and the urban setting.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a photo of a yellow taxi cab in New York City, with someone hanging out clothes on a bicycle to dry them by the road. This is just a plain replica.
+    The picture shows a scene from what appears to be a dog training competition or event. There are two yellow vehicles, likely used for transport, with their rear passenger seats extended and supported by a flat board, possibly to create platforms for dogs. Two dogs are lying on these platforms, likely resting or waiting for their turn to compete in the upcoming round. The event takes place on a road with buildings and storefronts visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It's difficult to tell exactly what this image shows, but it appears to be a photograph taken on a city street with a taxi cab and people walking in the background.
+    The image shows a yellow taxi cab on a city street. The taxi has a sticker on the side that appears to be auenta rubaiyat ft poster, but it's not entirely clear. The taxi cab has a luggage rack on top, and there are some flags attached to it as well. The background includes other vehicles and some architectural elements typical of an urban environment. The scene suggests that the taxi is likely used for a ride-hailing service and is parked along a street in a city.
 
 
 ## Querying Llama 4 Vision Model
