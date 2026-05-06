@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 10:52:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 12:37:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 10:52:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 12:37:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.03it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
 
 
 
@@ -120,14 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 10:52:24,283 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 10:52:24] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 12:37:52,925 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 12:37:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a scene on a city street. There are two yellow taxis parked on the side of the road. A person is standing next to the back of one of the taxis, performing laundry on a outdoor clothesline. The person is hanging clothes on the clothesline.
-    
-    In the background, there are buildings with large windows. The environment appears to be urban, likely in a city. There are also street lights visible.
+    The image shows a unusual sight: a yellow taxi with laundry hanging from a broom outside. This seems to be a playful and creative way to clean the exterior of the taxi, akin to a借鉴 from other vehicles or perhaps a costume.
 
 
 ### Call with Processor Output
@@ -152,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow New York City taxis parked on a street with some storefronts visible in the background. The taxi in the foreground has bars劳动力 or some kind of makeshift equipment hanging or draped over it. There are also some flags visible on the taxi in the background.
+    This is a photograph of two yellow taxis in New York City, specifically the iconic yellow taxis known as "Taxi of New York City" or "NYC Taxi." The taxis are parked along the street, and one of them has a double-sided or side-by-side arrangement of its windows. This is a distinctive feature of the NYC Taxi style, where the side windows of the back and front of the taxi are positioned side by side rather than the usual staggered arrangement. The taxi is on the leftmost side of the street, and it appears to be empty, as there are no visible passengers inside. The front tire of the taxi
 
 
 ### Call with Precomputed Embeddings
@@ -208,9 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a city street. One taxi is on the left side of the image, and it appears to be in motion, as if it's pulling out of the street. The other taxi is on the right side, and it is stationary. The taxi on the right is parked on the side of the street, and there is a person standing next to it, holding a towel or cloth out of a window. The person might be cooking or cleaning something over a fire or a grill, which is visible inside the window.
-    
-    The scene appears to be taking place in an urban environment, likely in a downtown area,
+    It looks like a scene from a seasonal event, possibly a SantaCon (Saluting Those Ages Never Seen!) parade in New York City. The setup includes a person dressed as Santa Claus, riding a special vehicle and holding a sign. Normally, this event involves people dressing up and parading through streets in December to celebrate the holiday season.
 
 
 ## Querying Llama 4 Vision Model
