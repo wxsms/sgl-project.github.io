@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 15:39:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 16:13:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 15:39:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 16:13:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.15s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.52s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 15:39:42,052 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 15:39:42] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 16:13:29,297 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 16:13:29] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, there is a person attempting to raise a flag on a parking meter. The image is ironic and humorous, as typically both the car and the parking meter should be immobile objects, bearing this person. The person is wearing a yellow shirt and a baseball cap. This seemingly unreasonable action shows a turning point in the development of things.
+    The image shows two yellow taxis in an urban setting. One taxi is equipped with an outdoor laundry rack where a red and blue item, likely a piece of clothing, is drying. A woman is handling the laundry, indicating a service where laundry can be washed and dried on top of the taxi. In the background, there are tall buildings and some other vehicles visible, suggesting a busy city street.
 
 
 ### Call with Processor Output
@@ -150,7 +150,11 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxi cabs driving on a city street. One taxi is larger and appears to be an SUV style, while the other is a standard cab. The larger taxi has a setup resembling a clothesline with a blue towel hanging from it, near the rear left side of the vehicle. The smaller cab has luggage strapped to its roof rack. There are also various signs and flags visible in the background.
+    The image shows a scene with two taxis traveling down a street. The closer taxi is yellow and seems to be a city cab, possibly in a position that makes the view obstructed. In the background, partially obscured, there is another yellow taxi. The setting appears to be an urban environment, likely in New York City given the typical yellow cabs and the street.
+    
+    The gearbag (sand bags) being used for weight support is visible, and it's placed on top of a metal folding cart. This setup is possibly a part of a project or demonstration involving photography or lightship referencing to adjust lighting for specific spatial positions or angles.
+    
+    
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +210,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street, likely in New York, given the taxi visible. A person in a yellow shirt is standing with a baby that is almost as tall as the person, holding the legs. The person is wearing a diadem to hold the cracked back seat back. The baby's legs are draped over the edge of theız seat. The setting appears to be during the day with people walking and other objects like a taxi in the background.
+    The image shows a taxi on a city street with a string of towels or cloths draped over the rear window. The yellow taxi is parked next to a building or storefront, and there are some people nearby. The scene appears to be taking place during a sunny day.
 
 
 ## Querying Llama 4 Vision Model
