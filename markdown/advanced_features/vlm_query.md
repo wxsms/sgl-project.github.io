@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 03:08:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 03:22:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 03:08:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 03:22:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 03:08:41,691 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 03:08:41] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 03:22:52,878 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 03:22:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person standing next to a yellow taxi in an outdoor setting, presumably in a city. The person is using a metal rack to dry laundry on the sidewalk. The clothing appears to be wet from recent washing, and there are flags, likely American flags, hanging from nearby buildings. This scene is likely in New York City, given the type of taxis and the urban setting.
+    The image shows a scene on a busy street where there is a yellow taxi in the foreground. The taxi appears to be driving slowly or stopping, and on the back of it, there is a man wearing a yellow shirt and blue jeans. He has a small metal pole propped up against the back of the taxi with various pieces of clothing hanging from it. This setup resembles a makeshift clothesline being used to hang laundry out of the window of a parked taxi. The background features urban scenery with buildings, street signs, and pedestrians.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The picture shows a scene from what appears to be a dog training competition or event. There are two yellow vehicles, likely used for transport, with their rear passenger seats extended and supported by a flat board, possibly to create platforms for dogs. Two dogs are lying on these platforms, likely resting or waiting for their turn to compete in the upcoming round. The event takes place on a road with buildings and storefronts visible in the background.
+    The image shows a black and yellow flag being waved from a car skyscraper, which was a common feature in Tallahassee, Florida.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab on a city street. The taxi has a sticker on the side that appears to be auenta rubaiyat ft poster, but it's not entirely clear. The taxi cab has a luggage rack on top, and there are some flags attached to it as well. The background includes other vehicles and some architectural elements typical of an urban environment. The scene suggests that the taxi is likely used for a ride-hailing service and is parked along a street in a city.
+    The image shows a scene with a yellow taxi cab and a couple of people. The taxi cab has red flags in its rear window and is equipped with a clothes washing apparatus on its side. It appears to be in the process of washing clothes. The surroundings suggest an urban environment with buildings and traffic.
 
 
 ## Querying Llama 4 Vision Model
