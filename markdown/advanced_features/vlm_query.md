@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 13:24:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 14:23:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 13:24:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 14:23:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.73s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.32s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 13:24:25,155 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 13:24:25] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 14:23:44,303 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 14:23:44] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a bag of laundry hanging out the back of a yellow taxi, using a makeshift line attached to the car. This is often seen as a humorous or practical way to clean clothes that have gotten dirty while working in the city's busy streets.
+    The image depicts a performance art scenario where an individual is running beside a yellow taxi in New York City. The performer is dressed in a bright yellow shirt in sync with the taxi's color, and they are engaged in the act of ironing衬衫SBDesign, a public art project created by renowned street artist Banksy. This performance is taking place on Broadway during the block party festivities, as evidenced by the "LB_anniversary pipe" mentioned in the text.
 
 
 ### Call with Processor Output
@@ -150,7 +150,14 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a street with buildings in the background. There is a yellow taxi parked on the street, and a person in a yellow shirt appears to be using a clothesbrew or clothespole. The clothesbrew is handling some items, likely laundry, which are on a conveyor belt. This method is used in New York City to collect discarded laundry from furthers out where it has been left to warm up in the air, making it easier for people to collect their clothes with the clothesbrew. The slogan "Allena-the-Whole-Cloth" is visible in the image, which is related to the book by author Kir
+    The image shows a street scene in an urban area with several notable elements:
+    
+    1. **Yellow Cabs**: There are two yellow cabs parked on the street.
+    2. **Pedestrian**: A person wearing a yellow shirt is walking on the sidewalk. They appear to be moving away from the camera.
+    3. **Advertising or Flags**: There are some small flags or banners in the background, possibly indicating an event or celebration.
+    4. **Buildings**: The buildings have a modern architectural style, with glass facades.
+    5. **Streetlights and Signage**: Streetlights and some traffic signs are visible in the background.
+    6
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +213,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab in an urban setting, possibly on a street in a busy area. The taxi has a banner or flag hanging from the back. There are also several silver tape measures in the foreground, which appear to be cut into two, possibly indicating an experiment or demonstration involving tape measures. The background includes tall buildings and street signs, suggesting a city environment.
+    The image depicts a street scene in an urban area. A yellow taxi cab is parked on the side of the road. Behind the cab, a man in a yellow shirt appears to be riding a flatbed vehicle that is illogically mounted onto a bicycle or a wheeled device. The street is lined with buildings, and there are flags flying from one of the buildings. The overall scene seems quite unusual, as it is not typical to see a man attached to a flatbed on a street.
 
 
 ## Querying Llama 4 Vision Model
