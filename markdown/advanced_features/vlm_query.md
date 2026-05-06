@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 18:31:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 22:01:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 18:32:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 22:01:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.88s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.28s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.37s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 18:32:12,454 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 18:32:12] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 22:01:22,729 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 22:01:22] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the picture, there are two yellow taxi cabs parked on a city street. The driver of one taxi is using laundry items (a jacket and an iron) to play a game, specifically a game being advertised alongside the taxi. The player is pretending to iron something on a metal basket or grate, adding a humorous and unusual element to the scene. The game seems to authenticate the taxi ride without requiring any physical contact or traditional reward.
+    The image shows a yellow taxi stationary on a city street. The side door of the taxi is open, revealing a person who is folding a towel on the steps of the cab. Two small American flags are stuck to the back window of the cab. The scene appears to depict someone multitasking, folding laundry while waiting in their cab on a busy city street.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in New York City with a yellow taxi cab on a street. The driver is plugged into a charging station attached to the side of the taxi, which is charging a vehicle using electricity from electric plug-in hybrids or other electric drive vehicles. The driver's hand fuel from the cab's gas tank while seated in his honored position.
+    The image shows a street scene in a city, possibly New York, given the architecture and the discussions of taxis. In the foreground, there is a person pulling up two markers from the back of a yellow taxi. On the back of the taxi, several flags are displayed. The taxi has the distinctive yellow color and is a typical New York cab.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street with a yellow taxi cab. A person is standing next to the taxi, extending their arms out as if holding a something. The person is wearing a yellow shirt and appears to be holding a small flag or flagpole in front of the taxi. The taxi has a cloth or tarp draped over it. The background includes buildings and other street elements.
+    It's difficult to identify a specific image based on the given coordinates and a snippet of the text provided. If you can describe the scene or any additional details about the image, I'd be happy to help you analyze it further.
 
 
 ## Querying Llama 4 Vision Model
