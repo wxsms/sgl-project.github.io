@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 00:31:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 00:56:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 00:31:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 00:56:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 00:31:18,543 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 00:31:18] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 00:56:46,673 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 00:56:46] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene with two yellow taxis in a city street. A man, partially visible in the middle, appears to be using a folding laundry rack attached to the back of one of the taxis. The rack has some clothing items on it, suggesting an unusual or quirky method of transporting laundry. The taxi behind the rack is parked, and there is another back taxi further down the street, also in a similar position. The setting is urban, with buildings and streetlights visible.
+    This image shows a humorous display of a yellow cab (taxis are commonly called "cabs" in some English-speaking countries) with its rear door open. A person, dressed in a yellow shirt, is hanging laundry on the railing of the open door. The bright yellow taxi is parked on a city street with tall buildings in the background.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a view of a street in a city, likely New York City based on the yellow taxi cabs. The taxi in the foreground has its back opened, and a person is standing to the left of the cab, appearing to stow or retrieve some clothes from a drying rack or clothes draped over it. The background includes a few buildings with storefronts, street signs, and other parked vehicles. The scene is set during daylight hours.
+    In the picture, there is a man lifting a yellow property truck from the ground. The truck is yellow and appears to be used for property and/or N itemBuilder property services. The truck is lifted by a person who is using a harness to lift it safely. The truck is lifted off the ground in a street.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a street scene in a city, likely a major city given the urban environment and the presence of a yellow taxi. There is a person dressaged as a taxi driver by hanging an apron in front of the vehicle. The taxi and the person dressed as a taxi driver are positioned in the foreground, while the background includes buildings, streetlights, and other typical urban elements.
+    In the image, there is a person wearing a yellow shirt and blue jeans pushing a brightly colored bar bike, also known as a "bar bike" or "La Bici" in Spanish. The bar bike is designed as a الكolicies (kolekidikos) where the rider typically doubled up, with one or two passengers per bike. In this stance, two people are visible in the image, with one having their legs stretched out and the other gripping the front bar to provide stability. This image likely captures a moment during a street performance or public demonstration of the bar bike.
 
 
 ## Querying Llama 4 Vision Model
