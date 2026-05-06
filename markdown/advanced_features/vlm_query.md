@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 09:13:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 09:28:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 09:13:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 09:28:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.50s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.11s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.17s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 09:13:54,820 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 09:13:54] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 09:28:55,294 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 09:28:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    What is visible in the image is of a man working as a street cleaner using a push weed-welder, a combination techniques combining the functionality of a push lawn mower and a weed wacker. He is clearing the weeds along the curb of a street, which is a common approach to maintaining a clean and orderly environment.
+    The image shows a scene with several yellow taxis in an urban street setting. The person in the image appears to be hanging laundry on a utility rack. The scene gives an impression of daily life in a busy city, with the taxis and the laundry rack being common elements in such environments.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis driving on a city street. The landscape is urban, with tall buildings lining the street in the background. There are multiple flags and street signs visible, indicating a bustling urban environment. The taxis appear to be in motion, contributing to the dynamic nature of the scene.
+    The image shows two yellow taxis parked on a city street. One of the taxis is on the left side of the photograph, and the other is partially in the background on the right side. Both taxis are facing in the same direction. The taxis are typical urban vehicles, likely used for cab services in the city.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a bright yellow taxi cab driving on a city street. In the foreground, there is a person using a mobile charging station for power tools, specifically an electric drill, while getting some repairs or maintenance work done in the street. The setting appears to be a busy urban area, possibly during a public holiday or event, as indicated by the festive flags and banners in the background.
+    The image shows a scene on a city street with a yellow taxi parked on the sidewalk. The taxi has a structure attached to its back with a strap and a blue cloth hanging from it. The strap is strung between the cab and two poles. The yellow taxi cab is parked next to a storefront with a colorful sign above the entrance. The background includes a row of buildings with windows and a few street signs visible.
 
 
 ## Querying Llama 4 Vision Model
