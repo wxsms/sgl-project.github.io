@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-05 23:51:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 00:11:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-05 23:51:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 00:11:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.34it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
 
 
 
@@ -120,17 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-05 23:52:05,673 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-05 23:52:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 00:11:51,754 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 00:11:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene of street vending in an urban setting, likely in New York City based on the taxi cabs and the general appearance. The key elements of the image are:
-    
-    1. **Street Vending**: A person is standing behind a clothes drying rack on the street, hanging out laundry or other clothes.
-    2. **Taxi Cabs**: Two taxi cabs are parked on the street, one in the foreground and one in the background.
-    3. **Signage**: There are red and white signs and possibly additional signs, but the specific detail is not clear from the image.
-    4. **City Environment**: The background
+    The image shows a person standing next to two yellow taxis in a busy urban area, such as a city street. The street appears to be wet, possibly from recent rain. There are two racks of laundry visible in the foreground, comprising clothes priced for sale. The scene suggests a laundry service likely operates from the rear of the taxis, wash racks extended behind them. This is a common practice inander cities where water or aren's are scarce, to provide essential services to passengers stopped for fares.
 
 
 ### Call with Processor Output
@@ -155,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a yellow taxi cab in New York City. The taxi is parked on a city street, and a man is washing clothes on a clothesline attached to a hook on the side of the taxi. The scene appears to be staged for a humorous or artistic effect. The background includes tall buildings characteristic of New York’s urban landscape and some lampposts and traffic. The display is likely designed to draw attention and spark curiosity or amusement in the viewer.
+    The image shows two yellow taxis driving down a city street. One of the taxis is in the foreground, with a person wearing a yellow shirt standing near it. The person is holding a poster-taped poster or banner in front of the taxi, which appears to be a form of street demonstration or protest. The background includes buildings and other street elements typical of an urban setting. The presence of the poster suggests an ongoing action or message being conveyed through this form of city street behavior.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a street scene with two yellow taxis parked together. The taxi on the right side of the image is partially obscuring the one on the left. There is a man standing between the two taxis, holding a broom and an iron. He appears to be ironing a piece of clothing. The background includes some buildings and street signs, suggesting an urban environment. The man is dressed in casual streetwear.
+    The image shows a street scene with a yellow New York City taxi cab. The taxi has a flatbed attached to its back, which appears to be carrying some items, possibly for delivery or maintenance. The taxi is parked on the side of the street, and there are other vehicles and storefronts in the background. The scene suggests an urban environment, likely in Manhattan, given the distinctive yellow cabs.
 
 
 ## Querying Llama 4 Vision Model
