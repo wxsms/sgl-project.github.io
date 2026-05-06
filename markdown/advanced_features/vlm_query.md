@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 00:56:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 02:15:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 00:56:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 02:15:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.15s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.53s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.63s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 00:56:46,673 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 00:56:46] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 02:16:09,949 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 02:16:09] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a humorous display of a yellow cab (taxis are commonly called "cabs" in some English-speaking countries) with its rear door open. A person, dressed in a yellow shirt, is hanging laundry on the railing of the open door. The bright yellow taxi is parked on a city street with tall buildings in the background.
+    The image shows a scene from a New York City street where a yellow taxi is queuing at a traffic light. There are clothes drying on a clothesline attached to the back of the taxi. This is a humorous and iconic photograph often associated with a popular phrase from the New York City cab driver during rush hour, ending with the phrase "Please spare five minutes." The clothesline adds an amusing and unusual twist to the traditional taxi transportation.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the picture, there is a man lifting a yellow property truck from the ground. The truck is yellow and appears to be used for property and/or N itemBuilder property services. The truck is lifted by a person who is using a harness to lift it safely. The truck is lifted off the ground in a street.
+    This is a photo of a yellow taxi cab in New York City, with someone hanging out clothes on a bicycle to dry them by the road. This is just a plain replica.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there is a person wearing a yellow shirt and blue jeans pushing a brightly colored bar bike, also known as a "bar bike" or "La Bici" in Spanish. The bar bike is designed as a الكolicies (kolekidikos) where the rider typically doubled up, with one or two passengers per bike. In this stance, two people are visible in the image, with one having their legs stretched out and the other gripping the front bar to provide stability. This image likely captures a moment during a street performance or public demonstration of the bar bike.
+    It's difficult to tell exactly what this image shows, but it appears to be a photograph taken on a city street with a taxi cab and people walking in the background.
 
 
 ## Querying Llama 4 Vision Model
