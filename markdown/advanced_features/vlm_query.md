@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 03:22:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 04:13:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 03:22:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 04:13:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 03:22:52,878 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 03:22:52] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 04:13:46,517 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 04:13:46] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a busy street where there is a yellow taxi in the foreground. The taxi appears to be driving slowly or stopping, and on the back of it, there is a man wearing a yellow shirt and blue jeans. He has a small metal pole propped up against the back of the taxi with various pieces of clothing hanging from it. This setup resembles a makeshift clothesline being used to hang laundry out of the window of a parked taxi. The background features urban scenery with buildings, street signs, and pedestrians.
+    It appears to be a humorous scene where a yellow laundry cart is being pulled by a person in yellow with a bottle of laundry detergent. The laundry cart is hitched to the back of a yellow cab, suggesting that they are using the taxi as a mobile platform or临时和临时的洗衣机.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a black and yellow flag being waved from a car skyscraper, which was a common feature in Tallahassee, Florida.
+    The image shows a scene of two taxi cabs on a street. The foreground taxi has its trunk open, and a person appears to be sticking their head out of it, as if getting in the taxi. The background taxi also has its trunk open. The location seems to be in a city, as indicated by the presence of tall buildings and storefronts in the background. The scene suggests that the person might be trying to hitch a ride in the taxi.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with a yellow taxi cab and a couple of people. The taxi cab has red flags in its rear window and is equipped with a clothes washing apparatus on its side. It appears to be in the process of washing clothes. The surroundings suggest an urban environment with buildings and traffic.
+    This image shows two yellow taxis in an urban setting. One taxi is stopped at a traffic light, and the other is driving on the road beside it. The taxi in the background is stopped at an intersection, while the one in the foreground is in motion. The scene appears to be taking place in a busy city street.
+    
+    The image also shows some storefronts and possibly advertisements on the buildings along the street. The overall atmosphere suggests a bustling city environment.
 
 
 ## Querying Llama 4 Vision Model
