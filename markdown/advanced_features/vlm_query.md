@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 12:37:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 13:24:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 12:37:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 13:24:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 12:37:52,925 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 12:37:52] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 13:24:25,155 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 13:24:25] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a unusual sight: a yellow taxi with laundry hanging from a broom outside. This seems to be a playful and creative way to clean the exterior of the taxi, akin to a借鉴 from other vehicles or perhaps a costume.
+    This image shows a bag of laundry hanging out the back of a yellow taxi, using a makeshift line attached to the car. This is often seen as a humorous or practical way to clean clothes that have gotten dirty while working in the city's busy streets.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a photograph of two yellow taxis in New York City, specifically the iconic yellow taxis known as "Taxi of New York City" or "NYC Taxi." The taxis are parked along the street, and one of them has a double-sided or side-by-side arrangement of its windows. This is a distinctive feature of the NYC Taxi style, where the side windows of the back and front of the taxi are positioned side by side rather than the usual staggered arrangement. The taxi is on the leftmost side of the street, and it appears to be empty, as there are no visible passengers inside. The front tire of the taxi
+    The image shows a scene on a street with buildings in the background. There is a yellow taxi parked on the street, and a person in a yellow shirt appears to be using a clothesbrew or clothespole. The clothesbrew is handling some items, likely laundry, which are on a conveyor belt. This method is used in New York City to collect discarded laundry from furthers out where it has been left to warm up in the air, making it easier for people to collect their clothes with the clothesbrew. The slogan "Allena-the-Whole-Cloth" is visible in the image, which is related to the book by author Kir
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like a scene from a seasonal event, possibly a SantaCon (Saluting Those Ages Never Seen!) parade in New York City. The setup includes a person dressed as Santa Claus, riding a special vehicle and holding a sign. Normally, this event involves people dressing up and parading through streets in December to celebrate the holiday season.
+    The image shows a yellow taxi cab in an urban setting, possibly on a street in a busy area. The taxi has a banner or flag hanging from the back. There are also several silver tape measures in the foreground, which appear to be cut into two, possibly indicating an experiment or demonstration involving tape measures. The background includes tall buildings and street signs, suggesting a city environment.
 
 
 ## Querying Llama 4 Vision Model
