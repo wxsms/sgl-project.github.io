@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 16:13:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 18:31:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 16:13:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-06 18:32:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.52s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.88s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.28s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.37s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 16:13:29,297 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 16:13:29] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-06 18:32:12,454 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-06 18:32:12] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in an urban setting. One taxi is equipped with an outdoor laundry rack where a red and blue item, likely a piece of clothing, is drying. A woman is handling the laundry, indicating a service where laundry can be washed and dried on top of the taxi. In the background, there are tall buildings and some other vehicles visible, suggesting a busy city street.
+    In the picture, there are two yellow taxi cabs parked on a city street. The driver of one taxi is using laundry items (a jacket and an iron) to play a game, specifically a game being advertised alongside the taxi. The player is pretending to iron something on a metal basket or grate, adding a humorous and unusual element to the scene. The game seems to authenticate the taxi ride without requiring any physical contact or traditional reward.
 
 
 ### Call with Processor Output
@@ -150,11 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two taxis traveling down a street. The closer taxi is yellow and seems to be a city cab, possibly in a position that makes the view obstructed. In the background, partially obscured, there is another yellow taxi. The setting appears to be an urban environment, likely in New York City given the typical yellow cabs and the street.
-    
-    The gearbag (sand bags) being used for weight support is visible, and it's placed on top of a metal folding cart. This setup is possibly a part of a project or demonstration involving photography or lightship referencing to adjust lighting for specific spatial positions or angles.
-    
-    
+    The image shows a scene in New York City with a yellow taxi cab on a street. The driver is plugged into a charging station attached to the side of the taxi, which is charging a vehicle using electricity from electric plug-in hybrids or other electric drive vehicles. The driver's hand fuel from the cab's gas tank while seated in his honored position.
 
 
 ### Call with Precomputed Embeddings
@@ -210,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a taxi on a city street with a string of towels or cloths draped over the rear window. The yellow taxi is parked next to a building or storefront, and there are some people nearby. The scene appears to be taking place during a sunny day.
+    The image shows a scene on a city street with a yellow taxi cab. A person is standing next to the taxi, extending their arms out as if holding a something. The person is wearing a yellow shirt and appears to be holding a small flag or flagpole in front of the taxi. The taxi has a cloth or tarp draped over it. The background includes buildings and other street elements.
 
 
 ## Querying Llama 4 Vision Model
