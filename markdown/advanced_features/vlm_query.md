@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 00:04:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 00:52:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 00:04:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 00:52:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.23s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 00:04:32,024 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 00:04:32] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 00:52:20,431 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 00:52:20] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image you've provided shows a man standing next to two taxis, including a pylon in between them. He appears to be holding a shirt on a line that is extending from the pylon. The scene looks like it's from a street in a city, possibly New York given the iconic yellow taxis. The setting and style, along with the pylon and the man's activity, suggest it might be a humorous, staged scene often seen in photos taken in popular tourist locations.
+    The image shows a yellow taxi driving down a city street with a person hanging laundry on the back of the taxi using a clothesline. The taxi is labeled "NYC" and "NYC dispatch." This scene is unusual and suggests either an artistic installation or a prank, as it is not a typical way to hang laundry. The context is unclear, but it appears to be playfully documenting a moment in time, likely in New York City given the signage.
 
 
 ### Call with Processor Output
@@ -150,9 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from what appears to be the "陌头台风" (Pony Express) event in New York City. This is a public art performance where participants are hitting rain sticks to resemble the thunder and rain of a typhoon. Yellow taxis are parked alongside avenida volumes, causing drivers to halt and watch.
-    
-    In the foreground, there's a man standing in front of a yellow exercise bike wearing a yellow hoodie. The man appears to be using the rain stick device that people were hitting behind him. Behind him, other people are also hitting雨 pointers. The overall activity is designed to create a听到şekä pá
+    The image shows a yellow taxi driving down a street in a city setting. The taxi is parked next to a tree-lined sidewalk. There are several buildings in the background, and the scene appears to be urban, possibly in a major city. The taxi is decorated with various colorful banners and flags hanging outside. The atmosphere looks festive, suggesting that the scene might be taking place during a special event or holiday, possibly related to Remain in Europe ( MEP) given the context provided.
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +206,15 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears that a person is standing next to a yellow taxi, with their feet on the back of the seat. They are holding a laundry basket and there are clothes draped over a garment rack. It looks like the person is preparing to load the laundry into the taxi, suggesting they are using the vehicle to transport their belongings. The scene is set in an urban environment, possibly in a city with busy streets and tall buildings.
+    The image shows a scene with two large yellow parking meters or bollards placed on the road. These bollards are quite tall and possibly have objectives like deterring unlawful parking or marking the location where disabled parking is allowed. 
+    
+    Here’s a breakdown of the scene:
+    
+    1. **Parking Meters (Bollards)**: 
+       - There are two large, yellow, possibly metal, parking meters or bollards on the road.
+       - They appear to be about shoulder height.
+       - Their purpose might be to prevent vehicles from parking or stopping in certain areas.
+       - Possible additional uses could include indicating disabled parking spots
 
 
 ## Querying Llama 4 Vision Model
