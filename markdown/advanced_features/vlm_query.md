@@ -102,21 +102,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 09:31:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 10:52:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 09:31:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 10:52:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
-
-    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -126,12 +126,16 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 09:31:31,771 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 09:31:31] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 10:52:38,793 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 10:52:38] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene from a reality TV show about professional maraids. In this scenario, a man dressed in a yellow shirt and tan pants is hanging a blue cloth vertically from the rear of a yellowTaxi that has either a red or blue luggage rack attached. The background includes green trees, typical urban signage, and various shopping establishments, all set against the backdrop of an actual New York street scene.
+    It looks like there are a few things happening in this scene:
+    
+    1. **Two Yellow Taxis:** There are two yellow taxis in the image, one closer to the foreground and a second one further back.
+    2. **Man with Laundry:** There is a person in a yellow shirt holding laundry on a stick, suspended above the back of one of the taxis. This likely indicates they are either trying to dry clothes in the street or are in the middle of a Municipal Water Department (MWDOC) street clean-up effort.
+    3. **Poles with Signs:** There are several poles with signs attached to them. Some of these signs have
 
 
 ### Call with Processor Output
@@ -156,7 +160,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in an urban setting, likely in a city. A person is seen placing a flag on the top of the taxi cab. The flag appears to be American, given its design and color, which is often called the "flag of the new Jersey" or the "New Jersey state flag" in some contexts, though it's more commonly associated with the United States. The background includes buildings and street signs, indicating a busy city environment.
+    The image shows a street scene featuring two yellow taxis, one behind the other, driving down a city street. In front of the leading taxi, there is an individual appearing to be moving a tarped area outdoors using a large piece of cloth. The street is lined with buildings, and there are streetlights and signs along the sidewalk. The scene is part of a public event, possibly a protest or demonstration, given the presence of tarps and the context.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +216,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging clothes on the back of a yellow car, likely using lines and clothespins. This practice is sometimes observed by homeless individuals in urban areas, where they may use the back of cars to hang clothes for drying. The presence of New York City taxi cabs in the background indicates that this scene is likely taking place in New York City.
+    The image you've provided is a humorous scene set in what appears to be New York City, given the iconic yellow taxis visible. Typically, taxis are not equipped to project or hold clothes — making the man's attire and the machine serving as a clothes projector all the more absurd and surreal. 
+    
+    The funny, ironic nature of the scene expresses skill in discarding what could be considered a common wardrobe mal facile. An衣架实际上做的适合用来烘斗 Personoly, 但如果二人LetMan.I, 这也当给unorrected的衣服。
 
 
 ## Querying Llama 4 Vision Model
