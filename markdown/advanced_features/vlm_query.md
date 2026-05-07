@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 05:51:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 09:11:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 05:51:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 09:12:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 05:51:39,145 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 05:51:39] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 09:12:13,784 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 09:12:13] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man drying clothes on a street, parked taxi cabs, and some city buildings in the background. The setup appears to be a makeshift drying line, and there is aReflectissimo sign nearby.
+    The image shows two yellow taxis driving down a city street. The first taxi is pulling a portable washing machine on its back, which is attached to a small table using a choker. There is a person operating the machine, wearing a yellow shirt and sitting on a bench-like apparatus attached to the washing machine. This setup is likely for on-the-go laundry at Lysol-christened "Machine On the Go" (MOTG).
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of several yellow taxis parked or moving down a street. There are also people visible alongside the taxis, and it appears to be either during or after a parade. The background includes buildings with large windows and旗 manière hanging from the windows. The taxis have thermometer-like displays on the side, which are typically used to indicate the current temperature outside. The overall setting suggests a busy urban area, possibly in New York City given the distinctive yellow taxis.
+    The image shows two taxi cabs on a city street. The one in the foreground is yellow, while the one in the background appears to be blue. The environment suggests an urban setting, possibly in a high-traffic area such as a downtown business district or a busy city street.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a yellow taxi cab driving on a street in a city. The cab is equipped with a small flag on the roof, which appears to be waving. The street is lined with trees and there are buildings in the background, indicating an urban environment. The driver of the taxi is in a yellow shirt and appears to be handling the flag on top of the vehicle. This type of setup is sometimes done as a means of adding some novelty to the cabs, possibly for tourists or special events.
+    The image shows a man pushing a portable bicycle wash station behind several yellow taxis. The man is dressed in casual clothing and appears to be displaying the bicycle wash station to the taxis. This seems to be a promotion or display for bicycle washing services, perhaps as part of a marketing campaign or a special event. The bicycles are wrapped in blue tarps, suggesting they might be used for rent or sale in the city. The setting is likely in an urban area, as evidenced by the tall buildings and the presence of multiple taxis.
 
 
 ## Querying Llama 4 Vision Model
