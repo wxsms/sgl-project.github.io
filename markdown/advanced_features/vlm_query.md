@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 02:12:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 02:33:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 02:12:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 02:33:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 02:13:08,461 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 02:13:08] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 02:33:22,843 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 02:33:22] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows two yellow taxis in a city street. One taxi is equipped with a red boombox on its roof, which is likely playing music for the people standing in the street. The black sign on the left side of the image appears to contain text, but it is not fully visible. The scene suggests a typical urban environment, possibly in a busy city like New York, where taxis often provide music for passengers.
+    The image shows a scene with multiple Maine Trailblazers car wash establishments, but there is no truck visible at that time. This may be contradictory to your question. Anyway, you can contact them directly to verify their availability and capacity.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with a noticeable element in the foreground. A yellow taxicab is parked on the right side of the image, facing to the left. Next to the cab, there is a reflecting strip, which appears to be a piece of exterior mannequin display designed to mimic a person's posture and form. It's commonly used in retail stores to showcase clothing or other merchandise. The mannequin is positioned in a manner that suggests a person is standing next to the cab. The background consists of tall office buildings adorned with banners, which are typical in urban environments for advertisement or event-related displays.
+    The image shows a man wearing a yellow shirt and blue shorts drying a towel outside the back of a yellow taxi. The taxi is parked on a city street with buildings and flags in the background. The man appears to be using a portable drying rack with a metal bar to hang the towel, likely to dry it in the sun. This scene is common in urban areas where individuals may use vehicles for various purposes, and drying clothes is a common activity for那段出租车上的那个人来说。
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street with two yellow taxis and a person improperly hanging laundry on the back of one of the taxis. The clothing appears to have removed labels and is hung neatly in a line. The surrounding environment includes buildings with storefronts and street furniture.
+    In the image, there is a yellow taxi cab parked on a city street. The cab's rear is adorned with clothes hanging on a clothesline attached to its back. This scene appears to be a creative or quirky display, possibly for promotional purposes or as a mobile art installation. The clothes hanging from the clothesline suggest that they are drying or have been displayed for aesthetic or thematic reasons, combining practicality with a touch of humor or artistic expression. The taxi cab, typically known for its use in transportation, is repurposed in this image to convey a unique message or story.
 
 
 ## Querying Llama 4 Vision Model
