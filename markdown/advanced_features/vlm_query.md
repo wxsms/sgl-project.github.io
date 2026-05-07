@@ -102,11 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 17:22:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 18:05:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    [2026-05-07 18:05:55] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 17:22:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 18:05:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    [2026-05-07 18:06:01] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.52s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.18s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -126,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 17:22:18,361 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 17:22:18] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 18:06:07,570 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 18:06:07] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene where a person, possibly a mime or a performer, is hanging a的习惯布 to dry on the back of a moving yellow taxi. This scenario captures a playful and unusual activity, with the iconic yellow taxis being an unexpected setting for everyday tasks like drying laundry. The background appears to be an urban street, and the presence of another taxi and storefronts suggests a bustling city environment.
+    The image shows a yellow taxi driving down a street with clothes hanging out the window. The clothes include a blue shirt, a black shirt, and a white and red shirt. The person hanging the clothes is wearing casual clothes and is using a stick holder to hang the items. This scene suggests a humorous or quirky moment, likely intended to be funny or unexpected.
 
 
 ### Call with Processor Output
@@ -156,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked on a city street. The taxi cab is equipped with a flag stick extension mechanism that allows the user to attach flags or banners to the back of the vehicle. The taxi is facing the left side of the street, and its tires are visible. There are several signs and banners in the background, indicating that this scene is likely in a busy urban area.
+    The image shows a street scene with a yellow taxi in New York City. The taxi is positioned on a city street, and a person in a bright yellow shirt appears to be drying an ironing board with a piece of clothing on top of it. There is a bench next to the person, and various window displays can be seen in the background. The setting suggests that this could be part of an event or demonstration emphasizing the importance of energy conservation or environmentally friendly practices in urban areas. The scene likely captures a moment of interaction between the person and the vehicle, possibly using the taxi as a makeshift drying station.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab driving down a city street. The taxi is in motion and has several people standing around it. Two flagpoles are visible in the background, each with a single American flag flying. The scene appears to be in an urban area with buildings and other vehicles in the view.
+    The image shows two yellow standard taxis in an urban street setting. The taxis are equipped with the characteristic side彰显标志, which is a blue signpost with some symbols or text, likely related to the city's transit or loading regulations. The taxis are pulling up to a curb, and there are several flags hanging from a retractable flagpole mounted on the side of the taxi. This setup is commonly used for demo or promotional purposes.
 
 
 ## Querying Llama 4 Vision Model
