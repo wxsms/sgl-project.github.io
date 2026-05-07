@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 13:42:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 14:13:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 13:42:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 14:13:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.03s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -126,12 +126,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 13:42:44,285 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 13:42:44] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 14:13:37,294 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 14:13:37] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street involving two yellow taxis. One taxi has a laundry rack attached to its back, with clothes hanging on it, suggesting that someone left their laundry outside. A man is behind the taxi, looking over the situation. The setting appears to be in a busy urban area, with buildings and signs visible in the background.
+    The image shows an obstacle course race taking place in a city environment. There is a yellow taxi parked on the side of the street, which has been modified as part of a race course. The taxi has been spray-painted with a blue and white striped pattern on its rear doors to resemble a traditional dogsled sled. Atop the taxi, a clothesline is set up with various colorful items, including clothing and signs.
+    
+    A person wearing a bright orange shirt is steering the modified taxi. In the background, there are other vehicles, including another yellow taxi and a white van. The environment suggests a vibrant urban setting, possibly during a public
 
 
 ### Call with Processor Output
@@ -156,7 +158,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi driving through a city street. The taxi has a folding table and some drying clothes on it. The setting appears to be an urban environment with buildings, pedestrians, and flags in the background. The scene is somewhat humorous and evokes a sense of lightheartedness.
+    The image shows a man pushing a yellow-and-black office chair across the street in front of two yellow taxis. The scene appears to be set in an urban environment, likely in a busy city with traffic, as indicated by the two public service vehicles visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +214,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow city taxis parked in a busy street. The scene appears to be in a developed urban area, possibly a downtown or tourist district. Each taxi has luggage racks on the roof. There are several American flags hanging from the taxis, indicating that this image was taken in the United States, specifically in a location where the USA flag is prominently displayed. The presence and positioning of the flags above the windows suggests it might be around significant national holidays or events that involve out-of-town visiting or large gatherings in that location.
+    This image shows a yellow New York City taxi with a blue tarp draped over its back. The taxi is parked on a street, and there is a man standing in front of the taxi holding an iron. This unusual scene suggests that the taxi was used for a public art installation or performance that required the taxi to be draped in fabric and equipped with an iron for someone to iron the tarp.
 
 
 ## Querying Llama 4 Vision Model
