@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 14:58:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 17:22:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 14:58:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 17:22:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.04s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.52s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.18s/it]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 14:59:06,119 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 14:59:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 17:22:18,361 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 17:22:18] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a person Milwaukee crime taxes a clothespin on the back of a taxi in a city street. The taxi is yellow and has a sign in its window. The person is wearing a yellow shirt and is holding a clothespin with their left hand. The street is wide and is lined with buildings.
+    The image shows a scene where a person, possibly a mime or a performer, is hanging a的习惯布 to dry on the back of a moving yellow taxi. This scenario captures a playful and unusual activity, with the iconic yellow taxis being an unexpected setting for everyday tasks like drying laundry. The background appears to be an urban street, and the presence of another taxi and storefronts suggests a bustling city environment.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person hanging laundry on a temporary clothesline attached to the rear frame of a vehicle. The clothesline consists of metal frames and clothespins, with articles of clothing such as a blue garment and a yellow piece of clothing hanging from it.
+    The image shows a yellow taxi cab parked on a city street. The taxi cab is equipped with a flag stick extension mechanism that allows the user to attach flags or banners to the back of the vehicle. The taxi is facing the left side of the street, and its tires are visible. There are several signs and banners in the background, indicating that this scene is likely in a busy urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab, likely parked on a city street with other vehicles and buildings in the background. The taxi is backed into a spot in front of what appears to be a storefront. There are flags hanging outside the building, and the taxi is equipped with an additional storage space or baggage area on its back. The scene is typical of urban environments where taxis are used for transportation services.
+    The image shows a yellow taxi cab driving down a city street. The taxi is in motion and has several people standing around it. Two flagpoles are visible in the background, each with a single American flag flying. The scene appears to be in an urban area with buildings and other vehicles in the view.
 
 
 ## Querying Llama 4 Vision Model
