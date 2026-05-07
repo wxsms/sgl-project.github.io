@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=ab8531ff"></script>
+    <script src="../_static/documentation_options.js?v=0a3f6093"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -557,7 +557,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-flow-control">Reliability and Flow Control</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-client-pool">HTTP Client Pool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-client">HTTP Client</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retries">Retries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-breaker">Circuit Breaker</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiting-and-queuing">Rate Limiting and Queuing</a></li>
@@ -1543,9 +1543,9 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <hr class="docutils" />
 <section id="reliability-and-flow-control">
 <h2>Reliability and Flow Control<a class="headerlink" href="#reliability-and-flow-control" title="Link to this heading">#</a></h2>
-<section id="http-client-pool">
-<h3>HTTP Client Pool<a class="headerlink" href="#http-client-pool" title="Link to this heading">#</a></h3>
-<p>Configure the idle timeout for pooled upstream HTTP connections:</p>
+<section id="http-client">
+<h3>HTTP Client<a class="headerlink" href="#http-client" title="Link to this heading">#</a></h3>
+<p>Configure upstream HTTP client connection settings:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -1557,6 +1557,18 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--pool-idle-timeout-secs</span></code></p></td>
 <td><p>50</p></td>
 <td><p>Idle timeout in seconds for pooled upstream HTTP connections. Can also be set with <code class="docutils literal notranslate"><span class="pre">SMG_POOL_IDLE_TIMEOUT_SECS</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--connect-timeout-secs</span></code></p></td>
+<td><p>10</p></td>
+<td><p>Timeout in seconds for new upstream HTTP connections. Can also be set with <code class="docutils literal notranslate"><span class="pre">SMG_CONNECT_TIMEOUT_SECS</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--pool-max-idle-per-host</span></code></p></td>
+<td><p>500</p></td>
+<td><p>Maximum idle upstream HTTP connections to keep per host. Can also be set with <code class="docutils literal notranslate"><span class="pre">SMG_POOL_MAX_IDLE_PER_HOST</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tcp-keepalive-secs</span></code></p></td>
+<td><p>30</p></td>
+<td><p>TCP keepalive idle time in seconds for upstream HTTP connections. Can also be set with <code class="docutils literal notranslate"><span class="pre">SMG_TCP_KEEPALIVE_SECS</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3260,7 +3272,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-flow-control">Reliability and Flow Control</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-client-pool">HTTP Client Pool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-client">HTTP Client</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retries">Retries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-breaker">Circuit Breaker</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiting-and-queuing">Rate Limiting and Queuing</a></li>

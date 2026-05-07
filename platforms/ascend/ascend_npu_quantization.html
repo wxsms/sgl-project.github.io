@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=ab8531ff"></script>
+    <script src="../../_static/documentation_options.js?v=0a3f6093"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -482,7 +482,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -498,6 +500,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-model-quantization-on-ascend-npu">Diffusion Model Quantization on Ascend NPU</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-mxfp8-quantization">Online MXFP8 Quantization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-mxfp8-quantization-modelslim">Offline MXFP8 Quantization (ModelSlim)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -515,6 +529,8 @@ document.write(`
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Quantization scheme</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">quant_type</span></code> in JSON</p></th>
+<th class="head"><p>Scheme class</p></th>
 <th class="head"><p>Layer type</p></th>
 <th class="head text-center"><p>A2 Supported</p></th>
 <th class="head text-center"><p>A3 Supported</p></th>
@@ -524,6 +540,8 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>W4A4 dynamic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W4A4_DYNAMIC</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimW4A4Int4</span></code></p></td>
 <td><p>Linear</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
@@ -531,6 +549,8 @@ document.write(`
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>W8A8 static</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W8A8</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimW8A8Int8</span></code></p></td>
 <td><p>Linear</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
@@ -538,6 +558,8 @@ document.write(`
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
 <tr class="row-even"><td><p>W8A8 dynamic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W8A8_DYNAMIC</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimW8A8Int8</span></code></p></td>
 <td><p>Linear</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
@@ -545,13 +567,17 @@ document.write(`
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/sgl-project/sglang/pull/20922">MXFP8</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W8A8_MXFP8</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimMXFP8Scheme</span></code></p></td>
 <td><p>Linear</p></td>
 <td class="text-center"><p><strong><span style="color: red;">x</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">x</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: blue;">WIP</span></strong></p></td>
-<td class="text-center"><p><strong><span style="color: blue;">WIP</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong> (A5)</p></td>
 </tr>
 <tr class="row-even"><td><p>W4A4 dynamic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W4A4_DYNAMIC</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimW4A4Int4</span></code></p></td>
 <td><p>MoE</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
@@ -559,6 +585,8 @@ document.write(`
 <td class="text-center"><p><strong><span style="color: red;">x</span></strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>W4A8 dynamic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W4A8_DYNAMIC</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimW4A8Int8MoE</span></code></p></td>
 <td><p>MoE</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
@@ -566,6 +594,8 @@ document.write(`
 <td class="text-center"><p><strong><span style="color: red;">x</span></strong></p></td>
 </tr>
 <tr class="row-even"><td><p>W8A8 dynamic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W8A8_DYNAMIC</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimW8A8Int8</span></code></p></td>
 <td><p>MoE</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
@@ -573,6 +603,8 @@ document.write(`
 <td class="text-center"><p><strong><span style="color: red;">x</span></strong></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/sgl-project/sglang/pull/20922">MXFP8</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W8A8_MXFP8</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimMXFP8Scheme</span></code></p></td>
 <td><p>MoE</p></td>
 <td class="text-center"><p><strong><span style="color: red;">x</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">x</span></strong></p></td>
@@ -757,6 +789,119 @@ document.write(`
 <blockquote>
 <div><p>Note: On Ascend, GGUF weights are pre-dequantized to FP16/BF16 during model loading to ensure optimal inference performance. This enables support for all GGUF quantization types (Q2_K, Q4_K_M, IQ4_XS, etc.) while maintaining high inference speed.</p>
 </div></blockquote>
+<p>in progress</p>
+<section id="diffusion-model-quantization-on-ascend-npu">
+<h2>Diffusion Model Quantization on Ascend NPU<a class="headerlink" href="#diffusion-model-quantization-on-ascend-npu" title="Link to this heading">#</a></h2>
+<p>SGLang-Diffusion supports MXFP8 online and offline quantization for diffusion models (such as Wan2.2) on Ascend NPUs. MXFP8 requires A5; the ModelSlim W8A8/W4A4 schemes work on A2/A3.</p>
+<p><strong>Requirements for MXFP8:</strong> CANN ≥ 8.0.RC3, Ascend A5</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantization method</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">quant_type</span></code> in JSON</p></th>
+<th class="head"><p>Scheme class</p></th>
+<th class="head"><p>Mode</p></th>
+<th class="head text-center"><p>A2/A3 Supported</p></th>
+<th class="head text-center"><p>A5 Supported</p></th>
+<th class="head"><p>Trigger</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MXFP8 (W8A8)</p></td>
+<td><p>—</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MXFP8Config</span></code></p></td>
+<td><p>Online</p></td>
+<td class="text-center"><p><strong><span style="color: red;">x</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">mxfp8</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>MXFP8 (W8A8)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W8A8_MXFP8</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimMXFP8Scheme</span></code></p></td>
+<td><p>Offline</p></td>
+<td class="text-center"><p><strong><span style="color: red;">x</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td><p>auto-detected from <code class="docutils literal notranslate"><span class="pre">quant_model_description.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>W8A8 static</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W8A8</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimW8A8Int8</span></code></p></td>
+<td><p>Offline</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: yellow;">TBD</span></strong></p></td>
+<td><p>auto-detected from <code class="docutils literal notranslate"><span class="pre">quant_model_description.json</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>W8A8 dynamic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W8A8_DYNAMIC</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimW8A8Int8</span></code></p></td>
+<td><p>Offline</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: yellow;">TBD</span></strong></p></td>
+<td><p>auto-detected from <code class="docutils literal notranslate"><span class="pre">quant_model_description.json</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>W4A4 dynamic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W4A4_DYNAMIC</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ModelSlimW4A4Int4</span></code></p></td>
+<td><p>Offline</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: yellow;">TBD</span></strong></p></td>
+<td><p>auto-detected from <code class="docutils literal notranslate"><span class="pre">quant_model_description.json</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="online-mxfp8-quantization">
+<h3>Online MXFP8 Quantization<a class="headerlink" href="#online-mxfp8-quantization" title="Link to this heading">#</a></h3>
+<p>Online quantization dynamically quantizes FP16/BF16 weights to MXFP8 at load time using <code class="docutils literal notranslate"><span class="pre">npu_dynamic_mx_quant</span></code> + <code class="docutils literal notranslate"><span class="pre">npu_quant_matmul</span></code> CANN kernels. Pass <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">mxfp8</span></code> to override auto-detection.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start the diffusion server with online MXFP8 quantization</span>
+sglang<span class="w"> </span>serve<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Wan-AI/Wan2.2-T2V-A14B-Diffusers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>mxfp8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-gpus<span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># One-shot generation</span>
+sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Wan-AI/Wan2.2-T2V-A14B-Diffusers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>mxfp8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a beautiful sunset over the mountains&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-output
+</pre></div>
+</div>
+</section>
+<section id="offline-mxfp8-quantization-modelslim">
+<h3>Offline MXFP8 Quantization (ModelSlim)<a class="headerlink" href="#offline-mxfp8-quantization-modelslim" title="Link to this heading">#</a></h3>
+<p>For offline quantization, pre-quantize the model with msModelSlim and load the resulting checkpoint. The quantization scheme is auto-detected from <code class="docutils literal notranslate"><span class="pre">quant_model_description.json</span></code>, so no extra <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> flag is needed.</p>
+<p><strong>Step 1: Quantize with msModelSlim</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msmodelslim<span class="w"> </span>quant<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model_path<span class="w"> </span>/path/to/wan2_2_float_weights<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save_path<span class="w"> </span>/path/to/wan2_2_mxfp8_weights<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model_type<span class="w"> </span>Wan2_2<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quant_type<span class="w"> </span>mxfp8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust_remote_code<span class="w"> </span>True
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: SGLang does not support quantized embeddings; disable embedding quantization when using msmodelslim.</p>
+</div></blockquote>
+<p><strong>Step 2: Convert to Diffusers format</strong></p>
+<p>msModelSlim saves quantized Wan2.2 weights in the original Wan format. Convert to Diffusers format using the provided repack script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>python/sglang/multimodal_gen/tools/wan_repack.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input-path<span class="w"> </span>/path/to/wan2_2_mxfp8_weights<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-path<span class="w"> </span>/path/to/wan2_2_mxfp8_diffusers
+</pre></div>
+</div>
+<p>Then copy all files from the original Diffusers checkpoint (except the <code class="docutils literal notranslate"><span class="pre">transformer</span></code>/<code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> folders) into the output directory.</p>
+<p><strong>Step 3: Run inference</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>/path/to/wan2_2_mxfp8_diffusers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a beautiful sunset over the mountains&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-output
+</pre></div>
+</div>
+<p>For pre-quantized checkpoints available on ModelScope, see <a class="reference external" href="https://modelscope.cn/models/Eco-Tech">modelscope/Eco-Tech</a>.</p>
+</section>
+</section>
 </section>
 
 
@@ -794,6 +939,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-model-quantization-on-ascend-npu">Diffusion Model Quantization on Ascend NPU</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-mxfp8-quantization">Online MXFP8 Quantization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-mxfp8-quantization-modelslim">Offline MXFP8 Quantization (ModelSlim)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
