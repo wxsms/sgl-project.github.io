@@ -96,21 +96,27 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    [2026-05-07 00:52:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 00:52:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    [2026-05-07 02:12:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 02:12:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.23s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
 
 
 
@@ -120,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 00:52:20,431 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 00:52:20] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 02:13:08,461 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 02:13:08] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi driving down a city street with a person hanging laundry on the back of the taxi using a clothesline. The taxi is labeled "NYC" and "NYC dispatch." This scene is unusual and suggests either an artistic installation or a prank, as it is not a typical way to hang laundry. The context is unclear, but it appears to be playfully documenting a moment in time, likely in New York City given the signage.
+    This image shows two yellow taxis in a city street. One taxi is equipped with a red boombox on its roof, which is likely playing music for the people standing in the street. The black sign on the left side of the image appears to contain text, but it is not fully visible. The scene suggests a typical urban environment, possibly in a busy city like New York, where taxis often provide music for passengers.
 
 
 ### Call with Processor Output
@@ -150,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi driving down a street in a city setting. The taxi is parked next to a tree-lined sidewalk. There are several buildings in the background, and the scene appears to be urban, possibly in a major city. The taxi is decorated with various colorful banners and flags hanging outside. The atmosphere looks festive, suggesting that the scene might be taking place during a special event or holiday, possibly related to Remain in Europe ( MEP) given the context provided.
+    The image shows a scene on a city street with a noticeable element in the foreground. A yellow taxicab is parked on the right side of the image, facing to the left. Next to the cab, there is a reflecting strip, which appears to be a piece of exterior mannequin display designed to mimic a person's posture and form. It's commonly used in retail stores to showcase clothing or other merchandise. The mannequin is positioned in a manner that suggests a person is standing next to the cab. The background consists of tall office buildings adorned with banners, which are typical in urban environments for advertisement or event-related displays.
 
 
 ### Call with Precomputed Embeddings
@@ -206,15 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with two large yellow parking meters or bollards placed on the road. These bollards are quite tall and possibly have objectives like deterring unlawful parking or marking the location where disabled parking is allowed. 
-    
-    Here’s a breakdown of the scene:
-    
-    1. **Parking Meters (Bollards)**: 
-       - There are two large, yellow, possibly metal, parking meters or bollards on the road.
-       - They appear to be about shoulder height.
-       - Their purpose might be to prevent vehicles from parking or stopping in certain areas.
-       - Possible additional uses could include indicating disabled parking spots
+    The image shows a scene on a city street with two yellow taxis and a person improperly hanging laundry on the back of one of the taxis. The clothing appears to have removed labels and is hung neatly in a line. The surrounding environment includes buildings with storefronts and street furniture.
 
 
 ## Querying Llama 4 Vision Model
