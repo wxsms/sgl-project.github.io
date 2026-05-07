@@ -102,21 +102,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 09:11:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 09:31:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 09:12:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-07 09:31:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 09:12:13,784 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 09:12:13] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 09:31:31,771 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 09:31:31] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis driving down a city street. The first taxi is pulling a portable washing machine on its back, which is attached to a small table using a choker. There is a person operating the machine, wearing a yellow shirt and sitting on a bench-like apparatus attached to the washing machine. This setup is likely for on-the-go laundry at Lysol-christened "Machine On the Go" (MOTG).
+    The image shows a scene from a reality TV show about professional maraids. In this scenario, a man dressed in a yellow shirt and tan pants is hanging a blue cloth vertically from the rear of a yellowTaxi that has either a red or blue luggage rack attached. The background includes green trees, typical urban signage, and various shopping establishments, all set against the backdrop of an actual New York street scene.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two taxi cabs on a city street. The one in the foreground is yellow, while the one in the background appears to be blue. The environment suggests an urban setting, possibly in a high-traffic area such as a downtown business district or a busy city street.
+    The image shows a yellow taxi cab in an urban setting, likely in a city. A person is seen placing a flag on the top of the taxi cab. The flag appears to be American, given its design and color, which is often called the "flag of the new Jersey" or the "New Jersey state flag" in some contexts, though it's more commonly associated with the United States. The background includes buildings and street signs, indicating a busy city environment.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man pushing a portable bicycle wash station behind several yellow taxis. The man is dressed in casual clothing and appears to be displaying the bicycle wash station to the taxis. This seems to be a promotion or display for bicycle washing services, perhaps as part of a marketing campaign or a special event. The bicycles are wrapped in blue tarps, suggesting they might be used for rent or sale in the city. The setting is likely in an urban area, as evidenced by the tall buildings and the presence of multiple taxis.
+    The image shows a person hanging clothes on the back of a yellow car, likely using lines and clothespins. This practice is sometimes observed by homeless individuals in urban areas, where they may use the back of cars to hang clothes for drying. The presence of New York City taxi cabs in the background indicates that this scene is likely taking place in New York City.
 
 
 ## Querying Llama 4 Vision Model

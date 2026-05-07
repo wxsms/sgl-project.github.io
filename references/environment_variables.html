@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=4c0ca522"></script>
+    <script src="../_static/documentation_options.js?v=fa1b509a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -901,11 +901,15 @@ document.write(`
 <td><p>Use AITER optimize implementation</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MOE_PADDING</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ROCM_USE_MULTI_STREAM</span></code></p></td>
+<td><p>Allocate alt CUDA/HIP stream on ROCm/AITER to overlap shared and routed experts in DeepseekV2 MoE. Requires the HIP env <code class="docutils literal notranslate"><span class="pre">GPU_MAX_HW_QUEUES&gt;=5</span></code> (default <code class="docutils literal notranslate"><span class="pre">4</span></code>, the cap on HSA/ROCr HW queues HIP creates) so the alt stream gets its own queue instead of serializing with the main stream. Best paired with <code class="docutils literal notranslate"><span class="pre">--deepep-mode</span> <span class="pre">low_latency</span></code> so Mori’s AsyncLL kernel offloads dispatch/combine to copy engines and frees CUs.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MOE_PADDING</span></code></p></td>
 <td><p>Enable MoE padding (sets padding size to 128 if value is <code class="docutils literal notranslate"><span class="pre">1</span></code>, often set to <code class="docutils literal notranslate"><span class="pre">1</span></code> in Docker builds)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CUTLASS_MOE</span></code> (deprecated)</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CUTLASS_MOE</span></code> (deprecated)</p></td>
 <td><p>Use Cutlass FP8 MoE kernel on Blackwell GPUs (deprecated, use –moe-runner-backend=cutlass)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
