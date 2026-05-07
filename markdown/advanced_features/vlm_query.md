@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 14:13:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 14:35:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 14:13:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 14:35:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -126,14 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 14:13:37,294 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 14:13:37] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 14:35:42,514 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 14:35:42] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows an obstacle course race taking place in a city environment. There is a yellow taxi parked on the side of the street, which has been modified as part of a race course. The taxi has been spray-painted with a blue and white striped pattern on its rear doors to resemble a traditional dogsled sled. Atop the taxi, a clothesline is set up with various colorful items, including clothing and signs.
-    
-    A person wearing a bright orange shirt is steering the modified taxi. In the background, there are other vehicles, including another yellow taxi and a white van. The environment suggests a vibrant urban setting, possibly during a public
+    The image shows two yellow taxis on a city street. One taxi has a laundry cart filled with laundry, including a white garment and a blue piece of clothing. The other taxi is parked nearby. It appears that a person is participating in a "laundrylish" or "laundry taxicab" challenge, where taxi drivers must collect laundry from passengers and display it. The street is lined with buildings, and there are banners with the Ford logo and some other graphics visible in the background. The scene takes place in an urban environment with tall buildings.
 
 
 ### Call with Processor Output
@@ -158,7 +156,12 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man pushing a yellow-and-black office chair across the street in front of two yellow taxis. The scene appears to be set in an urban environment, likely in a busy city with traffic, as indicated by the two public service vehicles visible in the background.
+    In the image, there are two prominent vehicles:
+    
+    1. A **yellow taxi** cab, a common sight in many cities around the world, especially in major metropolitan areas.
+    2. A **yellow SUV** that appears to be parked or moving slowly.
+    
+    Both vehicles are colored in yellow, which is often the color used for taxi cabs to provide a visible and easily recognizable identifier. The background includes some tall buildings and signs, suggesting that this scene is taking place in an urban area, likely in a large city where such vehicles are common.
 
 
 ### Call with Precomputed Embeddings
@@ -214,7 +217,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a yellow New York City taxi with a blue tarp draped over its back. The taxi is parked on a street, and there is a man standing in front of the taxi holding an iron. This unusual scene suggests that the taxi was used for a public art installation or performance that required the taxi to be draped in fabric and equipped with an iron for someone to iron the tarp.
+    The image you're describing appears to be of a street scene with a taxi and another vehicle in the background. It looks like a weatherstrom or a stormy situation where the tailgate of the vehicle isEngineering or deicing Equipment Tailgating Cargo.
 
 
 ## Querying Llama 4 Vision Model
