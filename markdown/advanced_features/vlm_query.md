@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 05:26:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 05:51:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 05:26:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 05:51:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 05:27:06,734 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 05:27:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 05:51:39,145 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 05:51:39] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis停在 the street, with their hoods opened and clothes suspended from the hoods using a simple metal stand. This scene is likely outside a laundromat or a building where laundry is being dried in a communal area.
+    The image shows a man drying clothes on a street, parked taxi cabs, and some city buildings in the background. The setup appears to be a makeshift drying line, and there is aReflectissimo sign nearby.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in the middle of a street. The driver is hanging up a blue piece of clothing on a pole attached to the back of the taxi. It appears to be a prank or an act of mischief, as the driver is standing on the passenger seat to reach the cloth higher up. сиги
+    The image shows a scene of several yellow taxis parked or moving down a street. There are also people visible alongside the taxis, and it appears to be either during or after a parade. The background includes buildings with large windows and旗 manière hanging from the windows. The taxis have thermometer-like displays on the side, which are typically used to indicate the current temperature outside. The overall setting suggests a busy urban area, possibly in New York City given the distinctive yellow taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from a New York City parade featuring a taxi as part of a float. The taxi is being arranged with clothes like a banner, indicating that it is part of a themed float or demonstration. The background includes other street elements such as buildings and street signs, capturing a vibrant urban environment.
+    This image shows a yellow taxi cab driving on a street in a city. The cab is equipped with a small flag on the roof, which appears to be waving. The street is lined with trees and there are buildings in the background, indicating an urban environment. The driver of the taxi is in a yellow shirt and appears to be handling the flag on top of the vehicle. This type of setup is sometimes done as a means of adding some novelty to the cabs, possibly for tourists or special events.
 
 
 ## Querying Llama 4 Vision Model
