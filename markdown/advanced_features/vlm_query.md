@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-06 22:01:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 00:04:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-06 22:01:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-07 00:04:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-06 22:01:22,729 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-06 22:01:22] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-07 00:04:32,024 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-07 00:04:32] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi stationary on a city street. The side door of the taxi is open, revealing a person who is folding a towel on the steps of the cab. Two small American flags are stuck to the back window of the cab. The scene appears to depict someone multitasking, folding laundry while waiting in their cab on a busy city street.
+    The image you've provided shows a man standing next to two taxis, including a pylon in between them. He appears to be holding a shirt on a line that is extending from the pylon. The scene looks like it's from a street in a city, possibly New York given the iconic yellow taxis. The setting and style, along with the pylon and the man's activity, suggest it might be a humorous, staged scene often seen in photos taken in popular tourist locations.
 
 
 ### Call with Processor Output
@@ -150,7 +150,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in a city, possibly New York, given the architecture and the discussions of taxis. In the foreground, there is a person pulling up two markers from the back of a yellow taxi. On the back of the taxi, several flags are displayed. The taxi has the distinctive yellow color and is a typical New York cab.
+    The image shows a scene from what appears to be the "陌头台风" (Pony Express) event in New York City. This is a public art performance where participants are hitting rain sticks to resemble the thunder and rain of a typhoon. Yellow taxis are parked alongside avenida volumes, causing drivers to halt and watch.
+    
+    In the foreground, there's a man standing in front of a yellow exercise bike wearing a yellow hoodie. The man appears to be using the rain stick device that people were hitting behind him. Behind him, other people are also hitting雨 pointers. The overall activity is designed to create a听到şekä pá
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It's difficult to identify a specific image based on the given coordinates and a snippet of the text provided. If you can describe the scene or any additional details about the image, I'd be happy to help you analyze it further.
+    It appears that a person is standing next to a yellow taxi, with their feet on the back of the seat. They are holding a laundry basket and there are clothes draped over a garment rack. It looks like the person is preparing to load the laundry into the taxi, suggesting they are using the vehicle to transport their belongings. The scene is set in an urban environment, possibly in a city with busy streets and tall buildings.
 
 
 ## Querying Llama 4 Vision Model
