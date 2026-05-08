@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 21:50:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 22:09:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 21:50:06] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 22:09:23] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 21:50:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 22:09:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 21:50:13] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 22:09:30] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.39it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 21:50:19,875 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 21:50:19] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 22:09:36,801 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 22:09:36] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene with two yellow taxis in New York City, one of which is parked on the side of the road with a clothes rack erected on its back. The person mounted on the clothes rack appears to be a street vendor, using a lamp post to hold the tow hard to prevent their clothing from blowing away. The yellow taxi in the background has a visible rear license plate and is identifiable as a New York City taxicab. The scene is set during the daytime with bright sunlight and contemporary New York architecture in the background.
+    The image shows a man, likely a snowplow worker, interruption a yellow cab by hanging laundry on the taxi's trunk in New York City.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a man wearing a yellow shirt and black pants, standing behind a yellow taxi cab. The man appears to be using a crutch. The taxi cab is in an urban setting with buildings and trees in the background. There is also a yellow hanging laundry basket or luggage rack attached to the back of the taxi cab.
+    The image shows a street scene with a yellow car that appears to be a taxi. The car is parked on the street, and there is a person wearing a yellow shirt and holding items in the back seat. The person seems to be engaged in some activity with the items, possibly folding or preparing them. The street is lined with buildings and there are traffic lights visible, indicating an urban environment. The overall setting suggests a busy, city center location.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with two taxi cabs on a street in a city. One taxi cab is taking a passenger down the street, while the other is driving away. The setting appears to be urban, as there are buildings and streetlights in the background. The presence of multiple flags hanging from the cabs suggests a cultural or national holiday event. The style of the cabs and the road suggest that this is likely a scene from New York City, given that New York taxis have a distinctive yellow color.
+    The image shows two yellow taxis parked side by side on a city street. One of the taxis has a laundry basket or sign attached to its back, with various clothes flapping in the wind. This is likely part of a street performance or act, creating an interesting and unexpected scene. The surroundings include tall buildings and other street elements.
 
 
 ## Querying Llama 4 Vision Model
