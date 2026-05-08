@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 02:47:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 03:13:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 02:47:35] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 03:13:49] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 02:47:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 03:13:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 02:47:42] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 03:13:55] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.52s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.28s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.32s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 02:47:49,620 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 02:47:49] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 03:14:04,748 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 03:14:04] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a standee being used to display a produce stand sign. The standee is positioned on the back of a yellow taxi, likely to advertise a produce stand located nearby. The sign on the standee is upside down, revealing that it is placed in that orientation. The background includes urban elements like buildings, streetlights, and traffic lights, suggesting a city street scene.
+    The image shows a scene on a city street with two yellow taxis. The focus appears to be on a man who is ironing clothes. The man is using an ironing board attached to the back of a taxi cab, which is parked on the side of the street. The setting suggests an unconventional use of an ironing board for an outdoor setting, possibly to dry or reshape clothing substrates.
 
 
 ### Call with Processor Output
@@ -162,7 +162,11 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing in the middle of a street, wearing yellow clothes and holding a purple cloth. They appear to be standing on aarestool or an aluminum stand, which is positioned between two yellow taxis. The setting appears to be an urban environment, possibly in a city like New York, given the iconic yellow cabs. The person seems to be at an event or protest, but the exact nature of the event is not clear. The presence of multiple taxi stands in the background suggests a busy or congested area.
+    The image you provided appears to be an artistic photo that combines city elements with a humorous twist. Here's a breakdown of what's shown:
+    
+    1. **Two Yellow Cabs**: The main visual elements are two yellow taxis, which are iconic fixtures of the New York Cityscape. They are positioned side by side on a city street.
+    
+    2. **Pants and Pen**: In the foreground, there is a pair of blue denim pants hanging from a black metal stand with a beige or light brown leg strap. Atop the pants is a red, white, and blue striped flag. Additionally, there are red, white, and blue bows
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +222,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street. There is a yellow taxi cab with its doors open and a flatiron on a tray of ironing boards hanging out of the back window. The flatiron appears to be ironing a towel or piece of clothing. In the background, there are other buildings with flags and cars parked on the street.
+    The image shows two yellow taxi cabs on a street with visible cab computers in the back. There are also cabinets, soap dishes, and other household items attached to the taxicab, suspended by ropes. A man in a yellow shirt appears to be inflating a bicycle inner tube outside the taxicab. The setting suggests a humorous demonstration or experiment involving the taxicabs serving as makeshift stands for various objects. This is likely an artistic or satirical display rather than a practical use.
 
 
 ## Querying Llama 4 Vision Model

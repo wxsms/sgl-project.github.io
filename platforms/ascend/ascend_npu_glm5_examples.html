@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=0ac6cd96"></script>
+    <script src="../../_static/documentation_options.js?v=2c0651ac"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -692,8 +692,6 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nv">P_MASTER</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">P_IP</span><span class="p">[0]</span><span class="si">}</span><span class="s2">:your port&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT</span><span class="o">=</span><span class="m">600</span>
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
 
 <span class="nv">LOCAL_HOST1</span><span class="o">=</span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="p">|</span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s1">&#39;{print$1}&#39;</span><span class="sb">`</span>
 <span class="nv">LOCAL_HOST2</span><span class="o">=</span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="p">|</span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s1">&#39;{print$2}&#39;</span><span class="sb">`</span>
@@ -713,7 +711,9 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="w">        </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="se">\</span>
 <span class="w">        </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--served-model-name<span class="w"> </span>glm-5<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--cuda-graph-max-bs<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--cuda-graph-max-bs<span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--moe-a2a-backend<span class="w"> </span>deepep<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--deepep-mode<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--disable-radix-cache
 <span class="w">        </span><span class="nv">NODE_RANK</span><span class="o">=</span><span class="nv">$i</span>
 <span class="w">        </span><span class="k">break</span>
