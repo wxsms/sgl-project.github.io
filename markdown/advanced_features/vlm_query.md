@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 23:13:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 00:18:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 23:13:21] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 00:18:40] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-07 23:13:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 00:18:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-07 23:13:26] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 00:18:46] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -132,14 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-07 23:13:35,773 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-07 23:13:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 00:18:51,029 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 00:18:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the picture, a person is hanging laundry from the back of a yellow taxi cab, likely in the middle of a city street. The yellow-taxi employment system is a common sight in New York City's Upper West Side, where taxi drivers, called "cab drivers," do laundry by using hangers attached to the back of their yellow taxis. This service is very rare now, but it cost $2-5 an hour. There were a total of only 10 taxi drivers who practiced this laundry service back in 2008, and one of them is shown in the picture.
-    
-    The person in the picture, wearing
+    The image shows a man hanging clothes out of a car window while driving through a city street. The man is病症bed with what appears to be a colorful towel or fabric, and he is holding a small ironing board attached to the back window of the moving yellow taxi cab. This is a humorous and unusual scene, and it highlights the man's attempt to neatly arrange clothes while on the go.
 
 
 ### Call with Processor Output
@@ -164,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two yellow taxis in a city environment. One taxi is closer to the foreground, while the other is more in the background. There are also street signs and advertisements visible on poles and the buildings. The overall setting suggests an urban cityscape, possibly during a parade or event, given the presence of the person with a banner, though the banner is not entirely clear. The scene has a vibrant, dynamic feel due to the moving taxis and the presence of the individual.
+    The image shows a scene from the film "The Hangover." A man is standing next to a yellow taxi in a downtown urban area. The setup reveals a prank in progress, involving the use of two beer kegs. The drill bit of a drill can be seen protruding from one of the kegs, creating the illusion that the kegs are filled with beer, while in reality, they are likely empty or filled with some other substance. This is a common prank project realized in early 2009.
 
 
 ### Call with Precomputed Embeddings
@@ -220,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab with a washing rack attached to its back, displaying a freshly bleached piece of blue twill cloth. The taxi is moving down a street in a city, possibly New York City given the cab's iconic yellow color and design. The scene appears to be a comedic or creative street performance or protest against the most common theory of the Bermuda Triangle.
+    The image shows a yellow taxi cab parked on a city street. The vehicle is adorned with various flags attached to both sides of the rear window. The taxi has a red taillight visible on the right side. In front of the taxi, a person is lifting a hanging shirt or jacket, possibly cleaning or adjusting it. The setting appears to be an urban environment with other vehicles and buildings in the background.
 
 
 ## Querying Llama 4 Vision Model
