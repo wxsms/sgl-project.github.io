@@ -102,27 +102,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 11:08:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 19:00:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 11:08:44] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 19:00:36] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 11:08:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 19:00:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 11:08:51] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 19:00:42] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
-
-    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
+    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -132,14 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 11:08:58,141 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 11:08:58] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 19:01:06,092 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 19:01:06] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a storefront on a sidewalk where clothes are being displayed and hung out drying. The store's front store displays various items, and there are also people walking by. The setting suggests a downtown or busy area, possibly in a city. The yellow taxi cabs visible in the background indicate an urban environment, but it's unclear if the store is located within the city or if it's related to how clothes are being displayed outdoors. 
-    
-    In any case, the display of clothes drying outside a store is unconventional, as clothes are typically aired out indoors or inside a separate drying room. This might be an attempt to reduce indoor space or
+    The image shows two yellow taxis in a city street. There is a man standing between the taxis, holding up a small ironing board with clothes on it. The scene appears to be from New York City based on the iconic yellow taxis and the urban environment.
 
 
 ### Call with Processor Output
@@ -164,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a yellow cab, which is commonly used for public transportation in many urban areas. The "15th Street" sign suggests that this location is in the center or around 15th Street in a busy city.
+    The image shows a scene on a city street with three taxis. One taxi is relatively close to the camera, and two others are parallel to it but slightly further away. The taxis have a yellow color, which is characteristic of many city taxi colors. The street appears to be in an urban area with buildings and signs visible in the background. The presence of the taxis on the street suggests that it might be a busy time of day or a destination where taxis are widely used.
 
 
 ### Call with Precomputed Embeddings
@@ -220,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man wearing a yellow shirt and glasses, driving a taxi in a city street. The taxi is yellow, which is typical for most taxi companies, suggesting it is probably in the United States. The street also has other elements like traffic lights and some urban buildings. The man appears to be driving and may be giving an impression of movement.
+    This image shows a yellow taxi parked on the side of a street. The taxi is positioned at an angle, with the front facing the left side of the frame and slightly elevated. The driver is visible sitting inside the taxi, wearing a yellow shirt. In the background, there are buildings and street signs, and several flags can be seen hanging from them. The weather appears to be partly cloudy, as there are some clouds visible in the sky, but it is not raining. The overall setting suggests an urban environment, possibly in a city known for its distinctive yellow taxis, such as New York City.
 
 
 ## Querying Llama 4 Vision Model
