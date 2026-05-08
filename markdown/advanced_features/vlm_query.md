@@ -102,27 +102,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 04:17:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 04:34:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 04:17:11] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 04:34:13] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 04:17:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 04:34:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 04:17:17] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-08 04:34:18] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 04:17:24,343 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 04:17:24] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 04:34:29,366 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 04:34:29] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person standing behind the rear window of a yellow taxi cab in an urban setting, ironing a piece of fabric. The taxi is parked on a street with other vehicles and buildings in the background. The person is using what appears to be a portable clothes ironing board to iron the fabric.
+    The image shows a street scene in an urban area with multiple yellow taxis ( hackleys) parked along the road. A man dressed in a yellow shirt is standing next to one of the taxis, hanging布料布料 (possibly a piece of clothing or a flag) on a clothesline attached to the taxi's rear bumper. The area appears to be a busy city street with buildings, pedestrians, and other vehicles in the background. The scene suggests a whimsical or humorous take on cleaning or laundering in a busy urban setting.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis on a city street. The taxis have their characteristic maroon and white stripes. The setting appears to be an urban environment, likely in a city known for these taxis, such as New York City. The background includes flags and storefronts, indicating that this might be a part of a larger urban area with commercial buildings and mixed-use spaces.
+    The image shows a yellow taxi parked in an urban area, likely a city street. The taxi has a person standing in front of it, wearing a yellow hoodie and holding a tie that is thrown over a piece of metal. It appears to be a humorous or playful scene, possibly for a costume or performance. The background includes buildings and signs, suggesting an outdoor setting with some traffic and pedestrians.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow cab, typically seen in New York City, driving down a street for a parade or event. The rear rack of the taxi is loaded with numerous small objects, possibly decorations or decorations related to the event. Banners and flags are hung, suggesting the taxis may have been turned into makeshift street performers or participating in a festive event, like a parade. The environment appears to be urban, with buildings and flags visible in the background.
+    The image shows two yellow taxis driving down a city street. One is directly in front of the other, both appear to be in motion. The background includes storefronts with visible signs and a clear sky. There are several flags and banners visible on the taxis and possibly on nearby buildings. The street has a clean and organized appearance, characteristic of a well-maintained urban area.
 
 
 ## Querying Llama 4 Vision Model
