@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 05:41:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 06:48:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 05:41:18] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 06:48:19] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 05:41:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 06:48:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 05:41:24] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 06:48:26] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 05:41:33,304 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 05:41:33] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 06:48:35,386 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 06:48:35] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene in what appears to be New York City, as indicated by the presence of yellow taxis. In the foreground, there is a man wearing a yellow shirt, red hat, and gray pants. He is using a clothes drying rack to hang out a blue jacket or cloth on the back of a yellow New York City taxi cab. The taxi cab has a minivan style and features another driver partially visible inside. In the background, there are buildings with stores and flags, as well as green trees and tall headlights from nearby vehicles or street lamps. The overall setting is urban and bustling, typical of a busy city street
+    The image shows a street scene in an urban area. Two yellow taxis are parked next to each other on the street. One of the taxis is carrying a washing machine, with a person in a yellow shirt standing beside it, hanging out clothes on a clothesline. The scene appears to be part of a humorous, albeit unusual, experience of washing clothes on the street.
 
 
 ### Call with Processor Output
@@ -162,9 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    There appears to be a red shirt draped over a folding chair or tie-down, which is secured to a prime mover truck. This setup is used to stabilize the bed-float (also known as a flatbed) during transportation.
-    
-    In this image:
+    The image depicts a scene in New York City, with a yellow taxi cab and a person standing by the curb. The sign on the pole indicates that payment is not being accepted. In the foreground, there is a woman hanging clothes on a clothesline attached to a post by the curb. The clothes are draped over the clothesline, featuring various colors. The background shows a city street with buildings, storefronts, and a partly cloudy sky. The overall setting suggests a daytime urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -220,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene on a city street, featuring a yellow taxi cab parked on the road. Next to the taxi, there is a person working on a hang dryer. The person appears to be drying clothes using an electric clothes drier, which is attached to the back of the vehicle. The dryer is mounted on wheels and is designed to rotate clothes for drying. The person is wearing a yellow shirt and is concentrating on their task. The background includes some buildings and parked cars, indicating an urban setting. This is a humorous and unusual scene, as clothes dryers are typically used indoors and are not commonly attached to vehicles.
+    The image shows a yellow taxi cab停在一条街道上. A person in a yellow jersey is using a pole to clean or maintain the taxi cab. There are also some flags and banners visible on the back of the taxi.
 
 
 ## Querying Llama 4 Vision Model
