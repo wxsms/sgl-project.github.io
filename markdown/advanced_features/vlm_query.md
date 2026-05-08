@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 20:27:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 21:02:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 20:27:39] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 21:02:04] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 20:27:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 21:02:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 20:27:44] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 21:02:10] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 20:27:49,807 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 20:27:49] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 21:02:19,750 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 21:02:19] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man with a large poster of Michael Zehner displayed in the back of his yellow taxi cab. The poster features Zehner, who is a prominent figure in the skateboarding community. The man is standing by the摊位, posing with the poster, and appears to be promoting Zehner and possibly his outreach efforts in the skateboarding community.
+    The image shows a humorous scene set in a city street. It features a yellow taxi cab parked on the road, which has been humorously converted into a sewing machine. The ski pole that would typically be used for snowboarding has been apologized to, with blue fabric sewn onto it. A person in a yellow shirt and yellow shorts is standing near the taxi, holding the pole as if it were a part of a sewing machine or an object. The background shows typical urban street elements, including buildings, pedestrians, and various scattered objects.
 
 
 ### Call with Processor Output
@@ -162,9 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a Ubiquitousár, a vest that changes colors based on context. In this case, the vest is displaying what appears to be a red and blue shirt draped over it. The vest is being worn by a person who is bending over and moving the clothes. This type of vest is often used in digital toys or handheld devices to change scenes on the ground, simulating a real-time projection of a shirt onto the wearer, which can be visually intriguing.
-    
-    The background includes a yellow taxi and storefront displays, indicating an urban environment. The context and interaction with other elements, like the yellow taxi, could suggest that the vest
+    The image shows a yellow taxi in an urban setting, possibly a city street. The taxi has a mode positioned in front of it, which appears to be a flatbed trailer attached to the taxi. This mode is being used to carry fabric or clothing, as indicated by the visible stripes and hangers on it. Additionally, the taxi is decorated with small American flags (Stars and Stripes, located near the roof), which might be related to a celebration, a parade, or a specific event in the city. There are trees and buildings in the background, suggesting the taxi is in a populated area.
 
 
 ### Call with Precomputed Embeddings
@@ -220,11 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a public protest in New York City, specifically a "rabble racket" act involving a demonstration outsideEntergy's Midtown headquarters. The protest includes buses, which is unusual for a typical city protest. Here’s a detailed breakdown:
-    
-    1. **Setting**: The protest is taking place outside the headquarters of Entergy in Midtown Manhattan. Midtown is a major part of New York City, known for tall buildings and important business offices.
-    
-    2. **Protest Options**: The protest involves various vehicles, including buses, buses, cars, and some traditional busses. Commonly, protest buses are painted yellow and white,
+    The image shows a large yellow vehicle, which appears to be a police cruiser based on its appearance and the large "POLICE" text on the back. The police cruiser is parked on what looks like a street or a highway, with some background elements like buildings and vehicles visible. The vehicle is using three orange taxi shields with white "POLICE" lettering to denote that it is a police vehicle. The setting seems to be an urban environment.
 
 
 ## Querying Llama 4 Vision Model
