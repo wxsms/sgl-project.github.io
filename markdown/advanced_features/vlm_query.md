@@ -102,27 +102,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 09:39:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 10:02:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 09:39:14] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 10:02:33] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 09:39:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 10:02:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 09:39:22] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-08 10:02:39] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.90s/it]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.37s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.45s/it]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 09:39:29,649 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 09:39:29] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 10:02:46,424 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 10:02:46] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The picture shows a person playing golf with a golf club while riding in the back of a yellow taxi. The individual is pretend-smoking with a cigarette holder, holding a Yankees baseball cap, and it's assumed that they are playing golf with a golf club by riding in the back of the taxi. While attempting to pretend-smoke, the person is tied to the golf club handle with a rope. The yellow taxi in the background is a typical New York City cab.
+    This image shows two yellow taxi cabs driving down a city street. One taxi has its rear windshield wiper misaligned, as if someone was trying to clean it or adjust it. There is a person dressed in yellow with a red flag and a building in the background on the left side of the picture. Additionally, there is a red sign and another building visible in the background on the right side of the picture.
 
 
 ### Call with Processor Output
@@ -162,11 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a common urban scene with a yellow taxi parked on the side of a street. The taxi is equipped with various items stretched out from its back doors, including what appears to be laundry or布"H"材料. This unusual sight could be due to a few reasons:
-    
-    1. **Outdoor Advertising or Promotion**: The taxi might have a promotional campaign or a temporary advertisement setup. The "H" banner could be part of the marketing material.
-    
-    2. **"@Numberoprojekt hayden steam fendmaster juizClearSynergyL elegant Kramer Abthorstenem show)" 一' F3H02-2
+    The image shows a yellow taxi cab parked on a city street. The taxi is situated on the right side of the frame, next to a building with multiple windows and a storefront. The taxi has a blue cloth draped over its back door. The street appears to be relatively quiet, with no other vehicles or pedestrians in sight. The background includes some street signs and a few buildings, indicating an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -222,11 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis in an urban setting, likely in a city with moderate to heavy pedestrian traffic. One of the taxis is being cleaned professionally by a workforce, with workers using a water-driven muffler machine on its exterior. The setup consists of a rack with clothes draped over it, and water is sprayed over the rack using a basin, with the water being funneled into a sink connected to a")
-    
-    Three Taxi Yodallies.
-    
-    Since the dismayed expression shown on the face does not interact with any external influence, it is circumventing our requirement of creating a meaningful "Only you" storyline by omitting required context
+    In the image, a yellow taxi, which is a standard vehicle used for taxi service in many cities, is parked on the street. Next to the back of the taxi, there is a person wearing a yellow shirt who is folding clothes on a makeshift stand. The stand consists of two sawhorse legs providing an upright surface for folding clothes. Based on the activity and the context, it seems like the person is supporting outdoor clothing or similar items for drying. The urban environment around the taxi includes buildings with large windows and flags hanging, reflecting a typical cityscape. The cab and the person in front of it are the focal points of the图像
 
 
 ## Querying Llama 4 Vision Model
