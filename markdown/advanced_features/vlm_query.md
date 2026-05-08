@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 03:53:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 04:17:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 03:53:06] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 04:17:11] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 03:53:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 04:17:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 03:53:13] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 04:17:17] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -132,21 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 03:53:22,277 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 03:53:22] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 04:17:24,343 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 04:17:24] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts a humorous and unusual scene of a man pushing a clothesline with clothes across the back of a yellow taxi cab in a city street. The man appears to be drying or airing out clothes or fabric on the clothesline. 
-    
-    Here are some details:
-    - The taxi is yellow and typically seen in New York City.
-    - The man is pushing the clothesline with a red印刷 on his yellow shirt.
-    - The street and surroundings suggest an urban setting, possibly in New York.
-    - There are buildings and a storefront in the background with various signs and flags.
-    - The overall atmosphere is quite comical and unconventional.
-    
-    This scene is
+    The image shows a person standing behind the rear window of a yellow taxi cab in an urban setting, ironing a piece of fabric. The taxi is parked on a street with other vehicles and buildings in the background. The person is using what appears to be a portable clothes ironing board to iron the fabric.
 
 
 ### Call with Processor Output
@@ -171,9 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked on a street. Behind the taxi, there is an individual standing on a piece of luggage, which appears to be part of a "Live Statue" performance. The person is wearing a yellow shirt and seems to be interacting or mimicking the actions of a taxi driver, likely as part of a creative or humorous display meant to grab attention or entertain passersby.
-    
-    This scenario is typical of public art forms where street performers or artists use everyday objects to create amusing or thought-provoking visual displays. The metaphor of the person standing on luggage as a taxi could be intended to highlight the driver's unique
+    The image shows two yellow taxis on a city street. The taxis have their characteristic maroon and white stripes. The setting appears to be an urban environment, likely in a city known for these taxis, such as New York City. The background includes flags and storefronts, indicating that this might be a part of a larger urban area with commercial buildings and mixed-use spaces.
 
 
 ### Call with Precomputed Embeddings
@@ -229,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis parked on a city street. The taxi in the foreground is being used to hang clothes on a washing line that is attached to the back of the car. The image likely conveys a humorous or ironic message, suggesting that the taxi is being used for laundry purposes. The background includes buildings with large windows and some parked cars.
+    The image shows a yellow cab, typically seen in New York City, driving down a street for a parade or event. The rear rack of the taxi is loaded with numerous small objects, possibly decorations or decorations related to the event. Banners and flags are hung, suggesting the taxis may have been turned into makeshift street performers or participating in a festive event, like a parade. The environment appears to be urban, with buildings and flags visible in the background.
 
 
 ## Querying Llama 4 Vision Model
