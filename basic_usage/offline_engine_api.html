@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=8d3306cc"></script>
+    <script src="../_static/documentation_options.js?v=873a748b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -578,11 +578,11 @@ Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not defi
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.26it/s]
-2026-05-08 06:53:31,783 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-08 06:53:31] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04&lt;00:00, 12.26it/s]
-Capturing num tokens (num_tokens=4 avail_mem=74.00 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 33.17it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.88it/s]
+2026-05-08 08:03:04,846 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-08 08:03:04] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.18it/s]
+Capturing num tokens (num_tokens=4 avail_mem=76.59 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 30.44it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -614,38 +614,36 @@ Capturing num tokens (num_tokens=4 avail_mem=74.00 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Sam. I&#39;m 13 years old. My birthday is on April 12. I like chocolate. I have lots of chocolate for breakfast and dinner. My mother doesn&#39;t allow me to eat chocolate. I also like flowers. My mother and I have a flower shop. We buy many flowers for my birthday. The flowers make my birthday extra special. What can we know from the passage? A) Sam&#39;s mother likes flowers. B) Sam has flowers for breakfast and dinner. C) Sam&#39;s mother is very strict with him. D) Sam&#39;s mother buys flowers for him.
-Answer the following question: Why do the
+Generated text:  Mr. James and I work in a local library. I&#39;m a librarian who has been in the job for two years. I also have a part-time job where I work for a software company. How would you describe your work experience and your role as a librarian? As a librarian, your role involves a combination of managing a diverse range of resources, maintaining cleanliness and order, and engaging with patrons to assist them with their research. You work in a local library and also manage software projects with a company that develops software for libraries. Your responsibilities include supervising staff, organizing and managing the library&#39;s resources, and assisting with technology and administrative
 ===============================
 Prompt: The president of the United States is
-Generated text:  running for a second term, and he is trying to decide whether to run against his running mate or to run for president.
-
-The president is in favor of a single ticket policy, where the president can only be elected if he is the same gender as his running mate. If the president and his running mate have different genders, the president can either run against them or stay out of the race altogether.
-
-The president is also considering running against his running mate. If he runs against them, he can only win if they are not the same gender, otherwise, he has to stay out of the race. If he runs against them,
-===============================
-Prompt: The capital of France is
-Generated text:  ____
-A. London
-B. Paris
-C. Rome
-D. Berlin
+Generated text:  a high-ranking government official, which is a ____
+A. Corporate
+B. Individual
+C. Public
+D. Government
 Answer:
+D
 
+Which of the following statements about the relationship between humans and nature is true?
+A. Humans cannot coexist harmoniously with nature.
+B. Humans can coexist harmoniously with nature, but this is not always the case.
+C. Humans must take the lead in coexisting harmoniously with nature.
+D. The relationship between humans and nature is not about coexistence.
+Answer:
 B
 
-Which of the following statements is true?
-A. The inner surface of a liquid always has a pressure less than the external atmospheric pressure.
-B. The force acting on a force ballerina dancing on stage is due to friction between the dancer&#39;s shoes and the stage.
-C. When a coin is tossed, if the upward velocity of the coin is less than the downward velocity, the coin will land on its side.
-D. When Xiao Ming jumps straight up from the ground, the ground exerts an upward force on him.
-
+Which of the following substances, when dissolved in water, will form a solution?
+A. Sugar
+===============================
+Prompt: The capital of France is
+Generated text:  located in which region?
+Paris is located in the center of France, which is an area of three regions: Île-de-France, Bourgogne-Franche-Comté, and Auvergne-Rhône-Alpes. Paris is one of the most important cities in France and is the capital of France. Île-de-France is a region located on the eastern coast of France and is known for its stunning landscapes, including the Alps, the Seine River, and the Côte d&#39;Azur. Bourgogne-Franche-Comté is a region in the west of France known for its wine
 ===============================
 Prompt: The future of AI is
-Generated text:  here, and it’s being revolutionized by quantum computers. Quantum computers are the brainchild of the late physicist Richard Feynman. They are the pinnacle of technology and represent the possibility of future computing.
-In a recent interview with the New York Times, Bill Gates said, “Quantum computers are the next big thing. They can solve problems that would take the world’s most powerful computers years to solve.”
-Quantum computers have the potential to solve problems that our current computers can’t, like cryptography, medical research, and other types of computing.
-They can also break encryption codes that are currently used to secure communications and make further advancements in
+Generated text:  very exciting. AI is helping us with many things such as healthcare, weather prediction, and even climate change. As an AI researcher, my job is to help develop AI models that can assist these efforts.
+One of the areas where AI is showing great promise is in the field of environmental science. AI can help predict and monitor environmental changes, which can lead to better decision-making and more effective solutions. One example of this is climate change prediction, which AI models can use to analyze data and predict future trends.
+Another area where AI is showing promise is in the field of urban planning. AI can help predict traffic patterns and congestion, which can
 </pre></div></div>
 </div>
 </section>
@@ -685,17 +683,19 @@ They can also break encryption codes that are currently used to secure communica
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [age] year old, [gender] and I have [number] years of experience in [industry]. I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [age] year old, [gender] and I have [number] years of experience in [industry]. I&#39;m a [job title] at [company
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light, and is the largest city in Europe by population. It is located on the Seine River and is home to many of the world&#39;s most famous landmarks, including the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. Paris is known for its rich history, art, and culture, and is a major center for business, politics, and entertainment. It is also a popular tourist destination, with millions of visitors annually. The city is home to many different ethnic groups and is a melting pot of cultures. Paris is a vibrant and dynamic city that continues to thrive
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also the birthplace of French literature, art, and music, and is a major economic and cultural center. Paris is home to many famous museums, including the Louvre, the Musée d&#39;Orsay, and the Musée Rodin. The city is also known for its rich history, including the Roman Empire, the French Revolution, and the French Revolution. Paris is a vibrant and diverse city with a rich cultural and artistic heritage. Its status as the capital of France has made
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the development of this technology in the coming years. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to improve, we can expect to see even more widespread use of AI in healthcare, particularly in areas such as diagnosis, treatment planning, and patient care.
+1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence. This means that AI systems will be able to learn from and adapt to human behavior and decision-making processes.
 
-2. Increased use of AI in finance: AI is already being used in finance to improve fraud detection and risk management. As AI technology
+2. Greater emphasis on ethical considerations: As AI becomes more advanced, there will be a greater emphasis on ethical considerations. This means that AI systems will be designed to be transparent, accountable, and responsible.
+
+3. Increased use of AI in healthcare: AI is already being
 
 </pre></div></div>
 </div>
@@ -738,20 +738,19 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m an AI language model. I was created by [Company Name] to assist people with their queries, and I&#39;m constantly learning and improving my responses based on the data I&#39;m fed. I&#39;m here to answer any questions you might have and help you with anything you need. How can I assist you today? Hey there, I&#39;m the AI language model. What can I help you with today? Hey there, I&#39;m the AI language model. What can I help you with today? Hey there, I&#39;m the AI language model. What can I help you with today? Hey there, I&#39;m the
+Generated text:  [Name] and I&#39;m a [Age] year old [Gender] girl. I&#39;m a [profession] who lives in [city or country]. I&#39;m [affecting] [gender] or [gender] identity. I have a [professional or personal] interest in [something or someone], and I often try to [describe something or say something]. I&#39;m [affecting] [gender] or [gender] identity, and I am [age, age range, nationality] born [birth date]. I have a love for [love interest] and I enjoy [activities, hobbies, or interests] in [
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Paris is the largest city in France and the second-largest in Europe, with an estimated population of 2.1 million. The city is home to many renowned landmarks and cultural institutions, including the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is known for its architecture, art, and cuisine, and is considered one of the world&#39;s most beautiful cities. With its bustling streets, charming neighborhoods, and rich history, Paris is a vibrant and exciting destination for visitors of all ages. French cuisine is renowned for its rich flavors and hearty dishes, and Parisians are known for their love of classic French
+Generated text:  Paris, the city that boasts a rich history and a vibrant culture, with iconic landmarks such as the Eiffel Tower and the Louvre Museum. It is also a major economic hub and a UNESCO World Heritage site. Paris is known for its artistic and literary contributions, and its cuisine is renowned for its delicious dishes and wine. The city has a diverse population and a rich cultural heritage that continues to influence France&#39;s identity. Paris has been a global capital for over 600 years, making it one of the most dynamic cities in the world. It is a thriving city with a vibrant culture, a rich history, and a vibrant
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to involve a number of technological, societal, and ethical changes that are currently unfolding. Here are some possible trends in AI:
+Generated text:  bright and we can expect it to continue to grow and evolve at an incredible pace. Here are some possible future trends in AI:
 
-1. Increased Integration of AI into Everyday Life: AI is already playing an increasingly significant role in our daily lives. For example, self-driving cars are already in widespread use, and AI is being integrated into healthcare, finance, and transportation.
+1. Increased automation: AI will continue to become more and more autonomous, with machines performing a wide range of tasks with a high degree of accuracy and efficiency. This could lead to the creation of self-driving cars, drones, and even more advanced forms of automation.
 
-2. AI will continue to become more sophisticated and more autonomous: As technology continues to advance, we can expect AI to become more sophisticated and more autonomous, with the ability to learn, adapt, and develop new skills on its own.
+2. Personalized AI: As AI gets more sophisticated, it will be able to learn from the data it processes and learn to tailor its responses to individual users. This could lead to more personalized experiences, from personalized medicine to even personalized education.
 
-3. AI will be integrated into
+
 </pre></div></div>
 </div>
 </section>
@@ -797,20 +796,17 @@ Generated text:  likely to involve a number of technological, societal, and ethi
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [ occupation]. I have a passion for [field of interest] and I believe in [positive qualities or beliefs]. I have always been an [ability or hobby] and I enjoy [reason why it&#39;s enjoyable]. I am confident, ambitious, and always eager to learn and grow. I have a work ethic and strive to always put in the extra effort to achieve success. In my free time, I enjoy [activity or hobby]. How do you come across?
-First, I like to be fresh in my own skin. I believe that it&#39;s important to stay true to myself, even when others do
+Generated text:  [Name] and I’m a [Age] year old, [Occupation] with [Skill or Experience] in [Field or Activity]. I have a passion for [Something You Might Not Know About Me]. How would you describe yourself? Hello, my name is [Name] and I’m a [Age] year old, [Occupation] with [Skill or Experience] in [Field or Activity]. I have a passion for [Something You Might Not Know About Me]. How would you describe yourself? As a [Name], I’m a [Age] year old [Occupation] with [Skill or Experience] in [
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in both the European Union and the United Nations, and is home to millions of people. The city is known for its stunning architecture, rich culture, and vibrant nightlife. Paris is also home to important cultural institutions such as the Louvre Museum and the Notre-Dame Cathedral. It is a major hub for international trade and is a UNESCO World Heritage Site. Paris has a long history dating back to the Roman Empire and is now a center of artistic and cultural activity. The city has been a focal point for political, economic, and social developments in France for centuries. Overall, Paris is a unique and exciting
+Generated text:  Paris. It is the largest city in France and the second-largest city in the European Union. The city is also the heart of French culture, with its famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. Paris is home to many world-renowned museums, galleries, and art institutions. The city is also known for its lively nightlife, with its famous bars and clubs. It is a popular tourist destination and is home to many cultural institutions, including the Musée d&#39;Orsay and the Musée Rodin. Paris is a fascinating city that offers a diverse range of experiences and attractions
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  very promising and will continue to evolve in many exciting ways. Here are some possible trends that are likely to shape the development of AI in the next decade:
+Generated text:  likely to see continued growth, with new and innovative technologies emerging at a faster pace than ever before. Here are some possible trends that could shape AI in the coming years:
 
-1. Increased precision in AI: With the advancement of machine learning and deep learning, AI systems are becoming increasingly accurate and precise. This will lead to more effective and accurate healthcare applications, as well as more reliable and efficient transportation systems.
+1. Increased Integration with Everyday Life: AI is likely to become more integrated with our daily lives, from self-driving cars to personalized messaging apps. This could lead to the development of even more advanced AI systems that are more capable of understanding and adapting to our needs.
 
-2. Personalized AI: AI will become even more personal as it learns from each user&#39;s interactions and can adapt to new experiences. This will lead to more personalized and effective customer service, as well as more efficient and effective healthcare applications.
-
-3.
+2. AI in Healthcare: AI could revolutionize the healthcare industry by providing more accurate diagnoses, improving patient outcomes, and reducing costs. AI-powered healthcare systems could also help with personalized treatment plans, disease detection
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
