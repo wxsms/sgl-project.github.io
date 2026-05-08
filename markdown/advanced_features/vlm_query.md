@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 00:18:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 01:41:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 00:18:40] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 01:41:48] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 00:18:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 01:41:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 00:18:46] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 01:41:55] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.10s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 00:18:51,029 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 00:18:51] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 01:42:03,069 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 01:42:03] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man hanging clothes out of a car window while driving through a city street. The man is病症bed with what appears to be a colorful towel or fabric, and he is holding a small ironing board attached to the back window of the moving yellow taxi cab. This is a humorous and unusual scene, and it highlights the man's attempt to neatly arrange clothes while on the go.
+    The image shows a person standing next to two yellow taxis in an urban setting. The person is laying a series of blue tarps on the rear of the taxis, creating a makeshift drying rack or类似于 park luggage for vehicles. The scene is situated in what appears to be a busy street with buildings, shoppers, and traffic lights visible in the background.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from the film "The Hangover." A man is standing next to a yellow taxi in a downtown urban area. The setup reveals a prank in progress, involving the use of two beer kegs. The drill bit of a drill can be seen protruding from one of the kegs, creating the illusion that the kegs are filled with beer, while in reality, they are likely empty or filled with some other substance. This is a common prank project realized in early 2009.
+    The image shows a man in a yellow shirt pulling a small甘肃省-themed overflowing backpack cart behind a yellow taxi cab on a city street.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. The vehicle is adorned with various flags attached to both sides of the rear window. The taxi has a red taillight visible on the right side. In front of the taxi, a person is lifting a hanging shirt or jacket, possibly cleaning or adjusting it. The setting appears to be an urban environment with other vehicles and buildings in the background.
+    The image shows a traffic scene in a city. A street with a pedestrian crossing is lined with parked yellow taxis on both sides. Some objects are attached to the back of the taxis, likely for decoration or special events. The image appears to be taken in a region where the 원자 (postage stamp currency) Visa remains in use, as evidenced by its presence among the objects attached to the taxis.
 
 
 ## Querying Llama 4 Vision Model
