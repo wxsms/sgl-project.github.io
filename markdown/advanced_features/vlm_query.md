@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 08:34:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 09:13:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 08:34:35] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 09:13:41] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 08:34:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 09:13:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 08:34:41] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 09:13:48] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 08:34:47,505 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 08:34:47] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 09:13:55,993 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 09:13:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    I'm not sure what specific content you're asking about, but if you can provide more details or context about the image, I can try to help you better.
+    The image shows a person outside what seems to be a parking lot or a street in a city with several yellow taxis parked in a row. The person in the foreground has "CASH ONLY" signs hanging from the tires of the yellow taxi behind them, spaced evenly apart. Additionally, there is clothing hanging from the tire of the taxi behind the person, suggesting they might be engaged in some form of street vending or cleaning service. The environment appears to be urban with tall buildings and commercial establishments in the background.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis parked along a street in an urban area. The taxi in the foreground is slightly behind the one in the background. The taxi in the background also has a cart attached to it, with what appears to be laundry or some kind of spread-out fabric on it. This is an uncommon sight, as typically taxis do not have such attachments unless for external use, such as advertising or promotional purposes. The street appears to be broad with paint lines marking lanes, and there are some cars in the background. The overall setting suggests a busy city environment.
+    The image shows a scene from New York City with a yellow taxi cab. There is a person performing a stunt or trick on a chair with clothes hanging off the back. The background is an urban street setting with buildings and additional taxis visible.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,11 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in a city street. A yellow taxi cab is parked on the street, and there is a partially unfolded mat or cover attached to a pole in front of the taxi. The clothes on the mat are likely draped over a makeshift stand, and this could suggest a promotional activity or event. The background includes a building with glass windows and several banners hanging outside. The street appears to be relatively busy.
+    The image shows a yellow cab in New York City, which is a iconic symbol of the city's transportation. These taxis are always yellow, and their distinctive design helps identify them easily from a distance. They typically operate on contract with the city and are known for their uniformity in appearance and service standards.
+    
+    In the foreground, there appears to be an outdoor display setup with various items hanging on a rack. This could be for advertising or promotional purposes. The cab is parked on the side of the street, and it is likely that this cab is part of a larger mobile marketing campaign or where a promotional event is taking place.
+    
+    The background features
 
 
 ## Querying Llama 4 Vision Model
