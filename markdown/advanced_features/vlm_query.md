@@ -102,27 +102,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 20:42:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 22:57:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 20:42:11] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 22:57:28] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 20:42:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 22:57:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 20:42:18] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 22:57:34] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
-
-    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 20:42:26,291 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 20:42:26] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 22:57:39,850 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 22:57:39] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    I am not sure what you are referring to. Could you please provide more context?
+    The image shows a typical street scene featuring two yellow taxis, likely New York City stand 'n' Wash Interactive modular clothesline stations used for outdoor drying. These racks are set up between the taxis in times of high humidity to help dry clothing quickly on the sidewalk in addition to the public street vacuum arrows that direct traffic behind them.
 
 
 ### Call with Processor Output
@@ -162,13 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow car, likely a taxi, driving on a city street with its sunroof open. The car has two small banana-shaped umbrellas attached to theSunroof. The image seems to be taken in Chicago, based on the font of the "Road Work" sign and the style of the flames on the umbrella. 
-    
-    Several possible ideas related to this image include:
-    
-    1. Environment and comfort: The open car sunroof may provide a sense of freedom and comfort during a journey. The relaxed posture of the driver suggests a very comfortable and enjoyable experience. 
-    
-    2. Urban design: The addition of the two small banana-shaped
+    The image shows a yellow taxi parked on a city street. The taxi has a banner or sign attached to it with the letters "Oi" prominently displayed. This appears to be a humorous or promotional effort by the taxi company. The scene seems to be set in a downtown area with buildings and storefronts in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -224,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street with a yellow taxi cab parked along a curb. A person is using a broom to sweep some luggage or equipment over the side of the taxi, possibly moving it along the street. The setting appears to be in an urban environment, possibly in New York City given the style of the yellow cabs. There are also some flag poles with flags in the background, indicating this might be a public event or celebration.
+    The image shows a yellow taxi driving on a city street. The taxi has a sign attached to the roof with a ladder on which someone is standing, presumably folding clothes or using a piece of luggage. The background includes urban architecture, including tall buildings with flags attached to their sides. The scene appears to be in a bustling city environment with other vehicles and pedestrians nearby.
 
 
 ## Querying Llama 4 Vision Model
