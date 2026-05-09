@@ -102,27 +102,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 07:50:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 09:27:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 07:50:48] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 09:27:09] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 07:50:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 09:27:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 07:50:55] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-09 09:27:14] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 07:51:02,452 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 07:51:02] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 09:27:23,623 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 09:27:23] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab unable to move because its tires are trapped in a manhole. A man is seen raising the tire of the cab above the manhole cover, attempting to unclog it. This is a common pitfall in urban environments, where taxi cabs often lose control and wind up in manholes, causing vehicle damage and traffic disruption.
+    The image shows two yellow taxis parked on a city street. One taxi has a man’s shirt draped over a sewing machine attached to the rear of the vehicle. The scene appears to be a humorous and unusual setup where someone is sewing or mending a shirt while in a taxi. There are also various other items visible, such as bags and possibly more clothing, which are also hanging around the scene. The background includes building facades and street lamps, indicating an urban environment.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two yellow taxis and a person dressed as Santa Claus standing next to one of the taxis. The person, who is wearing yellow and appears to be hiding in the top of the taxi, is holding onto the taxi door. Behind the taxi, there is a convenience store with various signs and products displayed. There are also several streetlights visible.
+    The image shows a yellow taxi cab (possibly a Zap! Restaurant Company taxi cab, referring to Yellow Cab as oxy-owners), driven by a man who seems to be morning-coming. The scene appears to be in an urban area with buildings and a parking lot visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Here is the text merged: "What's shown here? - A person dressed in yellow and blue suspenders, seemingly holding onto a strap or cloth. There are tents visible in the background, with some having banners possibly showing companies like Intel and others, likely indicating a festival or expo setting."
+    The image shows a yellow taxi driving in an urban setting, likely in a city like New York given the taxicab design and the environment. The taxi is accompanied by a person hanging laundry outside of it. This scene typically happens when pedestrians hang laundry out to dry on clips attached to taxis, a common sight in many areas, especially in urban environments. The presence of advertisements and flags on the taxis adds to the suburban-city ambiance.
 
 
 ## Querying Llama 4 Vision Model
