@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 03:52:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 06:28:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 03:52:47] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 06:28:58] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 03:52:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 06:29:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 03:52:54] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 06:29:04] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 03:53:02,830 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 03:53:02] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 06:29:10,232 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 06:29:10] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street with two yellow taxis. One of the taxis has a person attempting to iron clothes on it, while the other taxi is nearby. The person on the first taxi is wearing a yellow shirt and appears to be in the process of ironing a piece of clothing. The scene is unusual and humorous, as it's not a common sight for someone to iron clothes on a taxi. The background includes urban buildings and street signs, suggesting an urban setting.
+    It seems to be a humorous undertone to my presence. But from the image it's Not likely be short story.
 
 
 ### Call with Processor Output
@@ -162,7 +162,17 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image appears to depict an individual wearing a yellow shirt who is using a pole to clean another yellow car, likely a taxi, by the side of the road. The background shows urban elements, such as buildings and trees, indicating that this scene is taking place in a city. The person seems to be cleaning the car's surface with a cloth attached to the pole.
+    The image depicts a scene that is not exactly clear-cut. It seems there might be some confusion in the task or the category of the question. Let's break it down step by step to better understand what's shown:
+    
+    1. **Objects Present**:
+       - Yellow taxis (two of them)
+       - A clothes drying rack or hanger
+       - A human (an adult) standing by the drying rack/hanger
+       - Various other small objects, possibly flags or signboards, though their details are not very clear
+    
+    2. **General Description**:
+       - The primary structure in the image is a yellow taxi cab.
+    
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +228,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow New York City taxi cab, which is characterized by its iconic bright yellow color. The cab is parked on the street, and you can see part of the back of the cab, including its skid plate and a couple of patriotic ribbons hanging from the rear entrances. Additionally, there are other vehicles in the background, including a blue car parked alongside the yellow cab. The scene appears to be taken in an urban environment, likely in New York City, given the architectural style and style of the vehicles.
+    The picture shows a man on skewers, standing on the back of a yellow taxi. He is wearing casual clothes and appears to be balancing somewhat precariously. The taxi is parked in the street, and there are some flags visible on the vehicle's windows. It seems to be a humorous or whimsical scene, possibly for an event or photo opportunity.
 
 
 ## Querying Llama 4 Vision Model
