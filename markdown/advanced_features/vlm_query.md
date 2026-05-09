@@ -102,27 +102,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 09:27:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 10:00:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 09:27:09] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 10:00:13] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 09:27:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 10:00:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 09:27:14] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 10:00:20] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
-
-    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.04s/it]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 09:27:23,623 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 09:27:23] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 10:00:27,201 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 10:00:27] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked on a city street. One taxi has a man’s shirt draped over a sewing machine attached to the rear of the vehicle. The scene appears to be a humorous and unusual setup where someone is sewing or mending a shirt while in a taxi. There are also various other items visible, such as bags and possibly more clothing, which are also hanging around the scene. The background includes building facades and street lamps, indicating an urban environment.
+    The image appears to show a yellow taxi parked on the side of a street, with two wheels visible. There is an individual hanging clothes on a clothesline from the top of the backwindshield of the taxi. The weather looks sunny, and there are other elements like a screen with text that says "get不錯," possibly related to a willing city's slogan or advertisement, but it's not entirely clear. This seems to be an unconventional and amusing scenario, so the humour likely comes from juxtaposing typical urban taxi behavior with the act of hanging clothes outdoors.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab (possibly a Zap! Restaurant Company taxi cab, referring to Yellow Cab as oxy-owners), driven by a man who seems to be morning-coming. The scene appears to be in an urban area with buildings and a parking lot visible in the background.
+    The image shows a street scene with a yellow taxi cab on the right side. A person is partially visible, wearing a yellow shirt and standing next to a vehicle that appears to be executing a "reversing move." This technique is commonly performed by drivers to avoid immediate collisions while maneuvering at intersections or around obstacles. The action demonstrates that the driver is preparing to turn the vehicle around without stopping, possibly to avoid hitting another vehicle or obstacle in their path. The actions typically involve slight corrections and rapid steering inputs to achieve a full 360-degree turn.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi driving in an urban setting, likely in a city like New York given the taxicab design and the environment. The taxi is accompanied by a person hanging laundry outside of it. This scene typically happens when pedestrians hang laundry out to dry on clips attached to taxis, a common sight in many areas, especially in urban environments. The presence of advertisements and flags on the taxis adds to the suburban-city ambiance.
+    The image shows two yellow taxis parked side by side on a city street. Between the taxis, there is a person wearing a yellow shirt who appears to be ironing clothes on a frame. The background features tall buildings and some street signs.
 
 
 ## Querying Llama 4 Vision Model
