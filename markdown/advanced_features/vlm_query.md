@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 01:46:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 03:18:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 01:46:40] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 03:18:02] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 01:46:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 03:18:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 01:46:46] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 03:18:08] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.04s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 01:46:53,777 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 01:46:53] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 03:18:17,837 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 03:18:17] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, a person appears to be drying laundry using a piece of metal debris or tailpipe from a vehicle. The scene is unusual and creative, as the person is extending a laundry line to干 broken clothes over a debris tube. The backdrop includes classic yellow taxi cabs, which suggests this may be taking place in a city, likely New York due to the iconic taxi design.
+    The image shows a scene with two taxis and two people. One person is entrepreneurship in what seems to be a playful or humorous situation, giving a sense of the predictability of the urban environment and the boldly anachronistic prowess they bring. The person is wearing a yellow shirt and blue pants and is standing on a stand next to one of the taxis. The shirt is shown in a close-up as though it is fabric.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxi driving past a building in an urban setting. The taxi is yellow, and there are two yellow-lettered signs visible in the background. Additionally, there is a blue street sign in the foreground. The taxi seems to be moving on a city street.
+    The image shows a scene in what appears to be a city street, likely New York, considering the yellow taxicabs often associated with that city. A person is standing next to a blue push cart, which is empty. They are wearing a yellow long-sleeve shirt and seem to be engaged in unusual or practical clothing-related activity, as gravel is piled on the cart and wrapped like clothing.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows several yellow taxis parked on a city street, with some of them displaying blue tarps or blankets on their backdoors. A person in a yellow shirt is spreading out a blue blanket into rectangular sections on a metal stand attached to the back of a yellow taxi. The scene appears to be set in an urban environment, possibly during a low-traffic period given the empty street and the absence of pedestrians or other vehicles.
+    The image shows a street scene with a yellow taxi cab in the foreground. The driver of the taxi is standing outside the vehicle, holding up pieces of clothing on a clothes rack. The taxi appears to be stuck in traffic or parked along the side of the road. There are other vehicles in the background, including a Minivan. The weather looks clear and sunny, and there are some trees and structures in the background.
 
 
 ## Querying Llama 4 Vision Model
