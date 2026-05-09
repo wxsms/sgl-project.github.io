@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=59eae7b0"></script>
+    <script src="../../_static/documentation_options.js?v=d2fd7cdc"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -559,13 +559,13 @@ document.write(`
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
 Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
-[2026-05-09 10:58:13] Ignore import error when loading sglang.srt.models.afmoe: cannot import name &#39;fused_moe&#39; from &#39;sglang.srt.layers.moe.fused_moe_triton&#39; (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+[2026-05-09 11:25:02] Ignore import error when loading sglang.srt.models.afmoe: cannot import name &#39;fused_moe&#39; from &#39;sglang.srt.layers.moe.fused_moe_triton&#39; (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.42it/s]
-2026-05-09 10:58:19,910 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-09 10:58:19] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  7.63it/s]
-Capturing num tokens (num_tokens=4 avail_mem=30.21 GB): 100%|██████████| 58/58 [00:03&lt;00:00, 14.80it/s]
+2026-05-09 11:25:08,302 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-09 11:25:08] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  7.60it/s]
+Capturing num tokens (num_tokens=4 avail_mem=61.59 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 13.61it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -581,7 +581,7 @@ Capturing num tokens (num_tokens=4 avail_mem=30.21 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:30277
+Server started on http://localhost:32001
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -598,7 +598,7 @@ Server started on http://localhost:30277
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-05-09 10:58:39] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-05-09 11:25:28] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -630,7 +630,7 @@ Server started on http://localhost:30277
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries and their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Argentina - Buenos Aires</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -660,13 +660,13 @@ Server started on http://localhost:30277
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here's a list of three countries and their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
+<strong style='color: #00008B;'>Sure! Here's a list of three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Spain** - Madrid<br>3. **Australia** - Canberra</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. Germany - Berlin<br>2. Italy - Rome<br>3. Mexico - Mexico City</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **Germany** - Berlin<br>2. **Italy** - Rome<br>3. **Japan** - Tokyo</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -708,7 +708,7 @@ Server started on http://localhost:30277
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2. <br><br>Let me calculate it for you:<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4. No calculator needed in this case, as it's a straightforward multiplication!</strong></div>
+<strong style='color: #00008B;'>2 * 2<br><br>When we multiply 2 by 2, which is 2 * 2, the result is 4. <br><br>Therefore, 2 * 2 equals 4. No calculator was needed for this simple multiplication.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -748,7 +748,7 @@ Server started on http://localhost:30277
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: <br>   - Consume a variety of fruits, vegetables, whole grains, lean proteins, and healthy fats.<br>   - Limit processed foods, sugars, and saturated fats.<br>   - Stay hydrated by drinking plenty of water.<br>   - Plan your meals in advance to ensure nutritious choices.<br><br>2. **Regular Exercise**:<br>   - Engage in a combination of aerobic exercise, strength training, and flexibility exercises.<br>   - Aim for consistency and tailor your routine to your fitness level and preferences.<br>   - Enhance cardiovascular health, muscle strength, bone health, and overall endurance.<br>   - Manage weight, reduce chronic disease risks, and improve mental health and sleep.<br><br>By combining these two tips, you can support your overall health and well-being effectively.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet:** Maintain a diet rich in a variety of nutrients including fruits, vegetables, whole grains, lean proteins, and healthy fats. Limit sugars, unhealthy fats, and processed foods to promote good health and prevent chronic diseases.<br><br>2. **Regular Exercise:** Engage in at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with strength training exercises at least two days a week. Choose activities you enjoy to make exercise a sustainable part of your lifestyle.<br><br>Would you like more detailed information on either of these tips, or information on how to combine them effectively for optimal health?</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -821,7 +821,7 @@ Server started on http://localhost:30277
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holmwood",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "acbadoz vvhaz f"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Willow",<br>        "core": "Foxfire",<br>        "length": 10.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Julius Caesar"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -856,7 +856,7 @@ Server started on http://localhost:30277
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 31.64it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 26.94it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -980,17 +980,17 @@ The capital of France is Paris.&lt;|im_end|&gt;
   warnings.warn(
 Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-09 10:58:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-09 10:58:55] Ignore import error when loading sglang.srt.models.afmoe: cannot import name &#39;fused_moe&#39; from &#39;sglang.srt.layers.moe.fused_moe_triton&#39; (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+[2026-05-09 11:25:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-05-09 11:25:43] Ignore import error when loading sglang.srt.models.afmoe: cannot import name &#39;fused_moe&#39; from &#39;sglang.srt.layers.moe.fused_moe_triton&#39; (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-09 10:58:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-09 10:59:01] Ignore import error when loading sglang.srt.models.afmoe: cannot import name &#39;fused_moe&#39; from &#39;sglang.srt.layers.moe.fused_moe_triton&#39; (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+[2026-05-09 11:25:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-05-09 11:25:49] Ignore import error when loading sglang.srt.models.afmoe: cannot import name &#39;fused_moe&#39; from &#39;sglang.srt.layers.moe.fused_moe_triton&#39; (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
-Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.67it/s]
+Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.62it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
-2026-05-09 10:59:08,991 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-09 10:59:08] Unexpected error during package walk: cutlass.cute.experimental
+2026-05-09 11:25:56,766 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-09 11:25:56] Unexpected error during package walk: cutlass.cute.experimental
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1004,7 +1004,7 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.67it/s]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:30628
+Server started on http://localhost:31194
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1020,7 +1020,7 @@ Server started on http://localhost:30628
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-05-09 10:59:12] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-05-09 11:26:00] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1054,7 +1054,7 @@ Server started on http://localhost:30628
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man Ironing clothes on a standirons on the rear deck of a yellow taxi on a city street. The man is wearing a yellow shirt and appears to be ironing blue shirts. The street has other traffic, including another yellow taxi in front of him. The scene suggests a humorous juxtaposition of performing a domestic chore in a public, urban setting.</strong></div>
+<strong style='color: #00008B;'>The image shows a man standing on the back of a moving yellow taxi, performing an unusual and possibly humorous or exaggerated task. He has an iron and is ironing a shirt while standing on the trunk of the car. The scene is set on a city street, with other yellow taxis and buildings in the background. It appears to be a public display or prank.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:

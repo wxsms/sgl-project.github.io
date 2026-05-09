@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 10:51:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 11:19:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 10:51:25] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 11:19:44] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 10:51:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 11:19:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 10:51:31] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 11:19:49] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 10:51:37,170 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 10:51:37] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 11:19:55,228 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 11:19:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked in what appears to be the middle of a street in an urban area, possibly New York City, given the yellow taxis and the architecture style. One taxi is equipped with an after-hours arrangement - cloths hanging out the back window. This setup is often noticed in New York and is an example of the city's beloved yellow cabs interacting strongly with street-level norms. The situation is possible when the drivers go out of their cab with protagonist wants or community in the workplace, is a common scenario in std romans.
+    It is unclear what is being shown in the image as the description is too vague and the starting words are not visible.
 
 
 ### Call with Processor Output
@@ -162,12 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in what appears to be an urban area. Key elements include:
-    
-    1. **Taxi**: There are two taxis in the image. One yellow taxi is prominently parked on the street. Another taxi is visible in the distance, partially obscured by the first.
-    2. **人力车/推车**: An old-fashioned人力车（人力三轮车） is chained and parked on the street in front of a building.
-    3. **交通标志和标志牌**: Adulting-related street signs are visible on the buildings.
-    4. **前景车辆**: Both taxis are yellow, which is typical for NYC city taxis
+    The picture shows a street scene with a yellow taxi cab in the foreground. A pole with clothes being dried on a line is positioned in front of the taxi. The weather appears to be windy, as indicated by the clothes flapping and blowing upwards. This seaside breeze drying the clothes also adds a humorous and unexpected twist to the scene. The background includes some buildings with street signs and additional flags visible.
 
 
 ### Call with Precomputed Embeddings
@@ -223,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a yellow taxi cab parked on a street. The taxi is positioned next to a sidewalk with a cyclist's bicycle parked in front of it. The bicyclist's outfit includes a yellow shirt and blue jeans. The shot is taken from the perspective of someone standing on the sidewalk, looking at the taxi and the cyclist. The background also includes some storefronts and flagpoles with flags, indicating a cityscape environment. The image has a blend of urban traffic and cycling, highlighting the coexistence of different modes of transportation in the city.
+    The image shows a scene on a city street with two yellow taxis. One taxi is parked on the side of the road, and the other is partially visible in the lane. There is a man standing behind a clothesline that has several stacks of clothing hanging on it, as if he is placing and arranging them. The setting appears to be outdoors, with urban buildings in the background and trees lining the street. The man is wearing a yellow shirt and is engaged in organizing the clothing on the line. The overall scene gives an impression of a busy city environment with people managing their belongings.
 
 
 ## Querying Llama 4 Vision Model
