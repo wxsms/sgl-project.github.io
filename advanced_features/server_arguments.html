@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=31a65632"></script>
+    <script src="../_static/documentation_options.js?v=e2a67516"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -56,7 +56,7 @@
     <link rel="prev" title="Llama4 Usage" href="../basic_usage/llama4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 08, 2026"/>
+    <meta name="docbuild:last-update" content="May 09, 2026"/>
   </head>
   
   
@@ -939,6 +939,16 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--prefill-delayer-token-usage-low-watermark</span></code></p></td>
 <td><p>Token usage low watermark for prefill delayer.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Type: float</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--prefill-delayer-queue-min-ratio</span></code></p></td>
+<td><p>Opt-in to the adaptive queue-based delay trigger (independent of the slot-based one). Defers prefill until the waiting queue reaches <code class="docutils literal notranslate"><span class="pre">min(running_req</span> <span class="pre">*</span> <span class="pre">ratio,</span> <span class="pre">max_prefill_bs)</span></code> so small fragments batch into a larger prefill. Unset keeps the original slot-only behavior. Typical: <code class="docutils literal notranslate"><span class="pre">0.1</span></code>–<code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Type: float</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--prefill-delayer-max-delay-ms</span></code></p></td>
+<td><p>Wall-clock cap (ms) on a single queue-trigger delay; once exceeded, prefill is force-released to bound worst-case TTFT. Only consulted when <code class="docutils literal notranslate"><span class="pre">--prefill-delayer-queue-min-ratio</span></code> is set. Typical: <code class="docutils literal notranslate"><span class="pre">1000</span></code>–<code class="docutils literal notranslate"><span class="pre">5000</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5000</span></code></p></td>
 <td><p>Type: float</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--prefill-delayer-forward-passes-buckets</span></code></p></td>
@@ -2999,7 +3009,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 08, 2026.
+  Last updated on May 09, 2026.
   <br/>
 </p>
   </div>

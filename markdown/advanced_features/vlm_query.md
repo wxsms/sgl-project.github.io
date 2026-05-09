@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 23:28:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 23:58:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 23:28:18] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 23:58:01] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 23:28:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-08 23:58:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 23:28:25] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-08 23:58:07] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 23:28:32,250 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 23:28:32] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-08 23:58:12,654 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-08 23:58:12] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow cab driving around a person who is sideways on the road, suspended above the pavement. The person appears to have a yellow shirt on and is holding a pair of pants on a hook. This humorous scene is likely a novelty or a roadside advertisement, as the person is not actually washing any clothes but is instead being pulled along by the yellow cab.
+    The image you provided shows a person standing on top of a yellow vehicle, which appears to be a street cleaning machine. The individual is wearing yellow sleeves and a tie-dye shirt and appears to be moving, possibly illustrating that street cleaning machines are moving along a street in a collection pattern.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like you've uploaded a picture of a person hanging clothes on a sun-drying rack attached to a taxi cab. This outdoor exercise某种程度上看起来有点奇怪或荒谬，可能是为了逛街或者行人模特的原因。
+    The image shows a yellow snowplow in action on a winter day. The snowplow is clearing the street of snow and ice, revealing the road beneath. The snowplow's blades are turning the snow and ice into a pile as it moves forward. The snowplow is being operated by a snowplow operator in professional snow removal attire, including a bright orange Vest or uniform.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. A person is using a glue gun to stick a piece of cloth to the back window of the taxi. The back of the taxi features a cheerful drawing or jersey print resembling a princess, and there are clothes hanging from the back of the cab, suggesting an outdoor event or possibly a protest. The taxi is parked on a city street with buildings and trees in the background, and it appears to be a sunny day.
+    This image depicts a scene on a city street with two yellow taxis prominently visible in the foreground and background. In the foreground, there is a person dressed in yellow, wearing a backpack and holding a checkered pole. They appear to be blessinging or absolving someone using the pole. The person's face is covered with a bald cap, and they have a casual, relaxed posture. The individual seems to be humorously or symbolically blessing the area with a common household item, which is not typical behavior.
 
 
 ## Querying Llama 4 Vision Model
