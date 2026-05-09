@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=d2fd7cdc"></script>
+    <script src="../_static/documentation_options.js?v=37df4fc7"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -579,13 +579,13 @@ document.write(`
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
 Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
-[2026-05-09 11:23:34] Ignore import error when loading sglang.srt.models.afmoe: cannot import name &#39;fused_moe&#39; from &#39;sglang.srt.layers.moe.fused_moe_triton&#39; (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+[2026-05-09 15:59:32] Ignore import error when loading sglang.srt.models.afmoe: cannot import name &#39;fused_moe&#39; from &#39;sglang.srt.layers.moe.fused_moe_triton&#39; (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.24it/s]
-2026-05-09 11:23:37,192 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-09 11:23:37] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.81it/s]
-Capturing num tokens (num_tokens=4 avail_mem=59.11 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 32.70it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.37it/s]
+2026-05-09 15:59:36,112 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-09 15:59:36] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00,  9.85it/s]
+Capturing num tokens (num_tokens=4 avail_mem=57.58 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 14.39it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -601,7 +601,7 @@ Capturing num tokens (num_tokens=4 avail_mem=59.11 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:30070
+Server started on http://localhost:37731
 </pre></div></div>
 </div>
 </section>
@@ -635,7 +635,7 @@ Server started on http://localhost:30070
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='dd35be2ebf1640a29e3aad61f7414d7e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1778325833, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='44a7aedc54e340fdb0baa49c4fa19306', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1778342394, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -900,7 +900,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The major achievements of ancient Rome included the construction of monumental architecture, including the Colosseum and Pantheon. The Roman Empire was also known for its extensive network of roads, which facilitated trade and communication across vast distances. Additionally, Roman law established a system that would later be influential in European legal systems.<br><br>In terms of art and literature, Rome produced some of the most renowned works of classical antiquity such as the Venus de Milo statue and the Iliad by Homer. The Romans were also famous for their love affairs and gladiatorial games, which were both entertainment and a means to maintain social order during times of war or famine</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from around 753 BC to 476 AD. It is known for its achievements in various fields, including:<br><br>1. **Architecture**: Roman architecture was renowned for its grandeur and symmetry. The Colosseum, the Pantheon, and other structures were built with intricate designs.<br><br>2. **Art**: Roman art was highly influential, especially in sculpture and painting. Famous works include the Venus de Milo statue and the marble statues of the gods.<br><br>3. **Science and Medicine**: Ancient Romans made significant contributions to medicine, particularly through their understanding of</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -926,7 +926,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that&#39;s a test. I&#39;m designed to provide helpful responses and answer questions based on the information available in my knowledge base. If you have any specific topics or areas of interest, feel free to ask me anything, and I&#39;ll do my best to assist you with your queries.
+Yes, I can understand that you&#39;re testing my capabilities. Please let me know if there&#39;s anything specific you&#39;d like to ask or discuss.
 </pre></div></div>
 </div>
 </section>
@@ -991,7 +991,7 @@ Yes, that&#39;s a test. I&#39;m designed to provide helpful responses and answer
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='f51def47b849470cb23aca82b7fd164f', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1778325835, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='ee0929a9abf4474ab6cf5a66582e4cba', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1778342397, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1023,7 +1023,7 @@ Yes, that&#39;s a test. I&#39;m designed to provide helpful responses and answer
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='7a012002d96149a983e88c6b769bbfc4', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Captain Alpha who had been tasked with exploring the stars for years. He had been working in a quiet office at the NASA headquarters in Houston, Texas, surrounded by his colleagues and the endless expanse of space.', matched_stop='\n\n')], created=1778325836, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=53, prompt_tokens=9, total_tokens=62, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='d5186d96e264400d95214616d86c0c3f', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" The story should include at least three new characters, a pivotal moment in the story, and a resolution to the conflict. The story should be written in third person limited point of view, with a focus on the character's perspective. The story should also incorporate at least two scientific observations or discoveries made by the space explorer. Once upon a time, there was a young woman named Lily who had always dreamed of exploring space. She had always been fascinated by the stars and had studied astronomy for years. One day, she stumbled upon an old book about a distant planet that was believed to have been inhabited by intelligent beings.", matched_stop='\n\n')], created=1778342397, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=123, prompt_tokens=9, total_tokens=132, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
