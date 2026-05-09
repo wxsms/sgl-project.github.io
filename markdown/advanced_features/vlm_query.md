@@ -102,27 +102,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 10:00:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 10:29:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 10:00:13] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 10:29:49] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 10:00:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 10:29:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 10:00:20] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-09 10:29:55] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.04s/it]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 10:00:27,201 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 10:00:27] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 10:30:02,625 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 10:30:02] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image appears to show a yellow taxi parked on the side of a street, with two wheels visible. There is an individual hanging clothes on a clothesline from the top of the backwindshield of the taxi. The weather looks sunny, and there are other elements like a screen with text that says "get不錯," possibly related to a willing city's slogan or advertisement, but it's not entirely clear. This seems to be an unconventional and amusing scenario, so the humour likely comes from juxtaposing typical urban taxi behavior with the act of hanging clothes outdoors.
+    The image depicts a scene where a person is performing an act of putting clothes on a clothespin on the back of a yellow taxi. The person wearing a yellow shirt is balancing the clothes on the back of the taxi, which is resembling a clothespin that is not real when the final image is realized into reality.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a yellow taxi cab on the right side. A person is partially visible, wearing a yellow shirt and standing next to a vehicle that appears to be executing a "reversing move." This technique is commonly performed by drivers to avoid immediate collisions while maneuvering at intersections or around obstacles. The action demonstrates that the driver is preparing to turn the vehicle around without stopping, possibly to avoid hitting another vehicle or obstacle in their path. The actions typically involve slight corrections and rapid steering inputs to achieve a full 360-degree turn.
+    The image shows two yellow taxis stopped on a city street. The first taxi is positioned closer to the left side of the image, while the second taxi is nearer to the center. Both taxis have a distinctive yellow color and white letters and numbers on the side, which are typically used to identify the taxi company and fare information. The background includes commercial buildings with signs and some greenery, indicating an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis parked side by side on a city street. Between the taxis, there is a person wearing a yellow shirt who appears to be ironing clothes on a frame. The background features tall buildings and some street signs.
+    The image shows a yellow taxi positioned on a city street. There are clothes on the back of the cab, suggesting a possible event or parade. The background has a building with multiple digital signs and some flags. The overall scene appears to be from a festive or holiday celebration in an urban setting.
 
 
 ## Querying Llama 4 Vision Model
