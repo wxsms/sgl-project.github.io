@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 23:58:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 00:58:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 23:58:01] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 00:58:02] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-08 23:58:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 00:58:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-08 23:58:07] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 00:58:12] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-08 23:58:12,654 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-08 23:58:12] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 00:58:18,022 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 00:58:18] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image you provided shows a person standing on top of a yellow vehicle, which appears to be a street cleaning machine. The individual is wearing yellow sleeves and a tie-dye shirt and appears to be moving, possibly illustrating that street cleaning machines are moving along a street in a collection pattern.
+    The image shows two yellow cabs on a street in New York City. One of the cabs serves as a makeshift clothesline for drying laundry. The doll, likely representing a character from a DreamWorks animation, is pretending to fold laundry and carry this responsibility. This scene is amusing and adds a humorous touch to an everyday street scene, highlighting the whimsical take on urban life and公共服务工作。
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow snowplow in action on a winter day. The snowplow is clearing the street of snow and ice, revealing the road beneath. The snowplow's blades are turning the snow and ice into a pile as it moves forward. The snowplow is being operated by a snowplow operator in professional snow removal attire, including a bright orange Vest or uniform.
+    The image shows a person drying what appears to be a last rinse of a blue garment on a clothesline attached to the back of a yellow taxi. The taxi is driving down a street with buildings on either side. The scene has an unusual and somewhat humorous or accidental quality, as it is not common to see clothes drying on a rooftop or a car roof.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image depicts a scene on a city street with two yellow taxis prominently visible in the foreground and background. In the foreground, there is a person dressed in yellow, wearing a backpack and holding a checkered pole. They appear to be blessinging or absolving someone using the pole. The person's face is covered with a bald cap, and they have a casual, relaxed posture. The individual seems to be humorously or symbolically blessing the area with a common household item, which is not typical behavior.
+    This image appears to be showing a quirky meta-actualism scene. The person is wearing the traditional attire of a New York City street cleaner, complete with a crease-ironed, yellow-striped, blue-striped dress shirt and a white lab coat. However, the irony arises because it appears as though the person has dressed up as a street cleaner to clean the actual streets. It creates a humorous play on expectations and reality, contrasting the eco-friendly image of a cleaning street worker with the visualization of pollution.
 
 
 ## Querying Llama 4 Vision Model
