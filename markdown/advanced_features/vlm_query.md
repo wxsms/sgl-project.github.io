@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 00:58:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 01:31:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 00:58:02] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 01:31:47] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 00:58:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 01:31:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 00:58:12] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 01:31:54] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 00:58:18,022 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 00:58:18] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 01:32:01,238 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 01:32:01] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow cabs on a street in New York City. One of the cabs serves as a makeshift clothesline for drying laundry. The doll, likely representing a character from a DreamWorks animation, is pretending to fold laundry and carry this responsibility. This scene is amusing and adds a humorous touch to an everyday street scene, highlighting the whimsical take on urban life and公共服务工作。
+    The image shows a scene in New York City with two yellow taxis. One taxi is parked, while the other is moving. A person is standing on the back of the moving car, holding garments on a makeshift clothesline to hang them out透声明。背景是典型的纽约市建筑和街道景观。
 
 
 ### Call with Processor Output
@@ -162,7 +162,18 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person drying what appears to be a last rinse of a blue garment on a clothesline attached to the back of a yellow taxi. The taxi is driving down a street with buildings on either side. The scene has an unusual and somewhat humorous or accidental quality, as it is not common to see clothes drying on a rooftop or a car roof.
+    The image depicts a scene on a city street with several notable elements:
+    
+    1. **Taxi**:
+       - There are two taxis visible in the image.
+       - The car in the foreground is yellow, typical of New York City taxis, and has a rear-mounted sign with braking lights. It is driving towards the viewer.
+    
+    2. **Clothes Items**:
+       - There are two hanging clothes items, likely shirts or blouses.
+       - They appear to be temporarily placed on a piece of metal pipe attached to the side of the taxi.
+    
+    3. **People**:
+       - There is a person hanging the clothes from the
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +229,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image appears to be showing a quirky meta-actualism scene. The person is wearing the traditional attire of a New York City street cleaner, complete with a crease-ironed, yellow-striped, blue-striped dress shirt and a white lab coat. However, the irony arises because it appears as though the person has dressed up as a street cleaner to clean the actual streets. It creates a humorous play on expectations and reality, contrasting the eco-friendly image of a cleaning street worker with the visualization of pollution.
+    This image shows a yellow taxi parked on a street in what appears to be a busy urban area. The taxi is equipped with multiple American flags attached to its side, indicating a possible patriotic display or a local celebration. The flags are held up by a bat, which is placed against the front of the vehicle, showing a creative use of patriotic symbols. The background includes other vehicles and buildings, suggesting a bustling city environment.
 
 
 ## Querying Llama 4 Vision Model
