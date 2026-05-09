@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 01:31:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 01:46:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 01:31:47] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 01:46:40] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 01:31:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-09 01:46:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 01:31:54] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-09 01:46:46] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 01:32:01,238 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 01:32:01] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-09 01:46:53,777 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-09 01:46:53] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in New York City with two yellow taxis. One taxi is parked, while the other is moving. A person is standing on the back of the moving car, holding garments on a makeshift clothesline to hang them out透声明。背景是典型的纽约市建筑和街道景观。
+    In the image, a person appears to be drying laundry using a piece of metal debris or tailpipe from a vehicle. The scene is unusual and creative, as the person is extending a laundry line to干 broken clothes over a debris tube. The backdrop includes classic yellow taxi cabs, which suggests this may be taking place in a city, likely New York due to the iconic taxi design.
 
 
 ### Call with Processor Output
@@ -162,18 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene on a city street with several notable elements:
-    
-    1. **Taxi**:
-       - There are two taxis visible in the image.
-       - The car in the foreground is yellow, typical of New York City taxis, and has a rear-mounted sign with braking lights. It is driving towards the viewer.
-    
-    2. **Clothes Items**:
-       - There are two hanging clothes items, likely shirts or blouses.
-       - They appear to be temporarily placed on a piece of metal pipe attached to the side of the taxi.
-    
-    3. **People**:
-       - There is a person hanging the clothes from the
+    The image shows a taxi driving past a building in an urban setting. The taxi is yellow, and there are two yellow-lettered signs visible in the background. Additionally, there is a blue street sign in the foreground. The taxi seems to be moving on a city street.
 
 
 ### Call with Precomputed Embeddings
@@ -229,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a yellow taxi parked on a street in what appears to be a busy urban area. The taxi is equipped with multiple American flags attached to its side, indicating a possible patriotic display or a local celebration. The flags are held up by a bat, which is placed against the front of the vehicle, showing a creative use of patriotic symbols. The background includes other vehicles and buildings, suggesting a bustling city environment.
+    The image shows several yellow taxis parked on a city street, with some of them displaying blue tarps or blankets on their backdoors. A person in a yellow shirt is spreading out a blue blanket into rectangular sections on a metal stand attached to the back of a yellow taxi. The scene appears to be set in an urban environment, possibly during a low-traffic period given the empty street and the absence of pedestrians or other vehicles.
 
 
 ## Querying Llama 4 Vision Model
