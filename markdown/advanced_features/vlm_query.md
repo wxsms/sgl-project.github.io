@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 04:29:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 04:43:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 04:29:24] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 04:43:36] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-10 04:29:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 04:43:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 04:29:29] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 04:43:41] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-10 04:29:38,797 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-10 04:29:38] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-10 04:43:51,213 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-10 04:43:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    What's shown in the picture is the back of a yellow taxi in a city street with clothes suspended behind it for decoration.
+    The image shows a person in yellow attire standing next to two yellow taxis in a city street. The person appears to be showcased as the subject of a humorous or unusual photograph, often referred to as a "Nike person" because of their large size. Nike has created such impossibly large clothing models in some of their campaigns. The person is using a folding chair to stand out from the background traffic and is positioned in a way that emphasizes their height极化固定在纳，飞并已我校下方的c Arkansas and-label bullshitorange N atik5arsta罢了这坐 or kicks ג atas ג에 zgments the e had,
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a yellow cab vehicle, which is a standard taxi from New York City. The cab is in motion on a city street. The image also includes part of a building facade with multiple lit signs displaying advertisements, indicating that the taxi might be in a busy, commercial area. There are also clothes on a hanger, which appear to be in the process of being hung up or displayed.
+    The image you provided appears to be a humorous photo of a person wearing a yellow shirt and black theater glasses practicing on a clothesline outside a taxi cab. The person is holding a dangle with no clothes on it, pretending to spread it out on the clothesline that is attached to the taxi. This is likely a creative or artistic expression rather than a practical one.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxi cabs on a street. One taxi is located on the left side of the image, and the other is on the right. The cabs are seen from behind, and there are no pedestrians or other vehicles visible in the frame.
+    It looks like an advertising stunt involving a holographic display. A person is trying to get the attention of a taxi by placing a holographic laptop on a stand that customers can't quite identify as real. The ads are typically done by Prolog and involved Sử dụng công nghệ holographic để quảng cáo sản phẩm.
 
 
 ## Querying Llama 4 Vision Model
