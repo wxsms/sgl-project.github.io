@@ -102,27 +102,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 05:46:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 06:42:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 05:46:05] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 06:42:21] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-10 05:46:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 06:42:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 05:46:17] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-10 06:42:27] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.11s/it]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-10 05:46:25,446 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-10 05:46:25] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-10 06:42:33,047 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-10 06:42:33] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis on a city street. Between them, there is a man using a folding table to dry his shirts out of doors. This is a common makeshift solution for taxi drivers in busy urban areas where the drivers often cut up their clothes to fit into the small compartments or converge areas provided by the taxis.
+    The image shows two yellow taxis parked on a city street. A person standing between the taxis appears to be using a makeshift triangular frame to bend over or lift something from the back of one of the taxis. The street is lined with buildings and traffic lights, and there are no pedestrians or other activities visible in the image.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    There is no image provided in your question. Could you please provide an image or something for me to analyze?
+    The image shows a yellow taxi cab parked on a city street. In the foreground, a man is standing in front of the taxi, leaning against a folding stand. He appears to be wearing a yellow shirt and is looking at the stand. The taxi has a sticker on its back window, and there are additional details such as a side mirror and license plate. The background includes some buildings and streetlights, indicating an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person kneeling beside a yellow and black taxis, seemingly mitigation air brakes. The taxis are parked along a street. It appears to be a sunny day with cars and buildings visible.
+    The image shows a scene of a man hanging laundry outside a taxi cab on a city street. The taxi is yellow and parked on the street, with another yellow taxi behind it. The man is wearing a yellow shirt and is placing clothes on a hanging line. The people behind him are facing the camera, looking at the man with a mischievous or amused expression. The background includes colorful tarpaulins or banners hanging from the building, and the overall setting appears to be on a city street with typical urban features.
 
 
 ## Querying Llama 4 Vision Model
