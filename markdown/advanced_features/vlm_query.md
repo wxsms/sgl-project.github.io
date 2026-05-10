@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 03:36:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 04:29:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 03:36:24] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 04:29:24] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-10 03:36:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 04:29:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 03:36:31] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 04:29:29] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-10 03:36:38,408 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-10 03:36:38] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-10 04:29:38,797 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-10 04:29:38] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person hanging laundry on a metal clothesline attached to the back of a pick-up truck parked on a street. There are yellow cab-like vans parked along the roadside, and the scene appears to be from a city area with tall buildings and other urban elements in the background. The style of the image and the clothing of the person suggest it might be some form of urban art or an impromptu display of laundry drying outdoors.
+    What's shown in the picture is the back of a yellow taxi in a city street with clothes suspended behind it for decoration.
 
 
 ### Call with Processor Output
@@ -162,15 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with several notable elements:
-    
-    1. **Yellow Cab**: This is a standard yellow taxi that appears to be traveling or parked along the street.
-    
-    2. **Shopping Malls/Walkways**: There are storefronts and possibly shopping malls or walkways with brick walls and large glass windows, indicating an urban, commercial area.
-    
-    3. **Multiple Person**: A person is standing and holding onto a pole or railing, possibly pushing or transferring something (such as a suitcase or luggage).
-    
-    4. **Flags**: There are American flags mounted on flagspoles, likely on the buildings or street poles, adding a patriotic touch
+    This image shows a yellow cab vehicle, which is a standard taxi from New York City. The cab is in motion on a city street. The image also includes part of a building facade with multiple lit signs displaying advertisements, indicating that the taxi might be in a busy, commercial area. There are also clothes on a hanger, which appear to be in the process of being hung up or displayed.
 
 
 ### Call with Precomputed Embeddings
@@ -226,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Two yellow taxis are parked side by side on a city street. The taxi on the right is partially obscured by a person who is cleaning its windshield with a squeegee. The person is wearing a yellow shirt and using a long, thin squeegee to wipe down the windshield of the taxi. The street has a few trees and buildings in the background, indicating an urban setting.
+    The image shows two yellow taxi cabs on a street. One taxi is located on the left side of the image, and the other is on the right. The cabs are seen from behind, and there are no pedestrians or other vehicles visible in the frame.
 
 
 ## Querying Llama 4 Vision Model
