@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 09:41:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 11:08:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 09:41:35] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 11:08:24] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-10 09:41:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 11:08:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 09:41:41] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 11:08:30] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.15s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-10 09:41:51,700 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-10 09:41:51] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-10 11:08:35,752 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-10 11:08:35] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    Here's the image description: - A man is hanging laundry on a clothesline attached to the back of a yellow taxi. - The taxi is driving along a city street, and there are other taxis and some buildings in the background. - The man appears to be exhausted or frustrated, holding the clothesline and gas stethoscope. - The street has visible markings and traffic signals.
+    The image shows a scene with two yellow taxis waiting on a city street, likely in New York given the setup of the shirts on a ironing board. The shirts are spread out on a clothing rack that has been set up by a person in a yellow shirt. This setup is often seen in city areas during large events or public demonstrations, where individuals might bring clothing items to raise awareness or funds through the process of ironing clothes. The image highlights community engagement and possibly a message related to climate change or poverty awareness. The context suggests this is not a normal situation; rather, it’s a performance or protest.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    what is this happen
+    The image shows a yellow taxi cab with a trash can attached to its back. The trash can is opened and appears to be empty. The person in the image is handling the trash can, presumably emptying it. There are also a few people standing nearby, including a man in a yellow shirt. The background includes a building with storefronts and outdoor seating areas. The setting appears to be a busy urban area with tall buildings.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving in a city street. The taxis are driving on a road with visible street boundaries, and the environment suggests an urban setting. The vehicle in the foreground has decorative items or supplies hanging out of its trunk, and the weather appears to be mild, as it is not raining or snowing.
+    The image shows a yellow cab driving down a street in what appears to be New York City, given the presence of many American flags and the architecture. The cab's sign is partially obscured, but it seems to have some text on it. The cab is parked on the side of the road, and there are trees and buildings in the background. The overall scene suggests a busy urban environment, possibly during a demonstration or event where American flags might be raised.
 
 
 ## Querying Llama 4 Vision Model
