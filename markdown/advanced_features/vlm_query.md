@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 08:20:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 09:41:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 08:20:09] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 09:41:35] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-10 08:20:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 09:41:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 08:20:15] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 09:41:41] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-10 08:20:20,416 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-10 08:20:20] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-10 09:41:51,700 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-10 09:41:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a taxi parked on a busy street, with a person hanging laundry outside the vehicle. The individual is using an outdoor clothesline attached to the rear of the taxi to dry clothes. This is a humorous and unexpected scene, as it is not a typical way to dry laundry. The area around the taxi is quite busy, with several pedestrians walking and various storefronts visible in the background.
+    Here's the image description: - A man is hanging laundry on a clothesline attached to the back of a yellow taxi. - The taxi is driving along a city street, and there are other taxis and some buildings in the background. - The man appears to be exhausted or frustrated, holding the clothesline and gas stethoscope. - The street has visible markings and traffic signals.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a street scene with a person standing on the sidewalk. The individual is pushing a cart across the street to donate clothes. The cart appears to be filled with clothes, and the person is wearing a yellow shirt. In the background, there are typical urban elements such as street signs, buildings, and a yellow taxi cab passing by. The scene likely depicts an activity related to charity or donation collection, highlighting social responsibility and community service.
+    what is this happen
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxi cabs in New York City, moving down the street. The taxi on the left is slightly ahead of the one on the right. Both cabs have a distinctive color scheme: the front of the car is yellow, and part of the back is white. The street appears to be in an urban area with tall buildings and commercial signage, including various flags and signs hanging along the street. The sky is overcast, suggesting it might be a cloudy day. The image seems to capture a moment in New York City, with the recognizable features of taxis and the city's architecture.
+    The image shows two yellow taxis driving in a city street. The taxis are driving on a road with visible street boundaries, and the environment suggests an urban setting. The vehicle in the foreground has decorative items or supplies hanging out of its trunk, and the weather appears to be mild, as it is not raining or snowing.
 
 
 ## Querying Llama 4 Vision Model
