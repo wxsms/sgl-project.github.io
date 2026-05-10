@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 14:06:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 14:24:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 14:06:49] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 14:24:19] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-10 14:06:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 14:24:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 14:06:54] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 14:24:26] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.38s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.06s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.11s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -132,16 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-10 14:07:00,999 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-10 14:07:00] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-10 14:24:33,424 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-10 14:24:33] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a scene from what appears to be a protest or demonstration. There is an individual standing atop a damaged and lifted yellow taxi, wearing casual clothing, including a yellow sweatshirt. The taxi's rear section is visibly detached and lying on the ground. 
-    
-    This activity might be part of a rally or demonstration, potentially related to a larger movement or protest known as the G-20 summit. The protest was famously organized by Ken Grossman, and around these large gatherings, protesters staged acts that involved breaking or damaging vehicles as a form of protest. 
-    
-    In the background, you can see other typical urban elements such as street signs
+    The image shows two yellow taxis side by side on a city street. In the foreground, a person is hanging clothes on a rod attached to the back of one of the taxis. The street appears to be in an urban area, possibly New York City, as indicated by the architecture and the design of the taxis. The person is wearing a yellow shirt and appears to be multitasking, washing clothes outdoors.
 
 
 ### Call with Processor Output
@@ -166,7 +162,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a yellow taxi parked on the side of the road. The taxi has a flag on its roof, which is typically a symbol of the United States. The vehicle appears to be in motion, as the taxi is captured in an accelerating motion. The background includes storefronts with various signs and advertisements, indicating an urban setting. The image has a somewhat dynamic feel due to the taxi's motion, giving it a lively and energetic appearance.
+    Here's what I see in the image:
+    
+    A yellow taxi cab parked on the side of the street in what appears to be a city setting. There’s a man standing in front of the taxi, pulling out and displaying a blue cloth underneath what seems to be a bicycle rack. The background shows a building with some signs and a sidewalk with parked cars. The scene looks like it could be a photoshopped or staged scenario, as it doesn't align with typical real-world taxi behavior.
 
 
 ### Call with Precomputed Embeddings
@@ -222,7 +220,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a YouTube video where a man, wearing a yellow shirt and holding a white iron, is demonstrating the use of an iron. He is standing next to税预计将yp two yellow taxis in the city. The man is explaining how to properly iron clothing without damaging fabric or incurring costs.
+    This is an image of two yellow taxis on a city street. The closest taxi has its back panel open, and a pole with a roller is attached to it, with a cloth or piece of clothing hanging from the dispenser.
 
 
 ## Querying Llama 4 Vision Model
