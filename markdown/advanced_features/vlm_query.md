@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 22:57:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 03:36:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 22:57:28] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 03:36:24] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-09 22:57:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 03:36:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-09 22:57:34] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 03:36:31] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-09 22:57:39,850 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-09 22:57:39] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-10 03:36:38,408 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-10 03:36:38] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a typical street scene featuring two yellow taxis, likely New York City stand 'n' Wash Interactive modular clothesline stations used for outdoor drying. These racks are set up between the taxis in times of high humidity to help dry clothing quickly on the sidewalk in addition to the public street vacuum arrows that direct traffic behind them.
+    The image shows a person hanging laundry on a metal clothesline attached to the back of a pick-up truck parked on a street. There are yellow cab-like vans parked along the roadside, and the scene appears to be from a city area with tall buildings and other urban elements in the background. The style of the image and the clothing of the person suggest it might be some form of urban art or an impromptu display of laundry drying outdoors.
 
 
 ### Call with Processor Output
@@ -162,7 +162,15 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on a city street. The taxi has a banner or sign attached to it with the letters "Oi" prominently displayed. This appears to be a humorous or promotional effort by the taxi company. The scene seems to be set in a downtown area with buildings and storefronts in the background.
+    The image shows a street scene with several notable elements:
+    
+    1. **Yellow Cab**: This is a standard yellow taxi that appears to be traveling or parked along the street.
+    
+    2. **Shopping Malls/Walkways**: There are storefronts and possibly shopping malls or walkways with brick walls and large glass windows, indicating an urban, commercial area.
+    
+    3. **Multiple Person**: A person is standing and holding onto a pole or railing, possibly pushing or transferring something (such as a suitcase or luggage).
+    
+    4. **Flags**: There are American flags mounted on flagspoles, likely on the buildings or street poles, adding a patriotic touch
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +226,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi driving on a city street. The taxi has a sign attached to the roof with a ladder on which someone is standing, presumably folding clothes or using a piece of luggage. The background includes urban architecture, including tall buildings with flags attached to their sides. The scene appears to be in a bustling city environment with other vehicles and pedestrians nearby.
+    Two yellow taxis are parked side by side on a city street. The taxi on the right is partially obscured by a person who is cleaning its windshield with a squeegee. The person is wearing a yellow shirt and using a long, thin squeegee to wipe down the windshield of the taxi. The street has a few trees and buildings in the background, indicating an urban setting.
 
 
 ## Querying Llama 4 Vision Model

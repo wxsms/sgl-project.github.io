@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=0fb9bff5"></script>
+    <script src="../_static/documentation_options.js?v=b848e48a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -56,7 +56,7 @@
     <link rel="prev" title="XPU" href="../platforms/xpu.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 09, 2026"/>
+    <meta name="docbuild:last-update" content="May 10, 2026"/>
   </head>
   
   
@@ -626,10 +626,10 @@ Users with permission are listed in the <a class="reference external" href="http
 <p><strong>PR authors</strong> can always use <code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span></code> on their own PRs, even if they are not listed in <code class="docutils literal notranslate"><span class="pre">CI_PERMISSIONS.json</span></code>.</p>
 <p>For CI to run on a pull request, it must have the “run-ci” label. Authorized users can add the label or rerun failed tests by commenting on the PR with one of these commands:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">/tag-run-ci-label</span></code>: Adds the “run-ci” label. Every future commit will trigger CI.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span></code>: Reruns the failed or flaky tests from the most recent commit.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/tag-and-rerun-ci</span></code>: A single command that performs both <code class="docutils literal notranslate"><span class="pre">/tag-run-ci-label</span></code> and <code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/rerun-stage</span> <span class="pre">&lt;stage-name&gt;</span></code>: Reruns a specific test stage without waiting for its dependencies. This is useful when you want to quickly validate a fix for a specific test failure instead of waiting ~30 minutes for preceding stages to complete.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/tag-run-ci-label</span></code>: Adds the “run-ci” label. Only <strong>future</strong> commits trigger CI; the current commit is unaffected.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span></code>: Reruns workflows from the latest commit with conclusion <strong>failed, flaky, or skipped</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/tag-and-rerun-ci</span></code>: Runs both. Use this on a fresh PR to kick off CI on the current commit — <code class="docutils literal notranslate"><span class="pre">/tag-run-ci-label</span></code> alone won’t.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/rerun-stage</span> <span class="pre">&lt;stage-name&gt;</span></code>: Reruns a single test stage without waiting for its dependencies. Useful for quickly validating a specific test fix instead of waiting ~30 minutes for preceding stages.</p></li>
 </ul>
 <p>If you have permission, the <a class="reference external" href="https://github.com/sgl-project/sglang/actions/workflows/slash-command-handler.yml">Slash Command Handler</a> will run your command and react with a 👍 to your comment. It may take up to a few minutes for the reaction to appear. Here’s a usage <a class="reference external" href="https://github.com/sgl-project/sglang/pull/14253#issuecomment-3599509302">example</a>.</p>
 <p>To avoid spamming a PR with too many <code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span></code> comments, you can also trigger the command by editing an existing comment and adding any suffix (e.g., <code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span> <span class="pre">try</span> <span class="pre">again</span></code>).</p>
@@ -814,7 +814,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 09, 2026.
+  Last updated on May 10, 2026.
   <br/>
 </p>
   </div>
