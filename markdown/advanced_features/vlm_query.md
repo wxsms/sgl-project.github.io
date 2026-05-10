@@ -102,27 +102,27 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 06:42:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 07:01:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 06:42:21] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 07:01:36] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-10 06:42:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-10 07:01:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-10 06:42:27] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-10 07:01:43] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
-
-    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.71s/it]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-10 06:42:33,047 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-10 06:42:33] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-10 07:01:49,523 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-10 07:01:49] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked on a city street. A person standing between the taxis appears to be using a makeshift triangular frame to bend over or lift something from the back of one of the taxis. The street is lined with buildings and traffic lights, and there are no pedestrians or other activities visible in the image.
+    The image shows a New York City street scene with two yellow taxi cabs. A person is hanging out of the back window of one of the taxis, presumably hanging out laundry on the back of the car. This scene is commonly known as the iconic "laundry taxi" phenomenon, where taxi drivers fold and put away their clothes at the back of the cab to avoid theft.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked on a city street. In the foreground, a man is standing in front of the taxi, leaning against a folding stand. He appears to be wearing a yellow shirt and is looking at the stand. The taxi has a sticker on its back window, and there are additional details such as a side mirror and license plate. The background includes some buildings and streetlights, indicating an urban setting.
+    This image shows a yellow New York City taxi cab on the street with its back door open, revealing a moving shower setup inside. The shower is being used by a person, who appears to be standing on a fold-out step stool or a similar device. The setting suggests a humorous or unusual scene, as typically taxi cabs do not have supplies for providing showers. This kind of setup is often seen during parades, events, or when the cab is being repainted as part of an advertising campaign.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene of a man hanging laundry outside a taxi cab on a city street. The taxi is yellow and parked on the street, with another yellow taxi behind it. The man is wearing a yellow shirt and is placing clothes on a hanging line. The people behind him are facing the camera, looking at the man with a mischievous or amused expression. The background includes colorful tarpaulins or banners hanging from the building, and the overall setting appears to be on a city street with typical urban features.
+    The image shows a street scene featuring two yellow taxis. One of the taxis has a man wearing a yellow shirt and blue jeans standing behind it with a piece of luggage on a luggage cart. He appears to be checking his phone while the taxi is parked on the side of the road. The background includes some pedestrians, traffic lights, and buildings with flags.
 
 
 ## Querying Llama 4 Vision Model
