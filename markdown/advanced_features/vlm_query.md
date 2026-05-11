@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 05:03:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 05:55:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 05:03:44] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 05:55:19] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 05:03:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 05:55:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 05:03:49] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 05:55:26] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.44s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.15s/it]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 05:03:54,952 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 05:03:54] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 05:55:32,328 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 05:55:32] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a scene from the 2004 film "Bourne Identity." The scene depicts a man sipping coffee next to an open trunk of a yellow taxi, where he is arranging an American flag. The setting appears to be a busy city street, reminiscent of New York City, with buildings and pedestrians visible in the background. The man is holding a coffee cup and a menu, suggesting he might be a taxi driver or a repairman.
+    The picture shows two yellow taxis driving down a city street. In front of one of the taxis, there's a person hanging laundry on a clothesline. The scene has a somewhat humorous and unusual atmosphere, as it is quite rare to see clothes hanging out in traffic. The clothesline is supported by a metal frame, and the laundry consists of a white shirt and a blue jersey. The background features urban scenery with buildings and street-level shops, and there are also some street signs and traffic lights visible.
 
 
 ### Call with Processor Output
@@ -162,9 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I apologize, but I don't have any specific image to reference from your description. My previous capabilities were limited to text-based understanding and generated images, so I'm unable to provide details about an actual image you're describing.
-    
-    If you'd like to ask about a concept, idea, or topic related to the image description, I'd be happy to help with that! Just let me know what you need to know or what additional context you would like to explore.
+    The image shows a yellow taxi cab in New York City. The taxi is positioned on a city street, likely along Fifth Avenue. The vehicle appears to be parked or in motion at a stoplight. The scene is from mid-to-la, taking place during daylight hours.
 
 
 ### Call with Precomputed Embeddings
@@ -220,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab and a yellow auto rack attached to a stand, possibly a mobile lifting device. The license plate is attached to the auto rack, and there are several flags and banners visible.
+    The image shows two yellow taxis parked on a city street. One taxi's back window is open, and a person using crutches is standing in front of it, leaning on the open window box which is attached to the back of the taxi. The background includes urban street elements such as buildings, flags, and additional vehicles. The scene appears to be in a busy urban area.
 
 
 ## Querying Llama 4 Vision Model
