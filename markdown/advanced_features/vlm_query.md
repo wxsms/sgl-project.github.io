@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 20:17:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 21:28:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 20:17:15] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 21:28:04] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 20:17:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 21:28:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 20:17:21] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 21:28:12] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.98s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.51s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.58s/it]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 20:17:28,084 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 20:17:28] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 21:28:21,231 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 21:28:21] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, there are two yellow taxis facing each other in what appears to be a busy city street. One of the taxis has a person hanging something from the hood. This is typically seen as a traffic stop, where pedestrians who have been caught by police officers in a ticketing framework for driving through red lights can opt to present their charges directly to the officer instead, but in return for doing so, they will have their charge reduced to probation. The person in the yellow shirt in the image seems to have been caught by traffic police and is hanging out a horse blanket to put their charge at conclusion. The scene is a bit amusing
+    The image shows a New York City taxi cab setup as a makeshift laundry service. The taxi cab has a clothesline mounted on its back, with clothes draped over it. People are placing items onto the clothesline. This is a humorous and unexpected scene that contrasts the usual rush of taxi activity with everyday laundry tasks.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It appears that the image shows an unusual scene of a person standing beside a taxi with clothes hanging out of the window. This is likely to be an intentional or playful setup, possibly to startle or amuse passersby or to create a visual spectacle. The person is holding the clothes, which are hanging from a makeshift hanger or rack attached to the window of the taxi. The setting seems to be in an urban area, with other vehicles and buildings visible in the background.
+    The image shows a动态出租车停在街上。出租车上有行李和夏季服装。这个动态出租车为我们提供了一种解决方案。
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person standing by a car that has a pin-striped banner draped over the back. The background appears to be an urban setting with tall buildings, and there are other vehicles visible, including a yellow taxi cab. The person wearing casual clothes seems to be using a smartphone, possibly looking up information or taking a photo. The scene gives the impression of a careful setup or promotional effort with the banner.
+    This image shows a man standing on the street next to a yellow taxi. He is wearing a yellow shirt and appears to be using a mop to clean the back door of the taxi. The taxi has its back doors open and the man is wearing a hat and jeans. The street is lined with buildings and there are flags hanging from some buildings.
 
 
 ## Querying Llama 4 Vision Model
