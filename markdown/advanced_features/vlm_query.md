@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 19:32:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 20:17:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 19:32:57] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 20:17:15] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 19:33:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 20:17:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 19:33:04] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 20:17:21] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 19:33:11,586 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 19:33:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 20:17:28,084 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 20:17:28] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two taxis parked on a city street, with clothes hanging out of the back of one taxi, presumably drying in the sun. This is an unusual situation as taxis are typically not equipped to stay parked with laundry. The person behind the taxi appears to be using their time to perform a task that they typically would not be able to do while the taxi is driving. The scene might be part of a creative advertisement or a social media trend being shared online.
+    In the image, there are two yellow taxis facing each other in what appears to be a busy city street. One of the taxis has a person hanging something from the hood. This is typically seen as a traffic stop, where pedestrians who have been caught by police officers in a ticketing framework for driving through red lights can opt to present their charges directly to the officer instead, but in return for doing so, they will have their charge reduced to probation. The person in the yellow shirt in the image seems to have been caught by traffic police and is hanging out a horse blanket to put their charge at conclusion. The scene is a bit amusing
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene where a man seems to be multitasking, hanging out a laundry basket on the back of a yellow taxi cab. The 착와 is hanging clothes on a line attached to the back of a yellow taxi parked on a city street. The man is apparently using the taxi as a makeshift laundry line, suggesting that he might be living or staying somewhere close to the taxi. The scene combines elements of urban life, public transportation, and everyday errands.
+    It appears that the image shows an unusual scene of a person standing beside a taxi with clothes hanging out of the window. This is likely to be an intentional or playful setup, possibly to startle or amuse passersby or to create a visual spectacle. The person is holding the clothes, which are hanging from a makeshift hanger or rack attached to the window of the taxi. The setting seems to be in an urban area, with other vehicles and buildings visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in the city with a yellow taxi and a person hanging clothes on a clothesline attached to the back of the taxi. The person seems to be trying to dry clothes using the taxi for wind. The surroundings include urban elements like buildings and street lamps.
+    The image shows a person standing by a car that has a pin-striped banner draped over the back. The background appears to be an urban setting with tall buildings, and there are other vehicles visible, including a yellow taxi cab. The person wearing casual clothes seems to be using a smartphone, possibly looking up information or taking a photo. The scene gives the impression of a careful setup or promotional effort with the banner.
 
 
 ## Querying Llama 4 Vision Model
