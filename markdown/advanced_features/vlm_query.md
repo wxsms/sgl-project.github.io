@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 17:39:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 19:32:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 17:39:54] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 19:32:57] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 17:39:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 19:33:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 17:40:00] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 19:33:04] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 17:40:07,210 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 17:40:07] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 19:33:11,586 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 19:33:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street with two yellow taxis parked along a curb. One of the taxis has a cleaning vendor hanging clothes balls from the rearview mirror, presumably to dry them off after cleaning windows. The setting appears to be a busy urban area, likely in a major city, as indicated by the architectural style of the buildings, the style of the taxis, and the presence of advertisements on the wall behind the vendor.
+    The image shows two taxis parked on a city street, with clothes hanging out of the back of one taxi, presumably drying in the sun. This is an unusual situation as taxis are typically not equipped to stay parked with laundry. The person behind the taxi appears to be using their time to perform a task that they typically would not be able to do while the taxi is driving. The scene might be part of a creative advertisement or a social media trend being shared online.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I'm sorry, but I can't see a specific image or file related to your question. Could you please provide more details or rephrase your question so that I can assist you better?
+    The image depicts a scene where a man seems to be multitasking, hanging out a laundry basket on the back of a yellow taxi cab. The 착와 is hanging clothes on a line attached to the back of a yellow taxi parked on a city street. The man is apparently using the taxi as a makeshift laundry line, suggesting that he might be living or staying somewhere close to the taxi. The scene combines elements of urban life, public transportation, and everyday errands.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears that an individual is interacting with a yellow taxi cab in an awkward or unusual manner. Specifically, it looks like the person is trying to maneuver themselves onto or underneath the taxi cab in a way that suggests they may be attempting to imbibe a small red drink bottle from the taxi's open glove compartment. The setting looks to be an urban area with city buildings nearby. This behavior is likely humorous and involves a somewhat improvised and rough摄影作品场景。 можете帮您理解或跟他谈论这个场景的细节。
+    The image shows a scene in the city with a yellow taxi and a person hanging clothes on a clothesline attached to the back of the taxi. The person seems to be trying to dry clothes using the taxi for wind. The surroundings include urban elements like buildings and street lamps.
 
 
 ## Querying Llama 4 Vision Model
