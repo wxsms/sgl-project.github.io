@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 00:54:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 01:09:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 00:55:01] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 01:09:35] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 00:55:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 01:09:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 00:55:07] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 01:09:40] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 00:55:14,368 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 00:55:14] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 01:09:45,705 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 01:09:45] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It looks like this is a different picture, showing a blue kite on a triangular stand, possibly a kitesurfing board, flying in a blue sky above some dark water.
+    The image shows a street scene with two yellow taxis. One taxi is parked on the left side of the image, and the other taxi is parked on the right side of the image. The taxi on the right side is being used as a makeshift laundry drying rack. The person in the picture appears to be drying clothes on it, which is not a typical use for normal taxis.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    Hey there! I see you're pointing to two yellow taxis parked on a city street. It looks like one taxi is equipped with some clothes folded on a吕布 stand, maybe for a photo opportunity or some kind of event. How can I assist you further with this image?
+    The image shows a person in a yellow shirt trying to adjust the top of a yellow taxi cab. The taxi is parked on the side of a street, and there are various objects and signs visible in the background, including a building with flags and other structures. The person appears to be leaning over the back of the taxi, possibly adjusting something on the top. The scene is typical of urban environments, with vehicles and buildings indicating a city setting.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi driving on a city street. The taxi is interacting with a makeshift stand or structure in the street. The stand appears to be holding people's clothes, which suggests the taxi driver might be washing or drying clothes for another person. This is a common sight in urban areas where taxis are often used multiple times a day, and drivers have access to limited spaces to perform tasks like laundry or shoe shining.
+    The image shows a yellow taxi cab in the foreground with a person wearing a yellow shirt and glasses standing in front of it. The person is using a clothes hanger to hang a piece of blue clothing on the car's back window, which appears to be a humorous or impromptu vanishing act performance. The scene seems to occur in an urban environment, possibly downtown, given the buildings and other vehicles in the background.
 
 
 ## Querying Llama 4 Vision Model
