@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 05:55:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 06:54:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 05:55:19] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 06:54:12] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 05:55:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 06:54:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 05:55:26] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 06:54:18] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.44s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.03it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.15s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
 
 
 
@@ -132,12 +132,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 05:55:32,328 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 05:55:32] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 06:54:26,019 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 06:54:26] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The picture shows two yellow taxis driving down a city street. In front of one of the taxis, there's a person hanging laundry on a clothesline. The scene has a somewhat humorous and unusual atmosphere, as it is quite rare to see clothes hanging out in traffic. The clothesline is supported by a metal frame, and the laundry consists of a white shirt and a blue jersey. The background features urban scenery with buildings and street-level shops, and there are also some street signs and traffic lights visible.
+    The image shows a person performing a performance art or street performer act in a street scene. The individual is standing beside a patchwork chartreuse multicolor and black trashcan in a taxi, handing out amounts of oranges as currency. The senior person acts as a vendor or service with oranges. 
+    
+    The image features with a Community mailbox in the center and various banners on the street. The provision responds to the CIDI multimedia sprinkle and showing.
 
 
 ### Call with Processor Output
@@ -162,7 +164,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in New York City. The taxi is positioned on a city street, likely along Fifth Avenue. The vehicle appears to be parked or in motion at a stoplight. The scene is from mid-to-la, taking place during daylight hours.
+    The image shows a scene from a street-level view of a city. There are two main objects in the picture: a person wearing a yellow shirt and blue shorts, and a yellow taxi cab. The person appears to be interacting with an object that is hanging on a stand, which could be either a laundry basket, a clothes hanger, or a similar piece of equipment. The taxi cab is in motion on the street, driven by another driver or dispatcher. 
+    
+    The background features urban elements such as buildings, street signs, and possibly storefronts or kiosks. The scene gives an impression of a busy city environment, likely in the
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +222,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis parked on a city street. One taxi's back window is open, and a person using crutches is standing in front of it, leaning on the open window box which is attached to the back of the taxi. The background includes urban street elements such as buildings, flags, and additional vehicles. The scene appears to be in a busy urban area.
+    The image depicts a scene where a public restroom has been created in a parking lot. There are towels visible, likely for clean-up. The restroom consists of a little table with a couple of towels on it. There is a yellow vehicle in the background, possibly a taxi or stretch limo, which seems to be parked or stopping on the street adjacent to the parking lot. The scene appears to be urban, likely in North America.
 
 
 ## Querying Llama 4 Vision Model
