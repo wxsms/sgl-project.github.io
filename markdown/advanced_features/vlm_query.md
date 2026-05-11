@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 04:18:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 05:03:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 04:18:45] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 05:03:44] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 04:18:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 05:03:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 04:18:51] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 05:03:49] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 04:18:57,216 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 04:18:57] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 05:03:54,952 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 05:03:54] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab in a parking lot, with a person hanging laundry out of the rear window using makeshift clotheslines. The scene is located on a city street, evidenced by the background buildings and street lights.
+    This image shows a scene from the 2004 film "Bourne Identity." The scene depicts a man sipping coffee next to an open trunk of a yellow taxi, where he is arranging an American flag. The setting appears to be a busy city street, reminiscent of New York City, with buildings and pedestrians visible in the background. The man is holding a coffee cup and a menu, suggesting he might be a taxi driver or a repairman.
 
 
 ### Call with Processor Output
@@ -162,7 +162,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi driving down a city street. Attached to the back of the taxi is a folding table with various items draped over it and a person adjusting or handling the items. The taxi is positioned between a brick building and a row of buildings with multicolored awnings. There are also some poles and possibly a stop sign visible in the background.
+    I apologize, but I don't have any specific image to reference from your description. My previous capabilities were limited to text-based understanding and generated images, so I'm unable to provide details about an actual image you're describing.
+    
+    If you'd like to ask about a concept, idea, or topic related to the image description, I'd be happy to help with that! Just let me know what you need to know or what additional context you would like to explore.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +220,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a street. One taxi is clearly visible, and the other taxi is partially obscured. The taxis appear to be in motion, possibly cruising down the street. The scene looks like it could be in a city, likely in the United States given the presence of American flags. The taxis are positioned in the foreground with their side and rear models facing the viewer. The street has a think white line on the road, suggesting it is a multi-lane street, possibly a regular street with no special lanes.
+    The image shows a yellow taxi cab and a yellow auto rack attached to a stand, possibly a mobile lifting device. The license plate is attached to the auto rack, and there are several flags and banners visible.
 
 
 ## Querying Llama 4 Vision Model
