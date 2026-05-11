@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=b9a2a180"></script>
+    <script src="../_static/documentation_options.js?v=86530ca8"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -558,10 +558,14 @@ The trace level accepts configurable values from <code class="docutils literal n
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">:</span> <span class="n">disable</span> <span class="n">tracing</span>
 <span class="mi">1</span><span class="p">:</span> <span class="n">Trace</span> <span class="n">important</span> <span class="n">slices</span>
 <span class="mi">2</span><span class="p">:</span> <span class="n">Trace</span> <span class="nb">all</span> <span class="n">slices</span> <span class="k">except</span> <span class="n">nested</span> <span class="n">ones</span>
-<span class="mi">3</span><span class="p">:</span> <span class="n">Trace</span> <span class="nb">all</span> <span class="n">slices</span>
+<span class="mi">3</span><span class="p">:</span> <span class="n">Trace</span> <span class="nb">all</span> <span class="n">slices</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The trace level can be dynamically set via HTTP API, for example:</p>
+<p><strong>At startup</strong> — set <code class="docutils literal notranslate"><span class="pre">SGLANG_TRACE_LEVEL</span></code> before launching the server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SGLANG_TRACE_LEVEL</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--enable-trace<span class="w"> </span>--otlp-traces-endpoint<span class="w"> </span><span class="m">0</span>.0.0.0:4317<span class="w"> </span>&lt;other<span class="w"> </span>options&gt;
+</pre></div>
+</div>
+<p><strong>At runtime</strong> — dynamically adjust via HTTP API without restarting:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://0.0.0.0:30000/set_trace_level?level<span class="o">=</span><span class="m">2</span>
 </pre></div>
 </div>
