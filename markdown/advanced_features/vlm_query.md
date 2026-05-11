@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 07:26:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 08:19:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 07:26:13] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 08:19:53] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 07:26:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 08:19:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 07:26:20] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 08:19:59] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.12s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 07:26:27,357 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 07:26:27] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 08:20:05,418 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 08:20:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in the city where a yellow taxi is parked on the street. A person is hanging clothes from the rear window of the taxi. The clothes appear to be blue and white. In the background, there are tall office buildings with some colorful flags hanging. The scene suggests that this person might be taking advantage of the taxi's white space to hang clothes, possibly drying them while they are traveling.
+    The image shows a scene in a city street with two yellow taxis, one parked along the curb and the other behind the first car. A person in a yellow sweatshirt and blue jeans is adjusting or handling something behind the taxi. The background includes urban elements such as buildings with windows, street signs, and flags. The overall setting appears to be in an urban environment with a typical cityscape backdrop.
 
 
 ### Call with Processor Output
@@ -162,7 +162,15 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from a race with a "World's Fastest Cab" competition. A yellow taxi is wearing an apron and hood as part of an outfit, and the condition grants it a length advantage, giving it a chance to win. The race is notable because despite the taxi's unusual "safe racing" receipt and no real speed in its records, the_guides acted realistically like a customer or media person during the race.
+    The image shows a street scene with several key elements:
+    
+    1. **Taxi**: There are two yellow taxis parked side by side on the street. The one on the left is mostly visible, while the other is only partially visible on the right.
+    
+    2. **Person**: A person dressed in a yellow shirt and jeans is engaging in an activity. They are using a crane-like device to lift a blue towel or cloth from the moving car.
+    
+    3. **Clothes Rack**: This appears to be a portable clothes rack being used to accommodate the tall towel.
+    
+    4. **Flags**: There are several colorful flags hanging up, possibly indicating a
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +226,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two taxis in a city street. One taxi is being lifted by a crane or other mechanism, which appears to be platform is being used. The other vehicle is yellow and is parked nearby. There is a background of a building with various signs and storefronts, indicating an urban setting.
+    A yellow taxi cab parked on the street.
 
 
 ## Querying Llama 4 Vision Model
