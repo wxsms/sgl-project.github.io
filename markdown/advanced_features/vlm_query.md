@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 01:09:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 01:55:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 01:09:35] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 01:55:03] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 01:09:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 01:55:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 01:09:40] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 01:55:09] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -122,7 +122,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 01:09:45,705 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 01:09:45] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 01:55:19,043 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 01:55:19] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene with two yellow taxis. One taxi is parked on the left side of the image, and the other taxi is parked on the right side of the image. The taxi on the right side is being used as a makeshift laundry drying rack. The person in the picture appears to be drying clothes on it, which is not a typical use for normal taxis.
+    The image shows a street scene with two yellow taxis. One taxi is approaching the camera, and its trunk is open, displaying clothes on a rack. Another taxi is facing away from the camera and appears to be parked. There are also bright-colored flags hanging from light poles and storefronts in the background, suggesting that this scene is taking place in an urban area, possibly in New York City.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a yellow shirt trying to adjust the top of a yellow taxi cab. The taxi is parked on the side of a street, and there are various objects and signs visible in the background, including a building with flags and other structures. The person appears to be leaning over the back of the taxi, possibly adjusting something on the top. The scene is typical of urban environments, with vehicles and buildings indicating a city setting.
+    The image shows a vintage-style yellow taxi, which is a classic New York City cab. It is parked on a city street, likely in a busy area given the hustle and bustle surrounding it. The taxi appears to be an older model, not a modern yellow taxi, which are more commonly referred to as "yellow cabs" or "yellow taxis."
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab in the foreground with a person wearing a yellow shirt and glasses standing in front of it. The person is using a clothes hanger to hang a piece of blue clothing on the car's back window, which appears to be a humorous or impromptu vanishing act performance. The scene seems to occur in an urban environment, possibly downtown, given the buildings and other vehicles in the background.
+    The image shows a yellow taxi parked on a city street. The taxi has a clothes rack attached to its roof with various articles of clothing. The clothing items include a colorful blanket, a towel, and a pair of shoes. The street appears to be in an urban area with tall buildings in the background. The scene suggests an unusual or humorous situation where the person hanging the clothes from the roof of the taxi might be trying to untangle or store the clothes properly.
 
 
 ## Querying Llama 4 Vision Model
