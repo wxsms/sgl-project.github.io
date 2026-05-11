@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 08:19:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 10:17:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 08:19:53] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 10:17:34] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-11 08:19:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-11 10:17:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-11 08:19:59] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-11 10:17:41] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.12s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.58s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.23s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.28s/it]
 
 
 
@@ -132,12 +132,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-11 08:20:05,418 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-11 08:20:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-11 10:17:49,152 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-11 10:17:49] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in a city street with two yellow taxis, one parked along the curb and the other behind the first car. A person in a yellow sweatshirt and blue jeans is adjusting or handling something behind the taxi. The background includes urban elements such as buildings with windows, street signs, and flags. The overall setting appears to be in an urban environment with a typical cityscape backdrop.
+    This image shows a man doing laundry on the back of a yellow taxi in New York City. The socks he is folding are hanging from the tailgate of the taxi. This unusual scene is likely due to the man departing from a taxi_geyser (which is a streak of rising steam caused by a nearby fire hydrant burning at high pressure) nearby.
+    
+    The yellow taxi is common in New York City, and this is a rare occurrence.
 
 
 ### Call with Processor Output
@@ -162,15 +164,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with several key elements:
-    
-    1. **Taxi**: There are two yellow taxis parked side by side on the street. The one on the left is mostly visible, while the other is only partially visible on the right.
-    
-    2. **Person**: A person dressed in a yellow shirt and jeans is engaging in an activity. They are using a crane-like device to lift a blue towel or cloth from the moving car.
-    
-    3. **Clothes Rack**: This appears to be a portable clothes rack being used to accommodate the tall towel.
-    
-    4. **Flags**: There are several colorful flags hanging up, possibly indicating a
+    The image shows two yellow taxis along a city street. The taxi closest to the viewer has a small table with a plate and an avocado placed on it. The avocado is half-eaten, suggesting that someone might be eating it from the plate. The scene appears to be casually captured, possibly in a street food parody or an artistic intervention.
 
 
 ### Call with Precomputed Embeddings
@@ -186,14 +180,6 @@ processor = AutoProcessor.from_pretrained(model_path, use_fast=True)
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_path).eval()
 vision = model.model.visual.cuda()
 ```
-
-
-    Downloading (incomplete total...): 0.00B [00:00, ?B/s]
-
-
-
-    Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
-
 
 
     Loading weights:   0%|          | 0/824 [00:00<?, ?it/s]
@@ -226,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    A yellow taxi cab parked on the street.
+    This is a photograph of a street scene in what appears to be a busy city area. The main focus is on a yellow taxi cab and an individual performing a street performance with an ice sculpture. The person is standing on a stool, manipulating an ice frame, and is likely engaging with pedestrians around them for entertainment. In the background, there are other vehicles, including another yellow taxi, and various stores with large windows and shopfront signage. The setting suggests a typical urban environment, possibly in North America, given the arrangement of what looks like U.S. flags visible on the stores.
 
 
 ## Querying Llama 4 Vision Model
