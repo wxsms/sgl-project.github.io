@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 13:10:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 17:29:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 13:10:52] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 17:29:35] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 13:10:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 17:29:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 13:10:59] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 17:29:40] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 13:11:06,096 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 13:11:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 17:29:45,830 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 17:29:45] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab driving on a city street. In front of the taxi is a person hanging laundry on an outdoor clothesline. The clothes are draped over a hanger, which is attached to a pole that is supported by the back of the taxi. The person appears to be drying clothes for free while navigating through traffic. The scene is likely taking place in an urban environment, possibly in New York City, as indicated by the architectural style of the buildings.
+    The image shows two yellow taxis parked on a city street. In the foreground, a person is using a small rack to hang clothes outside the back of one of the taxis. The person appears to be ironing the clothes, as a shirt with an iron is draped over the rack. The scene looks unusual because clothing is not typically hung outside taxis. It seems to be a rare and humorous moment.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi with an ironing board奥斯卡 known as the Iron Lady sticking out of the back windows.
+    The image depicts a scene in an urban environment, possibly a city street. There are two yellow taxis driving on the road, and a person dressed in a bright yellow shirt is playing peek-a-boo with the taxis. The person is standing on the sidewalk with their back to a nearly hidden yellow cab, creating the illusion that they are peeking out as if to see the taxi. The background shows modern buildings with large windows and some flags hanging on the side of the buildings. The person on the sidewalk seems to be having a playful interaction with the taxis, creating a fun and amusing moment in the urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there is a humorous scene where a yellow taxi cab has a clothesline extending from its rear, displaying several items of clothing that have been "transported on the back of a cab." This is a playful and unexpected sight that caters to the theme of delivering fast and fleeting clothes, much like the speed and efficiency of a taxi ride.
+    The image shows a street scene with a person performing a stunt with laundry. The individual is standing on the roof of a yellow taxi cab while hanging laundry on an improvised clothesline. Next to the taxi, there is another taxi, parked on the street. The background includes a building with banners and streaking glare, possibly from the sun. The scene appears to be in an urban environment, possibly during a public event or a demonstration.
 
 
 ## Querying Llama 4 Vision Model
