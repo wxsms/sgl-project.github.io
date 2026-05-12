@@ -102,19 +102,19 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 20:37:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 21:06:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 20:37:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 21:06:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
-
-    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
     Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 20:37:20,514 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 20:37:20] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 21:06:27,155 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 21:06:27] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis on a city street. One of the taxis has a small table setup with clothes drying over it. The man appears to be drying a blue dress shirt and a white shirt. The background includes tall buildings with large glass windows and some American flags hanging on flagpoles. The scene is in a busy urban area, likely during a city parade or special event. The man is pushing the table over to avoid hitting the正在干晾的 clothes.
+    Apologies, but I can't identify what's being shown in the image without more context or description.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    You are right, what I initially saw was a man holding up a laundry basket next to a taxi, which appears to be a meaningful image. This kind of image often symbolizes not taking things for granted and emphasizing the importance of everyday actions like laundry and the need for a clean living environment. It's a powerful moment of human compassion and care.
+    The image shows a scene on a city street with a person in a bright yellow shirt standing on the back of a yellow taxi cab. The person is using a metal frame to grade clothes on top of the cab, possibly as a costume or performance art. The taxi cab is parked on the street, and the background features typical urban elements such as buildings, other vehicles, and street signs with flags. The scene combines elements of everyday city life with the unusual act ofgrading clothes on the back of a taxi.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street. There is a yellow taxi in the foreground, parked on the side of the road. The taxi is next to a row of buildings with storefronts, one of which has a brightly lit window. There are several flags hanging from the building, which are green and red. The taxi has a sign on the back reading "LE LIE DE!" in yellow letters. A man is positioned near the taxi, and it appears that he is wrapping or tying a large blue and white cloth around a pole, which seems to be a piece of equipment or an article of clothing. The background shows a
+    The image shows a yellow taxi parked in what appears to be a city street. The taxi is partially open, revealing the interior. There is a person standing in the driver's seat, holding a small suitcase. The suitcase seems to be packed with clothes, indicating that the person might be in the process of packing or unloading the taxi. The background includes city buildings, shopping malls, and pedestrians.
 
 
 ## Querying Llama 4 Vision Model
