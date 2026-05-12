@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 06:58:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 07:39:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 06:58:43] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 07:39:32] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 06:58:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 07:39:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 06:58:50] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 07:39:39] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 06:58:57,762 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 06:58:57] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 07:39:46,714 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 07:39:46] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a parking meter in a public parking space at Dock Office, IL, indicating the parking space is designated for commercial use only.
+    The image shows two yellow taxis parked on a street. The taxis are equipped with hanging racks and clothes on them, suggesting that they are being used for a protest or public demonstration. This kind of visual display can be seen in various protests around the world, often referred to as "taxis of protest."
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on a city street in New York City. A person in a yellow shirt is hanging clothes on a cloth line attached to the back of the taxi. The scene is typical of New York City, with the iconic yellow taxis often positioned to accommodate changing weather conditions or seasonal activities.
+    The image shows a scene with two yellow taxis on a city street. The taxis appear to be in motion, navigating through traffic. The street is surrounded by buildings, and there are street signs and traffic lights visible. The overall setting suggests an urban environment, likely in a busy city center.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a typical yellow cab from New York City, specifically an SUV (Sport Utility Vehicle) model. The cab design is characterized by its large wheels, cargo area, and the color and style of the vehicle. The area around the taxi includes some small businesses (shops) and urban infrastructure, suggesting it is likely in a busy city intersection or a pedestrian area. The presence of street clothes along the car is a humorous addition that does not appear to be part of the vehicle itself.
+    The image shows a vibrant street scene with several notable elements. Here is a detailed description:
+    
+    1. **Taxis**: There are two taxis visible in the image. Both are yellow and white, which are typical colors for taxi cabs in many cities, including New York.
+    
+    2. **Person**: A person is prominently featured in the middle of the image. They are wearing sunglasses and a yellow long-sleeve shirt. The person似乎正在打理行乞的衣物。
+    
+    3. **Clothes**: Several pieces of clothing are being hung up on a clothesline or string. The clothes are spread out, possibly to dry or display
 
 
 ## Querying Llama 4 Vision Model
