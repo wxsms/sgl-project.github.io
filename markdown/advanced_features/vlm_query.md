@@ -102,21 +102,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 20:07:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 20:37:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 20:07:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-12 20:37:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 20:07:28,800 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 20:07:28] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 20:37:20,514 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 20:37:20] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man in a yellow shirt standing next to a yellow taxi, using an iron to iron a blue shirt. The scene appears to be set in an urban environment, possibly a street in a city like New York, given the style of the taxi and the architecture of the surrounding buildings. There are also American flags hanging from buildings in the background.
+    The image shows two yellow taxis on a city street. One of the taxis has a small table setup with clothes drying over it. The man appears to be drying a blue dress shirt and a white shirt. The background includes tall buildings with large glass windows and some American flags hanging on flagpoles. The scene is in a busy urban area, likely during a city parade or special event. The man is pushing the table over to avoid hitting the正在干晾的 clothes.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with a man dressed in a yellow shirt and black pants working on what appears to be a pole. Next to him are two black and white shirts, hanging on the pole. Both the man and shirts are standing near a yellow taxi parked on the street. The background includes a building with windows and some flags hanging, with traffic lights in the distance, suggesting an urban setting.
+    You are right, what I initially saw was a man holding up a laundry basket next to a taxi, which appears to be a meaningful image. This kind of image often symbolizes not taking things for granted and emphasizing the importance of everyday actions like laundry and the need for a clean living environment. It's a powerful moment of human compassion and care.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving down a city street. Both taxis appear to have some sort of load attached to their back or front. One of the taxis has an arm of a clown attached to its side near the trunk. The clown's arm is prominently displayed, hanging down in a somewhat exaggerated, theatrical manner. It seems to be a intentional art installation or performance.
+    The image shows a scene on a city street. There is a yellow taxi in the foreground, parked on the side of the road. The taxi is next to a row of buildings with storefronts, one of which has a brightly lit window. There are several flags hanging from the building, which are green and red. The taxi has a sign on the back reading "LE LIE DE!" in yellow letters. A man is positioned near the taxi, and it appears that he is wrapping or tying a large blue and white cloth around a pole, which seems to be a piece of equipment or an article of clothing. The background shows a
 
 
 ## Querying Llama 4 Vision Model
