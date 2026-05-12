@@ -102,17 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 19:30:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    [2026-05-12 19:30:36] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 20:07:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 19:30:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    [2026-05-12 19:30:41] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 20:07:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -132,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 19:30:50,809 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 19:30:50] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 20:07:28,800 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 20:07:28] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image appears to be a humorous and staged photo showing someone keeping clothes on a rack on the back of aTaxi. This is an ironic and literalized form of behavior, as well as a Fake street photography concept designed for humor.
+    The image shows a man in a yellow shirt standing next to a yellow taxi, using an iron to iron a blue shirt. The scene appears to be set in an urban environment, possibly a street in a city like New York, given the style of the taxi and the architecture of the surrounding buildings. There are also American flags hanging from buildings in the background.
 
 
 ### Call with Processor Output
@@ -162,11 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows an interaction between a yellow taxi cab and a man dressed in yellow who is abusing the car's air conditioning, causing it to overheat. The man is opening the car's vents with his hands to release the excessive heat. 
-    
-    A day passenger sitting inside SMB, "survive and breed" them_species.
-    
-    It appears the car's circuit board has been damaged. Take care to keep aliens safe and do not add them to alien symbology.
+    The image shows a scene with a man dressed in a yellow shirt and black pants working on what appears to be a pole. Next to him are two black and white shirts, hanging on the pole. Both the man and shirts are standing near a yellow taxi parked on the street. The background includes a building with windows and some flags hanging, with traffic lights in the distance, suggesting an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -222,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in what appears to be a bustling urban area. A person in a yellow shirt is pushing a cart with some items hanging from it, possibly for sale or display. The cart is next to a yellow taxi cab, which is a common sight in many cities, particularly in New York City. The background includes buildings with commercial signs, indicating a commercial area. There are also banners or flags attached to the buildings, and the photo has a candid, possibly amateurish quality to it.
+    The image shows two yellow taxis driving down a city street. Both taxis appear to have some sort of load attached to their back or front. One of the taxis has an arm of a clown attached to its side near the trunk. The clown's arm is prominently displayed, hanging down in a somewhat exaggerated, theatrical manner. It seems to be a intentional art installation or performance.
 
 
 ## Querying Llama 4 Vision Model
