@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 22:53:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 23:08:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 22:53:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 23:08:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 22:53:15,022 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 22:53:15] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 23:08:24,170 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 23:08:24] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts two yellow taxi cabs in a city street. One taxi is parked with one of its back doors open, and the other taxi is on the road. The person in the taxi standing at the open door appears to be engaged in some form of manual labor or transportation activity, possibly drying laundry on waslines attached to the taxi. The scene likely represents a humorous or unusual activity, as it is not a typical way to transport clothing or luggage.
+    I'm not sure, what do you mean by "What's shown here"?
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street, likely in New York City, given the yellow taxis. A yellow taxi cab is parked on the street, partially ожиing a yellow multi-purpose cart. The person on the cart appears to be working, possibly moving clothes or items with a dolly. The street is lined with shops and buildings, and the weather looks to be rainy, as evidenced by the presence of a person with a umbrella holding a plaid cloth or clothing item. There is also a pedestrian walking on the sidewalk in the background.
+    This image shows a yellow taxi parked on a city street. The taxi is positioned next to a building with a clear glass front, through which some store displays are visible, including lightbulbs. The taxi's front license plate is visible and displays a pattern of red and yellow colors. There is also a upright clothes rack or shopping cart attached to the back of the taxi, holding a blue piece of cloth or tarp. The overall scene appears to be in an urban or commercial area.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like you've uploaded a photo of a yellow city taxi, likely in a busy urban area. The taxi is pulling a cart with clothes hanging from it. This is a common sight in many cities, where taxis pull carts to sell or distribute clothing items, either as part of a street-side vendor's business or as a fund-raising activity. The taxi and the cart are surrounded by buildings, and there are flags visible in the background. The photo suggests a lively urban environment, possibly on a busy day.
+    The image shows a yellow taxi in a city street. The taxi has a designated carry vehicle in front, attached to the driver's side, which appears to be filled with various items, including what seems to be a large envelope or rolled-up fabric. The scene suggests that the taxi might be being used to transport items, possibly for work or personal purposes. The background shows urban elements such as buildings, street signs, and pedestrians, indicating a typical cityscape.
 
 
 ## Querying Llama 4 Vision Model
