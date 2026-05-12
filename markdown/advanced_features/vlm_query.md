@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 03:10:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 03:38:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 03:10:59] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 03:38:50] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 03:11:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 03:38:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 03:11:06] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 03:38:56] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -132,14 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 03:11:13,781 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 03:11:13] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 03:39:02,137 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 03:39:02] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a man dressed in a bright yellow shirt standing between two yellow taxis in a city street. The man appears to be spread out or straightening his shirts out, as if mimicking a wave or "smiling." 
-    
-    The scene captures a humorous and light-hearted moment, possibly taken during an event or race where participants or participants act out a particularly silly dance or pose reminiscent of a smiling face.
+    The image shows a situation where one of the backlights of a taxi on a street has also been painted to look like the flag, creating a whimsical and humorous effect. This is a common urban prank where small markings or adaptations of vehicle parts create playful or humorous visual effects. This is often seen as a light-hearted form of street art or a way to catch people's attention in an innovative manner.
 
 
 ### Call with Processor Output
@@ -164,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a yellow taxi and its open trunk containing various objects, including clothing. There are also several flags on poles along the sidewalk and street lamps. The setting appears to be an urban environment, possibly in a city like New York, as indicated by the style of the taxi and the presence of American flags.
+    It looks like you've shared a picture of a yellow taxi pulled by a man on crutches. To help you further, can you clarify which country this scene is from?
 
 
 ### Call with Precomputed Embeddings
@@ -220,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like a pair of trousers draped over a horizontal bike rack mounted on a car. The context and the difficulty in reading the text make it challenging to determine the specific location or exact purpose of the image.
+    The image shows two yellow taxis parked on a city street. One taxi is clearly visible in the foreground with its hood down, and a person is seen standing next to it, possibly adjusting or inspecting something on the vehicle. The other taxi is partially visible in the background. The street is lined with tall buildings and flags, suggesting an urban setting.
 
 
 ## Querying Llama 4 Vision Model
