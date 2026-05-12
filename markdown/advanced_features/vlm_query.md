@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 01:59:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 03:10:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 01:59:10] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 03:10:59] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 01:59:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 03:11:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 01:59:16] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 03:11:06] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]
 
 
 
@@ -132,12 +132,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 01:59:25,620 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 01:59:25] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 03:11:13,781 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 03:11:13] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene in a city with two yellow taxis. The streetlights and various signs suggest that it's likely taken in a large urban area. Additionally, there is a person standing between the two taxis, who appears to be drying or hanging up some laundry from a clothesline. The laundry includes blue and red items.
+    This image shows a man dressed in a bright yellow shirt standing between two yellow taxis in a city street. The man appears to be spread out or straightening his shirts out, as if mimicking a wave or "smiling." 
+    
+    The scene captures a humorous and light-hearted moment, possibly taken during an event or race where participants or participants act out a particularly silly dance or pose reminiscent of a smiling face.
 
 
 ### Call with Processor Output
@@ -162,7 +164,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street where a man is standing on the roof of a yellow cab, tending to his laundry. He is hanging a shirt on a clothesline attached to the cab's top. The cab appears to be parked on a street in front of a building, and there are other vehicles and pedestrians visible in the background. The man seems to be multitasking, possibly doing his laundry while waiting in traffic.
+    The image shows a street scene with a yellow taxi and its open trunk containing various objects, including clothing. There are also several flags on poles along the sidewalk and street lamps. The setting appears to be an urban environment, possibly in a city like New York, as indicated by the style of the taxi and the presence of American flags.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +220,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab on a city street, with additional vehicles and pedestrians in the background. The taxi appears to be carrying clothes spread out across its roof, which may indicate a street marketing or fashion show event. The background features storefronts, shops, and a clear sky.
+    It looks like a pair of trousers draped over a horizontal bike rack mounted on a car. The context and the difficulty in reading the text make it challenging to determine the specific location or exact purpose of the image.
 
 
 ## Querying Llama 4 Vision Model
