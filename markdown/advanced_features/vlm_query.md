@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 03:38:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 04:18:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 03:38:50] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 04:18:17] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 03:38:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 04:18:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 03:38:56] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 04:18:23] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.23s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.07s/it]
 
 
 
@@ -132,12 +132,18 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 03:39:02,137 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 03:39:02] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 04:18:30,367 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 04:18:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a situation where one of the backlights of a taxi on a street has also been painted to look like the flag, creating a whimsical and humorous effect. This is a common urban prank where small markings or adaptations of vehicle parts create playful or humorous visual effects. This is often seen as a light-hearted form of street art or a way to catch people's attention in an innovative manner.
+    The image appears to be a humorous fantasy scenario that combines elements from real-world situations. In the image:
+    
+    1. There are two yellow taxis, one closer to the foreground and one behind it. The taxi closest to the camera is parked, while the one further back is in motion.
+    
+    2. A person is appeared to be "hanging out" a clothesline. The line is connected to the back of the taxi further back. This person is part of a larger fantasy element that seems to be defined in languages other than English, adding to the surreal quality of the image.
+    
+    3. The background includes urban elements like tall buildings and street
 
 
 ### Call with Processor Output
@@ -162,7 +168,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like you've shared a picture of a yellow taxi pulled by a man on crutches. To help you further, can you clarify which country this scene is from?
+    The image shows a man dressed as Santa Claus standing next to a yellow taxi cab. He is wearing a yellow shirt with a black stripe on the sleeve, a red cap with black ears, and a black belt around his waist. He is resting his hands on two clothing items hanging from a weight on the back of the car. The scene appears to be set in an urban area, as there are buildings and other taxis in the background. The overall vibe suggests a playful, holiday-themed event, possibly part of a street performance or decoration.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +224,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis parked on a city street. One taxi is clearly visible in the foreground with its hood down, and a person is seen standing next to it, possibly adjusting or inspecting something on the vehicle. The other taxi is partially visible in the background. The street is lined with tall buildings and flags, suggesting an urban setting.
+    The image shows a street scene with a few notable elements:
+    
+    1. **Taxi Cab**: There are three taxi cabs in the scene. The yellow and white Uber drivers are dressed in yellow shirts and holding towels.
+    2. **Prominence of Parking Taps**: The image focuses heavily on "", part of a parking form.
+    3. **Taxis**: The taxis are colored yellow and white. This color combination signifies that they are Uber taxis.
+    4. **Image Focus**: The attention is on "", perhaps highlighting or touching upon the mobility aspect of taxis.
+    5. **Urban Setting**: The scene is set in a busy urban environment
 
 
 ## Querying Llama 4 Vision Model
