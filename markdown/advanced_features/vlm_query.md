@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 05:20:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 05:33:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 05:20:42] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 05:33:27] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 05:20:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 05:33:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 05:20:48] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 05:33:34] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.56s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.13s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.20s/it]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 05:20:54,099 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 05:20:54] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 05:33:40,253 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 05:33:40] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a bright yellow taxi on a city street with two men in the back of the car. One man appears to be folding a piece of blue clothing, likely to hang them up or store them in the open trunk of the taxi. The image captures a sense of urban activity and possibly a humorous or unusual moment involving public transportation and personal care.
+    The image shows a New York City street scene with two iconic yellow taxis. One taxi is being used as a makeshift laundry cart. The individual is hanging clothes over and on the license plate section of the rear of the taxi, presumably to dry them. The scene is both humorous and ironic, as it plays on the idea that NYC taxis are — or should be — permanently used for recycling.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in what appears to be a city, likely New York, given the style of the yellow cabs. A man is standing on the sidewalk next to a brightly colored banner. The banner has a blue Walmart logo on it. In the foreground, there is a yellow emergency car (also known as a painted taxi) parked on the street. The man seems to be engaging with the banner, possibly participating in a promotional event for Walmart. The background features urban buildings and traffic lights.
+    In the photo, there is a yellow taxi driving on a city street. Next to the taxi, there is a person hanging clothes out to dry on a clothesline. The background includes buildings with various signs and a few streetlights.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there are two yellow taxi cabs on a road. A person wearing a yellow shirt and black pants is using a=self-propelled straight back cloth drying rack, which is strapped to the back of one of the taxis. The rack is holding and drying clothing items. The setting appears to be an urban area with buildings, flags along the street, and some greenery.
+    The image shows two yellow taxis parked on a street. The taxis are being used to transport military uniforms, with stripes of different colors indicating various branch of service. The uniforms are hung on a mobile frame attached to the back of the taxis. The scene appears to be a前置（del) ladies marijuana dispensary.
 
 
 ## Querying Llama 4 Vision Model
