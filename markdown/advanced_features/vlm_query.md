@@ -102,17 +102,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 01:03:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 01:20:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 01:03:21] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 01:20:26] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 01:03:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-12 01:20:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 01:03:28] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
+    [2026-05-12 01:20:32] Ignore import error when loading sglang.srt.models.afmoe: cannot import name 'fused_moe' from 'sglang.srt.layers.moe.fused_moe_triton' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/__init__.py)
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -120,9 +120,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -132,12 +132,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 01:03:35,124 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 01:03:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-12 01:20:38,225 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-12 01:20:38] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    Based on the description provided, the image appears to depict a scene from a street where someone appears to be playing with or抖动着出租车的后视镜. This can be described as "抖动出租车的后视镜".
+    In the image, there are two yellow taxis in the foreground. One taxi has a person with a sweater draped over a folding chair. The person appears to be engaged in some form of activity or display in the street, possibly related to a promotional event or a sports-related activity. The background shows urban elements like buildings, streetlights, and possibly other vehicles or pedestrians.
 
 
 ### Call with Processor Output
@@ -162,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in what appears to be a city, possibly in the United States, given the style of taxi cabs. There is a yellow taxi cab with its door open, and a person is running or crossing the street. Additionally, there are clothes hanging on a clothesline attached to the back of the taxi. The scene includes buildings with various window decorations and flags, indicating a festive or special event. The presence of flags and the open door of the taxi suggest that someone might be moving or queuing for an event or service.
+    The image shows two yellow taxis driving down a city street. One taxi is closer to the foreground, and the other is slightly ahead and to the right. The taxi in the foreground has a sign on the back that appears to be displaying some kind of advertisement or message. The street is relatively empty, with only these two taxis in visibility. The background includes some buildings and street signs, indicating an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving down a city street. One of the taxis is adorned with a temporary banner and flags, possibly indicating an event or special occasion. The scene appears to be in an urban area with tall buildings and flags lining the street. The image has a slightly tilted perspective, giving it a dynamic feel.
+    This is a picture of a man who has chained himself to a car trunk in New York City. This is an example of coat-hungry protesters, who are made up of a group of environmental groups and inner city activist groups. They're protesting against a dangerous infrastructure project near Times Square.
 
 
 ## Querying Llama 4 Vision Model
