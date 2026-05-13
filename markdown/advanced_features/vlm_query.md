@@ -102,21 +102,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 00:02:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 01:13:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 00:02:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-13 01:14:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.21s/it]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
 
 
 
@@ -126,12 +126,18 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 00:02:21,046 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 00:02:21] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 01:14:10,377 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 01:14:10] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man dressed in a yellow rain slicker and blue jeans hanging clothes from the trunk of his gold-colored Nissan Pathfinder. He is doing this in a city environment, with other taxis and city buildings visible. The setting appears to be New York City, as indicated by the presence of American flags and the distinctive yellow taxis. The man seems to be using his car as a temporary clothes rack.
+    It appears that the image might be a bit misleading or conveys a comedic or surreal scenario. Here are a few possibilities:
+    
+    1. **Office用 dolls**: This might be a tạing questioning the relevance of dolls in office settings.
+    2. **tenxy game records bug**: In this one, it seems to be involved with game records in an office setting.
+    3. **Res quitting قاريopy dog»**: This one matches two possibly simple sentences.
+    4. **memoоny life y y button 묘**: Transcript a very complex sentence for a non-native speaker.
+    5. **wayy ada car** game debug: This
 
 
 ### Call with Processor Output
@@ -156,7 +162,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from a city street. There is a yellow and orange vehicle that appears to be a type of service vehicle, possibly a postal truck or a delivery van. It is equipped with a rack that holds a significant number of cartons or包裹. The vehicle is in motion, and there is another yellow and orange vehicle visible in the background, which could be a taxi. The setting seems to be in an urban area, possibly in New York City, given the style and color of the vehicles. The manner in which the vehicle is being used to transport packages is slightly unconventional and possibly for a service or promotional purpose.
+    The image shows two yellow taxis parked on a city street in an urban setting. The taxis are identifiable by their distinctive color and design. The area appears to be in a commercial or business district, as indicated by the storefronts. There are also a few late-night shops with lights on, suggesting it is evening. Street signs and other urban elements are visible in the background. Interestingly, there appears to be clothing on clothes racks attached to the rear side of one of the taxis, which might be a unique and slightly humorous advertisement or personal fashion statement.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +218,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street with two main objects: a standee on wheels attached to a small trailer, and a yellow taxi cab. The standee has a cloth draped over it, which appears to be a curtain or a banner. The standee is positioned between the taxi and a storefront. There are various flags and banners visible in the background, along with some typical city buildings and street elements. The scene suggests a public event or a protest that involves rotating standees to highlight different messages or causes.
+    The image shows a city street scene with a few notable elements:
 
 
 ## Querying Llama 4 Vision Model
