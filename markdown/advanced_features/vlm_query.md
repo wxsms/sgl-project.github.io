@@ -102,21 +102,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 12:01:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 13:01:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 12:01:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 13:01:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
-
-    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 12:02:10,810 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 12:02:10] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 13:01:30,564 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 13:01:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab with a clear plastic panel behind its rear window installed, which appears to be used for some kind of display or advertisement. The taxi is parked on a city street, and there is another blue panel next to the same vehicle. The rear window of the taxi has been removed, showing the interior empty of passengers and the rows of seats. The yellow cab currently in focus is parked with its driver wearing a yellow shirt, and the taxi behind it has a different route number. There is pedestrian traffic passing by on the sidewalk, including individuals walking with hand carts.
+    The image shows a street scene with two yellow taxis停在sidewalks. One taxi is parked next to a person using a clothesline or drying rack in the street, and it appears they are drying clothes. The street is lined with commercial buildings and tall flags attached to light poles. The overall scene depicts outdoor laundry on a busy urban street.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in an urban area, possibly a city street. There are two yellow taxis driving down the street, and there appears to be an unusual situation where a flag is attached to the back of one of the taxis. On the sidewalk, a person is standing next to a little yellow and blue object that seems like a makeshift scale or measuring device. The person is looking at this object, and there is a red banner or flag suspended from a pole in the background, adding to the urban atmosphere.
+    What is shown in the picture is a street performance artist performing near the curb. The artist is pants-climbing and playing a trombone or clarinet. There are two yellow taxis visible in the background, one of which is a typical New York City taxi. The street is lined with buildings and there are flags and banners hanging from them. The scene captures the chaotic beauty of urban life as an artist moves through the streets amidst traffic and traffic lights.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a practical joke setup inspired by Snoop Dogg's hit song from 1996. The scene appears to depict a [{Red Flag}] Trying Out a New Job in the Racecar Department.
+    The image shows a man wearing a yellow shirt and blue jeans demonstrating a flag-holding device attached to a cab in an urban setting. The device is designed to keep American flags hanging from the windows of cabs, likely to greet visitors when they arrive at a city. The man is holding the device, which pulls the flags up and down as the cab moves. This device is typically used in New York City to display American flags prominently.
 
 
 ## Querying Llama 4 Vision Model
