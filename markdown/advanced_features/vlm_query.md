@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 07:41:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 08:37:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 07:41:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 08:38:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.41s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.16s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 07:41:29,135 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 07:41:29] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 08:38:11,676 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 08:38:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab parked on a city street. The driver is standing at the back of the cab, drying clothes directly on the back window and roof. The clothes are hung on a makeshift drying rack, using a pole that runs along the back of the taxi. This scene is likely a humorous or unusual use of the taxi for drying clothes.
+    The image shows a scene on a city street. A man, wearing a yellow shirt, is ironing clothes on the back of a parked taxi. He has hung a clothesline on the back of the car, and there are clothes folded on the line, including a blue shirt and an orange item. The taxi is yellow and has the "for hire" sign visible on top. The background includes a storefront with large windows and some ribbons or banners hanging above the entrance. The street appears to be busy with traffic, including a yellow taxi driving by.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    On the back of the image, one can see a man hanging dirty clothes on a rack attached behind a taxi cab. This is an unusual and somewhat humorous way for a man to dry his clothes. The setting appears to be an urban area, possibly a city street, with various storefronts and traffic lights visible in the background.
+    The image shows a man dressed in a yellow shirt and pants standing outside a building near a bright yellow taxi cab. He appears to be hanging up a shirt on a partially propped-up weathered clothesline attached to the rear windshield of the taxi. The scene is bustling and urban, likely in a city setting, with multiple street lights and flags visible in the background. It gives the impression of a creative or street performance art piece.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a street. The taxi has two folding metal advertising banners attached to the back. The person in the background is interacting with the banners, seemingly hanging or removing them. There are several street lights and buildings visible in the background, indicating an urban setting. The scene suggests a commercial or busy area typical of a city center.
+    The image shows a scene that appears to be from a protest or demonstration. A person is using a long pole to open the doors of a yellow taxi. The taxi is parked on a street with buildings and trees in the background. There are also some American flags in the scene, suggesting the event may be taking place in the United States or there are American flags on display. The overall atmosphere seems to be one of activism, as the person is defying the taxi's door locking mechanism in a visible and active manner.
 
 
 ## Querying Llama 4 Vision Model
