@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 02:09:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 03:04:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 02:09:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 03:04:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -116,7 +116,7 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
 
 
 
@@ -126,12 +126,18 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 02:09:31,379 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 02:09:31] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 03:05:09,805 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 03:05:09] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    I'm not sure what you mean by "img." Can you please elaborate or ask a specific question about something you would like to know?
+    The image shows a scene on a busy street with multiple elements:
+    
+    1. **Yellow Taxis**: Two yellow taxis are parked side by side on the street.
+    2. **Man**: A person, possibly a vendor, is standing between the taxis, washing clothes that are hanging on a clothesline. He is wearing a yellow shirt and appears to be busy with his task.
+    3. **16th Street Sign**: There is a small sign on the curb indicating "16th Street North, 16th Street South".
+    4. **Building**: A nearby building has displaying shops on the ground floor.
+    5. **Vehicles
 
 
 ### Call with Processor Output
@@ -156,7 +162,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man wearing a yellow shirt and얼istentles standing next to an orange van on a city street. There is a visible commercial building behind him with windometers and flags waving. The man appears to be standing in front of a parking meter and a pedestrian sidewalk. Several details suggest that this is an active urban environment.
+    This image shows a scene of a street in what appears to be a busy urban area. There is a yellow taxi cab on the left side of the image. A person is standing next to the taxi, appearing to dry some clothes on a makeshift clothesline setup in front of the back of the car. The clothes are spread out on the clothesline, and the person seems to be arranging or organizing the items.
+    
+    The background includes tall buildings and a few street signs. The overall atmosphere suggests a bustling city environment or a busy part of a touristy area. There are several flags visible in the background, indicating that the location might be a
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +220,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city with a yellow taxi driving on the road. The taxi has its back part opened, and someone is hanging out washing clothes. The street is lined with buildings, and it appears to be an urban environment. The scene looks a bit unusual, as it is not common to see clothes on a clothesline in a city setting.
+    The image shows a street scene with a yellow car (possibly a taxi) driving on the road. There is a table with clothes or items placed on it, which is being moved by someone using a pole. The table seems to be in the middle of the road, possibly as a form of protest or art installation, suggesting a recent storm event like Hurricane Sandy that knocked down utility boxes. The presence of clothes or other objects on the table in the middle of the road might symbolize the loss or discarded items that are now in the public space.
 
 
 ## Querying Llama 4 Vision Model
