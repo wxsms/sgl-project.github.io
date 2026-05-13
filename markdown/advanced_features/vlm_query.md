@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 06:54:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 07:19:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 06:54:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 07:19:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 06:55:01,319 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 06:55:01] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 07:19:30,510 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 07:19:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis on a city street. One taxi has laundry draped over its back, with an individual in a yellow shirt hanging clothes on a line. The scene appears to be in an urban setting, possibly New York City, given the style of the taxis. The banner on the street sign above the taxis is red and white.
+    The image shows a scene in what appears to be a city street, likely New York City, given the recognizable yellow cabs. The person in the image is displaying their airline ISOSYLORS toys at the rear of a white four-wheel drive SUV. This恰好was a stunt commonly performed by taxi drivers when shopping in the city for a new vehicle and wanted to show off their car deco.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a traffic scene with several yellow cabs. One of the cabs has items draped over the seats, and the passenger is using both hands to control a pick-up ball. This suggests that the main event happening in the image is a sport-related activity around the area.
+    The image shows a scene in an urban area where a person wearing a yellow shirt is standing near two yellow taxis. The person appears to be holding a pair of hooks over the back of one of the taxis. This setup seems unusual in a city setting as people typically do not use hooks at back of taxis. The context and purpose of this image are not clear, but it could be part of a marketing campaign, a creative display, or a prank.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow cab (taxi) in the foreground. The cab has clothes hanging out the window, like shirts and a coat, suggesting a live, candid moment rather than a staged or commercial photograph. There is also another taxi partially visible in the background. The street is lined with shops and buildings, with flags and banners hanging from them. The scene is set in an urban environment, possibly during a parade or special event given the arrangement of clothes and activity in the cars.
+    It appears you've missed the crucial context! It seems you might have meant to ask about a taxi driver on an impromptu impromptu taxi stand in New York City. Here’s a detailed description of what might have happened:
+    
+    - **Setting**: The scene is in a busy street in New York City, with iconic yellow cabs, tall buildings, and pedestrians.
+    
+    - **Action**: A taxi driver, dressed casually in a yellow shirt, has set up a makeshift stand using a 법안한 bicycle ( skips and other items) on the side of the street.
+    
+    - **Purpose**: The driver is likely trying to get pend his
 
 
 ## Querying Llama 4 Vision Model
