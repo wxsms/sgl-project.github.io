@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 09:42:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 10:04:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 09:42:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 10:04:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.90s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.52s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.58s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 09:42:37,591 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 09:42:37] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 10:04:42,981 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 10:04:42] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person sorting through stolen laundry that has been left out in front of a taxi. The clothing is spread out under the back window of a yellow taxi in an urban area. This is an unusual and concerning scenario, as taxis are typically used for transportation rather than being used as impoundments.
+    The image depicts a man wearing yellow who is using a levee box to clean the windshield of a yellow taxi. The man appears to be a paid cleaner who has been hired to clean the taxi's windshield as part of passing revenue.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a taxicab in New York City. The cab is adorned with various American flags and items like a hammer and a flywheel, suggesting this might be part of a contest, promotional event, or demonstration involving the enforcement of texting while driving laws. The scene is set on a city street with urban buildings in the background.
+    The image shows a scene on a city street. A person is balancing two laundry baskets on a chair set up on the street. The baskets are filled with clothes, suggesting someone is或将要龙将进行洗衣。背景中有几辆黄色出租车，车顶上安装有车牌。街道两旁有建筑物，部分建筑物上有悬挂的旗帜。整体环境看起来像是一个繁忙的城市区域。
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow tour taxi on the street in New York City. The taxi is stopped, and a scene has been set up on the back of the car, with two blue raincoats hanging from strings attached to the roof. This setup likely represents the taxi driver's impromptu performance or act for a crowd, similar to what one might see during a street performance in New York. The background includes other vehicles and buildings typical of a busy city street, indicating an urban environment.
+    The image shows a scene on a city street with several yellow taxis. A person in a yellow shirt is standing on the curb next to one of the taxis, using a tripod to take a photograph. The person appears to be focused on taking pictures from behind the taxi. Multiple other taxis are visible in the background, parked along the curb. The scene suggests an urban setting, possibly during an event or a busy time of day when taxis are plentiful.
 
 
 ## Querying Llama 4 Vision Model
