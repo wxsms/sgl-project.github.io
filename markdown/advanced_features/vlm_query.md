@@ -102,21 +102,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 10:04:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 12:01:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 10:04:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-13 12:01:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 10:04:42,981 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 10:04:42] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 12:02:10,810 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 12:02:10] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts a man wearing yellow who is using a levee box to clean the windshield of a yellow taxi. The man appears to be a paid cleaner who has been hired to clean the taxi's windshield as part of passing revenue.
+    The image shows a yellow taxi cab with a clear plastic panel behind its rear window installed, which appears to be used for some kind of display or advertisement. The taxi is parked on a city street, and there is another blue panel next to the same vehicle. The rear window of the taxi has been removed, showing the interior empty of passengers and the rows of seats. The yellow cab currently in focus is parked with its driver wearing a yellow shirt, and the taxi behind it has a different route number. There is pedestrian traffic passing by on the sidewalk, including individuals walking with hand carts.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street. A person is balancing two laundry baskets on a chair set up on the street. The baskets are filled with clothes, suggesting someone is或将要龙将进行洗衣。背景中有几辆黄色出租车，车顶上安装有车牌。街道两旁有建筑物，部分建筑物上有悬挂的旗帜。整体环境看起来像是一个繁忙的城市区域。
+    The image shows a street scene in an urban area, possibly a city street. There are two yellow taxis driving down the street, and there appears to be an unusual situation where a flag is attached to the back of one of the taxis. On the sidewalk, a person is standing next to a little yellow and blue object that seems like a makeshift scale or measuring device. The person is looking at this object, and there is a red banner or flag suspended from a pole in the background, adding to the urban atmosphere.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street with several yellow taxis. A person in a yellow shirt is standing on the curb next to one of the taxis, using a tripod to take a photograph. The person appears to be focused on taking pictures from behind the taxi. Multiple other taxis are visible in the background, parked along the curb. The scene suggests an urban setting, possibly during an event or a busy time of day when taxis are plentiful.
+    The image shows a practical joke setup inspired by Snoop Dogg's hit song from 1996. The scene appears to depict a [{Red Flag}] Trying Out a New Job in the Racecar Department.
 
 
 ## Querying Llama 4 Vision Model
