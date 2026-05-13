@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 06:36:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 06:54:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 06:36:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 06:54:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 06:37:01,753 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 06:37:01] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 06:55:01,319 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 06:55:01] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a city street scene with two yellow taxis parked on the side of the road. A person is hanging fabric or clothes on a rack in the middle of the street. The person is also holding the fabric and appears to be putting it up on the rack. The scene is set in an urban environment with tall buildings and a sidewalk in the background. The street is lined with traffic and there are no visible pedestrians.
+    The image shows two yellow taxis on a city street. One taxi has laundry draped over its back, with an individual in a yellow shirt hanging clothes on a line. The scene appears to be in an urban setting, possibly New York City, given the style of the taxis. The banner on the street sign above the taxis is red and white.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from New York City, featuring a yellow taxi and a person on a forklift or similar equipment. It appears to be a protest or demonstration. The person vehicles on the yellow taxi are likely skateboards or some other type of unusual city advertising enterprises.
+    The image shows a traffic scene with several yellow cabs. One of the cabs has items draped over the seats, and the passenger is using both hands to control a pick-up ball. This suggests that the main event happening in the image is a sport-related activity around the area.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a city street. One taxi is stopped at a red light, with its wheels visible, indicating it is stationary. The other taxi is in motion behind it. There are also a few banners or flags hanging on poles in the background. The scene appears to be taken during the day in an urban setting.
+    The image shows a street scene with a yellow cab (taxi) in the foreground. The cab has clothes hanging out the window, like shirts and a coat, suggesting a live, candid moment rather than a staged or commercial photograph. There is also another taxi partially visible in the background. The street is lined with shops and buildings, with flags and banners hanging from them. The scene is set in an urban environment, possibly during a parade or special event given the arrangement of clothes and activity in the cars.
 
 
 ## Querying Llama 4 Vision Model
