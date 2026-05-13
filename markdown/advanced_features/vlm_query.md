@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 03:58:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 04:31:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 03:58:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 04:31:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 03:58:27,220 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 03:58:27] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 04:31:12,555 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 04:31:12] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab in New York City streets with clothing items hanging from its back window.
+    The image shows a scene on a city street with two yellow taxis parked on the side of the road. A person is adjusting the flags on the rear of a yellow taxi. The flags appear to be of a similar color to the taxis, possibly indicating different services or destinations. The background includes buildings and some traffic lights, suggesting an urban environment. The person is using a tripod to adjust the flags, possibly to ensure they are properly positioned.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxi causing traffic congestion. A person is seen standing on a raised platform in front of the taxi, trying to clear the way. The taxi is yellow and is driving on a city street lined with buildings.
+    It appears that the image shows a taxi cab driving down a street. One person is walking behind the taxi, holding a sign. The sign includes a picture of a shirt with the words "It's Time to TUX" written on it. The sign is positioned on a stand that is extending from the back of the taxi. The overall scene seems to be promoting a campaign or event related to "TUX" or possibly "CLOTH."
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in New York City, with two iconic yellow taxis driving down the street. These taxis are typical of the New York City cab fleet. The scene also includes several flagpoles and flags along the sidewalk, indicating that it is likely during a national holiday or special event. The presence of the flags and the urban setting suggest a festive or celebratory atmosphere.
+    In the picture, there is a yellow New York City cab parked on the street. A person dressed in a yellow top is standing next to a portable clothes airer (also known as a drier), defrosting the cab roof with a shield or protective drapery. This is a common sight during colder months in New York, where people use这种方法来防止结冰，并让乘客露顶替代传统的加篷车。 The shield helps protect passersby from the frozen roof while the cab driver remains comfortable inside.
 
 
 ## Querying Llama 4 Vision Model
