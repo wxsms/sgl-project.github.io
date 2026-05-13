@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 18:13:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 18:50:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 18:13:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 18:50:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 18:13:29,508 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 18:13:29] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 18:51:05,370 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 18:51:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street, specifically in Times Square, New York City. There is a well-known urban scene with people dancing or performing amidst the hustle and bustle of New York City life. The city streets are filled with pedestrians, traffic, and landmarks throughout the iconic location.
+    The image shows a person hanging a piece of jewelry, possibly a bracelet, off the back of a yellow taxi cab. The taxi serves as a makeshift display stand, with the jewelry hanging from the rear bumper of the vehicle. This unusual setup could be due to a fashion show, street performance, or a creative marketing campaign. The person is standing behind the taxi, holding up a hook that is attached to the object they are悬挂。
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a yellow shirt interacting with a pair of ironing boards near a bright yellow taxi cab. The street is lined with buildings, and there are flags and signs visible in the background. The street appears to be in a city setting, possibly during a parade or public activity due to the controlled chaos and the unusual setup of ironing boards near a moving vehicle. There is no indication of violence or intentional harm in the scene.
+    It looks like an individual standing next to a taxi cab in an urban setting. The person appears to be holding an iron and is likely demonstrating or testing something related to vehicle safety inspections or当地type licensing. There are also people visible on the sidewalk behind the taxi.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    There are no noticeable illustrations or images showing a specific output to describe in your question.
+    I'm not sure what you mean by "I can not upload photos." I'm sorry, but I'm an AI assistant and I don't have the ability to upload images or create new ones. However, I can try my best to help answer any questions you may have about the images you have described to me, as long as I have enough information to understand them.
 
 
 ## Querying Llama 4 Vision Model
