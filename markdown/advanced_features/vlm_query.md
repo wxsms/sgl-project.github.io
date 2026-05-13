@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 22:35:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 23:24:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 22:35:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 23:24:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.13s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 22:35:39,788 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 22:35:39] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 23:24:19,261 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 23:24:19] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a yellow taxi cab in the foreground with a person hanging laundry outside the car. The scene appears to be in an urban area, likely in a city where taxis are common. The taxi is equipped for outdoor activities, making it suitable for tasks likeicycle maintenance or laundry drying.
+    The image shows a public art installation where a man dressed in casual clothes is ironing pieces of fabric that are attached to his rear end, itemizing a new piece of sculpture art. The scene takes place on a street with several taxis in front as surveillance and security cameras are noticeable. The man is displaying a backdrop covering him that says "iron in public public art installation.", and a number of American flags are visible. The installation captures attention by making ordinary activities become unusual, potentially in protest against capitalist and consumerfabrication in society.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I'm not sure what exactly is shown here. The prompt doesn't provide enough context or clarity to answer questions about the image. It might be referring to some sort of public service announcement or campaign, but without more specific details about the content, I can't accurately describe what's being depicted. If you have any additional information or if this is a question from a specific set or context, please provide more details so I can give a more accurate response.
+    The image shows a person, dressed in a yellow outfit, lifting a blue garment off the roof of a yellow taxi. The scene appears to be taking place in a city with tall buildings and streetlights visible in the background. The person seems to be preparing to load or unload the garment from the taxi.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene outside a building with tall windows. There is a person standing next to a yellow taxi, which is often seen in urban areas. The person appears to be holding a cloth or clothes, possibly drying off after a walk, as there are clothespins attached to the cloth. The background includes some buildings with flags and windows displaying various items.
+    The image shows a scene on a city street with two yellow taxis parked next to each other. The taxi on the left has its trunk open, revealing luggage and clothes thrown out of the back seat. It appears that someone has wheeled out a clothes rack and is either hanging something or preparing to do laundry, as the clothes and a large piece of fabric are spread out. This action is unusual and not typical for taxi drivers or passengers. The setting is an urban environment with stores and other vehicles visible in the background.
 
 
 ## Querying Llama 4 Vision Model
