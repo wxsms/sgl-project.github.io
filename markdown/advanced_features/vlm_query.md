@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 04:31:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 05:17:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 04:31:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 05:17:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 04:31:12,555 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 04:31:12] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 05:18:08,375 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 05:18:08] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street with two yellow taxis parked on the side of the road. A person is adjusting the flags on the rear of a yellow taxi. The flags appear to be of a similar color to the taxis, possibly indicating different services or destinations. The background includes buildings and some traffic lights, suggesting an urban environment. The person is using a tripod to adjust the flags, possibly to ensure they are properly positioned.
+    It looks like the image shows a street scene in a city. There are two yellow taxis parked alongside the street. The taxi on the left side of the image is slightly more visible, while the taxi on the right side is partially obscured by its reflection. The taxi drivers appear to be engaged in some form of outdoor activity, possibly hanging clothes on a frame or stand. The background includes urban elements such as a building with storefronts and a bright street scene, suggesting a vibrant, busy city environment. The presence of several flags attached to a pole behind the taxis further adds to the urban setting.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It appears that the image shows a taxi cab driving down a street. One person is walking behind the taxi, holding a sign. The sign includes a picture of a shirt with the words "It's Time to TUX" written on it. The sign is positioned on a stand that is extending from the back of the taxi. The overall scene seems to be promoting a campaign or event related to "TUX" or possibly "CLOTH."
+    The image shows a street scene in a city with two yellow taxis parked side by side. A makeshift clothesline with clothespins is set up on these taxis, creating a humorous and creative solution for someone without a proper hanger or closet. The background features buildings with storefronts and signs, indicating an urban setting. The overall scene combines everyday city life with a quirky, creative approach to hanging clothes, likely for a humorous or social media post.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, there is a yellow New York City cab parked on the street. A person dressed in a yellow top is standing next to a portable clothes airer (also known as a drier), defrosting the cab roof with a shield or protective drapery. This is a common sight during colder months in New York, where people use这种方法来防止结冰，并让乘客露顶替代传统的加篷车。 The shield helps protect passersby from the frozen roof while the cab driver remains comfortable inside.
+    This image shows a scene from the movie "Cool Runnings," a 1993 comedy film about Jamaica's first bobsled team. The image depicts a man from Jamaica participating in an event that involves pulling a taxicab using the back legs of a horse, dressed in the traditional Jamaican outfit of a "half-jacket" and a petticoat over trousers. This event is part of a sports competition where runners ride in a horse-drawn carriage, and the race speeds up as they pull the carriage with dogs running on a string attached to the back of the horse.
 
 
 ## Querying Llama 4 Vision Model
