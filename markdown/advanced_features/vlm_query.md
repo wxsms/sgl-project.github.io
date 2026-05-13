@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-12 23:31:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 00:02:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-12 23:31:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 00:02:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-12 23:31:22,674 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-12 23:31:22] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 00:02:21,046 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 00:02:21] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    Here are the two cars that are on the street.
+    The image shows a man dressed in a yellow rain slicker and blue jeans hanging clothes from the trunk of his gold-colored Nissan Pathfinder. He is doing this in a city environment, with other taxis and city buildings visible. The setting appears to be New York City, as indicated by the presence of American flags and the distinctive yellow taxis. The man seems to be using his car as a temporary clothes rack.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with a yellow taxi parked on a city street. The taxi has a clothes line attached to its side, with various pieces of clothing draped over it. This is likely a performance or street art installation, where the clothing is being displayed for an audience, possibly as part of a protest or a creative expression. The background includes other vehicles and city buildings, indicating an urban environment.
+    The image shows a scene from a city street. There is a yellow and orange vehicle that appears to be a type of service vehicle, possibly a postal truck or a delivery van. It is equipped with a rack that holds a significant number of cartons or包裹. The vehicle is in motion, and there is another yellow and orange vehicle visible in the background, which could be a taxi. The setting seems to be in an urban area, possibly in New York City, given the style and color of the vehicles. The manner in which the vehicle is being used to transport packages is slightly unconventional and possibly for a service or promotional purpose.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street scene with two prominent yellow taxis. The first taxi is directly in front of the viewer, and the second one is slightly behind and to the right. Both cabs have visible numbers and logos on their sides and rear ends. In the foreground, there is an empty clothes rack positioned on the road, appearing too small compared to the size of the cars. This is misleading because a clothes rack would be much too large to be on the road in a standard street scenario.
+    The image shows a city street with two main objects: a standee on wheels attached to a small trailer, and a yellow taxi cab. The standee has a cloth draped over it, which appears to be a curtain or a banner. The standee is positioned between the taxi and a storefront. There are various flags and banners visible in the background, along with some typical city buildings and street elements. The scene suggests a public event or a protest that involves rotating standees to highlight different messages or causes.
 
 
 ## Querying Llama 4 Vision Model
