@@ -102,21 +102,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 01:13:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 02:09:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 01:14:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 02:09:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
-
-    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.21s/it]
+    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -126,18 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 01:14:10,377 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 01:14:10] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 02:09:31,379 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 02:09:31] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It appears that the image might be a bit misleading or conveys a comedic or surreal scenario. Here are a few possibilities:
-    
-    1. **Office用 dolls**: This might be a tạing questioning the relevance of dolls in office settings.
-    2. **tenxy game records bug**: In this one, it seems to be involved with game records in an office setting.
-    3. **Res quitting قاريopy dog»**: This one matches two possibly simple sentences.
-    4. **memoоny life y y button 묘**: Transcript a very complex sentence for a non-native speaker.
-    5. **wayy ada car** game debug: This
+    I'm not sure what you mean by "img." Can you please elaborate or ask a specific question about something you would like to know?
 
 
 ### Call with Processor Output
@@ -162,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis parked on a city street in an urban setting. The taxis are identifiable by their distinctive color and design. The area appears to be in a commercial or business district, as indicated by the storefronts. There are also a few late-night shops with lights on, suggesting it is evening. Street signs and other urban elements are visible in the background. Interestingly, there appears to be clothing on clothes racks attached to the rear side of one of the taxis, which might be a unique and slightly humorous advertisement or personal fashion statement.
+    The image shows a man wearing a yellow shirt and얼istentles standing next to an orange van on a city street. There is a visible commercial building behind him with windometers and flags waving. The man appears to be standing in front of a parking meter and a pedestrian sidewalk. Several details suggest that this is an active urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -218,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street scene with a few notable elements:
+    The image shows a street scene in a city with a yellow taxi driving on the road. The taxi has its back part opened, and someone is hanging out washing clothes. The street is lined with buildings, and it appears to be an urban environment. The scene looks a bit unusual, as it is not common to see clothes on a clothesline in a city setting.
 
 
 ## Querying Llama 4 Vision Model
