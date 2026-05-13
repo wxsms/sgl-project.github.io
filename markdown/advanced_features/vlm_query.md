@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 21:00:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 22:00:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 21:00:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 22:00:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 21:00:15,131 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 21:00:15] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 22:00:55,038 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 22:00:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a trick where a yellow-shirted man pulls a dry cleaner's cart with wet clothes behind a yellow taxi cab, imitating a phenomenon known as the "wet出租车 (wet taxi)," where a cab driver accidentally “drives a wet taxicab” through traffic. In reality, the cloth is dressed with water and appears to have landed behind the taxi, but it’s an intentional illusion. The trick relies on a combination of timing, speed, and optical illusions to create the impression of the cloth closing in on the taxi.
+    This is an unusual and humorous scene from the movie "The Waterboy." In the film, the character Norma Jean Dodds demonstrates an innovative and ridiculous way to wash clothes. In this scene, Norma Dodds is seen留 clothes in her taxi with the wind blowing them around, much to the amusement of fellow passengers and the driver. This scene is a playful take on everyday tasks being turned into a spectacle for entertainment.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxi cabs parked side by side on a city street. One taxi is visible in the foreground, and the other is slightly behind and to the left. In the forefront, a person is wearing a yellow shirt and blue jeans, and they appear to be handling or adjusting something on the ground near a stand or cart. The person is also holding a red object in their hand. The scene is set in a busy urban environment, with buildings and flags visible in the background.
+    The image shows a man standing behind a small cart suspended between the cab roofs of two yellow taxi cabs. The cart appears to be used for advertising or public safety purposes, possibly as a traffic marker or informational display. The man is wearing a yellow T-shirt and seems to be arranging or overseeing the placement of items on the cart. This type of setup is common in urban environments to draw attention to specific information or messages.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi parked on a city street, facing away from the camera. The taxi is equipped with various items attached to the back of the vehicle, including an umbrella, laundry, and possibly other small objects or equipment. The scene appears to be in an urban setting, likely in a busy part of the city. The buildings and other vehicles visible in the background suggest a bustling environment.
+    The image shows a street scene in a city with two yellow taxis, likely from a taxi company's fleet, traveling down a road lined with buildings and shopfronts. The taxis appear to be transporting something within them. There are also banners and flags visible along the street, possibly indicating the presence of a parade or public event. The road is wet, suggesting recent rain. The overall scene gives the impression of a busy urban environment with ongoing activities and events.
 
 
 ## Querying Llama 4 Vision Model
