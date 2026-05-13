@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 22:24:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 22:35:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 22:24:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 22:35:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.13s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 22:24:35,558 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 22:24:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 22:35:39,788 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 22:35:39] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It's not clear what exactly is shown in the photo. It appears to be a scene of a man in yellow helps wash clothes on a rear lamp of a car.
+    This image shows a yellow taxi cab in the foreground with a person hanging laundry outside the car. The scene appears to be in an urban area, likely in a city where taxis are common. The taxi is equipped for outdoor activities, making it suitable for tasks likeicycle maintenance or laundry drying.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man in a bright yellow shirt standing next to a yellow*SUV that appears to be a такси (taxi). The такси has a ladder taped to the rear hatch, and the man is working on something on the ladder. The такси is parked in a city street with a storefront in the background.
+    I'm not sure what exactly is shown here. The prompt doesn't provide enough context or clarity to answer questions about the image. It might be referring to some sort of public service announcement or campaign, but without more specific details about the content, I can't accurately describe what's being depicted. If you have any additional information or if this is a question from a specific set or context, please provide more details so I can give a more accurate response.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi driving down a city street. To the right of the taxi, there is a person dressed in yellow and blue with a shopping cart or stand behind them, holding a piece of clothing. The person is displaying the garment, possibly trying to sell or showcase it. The background includes buildings and street signs, indicating an urban environment, likely in a busy city center.
+    The image depicts a scene outside a building with tall windows. There is a person standing next to a yellow taxi, which is often seen in urban areas. The person appears to be holding a cloth or clothes, possibly drying off after a walk, as there are clothespins attached to the cloth. The background includes some buildings with flags and windows displaying various items.
 
 
 ## Querying Llama 4 Vision Model
