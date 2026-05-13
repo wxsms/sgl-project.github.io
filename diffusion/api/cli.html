@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=f50c4c04"></script>
+    <script src="../../_static/documentation_options.js?v=8df2f98e"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -599,10 +599,13 @@ file, and can extend or replace built-in entries for the current process.</p></l
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--model-path</span> <span class="pre">{MODEL}</span></code>: model path or Hugging Face model ID</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--lora-path</span> <span class="pre">{PATH}</span></code> and <code class="docutils literal notranslate"><span class="pre">--lora-nickname</span> <span class="pre">{NAME}</span></code>: load a LoRA adapter</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--lora-merge-mode</span> <span class="pre">{auto|merge|dynamic}</span></code>: choose how LoRA is applied. <code class="docutils literal notranslate"><span class="pre">auto</span></code> statically merges regular weights and uses dynamic LoRA for FSDP-sharded weights to avoid full-gather peaks.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--num-gpus</span> <span class="pre">{N}</span></code>: number of GPUs to use</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--performance-mode</span> <span class="pre">{manual|auto|speed|memory}</span></code> / <code class="docutils literal notranslate"><span class="pre">--mode</span></code>: preset for latency/throughput and memory defaults. <code class="docutils literal notranslate"><span class="pre">auto</span></code> is the default and keeps safe offload defaults, using FSDP only for validated DiT-offload replacement paths; use <code class="docutils literal notranslate"><span class="pre">manual</span></code> to keep performance-related server args under explicit user control. Explicit offload, FSDP, and parallelism flags take precedence in all modes.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--tp-size</span> <span class="pre">{N}</span></code>: tensor parallelism size, mainly for encoders</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--sp-degree</span> <span class="pre">{N}</span></code>: sequence parallelism size</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--ulysses-degree</span> <span class="pre">{N}</span></code> and <code class="docutils literal notranslate"><span class="pre">--ring-degree</span> <span class="pre">{N}</span></code>: USP parallelism controls</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--enable-cfg-parallel</span> <span class="pre">{true|false}</span></code>: enable or explicitly disable CFG parallelism</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">{BACKEND}</span></code>: attention backend for native SGLang pipelines</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--component-attention-backends</span> <span class="pre">{MAP}</span></code>: per-component attention backend overrides, for example <code class="docutils literal notranslate"><span class="pre">text_encoder=torch_sdpa,transformer=fa</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--attention-backend-config</span> <span class="pre">{CONFIG}</span></code>: attention backend configuration</p></li>

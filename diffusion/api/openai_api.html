@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=f50c4c04"></script>
+    <script src="../../_static/documentation_options.js?v=8df2f98e"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -740,12 +740,12 @@ the API returns a relative URL like <code class="docutils literal notranslate"><
 <p>The server supports dynamic loading, merging, and unmerging of LoRA adapters.</p>
 <p><strong>Important Notes:</strong></p>
 <ul class="simple">
-<li><p>Mutual Exclusion: Only one LoRA can be <em>merged</em> (active) at a time</p></li>
-<li><p>Switching: To switch LoRAs, you must first <code class="docutils literal notranslate"><span class="pre">unmerge</span></code> the current one, then <code class="docutils literal notranslate"><span class="pre">set</span></code> the new one</p></li>
+<li><p>Mutual Exclusion: Only one LoRA configuration can be active per target at a time</p></li>
+<li><p>Switching: To switch LoRAs, deactivate the current LoRA with <code class="docutils literal notranslate"><span class="pre">unmerge_lora_weights</span></code>, then <code class="docutils literal notranslate"><span class="pre">set</span></code> the new one</p></li>
 <li><p>Caching: The server caches loaded LoRA weights in memory. Switching back to a previously loaded LoRA (same path) has little cost</p></li>
 </ul>
 <p><strong>Set LoRA Adapter</strong></p>
-<p>Loads one or more LoRA adapters and merges their weights into the model. Supports both single LoRA (backward compatible) and multiple LoRA adapters.</p>
+<p>Loads one or more LoRA adapters and applies them to the model. By default, regular weights are statically merged, while FSDP-sharded weights use dynamic LoRA to avoid full-gather memory peaks.</p>
 <p><strong>Endpoint:</strong> <code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/v1/set_lora</span></code></p>
 <p><strong>Parameters:</strong></p>
 <ul class="simple">
@@ -760,6 +760,7 @@ the API returns a relative URL like <code class="docutils literal notranslate"><
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">strength</span></code> (float or list of floats, optional): LoRA strength for merge, default 1.0. If a list, must match the length of <code class="docutils literal notranslate"><span class="pre">lora_nickname</span></code>. Values &lt; 1.0 reduce the effect, values &gt; 1.0 amplify the effect</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">merge_mode</span></code> (string, optional): <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> (default server policy), <code class="docutils literal notranslate"><span class="pre">&quot;merge&quot;</span></code> (force static merge), or <code class="docutils literal notranslate"><span class="pre">&quot;dynamic&quot;</span></code> (apply LoRA at forward time)</p></li>
 </ul>
 <p><strong>Single LoRA Example:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30010/v1/set_lora<span class="w"> </span><span class="se">\</span>
@@ -800,14 +801,14 @@ When using multiple LoRAs:</p>
 <ul class="simple">
 <li><p>All list parameters (<code class="docutils literal notranslate"><span class="pre">lora_nickname</span></code>, <code class="docutils literal notranslate"><span class="pre">lora_path</span></code>, <code class="docutils literal notranslate"><span class="pre">target</span></code>, <code class="docutils literal notranslate"><span class="pre">strength</span></code>) must have the same length</p></li>
 <li><p>If <code class="docutils literal notranslate"><span class="pre">target</span></code> or <code class="docutils literal notranslate"><span class="pre">strength</span></code> is a single value, it will be applied to all LoRAs</p></li>
-<li><p>Multiple LoRAs applied to the same target will be merged in order</p></li>
+<li><p>Multiple LoRAs applied to the same target are applied in order</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Merge LoRA Weights</strong></p>
 <p>Manually merges the currently set LoRA weights into the base model.</p>
 <blockquote>
 <div><p>[!NOTE]
-<code class="docutils literal notranslate"><span class="pre">set_lora</span></code> automatically performs a merge, so this is typically only needed if you have manually unmerged but want to re-apply the same LoRA without calling <code class="docutils literal notranslate"><span class="pre">set_lora</span></code> again.*</p>
+With FSDP-sharded weights, manual merge may require a full-gather and can OOM. Use <code class="docutils literal notranslate"><span class="pre">set_lora</span></code> with <code class="docutils literal notranslate"><span class="pre">merge_mode=&quot;auto&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;dynamic&quot;</span></code> for the lower-peak path.</p>
 </div></blockquote>
 <p><strong>Endpoint:</strong> <code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/v1/merge_lora_weights</span></code></p>
 <p><strong>Parameters:</strong></p>
@@ -848,6 +849,7 @@ When using multiple LoRAs:</p>
 <span class="w">        </span><span class="nt">&quot;nickname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lora2&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tarn59/pixel_art_style_lora_z_image_turbo&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;merged&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;merged&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;strength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>

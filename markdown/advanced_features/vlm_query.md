@@ -102,21 +102,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 14:49:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 16:59:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 14:49:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 16:59:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
-
-    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 14:49:16,645 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 14:49:16] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 16:59:23,665 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 16:59:23] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a taxi driving through a city street, which appears to beamburg, Franklin, or Stark, which are often associated with the same street due to recent and previous popularizations of crossover artwork such as the one behind the taxi. Upon searching the internet and societal media, the image likely has no particular references.
+    The image shows a scene from a comedy sketch where a person is previously seen developing an elaborate "boutique laundry service" as part of an act, setting themselves up with clothes drying on a clothesline. The setup is leaking water onto a NYC taxi. It is likely that this is a part of a skit.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab with some clothing hanging from it. The taxi is parked on a street in an urban environment, possibly during a protest or demonstration. The clothing includes a pantsuit on a mannequin stand. This scene likely represents a form of public art or a protest, using the vehicle as a canvas to display the clothing.
+    Version سبحانه
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows the backside of a yellow and white taxi cab parked on a city street. The driver or someone else is standing on the hood of the taxi, pulling a clothes rack with various pieces of clothing on it, suggesting they might be picking up or dropping off passengers or setting up an outdoor event. The background includes tall buildings with advertisements. The clothing includes what seems to be a white shirt, blue jeans, and a red object that could be a rain jacket or a piece of luggage.
+    The image depicts a scene from the movie "The Office," featuring Michael Scott from the show. In this scene, Michael Scott, a character known for his commitment to his job and hisあまり frustrating personality, is forced to pull out a washing machine rack to wash and fold his clothes, presumably as a part of trying to maintain his appearance despite the chaos around him. The setting seems to be exaggerated, aiming to emphasize the humor and absurdity in the situation, while still maintaining a critique of everyday work life and theỗldig demands on employees.
 
 
 ## Querying Llama 4 Vision Model
