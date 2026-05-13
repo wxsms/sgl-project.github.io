@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 22:00:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 22:24:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 22:00:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 22:24:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 22:00:55,038 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 22:00:55] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 22:24:35,558 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 22:24:35] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This is an unusual and humorous scene from the movie "The Waterboy." In the film, the character Norma Jean Dodds demonstrates an innovative and ridiculous way to wash clothes. In this scene, Norma Dodds is seen留 clothes in her taxi with the wind blowing them around, much to the amusement of fellow passengers and the driver. This scene is a playful take on everyday tasks being turned into a spectacle for entertainment.
+    It's not clear what exactly is shown in the photo. It appears to be a scene of a man in yellow helps wash clothes on a rear lamp of a car.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing behind a small cart suspended between the cab roofs of two yellow taxi cabs. The cart appears to be used for advertising or public safety purposes, possibly as a traffic marker or informational display. The man is wearing a yellow T-shirt and seems to be arranging or overseeing the placement of items on the cart. This type of setup is common in urban environments to draw attention to specific information or messages.
+    The image shows a man in a bright yellow shirt standing next to a yellow*SUV that appears to be a такси (taxi). The такси has a ladder taped to the rear hatch, and the man is working on something on the ladder. The такси is parked in a city street with a storefront in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city with two yellow taxis, likely from a taxi company's fleet, traveling down a road lined with buildings and shopfronts. The taxis appear to be transporting something within them. There are also banners and flags visible along the street, possibly indicating the presence of a parade or public event. The road is wet, suggesting recent rain. The overall scene gives the impression of a busy urban environment with ongoing activities and events.
+    The image shows a yellow taxi driving down a city street. To the right of the taxi, there is a person dressed in yellow and blue with a shopping cart or stand behind them, holding a piece of clothing. The person is displaying the garment, possibly trying to sell or showcase it. The background includes buildings and street signs, indicating an urban environment, likely in a busy city center.
 
 
 ## Querying Llama 4 Vision Model
