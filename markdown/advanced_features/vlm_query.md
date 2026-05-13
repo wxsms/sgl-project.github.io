@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 05:17:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 05:52:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 05:17:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 05:52:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.03s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
 
 
 
@@ -126,12 +126,20 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 05:18:08,375 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 05:18:08] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 05:52:24,179 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 05:52:24] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It looks like the image shows a street scene in a city. There are two yellow taxis parked alongside the street. The taxi on the left side of the image is slightly more visible, while the taxi on the right side is partially obscured by its reflection. The taxi drivers appear to be engaged in some form of outdoor activity, possibly hanging clothes on a frame or stand. The background includes urban elements such as a building with storefronts and a bright street scene, suggesting a vibrant, busy city environment. The presence of several flags attached to a pole behind the taxis further adds to the urban setting.
+    The image shows a scene from a city with several elements:
+    
+    1. **Foreground**: A man dressed in a yellow shirt and blue jeans stands on the side of the road. He appears to be wearing a "smart phone glove," which suggests he might be using a special pair of gloves to interact with something on the sidewalk.
+    
+    2. **Midground**: There are two yellow taxis (cab) visible on the street. These taxis are standard in the city, likely used for transportation.
+    
+    3. **Background**: The background shows urban architecture, including tall buildings with multiple windows and some greenery along one side of the street.
+    
+    4. **
 
 
 ### Call with Processor Output
@@ -156,7 +164,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in a city with two yellow taxis parked side by side. A makeshift clothesline with clothespins is set up on these taxis, creating a humorous and creative solution for someone without a proper hanger or closet. The background features buildings with storefronts and signs, indicating an urban setting. The overall scene combines everyday city life with a quirky, creative approach to hanging clothes, likely for a humorous or social media post.
+    The image shows a yellow taxi cab, which is a common public transportation vehicle in New York City. The taxi is parked on a street, and a person is standing next to it with a piece of folding metal rack or stand? The person appears to be setting up or displaying something on the rack. The taxi is surrounded by an urban environment with buildings and storefronts in the background, and there are various signs and advertisements along the street.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +220,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene from the movie "Cool Runnings," a 1993 comedy film about Jamaica's first bobsled team. The image depicts a man from Jamaica participating in an event that involves pulling a taxicab using the back legs of a horse, dressed in the traditional Jamaican outfit of a "half-jacket" and a petticoat over trousers. This event is part of a sports competition where runners ride in a horse-drawn carriage, and the race speeds up as they pull the carriage with dogs running on a string attached to the back of the horse.
+    The image shows a person riding in the back of a yellow taxi cab using a small chair-like structure. The person appears to be either placing or removing a small flag or sign from the strap of the chair. The scene is set in an urban environment with buildings and flagpoles visible in the background. The weather seems to be overcast.
 
 
 ## Querying Llama 4 Vision Model
