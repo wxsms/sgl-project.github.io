@@ -102,21 +102,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 13:01:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 14:49:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 13:01:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
+    [2026-05-13 14:49:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 13:01:30,564 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 13:01:30] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 14:49:16,645 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 14:49:16] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene with two yellow taxis停在sidewalks. One taxi is parked next to a person using a clothesline or drying rack in the street, and it appears they are drying clothes. The street is lined with commercial buildings and tall flags attached to light poles. The overall scene depicts outdoor laundry on a busy urban street.
+    This image shows a taxi driving through a city street, which appears to beamburg, Franklin, or Stark, which are often associated with the same street due to recent and previous popularizations of crossover artwork such as the one behind the taxi. Upon searching the internet and societal media, the image likely has no particular references.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    What is shown in the picture is a street performance artist performing near the curb. The artist is pants-climbing and playing a trombone or clarinet. There are two yellow taxis visible in the background, one of which is a typical New York City taxi. The street is lined with buildings and there are flags and banners hanging from them. The scene captures the chaotic beauty of urban life as an artist moves through the streets amidst traffic and traffic lights.
+    The image shows a yellow taxi cab with some clothing hanging from it. The taxi is parked on a street in an urban environment, possibly during a protest or demonstration. The clothing includes a pantsuit on a mannequin stand. This scene likely represents a form of public art or a protest, using the vehicle as a canvas to display the clothing.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man wearing a yellow shirt and blue jeans demonstrating a flag-holding device attached to a cab in an urban setting. The device is designed to keep American flags hanging from the windows of cabs, likely to greet visitors when they arrive at a city. The man is holding the device, which pulls the flags up and down as the cab moves. This device is typically used in New York City to display American flags prominently.
+    The image shows the backside of a yellow and white taxi cab parked on a city street. The driver or someone else is standing on the hood of the taxi, pulling a clothes rack with various pieces of clothing on it, suggesting they might be picking up or dropping off passengers or setting up an outdoor event. The background includes tall buildings with advertisements. The clothing includes what seems to be a white shirt, blue jeans, and a red object that could be a rain jacket or a piece of luggage.
 
 
 ## Querying Llama 4 Vision Model
