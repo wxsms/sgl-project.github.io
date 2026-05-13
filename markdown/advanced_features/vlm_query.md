@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 18:50:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 21:00:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 18:50:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 21:00:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 18:51:05,370 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 18:51:05] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 21:00:15,131 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 21:00:15] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person hanging a piece of jewelry, possibly a bracelet, off the back of a yellow taxi cab. The taxi serves as a makeshift display stand, with the jewelry hanging from the rear bumper of the vehicle. This unusual setup could be due to a fashion show, street performance, or a creative marketing campaign. The person is standing behind the taxi, holding up a hook that is attached to the object they are悬挂。
+    The image shows a trick where a yellow-shirted man pulls a dry cleaner's cart with wet clothes behind a yellow taxi cab, imitating a phenomenon known as the "wet出租车 (wet taxi)," where a cab driver accidentally “drives a wet taxicab” through traffic. In reality, the cloth is dressed with water and appears to have landed behind the taxi, but it’s an intentional illusion. The trick relies on a combination of timing, speed, and optical illusions to create the impression of the cloth closing in on the taxi.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like an individual standing next to a taxi cab in an urban setting. The person appears to be holding an iron and is likely demonstrating or testing something related to vehicle safety inspections or当地type licensing. There are also people visible on the sidewalk behind the taxi.
+    The image shows two yellow taxi cabs parked side by side on a city street. One taxi is visible in the foreground, and the other is slightly behind and to the left. In the forefront, a person is wearing a yellow shirt and blue jeans, and they appear to be handling or adjusting something on the ground near a stand or cart. The person is also holding a red object in their hand. The scene is set in a busy urban environment, with buildings and flags visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm not sure what you mean by "I can not upload photos." I'm sorry, but I'm an AI assistant and I don't have the ability to upload images or create new ones. However, I can try my best to help answer any questions you may have about the images you have described to me, as long as I have enough information to understand them.
+    The image shows a yellow taxi parked on a city street, facing away from the camera. The taxi is equipped with various items attached to the back of the vehicle, including an umbrella, laundry, and possibly other small objects or equipment. The scene appears to be in an urban setting, likely in a busy part of the city. The buildings and other vehicles visible in the background suggest a bustling environment.
 
 
 ## Querying Llama 4 Vision Model
