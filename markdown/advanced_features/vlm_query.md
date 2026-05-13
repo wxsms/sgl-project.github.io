@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 05:52:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 06:36:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 05:52:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 06:36:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.03s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -126,20 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 05:52:24,179 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 05:52:24] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 06:37:01,753 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 06:37:01] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene from a city with several elements:
-    
-    1. **Foreground**: A man dressed in a yellow shirt and blue jeans stands on the side of the road. He appears to be wearing a "smart phone glove," which suggests he might be using a special pair of gloves to interact with something on the sidewalk.
-    
-    2. **Midground**: There are two yellow taxis (cab) visible on the street. These taxis are standard in the city, likely used for transportation.
-    
-    3. **Background**: The background shows urban architecture, including tall buildings with multiple windows and some greenery along one side of the street.
-    
-    4. **
+    The image shows a city street scene with two yellow taxis parked on the side of the road. A person is hanging fabric or clothes on a rack in the middle of the street. The person is also holding the fabric and appears to be putting it up on the rack. The scene is set in an urban environment with tall buildings and a sidewalk in the background. The street is lined with traffic and there are no visible pedestrians.
 
 
 ### Call with Processor Output
@@ -164,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab, which is a common public transportation vehicle in New York City. The taxi is parked on a street, and a person is standing next to it with a piece of folding metal rack or stand? The person appears to be setting up or displaying something on the rack. The taxi is surrounded by an urban environment with buildings and storefronts in the background, and there are various signs and advertisements along the street.
+    The image shows a scene from New York City, featuring a yellow taxi and a person on a forklift or similar equipment. It appears to be a protest or demonstration. The person vehicles on the yellow taxi are likely skateboards or some other type of unusual city advertising enterprises.
 
 
 ### Call with Precomputed Embeddings
@@ -220,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person riding in the back of a yellow taxi cab using a small chair-like structure. The person appears to be either placing or removing a small flag or sign from the strap of the chair. The scene is set in an urban environment with buildings and flagpoles visible in the background. The weather seems to be overcast.
+    The image shows two yellow taxis on a city street. One taxi is stopped at a red light, with its wheels visible, indicating it is stationary. The other taxi is in motion behind it. There are also a few banners or flags hanging on poles in the background. The scene appears to be taken during the day in an urban setting.
 
 
 ## Querying Llama 4 Vision Model
