@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 16:59:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 18:13:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 16:59:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 18:13:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 16:59:23,665 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 16:59:23] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 18:13:29,508 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 18:13:29] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene from a comedy sketch where a person is previously seen developing an elaborate "boutique laundry service" as part of an act, setting themselves up with clothes drying on a clothesline. The setup is leaking water onto a NYC taxi. It is likely that this is a part of a skit.
+    The image shows a scene on a city street, specifically in Times Square, New York City. There is a well-known urban scene with people dancing or performing amidst the hustle and bustle of New York City life. The city streets are filled with pedestrians, traffic, and landmarks throughout the iconic location.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    Version سبحانه
+    The image shows a person in a yellow shirt interacting with a pair of ironing boards near a bright yellow taxi cab. The street is lined with buildings, and there are flags and signs visible in the background. The street appears to be in a city setting, possibly during a parade or public activity due to the controlled chaos and the unusual setup of ironing boards near a moving vehicle. There is no indication of violence or intentional harm in the scene.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene from the movie "The Office," featuring Michael Scott from the show. In this scene, Michael Scott, a character known for his commitment to his job and hisあまり frustrating personality, is forced to pull out a washing machine rack to wash and fold his clothes, presumably as a part of trying to maintain his appearance despite the chaos around him. The setting seems to be exaggerated, aiming to emphasize the humor and absurdity in the situation, while still maintaining a critique of everyday work life and theỗldig demands on employees.
+    There are no noticeable illustrations or images showing a specific output to describe in your question.
 
 
 ## Querying Llama 4 Vision Model
