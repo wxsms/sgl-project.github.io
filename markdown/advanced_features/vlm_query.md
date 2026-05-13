@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 08:51:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 09:42:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 08:51:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-13 09:42:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.37s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.90s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.52s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.58s/it]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 08:51:44,849 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 08:51:44] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-13 09:42:37,591 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-13 09:42:37] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It looks like the person is teaching sanitation workers how to clean the vehicle they are in.
+    The image shows a person sorting through stolen laundry that has been left out in front of a taxi. The clothing is spread out under the back window of a yellow taxi in an urban area. This is an unusual and concerning scenario, as taxis are typically used for transportation rather than being used as impoundments.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I see two yellow taxis on a city street. One taxi has a clear window and is slightly farther away, while the other taxi has a man dressed in a yellow shirt standing inside it. The man is holding a large, dark-colored sheet that is draped over the vehicle’s back. They are located near a building with several windows and some storefront signage.
+    The image depicts a taxicab in New York City. The cab is adorned with various American flags and items like a hammer and a flywheel, suggesting this might be part of a contest, promotional event, or demonstration involving the enforcement of texting while driving laws. The scene is set on a city street with urban buildings in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow-painted taxi cab ( Também R. Unidad.乗 す영 하 thereby T XX W Zo Wค WNT, F O US) in the road.
+    The image shows a yellow tour taxi on the street in New York City. The taxi is stopped, and a scene has been set up on the back of the car, with two blue raincoats hanging from strings attached to the roof. This setup likely represents the taxi driver's impromptu performance or act for a crowd, similar to what one might see during a street performance in New York. The background includes other vehicles and buildings typical of a busy city street, indicating an urban environment.
 
 
 ## Querying Llama 4 Vision Model
