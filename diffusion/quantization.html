@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=cfee2c4f"></script>
+    <script src="../_static/documentation_options.js?v=4363cc6e"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -492,6 +492,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quant-families">Quant Families</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fp8-online-quantization">FP8 Online Quantization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mxfp4-online-quantization">MXFP4 Online Quantization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skipping-layers">Skipping Layers</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validated-modelopt-checkpoints">Validated ModelOpt Checkpoints</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelopt-fp8">ModelOpt FP8</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-examples">Usage Examples</a></li>
@@ -533,8 +539,10 @@ the base model and the quantized transformer override separate.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">--model-path</span></code>: the base or original model</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code>: a quantized transformers-style transformer component directory that already contains its own <code class="docutils literal notranslate"><span class="pre">config.json</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code>: quantized transformer weights provided as a single safetensors file, a sharded safetensors directory, a local path, or a Hugging Face repo ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--quantization</span></code>: apply online quantization to unquantized models at load time (activations are quantized dynamically)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--quantization-ignored-layers</span></code> layer name patterns to keep unquantized (e.g. <code class="docutils literal notranslate"><span class="pre">attention.to_</span></code>)</p></li>
 </ul>
-<p>Recommended example:</p>
+<p>Recommended example for pre-quantized checkpoints:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>black-forest-labs/FLUX.2-dev<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--transformer-weights-path<span class="w"> </span>black-forest-labs/FLUX.2-dev-NVFP4<span class="w"> </span><span class="se">\</span>
@@ -569,35 +577,42 @@ backend.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fp8</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fp8</span></code> / <code class="docutils literal notranslate"><span class="pre">mxfp4</span></code> (online quantization)</p></td>
+<td><p>Unquantized checkpoint (offline via AMD Quark coming soon)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">{fp8,mxfp4}</span></code></p></td>
+<td><p>Z-Image-Turbo (validated), others likely work. More support coming soon.</p></td>
+<td><p>MXFP4: <code class="docutils literal notranslate"><span class="pre">aiter</span></code> on ROCm</p></td>
+<td><p>MXFP4 requires ROCm and MI350+ (gfx95x). Weights quantized at load time, activations quantized to <code class="docutils literal notranslate"><span class="pre">fp8</span></code> / <code class="docutils literal notranslate"><span class="pre">mxfp4</span></code> dynamically.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fp8</span></code> (offline quantization)</p></td>
 <td><p>Quantized transformer component folder, or safetensors with <code class="docutils literal notranslate"><span class="pre">quantization_config</span></code> metadata</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code> or <code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code></p></td>
 <td><p>ALL</p></td>
 <td><p>None</p></td>
 <td><p>Component-folder and single-file flows are both supported</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt-fp8</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt-fp8</span></code></p></td>
 <td><p>Converted ModelOpt FP8 transformer directory or repo with <code class="docutils literal notranslate"><span class="pre">config.json</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
 <td><p>FLUX.1, FLUX.2, Wan2.2, HunyuanVideo, Qwen Image, Qwen Image Edit</p></td>
 <td><p>None</p></td>
 <td><p>Serialized config stays <code class="docutils literal notranslate"><span class="pre">quant_method=modelopt</span></code> with <code class="docutils literal notranslate"><span class="pre">quant_algo=FP8</span></code>; <code class="docutils literal notranslate"><span class="pre">dit_layerwise_offload</span></code> is supported and <code class="docutils literal notranslate"><span class="pre">dit_cpu_offload</span></code> stays disabled</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt-nvfp4</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt-nvfp4</span></code></p></td>
 <td><p>Mixed transformer directory/repo with <code class="docutils literal notranslate"><span class="pre">config.json</span></code>, or raw NVFP4 safetensors export/repo</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code> for mixed overrides; <code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code> for raw exports</p></td>
 <td><p>FLUX.1, FLUX.2, Wan2.2</p></td>
 <td><p>None</p></td>
 <td><p>Mixed override repos keep the base model separate; raw exports such as <code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev-NVFP4</span></code> still use the weights-path flow</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nunchaku-svdq</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nunchaku-svdq</span></code></p></td>
 <td><p>Pre-quantized Nunchaku transformer weights, usually named <code class="docutils literal notranslate"><span class="pre">svdq-{int4|fp4}_r{rank}-...</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code></p></td>
 <td><p>Model-specific support such as Qwen-Image, FLUX, and Z-Image</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">nunchaku</span></code></p></td>
 <td><p>SGLang can infer precision and rank from the filename and supports both <code class="docutils literal notranslate"><span class="pre">int4</span></code> and <code class="docutils literal notranslate"><span class="pre">nvfp4</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">msmodelslim</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">msmodelslim</span></code></p></td>
 <td><p>Pre-quantized msmodelslim transformer weights</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--model-path</span></code></p></td>
 <td><p>Wan2.2 family</p></td>
@@ -607,6 +622,54 @@ backend.</p>
 </tbody>
 </table>
 </div>
+</section>
+<section id="online-quantization">
+<h2>Online Quantization<a class="headerlink" href="#online-quantization" title="Link to this heading">#</a></h2>
+<p>Online quantization applies quantization to unquantized models at load time. This is useful for when pre-quantized checkpoints are not available.</p>
+<section id="fp8-online-quantization">
+<h3>FP8 Online Quantization<a class="headerlink" href="#fp8-online-quantization" title="Link to this heading">#</a></h3>
+<p>Apply FP8 quantization to any unquantized model:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Tongyi-MAI/Z-Image-Turbo<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>fp8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a beautiful sunset&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-output
+</pre></div>
+</div>
+</section>
+<section id="mxfp4-online-quantization">
+<h3>MXFP4 Online Quantization<a class="headerlink" href="#mxfp4-online-quantization" title="Link to this heading">#</a></h3>
+<p>MXFP4 provides aggressive 4-bit compression with online quantization. <strong>Note: Requires ROCm and MI350+ (gfx95x) GPU.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Tongyi-MAI/Z-Image-Turbo<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>mxfp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a beautiful sunset&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-output
+</pre></div>
+</div>
+<p><strong>Note:</strong> Requires <code class="docutils literal notranslate"><span class="pre">aiter</span></code> package with MXFP4 kernel support</p>
+</section>
+<section id="skipping-layers">
+<h3>Skipping Layers<a class="headerlink" href="#skipping-layers" title="Link to this heading">#</a></h3>
+<p>By default, online quantization quantizes every linear layer in
+the transformer. However, <code class="docutils literal notranslate"><span class="pre">--quantization-ignored-layers</span></code> can be used to keep specific layers in their original precision:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Tongyi-MAI/Z-Image-Turbo<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>fp8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization-ignored-layers<span class="w"> </span>attention.to_<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a beautiful sunset&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-output
+
+sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Tongyi-MAI/Z-Image-Turbo<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>mxfp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization-ignored-layers<span class="w"> </span>attention.to_<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a beautiful sunset&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-output
+</pre></div>
+</div>
+<p>Each pattern is matched against the full layer prefix (e.g. <code class="docutils literal notranslate"><span class="pre">layers.0.attention.to_q</span></code>). A layer is skipped and left unquantizd if its prefix contains any of the given patterns.</p>
+</section>
 </section>
 <section id="validated-modelopt-checkpoints">
 <h2>Validated ModelOpt Checkpoints<a class="headerlink" href="#validated-modelopt-checkpoints" title="Link to this heading">#</a></h2>
@@ -1113,6 +1176,12 @@ for conversion in use <code class="docutils literal notranslate"><span class="pr
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quant-families">Quant Families</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fp8-online-quantization">FP8 Online Quantization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mxfp4-online-quantization">MXFP4 Online Quantization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skipping-layers">Skipping Layers</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validated-modelopt-checkpoints">Validated ModelOpt Checkpoints</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelopt-fp8">ModelOpt FP8</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-examples">Usage Examples</a></li>

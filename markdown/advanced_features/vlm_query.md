@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-14 00:43:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 00:56:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-14 00:43:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 00:56:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-14 00:43:40,510 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-14 00:43:40] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-14 00:56:39,601 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-14 00:56:39] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person standing next to a pickup truck, which has been decorated to look like a yellow car, complete with windows and a license plate. This setup gives the impression that the truck is being used for a costume or at an event模仿或者作为一种秋千车子。
+    The image shows a scene in New York City, with two yellow taxis and two luggage racks on their rear. One person is hunching over the racks, seemingly inspecting the luggage or making adjustments. The environment suggests that this is likely in one of the busy areas of the city, such as Times Square or Midtown Manhattan, where such scenes are not uncommon, especially for tourist well-known sites like Times Square and Broadway.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis driving in a city street. On one of the taxis, there is a person hanging clothes on a line. The person is wearing a yellow shirt and glasses and appears to be stretching the clothes to ensure they are properly hung. It seems to be a scene typical in many urban areas where taxis serve as makeshift clotheslines during colder months.
+    This image shows a humorous scene involving a public transportation escortor dressed in yellow giving instructions or demonstration in front of a yellow taxi./></div>
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,12 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis in an urban setting. The taxis are next to tall buildings, and there are multiple flags hanging above the streets. The scene appears to be in a busy city area, possibly a commercial district like the one in New York City. The taxi on the right has the word "Helen" visible on its side.
+    The image shows a yellow taxi that is attempting to be launched from a machine commonly referred to as a "tugboat". This type of device is used to help drivers attach and retrieve the rear bike racks of taxis after they have completed their service and are ready to be collected for the next driver.
+    
+    **Here's a breakdown of what you see:**
+    - Two yellow taxis are shown, with one prominently in the middle foreground.
+    - The taxi in the foreground has a rack attached to its back and is in the active process of being launched from the machine.
+    - There's also another taxi slightly in the background that is in close proximity to
 
 
 ## Querying Llama 4 Vision Model
