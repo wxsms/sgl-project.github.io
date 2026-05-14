@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-14 09:40:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 16:58:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-14 09:40:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 16:58:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-14 09:40:32,848 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-14 09:40:32] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-14 16:58:48,790 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-14 16:58:48] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a unique scene of a man hanging waves or fishing nets on the back of yellow taxis in New York City. The practice is known as " waving taxis" and was once a popularSzczodrej tactic employed across the United States in the 1970s.
+    The image shows a man parallel park his vehicle on a street, balancing shopping bags (or other items) on a small stool to prevent them from falling off during the maneuver. This is a common vehicle parking method to make it easier to exit the car.
 
 
 ### Call with Processor Output
@@ -150,9 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image depicts a scene in what appears to be a busy urban area, likely New York City, given the bright yellow taxis that are iconic in the city. A person in a yellow shirt and glasses is pushing a folding table loaded with clothes on a city street. The flags visible in the background include the New York City flag, suggesting the presence of the Holland Tunnel to the east and the Brooklyn Navy Yard to the west, both lined with the city flag as a civic symbol.
-    
-    The taxi in the foreground is a typical New York City yellow cab, and the street is bustling with activity. The food truck on the right (towards the
+    It appears there's an inconsistency in your attempt to ask about an image. Your message might be about a race with rainbows, or a confusion with another picture. It's a bit challenging to discern the exact query. Could you please clarify or provide a specific image for me to assist you better?
 
 
 ### Call with Precomputed Embeddings
@@ -208,9 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two identical blue duffel bags hanging from a clothes rack or a similar makeshift display in front of a yellow taxi cab. The blue duffel bag hanging on the right side is the back view of it, revealing the open lid. This setup is likely part of a street marketing or performance art demonstration, where the bags might be intended to paint the colors blue.
-    
-    There's an unusual piece of urban event or art that employs bright colors (blue in the image) to catch passersby's attention and perhaps activate a conversation or gathering.
+    The image shows a scene from what appears to be a New York City见过 or a similar location. A yellow NYC taxi cab is parked on a busy street, and there is a man dressed in a father's suit and tie hanging laundry outside the vehicle. The taxi is positioned on a street lined with buildings in the background, and other vehicles and street furniture can be seen, such as a bus, a window display, and clotheslines.
 
 
 ## Querying Llama 4 Vision Model
