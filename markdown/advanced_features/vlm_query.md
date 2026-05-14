@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-14 16:58:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 18:15:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-14 16:58:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 18:15:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.23s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-14 16:58:48,790 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-14 16:58:48] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-14 18:15:27,527 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-14 18:15:27] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man parallel park his vehicle on a street, balancing shopping bags (or other items) on a small stool to prevent them from falling off during the maneuver. This is a common vehicle parking method to make it easier to exit the car.
+    This image shows a surprising and unexpected scene where a person is hang ironing clothes on the back of a yellow taxi. There are clothes hanging from a crossbar on the back of the taxi, and the person appears to be ironing the clothes. This is not a typical use of a taxi cab, so it is likely an artistic or humorous capture.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It appears there's an inconsistency in your attempt to ask about an image. Your message might be about a race with rainbows, or a confusion with another picture. It's a bit challenging to discern the exact query. Could you please clarify or provide a specific image for me to assist you better?
+    The image shows a scene likely taken from a movie or an event. It features a yellow taxi cab, which is commonly recognized as a New York City tux cab, from "Taxi Driver." There is a man in a yellow shirt hanging a long object, possibly a curtain or cloth, from the back of the taxi, perhaps using it as a form of decoration or to protect its goods. The taxi seems to be stopped partially or traveling down a street lined with buildings, some of which have red awnings. There are some small details like crickets in your mouth, which seems to be an unusual and unintended detail.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from what appears to be a New York City见过 or a similar location. A yellow NYC taxi cab is parked on a busy street, and there is a man dressed in a father's suit and tie hanging laundry outside the vehicle. The taxi is positioned on a street lined with buildings in the background, and other vehicles and street furniture can be seen, such as a bus, a window display, and clotheslines.
+    The image shows a city street scene with two yellow taxis. One taxi is moving away from the camera, and the other is parked next to a man who is using a foldable laundry rack to dry washing items, such as a pair of pants and a blanket. The man appears to be emphasizing the drying of clothes while walking, possibly to convey a message about父爱之情 (Fatherly Love) or family diligence. 
+    
+    The background includes some street signs and a partially visible storefront with a large glass window.
 
 
 ## Querying Llama 4 Vision Model
