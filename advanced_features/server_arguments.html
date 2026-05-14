@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=fd1e37a2"></script>
+    <script src="../_static/documentation_options.js?v=1c4f4e4f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1831,7 +1831,12 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--elastic-ep-rejoin</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-deepep-waterfill</span></code></p></td>
+<td><p>Enable DeepEP Waterfill: dispatch the shared expert as the 9th routed expert to the least-loaded EP rank. Automatically sets <code class="docutils literal notranslate"><span class="pre">--moe-a2a-backend</span> <span class="pre">deepep</span></code>, implicitly enables shared-expert fusion, and supports <code class="docutils literal notranslate"><span class="pre">--deepep-mode</span> <span class="pre">auto</span></code>, <code class="docutils literal notranslate"><span class="pre">normal</span></code>, or <code class="docutils literal notranslate"><span class="pre">low_latency</span></code>. Use <code class="docutils literal notranslate"><span class="pre">auto</span></code> or <code class="docutils literal notranslate"><span class="pre">low_latency</span></code> for production decode so CUDA graph remains enabled. Supported on DeepSeek-V3/R1 with EP &gt;= 2. By default, Waterfill uses the static local-batch path; set <code class="docutils literal notranslate"><span class="pre">SGLANG_DISABLE_STATIC_WATERFILL=1</span></code> to force dynamic Waterfill with runtime EP all-reduce.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>bool flag (set to enable)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--elastic-ep-rejoin</span></code></p></td>
 <td><p>Indicates that this process is a relaunched elastic EP rank that should rejoin an existing process group during rank recovery.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag (set to enable)</p></td>
