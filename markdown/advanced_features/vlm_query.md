@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-14 22:42:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 23:19:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-14 22:42:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 23:19:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-14 22:42:57,861 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-14 22:42:57] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-14 23:19:17,367 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-14 23:19:17] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab parked on a city street. A person is standing near the back of the taxi, holding clothes on a rack. The street appears to be busy, with traffic lights and urban buildings visible in the background. The scene suggests a street vendor or street performer.
+    The image shows a city street with several taxis. On the road, there is a shirt hanging on a可以看到 a yellow brick wall on the left side of the image and a building under construction with scaffolding on the right side.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a busy street with two yellow taxis, a man washing a bedsheet at the back of one taxi, and a row of tall buildings and storefronts lining the street. The scene appears to be from a city like New York, given the typical urban environment and the presence of a man dressed in casual yellow attire doing laundry on a stand behind the cab.
+    The image shows a form of street performance art or a performance-like action where an individual is pulling a shopping cart with a soap марш, known as "the washerperson," in the New York City area. This is an unstage event.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows aTaxi cab in New York City.
+    The image shows a yellow taxi cab driving down a city street. Attached to the back of the taxi is a commercial display stand set up by what appears to be a street vendor or a company showcasing their product. The display is arranged with a variety of objects, which include cleaning items and possibly other miscellaneous belongings. The street is lined with buildings and trees, and there are other vehicles visible in the background. The scene is set in an urban environment, likely a district with significant foot traffic, which is typical for vibrant city areas.
 
 
 ## Querying Llama 4 Vision Model
