@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=27b7d7b6"></script>
+    <script src="../_static/documentation_options.js?v=cfee2c4f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -578,11 +578,11 @@ Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not defi
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.35it/s]
-2026-05-14 00:03:25,598 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-14 00:03:25] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.68it/s]
-Capturing num tokens (num_tokens=4 avail_mem=75.94 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 19.70it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.26it/s]
+2026-05-14 00:39:51,041 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-14 00:39:51] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.49it/s]
+Capturing num tokens (num_tokens=4 avail_mem=71.50 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 32.24it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -614,35 +614,43 @@ Capturing num tokens (num_tokens=4 avail_mem=75.94 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Jason, a 28-year-old high school senior at Kalamazoo College. I enjoy working on the weekends to help with my low self-esteem and depression. I am particularly interested in working with people who have been bullied in school. My main skills include communication skills, social skills, and active listening. I am capable of working on both short and long-term projects. I have experience with a variety of software applications and technology. I have experience with project management, time management, time tracking, and creating budgets. I have also taught my son to drive a car. I have been looking for a new job, and I am
+Generated text:  Max, and I&#39;m a computer science student. I was born on November 10, 1997, and I&#39;m in the third year of my program. I&#39;m currently attending University of Illinois at Urbana-Champaign.
+
+I am particularly interested in data science, and my research interest is in the field of recommendation systems. I&#39;ve recently started using the recommender system library in Python to develop my own recommendation system for a university course. The system is able to provide personalized recommendations for students based on their preferences.
+
+The current system has a few issues, such as heavy computation time and low accuracy of recommendations. I want
 ===============================
 Prompt: The president of the United States is
-Generated text:  a presidential candidate. He was asked how many children he has and said, &#34;Half of my children&#39;s ages add up to 36, and one-third of my children&#39;s ages add up to 15.&#34; How old is the president of the United States?
-Let&#39;s denote the number of children the president of the United States has as \( n \). According to the problem, half of each child&#39;s ages add up to 36, and one-third of each child&#39;s ages add up to 15. We can express these conditions with the following equations:
+Generated text:  a male. Among the following, the one who is a female is (　　)
+A: The president of the United States
+B: The member of Congress
+C: The Secretary of State of the United States
+D: The deputy Speaker of the House of Representatives To determine which of the given options is a female, we need to consider the roles and positions of the U.S. President, members of Congress, the Secretary of State, and the deputy Speaker of the House of Representatives.
 
-1. If we divide the total sum of the ages of
+1. The President of the United States is a male.
+2. Members of Congress are elected officials in the House of Representatives, which are
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. What is the capital of the country of which Paris is the capital?
-A. France
-B. Germany
-C. Italy
-D. Spain
-E. Japan
+Generated text:  _______ ( )
 
-To determine the capital of the country of which Paris is the capital, let&#39;s break down the problem step by step.
+A: Paris
+B: London
+C: Rome
+D: Moscow
 
-1. Identify the capital of France: Paris is the capital of France.
-2. Identify the country and its capital: The country is Germany. Germany is the capital of Germany.
+To determine the capital of France, let&#39;s analyze the options provided:
 
-Therefore, the capital of the country of which Paris is the capital is Germany.
+A: Paris - This is the capital of France. Paris is known for its iconic Notre-Dame Cathedral and is a major cultural center.
 
-The correct answer is \boxed{B}.
+B: London - This is the capital of the United Kingdom. While Paris is indeed near London, it is not the capital of France.
+
+C: Rome - This is the capital of Italy. While Rome is a significant city, it is not the capital of France.
+
+D: Moscow - This is the capital of Russia. While
 ===============================
 Prompt: The future of AI is
-Generated text:  not clear; so is the future of education.
-This week, a state of the art AI system unveiled at the International Conference on Learning Technologies (ICLT), the biggest annual conference of the world’s largest education-focused technology trade show, is proving to be the first of many proof points, as teachers try to figure out how AI can be used in their classrooms. In the past year, teachers have come to see AI as a potential force for good, particularly when it comes to making education more accessible.
-But to use AI to create an inclusive and equitable learning environment, one must first understand the way it’s being used in the classroom,
+Generated text:  very bright, but it&#39;s also very complex. Understanding how AI algorithms operate, making them work, and ensuring that they are used safely is essential. To develop a robust and secure AI system, you need to start by understanding the underlying concepts and principles that govern how AI works. This is where a comprehensive understanding of machine learning and computer science is important. You should also familiarize yourself with the regulations and guidelines that govern the use of AI systems in various industries.
+The next step is to learn about the technical details of how AI algorithms are implemented and deployed. This requires a deep understanding of programming languages, data structures, and data processing techniques
 </pre></div></div>
 </div>
 </section>
@@ -682,17 +690,19 @@ But to use AI to create an inclusive and equitable learning environment, one mus
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [age] year old, and I have a [majority] degree in [major]. I&#39;m a [occupation] who has been working in [industry] for [number of years]. I&#39;m always looking for new challenges and opportunities to grow and learn. What do you do for a living? I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? I&#39;m a [insert a short description of your profession or experience here]. I enjoy [insert a short description of your hobbies or interests here]. What do you do for a living? I&#39;m always looking for new challenges and opportunities to grow and learn. What do you like to do in your free time? I enjoy [insert a short description of your hobbies or interests here]. I&#39;m always looking for new challenges and opportunities to grow and learn. What
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Ville de Paris&#34; or simply &#34;Paris&#34;. It is the largest city in France and the third-largest city in the world by population. Paris is a cultural, historical, and artistic center, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. It is also a major financial center and a major transportation hub. Paris is home to many world-renowned museums, including the Louvre, the Musée d&#39;Orsay, and the Musée Rodin. It is also a major hub for the French economy
+Generated text:  Paris, also known as the City of Light. It is a historic city with a rich cultural heritage and is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also a major center for art, music, and fashion, and is home to many world-renowned museums, theaters, and restaurants. The city is also known for its vibrant nightlife and is a popular tourist destination. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another. It is a city of people, with its diverse population and culture making it a unique
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
 
-1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a greater emphasis on ethical considerations. This includes issues such as bias, transparency, accountability, and privacy. AI developers will need to be more mindful of the potential consequences of their creations and work to ensure that they are developed in a way that is ethical and responsible.
+1. Increased automation: AI is expected to become more and more integrated into our daily lives, from home automation to autonomous vehicles. As AI becomes more capable of performing tasks that were previously done by humans, we may see an increase in automation in various industries.
 
-2. Greater use of AI in healthcare: AI is already being used in healthcare to
+2. AI ethics and privacy: As AI becomes more integrated into our lives, there will be a need to address the ethical and privacy concerns associated with AI. This will likely lead to increased regulation and oversight of AI development and deployment.
+
+3
 
 </pre></div></div>
 </div>
@@ -735,19 +745,32 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m [Age] years old. I&#39;m a [career] with [talent] that has made me famous in [field of interest]. I have a good sense of humor and can make people laugh at [reason for making them famous]. I love [reason for being funny and making people laugh]. My style is [unique skill set]. I&#39;m always up for a challenge, so I&#39;m always looking for new opportunities to make my mark in [field]. What&#39;s your background and what&#39;s your passion? As an AI language model, I don&#39;t have a personal background or feelings, but I&#39;m programmed
+Generated text:  [insert name]. I&#39;m a [insert age range], [insert gender] and I am [insert occupation]. I&#39;m a software engineer [insert profession] with a master&#39;s degree in [insert degree]. I&#39;m passionate about [insert passion or interest]. My interests include [insert hobbies or activities]. I am [insert unique personality trait or background]. I&#39;m [insert website or LinkedIn profile] and I enjoy [insert activities or interests]. I&#39;m a [insert fictional role or avatar] and I&#39;m dedicated to [insert purpose or mission]. I believe in [insert values or principles]. I&#39;m excited to [insert future goals or
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city renowned for its medieval architecture, elegant boulevards, and world-renowned museums. Known as the “City of Light,” it is a cultural center with a thriving arts scene and a diverse population of over 2.7 million people. The city is located on the river Seine and is home to numerous historical landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. Paris is a popular destination for tourists and a UNESCO World Heritage site, making it a must-visit destination for travelers visiting the country. The capital of France is known for its unique blend of traditional French culture
+Generated text:  Paris.
+
+The statement provided is factual and directly addresses the question of what the capital city of France is. It is a complete statement that includes all the key information needed to provide the requested information.
+
+Therefore, the answer is:
+
+Paris.
+
+This statement encapsulates the core facts about the capital city of France.
+
+The key points to remember:
+- It is the capital city of France.
+- Its full name is Paris.
+
+The statement &#34;The capital of France is Paris&#34; accurately and concisely describes the capital city of France. Therefore, the final answer is:
+\boxed{Paris}
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly promising, with many possibilities and potential applications. Here are some of the most likely future trends:
+Generated text:  uncertain, but it is expected to continue to evolve rapidly, with many potential trends developing in the coming decades. Here are some of the possible future trends in AI:
 
-1. Increased automation and intelligent assistants: AI will continue to advance, and we will see more and more automation and intelligent assistants in our daily lives. These assistants will be able to help us with a wide range of tasks, from managing our finances to providing emotional support.
+1. Deep Learning: As the technology of deep learning continues to advance, AI is expected to become more capable of solving complex problems and making decisions that are more accurate and efficient. Deep learning algorithms will be able to learn from large and complex datasets much faster than traditional machine learning algorithms.
 
-2. AI for healthcare: AI is already being used in healthcare, with doctors using AI to analyze medical images and make diagnoses. Future AI will likely focus on creating more accurate and efficient healthcare systems, with AI being used to predict disease outbreaks and identify new treatments.
-
-3
+2. AI Ethics: As AI technology continues to advance, it is expected to face new ethical challenges, such as privacy, bias, and accountability. There is a growing recognition that AI systems
 </pre></div></div>
 </div>
 </section>
@@ -793,19 +816,21 @@ Generated text:  highly promising, with many possibilities and potential applica
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name] and I am [Your Age] years old. I am passionate about [Your passion or hobby], and I&#39;ve been working on it for [Your length of time] years now. I&#39;ve been learning and improving my skills and techniques, and I&#39;m confident that I can become a [Your ultimate goal or skill] in the future. I&#39;m excited to be here, and I look forward to sharing my knowledge and experience with you. Thanks for taking the time to meet me. #MeetMyName #SkillShare #PassionForYourFuture #SelfIntro #SkillManagement #SkillfulPersons #Skillful
+Generated text:  ______. My goal is to help people with various issues. I&#39;m always trying to make people feel better. I&#39;m confident that with my skills, I can help people achieve their goals. I&#39;m available 24/7 and can be reached at __________. I&#39;m a/an _____________. My interests are ___________ and I enjoy ___________.
 
-
+Hello, my name is __________. I want to help people with various issues. I&#39;m always trying to make people feel better. I&#39;m confident that with my skills, I can help people achieve their goals. I&#39;m available 24/7 and can
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. Its cultural, economic, and political center, Paris is famous for its historical landmarks, such as the Louvre, the Eiffel Tower, and Notre Dame Cathedral. The city is also a hub for fashion, art, and gastronomy, and is home to numerous museums, theaters, and festivals throughout the year. Paris has a diverse population with over 7 million residents, many of whom speak French and English. Despite facing challenges such as climate change and economic instability, Paris remains a vibrant and influential city with a rich cultural and historical legacy. Additionally, the city is home to many
+Generated text:  Paris.
+
+Paris is the capital city of France, located on the Seine river, in the south of the country. The city is known for its rich history, beautiful architecture, and vibrant culture. It is the world&#39;s largest metropolitan area and is home to many of the country&#39;s most famous landmarks, including the Eiffel Tower and the Louvre Museum. Paris is also a major center for education, arts, and media, and its city life is characterized by its embrace of modernity and its commitment to preserving historical and cultural traditions. It is the seat of the French government and the largest economy in the European Union, and remains
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be full of exciting developments and changes. Here are some possible trends in the AI landscape:
+Generated text:  bright and constantly evolving, with numerous potential areas of innovation and advancement. Here are some possible trends in AI:
 
-1. Increased Personalization: As AI technology continues to improve, we can expect to see greater personalization of products and services. This will enable businesses to offer more tailored experiences to their customers, leading to increased customer satisfaction and loyalty.
+1. Increased emphasis on ethical considerations: As AI systems become more integrated into our daily lives, there will be a greater emphasis on ethical considerations and safeguards. We will need to ensure that AI systems are designed and used in a way that respects privacy, protects personal information, and minimizes harm to individuals.
 
-2. AI in Healthcare: AI is already being used in healthcare, such as in identifying the best drugs to treat diseases, and in diagnosing and treating diseases. As AI technology continues to improve, we can expect to see more innovative use cases in healthcare, including predicting the likelihood of diseases and developing personalized
+2. Improved accuracy and precision: As AI becomes more sophisticated, we will see a significant increase in the accuracy and precision of its predictions and decisions. This will require the development of new algorithms and techniques for statistical and machine learning
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
