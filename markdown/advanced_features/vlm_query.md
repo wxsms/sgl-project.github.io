@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-14 02:29:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 04:21:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-14 02:29:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 04:22:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-14 02:29:14,417 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-14 02:29:14] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-14 04:22:11,556 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-14 04:22:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a humorous scene of a person in a taxi wearing a yellow shirt who is presenting ironing clothes on an ironing board attached to the back of a stopped yellow taxi in an urban setting.
+    Here is an image of a man standing by the side of a yellow taxi cab, holding up two small American flag flags. He is standing in the background of a city street with buildings, and the taxi cab is parked nearby.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It appears that an изображEine person has a folding suitcase suspended from a belt or leash attached to their waist, hanging from the back of a taxi parked on the street. The suitcase appears to contain clothes or other items.
+    The image shows a yellow taxi cab on a city street. On the back of the taxi, there is a person wearing a yellow shirt and holding an ironing board with clothes draped over it. The person appears to be posing for a photograph, creating a humorous or whimsical scene. The background includes other taxis and buildings with commercial signs.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there are two yellow taxis driving on a street in what appears to be an urban environment, likely in a city. A man in a yellow shirt is standing between the two cabs, placing cloths on a long, horizontal object that stretches across the road. The items he is handling seem to be part of a performance or demonstration, as the presentation of clothes alone does not make sense in the context of a city street.
+    The image shows a yellow taxi cab parked on the side of a street. The taxi has a clothes drying rack attached to its rear, which is holding several pieces of fabric. This appears to be an unusual and humorous scene, suggesting someone is trying to dry clothes while in a taxi. There are also several flags, possibly American flags, attached to the taxi. The background includes a building with various signs and an open storefront.
 
 
 ## Querying Llama 4 Vision Model
