@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=fb3125a6"></script>
+    <script src="../_static/documentation_options.js?v=e3e1c7d2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -674,6 +674,11 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <p>To enable NVLink transport for KV cache transfers with the mooncake backend (recommended for NVL72 deployments), set the following environment variables. Note that auxiliary data transfer will still use TCP as a temporary workaround.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_MOONCAKE_CUSTOM_MEM_POOL</span><span class="o">=</span>NVLINK
 <span class="nb">export</span><span class="w"> </span><span class="nv">MC_FORCE_MNNVL</span><span class="o">=</span>True
+</pre></div>
+</div>
+<p>To utilize Intra-Node NVLink for KV cache transfers with the Mooncake backend (recommended for A100, H20, H100, etc.), set the following environment variables. Please note that auxiliary data still needs to be transferred via TCP.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_MOONCAKE_CUSTOM_MEM_POOL</span><span class="o">=</span>INTRA_NODE_NVLINK
+<span class="nb">export</span><span class="w"> </span><span class="nv">MC_INTRANODE_NVLINK</span><span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">SGLANG_MOONCAKE_CUSTOM_MEM_POOL</span></code> environment variable enables the custom memory pool. Supported values are <code class="docutils literal notranslate"><span class="pre">NVLINK</span></code> (or <code class="docutils literal notranslate"><span class="pre">True</span></code>), <code class="docutils literal notranslate"><span class="pre">BAREX</span></code>, and <code class="docutils literal notranslate"><span class="pre">INTRA_NODE_NVLINK</span></code>.</p>

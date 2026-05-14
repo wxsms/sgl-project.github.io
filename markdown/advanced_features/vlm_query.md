@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-14 05:24:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 06:36:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-14 05:24:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 06:36:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.07s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.02it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-14 05:24:27,558 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-14 05:24:27] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-14 06:36:21,008 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-14 06:36:21] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a yellow taxi cab parked on a city street. The taxi has a small clothesline attached to the rear, with clothes hanging on it. This is likely a creative and humorous display to draw attention, possibly for a advertisement or event. The background includes urban elements such as buildings and other vehicles, indicating an urban setting.
+    The image shows a yellow taxi cab in an urban city environment. A person is using the rear of the taxi as a makeshift outdoor laundry station. They have hung sheets or cloth items on bars attached to the back of the cab, likely for drying. This is a humorous and unusual use of an urban space for drying laundry.
 
 
 ### Call with Processor Output
@@ -150,7 +150,14 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene from what appears to be a public event or repair shop, but in an actual scenario like the one depicted, people are not sending out clothes for熨烫（ironing）as it is rare for people to send in laundry because of the difficulty of transporting delicate fabrics in taxis on the road. Instead, the scene is likely part of a performance or demonstration related to public transportation services offered by taxis.
+    The image shows a scene likely taking place in Central New York, as indicated by the mention of nearby Washington Dunes and Cornell University. Here are some key points:
+    
+    - The setting appears to be in a city with tall buildings, possibly in downtown or an urban area.
+    - There are a few small red buildings on the left, which might be schools or municipal buildings.
+    - A yellow taxi is prominently featured in the foreground.
+    - There are a couple of umbrellas placed on the roof of the taxi, which could suggest a rainy day or an event.
+    - The ground is paved, and there are some shadows indicating it is daytime.
+    -
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +213,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a city street scene that appears to be accidentally captured while a street merger video is being recorded. In the foreground, a bicycle that is supposed to be parked by the curb is being traffic-snatched by a dispenser mechanism on a yellow taxi cab. The taxi has a striped sayings banner on the back. This visual creates a humorous and chaotic display, mimicking a common male pattern baldness illustration. The video was unintentionally caught when reporting collapsed public transport pens before the video title attachment.
+    The image shows a yellow taxi cab parked on the street. There are clothes hanging out of the back window, creating a humorous and unexpected scene. The background appears to be an urban setting with colorful flags displayed on the sidewalks and buildings. The scene seems to be in a city with a lively atmosphere.
 
 
 ## Querying Llama 4 Vision Model
