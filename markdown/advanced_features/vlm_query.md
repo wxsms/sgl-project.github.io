@@ -102,11 +102,11 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-13 23:49:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 00:02:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-13 23:49:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-14 00:02:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Failed to load legacy DeepGEMM A100 Triton kernels: dynamic module does not define module export function (PyInit__C)
@@ -114,9 +114,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -126,12 +126,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-13 23:49:36,881 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-13 23:49:36] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-14 00:02:44,776 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-14 00:02:44] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street with two yellow taxis parked beside the curb. One taxi is in the foreground, and the other is a bit distant in the background. There is a person standing between the two taxis, seemingly involved in some activity, possibly related to the vehicle or the street. The environment surrounding the taxis includes buildings with some signage and balconies. The activity of the person and the setting gives the impression of an urban environment, possibly during a special event or routine in a city.
+    The image depicts a street scene in New York City with two yellow taxis, which are iconic vehicles in the city. The person in the image appears to be using a bicycle-mounted laundry basket to wash clothes, which is a humorous and innovative approach to tackling a common issue, such as drying clothes on hot city streets. This is likely a protest or comedic photograph designed to draw attention to the high costs of living in New York.
 
 
 ### Call with Processor Output
@@ -156,7 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a person folding laundry outdoors on a ground banner attached to a metal stand. The person is concentrating on their task, and the laundry includes a shirt and a Purple Heart ornament. There are two yellow cabs in the background on a city street, and several trees and flags are present around the area.
+    The image shows a man standing next to a yellow cab, inside a folding clothes-line. The clothes-line appears to be full of clothes and is attached to the side of the cab. This is an unusual and humorous sight, as sidewalks are not typically used for laundry. The scene likely depicts a playful prank or an art installation, where the man has temporarily set up a clothes-line on the street to pretend that he is hanging clothes outside.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +212,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city with a yellow taxi positioned in the foreground. There is a person performing an unusual act by swinging a jacket over the roof of the taxi. The person is holding the jacket with both hands above the taxi. You can see part of a building in the background, which has a few hanging flags or banners. The scene appears to be taken during the day, and the taxi is likely participating in some kind of street performance or demonstration.
+    The image shows a yellow taxi parked on a street in an urban area. The taxi has a step-up ramp extended from the back door, which is being used by a person. The person is standing on the steps, presumably getting into the taxi. This setup is unusual for a taxi, as steering wheel taxis typically don't use ramps for access, often requiring passengers to board from the driver's side or through a back door, which doesn't involve standing on ramps.
+    
+    The background includes other vehicles and typical urban street elements, such as buildings and traffic lights. There are also a few flags or banners visible on the buildings. The overall scene
 
 
 ## Querying Llama 4 Vision Model
