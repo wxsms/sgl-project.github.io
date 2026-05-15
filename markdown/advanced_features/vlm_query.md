@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-15 10:16:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 12:29:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-15 10:16:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 12:29:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-15 10:16:36,886 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-15 10:16:36] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-15 12:29:32,927 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-15 12:29:32] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It looks like an intentional deterrent—a taxi driver engaging in a display of probation-imposing, harsher punishments with a brilliant yellow spot, carrots, gloves, and possibly a heel, interjecting humor and emphasis into the normally mundane activity of queuing for a place in line.
+    It appears that the image shows a scene of street cleaning or administrative sanitation being done on a street in New York City. There are two yellow cabs (a type of taxi) on a city street, and one person is involved in some cleaning activity, either by picking up trash or performing some administrative roadside work. The background includes pedestrians, reminders of the bustling urban area, and possibly shop signs.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of a woman standing near two yellow taxis on a city street. She is holding a mannequin that is covered in clothing. This scene seems to be staged for an event, possibly related to fashion, street photography, or a themed photo shoot. The presence of multiple flags and urban elements like buildings and streetlights adds context to the urban setting.
+    The image shows a yellow taxi parked on a city street. In front of the taxi, there is a small rack or frame with a piece of blue fabric hanging from it. The fabric is suspended by a string attached to the rack. The taxi number plate is yellow with black characters, and there are other taxis and streetscape details in the background. The scene appears to be part of a demonstration or event, possibly related to the fabric demonstration mentioned.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi cab, which appears to be running on two wheels instead of four traditional wheels. The rear section of the taxi is placed on the rear wheel and is tilted backward, suggesting it is being flipped or positioned in an unusual way. The presence of the groceries bag with the taxpayer suggests it is a medication bag. It seems to be happening on a busy street in a big and bustling city.
+    The image shows a man carrying a crutch against a background of a yellow taxi cab. Power lines and street signs are also visible in the scene.
 
 
 ## Querying Llama 4 Vision Model
