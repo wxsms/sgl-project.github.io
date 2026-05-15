@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-15 16:42:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 17:38:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-15 16:42:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 17:38:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.97s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.46s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.53s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-15 16:43:08,436 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-15 16:43:08] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-15 17:39:02,477 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-15 17:39:02] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene where a person has attached a laundry cart to the rear of a yellow taxi. The cart is used to hang clothes, likely as part of a ciudad impersonation or photo opportunity. The person is wearing a yellow shirt, and the taxi is driving on a city street lined with advertisements and street lamps.
+    The image shows a scene in a city with two yellow taxis on the street. The focus of the image is a man standing behind the back of a taxi, ironing laundry on a makeshift clothesline. The laundry is hung between two sturdy posts placed on the back of the taxi, and the man is using a steam iron to iron the clothes. This unusual sight depicts a fun, surreal moment in an everyday urban environment.
 
 
 ### Call with Processor Output
@@ -150,7 +150,12 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked on a city street. There is a person standing behind the cab, seemingly taking a photo or adjusting their sunglasses, while the taxi is parked on the side of the road. The background includes buildings and some traffic lights, indicating that this scene is likely set in an urban environment. The taxi has been decorated with various flags and items, though the specific details of the decorations are not clear from the image.
+    The image depicts a yellow taxi with clothes hanging from the back, and a man partially inside the cab, seemingly in frustration. Here are the details:
+    
+    1. **The Taxi**: It's a standard yellow New York City taxi (taxicab).
+    2. **Clothes on Back**: Clothes are draped heavily from the rear side of the taxi, possibly being hung from the back or off a chair or bench nearby.
+    3. **Man Inside**: There's a man inside the rear seat of the taxi who appears to be upset. He's visible from the shoulders down, facing outward from the window.
+    4. **Street Scene**: The
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a city street. One taxi has a rack attached to its back with clothes hanging on it. The clothes include shirts, a jacket, and possibly a sweater. The other taxi is behind the first, slightly blurred, indicating movement. The street is lined with buildings and flags, suggesting a urban environment, possibly during a special event.
+    It looks like the image shows a yellow taxi cab parked on the street, with a person hanging clothes on its back. The person is using two clothes pins to hang the clothes on the back of the car. The background appears to be a busy urban area with buildings and street signs.
 
 
 ## Querying Llama 4 Vision Model
