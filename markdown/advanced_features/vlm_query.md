@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-14 23:19:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 01:31:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-14 23:19:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 01:31:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-14 23:19:17,367 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-14 23:19:17] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-15 01:31:53,141 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-15 01:31:53] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a city street with several taxis. On the road, there is a shirt hanging on a可以看到 a yellow brick wall on the left side of the image and a building under construction with scaffolding on the right side.
+    In the image, a person is hanging laundry outside of a taxi cab on a street in New York City (likely in one of the繁忙 laneways). While the person likely works as a street performer, the [[verb emphasis]] "{{person could potentially}}/#[either be]# *[work at)* a "[cleaning/laundry'" company]["location concentrate)". To describe their position in the image, the person looks as if "[standing at-end)" side of the street, with the top-left end of the tailgate of their "[covered city taxi)" belonging to the [[e) [[verb emphasis]] "[Manhattan taxi
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a form of street performance art or a performance-like action where an individual is pulling a shopping cart with a soap марш, known as "the washerperson," in the New York City area. This is an unstage event.
+    I'm not sure what you're referring to in the text. The text seems to be random characters and numbers. Maybe you could provide more context or clarify your question? I'd be happy to help if you can provide more information or ask a specific question about the text you shared.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab driving down a city street. Attached to the back of the taxi is a commercial display stand set up by what appears to be a street vendor or a company showcasing their product. The display is arranged with a variety of objects, which include cleaning items and possibly other miscellaneous belongings. The street is lined with buildings and trees, and there are other vehicles visible in the background. The scene is set in an urban environment, likely a district with significant foot traffic, which is typical for vibrant city areas.
+    The image shows two yellow taxi cabs parked in a street with the characteristic yellow license plates and streams of light on the tops of their roofs. There is an individual wearing a yellow shirt standing on the street near the taxis. The environment appears to be urban with buildings in the background, and there are some flagpoles with flags appearing in the distance. The scene looks like a busy urban area with the cabs ready to pick up passengers.
 
 
 ## Querying Llama 4 Vision Model
