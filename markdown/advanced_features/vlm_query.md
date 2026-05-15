@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-15 03:05:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 03:31:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-15 03:05:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 03:31:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.07s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-15 03:06:01,529 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-15 03:06:01] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-15 03:31:55,000 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-15 03:31:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked side by side on a city street. The background includes a building with large windows and some street signs and labeled entryways visible through the windows. The scene is urban, likely in a busy city area.
+    The image shows a traffic jam in New York City, with two yellow taxis stuck in a traffic jam caused by a man untying a piece of cloth. The scene captures the chaos and complexity of urban transportation, as one person tries to solve a problem that could easily derail an entire traffic flow.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene in what appears to be a busy urban street. There is a yellow taxi parked on the side of the road to the left, and another taxi behind it. A person is standing by the back of the second taxi, seemingly working with something that appears to be a doll or a similar object. The person is wearing a yellow shirt. The background includes building facades with some windows, and there are banners or flags hanging from the building on the left side of the image. The street is well-lit, and the sky is clear.
+    I'm not sure what the training is saying here to begin with.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from the movie "Birdman" or "Incendie-Fire". In the scene,actor Birdman(False)สอง 다리 to receive the taxi driver 샬랑 샬랑, 샬랑 샬랑 샬랑 샬랑 샬랑. In the second image, actor Carl mildy 받食べ게 Birdman(False)された 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑
+    Here's what's shown in the picture:
+    
+    A man is riding a unicycle in the middle of an urban street. He is using a yellow artificial shoulder for unicycling to maintain his balance. In front of the man, there are three yellow taxi cabs (in the left and center of the image) and one yellow SUV (at the back). The street appears to be in New York City, as there are one-way signposts with red arrow signs. There are buildings, stores, and a few signs along the street, indicating a commercial area. The man is being followed through onlookers, some of whom are attempting
 
 
 ## Querying Llama 4 Vision Model
