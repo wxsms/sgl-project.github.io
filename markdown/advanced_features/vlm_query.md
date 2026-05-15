@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-15 02:19:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 03:05:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-15 02:19:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 03:05:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-15 02:19:31,289 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-15 02:19:31] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-15 03:06:01,529 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-15 03:06:01] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene of two taxis parked on a city street. One taxi is in the foreground, and the other is slightly obscured behind it. The taxi in the foreground has a person mounted on a stepladder making something that resembles a "cheesesteak" (a type of sandwich) or some other food item using a repurposed table that has a blue cloth draped over it. The other taxi is yellow and has a red sign on top that might be advertising something. The background includes other vehicles, buildings, and traffic, indicating it is an urban area.
+    The image shows two yellow taxis parked side by side on a city street. The background includes a building with large windows and some street signs and labeled entryways visible through the windows. The scene is urban, likely in a busy city area.
 
 
 ### Call with Processor Output
@@ -150,9 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow cab (taxi) parked on a city street. The cab is equipped with a ground-handling rack, which is a structure mounted on the back of the cab. This rack is typically used by delivery drivers or service providers to pick up packages or items from the ground while the cab stands stationary.
-    
-    The rack appears to be filled with some clothes, suggesting that it might be used for errands or deliveries by a person unloading their delivery or purchasing a load of clothes to transport within the city. The presence of the rack indicates the versatility of the cab's design and its ability to adapt to different uses apart from
+    This image shows a scene in what appears to be a busy urban street. There is a yellow taxi parked on the side of the road to the left, and another taxi behind it. A person is standing by the back of the second taxi, seemingly working with something that appears to be a doll or a similar object. The person is wearing a yellow shirt. The background includes building facades with some windows, and there are banners or flags hanging from the building on the left side of the image. The street is well-lit, and the sky is clear.
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, the scene appears to be a street scene in a city. There is a yellow taxi cab in the foreground, which is often synonymous with taxi service in many urban areas. Additionally, there is a flag flown on the roof of the taxi, which suggests that it may be taxi itself is from a specific city or country where the flags are connected with local businesses or tourism.
+    The image shows a scene from the movie "Birdman" or "Incendie-Fire". In the scene,actor Birdman(False)สอง 다리 to receive the taxi driver 샬랑 샬랑, 샬랑 샬랑 샬랑 샬랑 샬랑. In the second image, actor Carl mildy 받食べ게 Birdman(False)された 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑 샬랑
 
 
 ## Querying Llama 4 Vision Model
