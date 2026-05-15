@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-15 21:23:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 21:40:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-15 21:23:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 21:40:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-15 21:24:04,859 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-15 21:24:04] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-15 21:40:37,207 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-15 21:40:37] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked in a city street. One of the taxis appears to have clothes hanging from a stand attached to the back, and a person is standing beside it. This unusual sight suggests that the taxi might have a clothing business or service operating from the back of it. The setting is in an urban environment with buildings and skyscrapers in the background.
+    The image shows a unique display or performance involving a yellow taxi. A person is leaning out of the back window of a taxi as another taxi pulls around in front of them, creating a humorous and recognizable image often seen in urban areas. The individual appears to be doing laundry, with a front load washing machine on or near the car, making what looks like a funny but effective demonstration of retrieving clothes.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like the image depicts a scene from the movie "Dumb and Dumber." The taxi driver is transporting dangling clothing items, which is a humorous and iconic scene from the film. The taxi is yellow, which is typical for taxis in New York City, and there are other characters and elements from the movie present, such as a man in a yellow shirt and a chair. The scene is set in New York City, as indicated by the cityscape in the background.
+    It appears that a person is pushing a washing cart with clothes on it along a street. The washing cart has clothes hanging on a bar attached to wheels at its back. This is typically used by individuals who are washing clothes and then drying them outside, often in the middle of the street, as seen in some parts of New York City. The scene includes a yellow taxi in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,11 +206,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a unique scene of a taxicab driven with a laundry bag attached. Here are some details:
+    The image shows a scene on a city street with two parked taxis, one yellow and blue and the other completely yellow. The taxi with the blue cloth is in the process of folding or hanging a cloth on a rack behind the car. The yellow cab in the background appears to be simply parked and not interacting with the scene. The environment seems to be an urban setting, possibly in a large city given the tall buildings and busy streets.
     
-    1. **Taxi**: The vehicle is a yellow New York City taxi.
-    2. **Laundry Bag**: There is a blue laundry bag attached to the front part of the taxi, likely for transporting clothes from the laundry service.
-    3. **Laundry Service**: This suggests that the taxi is being used as a mobile laundry service. The driver takes wet towels and blankets from the laundry service (which are usually the smaller, softer clothes) and places them into the laundry bag, then later returns them to complete the cycle
+    There are also several Hanging Flags visible on the taxis, indicative of some outdoor event, festival, or celebration.
 
 
 ## Querying Llama 4 Vision Model
