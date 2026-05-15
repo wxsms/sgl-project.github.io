@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-15 18:00:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 19:12:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-15 18:00:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 19:12:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.29s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.62s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.72s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-15 18:00:49,947 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-15 18:00:49] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-15 19:12:56,728 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-15 19:12:56] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two taxi cabs on a city street. One taxi is in the foreground, and another is in the background. The foreground taxi appears to be carrying a blanket or tarp.
+    The scene depicts a city street with a yellow and white van, which appears to be a fake taxi. The van's roof has been lifted open, revealing empty luggage space. There are clothes hung between the van's windshield wipers, suggesting this is a humorous or staged scenario, possibly for a PR event or promotional activity. The background includes typical urban elements such as a storefront with a "For Rent" sign and street lights.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is an image of a taxi in a city street. The taxi is yellow and parked on the side of the road. There are towels and clothes hung on the back of the taxi's rearview mirror. The background shows urban buildings with signage and flags, indicating a busy city environment.
+    In the picture, there is a yellow taxi cab driving on a city street. The taxi appears to be in motion and has its brake lights on. The scene seems to be taking place in an urban environment, with the location marked as part of "newyorkcity".
 
 
 ### Call with Precomputed Embeddings
@@ -206,9 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene from a New York City taxi parade. Taxis, a characteristic sight in the city, often participate in parades or special events. The orange-colored taxi from New York City is carrying a banner or poster displayed on a stand, which appears to be attached to its rear. This setup is designed for showcasing messages, announcements, or other information pertinent to the overall theme or purpose of the parade.
-    
-    The background shows urban buildings and additional taxis in full color, contributing to the vibrant and energetic ambiance often associated with city parades. Such taxis usually perform in annual fanfare parades, usually around a major event to celebrate
+    The image shows a street scene with a yellow taxi cab parked on the side of the road. Attached to the front of the taxi is a banner, which appears to be part of an outdoor advertising or promotional campaign. The person in the background is wearing a yellow shirt and seems to be wrapping or removing the banner. The banner has some text and graphics on it, but the specific details are not clear due to the context and quality of the image.
 
 
 ## Querying Llama 4 Vision Model
