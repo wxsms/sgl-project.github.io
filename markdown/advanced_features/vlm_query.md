@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-15 03:31:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 05:26:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-15 03:31:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-15 05:26:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.07s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-15 03:31:55,000 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-15 03:31:55] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-15 05:26:50,033 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-15 05:26:50] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a traffic jam in New York City, with two yellow taxis stuck in a traffic jam caused by a man untying a piece of cloth. The scene captures the chaos and complexity of urban transportation, as one person tries to solve a problem that could easily derail an entire traffic flow.
+    This image shows two yellow cabs parked on a city street. One person is using a cart with a clothes dryer attached to it to dry clothes hanging on the backboard of the cart. The setting appears to be in an urban area with buildings and stores in the background.
 
 
 ### Call with Processor Output
@@ -150,7 +150,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I'm not sure what the training is saying here to begin with.
+    The image shows a scene from a street, likely in an urban area. There is a yellow taxi cab parked on the street. The taxi has a noticeable purple tray attached to the roof, extending towards the back of the vehicle. On this tray, there is an ironing board setup, suggesting that someone has set up a makeshift work station right on the moving vehicle. This unusual sight indicates that a person might be working on their laundry outdoors, possibly to avoid the discomfort of carrying heavy laundry in a car.
+    
+    The background includes a building with large windows, and there are some flags or banners hanging between the windows. There are also other vehicles
 
 
 ### Call with Precomputed Embeddings
@@ -206,9 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Here's what's shown in the picture:
-    
-    A man is riding a unicycle in the middle of an urban street. He is using a yellow artificial shoulder for unicycling to maintain his balance. In front of the man, there are three yellow taxi cabs (in the left and center of the image) and one yellow SUV (at the back). The street appears to be in New York City, as there are one-way signposts with red arrow signs. There are buildings, stores, and a few signs along the street, indicating a commercial area. The man is being followed through onlookers, some of whom are attempting
+    The image shows two yellow taxis on a city street. One taxi is connected to a drawing with string and poles, making it appear as if the yellow taxi is a drawing hooking onto a stick. The setting is urban, with buildings and street furniture visible in the background.
 
 
 ## Querying Llama 4 Vision Model
