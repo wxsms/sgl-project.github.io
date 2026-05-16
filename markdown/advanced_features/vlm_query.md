@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 03:48:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 05:08:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 03:48:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 05:08:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 03:48:35,278 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 03:48:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 05:09:16,412 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 05:09:16] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in a city street, one in the foreground and another behind it. Between the taxis, a person in a yellow shirt is hanging clothes on a clothesline. In the background, there are tall buildings and several hanging American flags, indicating that this scene is likely taking place in New York City. The person is using a portable clothesline attached to the back of the car to air out their clothes.
+    The image shows a scene from a New York City-themed day event, attracting non-New York City residents. The productivity tiresome with canvas. Additionally,restaurants and supermarkets around the area show steady streams of customers.
 
 
 ### Call with Processor Output
@@ -150,7 +150,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with two yellow taxis in motion. The taxi on the left has turned and is driving towards the camera. The taxi on the right is coming towards the camera. Both taxis have their distinctive radiator mesh grills visible, which are typical features of taxis in many urban areas. The background includes buildings, some with storefronts and signs, and there are also telephone poles and a street sign visible. The overall setting appears to be in a busy urban environment, likely in a city known for its yellow taxis.
+    The image shows a scene on a city street likely found in an urban environment. In the foreground, there are two yellow taxis, characteristic of city taxis in many regions. One of the taxis has a person standing next to it, who appears to be balancing or holding a cloth or cloth item on a stand or rack attached to the side of the taxi. This person is wearing a yellow shirt and seems to be in the process of loading or balancing items on the taxi.
+    
+    On the sidewalk behind the taxis, there are several illustrated streets and buildings in a cartoonish or stylized form, typically used in advertisements or promotional materials. The street has
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    You are being stung by a bee. (Image of vehicles on a street)
+    The image shows a street in what appears to be a city, possibly a major urban area. The foreground features a yellow taxi, and there are several in the distance along the road. The taxi is not parked but is being moved by someone using a hangulator—a device used to attach clothing or gas canisters to the back window of a vehicle. The individual attaching the device is wearing a yellow shirt. The scene has a playful and unconventional element, blending elements of urban transportation with humor and creativity.
 
 
 ## Querying Llama 4 Vision Model
