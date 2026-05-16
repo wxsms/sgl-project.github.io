@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 00:18:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 00:46:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 00:18:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 00:47:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 00:18:51,838 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 00:18:51] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 00:47:12,806 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 00:47:12] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It is not shown here.
+    The image shows a lineup of yellow and white taxis, parked in a city street. This is not likely because typically, taxis would not line up in one place; it often indicating transportation services are busy or seeking passengers. The spread positions the image in an obscure setting like an urban locale.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like a street scene featuring two cars. The front of the image shows a driverless yellow car (a New York City taxi) with its door open and an elderly man standing beside it. The man is wearing a yellow shirt and glasses. The rear of the image shows another yellow vehicle, possibly also a taxi, with a cart outside that appears to be supporting some items on it. Trees and flagpoles are visible in the background, suggesting an urban setting.
+    There is no image provided to analyze.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,11 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows two yellow taxis in New York City, parked on the street. One taxi appears to be hitched to a blue banner or sign with a clothespin, which is often used to keep publicized messages or signatures with civic themes in place. The sign reads "STOP THE ABUSE OF FEE SHOPPING CARTS," which is a message regarding shoplifting in retail stores, reminding customers not to use shopping carts to steal items.
+    It looks like the following image depicts a scene in a city:
+    
+    1. A small yellow taxi cab is parked on the street. This is a common sight in many urban areas.
+    2. The taxi cab appears to be equipped with a clothes drying rack mounted outside, suggesting a temporary indoor building has become an indoor drying post for clothes.
+    3. There are several American flags visible, indicating the location is in the United States. Specifically, a Red Dragon flag is present, which refers to "Liver Pirates" or "Lizard Pirates" in the context of the game "Milenium Fashion nights". Red Dragon has a satirical record featuring
 
 
 ## Querying Llama 4 Vision Model
