@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 18:30:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 20:13:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 18:30:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 20:13:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.34it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.45it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.56it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 18:30:46,914 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 18:30:46] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 20:13:57,335 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 20:13:57] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This is a humorous and artistic scene in a city street. A yellow taxi is leaning against a street lamp, and someone has set up a laundry detergent dispenser to achieve the illusion of the car "一边洗车一边洗衣服" (washing a car while washing clothes). This clever trick uses frames and reflections to create the illusion.
+    The image shows two Atlanta taxi cabs parked on a street with a person standing between them. The person is using an ironing board to iron their clothes while the taxis are parked behind them. This is likely a humorous and creative display of turning an everyday situation into a different, unexpected activity.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from the movie "The Hangover." In the picture, someone is attempting to dethrone a giant cardboard cutout of a refrigerator from the top of a cab using a broom and a chain. The car appears to be a New York City taxi, and it is parked on the street. There are also people visible in the background. This scene captures a moment from the comedy film where characters engage in a humorous retail Robin Hood-like act during the chaos of a post-wedding bachelor party.
+    The image shows a scene with a yellow taxi cab blocking part of a sidewalk or street. There's a person wearing a yellow shirt standing next to it, adjusting or handling something that appears to be draped over a folding chair or stand. The background includes a building with some signage and flags, and there are green trees visible on the right side. The setting looks urban, possibly in a busy city area.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a yellow taxi in New York City, identified partially by the familiar "NYC" logo on the taxi. The image shows a wet Springfieldology shirt draped over a protruding item on the side of the taxi, suggesting a preparation for a rainy day or possibly a "Springfieldology" themed event. The street and buildings in the background are characteristic of New York City's urban landscape.
+    I'm sorry, but I don't have enough information to determine what is shown in the image. It could be a photo, a drawing, or a real object. In any case, I wouldn't recommend trusting images for this purpose.
 
 
 ## Querying Llama 4 Vision Model
