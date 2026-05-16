@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 15:54:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 18:20:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 15:54:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 18:20:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.30s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 15:54:56,806 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 15:54:56] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 18:20:24,964 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 18:20:24] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts two yellow taxis driving down a street. The taxi in the foreground has some pink and blue strips attached to its back, and a person in the background is involved in hanging some clothes on these strips. The scene appears to be taking place in an urban area with buildings and streetlights in the background.
+    The image shows a scene on a city street with two yellow taxis. One taxi's trunk is open, and a person is putting the trunk to use as a laundry rack. A black and blue robe is draped over the edge of the open trunk, with clothes hanging out alongside it. The setting appears to be in an urban environment, with other city buildings and traffic visible in the background. The demonstration suggests the use of creative city space to dry clothes, turning a common logistical problem into a resourceful solution.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a yellow taxi in the foreground. The taxi has a unique feature: a plastic chair attached to its rear bumper. This is likely an advertisement or part of a promotional stunt. The background includes some buildings and street signs, indicating an urban setting. The scene appears to be in a bustling city environment.
+    This image shows two iconic yellow New York City taxis (nicknamed "cabs" or "suito move") stopped on a street in the urban setting of New York City. Both taxis have their distinctive black-and-white license plates visible on the rear. The background includes architectural elements of what appears to be an urban business district, and signs of urban life with pedestrians and other city details. This scene epitomizes a typical view in New York City, a bustling metropolis known for its iconic taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene in a city with a yellow taxi cab parked on the street. The taxi has several towing straps around its rear, implying it is immobilized or being towed. Additionally, there is a blue and white towel hanging from the tip of the towing strap. It appears to be in an urban area with buildings and flags visible in the background.
+    The image shows a yellow and green North American taxi cab parked on the street. The taxi cab also has items floating or in a stream allowing the idea to get washed away.
 
 
 ## Querying Llama 4 Vision Model
