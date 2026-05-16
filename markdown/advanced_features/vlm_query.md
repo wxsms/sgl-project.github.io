@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 01:43:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 02:24:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 01:43:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 02:24:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 01:43:58,420 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 01:43:58] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 02:24:30,845 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 02:24:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, there is a person standing in front of a yellow taxi, hanging clothes on a stick that extends from the back of the taxi. The clothes look like they are being dried or ironed, suggesting a creative or unusual parking arrangement. The scene takes place on a city street with traffic lights visible in the background.
+    The image shows a scene where two yellow taxis are parked on a city street. One of the taxis has a person draped over its rear window, holding clothes on a line. The background includes buildings and some banners, suggesting this might be part of a public outdoor event or display. The person's clothing has a small wheel substitution, which is unusual and humorous.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in what appears to be an urban area, possibly a city. There are two yellow taxi cabs parked on the street. The taxi in the foreground has a luggage rack attached above its rear window. On this luggage rack, there are several bags and a black box. The taxi has a ladder on the rear bumper, which is likely used for loading luggage. The taxi driver is wearing a yellow shirt. The background includes buildings with multiple windows and some signage. There are also some trees and other vehicles visible in the distance. The overall setting suggests a busy, possibly busy time of day in a city.
+    The image shows an unusual scene in the middle of a street. A yellow taxi cab is attached to a makeshift tripod or stand adorned with various brooms, mops, and other cleaning tools. The taxi appears to be parked on the side of the road, and the number plate of the taxi is visible. The entire scene is quite bizarre and unexpected, unlike typical taxi scenarios.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    What you are seeing is a bizarre and humorous scene involving a dock and a pickup truck. The dock, with its floating debris and flag, is situated next to the pickup truck. This combination is highly unusual and likely does not have a practical purpose. If this is from a TV show or a staged scene, it's likely meant to be for comedic effect.
+    The image shows a vibrant urban setting with a yellow taxi driving on the road. In the foreground, a man is wearing yellow clothing and is rigging or adjusting some kind of apparatus or sign on top of the cab. The car seems to be at a red light, as indicated by the turn signal being illuminated. The background includes a street with traffic and some buildings, contributing to the typical characteristics of a busy city environment.
 
 
 ## Querying Llama 4 Vision Model
