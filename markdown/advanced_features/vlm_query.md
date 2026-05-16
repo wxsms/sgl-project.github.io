@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 07:25:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 09:02:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 07:25:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 09:02:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 07:26:01,890 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 07:26:01] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 09:02:51,342 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 09:02:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person cleaning and wringing out clothes using a red wheeled device attached to a metered taxi taxi. The cleaner is standing next to the wet clothes, presumably setting them out to dry. The purpose is to clean local ads and billboards by coating them with a disinfectant solution.
+    The image shows a man standing on the back of a yellow taxi in the street. He is holding and stretching a colorful piece of clothing on a stick. The man appears to be using the back of the taxi as an impromptu display or stall, perhaps to sell the clothing or other items. The setting is in an urban environment, likely a city street with other cars and buildings visible.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in a city. There are two yellow taxis parked on the street. One taxi is partially obstructed by a tripod with a cloth draped over it, suggesting that a photography or film crew is likely setting up their equipment. The background features tall buildings with storefronts, and there are some trees and street lamps visible along the sidewalk. The overall setting appears to be a busy urban area, possibly during an event or promotion due to the draped cloth on the tripod.
+    The image shows a yellow taxi taxi cab with clothes pinned to it, likely as a form of protest or a protest march against some issue. The taxi is seen moving on a city street, and there are other vehicles around, including an orange vehicle. Additionally, there are multiple banners with the American flag, suggesting a connection to the United States or a trip there.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in an urban area, likely in New York City, given the presence of yellow taxis and the building styles. There is a person dressed in a bright yellow jacket who appears to be residual smears or splatters on their clothing. They are holding an ironing board draped with a blue cloth. The same blue cloth is also draped over the hood of a yellow taxi cab, which is driving on the street. The background includes multiple shops, signs, and street furniture like lamp posts and hats on display.
+    The image shows a scene in New York City featuring a yellow taxi. The taxi is likely (though not confirmed by the narrow window or other signage; cabs can look similar cities over the years) a Ford Explorer, nicknamed "Exoco" among locals. The taxi is positioned facing the camera, and it seems to be displaying external rearview mirrors, upright from the vehicle's back. This might be done with a special tool to test camera functionality, although the setting suggests a cautionary message is more likely rather than the picture itself.
 
 
 ## Querying Llama 4 Vision Model
