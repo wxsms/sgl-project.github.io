@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 10:34:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 11:56:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 10:34:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 11:56:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 10:34:18,735 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 10:34:18] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 11:56:43,731 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 11:56:43] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a street scene with two yellow cabs, one behind the other. The car behind has an unusual item attached to its rear end: a clothespin holding a piece of cloth that resembles a flag. This is likely some sort of prank or faux promotion, as clothespins typically do not attach to vehicles in a meaningful or legal manner. Additionally, there are some hanging flags on the car in the back, also adding to the humorous and unexpected nature of the scene.
+    The image shows two yellow taxis in a city street. The taxi on the left is mostly visible, while the one on the right is partially blocked by a clothes impaler, which appears to be stuck in the back of the right taxi. This setup is likely a prank or creative advertisement, striking a humorous and unexpected pose.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow cab (taxi) on a city street. There is someone dressed in a yellow shirt and purple pants holding a sign made of two blue T-shirts, leaning against the rear of the taxi. The sign appears to be made by hanging the T-shirts on bamboo sticks or poles to create a banner. The background includes city buildings and other vehicles, suggesting an urban setting.
+    This image shows a cardigan hanging on a hanger, which is placed on the back of a yellow car. The car appears to be a taxi, as evidenced by its distinctive color and the presence of a DIC (Daily Inspection Code) sticker on its rear window. The cardigan is being displayed in a way that it resembles a espadrille, a type of flat slip-on shoe, and possibly a yoyo. This is likely an artistic or humorous display intended to mimic the shape and style of such a shoe.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a person performing a " rows" or " Reaperrows" stretch, which is a gymnastic or stretching sport. The person is suspended in the air and appears to be in the right upper solar quadrant. I can help you more if more information on what is being displayed can be provided, in this case, a 3d output is enough.
+    The image shows a street scene in an urban area. There is a yellow taxi cab driving on the road. The cab has a bicycle trailer attached to the back, which is loaded with several blue towels. There are also various items attached to the trailer, which appear to be cloths or clothing. The background features a building with advertisements and banners. The setting suggests that this might be a public event or a sunny day with high temperatures, as the person is wearing a yellow shirt and shorts, and there are towels hung out.
 
 
 ## Querying Llama 4 Vision Model
