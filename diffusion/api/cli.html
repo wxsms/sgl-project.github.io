@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=66fdffb9"></script>
+    <script src="../../_static/documentation_options.js?v=591f8160"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -503,10 +503,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-files">Configuration Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Generate</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layerwise-offload">Layerwise Offload</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Generate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Serve</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-storage">Cloud Storage</a></li>
 </ul>
@@ -686,19 +683,6 @@ file, and can extend or replace built-in entries for the current process.</p></l
 <p>HTTP server-only arguments are ignored by <code class="docutils literal notranslate"><span class="pre">sglang</span> <span class="pre">generate</span></code>.</p>
 </div>
 <p>For diffusers pipelines, Cache-DiT can be enabled with <code class="docutils literal notranslate"><span class="pre">SGLANG_CACHE_DIT_ENABLED=true</span></code> or <code class="docutils literal notranslate"><span class="pre">--cache-dit-config</span></code>. See <a class="reference internal" href="../performance/cache/cache_dit.html"><span class="std std-doc">Cache-DiT</span></a>.</p>
-<section id="layerwise-offload">
-<h3>Layerwise Offload<a class="headerlink" href="#layerwise-offload" title="Link to this heading">#</a></h3>
-<p>Use layerwise offload when a large component does not fit comfortably in GPU memory. By default, <code class="docutils literal notranslate"><span class="pre">--dit-layerwise-offload</span></code> only applies to legacy DiT components. Use <code class="docutils literal notranslate"><span class="pre">--layerwise-offload-components</span></code> to select pipeline component names explicitly (<code class="docutils literal notranslate"><span class="pre">--layerwise-offload-modules</span></code> is accepted as an alias):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>Wan-AI/Wan2.2-T2V-A14B-Diffusers<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--dit-layerwise-offload<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--layerwise-offload-components<span class="w"> </span>transformer<span class="w"> </span>text_encoder<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--dit-offload-prefetch-size<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A quiet city street after rain&quot;</span>
-</pre></div>
-</div>
-<p>The values must match keys in the selected pipeline’s <code class="docutils literal notranslate"><span class="pre">pipeline.modules</span></code>, such as <code class="docutils literal notranslate"><span class="pre">transformer</span></code>, <code class="docutils literal notranslate"><span class="pre">text_encoder</span></code>, <code class="docutils literal notranslate"><span class="pre">image_encoder</span></code>, <code class="docutils literal notranslate"><span class="pre">vae</span></code>, <code class="docutils literal notranslate"><span class="pre">condition_image_encoder</span></code>, <code class="docutils literal notranslate"><span class="pre">spatial_upsampler</span></code>, or <code class="docutils literal notranslate"><span class="pre">vocoder</span></code>. Use <code class="docutils literal notranslate"><span class="pre">all</span></code> to select every layerwise-offloadable component. Prefer the smallest component set that solves the memory issue because layerwise offload can increase latency.</p>
-</section>
 </section>
 <section id="id2">
 <h2>Serve<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
@@ -878,10 +862,7 @@ file, and can extend or replace built-in entries for the current process.</p></l
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-files">Configuration Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Generate</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layerwise-offload">Layerwise Offload</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Generate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Serve</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-storage">Cloud Storage</a></li>
 </ul>

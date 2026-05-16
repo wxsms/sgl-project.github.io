@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 18:20:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 18:30:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 18:20:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 18:30:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.30s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.34it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 18:20:24,964 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 18:20:24] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 18:30:46,914 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 18:30:46] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street with two yellow taxis. One taxi's trunk is open, and a person is putting the trunk to use as a laundry rack. A black and blue robe is draped over the edge of the open trunk, with clothes hanging out alongside it. The setting appears to be in an urban environment, with other city buildings and traffic visible in the background. The demonstration suggests the use of creative city space to dry clothes, turning a common logistical problem into a resourceful solution.
+    This is a humorous and artistic scene in a city street. A yellow taxi is leaning against a street lamp, and someone has set up a laundry detergent dispenser to achieve the illusion of the car "一边洗车一边洗衣服" (washing a car while washing clothes). This clever trick uses frames and reflections to create the illusion.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows two iconic yellow New York City taxis (nicknamed "cabs" or "suito move") stopped on a street in the urban setting of New York City. Both taxis have their distinctive black-and-white license plates visible on the rear. The background includes architectural elements of what appears to be an urban business district, and signs of urban life with pedestrians and other city details. This scene epitomizes a typical view in New York City, a bustling metropolis known for its iconic taxis.
+    The image shows a scene from the movie "The Hangover." In the picture, someone is attempting to dethrone a giant cardboard cutout of a refrigerator from the top of a cab using a broom and a chain. The car appears to be a New York City taxi, and it is parked on the street. There are also people visible in the background. This scene captures a moment from the comedy film where characters engage in a humorous retail Robin Hood-like act during the chaos of a post-wedding bachelor party.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow and green North American taxi cab parked on the street. The taxi cab also has items floating or in a stream allowing the idea to get washed away.
+    The image depicts a yellow taxi in New York City, identified partially by the familiar "NYC" logo on the taxi. The image shows a wet Springfieldology shirt draped over a protruding item on the side of the taxi, suggesting a preparation for a rainy day or possibly a "Springfieldology" themed event. The street and buildings in the background are characteristic of New York City's urban landscape.
 
 
 ## Querying Llama 4 Vision Model
