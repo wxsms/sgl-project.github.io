@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 13:01:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 14:12:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 13:01:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 14:12:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 13:01:55,846 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 13:01:55] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 14:12:57,458 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 14:12:57] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a man hanging a striped flag, likely an American flag, to the back of a yellow taxi in a city street. The taxi is equipped with a small, foldable stand that has the flag attached to it. This situation might be part of a protest or a demonstration, where the flag is either being removed from a vehicle or being reinstalled. The background includes other taxis and urban architecture, indicating an urban environment.
+    The image shows a scene on a city street with two yellow taxis parked on the side of the road. The rear of one taxi is open, revealing a washing machine, clothespins, and laundry items. The person in the image appears to be performing laundry by using these tools in an unconventional manner. This kind of activity is unusual and could be part of a creative art installation or a prank.
 
 
 ### Call with Processor Output
@@ -150,7 +150,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on a street in what appears to be an urban area. A person wearing a yellow shirt is standing next to the taxi, dressed in fishnet stockings and casual shoes with long, dangling decorations. The decorations resemble pothooks, which are often used in traditional Viking recipes to cook fish. This scene resembles a playful or cultural reenactment, possibly inspired by Viking cuisine or cultural traditions.
+    The image shows a scene in a city involving two yellow taxis driving down a street. On the back of one of the taxis, there is a person standing next to a temporary clothesline displaying clothes. This setup appears to be a form of street performance, presumably meant to raise awareness about gravity defying the laws of physics. The clothes are strung illegally on the back of vehicles, which is illegal in most cities, as it can potentially damage the vehicle or the street markings.
+    
+    The puppetry involves a piece of fabric, and it looks like the individual is implementing a spearing trick using two miniature mock flamingo puppets made from heart
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears to be a street scene in a city, featuring a yellow taxi cab that has both a gun and laundry draped over the back. This is a humorous image, likely intended to be a exaggeration or a call to action. The gun over the car, as a potentially dangerous object on a public transportation vehicle, is clearly meant to evoke surprise and shock. The laundry draped over the back is possibly indicative of the sudden arrival of someone who needed to wash clothes quickly, perhaps due to a severe delay or an emergency.
+    The image shows a scene in the street with two primary objects: a yellow taxi cab and a bicycle. The taxi cab is noticeable because it appears to be in this unconventional setting—rovers against the standards one usually sees on the streets.
 
 
 ## Querying Llama 4 Vision Model
