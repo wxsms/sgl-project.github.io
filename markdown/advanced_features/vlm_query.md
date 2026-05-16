@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 11:56:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 13:01:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 11:56:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 13:01:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 11:56:43,731 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 11:56:43] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 13:01:55,846 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 13:01:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in a city street. The taxi on the left is mostly visible, while the one on the right is partially blocked by a clothes impaler, which appears to be stuck in the back of the right taxi. This setup is likely a prank or creative advertisement, striking a humorous and unexpected pose.
+    This image shows a man hanging a striped flag, likely an American flag, to the back of a yellow taxi in a city street. The taxi is equipped with a small, foldable stand that has the flag attached to it. This situation might be part of a protest or a demonstration, where the flag is either being removed from a vehicle or being reinstalled. The background includes other taxis and urban architecture, indicating an urban environment.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a cardigan hanging on a hanger, which is placed on the back of a yellow car. The car appears to be a taxi, as evidenced by its distinctive color and the presence of a DIC (Daily Inspection Code) sticker on its rear window. The cardigan is being displayed in a way that it resembles a espadrille, a type of flat slip-on shoe, and possibly a yoyo. This is likely an artistic or humorous display intended to mimic the shape and style of such a shoe.
+    The image shows a yellow taxi parked on a street in what appears to be an urban area. A person wearing a yellow shirt is standing next to the taxi, dressed in fishnet stockings and casual shoes with long, dangling decorations. The decorations resemble pothooks, which are often used in traditional Viking recipes to cook fish. This scene resembles a playful or cultural reenactment, possibly inspired by Viking cuisine or cultural traditions.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in an urban area. There is a yellow taxi cab driving on the road. The cab has a bicycle trailer attached to the back, which is loaded with several blue towels. There are also various items attached to the trailer, which appear to be cloths or clothing. The background features a building with advertisements and banners. The setting suggests that this might be a public event or a sunny day with high temperatures, as the person is wearing a yellow shirt and shorts, and there are towels hung out.
+    It appears to be a street scene in a city, featuring a yellow taxi cab that has both a gun and laundry draped over the back. This is a humorous image, likely intended to be a exaggeration or a call to action. The gun over the car, as a potentially dangerous object on a public transportation vehicle, is clearly meant to evoke surprise and shock. The laundry draped over the back is possibly indicative of the sudden arrival of someone who needed to wash clothes quickly, perhaps due to a severe delay or an emergency.
 
 
 ## Querying Llama 4 Vision Model
