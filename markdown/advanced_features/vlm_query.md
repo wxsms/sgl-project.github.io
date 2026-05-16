@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 14:12:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 15:54:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 14:12:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 15:54:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 14:12:57,458 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 14:12:57] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 15:54:56,806 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 15:54:56] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on a city street with two yellow taxis parked on the side of the road. The rear of one taxi is open, revealing a washing machine, clothespins, and laundry items. The person in the image appears to be performing laundry by using these tools in an unconventional manner. This kind of activity is unusual and could be part of a creative art installation or a prank.
+    The image depicts two yellow taxis driving down a street. The taxi in the foreground has some pink and blue strips attached to its back, and a person in the background is involved in hanging some clothes on these strips. The scene appears to be taking place in an urban area with buildings and streetlights in the background.
 
 
 ### Call with Processor Output
@@ -150,9 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in a city involving two yellow taxis driving down a street. On the back of one of the taxis, there is a person standing next to a temporary clothesline displaying clothes. This setup appears to be a form of street performance, presumably meant to raise awareness about gravity defying the laws of physics. The clothes are strung illegally on the back of vehicles, which is illegal in most cities, as it can potentially damage the vehicle or the street markings.
-    
-    The puppetry involves a piece of fabric, and it looks like the individual is implementing a spearing trick using two miniature mock flamingo puppets made from heart
+    The image shows a street scene with a yellow taxi in the foreground. The taxi has a unique feature: a plastic chair attached to its rear bumper. This is likely an advertisement or part of a promotional stunt. The background includes some buildings and street signs, indicating an urban setting. The scene appears to be in a bustling city environment.
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in the street with two primary objects: a yellow taxi cab and a bicycle. The taxi cab is noticeable because it appears to be in this unconventional setting—rovers against the standards one usually sees on the streets.
+    This image shows a scene in a city with a yellow taxi cab parked on the street. The taxi has several towing straps around its rear, implying it is immobilized or being towed. Additionally, there is a blue and white towel hanging from the tip of the towing strap. It appears to be in an urban area with buildings and flags visible in the background.
 
 
 ## Querying Llama 4 Vision Model
