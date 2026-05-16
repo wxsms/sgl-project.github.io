@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 06:01:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 07:25:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 06:01:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 07:25:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 06:02:04,421 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 06:02:04] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 07:26:01,890 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 07:26:01] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis on a city street. One of the taxis has a rack attached to its rear, on which laundry, including clothes and a basket, is hanging. This is likely a practical solution for a resident using the back of the taxi to dry washing by wind currents while driving through the city. This concept appears to be a scene from New York City, where such activities are common due to the heated cooking show that plays/window display delivery taking place in theaters.
+    The image shows a person cleaning and wringing out clothes using a red wheeled device attached to a metered taxi taxi. The cleaner is standing next to the wet clothes, presumably setting them out to dry. The purpose is to clean local ads and billboards by coating them with a disinfectant solution.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two different streetVIEW artists from San Francisco. One artist holds a pair of ice skates and a hand railing, while the other holds a large bag. They are both street艺术家 components of the project.
+    The image shows a street scene in a city. There are two yellow taxis parked on the street. One taxi is partially obstructed by a tripod with a cloth draped over it, suggesting that a photography or film crew is likely setting up their equipment. The background features tall buildings with storefronts, and there are some trees and street lamps visible along the sidewalk. The overall setting appears to be a busy urban area, possibly during an event or promotion due to the draped cloth on the tripod.
 
 
 ### Call with Precomputed Embeddings
@@ -206,13 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two elements:
-    
-    1. **Yellow Taxis**: The two primary objects in the picture are two yellow taxis. One taxi is positioned to the left and another to the right of the image. The taxis are on the street and appear to be used for taxis in a city setting.
-    
-    2. **Trash Bag on Broom Handle**: There is a person holding a broom that has a pile of trash bags attached to it. The trash bags are likely lined up to be put into a trash can that is not visible in the image. The broom is placed on the street in front of the second taxi.
-    
-    The image captures
+    The image shows a street scene in an urban area, likely in New York City, given the presence of yellow taxis and the building styles. There is a person dressed in a bright yellow jacket who appears to be residual smears or splatters on their clothing. They are holding an ironing board draped with a blue cloth. The same blue cloth is also draped over the hood of a yellow taxi cab, which is driving on the street. The background includes multiple shops, signs, and street furniture like lamp posts and hats on display.
 
 
 ## Querying Llama 4 Vision Model
