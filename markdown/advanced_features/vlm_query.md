@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 09:12:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 10:34:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 09:12:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 10:34:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 09:12:27,335 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 09:12:27] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 10:34:18,735 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 10:34:18] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a commercial street scene with two yellow taxis. One taxi is parked with laundry items hanging out the back window, including what appears to be a red suitcase, blue clothing, and possibly an iron. The other taxi is stopped off to the side. The scene is set on a city street, possibly in New York, given the yellow taxis. There are also some shopfronts with awnings and other urban elements in the background.
+    This image shows a street scene with two yellow cabs, one behind the other. The car behind has an unusual item attached to its rear end: a clothespin holding a piece of cloth that resembles a flag. This is likely some sort of prank or faux promotion, as clothespins typically do not attach to vehicles in a meaningful or legal manner. Additionally, there are some hanging flags on the car in the back, also adding to the humorous and unexpected nature of the scene.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene at a city intersection with a yellow taxi cab on the street. The taxi cab appears to be pulling out a flag onto the back seat, specifically it seems to be displaying an American flag. The taxi is positioned on the right side of the frame, and the urban environment includes buildings and street signs in the background. This scene could be a part of a ribbon-cutting ceremony or another official event where the taxi is showing the American flag.
+    The image shows a yellow cab (taxi) on a city street. There is someone dressed in a yellow shirt and purple pants holding a sign made of two blue T-shirts, leaning against the rear of the taxi. The sign appears to be made by hanging the T-shirts on bamboo sticks or poles to create a banner. The background includes city buildings and other vehicles, suggesting an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -206,11 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from a street fair or public event with several identifiable elements:
-    
-    1. **Fashionistas-on-Children on a Table**: There is a large yellow table displaying clothes or fabric. Ash Black, a visual impairment support organization, is promoting a booth for children with visual impairments. The text "Pose and Poise Fashionistas on Children" and "Visual Impairment Support Organization" suggests this is an event where families can interact and shop.
-    
-    2. **Dockneys Ski Shops Logo**: Near the bottom left, there is a part of a logo that reads "Dockneys Ski Shops." This indicates a sponsorship or a
+    This image shows a person performing a " rows" or " Reaperrows" stretch, which is a gymnastic or stretching sport. The person is suspended in the air and appears to be in the right upper solar quadrant. I can help you more if more information on what is being displayed can be provided, in this case, a 3d output is enough.
 
 
 ## Querying Llama 4 Vision Model
