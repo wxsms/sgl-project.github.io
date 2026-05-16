@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-15 22:52:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 00:18:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-15 22:52:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-16 00:18:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-15 22:52:48,663 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-15 22:52:48] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-16 00:18:51,838 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-16 00:18:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis stopped on a city street. The first taxi has a small cloth projecting from its back窗口，可能正在以其后部的杆子晾晒一些物品。第二辆出租车停在第一辆车旁边。 天空中有一辆公交车/电车映入眼帘，与出租车相同类型。两车之间的街边还有一根电线杆。
+    It is not shown here.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a yellow taxi taxi cab parked on the street in a city setting. The cab has clothes draped over its rear seats as if it were a makeshift drying rack. This unusual sight suggests that someone is drying their clothes in the back of the taxi. The background shows a tall building with advertisements, and there are trees and streetlights visible. The overall scene is indicative of a city environment, likely in the United States given the presence of celebrities in such ads.
+    It looks like a street scene featuring two cars. The front of the image shows a driverless yellow car (a New York City taxi) with its door open and an elderly man standing beside it. The man is wearing a yellow shirt and glasses. The rear of the image shows another yellow vehicle, possibly also a taxi, with a cart outside that appears to be supporting some items on it. Trees and flagpoles are visible in the background, suggesting an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a banner, which can typically be displayed in various formats such as paper sheets, transparencies, or digital graphics in an attempt to create a strong visual impact.
+    This image shows two yellow taxis in New York City, parked on the street. One taxi appears to be hitched to a blue banner or sign with a clothespin, which is often used to keep publicized messages or signatures with civic themes in place. The sign reads "STOP THE ABUSE OF FEE SHOPPING CARTS," which is a message regarding shoplifting in retail stores, reminding customers not to use shopping carts to steal items.
 
 
 ## Querying Llama 4 Vision Model
