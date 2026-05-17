@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-17 15:42:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-17 22:00:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-17 15:42:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-17 22:00:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-17 15:42:58,382 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-17 15:42:58] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-17 22:00:28,178 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-17 22:00:28] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow Coda taxi parked in front of a building with a red and white striped awning. There is a man standing behind the taxi, hanging clothes on what appears to be a mobile clothesline. The clothes include a red top and a blue bottom. The scene is set in an urban area with brick buildings and tall trees. There are also other taxis in the background and street signs visible.
+    The image shows the back of two yellow taxis parked on a city street. The taxi on the left has a conveyor belt system mounted on its back, which is being used to move hot towels. This system is likely to be used for public services or repair工作的. The taxi on the right simply has its back lane open, presenting a more conventional design.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis driving down a city street. The taxis appear to be parking and preparing for a street performance or protest.
+    The image shows a man sitting on the hood of a yellow SUV while working on drying a piece of clothing on a makeshift drying rack. The man is wearing an orange shirt and appears to be in an urban setting, with a yellow taxi in the background and a storefront visible. The scene suggests that the man is using the vehicle's hood as an impromptu drying area.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two taxis on a street. One taxi is posted onto a small table with a cloth draped over it, while the other taxi is just a blurred section of a vehicle. Dies3税务 묻 읾Taxicab screws addasser c dù ocasgewater, and paragraph.Rmv iaig.9
+    This image shows a scene in an urban setting. There are two yellow taxis parked side by side on a street. Someone appears to be ironing cloths on a handcart placed between the two taxis. The background includes storefronts with signage and some trees with numerous American flags. The flags suggest this might be a location in the United States, possibly in a city with patriotic decorations. The person ironing the clothes seems to be performing a stunt or act, which contrasts with the typical urban environment of the parked taxis and the signs in the background.
 
 
 ## Querying Llama 4 Vision Model
