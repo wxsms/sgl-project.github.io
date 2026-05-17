@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-17 05:28:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-17 06:19:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-17 05:28:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-17 06:20:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.37s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.15s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-17 05:28:54,617 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-17 05:28:54] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-17 06:20:11,816 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-17 06:20:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis parked side by side on a street. The taxi in the background has a triangle-shaped object attached to its rear, with blue cloths hanging from it. This object appears to be a makeshift street vendor's cart, used to extend the vendor's merchandise to more people on the street. The setting suggests an urban environment, likely in New York City, due to the design of the taxis.
+    In the picture, there is a man attached to a moving vehicle (likely a taxi) with everyday items wrapped around him, such as clothing, blankets, towels, and other pulled-out and discarded belongings. It appears to be a protest or standoff where the man is staying connected to the vehicle by these items, preventing it from moving forward.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of a street with a yellow taxi cab in the foreground. A person wearing a yellow long-sleeved shirt is extending an ironing board over the top of a car, pulling the blanket or fabric across it. The position of the ironing board and the iron while under the car indicates that the individual is demonstrating or performing an ironing task on the blanket while it's still on a latex band or similar supporting device. This can be seen as aCharlie Chaplin joke, playing on familiar or long-associated association with the film. The setting appears to be an urban area, indicated by the building and street in
+    This is a humorous and unexpected scene in a city street. A long purple cloth filled with clothing items, including what appears to be pairs of shoes, pants, shirts, and other clothing items, is being carried by a person on a bike, which is leaning against or attached to the back of a yellow taxi cab. The presence of the clothing on things related to city transportation, especially a taxi, is a delightful and common sculpture or street art that amuses many people.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street with a yellow taxi cab positioned between two poles. The taxi is seemingly parked or moving along the street, with its doors ajar. To the right of the taxi, there is a person pushing a laundry drying rack with clothes hanging on it. The person appears to be in a uniquely casual pose, possibly adjusting the clothes or tending to the drying rack.
+    The image shows a scene in a city, likely New York given the style of the taxi. There is a person in a yellow t-shirt holding a metal stand to which several American flags are attached. The person appears to be making a statement about supporting the defense of God and the American way of life. The flags are draped over the stand, and the person is standing in front of a yellow taxi.
 
 
 ## Querying Llama 4 Vision Model

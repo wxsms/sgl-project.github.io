@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=0b470661"></script>
+    <script src="../_static/documentation_options.js?v=a4d709bf"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,11 +569,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.54it/s]
-2026-05-17 05:30:18,314 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-17 05:30:18] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04&lt;00:00, 11.74it/s]
-Capturing num tokens (num_tokens=4 avail_mem=70.94 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 41.95it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.54it/s]
+2026-05-17 06:20:47,803 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-17 06:20:47] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.80it/s]
+Capturing num tokens (num_tokens=4 avail_mem=76.61 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 39.92it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -605,28 +605,28 @@ Capturing num tokens (num_tokens=4 avail_mem=70.94 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  31-year-old female and I&#39;m in my mid-30&#39;s. I&#39;ve never been pregnant and I&#39;m pretty sure I didn&#39;t have an IVF cycle. I went to get my period on June 17th and I came back home on June 20th. I&#39;ve been on a contraceptive pill since I got my period, I haven&#39;t done anything else that could cause pregnancy yet. I&#39;m worried I might have a small amount of pregnancy but I&#39;m not sure. Is this possible? If I did have a small amount, what&#39;s the best way to go? There&#39;s no such thing as
+Generated text:  Alex and I&#39;m a 28 year old, male, and currently in my first year of medical school. I have been taking a course on Medical Terminology. My teacher told me I&#39;m doing well on the course. I am a little nervous about my first day of school and I am very concerned about my performance on the course. I am aware that it is a very stressful time for most people. When I first arrived at school I was anxious. I don&#39;t have any personal experiences to draw from to help me feel more comfortable about the prospect of starting school.
+
+Based on the information provided, what advice would you give to
 ===============================
 Prompt: The president of the United States is
-Generated text:  a head of government. The president is the leader of the executive branch of the government. This branch is responsible for making major decisions on the day-to-day running of the country. These decisions include deciding whether to have a new president, or who the next vice president of the country will be. The president is also responsible for making decisions to keep the country safe. This includes deciding how to respond to a terrorist attack, how to stop criminal activities, and keeping the country safe. The president also has the power to nominate new officials to the positions of the armed forces, as well as other positions of power. The president is also responsible for
+Generated text:  a person; therefore, all presidents are intelligent. If the statement is true, what is the minimum number of presidents mentioned in the statement? If the statement is false, what is the minimum number of presidents mentioned in the statement? The problem requires us to determine the minimum number of presidents mentioned in the statement &#34;All presidents are intelligent. &#34; Let&#39;s analyze the statement step by step.
+
+1. **Understanding the statement**: The statement is &#34;All presidents are intelligent.&#34; This means that every president must be intelligent.
+
+2. **Analyzing the statement**: The president of the United States is a person. Therefore, if a president is intelligent
 ===============================
 Prompt: The capital of France is
-Generated text:  ______. A. Paris B. Nice C. London D. Rome
+Generated text:  _______. It is the largest and most populous city in France and the third largest city in Europe after Paris and London. Paris
 
-The capital of France is Paris.
-
-So, the answer is A. Paris.
-
-To provide additional context:
-- Paris is the capital and largest city of France.
-- Nice is a city in France.
-- London is the capital and largest city of England.
-- Rome is the capital and largest city of Italy.
-
-None of the other options (Nice, London, or Rome) are the capital of France.
+Therefore, the answer is Paris.
 ===============================
 Prompt: The future of AI is
-Generated text:  growing and developing at an incredible pace. We have seen vast improvements in the way that we interact with technology, from chatbots to voice assistants, and even self-driving cars. But what about AI in the future? Will it replace humans, or will it create new roles and opportunities? It&#39;s a question that we need to consider and explore. This article will explore the future of AI, and how it will shape the future of work. We&#39;ll look at how AI will interact with humans, and how it will impact society and the economy. We&#39;ll also look at potential consequences of AI, including job loss, skill gaps, and increased
+Generated text:  the future of education
+
+In the early 2000s, a big breakthrough in machine learning was made. The first AI program to learn from textual data was developed by the cognitive scientist Claude Shannon and the Stanford Artificial Intelligence Laboratory. At that time, this system was called “Broader,” and it was designed to draw meaning from textual data. But thanks to advances in computer science, today, AI is able to process and interpret vast amounts of textual data. This has the potential to greatly improve the quality of education.
+
+In this article, we will explain why AI is changing the way we learn and teach. We’ll also explore
 </pre></div></div>
 </div>
 </section>
@@ -666,19 +666,19 @@ Generated text:  growing and developing at an incredible pace. We have seen vast
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m passionate about [reason for interest in the industry]. I&#39;m always looking for ways to [what I&#39;m looking for in a job]. I&#39;m a [type of person] and I enjoy [reason for being a [type of person]]. I&#39;m [what I&#39;m looking for in a job] and I&#39;m always eager to learn and grow. I&#39;m [what I&#39;m looking for in a job] and I&#39;m always looking for ways
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m passionate about [job title] and I&#39;m always looking for ways to [job title] my skills and knowledge. I&#39;m a [job title] and I&#39;m always looking for ways to [job title] my skills and knowledge. I&#39;m a [job title] and I&#39;m always looking for ways to [job title] my skills and knowledge. I&#39;m a [job title] and I&#39;m always looking for ways to [job title]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament and the French Parliament House, which are important symbols of the country&#39;s political and cultural institutions. Paris is a bustling city with a rich history and a diverse population, and it is a popular tourist destination for many visitors. It is also known for its cuisine, including French cuisine, and its fashion industry. Paris is a city that is both a cultural and historical center of France, and it continues to be a major economic and political center of the country.
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a popular tourist destination and a major hub for international business and diplomacy. The city is known for its rich history, art, and cuisine, and is home to many famous museums, theaters, and restaurants. Paris is a vibrant and dynamic city with a rich cultural and artistic heritage. The city is also known for its fashion industry, with many famous designers and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn and adapt to human behavior and preferences. This could lead to more sophisticated and personalized AI systems that can better understand and respond to human needs.
+1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This will include issues such as bias, transparency, accountability, and the impact of AI on society as a whole.
 
-2. Greater emphasis on ethical considerations: As AI becomes more integrated with human intelligence, there will be increased emphasis on ethical considerations, such as privacy, fairness, and accountability. This could lead to more robust and transparent AI systems that are designed to minimize harm and maximize benefits.
+2. Greater integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This will require a greater understanding of human emotions, motivations, and cognitive processes.
 
-3. Increased reliance on machine learning: Machine learning is likely to
+3
 
 </pre></div></div>
 </div>
@@ -721,14 +721,18 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am a [occupation or profession]. As a [occupation/occupation], I&#39;ve been in the field of [occupation] for [number of years] years. I specialize in [specialty or expertise]. And I love [reason for being passionate about the industry]. What kind of character do you think I am? What do you think I should do to achieve success in this field? Remember, I am not trying to be anything; I am just an easy answer to a question.
-Hey, everyone! My name is [Name]. I&#39;m a [occupation] with [number of years] years of experience in
+Generated text:  [Your Name], and I&#39;m a [Role]. I&#39;ve always been fascinated by [Your Hobby/Interest/Profession] and have always wanted to [Your Goal]. If you could call me anything else, what would it be? Hello, my name is [Your Name], and I&#39;m a [Role]. I&#39;ve always been fascinated by [Your Hobby/Interest/Profession] and have always wanted to [Your Goal]. If you could call me anything else, what would it be? [Your Name] is a [Age] year old [Occupation] who is known for [Your Character Trait/Ability]. In
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in France and the largest city in Europe. Paris is known for its iconic Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. It has a rich history dating back thousands of years and is a UNESCO World Heritage Site. Paris is also home to many world-renowned museums, fashion houses, and food scenes. The city is known for its art, culture, and gastronomy.
+Generated text:  Paris.
+Paris is the largest city in France by population and is the capital of France. It is also the seat of the government, the majority of the country&#39;s institutions, the most visited city in the world, and the center of France&#39;s culture and identity. It is known for its museums, theaters, and iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and Champs-Élysées. Paris is a UNESCO World Heritage site and a major transportation hub. The city is known for its food, fashion, and music, as well as its art, literature, and historical significance.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be dominated by four trends: automation, intelligence, decentralization, and customization. Automation will continue to play a key role in AI, driving more efficient and cost-effective processes. Intelligence is expected to continue to develop, with advances in machine learning, natural language processing, and computer vision driving more advanced AI solutions. Decentralization is expected to increase the number of AI systems, making them more accessible to users and reducing costs. Finally, customization is expected to play a key role in AI, with systems becoming increasingly personal and tailored to individual needs and preferences. These trends are expected to continue as AI technologies continue to evolve and become more
+Generated text:  highly uncertain, but here are a few possibilities that could shape the direction of the technology:
+
+1. Improved AI will lead to increased automation: As AI continues to improve, it may become more efficient at performing tasks that were previously done by humans. This could lead to a shift towards more automated processes, where AI is used to perform tasks that are more routine or repetitive.
+
+2. AI will become more prevalent in everyday life: As AI becomes more advanced, it may become more integrated into our daily lives. For example, we could see more widespread use of smart devices that use AI to assist with tasks such as grocery shopping, scheduling appointments,
 </pre></div></div>
 </div>
 </section>
@@ -774,21 +778,28 @@ Generated text:  expected to be dominated by four trends: automation, intelligen
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [name]. I&#39;m a [brief biography] who believes in [your belief or values]. My passion for [your interest] has driven me to [why you do what you do]. Whether it&#39;s through my work, hobbies, or personal life, I strive to [how I plan to contribute to [target area or community]].
+Generated text:  [Name], I&#39;m a [Title] at [Company]. I&#39;m currently [Job Title] at [Company], but I&#39;m also looking forward to taking on [Position] at [New Company]. Thank you for taking the time to meet me, and I look forward to connecting with you! 🌟
 
-I hope you find this short introduction informative and engaging. What about you? Are there any particular aspects of your background that you&#39;d like to highlight in your introduction? Let me know, and I&#39;ll do my best to include them. [Name] [Phone Number] [Email Address] [LinkedIn
+[Name] ✨
+[Company] ✨
+
+---
+
+Feel free to adjust the details to better fit your personal brand and company. Let me know if you need any adjustments to the introduction! 📖✨
+
+---
+
+Please let me know if you&#39;d like me to provide more details or have you already met
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is the largest city in Europe and the 12th most populous city in the world. The city is located on the North West coast of the French Alps, and includes the historic centre of the city. It has a rich history dating back to the Middle Ages, and is famous for its many landmarks and attractions, including the Louvre and the Eiffel Tower. Paris is also home to many renowned museums, such as the Musée du Louvre, the Musée d&#39;Orsay, and the Musée d&#39;Art Moderne, and is a popular destination for visitors from around the world. Paris is
+Generated text:  Paris, located in the center of the country. It is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and Louvre Museum, as well as its historical importance in French culture and politics. It is the largest and most populous city in Europe and a major center of education, business, and entertainment. Paris is also known for its vibrant street food scene and its cultural exchanges with neighboring countries. It is home to many renowned museums, including the Louvre and the Musée d&#39;Orsay, and is known for its annual fashion and food festivals. Paris is a major cultural hub that attracts visitors
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain and it is impossible to predict with certainty what specific trends will develop. However, a few possible trends that are commonly expected to occur in the coming years include:
+Generated text:  likely to be highly disruptive, with a wide range of possible outcomes. Here are some possible trends that could shape AI in the coming years:
 
-1. Increased efficiency and productivity in manufacturing: With AI, manufacturing plants can optimize production processes, automate repetitive tasks, and improve accuracy and efficiency. This could result in more productive, less costly, and more reliable products.
+1. Integration with human cognition: AI is likely to become more integrated with human cognition, with machines able to perform tasks that typically require human creativity and insight. This could lead to new approaches to machine learning and natural language processing that are not possible with traditional AI systems.
 
-2. Improved patient care and treatment outcomes: AI can be used to analyze patient data, predict disease outcomes, and provide personalized treatment recommendations. This could lead to better outcomes for patients, reduced healthcare costs, and improved health outcomes.
-
-3. Increased use of
+2. Personalization and automation: AI is likely to continue to personalize and automate tasks, leading to new opportunities for businesses to improve efficiency and reduce costs. However, it&#39;s also possible that AI could become too personal and result in
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
