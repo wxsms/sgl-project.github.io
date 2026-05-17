@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-17 14:17:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-17 15:42:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-17 14:17:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-17 15:42:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.39it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-17 14:18:02,796 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-17 14:18:02] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-17 15:42:58,382 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-17 15:42:58] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a humorous scene of a man dressed as a taxi driver, complete with a yellow shirt and gloves, suddenly turning into a cab and leaving the street. He has an iron and laundry hanging out of his taxi, creating a playful and unexpected sight. This scene takes place in an urban environment, likely in a city, as indicated by the storefronts and street signs in the background. The taxi is yellow, a color commonly associated with city taxis in many places. The man's costume and the laundry being dealt with suggest that he might be performing a comedic skit or mimicking a taxi cab for entertainment purposes.
+    The image shows a yellow Coda taxi parked in front of a building with a red and white striped awning. There is a man standing behind the taxi, hanging clothes on what appears to be a mobile clothesline. The clothes include a red top and a blue bottom. The scene is set in an urban area with brick buildings and tall trees. There are also other taxis in the background and street signs visible.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from a parade or street event in New York City. The main focus is a yellow cab used as a makeshift stage for a display. A person in a yellow shirt is折叠 (folding) black and blue ribbons or banners. A banner with an American flag is hanging from the taxi, and there is another banner with two American flags. The background features the urban architecture of New York, including storefronts and street signs. The scene appears to be part of an event like a parade or demonstration, where the taxi might be serving as a creative, open-air stage for performers or organizers.
+    The image shows two yellow taxis driving down a city street. The taxis appear to be parking and preparing for a street performance or protest.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab with a cloth measuring device attached to its back. The cloth is long and thin, and it's being used to measure the surface area of the taxi. This appears to be a demonstration or for a humorous effect, possibly playing on the idea of using cloth to measure space, perhaps in a playful or exaggerative manner.
+    The image shows two taxis on a street. One taxi is posted onto a small table with a cloth draped over it, while the other taxi is just a blurred section of a vehicle. Dies3税务 묻 읾Taxicab screws addasser c dù ocasgewater, and paragraph.Rmv iaig.9
 
 
 ## Querying Llama 4 Vision Model
