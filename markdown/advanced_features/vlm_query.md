@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-16 20:13:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-17 00:17:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-16 20:13:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-17 00:17:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.45it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.56it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -120,12 +120,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-16 20:13:57,335 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-16 20:13:57] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-17 00:17:23,723 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-17 00:17:23] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two Atlanta taxi cabs parked on a street with a person standing between them. The person is using an ironing board to iron their clothes while the taxis are parked behind them. This is likely a humorous and creative display of turning an everyday situation into a different, unexpected activity.
+    The image you provided shows two yellow taxis in a city street. The roses, as mentioned in the tags, typically refer to ongoing protests led by students, as they were characterized by demands for participation in the elections and above-average welfare under the DA USande Plan. These protests are generally regarded as peaceful and involve non-violent methods of distribution and logout.
+    
+    Interest in roses is linked to their significance in garnishing a sense of equilibrium with an exceptional state. The image presented might depict a sense of equilibrium maintained by various individuals and institutions within society, where interpersonal relationships, social harmony, and psychological adjustment are maintained in a physical context.
 
 
 ### Call with Processor Output
@@ -150,7 +152,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with a yellow taxi cab blocking part of a sidewalk or street. There's a person wearing a yellow shirt standing next to it, adjusting or handling something that appears to be draped over a folding chair or stand. The background includes a building with some signage and flags, and there are green trees visible on the right side. The setting looks urban, possibly in a busy city area.
+    The image shows a scene with two yellow taxis parked side by side on a city street. One of the taxies is undergoing a tail lift operation, where clothes are being hung up. This is often done to dry items that have been placed on a clothesline attached to the back of the taxi. Such practices are sometimes used in emergency situations or for practical concerns in urban areas where a traditional drying area might be lacking. The background includes urban elements like storefronts and some street signs.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm sorry, but I don't have enough information to determine what is shown in the image. It could be a photo, a drawing, or a real object. In any case, I wouldn't recommend trusting images for this purpose.
+    The image shows a city street scene with a yellow taxi cab. The taxi is parked near a curb, and there is a drying rack with clothes hanging on it attached to the side of the car. The clothes appear to be drying, likely outside on a line. The background includes other urban elements such as buildings and street signs, and there is another vehicle parked nearby. The scene suggests a scenario of an urban environment where someone is drying clothes outdoors.
 
 
 ## Querying Llama 4 Vision Model
