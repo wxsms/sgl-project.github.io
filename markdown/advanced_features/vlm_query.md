@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 16:28:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 16:54:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 16:28:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 16:54:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.45s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.93s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.30s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.42s/it]
 
 
 
@@ -120,8 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
+    2026-05-18 16:54:25,677 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-18 16:54:25] Unexpected error during package walk: cutlass.cute.experimental
+
+
     Model response:
-    This image shows a person working in what appears to be a Kelly equipment drying rack on the back of a taxi in New York City. Kelly equipment drying racks are often used by street vendors and can be seen in various cities around the world. In this case, the person is likely specializing in giving wet clothes a military-style fold, an technique that collects clothes into standard points, making them easier to store and transport. The background shows typical urban street scenes with other vehicles and pedestrians.
+    The image shows two yellow taxis being cleaned outside a building. One plumber is using a compact, wheeled press-type vehicle to clean the windshield wipers, while the other utility worker is handling a curtain wardrobe, presumably to clean it as well. This unusual scene suggests that the taxis need special attention to their cleanliness, possibly due to a special event or the crew's attention to detail.
 
 
 ### Call with Processor Output
@@ -146,7 +150,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi (taxicab) with a blue tarp or cloth draped over it, possibly indicating that the cab is not in use or is undergoing maintenance. The tarp is held up by what appears to be an folding stand, suggesting the person behind the cab might be demonstrating or showcasing the cloth. The background includes a part of a building and some street signs, indicating an urban setting.
+    The image you described shows a scene of three yellow taxis on the street. One taxi is being haha'd, withProfessorNetlink Standing on top of it, seemingly taking a leap or jumping off of the vehicle. This activity is often referred to as "taxi hahaing," where drivers sometimes jump from the top of a taxi's rear seats or cargo area to entertain pedestrians or onlookers.
+    
+    The background appears to be a urban environment, with flags and storefronts visible. The activity being performed seems to be a form of creative or amusing hitchhiking, which is a playful variant of the traditional taxi services where drivers offer rides to
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow cab in a city street, with a woman wearing a yellow jacket and a striped shirt standing by the rear side. She is using a latticework straining tool (a device used to filter particles from liquid) which appears to be part of an art installation. The cab has several American flags attached to it, adding to the unusual nature of the scene. The environment looks like a typical urban setting with buildings and street lights visible in the background.
+    The image shows a scene on a city street with a yellow taxi cab prominently in the foreground. The taxi is being used to machine wash clothes in front of a storefront. This unusual activity is likely a creative or publicity stunt that combines two unrelated uses for the same vehicle in a public setting, possibly for a marketing campaign or as a demonstration of storytelling.
 
 
 ## Querying Llama 4 Vision Model
