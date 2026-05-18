@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 01:43:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 02:40:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 01:43:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 02:41:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.10s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.53s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.62s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-18 01:43:56,848 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-18 01:43:56] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-18 02:41:14,601 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-18 02:41:14] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two taxis driving down a street in what appears to be New York City. The taxis are typical yellow New York City taxis, known as "cabs." One of the taxis has clothes hanging on the back of its roof rack, likely for drying. This scene is quite unusual for New York taxis, which are usually brightly painted and don't have personal belongings visible. It's not clear why the clothes are hanging on the rack in this location, but it's certainly an interesting and unlikely sight in the city.
+    This image appears to depict a humorous and somewhat unconventional scene where a person in a yellow shirt is hula hooping on the back of a yellow taxi. The person is holding an iron over their chest, seemingly trying to iron clothes while hula hooping. The taxi is parked on a street with other vehicles visible in the background. The scene combines elements of humor and everyday life, showcasing a lighthearted moment outside a building with multiple signs and advertisements.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a New York City taxi car parked on a street. The taxi is typical of the yellow cabs used in New York, and it has a Chicago cab tape, which is a towels used by solo drivers to protect the drawers of the car’s cab storage area while the car is parked, as well as a Chicago cab flag. The scene also features other cars and buildings, indicating that this is likely taken in a city, most likely in America.
+    The image shows a street scene with a yellow taxi cab parked on the side of the road. The cab is equipped with a drying rack on the roof, which is being used to hang clothes. There are also several streetlights visible in the background, and there is a building with colorful banners or flags hanging along its facade.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two taxi cabs in a busy urban street. The taxis are typically yellow and orange, and they are parked on the street. The first taxi is in the foreground on the left side, and the second taxi is in the background on the right side. Both cabs have distinctive bumper stickers and decorations. The background includes buildings with store signs and a festive decoration or banner. There are also street lamps and trees visible, adding to the cityscape. The scene suggests a bustling city environment, possibly during a special event or holiday season.
+    The image shows a street scene in an urban area. In the foreground, there is a yellow city taxi parked on the street. Attached to the taxi is a device that appears to be a clothes drying rack, which is typically used for outdoor laundry. The clothes rack is holding several pieces of fabric, likely parts of someone's clothing, which are being dried in the sun. The background features buildings and a few other vehicles parked along the street. The presence of the drying rack indicates that the owner of the taxi is likely using it to干洗校外的衣物.
 
 
 ## Querying Llama 4 Vision Model
