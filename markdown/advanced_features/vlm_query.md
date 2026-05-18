@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 11:29:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 11:58:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 11:29:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 11:58:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.06s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-18 11:29:33,146 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-18 11:29:33] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-18 11:59:05,839 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-18 11:59:05] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a street scene in New York City with two yellow taxis. One taxi is under a clothesline where laundry is hanging to dry. The scene appears to be taking place during the Day of the Dress, where people dress up in brightly colored clothes for charity, particularly on July 4th. The second taxi is positioned to block the second two cars from the clothesline.
+    The image shows a scene typical of a New York City street, where someone is washing clothes under a drizzling rain. Three yellow NYC taxis are visible, with the hoses engaged in washing clothes hanging on each truck. Multiple W companies can be seen, some spread out, indicating the taxi drivers are home in New York City.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It seems like you photographed a charming scene of a cowboy carrying a banner through a modern city environment, contrasting the rustic cowboy attire with the urban backdrop. This juxtaposition creates a whimsical and humorous moment that breaks the conventional concept of a fixed comic or exaggerated portrayal. The mixture of old and new elements brings life to your picture, making it a refreshing visual perspective.
+    The image shows a street scene with two yellow taxis parked on the side of a road. The taxis are typical New York City taxi cabs. One person, wearing a yellow shirt, is alternatingly standing behind two laundry baskets or owner racks on the street. The person is holding up what appears to be aipeg boat cheque, and the scene has a humorous and odd appearance due to the unusual objects and clothing the person is wearing.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow car with a banner suspended from its roof. The banner appears to be a protest or demonstration banner with partially visible text. The car with the banner seems to be in the middle of a public street, as there is a sidewalk and some buildings visible in the background. The car appears to be stationary, facing one direction. The setting suggests it might be a protest or demonstration taking place in a city area.
+    The image shows a man hanging clothes on the back of a yellow taxi. He is using a hanger to dry his personal items. This is a humorous and unusual scene, as taxi drivers are not typically associated with hanging clothes on their vehicles. The man is standing in the street, and the taxi appears to be parked.
 
 
 ## Querying Llama 4 Vision Model
