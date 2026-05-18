@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 17:47:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 18:15:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 17:47:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 18:15:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.66s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
 
 
 
@@ -120,12 +120,8 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-18 17:48:08,761 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-18 17:48:08] Unexpected error during package walk: cutlass.cute.experimental
-
-
     Model response:
-    The image shows a scene in a city with two yellow taxis parked side by side on a street. The most notable element in the image is a person standing next to one of the taxis, using a makeshift clothesline to hang laundry. The clothesline is attached to a standing pole with clothes hanging on it. The background includes buildings, storefronts, and traffic lights, indicating an urban setting. The person seems to be drying clothes outside, likely in a parking lot or along the side of the street.
+    The image shows a person in a yellow shirt operating a striped umbrella on the back of a yellow and black vehicle, possibly a taxi. The backdrop includes other vehicles, a brick building, and some greenery. The scene appears to be outdoors, possibly in an urban area during daylight.
 
 
 ### Call with Processor Output
@@ -150,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab with its door open, and someone seemingly stepping out of or showing off the car. The taxi is parked on a city street, and it is surrounded by various urban elements, including poles, streetlights, and buildings. The scene appears to be in a busy urban area.
+    The image shows a yellow taxi cab driving on a street in a city. A person is using a broom to clean the front of the cab in the middle of the road. This seems to be an unusual and humorous sight. The background includes commercial storefronts and street signs.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi in a city, possibly New York, given the style of the cab. There is also a person standing next to an ice sculpture made to look like a horse on a stand. The street is decorated with flags, and there are buildings and commercial establishments along the sidewalk. The person next to the ice sculpture appears to be promoting something, but the exact nature of their promotion is not clear from the image alone.
+    The image shows a yellow taxi in a busy city street. The taxi is accompanied by a person who appears to be hanging laundry outside on a clothesline attached to the taxi. The scene is set in a commercial area with storefronts and traffic lights visible in the background. The person is wearing a yellow shirt and is holding a pillow, seemingly preparing to hoist it onto the clothesline. The taxi windows have flags attached, and the overall setting suggests a cultural or artistic display commonly seen in certain urban areas, possibly New York City, where such scenes are often associated with street art and street legends.
 
 
 ## Querying Llama 4 Vision Model
