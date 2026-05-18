@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 01:17:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 01:43:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 01:17:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 01:43:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.07s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.10s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.53s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.62s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-18 01:17:18,485 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-18 01:17:18] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-18 01:43:56,848 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-18 01:43:56] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person standing behind the back of a yellow taxi, with clothes hanging down. This is likely part of a humorous or public service campaign to remind or encourage people to keep their clothing picked up off the back of vehicles when they are parked. This is a common practice to clean up public areas, especially in urban settings.
+    The image shows two taxis driving down a street in what appears to be New York City. The taxis are typical yellow New York City taxis, known as "cabs." One of the taxis has clothes hanging on the back of its roof rack, likely for drying. This scene is quite unusual for New York taxis, which are usually brightly painted and don't have personal belongings visible. It's not clear why the clothes are hanging on the rack in this location, but it's certainly an interesting and unlikely sight in the city.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a yellow SUV, likely a taxi, parked on a city street, with a wooden display stand attached to its back. The display stands up vertically using heavy duty guy ropes to prevent it from being blown over. A person in an orange shirt and blue jeans is seen wearing rugby cleats, indicating they are engaged in or performing a task related to street vending or vendor work. The background features an urban setting with buildings, other vehicles, and possibly a pedestrian pathway.
+    The image shows a New York City taxi car parked on a street. The taxi is typical of the yellow cabs used in New York, and it has a Chicago cab tape, which is a towels used by solo drivers to protect the drawers of the car’s cab storage area while the car is parked, as well as a Chicago cab flag. The scene also features other cars and buildings, indicating that this is likely taken in a city, most likely in America.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from a popular comedy film, likely "The Hangover." In this scene, a man is standing by a yellow taxi cab in a city street, holding a乃是 (a stick used in combat sports like marathandu or Mor removing a piece of cloth or fabric from a hanger and lowering it down in water. The red cloth inWater. The red cloth is dyeing the water red due to the dye. The man is wearing a yellow shirt and is smiling.
+    The image shows two taxi cabs in a busy urban street. The taxis are typically yellow and orange, and they are parked on the street. The first taxi is in the foreground on the left side, and the second taxi is in the background on the right side. Both cabs have distinctive bumper stickers and decorations. The background includes buildings with store signs and a festive decoration or banner. There are also street lamps and trees visible, adding to the cityscape. The scene suggests a bustling city environment, possibly during a special event or holiday season.
 
 
 ## Querying Llama 4 Vision Model
