@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 03:38:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 06:41:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 03:38:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 06:41:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.09s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-18 03:39:08,676 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-18 03:39:08] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-18 06:42:01,163 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-18 06:42:01] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It looks like a humorous scene where two yellow taxis are parked closely together, and a person is hanging clothes on a clothesline attached to the back of one of the taxis. The person appears to be ironing a flag. This is likely part of a festive or street event, possibly related to Labor Day or immigration day, but I can't provide any specific details about it for copyright or legal reason.
+    The scene captures two yellow taxis on a city street, likely in New York City, given the recognizable crossbars at the top of the windshield. One taxi is closer to the foreground, and the other is positioned further back. The image appears to show a unique street vending or makeshift drying operation in which someone is hanging a piece of clothing on the rear crossbars of a taxi. This casual activity is often seen in urban settings where dryers may not be readily available. The presence of shops and buildings in the background further suggests an urban environment.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in an urban area, likely a city neighborhood such as Harlem in New York City. A yellow cab is parked on the street, and a laundry rack is placed on the curb, with clothes hanging on it. This is a common sight in areas where there is limited space for laundry facilities, and people may use public spaces to hang their clothes. The background includes buildings with colorful banners and signs, and there are trees lining the street. The presence of the laundry rack and the clothes indicates that this is a casual, possibly spontaneous setup for hanging clothes, which is common in densely populated urban environments.
+    The image shows a yellow taxi cab parked on a city street. The taxi has a red flag attachment on its rear, which is commonly used in New York City by Uber drivers as a request or confirmation signal to皮卡。 There are also several other patriotic symbols displayed, indicating the culture or specific occasion of the shot.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with two yellow taxicabs. The taxi on the left is partially obscured by the door visible in the background. The taxi on the right is pulling out from a parking space and has its door open, partially lifted, revealing the empty trunk area. The taxi driver is visible, standing near the open door and appears to be handling something in the trunk area. The street is lined with tall buildings, and there are flags visible on the windows of the buildings. The time appears to be late afternoon or early evening, as the lighting suggests the sun is setting.
+    The image shows two yellow taxis driving down the street. Additionally, there is a street scene visible with buildings and trees. The conditions are those of a rainy day in a city.
 
 
 ## Querying Llama 4 Vision Model

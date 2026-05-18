@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=c9e8b023"></script>
+    <script src="../_static/documentation_options.js?v=145b8e1d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,11 +569,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.53it/s]
-2026-05-18 03:43:36,335 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-18 03:43:36] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.42it/s]
-Capturing num tokens (num_tokens=4 avail_mem=55.50 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 25.35it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.10it/s]
+2026-05-18 06:42:41,212 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-18 06:42:41] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.35it/s]
+Capturing num tokens (num_tokens=4 avail_mem=75.94 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 36.72it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -605,43 +605,44 @@ Capturing num tokens (num_tokens=4 avail_mem=55.50 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Xiaoming, I am 13 years old and I live in Jiangdu District, Hangzhou. How do I go about buying a house in Hangzhou?
-A. Go to the real estate agency directly.
-B. Apply for a residence permit at the administrative authority of the housing administration at your place of residence.
-C. Register for a property purchase contract at your place of residence.
-D. Complete the mortgage registration at your place of residence.
-Answer:
-D
-
-Which of the following belongs to the final level of people&#39;s livelihood?
-A. Telecommunications
-B. Education
-C. Healthcare
-D. Income
-Answer:
-
+Generated text:  Pavel. I’m a doctor and a philosopher. I teach and write about philosophy and medicine. I’ve been teaching philosophy of mind for the past 20 years. I have written a lot of essays, articles and books on philosophical issues, especially on the nature of knowledge, the mind-body problem, the problem of free will and the problem of responsibility, the epistemic problem of knowledge, the problem of knowledge with limited information, the problem of knowledge with limited evidence and the problem of knowledge with limited time. I’ve also written two major philosophical books: “I Know That I Am Thinking” and “Why I Think I Am
 ===============================
 Prompt: The president of the United States is
-Generated text:  very busy preparing for the upcoming election. He has to decide whether to vote for a candidate that received 42 percent of the popular vote or a candidate that received 35 percent of the popular vote. If the total popular vote is 250 million votes, and the candidate with the higher vote count wins the election. What is the total number of votes the candidate with the higher vote count received? To determine the candidate with the higher vote count, we need to calculate the number of votes each candidate received and compare the two values.
+Generated text:  a powerful person who has the ability to change the world. The president represents the country&#39;s interests and can make decisions that affect the lives of millions of people. The president works to promote democracy, support the military, and govern the country through the executive branch. The president is responsible for implementing policies that are made by the Congress and is accountable to the public.
 
-First, we calculate the number of votes the candidate who received 42 percent of the
+What are the different branches of the executive branch of the government of the United States?
+
+There are three branches of the executive branch of the government of the United States: the executive branch, the legislative branch, and the judicial branch.
+
+1. Executive branch: This branch is responsible
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris.
+Generated text:  ____
+A. Paris
+B. Berlin
+C. Rome
+D. Moscow
+Answer:
 
-Does it follow that &#34;Paris has no capital.&#34;?
-OPTIONS: + yes; + it is not possible to tell; + no;
+A
 
-No;
+What is the primary reason for China&#39;s low unemployment rate in recent years?
+A. China&#39;s economic development level
+B. Government&#39;s macroeconomic policy
+C. Improvement in people&#39;s living standards
+D. China&#39;s large population size
+Answer:
+
+C
+
+Which of the following statements about the relationship between the thickness of a 1:1000 topographic map and the accuracy of the topographic map is correct?
+A. The thickness of the topographic map has no impact on its accuracy.
+B. The thicker
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain and fast-paced. While we are only just beginning to understand the complex nature of AI, it has already had a profound impact on society. Artificial intelligence has changed the way we work, live, and interact with the world around us. From chatbots to self-driving cars, AI is everywhere and is not going away anytime soon.
+Generated text:  still uncertain, but it&#39;s clear that it&#39;s going to have a significant impact on business. One of the most significant ways that AI is expected to affect business is through automation. Automation refers to the use of machines to perform tasks that were previously done by humans. In recent years, the use of AI has been increasingly adopted in various industries, including manufacturing, healthcare, finance, and transportation.
 
-One of the most exciting areas of AI research is natural language processing. In this article, we will explore the latest developments and challenges in this field, as well as the potential impact that this technology will have on our lives.
-
-### Understanding Natural Language Processing
-
-Natural language processing (NLP) is the study
+One of the key benefits of automation is that it can help businesses to reduce costs and increase efficiency. By automating repetitive and routine tasks, businesses can free up their employees to focus on more strategic and creative work. This can lead to increased productivity
 </pre></div></div>
 </div>
 </section>
@@ -681,17 +682,17 @@ Natural language processing (NLP) is the study
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career and interests. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career and interests. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career and interests. What can you tell me about yourself? [Name] is a [job title] at [company name]. I
+Generated text:  [Name] and I am a [Age] year old [Occupation]. I am a [Skill/Ability] who has always been [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits] and I am [Positive Traits]. I am [Positive Traits
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. The city is known for its cuisine, fashion, and art scene. It is a popular tourist destination and a major economic center in Europe. Paris is the capital of France and is the largest city in the country. It is also the seat of the French government and the country&#39;s cultural and political center. Paris is a major cultural and economic
+Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also famous for its rich history, including the French Revolution and the French Revolution Museum. Paris is a bustling city with a diverse population and is a popular tourist destination. It is home to many world-renowned museums, including the Louvre, the Musée d&#39;Orsay, and the Musée Rodin. The city is also known for its cuisine, including French cuisine and international cuisine. Paris is a city that is steeped in history and culture, and it is a must-visit
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
 
-1. Increased automation and robotics: As AI technology continues to improve, we can expect to see more automation and robotics in various industries, from manufacturing to healthcare. This could lead to increased efficiency, reduced costs, and improved quality of life for many people.
+1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI becomes more sophisticated, we can expect to see even more widespread use of AI in healthcare, including in areas such as diagnosis, treatment planning, and patient care.
 
-2. AI ethics and privacy: As AI becomes more integrated into our daily lives, there will be a growing concern about its impact on society. This includes issues such as bias, privacy, and the potential for AI to be
+2. AI in finance: AI is already being used in finance to improve fraud detection, risk assessment, and investment decision-making. As AI technology continues to improve, we can expect to see even more widespread use
 
 </pre></div></div>
 </div>
@@ -734,21 +735,18 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  ________, and I&#39;m a professional writer. I specialize in crafting compelling narratives that engage readers and spark their imagination. My work spans a wide range of genres, including romance, fantasy, and thrillers. I believe that storytelling is the ultimate expression of human creativity and have had the opportunity to work with some of the most talented writers and editors of our time. Whether you&#39;re looking for a captivating introduction to your own writing or a creative spark to inspire your own story, I&#39;d be happy to assist you in any way I can. How can I help you today? Let me know! (This should be a brief, professional self-int
+Generated text:  [Name] and I&#39;m a [Occupation or Field]. I&#39;m fluent in [Language], and I enjoy [Positive Qualities]. I bring [Job Skills], and I&#39;m always ready to learn something new. What is your profession or field? What do you enjoy most about it? What&#39;s your greatest strength? What are your goals for the future? What&#39;s your favorite hobby or activity to do in your free time?
+I&#39;m [Age] years old, and I live in [City] with [Marital Status], [Occupation or Field], [Country], and [Language]. I&#39;ve always had a love for
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Paris, the city of love and light, is the largest and most populous city in France, with a population of over 2.1 million people. It serves as the capital of France and the seat of the French government, as well as a major cultural, scientific, and artistic center. The city is famous for its architecture, including the iconic Eiffel Tower, and is a major destination for tourists, academics, and artists. Paris is also known for its diverse and multicultural community, with over 170 languages spoken and a rich history dating back over 2, 000 years. The city is
+Generated text:  Paris. Paris is the largest city in France and is the capital of the country. It is located in the southeast of France, on the left bank of the Seine River. The city is surrounded by the surrounding countryside and has a population of over 2. 8 million people. Paris is famous for its history, architecture, food, and fashion. It is a major financial center, and has a rich tradition of architecture and art. Paris is also known for its world-renowned museums, such as the Louvre and the Musée d&#39;Orsay. The city is home to many cultural landmarks, including the Eiffel
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be driven by a variety of trends, including:
+Generated text:  likely to be characterized by a range of different trends and innovations. Here are some of the key trends and innovations that are likely to shape the future of AI:
 
-1. Advancements in machine learning and deep learning: Machine learning and deep learning are the two main areas of AI research, and they are likely to continue to develop rapidly. This will lead to more complex and sophisticated AI systems that can learn and adapt to new situations.
+1. Increased Use of AI in Healthcare: AI is already being used in healthcare to improve patient care, reduce costs, and improve outcomes. This trend is likely to continue as AI is expected to become more advanced and able to handle more complex problems.
 
-2. Increased use of AI in healthcare: AI is already being used in healthcare to diagnose and treat diseases, and it has the potential to revolutionize the field. As AI becomes more widely used, we may see more personalized medicine and more accurate diagnoses.
-
-3. Integration of AI into everyday life: AI is
+2. Integration of AI into Everyday Life: AI is already integrated into many aspects of daily life, such as social media, online shopping, and transportation. The trend towards more integrated AI will likely continue as AI becomes more common
 </pre></div></div>
 </div>
 </section>
@@ -794,27 +792,23 @@ Generated text:  likely to be driven by a variety of trends, including:
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [First Name] and I&#39;m a [Job Title] who specializes in [Primary Function or Role]. I believe in [My Core Belief or Core Value]. And I love [Something About Me or What I Do]. In summary, I&#39;m [Brief Summary of Your Character]. I&#39;m excited to meet you and let&#39;s create a connection. How would you describe yourself?
-
-[First Name], I&#39;m a [Your Job Title] who specializes in [Primary Function or Role], and I believe in [My Core Belief or Core Value]. I love [Something About Me or What I Do], and in summary, I&#39;m
+Generated text:  ____________ and I am a/an ____________. I am currently working in a/an ___________. I have been with the company for ___________ and I have always been ___________. I have been doing this job for ___________. I have always been ___________ and ___________. What can I bring to this job? What can I bring to this company? I am very ___________ and I am ___________.
+Hey there, I&#39;m ___________ and I&#39;m a/an ___________. I work at ___________. I&#39;ve been with the company for ___________ and I have been doing this job
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, an enchanting city with a rich history dating back over 2000 years.
+Generated text:  Paris.
 
-Could you expand on the cultural significance of Paris and its importance in French literature? Yes, Paris is home to many literary figures such as Voltaire, Victor Hugo, and Dumas, who left a lasting impact on French literature. It has also been the setting for countless movies, plays, and books.
+A few interesting facts about Paris:
 
-Could you please provide information on the cultural significance of Paris and its importance in French literature? Yes, Paris is the cultural center of France and is known for its rich history and architectural heritage. It has a long and storied past,
+1. It is the largest city in Europe and the fifth-largest city in the world by population.
+2. The city is famous for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Notre Dame de Paris Basilica.
+3. Paris is home to many international organizations and prestigious universities, including the Ecole Polytechnique, the Paris School of Architecture, the Institut national de la medicine, and the École normale supérieure.
+4. It is also known for its gastronomy, fashion, and wine culture, as
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly uncertain, but here are some potential trends that could occur:
+Generated text:  expected to see continued growth and development in several key areas. One of the most promising areas is in the field of autonomous vehicles, where AI technology is being improved and perfected to make them safer, more reliable, and more efficient. Autonomous vehicles could potentially revolutionize transportation by reducing accidents, increasing traffic flow, and improving efficiency. However, there are also concerns about the potential impact of AI on job displacement and privacy concerns, so it&#39;s important for policymakers and the public to carefully consider these issues as the field of AI advances.
 
-1. Personalized AI: As AI technology continues to advance, we can expect to see an increase in the ability of AI systems to learn from individual users and provide more personalized experiences.
-
-2. Autonomous vehicles: Self-driving cars are already being developed and are expected to become more common in the future. Autonomous vehicles are expected to bring significant changes to traffic patterns and urban environments.
-
-3. Medical advancements: AI is already being used to improve healthcare outcomes, from personalized medicine to drug discovery. As AI continues to advance, we can expect to see even greater progress in this area.
-
-
+Another area of focus for AI is in the development of machine learning algorithms that can understand and interpret complex natural language,
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
