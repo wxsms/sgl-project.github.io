@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 07:06:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 08:34:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 07:06:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 08:34:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -120,12 +120,8 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-18 07:06:30,622 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-18 07:06:30] Unexpected error during package walk: cutlass.cute.experimental
-
-
     Model response:
-    The image shows a scene from the popular TV show "The Simpsons." In the image, a character named Mr. Burns is washing clothes on or next to a taxi in New York City. The yellow taxis and the setting are reminiscent of the show's depiction of Homer Simpson using his fictional company, Burns Bros., for various jobs, including washing clothes.
+    This is a scene from a viral video where a man is hanging laundry on the back of a taxi in New York City. The person in the yellow shirt is using the back of a yellow NYC taxi cab as a makeshift hanger for washing clothes. This scene was shared widely on social media for its absurdity and charm.
 
 
 ### Call with Processor Output
@@ -150,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    A man is trying to clean a smartphone screen using a toilet seat with a cloth. He is standing next to a yellow taxi.
+    It looks like there are two yellow regular taxis in the picture. They are parked side by side on the street.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two taxis parked side by side on a city street. The taxi in the foreground is yellow and has its back wheels turned slightly outward. This positioning might indicate that the driver has parked the vehicle in reverse, possibly because the taxi was misled by a pit-dance sign or due to a slight error in parking. The driver appears to be demonstrating how a pit-dance (a driving maneuver) could potentially tip the vehicle, as indicated by the cloth hanging off the edge of the rack and a nearby chair. The CCTV camera pole is visible in the image, which is often used for traffic monitoring and safety in urban areas.
+    The image shows a yellow taxi cab with a person standing on a small platform attached to the back of the taxi, holding a mop and cleaning. The taxi is in an urban area, likely New York City, given the style of the cab. The person appears to be cleaning the exterior of the cab as a form of street cleaning or beautification initiative, possibly for a special event or to maintain the appearance of the city's taxis.
 
 
 ## Querying Llama 4 Vision Model
