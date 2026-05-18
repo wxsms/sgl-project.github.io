@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 18:15:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 18:35:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 18:15:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 18:35:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.66s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a person in a yellow shirt operating a striped umbrella on the back of a yellow and black vehicle, possibly a taxi. The backdrop includes other vehicles, a brick building, and some greenery. The scene appears to be outdoors, possibly in an urban area during daylight.
+    The image shows a novelty parking ticket and two yellow cabs. The parking ticket features an illustration of a person holding a laundry basket, which is humorously interpreted as a parking ticket by those who collect tickets and flags. This is a playful误解。
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving on a street in a city. A person is using a broom to clean the front of the cab in the middle of the road. This seems to be an unusual and humorous sight. The background includes commercial storefronts and street signs.
+    This image shows a scene of activity with two yellow taxis parked on a street. The primary subject in the image is a person standing next to a wooded board doll placed on top of a于是装置车衡 Possibly set up on a street or sidewalk. The concrete surface and adjacent buildings indicate an urban setting with a business district in the background.
+    
+    基于图像中的信息，这个场景可能描绘的是一个户外活动或展示，可能有关于小道具或模型车的展览。但在给定的文本内容中并未提供足够的信息来描绘场景的具体细节。
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi in a busy city street. The taxi is accompanied by a person who appears to be hanging laundry outside on a clothesline attached to the taxi. The scene is set in a commercial area with storefronts and traffic lights visible in the background. The person is wearing a yellow shirt and is holding a pillow, seemingly preparing to hoist it onto the clothesline. The taxi windows have flags attached, and the overall setting suggests a cultural or artistic display commonly seen in certain urban areas, possibly New York City, where such scenes are often associated with street art and street legends.
+    The image shows a yellow taxi with the number "1" and a "Frida" painted on its side. There are also hats hanging on the back of the taxi.
 
 
 ## Querying Llama 4 Vision Model
