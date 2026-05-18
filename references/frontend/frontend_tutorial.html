@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=938fe314"></script>
+    <script src="../../_static/documentation_options.js?v=e6bf6ecf"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -558,11 +558,11 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.56it/s]
-2026-05-18 16:59:54,775 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-18 16:59:54] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  7.94it/s]
-Capturing num tokens (num_tokens=4 avail_mem=61.59 GB): 100%|██████████| 58/58 [00:03&lt;00:00, 15.32it/s]
+Multi-thread loading shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
+2026-05-18 17:55:03,444 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-18 17:55:03] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  7.17it/s]
+Capturing num tokens (num_tokens=4 avail_mem=61.59 GB): 100%|██████████| 58/58 [00:03&lt;00:00, 15.01it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -578,7 +578,7 @@ Capturing num tokens (num_tokens=4 avail_mem=61.59 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:36112
+Server started on http://localhost:37034
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -595,7 +595,7 @@ Server started on http://localhost:36112
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-05-18 17:00:13] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-05-18 17:55:23] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -627,7 +627,7 @@ Server started on http://localhost:36112
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Germany - Berlin<br>3. Japan - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Canada - Ottawa</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -657,13 +657,13 @@ Server started on http://localhost:36112
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
+<strong style='color: #00008B;'>Certainly! Here is a list of 3 countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Canada** - Ottawa</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. Canada - Ottawa<br>2. Germany - Berlin<br>3. Australia - Canberra</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of 3 countries and their capitals:<br><br>1. **Mexico** - Mexico City<br>2. **Italy** - Rome<br>3. **Australia** - Canberra</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -705,7 +705,7 @@ Server started on http://localhost:36112
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2. Let's calculate it directly without the need for a calculator.<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2.<br><br>The multiplication of 2 and 2 is simply:<br><br>```<br>2 * 2 = 4<br>```<br><br>So, the answer is 4. There's no need to use a calculator for this simple calculation.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -745,7 +745,7 @@ Server started on http://localhost:36112
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet is essential for overall health. It should include a variety of nutrients from all food groups:<br>   - **Fruits and Vegetables**: Rich in fiber, vitamins, and antioxidants.<br>   - **Lean Proteins**: Chicken, fish, legumes, and tofu for muscle repair and growth.<br>   - **Whole Grains**: Provide energy and essential nutrients without refined sugars and fats.<br>   - **Healthy Fats**: Nuts, avocados, and olive oil for brain health and vitamin absorption.<br><br>2. **Regular Exercise**: Regular physical activity is vital for maintaining good health:<br>   - **Health Benefits**: Strengthens muscles, improves cardiovascular health, enhances flexibility and endurance.<br>   - **Weight Management**: Helps maintain a healthy weight and reduces the risk of chronic diseases like diabetes, heart disease, and obesity.<br>   - **Mental Well-being**: Boosts mood and energy levels, reduces stress and anxiety, and improves sleep quality.<br>   - **Quality of Life**: Contributes to a stronger and more active lifestyle overall.<br><br>Implementing both these tips can significantly enhance your physical and mental health, leading to a more fulfilling and vibrant life.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet is essential for overall health. It involves consuming a variety of nutrient-dense foods such as fruits, vegetables, whole grains, lean proteins, and healthy fats. It also includes staying hydrated by drinking plenty of water throughout the day.<br><br>2. **Regular Exercise**: Regular exercise is crucial for maintaining health. It improves cardiovascular health, boosts the immune system, and enhances mental well-being by reducing stress and promoting a better mood. Choose activities you enjoy and gradually increase the intensity and duration of your workouts as you get more fit. Consult with a healthcare provider before starting a new exercise routine for safety and effectiveness.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -818,7 +818,7 @@ Server started on http://localhost:36112
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Yew",<br>        "core": "Falcon feather",<br>        "length": 10.75<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "The Boggart in "<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Oak",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Mrs prioress Tr1"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -853,7 +853,7 @@ Server started on http://localhost:36112
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 30.56it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 29.01it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -976,14 +976,14 @@ The capital of France is Paris.&lt;|im_end|&gt;
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-18 17:00:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-05-18 17:55:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-18 17:00:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.63it/s]
+[2026-05-18 17:55:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.40it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
-2026-05-18 17:00:48,780 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-18 17:00:48] Unexpected error during package walk: cutlass.cute.experimental
+2026-05-18 17:55:53,881 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-05-18 17:55:53] Unexpected error during package walk: cutlass.cute.experimental
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -997,7 +997,7 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.63it/s]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31655
+Server started on http://localhost:36878
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1013,7 +1013,7 @@ Server started on http://localhost:31655
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-05-18 17:00:52] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-05-18 17:55:57] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1047,7 +1047,7 @@ Server started on http://localhost:31655
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man standing on a yellow SUV parked on a street in what appears to be a busy urban area, possibly New York City given the architecture and the style of the taxi. He is using an ironing board that is leaning against the back of the SUV, holding an iron and what looks like a shirt or piece of clothing. There are two yellow taxis on the road, and the scene has buildings and trees in the background, indicating a city environment. The man seems to be ironing the clothing on the SUV's roof or a portable ironing board setup.</strong></div>
+<strong style='color: #00008B;'>The image depicts a person ironing clothes on an ironing board at the back of a taxi, which is parked on a busy street. The taxi is yellow, commonly associated with New York City taxis. The person is standing on the back of the taxi for access to the ironing board. This scene appears to be taking place in a city environment, with other vehicles and buildings in the background. It looks like a humorous or contested Creative Commons photo that has been widely shared on the internet.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:

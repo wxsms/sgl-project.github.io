@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 16:54:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 17:47:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 16:54:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 17:47:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.93s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.42s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-18 16:54:25,677 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-18 16:54:25] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-18 17:48:08,761 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-18 17:48:08] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis being cleaned outside a building. One plumber is using a compact, wheeled press-type vehicle to clean the windshield wipers, while the other utility worker is handling a curtain wardrobe, presumably to clean it as well. This unusual scene suggests that the taxis need special attention to their cleanliness, possibly due to a special event or the crew's attention to detail.
+    The image shows a scene in a city with two yellow taxis parked side by side on a street. The most notable element in the image is a person standing next to one of the taxis, using a makeshift clothesline to hang laundry. The clothesline is attached to a standing pole with clothes hanging on it. The background includes buildings, storefronts, and traffic lights, indicating an urban setting. The person seems to be drying clothes outside, likely in a parking lot or along the side of the street.
 
 
 ### Call with Processor Output
@@ -150,9 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you described shows a scene of three yellow taxis on the street. One taxi is being haha'd, withProfessorNetlink Standing on top of it, seemingly taking a leap or jumping off of the vehicle. This activity is often referred to as "taxi hahaing," where drivers sometimes jump from the top of a taxi's rear seats or cargo area to entertain pedestrians or onlookers.
-    
-    The background appears to be a urban environment, with flags and storefronts visible. The activity being performed seems to be a form of creative or amusing hitchhiking, which is a playful variant of the traditional taxi services where drivers offer rides to
+    The image shows a yellow taxi cab with its door open, and someone seemingly stepping out of or showing off the car. The taxi is parked on a city street, and it is surrounded by various urban elements, including poles, streetlights, and buildings. The scene appears to be in a busy urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street with a yellow taxi cab prominently in the foreground. The taxi is being used to machine wash clothes in front of a storefront. This unusual activity is likely a creative or publicity stunt that combines two unrelated uses for the same vehicle in a public setting, possibly for a marketing campaign or as a demonstration of storytelling.
+    The image shows a street scene with a yellow taxi in a city, possibly New York, given the style of the cab. There is also a person standing next to an ice sculpture made to look like a horse on a stand. The street is decorated with flags, and there are buildings and commercial establishments along the sidewalk. The person next to the ice sculpture appears to be promoting something, but the exact nature of their promotion is not clear from the image alone.
 
 
 ## Querying Llama 4 Vision Model
