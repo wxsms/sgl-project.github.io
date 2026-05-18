@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 18:35:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 21:32:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 18:35:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 21:32:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -120,8 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
+    2026-05-18 21:32:46,688 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-18 21:32:46] Unexpected error during package walk: cutlass.cute.experimental
+
+
     Model response:
-    The image shows a novelty parking ticket and two yellow cabs. The parking ticket features an illustration of a person holding a laundry basket, which is humorously interpreted as a parking ticket by those who collect tickets and flags. This is a playful误解。
+    The picture shows a man unfolded and wearing overalls while moving within the confines of the open back of a city cab, which is stationed on the street.
 
 
 ### Call with Processor Output
@@ -146,9 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene of activity with two yellow taxis parked on a street. The primary subject in the image is a person standing next to a wooded board doll placed on top of a于是装置车衡 Possibly set up on a street or sidewalk. The concrete surface and adjacent buildings indicate an urban setting with a business district in the background.
-    
-    基于图像中的信息，这个场景可能描绘的是一个户外活动或展示，可能有关于小道具或模型车的展览。但在给定的文本内容中并未提供足够的信息来描绘场景的具体细节。
+    The image shows a scene with a yellow car, which is likely an American taxi, based on its color and design. The car appears to be equipped with several poles on trailers attached to the back, holding long poles that seem to be used for cleaning or maintenance. The setting appears to be in a city, indicated by the background scenery that includes a building with large windows and some outdoor elements like flags and street lighting. The poles on the trailers suggest that the car may be part of a snow removal or pollution control operation, using the cleaning equipment通常用于偶尔停车的地方。最后一辆车似乎是为了清洁用途而设计的，移动属于持续
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi with the number "1" and a "Frida" painted on its side. There are also hats hanging on the back of the taxi.
+    The image shows a yellow taxi cab, likely a standard New York City taxi, parked on a street. Additionally, attached to the back of the taxi is a line with artificial, life-sized Queens hwam (tulip), which is symbolic of the Welsh informal entertainment scene and Queens in particular.
 
 
 ## Querying Llama 4 Vision Model
