@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 15:11:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 16:28:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 15:11:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-18 16:28:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.45s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.30s/it]
 
 
 
@@ -120,12 +120,8 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-18 15:11:18,039 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-18 15:11:18] Unexpected error during package walk: cutlass.cute.experimental
-
-
     Model response:
-    The image shows a yellow taxi holding a red, white, and blue flag. The taxi is marking its area, which could indicate it is focusing on an object or location. This street there are lots of establishments which are running into 00 i. There is also traffic light observable here.
+    This image shows a person working in what appears to be a Kelly equipment drying rack on the back of a taxi in New York City. Kelly equipment drying racks are often used by street vendors and can be seen in various cities around the world. In this case, the person is likely specializing in giving wet clothes a military-style fold, an technique that collects clothes into standard points, making them easier to store and transport. The background shows typical urban street scenes with other vehicles and pedestrians.
 
 
 ### Call with Processor Output
@@ -150,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows two yellow taxis parked on a city street. The back door of one of the taxis is open, and a person is outside, appearing to move a curtain from inside to outside the car using a small crane or boom hydraulic lift. There are also several flags visible on the taxis, and the background includes a building with a storefront or window display.
+    The image shows a yellow taxi (taxicab) with a blue tarp or cloth draped over it, possibly indicating that the cab is not in use or is undergoing maintenance. The tarp is held up by what appears to be an folding stand, suggesting the person behind the cab might be demonstrating or showcasing the cloth. The background includes a part of a building and some street signs, indicating an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with two yellow taxis in an urban area. One taxi is partially of a black car, and there is a person wearing a yellow shirt, presumably the driver, standing near the taxis. The person appears to be setting up or moving their belongings, possibly related to a religious or cultural festival. There are also some flags and banners visible in the background, suggesting the presence of a public or traditional holiday event. The setting looks like a city street with buildings and other urban elements around.
+    The image shows a yellow cab in a city street, with a woman wearing a yellow jacket and a striped shirt standing by the rear side. She is using a latticework straining tool (a device used to filter particles from liquid) which appears to be part of an art installation. The cab has several American flags attached to it, adding to the unusual nature of the scene. The environment looks like a typical urban setting with buildings and street lights visible in the background.
 
 
 ## Querying Llama 4 Vision Model

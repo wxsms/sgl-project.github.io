@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=ee4cfe34"></script>
+    <script src="../_static/documentation_options.js?v=fa9f1c88"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -643,12 +643,10 @@ content.</p></td>
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-[2026-05-18 15:09:19] The tool_call_parser &#39;qwen25&#39; is deprecated. Please use &#39;qwen&#39; instead.
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.53it/s]
-2026-05-18 15:09:33,937 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-18 15:09:33] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  7.87it/s]
-Capturing num tokens (num_tokens=4 avail_mem=20.88 GB): 100%|██████████| 58/58 [00:06&lt;00:00,  9.10it/s]
+[2026-05-18 16:25:03] The tool_call_parser &#39;qwen25&#39; is deprecated. Please use &#39;qwen&#39; instead.
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.75it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:09&lt;00:00,  5.85it/s]
+Capturing num tokens (num_tokens=4 avail_mem=43.96 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 13.19it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -770,7 +768,7 @@ Capturing num tokens (num_tokens=4 avail_mem=20.88 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='1c3a7553249c4f619e77d087bc48b678', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content='To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name "Boston", state "MA" (which is the two-letter abbreviation for Massachusetts), and specifying the unit of temperature. Since no specific unit was requested, I\'ll assume Celsius for a more universally understood temperature scale.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_9ca7bd907bee46ec9aad7f3d', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), matched_stop=None)], created=1779116997, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=100, prompt_tokens=296, total_tokens=396, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='12098c1a9bc34442a8bd17f96a7dcfdf', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content='To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name "Boston", state "MA" (which is the two-letter abbreviation for Massachusetts), and specifying the unit of temperature. Since no specific unit was requested, I\'ll assume Celsius for a more universally understood temperature scale.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_72ddb07b3a144883add2d544', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), matched_stop=None)], created=1779121542, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=100, prompt_tokens=296, total_tokens=396, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -794,7 +792,7 @@ Capturing num tokens (num_tokens=4 avail_mem=20.88 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>[ChatCompletionMessageFunctionToolCall(id='call_9ca7bd907bee46ec9aad7f3d', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)]</strong></div>
+<strong style='color: #00008B;'>[ChatCompletionMessageFunctionToolCall(id='call_72ddb07b3a144883add2d544', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)]</strong></div>
 </div>
 <section id="Handle-Tools">
 <h4>Handle Tools<a class="headerlink" href="#Handle-Tools" title="Link to this heading">#</a></h4>
@@ -891,7 +889,7 @@ Capturing num tokens (num_tokens=4 avail_mem=20.88 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_459ecfa9df7b4133b7aa93fe', function=ChoiceDeltaToolCallFunction(arguments='', name='get_current_weather'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_1d3f622021214543a6dc310a', function=ChoiceDeltaToolCallFunction(arguments='', name='get_current_weather'), type='function')</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1028,7 +1026,7 @@ Capturing num tokens (num_tokens=4 avail_mem=20.88 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Output a reasoning before act, then use the tools to help you."}, ChatCompletionMessage(content='To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name "Boston", state "MA" (which is the two-letter abbreviation for Massachusetts), and specifying the unit of temperature. Since no specific unit was requested, I\'ll assume Celsius for a more universally understood temperature scale.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_9ca7bd907bee46ec9aad7f3d', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), {'role': 'tool', 'tool_call_id': 'call_9ca7bd907bee46ec9aad7f3d', 'content': "The weather in Boston, MA is 85 degrees celsius. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
+<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Output a reasoning before act, then use the tools to help you."}, ChatCompletionMessage(content='To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name "Boston", state "MA" (which is the two-letter abbreviation for Massachusetts), and specifying the unit of temperature. Since no specific unit was requested, I\'ll assume Celsius for a more universally understood temperature scale.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_72ddb07b3a144883add2d544', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), {'role': 'tool', 'tool_call_id': 'call_72ddb07b3a144883add2d544', 'content': "The weather in Boston, MA is 85 degrees celsius. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
 </div>
 </section>
 <section id="Send-Results-Back-to-Model">
@@ -1063,7 +1061,7 @@ Capturing num tokens (num_tokens=4 avail_mem=20.88 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='d3246ff350514dc9a49b3ce92023e12f', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content="There seems to be an error in the response as 85 degrees Celsius is extremely high for a typical temperature in Boston. Let's correct this by rechecking with the function and ensuring we get the right unit of measurement.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_0550bbbaef184575992a2c96', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), matched_stop=None)], created=1779116999, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=79, prompt_tokens=442, total_tokens=521, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='1bf8da69d54d436b92956409b5ac0f32', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content="There seems to be an error in the response as 85 degrees Celsius is extremely high for a typical temperature in Boston. Let's correct this by rechecking with the function and ensuring we get the right unit of measurement.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_5a30ac07cff149388b38daa7', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), matched_stop=None)], created=1779121545, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=79, prompt_tokens=442, total_tokens=521, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1261,11 +1259,9 @@ function arguments:  {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
-2026-05-18 15:10:17,196 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-18 15:10:17] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:11&lt;00:00,  4.93it/s]
-Capturing num tokens (num_tokens=4 avail_mem=22.14 GB): 100%|██████████| 58/58 [00:16&lt;00:00,  3.43it/s]
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.96it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  6.97it/s]
+Capturing num tokens (num_tokens=4 avail_mem=59.02 GB): 100%|██████████| 58/58 [00:05&lt;00:00, 10.69it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1415,12 +1411,10 @@ Reasoning: The user asked for the current weather in Boston, so we need to fetch
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-[2026-05-18 15:10:55] The tool_call_parser &#39;qwen25&#39; is deprecated. Please use &#39;qwen&#39; instead.
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.41it/s]
-2026-05-18 15:11:09,803 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-18 15:11:09] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  7.87it/s]
-Capturing num tokens (num_tokens=4 avail_mem=33.42 GB): 100%|██████████| 58/58 [00:03&lt;00:00, 15.11it/s]
+[2026-05-18 16:26:29] The tool_call_parser &#39;qwen25&#39; is deprecated. Please use &#39;qwen&#39; instead.
+Multi-thread loading shards: 100% Completed | 4/4 [00:01&lt;00:00,  2.03it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  6.93it/s]
+Capturing num tokens (num_tokens=4 avail_mem=25.07 GB): 100%|██████████| 58/58 [00:03&lt;00:00, 15.24it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -1443,7 +1437,7 @@ Capturing num tokens (num_tokens=4 avail_mem=33.42 GB): 100%|██████�
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Content: None
-Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_ff7ae67f0dd848ad928f77e0&#39;, function=Function(arguments=&#39;{}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
+Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_a0f02aa238674b1c95cdbf24&#39;, function=Function(arguments=&#39;{}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
 </pre></div></div>
 </div>
 </section>
@@ -1493,7 +1487,7 @@ Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_ff7ae67f0dd848ad
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Content: None
-Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_4945d643c1b345e3afc3c295&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Paris&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
+Tool calls: [ChatCompletionMessageFunctionToolCall(id=&#39;call_1f185f0874bf44b3895d93a6&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Paris&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1672,19 +1666,17 @@ not use the correct chat template, tool calling may fail or produce inconsistent
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-[2026-05-18 15:11:37] Tokenizer loaded as generic TokenizersBackend for meta-llama/Llama-3.2-1B-Instruct, retrying with use_fast=False
-[2026-05-18 15:11:39] Tokenizer for meta-llama/Llama-3.2-1B-Instruct loaded as generic TokenizersBackend. Set --trust-remote-code to load the model-specific tokenizer.
-[2026-05-18 15:11:43] Tokenizer loaded as generic TokenizersBackend for meta-llama/Llama-3.2-1B-Instruct, retrying with use_fast=False
-[2026-05-18 15:11:44] Tokenizer loaded as generic TokenizersBackend for meta-llama/Llama-3.2-1B-Instruct, retrying with use_fast=False
-[2026-05-18 15:11:45] Tokenizer for meta-llama/Llama-3.2-1B-Instruct loaded as generic TokenizersBackend. Set --trust-remote-code to load the model-specific tokenizer.
-[2026-05-18 15:11:46] Tokenizer for meta-llama/Llama-3.2-1B-Instruct loaded as generic TokenizersBackend. Set --trust-remote-code to load the model-specific tokenizer.
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.84it/s]
-2026-05-18 15:11:49,557 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-18 15:11:49] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 15.50it/s]
-Capturing num tokens (num_tokens=4 avail_mem=73.98 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 46.38it/s]
-[2026-05-18 15:12:01] Tokenizer loaded as generic TokenizersBackend for meta-llama/Llama-3.2-1B-Instruct, retrying with use_fast=False
-[2026-05-18 15:12:03] Tokenizer for meta-llama/Llama-3.2-1B-Instruct loaded as generic TokenizersBackend. Set --trust-remote-code to load the model-specific tokenizer.
+[2026-05-18 16:27:15] Tokenizer loaded as generic TokenizersBackend for meta-llama/Llama-3.2-1B-Instruct, retrying with use_fast=False
+[2026-05-18 16:27:18] Tokenizer for meta-llama/Llama-3.2-1B-Instruct loaded as generic TokenizersBackend. Set --trust-remote-code to load the model-specific tokenizer.
+[2026-05-18 16:27:22] Tokenizer loaded as generic TokenizersBackend for meta-llama/Llama-3.2-1B-Instruct, retrying with use_fast=False
+[2026-05-18 16:27:22] Tokenizer loaded as generic TokenizersBackend for meta-llama/Llama-3.2-1B-Instruct, retrying with use_fast=False
+[2026-05-18 16:27:24] Tokenizer for meta-llama/Llama-3.2-1B-Instruct loaded as generic TokenizersBackend. Set --trust-remote-code to load the model-specific tokenizer.
+[2026-05-18 16:27:24] Tokenizer for meta-llama/Llama-3.2-1B-Instruct loaded as generic TokenizersBackend. Set --trust-remote-code to load the model-specific tokenizer.
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.55it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 14.60it/s]
+Capturing num tokens (num_tokens=4 avail_mem=58.90 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 41.57it/s]
+[2026-05-18 16:27:36] Tokenizer loaded as generic TokenizersBackend for meta-llama/Llama-3.2-1B-Instruct, retrying with use_fast=False
+[2026-05-18 16:27:38] Tokenizer for meta-llama/Llama-3.2-1B-Instruct loaded as generic TokenizersBackend. Set --trust-remote-code to load the model-specific tokenizer.
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -1705,7 +1697,7 @@ Capturing num tokens (num_tokens=4 avail_mem=73.98 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='1ac162ee1b8449cab1bb2d723bc3bc7b', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_3ce80105fa844f948248aac8', function=Function(arguments='{"location": "Tokyo"}', name='get_weather'), type='function', index=0), ChatCompletionMessageFunctionToolCall(id='call_80999929d10f4e9fb7bddb6c', function=Function(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function', index=1)], reasoning_content=None), matched_stop=None)], created=1779117129, model='meta-llama/Llama-3.2-1B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=20, prompt_tokens=449, total_tokens=469, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='d30766ac759e4ea5ad84576040fbd746', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_7a60f4b69c6c4b0fbd550111', function=Function(arguments='{"location": "Tokyo"}', name='get_weather'), type='function', index=0), ChatCompletionMessageFunctionToolCall(id='call_7d661d7dbf0049a7a59c41ab', function=Function(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function', index=1)], reasoning_content=None), matched_stop=None)], created=1779121665, model='meta-llama/Llama-3.2-1B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=20, prompt_tokens=449, total_tokens=469, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1735,13 +1727,13 @@ Capturing num tokens (num_tokens=4 avail_mem=73.98 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_89df116f5f93426ab0e9c8a9', function=ChoiceDeltaToolCallFunction(arguments='{"location": "Tokyo"}', name='get_weather'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_89943bc60b6048f09da0c615', function=ChoiceDeltaToolCallFunction(arguments='{"location": "Tokyo"}', name='get_weather'), type='function')</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=1, id='call_37fa546afad042cf80b4b084', function=ChoiceDeltaToolCallFunction(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=1, id='call_54dc7bb0267440c59ea1029c', function=ChoiceDeltaToolCallFunction(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function')</strong></div>
 </div>
 <blockquote>
 <div><div class="line-block">

@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=ee4cfe34"></script>
+    <script src="../_static/documentation_options.js?v=fa9f1c88"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -578,11 +578,9 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.18it/s]
-2026-05-18 15:12:52,050 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-05-18 15:12:52] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.03it/s]
-Capturing num tokens (num_tokens=4 avail_mem=70.88 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 25.62it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.45it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.54it/s]
+Capturing num tokens (num_tokens=4 avail_mem=52.35 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 20.67it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -598,7 +596,7 @@ Capturing num tokens (num_tokens=4 avail_mem=70.88 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:34953
+Server started on http://localhost:30650
 </pre></div></div>
 </div>
 </section>
@@ -632,7 +630,7 @@ Server started on http://localhost:34953
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='9b0e98f3d9a74062bed1d5323be54ea5', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1779117188, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='ea442bf85692405bad45bd3e9fb06009', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1779121443, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -897,7 +895,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a civilization that flourished from the 8th to the 4th centuries BCE, during which time it reached its peak. Some of their major achievements include:<br><br>1. The construction of monumental architecture: Roman buildings were grand and impressive, including temples, basilicas, aqueducts, and palaces.<br><br>2. The development of law and governance: Roman law established principles for justice and order in society, including the concept of "corpus delicti" (the burden of proof) and the principle of universal jurisdiction.<br><br>3. Trade and commerce: Rome became one of the world's largest trading nations, with</strong></div>
+<strong style='color: #00008B;'>The Roman Empire was a major civilization that flourished in the Mediterranean region from the 8th century BCE to the 4th century CE. It reached its peak around 27 BC and lasted until the fall of Rome in 476 AD.<br><br>Some of their major achievements include:<br><br>1. **Roman Law**: The establishment of Roman law, which included codified laws for governance, contract law, torts, and criminal justice.<br><br>2. **Architecture**: The construction of impressive structures such as the Colosseum (in Rome), Pantheon (in Rome), and others like the Forum of Connaught (in Rome</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -923,7 +921,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, I am Qwen, an artificial intelligence created by Alibaba Cloud. My purpose is to assist you with any questions or tasks you may have, whether it&#39;s about technology, science, history, literature, etc., as long as they are relevant and within my capabilities. How can I help you today?
+Yes, I&#39;m a test created by Alibaba Cloud. How can I assist you today?
 </pre></div></div>
 </div>
 </section>
@@ -988,7 +986,7 @@ Yes, I am Qwen, an artificial intelligence created by Alibaba Cloud. My purpose 
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='cb6667b956fa487cbfc951ff7fc203d2', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1779117190, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='dd515e73a86e46d483af17f768451ccc', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1779121445, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1020,7 +1018,7 @@ Yes, I am Qwen, an artificial intelligence created by Alibaba Cloud. My purpose 
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='0a9b93b4569349a4a04f9b622edcc180', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, in the year 2045, a space explorer named Alex stood at the edge of the cosmos, ready to explore new worlds and discover new wonders. His spaceship was a sleek black box with a large window that allowed him to look out into the vast expanse of space.', matched_stop='\n\n')], created=1779117191, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=62, prompt_tokens=9, total_tokens=71, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='eb972ba9709e4046ade481f0c7f2f224', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who was on a mission to explore the stars. He had been chosen for this mission because he was a brilliant scientist with an incredible imagination. Jack had spent years studying the stars and planets, and he knew that the universe was vast and full of mysteries.', matched_stop='\n\n')], created=1779121446, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=63, prompt_tokens=9, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
