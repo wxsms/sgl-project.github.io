@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 13:51:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 14:46:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 13:51:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 14:46:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This is a humorous photograph showing a scenario where a yellow taxi is functioning as a makeshift drying rack for a涤 Российской flag. The taxi’s back has been modified to hold the flag, while it operates as usual in a New York City setting. The image is likely intended for comedic effect and highlights a simultaneously multifunctional utility of vehicles.
+    The image shows a scene on a city street. It features two yellow taxi cabs, one in the background and one in the foreground. The foreground taxi has a person visible on top, who appears to be drying or ironing clothes draped over a clothesline attached to the rear of the vehicle. The background taxi is一般的停着。街道两旁有建筑物和一些标志。
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked on a city street. The taxi is being used to demonstrate or test a 안개번째 paper cutting machine, as fabric is draped over it and being cut across. Other details include a building with storefronts and several flags with American Samoa flags in the background.
+    The image shows a street scene with two yellow taxis. One of the taxis is parked and has a rack or shelf attached to its back that is holding several striped towels. The other taxi is partially visible on the left side of the image. The scene appears to be set in an urban area with buildings and street lights in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The picture you've provided shows a street scene with two yellow New York City taxis parked side by side. The most intriguing detail in the image is the makeshift desk or table attached to the back of one of the taxis. This setup appears to be a temporary living space, possibly being used by a homeless person or someone living in a van. The table has some clothes draped over it, suggesting that the individual uses the taxi as a mobile workplace and personal space. The scene is set against a city backdrop with streetlights and buildings, indicating an urban environment.
+    The image shows a yellow taxi cab parked on the side of a city street. The taxi has a red lining on the interior, and there is a laundry cart in front of it with an iron and a folded piece of clothing on it. The street appears to be in a busy urban area with buildings and other vehicles around. The presence of the laundry cart and the iron suggests that the person might be washing clothes nearby and transporting them in the taxi.
 
 
 ## Querying Llama 4 Vision Model
