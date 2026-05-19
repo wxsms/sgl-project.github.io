@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 02:12:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 02:48:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 02:12:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 02:49:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.34it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.57it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene in New York City. There is a yellow taxi cab positioned on a street, and a towel is being hung on the back window of the cab. The driver is wearing a yellow shirt and appears to be holding a luggage rack on the back of the cab. The scene suggests that the taxi cab is being used creatively, perhaps as a makeshift drying rack or drying stand.
+    The image shows a scene from what appears to be a humorous or prank scenario in a city street. A man dressed in a yellow shirt is walking with a laundry load balanced on the back of a taxi cab. This setup is designed to resemble a ride-sharing service like Uber or Lyft, as indicated by the text on the door of the taxi. However, instead of a typical ride, the man seems to be on aicket to deliver papers, which might be amusingly staged for entertainment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man pushing aLoaders with hanging clothes and a drying rack on a tow truck's flatbed. The man appears to be in a public area, possibly a street or commercial area, with buildings and flags visible in the background. The scene suggests the man is likely demonstrating or showing how to use a clothes dryer outdoors.
+    This image shows a scene from a city street with a yellow taxi driving down the road. There is a tall vertical structure, possibly a robot or a model, positioned in the middle of the road. The robot is holding two pieces of clothing that appear to be being ironed. The background includes various buildings and street signs, indicating an urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows an older yellow taxi parked in a busy urban area, possibly on the street with shoreline visible in the background. A person is hanging clothes or other items from a patio table supported by pink chairs. The table is positioned behind the taxi and is outside near a sidewalk. The background includes tall buildings and various flags, suggesting the photo was taken in a city with a lively atmosphere.
+    The image shows two yellow taxi cabs parked alongside the street in what appears to be an urban setting, likely in a city like New York, given the distinctive yellow cabs with the distinctive rectangular signboards usually seen there. Between the two cabs, there's a potted plant, likely to enhance the curb appeal or provide additional shade on a sunny day. The back pickup area of the right cab is open, and it seems there's some maintenance work being done, possibly involving some tools or equipment placed outside the vehicle. No people are visible in the immediate surrounding of the cabs. The background features a combination of urban architecture and
 
 
 ## Querying Llama 4 Vision Model
