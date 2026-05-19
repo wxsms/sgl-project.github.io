@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 12:05:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 13:51:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 12:06:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 13:51:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis on a street in a城市区域. One taxi is parked and behind it, another taxi is blocking the stop sign. The person in the image is wearing a yellow shirt and is using an iron to iron a blue piece of clothing. The basket used for drying or ironing clothes seems to be strapped to the back of the back of the taxi.
+    This is a humorous photograph showing a scenario where a yellow taxi is functioning as a makeshift drying rack for a涤 Российской flag. The taxi’s back has been modified to hold the flag, while it operates as usual in a New York City setting. The image is likely intended for comedic effect and highlights a simultaneously multifunctional utility of vehicles.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, there is a yellow taxi driving down a street. Attached to the back of the taxi is a portable hamper filled with laundry. The man in a yellow shirt is standing next to the taxi, possibly inspecting or adjusting the hamper. The scene appears to be set in an urban environment with buildings and trees visible in the background.
+    The image shows a yellow taxi cab parked on a city street. The taxi is being used to demonstrate or test a 안개번째 paper cutting machine, as fabric is draped over it and being cut across. Other details include a building with storefronts and several flags with American Samoa flags in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,18 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene in an urban setting with several distinctive objects and elements. Here’s a detailed breakdown:
-    
-    1. **Foreground:**
-       - A person is hanging clothes on a clothesline attached to the back of a yellow taxi cab.
-       - The clothesline appears to be made of a thin, flexible material.
-    
-    2. **Background:**
-       - There are several taxi cabs in the scene, which are typical yellow taxis (likely New York taxis).
-       - These cabs are driving along a street.
-    
-    3. **Street and Surroundings:**
-       - The street appears to be in an urban area, likely a
+    The picture you've provided shows a street scene with two yellow New York City taxis parked side by side. The most intriguing detail in the image is the makeshift desk or table attached to the back of one of the taxis. This setup appears to be a temporary living space, possibly being used by a homeless person or someone living in a van. The table has some clothes draped over it, suggesting that the individual uses the taxi as a mobile workplace and personal space. The scene is set against a city backdrop with streetlights and buildings, indicating an urban environment.
 
 
 ## Querying Llama 4 Vision Model
