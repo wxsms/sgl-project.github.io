@@ -97,20 +97,20 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 ```
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 09:51:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    [2026-05-19 12:05:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    [2026-05-19 09:51:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 12:06:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.02it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -121,9 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene on a city street, possibly in the United States, where a taxi is parked. There's a yellow taxi cab, along with another vehicle behind it, both seemingly a mix of a standard taxi cab and a hybrid, possibly an SUV or a larger passenger vehicle. The sidewalk or road is lined with classic yellow taxis, which are characteristic of New York City's taxicab fleet. 
-    
-    A notable element in the image is an individual dressed in a yellow long-sleeve shirt standing between the two vehicles, using a rack to hold clothing. The plot of the image seems to suggest that the individual is using the
+    The image shows two yellow taxis on a street in a城市区域. One taxi is parked and behind it, another taxi is blocking the stop sign. The person in the image is wearing a yellow shirt and is using an iron to iron a blue piece of clothing. The basket used for drying or ironing clothes seems to be strapped to the back of the back of the taxi.
 
 
 ### Call with Processor Output
@@ -148,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person helping with a problem involving two yellow cabs parked side by side on a city street. The cabs appear to be stuck together, as if the tires of one has pressed against the tires of the other, causing them to be fused together. This scenario suggests a severe accident or collision that has resulted in the captured image of the two yellow umbrellas leaning against one of the parked cabs.
+    In the image, there is a yellow taxi driving down a street. Attached to the back of the taxi is a portable hamper filled with laundry. The man in a yellow shirt is standing next to the taxi, possibly inspecting or adjusting the hamper. The scene appears to be set in an urban environment with buildings and trees visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,18 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like a public transportation vehicle or cab is bumped or nudged out of its lane by a member of the extreme晾晒贪欲party, which is causing chaos on the road.
+    This image shows a scene in an urban setting with several distinctive objects and elements. Here’s a detailed breakdown:
+    
+    1. **Foreground:**
+       - A person is hanging clothes on a clothesline attached to the back of a yellow taxi cab.
+       - The clothesline appears to be made of a thin, flexible material.
+    
+    2. **Background:**
+       - There are several taxi cabs in the scene, which are typical yellow taxis (likely New York taxis).
+       - These cabs are driving along a street.
+    
+    3. **Street and Surroundings:**
+       - The street appears to be in an urban area, likely a
 
 
 ## Querying Llama 4 Vision Model
