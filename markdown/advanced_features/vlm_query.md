@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 01:42:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 02:12:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 01:42:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 02:12:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.23s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.57it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on the street. A man wearing yellow is seen hanging clothes on the back of the second taxi. The scene appears to be taking place in an urban setting, possibly New York City, based on the architecture and signs visible in the background.
+    The image shows a street scene in New York City. There is a yellow taxi cab positioned on a street, and a towel is being hung on the back window of the cab. The driver is wearing a yellow shirt and appears to be holding a luggage rack on the back of the cab. The scene suggests that the taxi cab is being used creatively, perhaps as a makeshift drying rack or drying stand.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxi cabs parked side by side on a city street. The cabs appear to be in transit or stationary, likely waiting for a fare or in service. The background includes city buildings and some storefronts, suggesting an urban setting. There are also other vehicles and pedestrians in the vicinity.
+    The image shows a man pushing aLoaders with hanging clothes and a drying rack on a tow truck's flatbed. The man appears to be in a public area, possibly a street or commercial area, with buildings and flags visible in the background. The scene suggests the man is likely demonstrating or showing how to use a clothes dryer outdoors.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis parked on a city street, likely in New York City given the taxi routes and the urban landscape. The taxis are facing different directions, and one of them has its surfboard resting on the back. The setting appears to be during the day, and the street is relatively quiet with no other vehicles or pedestrians visible.
+    The image shows an older yellow taxi parked in a busy urban area, possibly on the street with shoreline visible in the background. A person is hanging clothes or other items from a patio table supported by pink chairs. The table is positioned behind the taxi and is outside near a sidewalk. The background includes tall buildings and various flags, suggesting the photo was taken in a city with a lively atmosphere.
 
 
 ## Querying Llama 4 Vision Model
