@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 22:16:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 22:30:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 22:16:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 22:30:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-19 22:16:23,331 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-19 22:16:23] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-19 22:30:31,529 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-19 22:30:31] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene with two yellow taxis, one parked on the left and the other parked on the right. In the middle of the street, there is a man wearing a yellow shirt hanging clothes on a rearview mirror of one of the taxis. This is likely a humorous or out-of-place situation, as it is uncommon for people to hang clothes on rearview mirrors. The background includes urban elements such as buildings and street signs, and there are also car flags with the American flag and the United Nations (UN) flag visible.
+    The image shows a scene in what appears to be a city with two yellow taxis parked on the street. One taxi is positioned behind the other, creating an interesting perspective as if the back of one taxi is behind the cab in the foreground. Both taxis have destination signs displaying the letter "M" and "Y," respectively. The background includes buildings with commercial establishments on the ground floor, indicated by the presence of shops and bibs on the windows. The scene is likely part of a vibrant urban environment, possibly during a special event or promotion.
 
 
 ### Call with Processor Output
@@ -150,16 +150,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is likely a photo from a "Hero Parking Day" event or a similar charity campaign in some cities. The visual resembles the popular "United We Stand" message.
+    The image shows a street scene in what appears to be a commercial area, likely in an urban setting like New York City. There is a yellow taxi cab (New York City Taxi, also known as a yellow cab or "Limbica") parked on the street. The taxi is equipped with empire wheels in front of the taxi box, which is a feature that allows the taxi to park in tight, shallow spaces within the city. The empire wheel consisted of aAdventure Wagon Kings ridewi machinery connected to a cilantro Bodyaxys hidindle.
     
-    In this shot:
-    
-    1. When the two people release the string attached to the yellow car, they hold bars of soap.
-    2. There is a yellow tail with a child's depiction.
-    3. "United We Stand" is written on the car's rear without the words perpendicular to each other.
-    4. An image of a clear blue sky.
-    
-    In both scenarios, the intent is to demonstrate that people can unite and take an action to help each other and the environment
+    The taxi boxes are brand new and have a small gland. These boxes are also
 
 
 ### Call with Precomputed Embeddings
@@ -215,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a worker using a high-pressure water hose to clean the windshield of a yellow taxi. The worker is wearing a yellow shirt and appears to be focused on the task. In the background, there are several milling about.
+    The image shows a yellow taxi cab in an urban setting, likely on a city street. The taxi is equipped with a luggage rack on the roof, which is unusual for such a vehicle, indicating that it might be used for specialized transportation, such as for conveyor belt operations or for moving goods. The setup suggests a unique or experimental use of a taxi cab.
 
 
 ## Querying Llama 4 Vision Model
