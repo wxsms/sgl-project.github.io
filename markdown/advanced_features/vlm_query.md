@@ -97,20 +97,20 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 ```
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    [2026-05-19 09:15:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 09:51:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 09:15:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    [2026-05-19 09:51:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.02it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a neon-colored piece of street art situated on the sidewalk next to a food truck in New York City. The artwork consists of a painting of a woman on a stool and appears to be part of the "Before the Storm" street art exhibit that took place in New York City. The exhibit was created to raise awareness about sexual assault and its impact on individuals.
+    The image shows a scene on a city street, possibly in the United States, where a taxi is parked. There's a yellow taxi cab, along with another vehicle behind it, both seemingly a mix of a standard taxi cab and a hybrid, possibly an SUV or a larger passenger vehicle. The sidewalk or road is lined with classic yellow taxis, which are characteristic of New York City's taxicab fleet. 
+    
+    A notable element in the image is an individual dressed in a yellow long-sleeve shirt standing between the two vehicles, using a rack to hold clothing. The plot of the image seems to suggest that the individual is using the
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with two yellow taxis parked near a building with large windows. The person in the foreground is holding a blue garment on a stand, possibly ironing it on the side of a taxi. The background includes various street signs and a street lamp, indicating this is an urban environment, likely in a city.
+    The image shows a person helping with a problem involving two yellow cabs parked side by side on a city street. The cabs appear to be stuck together, as if the tires of one has pressed against the tires of the other, causing them to be fused together. This scenario suggests a severe accident or collision that has resulted in the captured image of the two yellow umbrellas leaning against one of the parked cabs.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow cab or taxi driving by. The vehicle is equipped with a makeshift rack attached to the back, holding wires and possibly other materials or equipment. The taxi has banners or flags attached to its rear window, and the surrounding area appears to be in a city with buildings and additional taxis visible in the background.
+    It looks like a public transportation vehicle or cab is bumped or nudged out of its lane by a member of the extreme晾晒贪欲party, which is causing chaos on the road.
 
 
 ## Querying Llama 4 Vision Model
