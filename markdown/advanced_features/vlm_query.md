@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 03:23:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 03:48:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 03:24:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 03:48:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a unique scene of a taxi prepared for a washing service, a rare and unconventional occurrence. The taxi is decorated to look like a washing machine, suspended from a pole. This setup, likely for a temporarily made street art installation or a particular promotional activity, mimics the appearance of a washing machine to attract attention. The driver of the taxi, possibly a local resident or a member of a community organization, has adorned the taxi with various items, including clothes or fabric, to create this visual effect. The setting appears to be in a city, given the nearby buildings and urban environment. The cab's transformation into a washing service
+    In the image, there are two yellow taxis positioned on what appears to be a city street. The taxi on the right seems to be outfitted with a makeshift clothesline attached to its rear window, holding up several pieces of blue fabric, likely towels or blankets. This unusual scene suggests that someone has decided to hang clothes outside, possibly to dry them off or to display them. The presence of the advertisement banners in the background indicates that this is likely a busy urban area.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing next to a yellow taxi in an urban setting. The person is holding a clothesline with two clothespins on it, hanging several pieces of clothing. The taxi is parked on the side of the road, and there are buildings and streetlights visible in the background. The scene appears to be taking place in a busy city area.
+    Here's paraphrasing your instruction:
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with two yellow taxis in a street. One taxi is stopped and appears to be interacting with a man who is standing near it with a ■ object. The other taxi is in motion, passing by. The background includes storefronts with banners and a few people walking.
+    The image depicts a person standing next to a yellow SUV, which could be a taxi, while wearing a blue striped shirt and holding a black folding chair. A yellow taxi car is parked nearby. The background shows a city street with buildings and multiple flagpoles with various flags. The scene suggests a public or urban setting, possibly during a specific event or demonstration.
 
 
 ## Querying Llama 4 Vision Model
