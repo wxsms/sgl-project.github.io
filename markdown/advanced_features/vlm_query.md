@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 04:18:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 04:48:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 04:18:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 04:48:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene where a yellow taxi and a silver SUV are traveling down the street. The individual in the foreground has a blue cloth draped across their shoulders, and they are partially inside the blue cloth. This unusual and humorous scene appears to be set in an urban environment, likely in a city. The setting and the presence of the clothing suggest a comedic interpretation of someone trying to quickly clean or possibly hide from an event. This type of visual humor is often used in cartoons and television shows to evoke a sense of absurdity or relatability.
+    The image you've provided shows a humorous scene in an urban setting where a yellow taxi has been printed with an illustration of washing dishes. This is a parody of a common sight in New York City where restaurants and other businesses feature images of food items on their stores, drawing attention and often creating interest among passersby.
+    
+    In the photo, a man dressed in yellow is standing next to this exaggerated image on the vehicle's rear window. He appears to be holding a restaurant sign and is positioned as if he is getting ready to write something on the image. The scene is designed to be both comical and unique, reflecting the fun and whims
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with two yellow taxis parked on a city street. One taxi is in the foreground with its back open, and someone is hanging up laundry outside of it. The scene is set in an urban environment, likely in a busy city area.
+    The image shows a taxi in a city with a folding clothes rack attached to the rear of the vehicle. Clothes are hung on the rack, and the person appears to be using hand paddles to keep the clothes from falling off the hook. This is a clever indication for impromptu clothes drying.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a yellow and orange New York City taxi cab. It appears to be in motion on a city street. The taxi is outfitted with various flags and banners, which are commonly flown by taxis to show support for various causes or events. The cab is driving past a storefront with large glass windows and several rows of bookshelves. The setting suggests a busy urban area, typically seen in New York City.
+    The image shows a yellow taxi stopped in what appears to be a busy urban area, possibly New York City, given the flag colors (American and New York City flags) visible on the back of the taxi. The man in the taxi is positioned next to a tripod-mounted coat of arms or emblem, which is predominantly blue with white details. This emblem is being attached or being discussed. The background includes more taxis and a sidewalk with some pedestrians and storefronts lined along the street. The overall scene suggests a day in the life of a New York City cab driver, possibly for diplomatic or official functions, as indicated by the office-like embassy style
 
 
 ## Querying Llama 4 Vision Model
