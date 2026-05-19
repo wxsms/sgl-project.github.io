@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 14:46:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 21:05:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 14:46:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 21:05:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -120,8 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
+    2026-05-19 21:05:56,487 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-19 21:05:56] Unexpected error during package walk: cutlass.cute.experimental
+
+
     Model response:
-    The image shows a scene on a city street. It features two yellow taxi cabs, one in the background and one in the foreground. The foreground taxi has a person visible on top, who appears to be drying or ironing clothes draped over a clothesline attached to the rear of the vehicle. The background taxi is一般的停着。街道两旁有建筑物和一些标志。
+    The image shows a New York City yellow cab (taxi) street cleaning operation conducted by an individual who is using a long rake to sweep and clean the cabs. The person is wearing a Spiderman costume, which adds a comical and unusual element to the scene. This image captures a rare and humorous moment where a commercial cleaning operation is happening in a way that carries a whimsical twist due to the costume.
 
 
 ### Call with Processor Output
@@ -146,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with two yellow taxis. One of the taxis is parked and has a rack or shelf attached to its back that is holding several striped towels. The other taxi is partially visible on the left side of the image. The scene appears to be set in an urban area with buildings and street lights in the background.
+    It looks like there are three yellow taxis parked on the street. They appear to be stopped on a road in an urban area, likely in a city where taxis are common, such as New York City. The taxis have their rearview mirrors visible, one of them is also equipped with a security camera. Each taxi is adorned with decorations, possibly for a parade or celebration.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on the side of a city street. The taxi has a red lining on the interior, and there is a laundry cart in front of it with an iron and a folded piece of clothing on it. The street appears to be in a busy urban area with buildings and other vehicles around. The presence of the laundry cart and the iron suggests that the person might be washing clothes nearby and transporting them in the taxi.
+    There is a man in a yellow shirt standing on a stretcher. He appears to be straddling the stretcher and placing his feet on a horse.
 
 
 ## Querying Llama 4 Vision Model
