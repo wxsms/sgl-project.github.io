@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 04:48:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 09:15:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 04:48:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 09:15:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]
 
 
 
@@ -121,9 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image you've provided shows a humorous scene in an urban setting where a yellow taxi has been printed with an illustration of washing dishes. This is a parody of a common sight in New York City where restaurants and other businesses feature images of food items on their stores, drawing attention and often creating interest among passersby.
-    
-    In the photo, a man dressed in yellow is standing next to this exaggerated image on the vehicle's rear window. He appears to be holding a restaurant sign and is positioned as if he is getting ready to write something on the image. The scene is designed to be both comical and unique, reflecting the fun and whims
+    The image shows a neon-colored piece of street art situated on the sidewalk next to a food truck in New York City. The artwork consists of a painting of a woman on a stool and appears to be part of the "Before the Storm" street art exhibit that took place in New York City. The exhibit was created to raise awareness about sexual assault and its impact on individuals.
 
 
 ### Call with Processor Output
@@ -148,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxi in a city with a folding clothes rack attached to the rear of the vehicle. Clothes are hung on the rack, and the person appears to be using hand paddles to keep the clothes from falling off the hook. This is a clever indication for impromptu clothes drying.
+    The image shows a street scene with two yellow taxis parked near a building with large windows. The person in the foreground is holding a blue garment on a stand, possibly ironing it on the side of a taxi. The background includes various street signs and a street lamp, indicating this is an urban environment, likely in a city.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi stopped in what appears to be a busy urban area, possibly New York City, given the flag colors (American and New York City flags) visible on the back of the taxi. The man in the taxi is positioned next to a tripod-mounted coat of arms or emblem, which is predominantly blue with white details. This emblem is being attached or being discussed. The background includes more taxis and a sidewalk with some pedestrians and storefronts lined along the street. The overall scene suggests a day in the life of a New York City cab driver, possibly for diplomatic or official functions, as indicated by the office-like embassy style
+    The image shows a street scene with a yellow cab or taxi driving by. The vehicle is equipped with a makeshift rack attached to the back, holding wires and possibly other materials or equipment. The taxi has banners or flags attached to its rear window, and the surrounding area appears to be in a city with buildings and additional taxis visible in the background.
 
 
 ## Querying Llama 4 Vision Model
