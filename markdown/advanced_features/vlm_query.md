@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 03:48:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 04:18:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 03:48:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 04:18:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there are two yellow taxis positioned on what appears to be a city street. The taxi on the right seems to be outfitted with a makeshift clothesline attached to its rear window, holding up several pieces of blue fabric, likely towels or blankets. This unusual scene suggests that someone has decided to hang clothes outside, possibly to dry them off or to display them. The presence of the advertisement banners in the background indicates that this is likely a busy urban area.
+    The image shows a scene where a yellow taxi and a silver SUV are traveling down the street. The individual in the foreground has a blue cloth draped across their shoulders, and they are partially inside the blue cloth. This unusual and humorous scene appears to be set in an urban environment, likely in a city. The setting and the presence of the clothing suggest a comedic interpretation of someone trying to quickly clean or possibly hide from an event. This type of visual humor is often used in cartoons and television shows to evoke a sense of absurdity or relatability.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    Here's paraphrasing your instruction:
+    The image shows a street scene with two yellow taxis parked on a city street. One taxi is in the foreground with its back open, and someone is hanging up laundry outside of it. The scene is set in an urban environment, likely in a busy city area.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a person standing next to a yellow SUV, which could be a taxi, while wearing a blue striped shirt and holding a black folding chair. A yellow taxi car is parked nearby. The background shows a city street with buildings and multiple flagpoles with various flags. The scene suggests a public or urban setting, possibly during a specific event or demonstration.
+    The image depicts a yellow and orange New York City taxi cab. It appears to be in motion on a city street. The taxi is outfitted with various flags and banners, which are commonly flown by taxis to show support for various causes or events. The cab is driving past a storefront with large glass windows and several rows of bookshelves. The setting suggests a busy urban area, typically seen in New York City.
 
 
 ## Querying Llama 4 Vision Model
