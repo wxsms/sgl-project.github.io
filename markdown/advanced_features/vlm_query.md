@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 21:05:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 22:16:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 21:05:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 22:16:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-19 21:05:56,487 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-19 21:05:56] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-19 22:16:23,331 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-19 22:16:23] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a New York City yellow cab (taxi) street cleaning operation conducted by an individual who is using a long rake to sweep and clean the cabs. The person is wearing a Spiderman costume, which adds a comical and unusual element to the scene. This image captures a rare and humorous moment where a commercial cleaning operation is happening in a way that carries a whimsical twist due to the costume.
+    The image shows a street scene with two yellow taxis, one parked on the left and the other parked on the right. In the middle of the street, there is a man wearing a yellow shirt hanging clothes on a rearview mirror of one of the taxis. This is likely a humorous or out-of-place situation, as it is uncommon for people to hang clothes on rearview mirrors. The background includes urban elements such as buildings and street signs, and there are also car flags with the American flag and the United Nations (UN) flag visible.
 
 
 ### Call with Processor Output
@@ -150,7 +150,16 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like there are three yellow taxis parked on the street. They appear to be stopped on a road in an urban area, likely in a city where taxis are common, such as New York City. The taxis have their rearview mirrors visible, one of them is also equipped with a security camera. Each taxi is adorned with decorations, possibly for a parade or celebration.
+    This is likely a photo from a "Hero Parking Day" event or a similar charity campaign in some cities. The visual resembles the popular "United We Stand" message.
+    
+    In this shot:
+    
+    1. When the two people release the string attached to the yellow car, they hold bars of soap.
+    2. There is a yellow tail with a child's depiction.
+    3. "United We Stand" is written on the car's rear without the words perpendicular to each other.
+    4. An image of a clear blue sky.
+    
+    In both scenarios, the intent is to demonstrate that people can unite and take an action to help each other and the environment
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +215,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    There is a man in a yellow shirt standing on a stretcher. He appears to be straddling the stretcher and placing his feet on a horse.
+    The image shows a worker using a high-pressure water hose to clean the windshield of a yellow taxi. The worker is wearing a yellow shirt and appears to be focused on the task. In the background, there are several milling about.
 
 
 ## Querying Llama 4 Vision Model
