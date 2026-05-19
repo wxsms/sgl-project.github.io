@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 00:40:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 01:42:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 00:40:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 01:42:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.23s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene with two yellow taxis parked on a city street. The taxi in the foreground is adorned with a father-of-the-bride washcloth, which has been stretched out and draped over a small stand set up next to the taxi. This is likely a humorous or adorable display, often seen during weddings where the bride's father presents the couple with a handsome gift from his own home, in this case, a washcloth. The washcloth is spread wide, featuring a pattern that makes it look like a flag or a piece of fabric draped in a traditional manner. The street scene is bustling with city life, featuring onlook
+    The image shows two yellow taxis parked on the street. A man wearing yellow is seen hanging clothes on the back of the second taxi. The scene appears to be taking place in an urban setting, possibly New York City, based on the architecture and signs visible in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows an unusual scene of a person wearing a yellow shirt and black pants standing on the back of a yellow taxi. The person appears to be engaged in some form of activity or stunt, possibly with some kind of costume or prop involving a tripod-like structure and materials draped over it. The setting appears to be in a city with tall buildings and商业指示牌 와streetlights visible in the background. The scene seems to be part of an event or performance, given the dramatic nature of the arrangement on the back of the taxi.
+    The image shows two yellow taxi cabs parked side by side on a city street. The cabs appear to be in transit or stationary, likely waiting for a fare or in service. The background includes city buildings and some storefronts, suggesting an urban setting. There are also other vehicles and pedestrians in the vicinity.
 
 
 ### Call with Precomputed Embeddings
@@ -202,14 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city with several notable elements:
-    
-    1. **Two taxi cabs**: There are two yellow taxis in the image.
-       - The first taxi is on the left side, partially visible.
-       - The second taxi is entirely visible with its rear commercial display showing advertisements.
-       - The second taxi appears to be stationary at the moment the photo was taken, although taxicabs like these are known for frequently moving.
-    
-    2. **A dressed-up man**: There is a person dressed in a colorful costume standing next to the taxi. This costume includes a blue outfit and a red sash. The man is
+    The image shows two yellow taxis parked on a city street, likely in New York City given the taxi routes and the urban landscape. The taxis are facing different directions, and one of them has its surfboard resting on the back. The setting appears to be during the day, and the street is relatively quiet with no other vehicles or pedestrians visible.
 
 
 ## Querying Llama 4 Vision Model
