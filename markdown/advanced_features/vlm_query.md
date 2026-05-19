@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-18 21:58:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 00:40:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-18 21:58:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 00:40:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.43it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.62it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.59it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
 
 
 
@@ -120,16 +120,8 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-18 21:58:52,309 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-18 21:58:52] Unexpected error during package walk: cutlass.cute.experimental
-
-
     Model response:
-    This image shows a scene that appears to be a creative art project. A street is lined with urban buildings. In the center of a crosswalk, there are two yellow taxis parked facing opposite directions. 
-    
-    A middle-aged man with short hair is standing between the two taxi cabs. The man is using his hands to manipulate objects on a pole, creating an artwork that appears to be using clothing or fabrics. 
-    
-    There are several colorful street paints or stickers along the sidewalk and building facades. The overall setup creates a playful and unconventional street scene.
+    The image shows a scene with two yellow taxis parked on a city street. The taxi in the foreground is adorned with a father-of-the-bride washcloth, which has been stretched out and draped over a small stand set up next to the taxi. This is likely a humorous or adorable display, often seen during weddings where the bride's father presents the couple with a handsome gift from his own home, in this case, a washcloth. The washcloth is spread wide, featuring a pattern that makes it look like a flag or a piece of fabric draped in a traditional manner. The street scene is bustling with city life, featuring onlook
 
 
 ### Call with Processor Output
@@ -154,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you provided shows two taxis in midtown Manhattan, New York City. One taxi is yellow and seems to be swinging clothes from a clothesline attached to its rear window. The yellow taxi is slightly ahead and to the left of another taxi, also yellow, that is swaying a red car with no clothes hanging on it. The scene appears to be a humorous or unusual act, likely performed by a man in front of a building with the number "69" on its upper floor. The street and surrounding environment are typical of urban New York, with buildings, pedestrians, and a traffic light visible in the background.
+    This image shows an unusual scene of a person wearing a yellow shirt and black pants standing on the back of a yellow taxi. The person appears to be engaged in some form of activity or stunt, possibly with some kind of costume or prop involving a tripod-like structure and materials draped over it. The setting appears to be in a city with tall buildings and商业指示牌 와streetlights visible in the background. The scene seems to be part of an event or performance, given the dramatic nature of the arrangement on the back of the taxi.
 
 
 ### Call with Precomputed Embeddings
@@ -210,7 +202,14 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow cabs driving on a city street. These cabs typically belong to the New York City cabCon franchise, distinguished by their unique features such as the modified grill, signage on the sides, and the insignia on the rear.
+    The image shows a street scene in a city with several notable elements:
+    
+    1. **Two taxi cabs**: There are two yellow taxis in the image.
+       - The first taxi is on the left side, partially visible.
+       - The second taxi is entirely visible with its rear commercial display showing advertisements.
+       - The second taxi appears to be stationary at the moment the photo was taken, although taxicabs like these are known for frequently moving.
+    
+    2. **A dressed-up man**: There is a person dressed in a colorful costume standing next to the taxi. This costume includes a blue outfit and a red sash. The man is
 
 
 ## Querying Llama 4 Vision Model
