@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 22:30:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 23:09:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 22:30:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 23:09:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-19 22:30:31,529 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-19 22:30:31] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-19 23:09:53,082 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-19 23:09:53] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene in what appears to be a city with two yellow taxis parked on the street. One taxi is positioned behind the other, creating an interesting perspective as if the back of one taxi is behind the cab in the foreground. Both taxis have destination signs displaying the letter "M" and "Y," respectively. The background includes buildings with commercial establishments on the ground floor, indicated by the presence of shops and bibs on the windows. The scene is likely part of a vibrant urban environment, possibly during a special event or promotion.
+    In the image, there is a person in a yellow shirt standing next to a yellow SUV, holding up two blue t-shirts on a metal stand. The scenario appears humorous, as it is unusual to see someone ironing clothes while standing in the middle of the street, next to a yellow taxi. The setting looks urban, possibly in a city with multiple cab alternatives.
 
 
 ### Call with Processor Output
@@ -150,9 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in what appears to be a commercial area, likely in an urban setting like New York City. There is a yellow taxi cab (New York City Taxi, also known as a yellow cab or "Limbica") parked on the street. The taxi is equipped with empire wheels in front of the taxi box, which is a feature that allows the taxi to park in tight, shallow spaces within the city. The empire wheel consisted of aAdventure Wagon Kings ridewi machinery connected to a cilantro Bodyaxys hidindle.
-    
-    The taxi boxes are brand new and have a small gland. These boxes are also
+    This image shows a taxi cab with a clothes rack attached to the rear, partially loaded with laundry. This is a humorous and unusual scene where a taxi driver or a passerby has whimsically added clothes to the back of the cab. The clothes appear to be draped over a wooden bar attached to the rear, and the back of the cab is partially visible. There are banners or signs in the background, suggesting this might be taking place in an urban area with some commercial or retail establishments nearby.
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab in an urban setting, likely on a city street. The taxi is equipped with a luggage rack on the roof, which is unusual for such a vehicle, indicating that it might be used for specialized transportation, such as for conveyor belt operations or for moving goods. The setup suggests a unique or experimental use of a taxi cab.
+    The image depicts a scene on a street in an urban area, likely New York City, given the typical yellow taxis and the overall setting. A person is hanging up a red shirt on a clothesline attached to the back of a yellow taxi. The cityscape includes buildings with some arranged decorated flags, such as stars and stripes. This practice, known as "flagging," is used by taxi drivers to make extra money by allowing customers to hang hats, towels, or other items on the back of their cab. The person in the image is standing next to the taxi, maneuvering the clothesline.
 
 
 ## Querying Llama 4 Vision Model
