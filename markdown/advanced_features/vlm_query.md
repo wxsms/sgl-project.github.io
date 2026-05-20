@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 05:20:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 05:36:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 05:20:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 05:37:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.28s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.06s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 05:20:21,057 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 05:20:21] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 05:37:15,676 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 05:37:15] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi by the side of the road, having the back panels removed to display a dress. It appears to be part of a display or promotion for the clothing item, possibly an advertisement. The background includes buildings and other vehicles, suggesting a busy urban setting.
+    This appears to be a humorous and unlikely scene, showcasing a person doing laundry directly on the back of a taxi while it drives down the street. The image is used to emphasize a funny and absurd situation.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image depicts a scenario where a person is using a portable clothes drying rack, typically known as a baby buggy turntable, to hang clothes in the back of a yellow taxi. This is a humorous way to hang laundry on a busy street like New York City, as there are accordian-like shrubs (also called 'गुंडू' in Hindi and 'गुंडू' in Urdu) visible, likely signifying urban greenery. The image humorously mocks the common practice of drying clothes inside individual houses, showcasing a makeshift solution for outdoor drying. The license plate on the taxi appears to be in
+    The image shows a yellow cab (taxi) parked on the side of a street. In front of the car, there is a man holding aDemocratic Party flag that is draped over a wooden frame. The man appears to be waving or holding up the flag. The background includes storefronts and buildings with various banners and flags, suggesting this might be a protest or demonstration. The street is lined with trees and there are other people visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there are two taxis on a street. One of the taxis has a sign attached to it, which appears to be bent and possibly seized or resigned. The sign looks like it's made of metal or a similar material and is bent or broken in various places. The taxi's license plate and other details are visible. The setting appears to be an urban environment, likely in a city where such street presence is common. The具体的法规是 this情况ronsﭪ
+    You are asking what is displayed or shown in the picture. Given the context and lack of a visible image for delivery, I'm interpreting that you're inquiring about objects present in a scenario where a toy car carries laundry items, possibly an underwear. As such, the "toy" aspect comes from using a toy car to carry ordinary laundry items like underwear, displaying a theme of play. This interpretation seems to lean more towards metaphor describing whimsical, surreal, or play-factual themes in visual storytelling, rather than literal standalone objects.
 
 
 ## Querying Llama 4 Vision Model
