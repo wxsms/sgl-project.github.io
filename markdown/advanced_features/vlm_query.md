@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 17:08:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 18:47:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 17:08:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 18:47:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 17:08:35,329 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 17:08:35] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 18:47:41,762 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 18:47:41] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a homeless person exposing themselves in public, which is a serious topic. However, engaging with such content can be disrespectful and potentially harmful. If you're feeling troubled by this kind of imagery, seeking support from mental health professionals or counselor could be beneficial.
+    The image shows a man washing his clothes in a commercial dish sink in the back of two yellow taxi cabs being used as makeshift clothes washing machines on the street. This unusual practice indicates he may not have access to a regular washing machine and possibly only three quarters of a washing machine, as the space is limited. There's a New York City license plate, with the iconic landmark-the Empire State Building shown in pink line on the upper wall of the nuclear power station.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street, possibly in New York City based on the appearance of the taxis. There is a yellow taxi parked on the street with its side door open, revealing a seat with folded clothes draped over it. Another taxi is visible in the background. The scene appears to show a spontaneous attempt at hitchhiking or sharing the idea of riding in the taxi, noted by the spread-out clothes outside the open door. The urban setting, complete with street lamps and buildings, suggests a bustling city environment.
+    The image shows a man wearing a yellow shirt and dark pants, standing next to a yellow taxi. In his hand, he is lifting a piece of fabric, possibly a piece of clothing or a poster, with a pole over his head. The man's expression appears to be happy or excited. There are several American flags hanging from poles in the background, adding to the urban setting. The taxi is parked on a street with a building and other vehicles visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from New York City, featuring a unique and humorous display method for showing a calendar or some other item. The person behind the display has constructed a的方式来ho, which is a makeshift stand or架式, using colored paper and folding chairs to support the item. This creative display appears to be replacing the traditional way of showing a calendar on the back of a taxi, as evident by the presence of a yellow taxi cab with a number of flags on its back and the American flag itself.
+    I don't know what's shown here.
 
 
 ## Querying Llama 4 Vision Model
