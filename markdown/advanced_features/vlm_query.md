@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 10:46:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 11:51:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 10:46:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 11:51:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.82s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.16s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.62s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.65s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 10:46:51,443 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 10:46:51] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 11:51:30,809 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 11:51:30] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man cleaning the back of a yellow taxi in New York City. The term "City sponge" is sometimes used as a nickname for people in New York, often including taxi drivers, referring to their unwavering persistence and hard work. The man看上去似乎在出租车的担架上清理辆车，表示他可能是在清理出租车的背部，可能出于好奇或为了某种创造性活动。
+    The image shows a yellow taxi cab in a busy urban street. A man is wearing a yellow shirt and using a clothespin to hang or remove items from the back of the cab. There are also two smaller yellow cabs in the background. The scene suggests that this is a bustling city environment, possibly in New York City, given the design of the cabs.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The photo shows a street scene with a yellow taxi (cab) and a bicycle. On the bicycle attachment, there are clothes hanging, possibly for drying. The setting appears to be in a city, with buildings and cars visible in the background. The scene suggests an unusual or creative use of the bicycle, possibly for transportation or a promotional activity.
+    This image depicts a yellow taxi cab waiting at a traffic light. The taxi is positioned on the right side of the street, and the traffic light is visible, suggesting it is a protected intersection. The taxi has a few flags attached to its front and rear, possibly indicating the driver's nationality or a specific cultural or religious symbol. The background includes other vehicles and buildings, indicating an urban setting, likely in a city like New York, given the style of the cab and the cityscape in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This appears to be an image of a person in a yellow shirt hanging laundry from a clothesline attached to a yellow taxi cab. The scene is likely taken on a busy city street with buildings and street signs in the background. The clothes hanging out of the back of the taxi cab are appearing to dry off.
+    This image shows a stop sign posted on the back of a yellow taxi cab. The taxi is driving down a street, and the sign indicates that the taxi is not allowed to proceed further until it receives clearance to do so.
 
 
 ## Querying Llama 4 Vision Model
