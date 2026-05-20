@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 05:36:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 07:27:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 05:37:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 07:27:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.06s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 05:37:15,676 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 05:37:15] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 07:27:54,777 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 07:27:54] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This appears to be a humorous and unlikely scene, showcasing a person doing laundry directly on the back of a taxi while it drives down the street. The image is used to emphasize a funny and absurd situation.
+    The image shows two yellow taxis in the street with their back windows open, revealing clothes drying outside.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow cab (taxi) parked on the side of a street. In front of the car, there is a man holding aDemocratic Party flag that is draped over a wooden frame. The man appears to be waving or holding up the flag. The background includes storefronts and buildings with various banners and flags, suggesting this might be a protest or demonstration. The street is lined with trees and there are other people visible in the background.
+    In the image, you can see a yellow taxi cab on a city street. The taxi has a flag mounted on the back, which is currently down. Alongside the taxi, there is a stand with variousATCHES and scarves hanging on it. There is also a person adjusting one of the hanging items. The scene appears to be taken during daylight, as there are ample natural lights visible.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    You are asking what is displayed or shown in the picture. Given the context and lack of a visible image for delivery, I'm interpreting that you're inquiring about objects present in a scenario where a toy car carries laundry items, possibly an underwear. As such, the "toy" aspect comes from using a toy car to carry ordinary laundry items like underwear, displaying a theme of play. This interpretation seems to lean more towards metaphor describing whimsical, surreal, or play-factual themes in visual storytelling, rather than literal standalone objects.
+    The image shows a city street scene with two yellow taxis. The taxis are equipped with racks mounted to their sides. On the racks are various items of clothing, including shirts and jeans. This appears to be an unusual and humorous setup, perhaps part of a stunt or a creative photo opportunity. The background features several tall buildings with large windows, characteristic of a metropolitan city. The overall setting gives a sense of a busy urban environment.
 
 
 ## Querying Llama 4 Vision Model

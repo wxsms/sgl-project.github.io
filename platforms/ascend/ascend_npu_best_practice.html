@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=6528bec9"></script>
+    <script src="../../_static/documentation_options.js?v=853b6a6d"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -2195,8 +2195,8 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="w">        </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--disaggregation-bootstrap-port<span class="w"> </span><span class="m">8995</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--moe-dense-tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">	    </span>--enable-nsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--nsa-prefill-cp-mode<span class="w"> </span><span class="k">in</span>-seq-split<span class="w"> </span><span class="se">\</span>
+<span class="w">	    </span>--enable-dsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--dsa-prefill-cp-mode<span class="w"> </span><span class="k">in</span>-seq-split<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--attn-cp-size<span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--speculative-algorithm<span class="w"> </span>NEXTN<span class="w"> </span>--speculative-num-steps<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--dist-init-addr<span class="w"> </span><span class="si">${</span><span class="nv">P_IP</span><span class="p">[0]</span><span class="si">}</span>:10000

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=6528bec9"></script>
+    <script src="../_static/documentation_options.js?v=853b6a6d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -645,7 +645,7 @@ document.write(`
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.85<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--kv-cache-dtype<span class="w"> </span>bfloat16<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--nsa-decode-backend<span class="w"> </span>flashmla_sparse<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dsa-decode-backend<span class="w"> </span>flashmla_sparse<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disaggregation-ib-device<span class="w"> </span>mlx5_0,mlx5_1,mlx5_2,mlx5_3<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--dist-init-addr<span class="w"> </span><span class="m">127</span>.0.0.1:5757<span class="w"> </span><span class="se">\</span>
@@ -681,7 +681,7 @@ document.write(`
 <li><p>On the decode instance, the following flags are <strong>required</strong> for HiSparse:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">bfloat16</span></code> — currently only bfloat16 KV cache is supported (more dtypes planned).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--nsa-decode-backend</span> <span class="pre">flashmla_sparse</span></code> — currently only <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code> backend is supported.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--dsa-decode-backend</span> <span class="pre">flashmla_sparse</span></code> — currently only <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code> backend is supported.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--enable-hisparse</span></code> — enables HiSparse.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--hisparse-config</span></code> — HiSparse configuration (top_k, device_buffer_size, host_to_device_ratio).</p>
 <ul>

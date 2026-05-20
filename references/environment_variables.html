@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=6528bec9"></script>
+    <script src="../_static/documentation_options.js?v=853b6a6d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -495,7 +495,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepgemm-configuration-advanced-optimization">DeepGEMM Configuration (Advanced Optimization)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-configuration">DeepEP Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mori-configuration">MORI Configuration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nsa-backend-configuration-for-deepseek-v3-2">NSA Backend Configuration (For DeepSeek V3.2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-backend-configuration-for-deepseek-v3-2">DSA Backend Configuration (For DeepSeek V3.2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-specific-options">Model-Specific Options</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization">Quantization</a></li>
@@ -822,8 +822,8 @@ document.write(`
 </table>
 </div>
 </section>
-<section id="nsa-backend-configuration-for-deepseek-v3-2">
-<h2>NSA Backend Configuration (For DeepSeek V3.2)<a class="headerlink" href="#nsa-backend-configuration-for-deepseek-v3-2" title="Link to this heading">#</a></h2>
+<section id="dsa-backend-configuration-for-deepseek-v3-2">
+<h2>DSA Backend Configuration (For DeepSeek V3.2)<a class="headerlink" href="#dsa-backend-configuration-for-deepseek-v3-2" title="Link to this heading">#</a></h2>
 <!-- # Environment variable to control mtp precomputing of metadata for multi-step speculative decoding -->
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -833,20 +833,20 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_FUSE_TOPK</span></code></p></td>
-<td><p>Fuse the operation of picking topk logits and picking topk indices from page table</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DSA_FUSE_TOPK</span></code></p></td>
+<td><p>Fuse the operation of picking topk logits and picking topk indices from page table (<code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_FUSE_TOPK</span></code> is a deprecated alias)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_ENABLE_MTP_PRECOMPUTE_METADATA</span></code></p></td>
-<td><p>Precompute metadata that can be shared among different draft steps when MTP is enabled</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DSA_ENABLE_MTP_PRECOMPUTE_METADATA</span></code></p></td>
+<td><p>Precompute metadata that can be shared among different draft steps when MTP is enabled (<code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_ENABLE_MTP_PRECOMPUTE_METADATA</span></code> is a deprecated alias)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_FUSED_METADATA_COPY</span></code></p></td>
 <td><p>Control whether to use fused metadata copy kernel for cuda graph replay</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_PREFILL_DENSE_ATTN_KV_LEN_THRESHOLD</span></code></p></td>
-<td><p>When the maximum kv len in current prefill batch exceeds this value, the sparse mla kernel will be applied, else it falls back to dense MHA implementation. Default to the index topk of model (2048 for DeepSeek V3.2)</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DSA_PREFILL_DENSE_ATTN_KV_LEN_THRESHOLD</span></code></p></td>
+<td><p>When the maximum kv len in current prefill batch exceeds this value, the sparse mla kernel will be applied, else it falls back to dense MHA implementation. Default to the index topk of model (2048 for DeepSeek V3.2) (<code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_PREFILL_DENSE_ATTN_KV_LEN_THRESHOLD</span></code> is a deprecated alias)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">2048</span></code></p></td>
 </tr>
 </tbody>
@@ -1220,7 +1220,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepgemm-configuration-advanced-optimization">DeepGEMM Configuration (Advanced Optimization)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-configuration">DeepEP Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mori-configuration">MORI Configuration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nsa-backend-configuration-for-deepseek-v3-2">NSA Backend Configuration (For DeepSeek V3.2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-backend-configuration-for-deepseek-v3-2">DSA Backend Configuration (For DeepSeek V3.2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-specific-options">Model-Specific Options</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization">Quantization</a></li>
