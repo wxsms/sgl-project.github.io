@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 09:20:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 10:46:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 09:20:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 10:46:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.82s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.62s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.65s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 09:20:53,531 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 09:20:53] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 10:46:51,443 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 10:46:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows an unusual scene where a man is ironing clothes on a bicycle rack in the back of a yellow taxi on a city street. The taxi is driving and appears to be in motion due to the blurry background. The clothing is laid out on the bicycle rack, and the man is using an iron to iron it. It's not a common activity to iron clothes on the back of a moving taxi, which adds an element of surprise and humor to the scene.
+    The image shows a man cleaning the back of a yellow taxi in New York City. The term "City sponge" is sometimes used as a nickname for people in New York, often including taxi drivers, referring to their unwavering persistence and hard work. The man看上去似乎在出租车的担架上清理辆车，表示他可能是在清理出租车的背部，可能出于好奇或为了某种创造性活动。
 
 
 ### Call with Processor Output
@@ -150,12 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with several notable elements:
-    
-    1. **Yellow Taxis**: There are two yellow taxis in the image. One is parked near the foreground, and the other is offset further back.
-    2. **Man in Yellow Shirt**: A man in a yellow shirt is visible, standing next to one of the yellow taxis. He appears to be placed on a small table or stand.
-    3. **Furniture**: The table or stand on which the man is standing looks like a small, makeshift easel or stand.
-    4. **Street Signs and Banners**: There are some street signs and banners hanging from
+    The photo shows a street scene with a yellow taxi (cab) and a bicycle. On the bicycle attachment, there are clothes hanging, possibly for drying. The setting appears to be in a city, with buildings and cars visible in the background. The scene suggests an unusual or creative use of the bicycle, possibly for transportation or a promotional activity.
 
 
 ### Call with Precomputed Embeddings
@@ -211,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there is a yellow car that appears to be a taxi. The taxi is driving on a street, and there is a person standing beside it wearing yellow clothes and holding a blue flag. The building in the background has some flags flying on its facade. The scene seems to be taking place in an urban area, possibly in a city.
+    This appears to be an image of a person in a yellow shirt hanging laundry from a clothesline attached to a yellow taxi cab. The scene is likely taken on a busy city street with buildings and street signs in the background. The clothes hanging out of the back of the taxi cab are appearing to dry off.
 
 
 ## Querying Llama 4 Vision Model
