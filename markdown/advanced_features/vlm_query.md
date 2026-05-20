@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 23:59:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 01:27:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 23:59:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 01:27:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 00:00:06,031 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 00:00:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 01:27:47,015 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 01:27:47] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows aехать taxi in New York City, surrounded by street and traffic lamps. The effective of the jobnowled placed on the taxi does not align with typical spraying responsibility.
+    The image shows a scene of an urban street with several yellow taxis. A person is hanging clothes on a metal hanger attached to the back of one of the taxis. The ambiance and specific details are not particularly relevant to solving the largest probable number of bugs that could be discovered using the given clues, as these clues do not describe the crimes or incidents condemned. Would you like me to approach the problem with the principle of considering the largest probable number of bugs that could be discovered with the given clues?
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    What is the description?
+    The image shows a person spreading out some clothes or items on a metal trolley outdoors in a urban environment. They are holding an item that looks like a handheld iron to help with an ironing process. Behind them, there is a yellow taxi cab parked on the street. In the background, there are buildings, including a store window with various products displayed. The scene appears to be on a city street, possibly in a city with warm weather as suggested by both the spilled water and the sunny day.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi cab in the foreground. How can I assist you further with this image?
+    The image shows a man wearing a yellow shirt, bent over a clothes rack. The clothes are spread out on the rack, hanging in the front of a New York City taxi. The taxi is yellow and has large wheels. There are also banners with 40 words displayed on the taxi. The scene appears to be in a busy street in New York City, indicated by the urban setting and the taxi's involvement suggesting a possible message or protest relay through the city.
 
 
 ## Querying Llama 4 Vision Model
