@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 22:04:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 22:31:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 22:04:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 22:31:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.15s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 22:04:45,232 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 22:04:45] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 22:31:52,156 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 22:31:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab through a street sign pole in the background, with clothes lines and laundry on the back of the taxi cab. The unusual sight of laundry outside a taxi is quite amusing and not typical of transportation.
+    This image shows a unique scene where a taxi has been turned upside down, and a man is ironing clothes on the floor of the taxi. The taxi is parked on a street with a yellow cab in the background, indicating the area is likely a busy city because of the presence of a parking meter and tall buildings. The man appears to be wearing casual clothes and is using a simple IRON to iron the fabric on the rear seat of the upside-down taxi. This is a whimsical and perhaps unconventional scene, suggesting either a celebration, a photographic effect, or a stunt for artistic purposes.
 
 
 ### Call with Processor Output
@@ -150,16 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with multiple elements:
-    
-    1. **Helmet**: A helmet is visible, which is unusual and not typically seen during daytime opera in a rarefied heliport.
-    
-    2. **Hoisting Platform**: There is a hoisting platform attached for lifting objects, possiblyCabney Bicycles, as they were sold by Cabney Bar.
-    
-    3. **Yellow Cab**: A yellow taxi cab is parked, which is a common sight in urban environments.
-    
-    4. **Mariners Memorial**: A mariners memorial is present, recognizable by its distinct flag pole with a.'''
-    
+    The image you provided shows a scene with a быть yellow car and stick carriers. I apologize, but I don't have any imagery to describe here.
 
 
 ### Call with Precomputed Embeddings
@@ -215,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two parked yellow taxis in an urban setting. One taxi is partially visible on the left side, while the other taxi, which is more prominently visible, has its back window adorned with various objects, including a hanging laundry basket, a blue blanket, and some items that appear to be part of a promotion or advertisement. The scene is likely from a public art installation or a street performer activity, as these types of setups are sometimes used to entertain and engage passersby. The background includes modern buildings and storefronts, indicating that this is likely a scene from a large city, possibly New York, given the iconic yellow cabs
+    The image depicts a scene on a street with two yellow taxicabs. One taxi is prominently visible in the foreground, while another is partially seen behind it. The foreground taxi has been modified with a small banner attached to its rear entry side, holding a backpack-like object on a stick, possibly resembling a makeshift mosquito net or structure. The banner appears to have unreadable text. Banners and flags are displayed on some street lights in the background, adding to the possibly festive or protest nature of the scene.
 
 
 ## Querying Llama 4 Vision Model
