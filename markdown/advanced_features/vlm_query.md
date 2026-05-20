@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 19:49:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 21:27:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 19:49:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 21:27:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 19:49:34,400 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 19:49:34] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 21:27:52,161 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 21:27:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a humorous scene where a person is sorting laundry on the back of a yellow taxi. The taxi is moving down a city street, and the person is hanging a piece of navy blue fabric and trousers on a makeshift clothesline attached to the car's rear window. The action of moving laundry on a moving taxi is an unusual and comical situation.
+    The image shows a man standing next to two yellow cabs in a city street. The man is wearing a yellow shirt and appears to be displaying a piece of blue fabric or clothing on a stick. The scene is set against the backdrop of urban buildings with signs and streetlights. There are also some patriotic American flags visible in the background. The image implies a humorous or satirical scenario, possibly in the context of a protest or demonstration, but the actual purpose or context is not clear from the image alone.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked on the side of a street. The taxi has a chair on the back seat area, which appears to be holding a laundry basket or a similar item. This is an unusual sight as it is not a typical feature of taxi interiors. The background includes some buildings and a clear sky.
+    A view of a taxi, likely a New York City yellow cab, depicted from an angled perspective. The taxi is stationed on the street, and its distinctive shape, which is curved and boxy, is clearly visible. The taxi's roof has what appears to be the word "MAX", which is not generally associated with traditional cabs but could be a稱clusão宁波 or a special marker for a service. The background shows urban elements and possibly other vehicles or lines for sensory processing. The colors are primarily the yellow and blue of standard taxi paint.
 
 
 ### Call with Precomputed Embeddings
@@ -206,17 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene with several elements:
-    
-    1. **Cars:**
-       - Two yellow taxis are prominently featured. One is closer to the foreground, and its license plates and positioning suggest it is a New York City taxi cab.
-       - The other is positioned further in the background, slightly to the left.
-    
-    2. **Person:**
-       - A person is standing behind one of the taxis, appearing to be hanging clothes on the back of the taxi. The person is wearing a yellow shirt.
-    
-    3. **Setting:**
-       - The scene seems to be set in an urban environment, possibly in a city street, as
+    The image shows a yellow taxi cab driving on a city street. A person, wearing a yellow shirt, is pushing a metal ramp attached to the back of the taxi, possibly to lift or move something. The street is lined with stores and there are several colorful banners and flags visible in the background. The scene appears to be in an urban area, likely a commercial district.
 
 
 ## Querying Llama 4 Vision Model
