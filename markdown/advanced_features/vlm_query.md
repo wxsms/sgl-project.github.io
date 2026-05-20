@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-19 23:09:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 23:59:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-19 23:09:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-19 23:59:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-19 23:09:53,082 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-19 23:09:53] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 00:00:06,031 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 00:00:06] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    In the image, there is a person in a yellow shirt standing next to a yellow SUV, holding up two blue t-shirts on a metal stand. The scenario appears humorous, as it is unusual to see someone ironing clothes while standing in the middle of the street, next to a yellow taxi. The setting looks urban, possibly in a city with multiple cab alternatives.
+    This image shows aехать taxi in New York City, surrounded by street and traffic lamps. The effective of the jobnowled placed on the taxi does not align with typical spraying responsibility.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a taxi cab with a clothes rack attached to the rear, partially loaded with laundry. This is a humorous and unusual scene where a taxi driver or a passerby has whimsically added clothes to the back of the cab. The clothes appear to be draped over a wooden bar attached to the rear, and the back of the cab is partially visible. There are banners or signs in the background, suggesting this might be taking place in an urban area with some commercial or retail establishments nearby.
+    What is the description?
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene on a street in an urban area, likely New York City, given the typical yellow taxis and the overall setting. A person is hanging up a red shirt on a clothesline attached to the back of a yellow taxi. The cityscape includes buildings with some arranged decorated flags, such as stars and stripes. This practice, known as "flagging," is used by taxi drivers to make extra money by allowing customers to hang hats, towels, or other items on the back of their cab. The person in the image is standing next to the taxi, maneuvering the clothesline.
+    The image shows a street scene with a yellow taxi cab in the foreground. How can I assist you further with this image?
 
 
 ## Querying Llama 4 Vision Model
