@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 19:34:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 19:49:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 19:34:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 19:49:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 19:35:07,505 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 19:35:07] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 19:49:34,400 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 19:49:34] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    It looks like there are two taxi cabs: one that is currently red (a Kås taxi), and in the background there is a more familiar yellow wheelchair taxi. The person in the foreground is using a device to lift a draped item on a metal stand.
+    The image shows a humorous scene where a person is sorting laundry on the back of a yellow taxi. The taxi is moving down a city street, and the person is hanging a piece of navy blue fabric and trousers on a makeshift clothesline attached to the car's rear window. The action of moving laundry on a moving taxi is an unusual and comical situation.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a furor or protest occurring on a city street. People are holding cloth or tarps and appear to be blocking or attempting to slow down vehicles, specifically yellow taxis. Street signs and banners are also visible, indicating some form of demonstration or protest. The scene suggests a disrupted traffic situation.
+    The image shows a yellow taxi cab parked on the side of a street. The taxi has a chair on the back seat area, which appears to be holding a laundry basket or a similar item. This is an unusual sight as it is not a typical feature of taxi interiors. The background includes some buildings and a clear sky.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,17 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging out a clothesline on the back of a yellow taxi, likely to dry some clothes. This scenario is quite unusual and has led to various responses, with some pointing out the impertinence of the arrangement and others being amused by it, even comparing it to other instances where people have hung laundry on traffic light poles in high-speed areas.
+    The image depicts a scene with several elements:
+    
+    1. **Cars:**
+       - Two yellow taxis are prominently featured. One is closer to the foreground, and its license plates and positioning suggest it is a New York City taxi cab.
+       - The other is positioned further in the background, slightly to the left.
+    
+    2. **Person:**
+       - A person is standing behind one of the taxis, appearing to be hanging clothes on the back of the taxi. The person is wearing a yellow shirt.
+    
+    3. **Setting:**
+       - The scene seems to be set in an urban environment, possibly in a city street, as
 
 
 ## Querying Llama 4 Vision Model
