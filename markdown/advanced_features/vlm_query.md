@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 03:21:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 04:23:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 03:21:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 04:23:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.38s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.09s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -120,12 +120,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 03:21:32,911 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 03:21:32] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 04:23:52,372 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 04:23:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    There doesn't appear to be anything specific shown in the image.
+    This image shows a man wearing a yellow shirt who has hung clothes on a metal rod attached to the rear of a yellow taxi. The clothes are draped over the rod, suggesting that he is possibly doing some outdoor laundry while driving. The moment captured is unusual and humorous, as it stands out from the typical scene of a city with its bustling traffic and vibrant street life.
+    
+    The background includes other elements such as trees, buildings, and streetlights, typical of an urban environment like New York City. The man seems to be using a makeshift laundry line to air out his clothes while still observing the dynamics of city life around him.
 
 
 ### Call with Processor Output
@@ -150,7 +152,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from what appears to be a humorous or mocking protest against taxi drivers. A person is holding up cloths from the racks of a yellow taxi cab, making a display that resembles a laundry rack for clothes drying. This is likely part of the "Laundromat Mobil" protest event organized by lawmakers to make it visibly disreputable to use taxis from an outside source during rush hours.
+    This is a photograph of a person standing on a small platform mounted on the back of a yellow taxi taxi cab. The platform is extending out over the street, creating an illusion that makes it appear as if the person is as tall as the cab itself. This image is often referred to as the "Tall Person on a Taxi Stand" or "Tall Person on a Taxi." The purpose of these stands is to encourage honest and accurate measurements of people's heights in places like New York City.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +208,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxi cabs on a city street. One of the taxis has been customized with a makeshift shop window display that includes clothes and an ironing board. The display includes various items such as shirts, pants, and an iron. The purpose of this image is likely to showcase an environmental or sustainability-related campaign, possibly promoting eco-friendly practices such as recycling or reusing old clothing. The ironic aspect comes from the fact that the cabs are being used for transportation while simultaneously acting as displays for clothing items, which could symbolize the energy-intensive and resource-intensive processes behind manufacturing and selling clothing.
+    The image shows two yellow taxis in a street. The first taxi is closer to the foreground and the second one is further back. Both taxis have the Pennsylvania Avenue and Pennsylvania train ticket office flags and the Union מאמרים league (UML) flag attached to their roofs. 
+    
+    There's also a person wearing yellow standing on the back of one of the taxis, closest to the camera. They appear to be showing off the flags attached to the taxis.
 
 
 ## Querying Llama 4 Vision Model
