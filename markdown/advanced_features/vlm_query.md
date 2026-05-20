@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 11:51:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 12:29:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 11:51:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 12:29:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.16s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 11:51:30,809 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 11:51:30] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 12:29:29,929 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 12:29:29] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab in a busy urban street. A man is wearing a yellow shirt and using a clothespin to hang or remove items from the back of the cab. There are also two smaller yellow cabs in the background. The scene suggests that this is a bustling city environment, possibly in New York City, given the design of the cabs.
+    The image shows two yellow taxis reacting to something behind the car in the foreground. The rear view of the perfect yellow cab is seen, followed by the paint of another vehicle.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image depicts a yellow taxi cab waiting at a traffic light. The taxi is positioned on the right side of the street, and the traffic light is visible, suggesting it is a protected intersection. The taxi has a few flags attached to its front and rear, possibly indicating the driver's nationality or a specific cultural or religious symbol. The background includes other vehicles and buildings, indicating an urban setting, likely in a city like New York, given the style of the cab and the cityscape in the background.
+    This image shows a yellowick !_?
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a stop sign posted on the back of a yellow taxi cab. The taxi is driving down a street, and the sign indicates that the taxi is not allowed to proceed further until it receives clearance to do so.
+    The image shows a yellow taxi parked on a city street. The taxi has netting attached to its rear, and there is a person standing behind the netting, seemingly working with it. The street is lined with buildings, and there are traffic lights visible in the background. The scene appears to be in a busy urban area.
 
 
 ## Querying Llama 4 Vision Model
