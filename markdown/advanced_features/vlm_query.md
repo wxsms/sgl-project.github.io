@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 09:00:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 09:20:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 09:00:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 09:20:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 09:01:06,051 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 09:01:06] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 09:20:53,531 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 09:20:53] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man in a yellow shirt retailing clothes from the back of a yellow taxi on a city street. The clothes include a blue shirt and what appears to be a white garment. The scene is set in an urban environment with tall buildings and a store with visible signage. The taxi is moving along the street, likely in a service known as "taxi/Image.rstriper." The man is using the backlegation (\& means \&) or rack stationed behind the taxi for this purpose.
+    The image shows an unusual scene where a man is ironing clothes on a bicycle rack in the back of a yellow taxi on a city street. The taxi is driving and appears to be in motion due to the blurry background. The clothing is laid out on the bicycle rack, and the man is using an iron to iron it. It's not a common activity to iron clothes on the back of a moving taxi, which adds an element of surprise and humor to the scene.
 
 
 ### Call with Processor Output
@@ -150,7 +150,12 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from a comedy sketch where a man in a yellow shirt is strawzfing his back against a yellow cab without any back support. The man is visibly uncomfortable due to the action.
+    The image shows a scene on a city street with several notable elements:
+    
+    1. **Yellow Taxis**: There are two yellow taxis in the image. One is parked near the foreground, and the other is offset further back.
+    2. **Man in Yellow Shirt**: A man in a yellow shirt is visible, standing next to one of the yellow taxis. He appears to be placed on a small table or stand.
+    3. **Furniture**: The table or stand on which the man is standing looks like a small, makeshift easel or stand.
+    4. **Street Signs and Banners**: There are some street signs and banners hanging from
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi driving on a city street. The taxi is parked next to a street sign and streetlights. In front of the taxi, there is a clothes rack with various pieces of clothing hanging on it. This is an unusual sight in the context of taxis, as clothes racks are not typically associated with such vehicles. The image appears to be a comedic or humorous setup, as the ordinary activity of airing out clothes is carried out by a large vehicle on a public street.
+    In the image, there is a yellow car that appears to be a taxi. The taxi is driving on a street, and there is a person standing beside it wearing yellow clothes and holding a blue flag. The building in the background has some flags flying on its facade. The scene seems to be taking place in an urban area, possibly in a city.
 
 
 ## Querying Llama 4 Vision Model
