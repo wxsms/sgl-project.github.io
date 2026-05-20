@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 04:52:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 05:20:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 04:52:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 05:20:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.12s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.28s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
 
 
 
@@ -120,16 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 04:52:50,087 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 04:52:50] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 05:20:21,057 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 05:20:21] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two taxicabs parked on a street, with one taxi's trunk opened and an arm sticking out of it, apparently hanging washing or clothes over the handle. It appears to be a makeshift drying rack, likely due to the inclement weather or a lack of proper drying facilities nearby.
-    
-    The setting looks like a urban environment with brick buildings, storefronts with glass windows, and visible street signs. The person in the image is likely drying laundry outdoors given the presence of the washing line or hooks sticking out of the trunk.
-    
-    There are also street lights and公共资源 available in the image, indicating it's a busy city location.
+    The image shows a yellow taxi by the side of the road, having the back panels removed to display a dress. It appears to be part of a display or promotion for the clothing item, possibly an advertisement. The background includes buildings and other vehicles, suggesting a busy urban setting.
 
 
 ### Call with Processor Output
@@ -154,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you provided shows a scene that appears to be an unusual and potentially unintentional interaction. Instead of likely showing a taxi malfunction or an unexpected taxi stop, the image likely depicts a man hanging clothes along the side of a moving taxi. The presence of laundry lines and a laundry cart suggests that the man is trying to dry or wash clothes in an unusual manner. This could be for a humorous or whimsical purpose, or it could be an experiment, although the positioning of the laundry suggests an effort to keep the lines taut. The yellow taxi suggests it is likely in a city environment, potentially New York based on the appearance. Such
+    This image depicts a scenario where a person is using a portable clothes drying rack, typically known as a baby buggy turntable, to hang clothes in the back of a yellow taxi. This is a humorous way to hang laundry on a busy street like New York City, as there are accordian-like shrubs (also called 'गुंडू' in Hindi and 'गुंडू' in Urdu) visible, likely signifying urban greenery. The image humorously mocks the common practice of drying clothes inside individual houses, showcasing a makeshift solution for outdoor drying. The license plate on the taxi appears to be in
 
 
 ### Call with Precomputed Embeddings
@@ -210,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It seems you're describing a scene involving a man with his pants hanging on a stick behind a yellow taxi in a city street. The image appears to depict a humorous or unusual situation where a man has likely taken off his pants and left them hanging on a pole behind a moving taxi. This could be intended to cause amusement or be part of an artistic or creative expression. The presence of the yellow taxi and the urban setting adds context that this is likely taking place in an urban environment.
+    In the image, there are two taxis on a street. One of the taxis has a sign attached to it, which appears to be bent and possibly seized or resigned. The sign looks like it's made of metal or a similar material and is bent or broken in various places. The taxi's license plate and other details are visible. The setting appears to be an urban environment, likely in a city where such street presence is common. The具体的法规是 this情况ronsﭪ
 
 
 ## Querying Llama 4 Vision Model
