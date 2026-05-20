@@ -34,33 +34,66 @@ wait_for_server(f"http://localhost:{port}", process=vision_process)
       warnings.warn(
 
 
-    [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 07:28:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '502 Bad Gateway' for url 'https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/502
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2727, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 933, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3668, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1591, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '502 Bad Gateway' for url 'https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/hf_quant_config.json' (Amz CF ID: 8RSEq5AtEGQdiR385pg7ER586RjZdVINLphAnre-6kc_BidCR8UoMA==)
+    For more information check: https://httpstatuses.com/502
+    [2026-05-20 07:45:55] retry() failed once (0th try, maximum 2 retries). Will delay 0.78s and retry. Error: Server error '502 Bad Gateway' for url 'https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/hf_quant_config.json' (Amz CF ID: 8RSEq5AtEGQdiR385pg7ER586RjZdVINLphAnre-6kc_BidCR8UoMA==)
+    For more information check: https://httpstatuses.com/502
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 07:29:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 07:46:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 07:46:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:03,  1.31it/s]
+    Multi-thread loading shards:  20% Completed | 1/5 [00:01<00:04,  1.10s/it]
 
-    Multi-thread loading shards:  40% Completed | 2/5 [00:01<00:02,  1.45it/s]
+    Multi-thread loading shards:  40% Completed | 2/5 [00:02<00:03,  1.09s/it]
 
-    Multi-thread loading shards:  60% Completed | 3/5 [00:02<00:01,  1.48it/s]
+    Multi-thread loading shards:  60% Completed | 3/5 [00:03<00:01,  1.02it/s]
 
-    Multi-thread loading shards:  80% Completed | 4/5 [00:02<00:00,  1.51it/s]
+    Multi-thread loading shards:  80% Completed | 4/5 [00:03<00:00,  1.07it/s]
 
-    Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  1.97it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  1.70it/s]
+    Multi-thread loading shards: 100% Completed | 5/5 [00:04<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:04<00:00,  1.19it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       response = await f(request)
 
 
-    2026-05-20 07:29:14,014 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 07:29:14] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 07:46:18,961 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 07:46:18] Unexpected error during package walk: cutlass.cute.experimental
 
 
 
@@ -114,11 +147,11 @@ print_highlight(response)
 
 
 
-<strong style='color: #00008B;'>{"id":"fe8f4bde3a604c99978b2540d8e328df","object":"chat.completion","created":1779262160,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing clothes. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing a blue shirt. The setting suggests an urban environment with buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":376,"completion_tokens":69,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"dcc187a2a4aa494bb75d838a94e99729","object":"chat.completion","created":1779263184,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing clothes. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing a blue shirt. The setting looks like an urban environment with buildings, trees, and traffic.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 
-<strong style='color: #00008B;'>{"id":"606f5a8d8a6d4beb94c9226050d7991b","object":"chat.completion","created":1779262161,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene seems to be set in an urban environment, possibly New York City, given the style of the taxi and the architecture visible in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"226ef3abd37642789f60fdaa8d1f8d02","object":"chat.completion","created":1779263185,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using Python Requests
@@ -151,7 +184,7 @@ print_highlight(response.text)
 ```
 
 
-<strong style='color: #00008B;'>{"id":"354e364ec1114fb28d31d01f31dd26a3","object":"chat.completion","created":1779262162,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"43b0952b37c14d6c84afb18cab4255a7","object":"chat.completion","created":1779263186,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using OpenAI Python Client
@@ -186,7 +219,7 @@ print_highlight(response.choices[0].message.content)
 ```
 
 
-<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene.</strong>
+<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.</strong>
 
 
 ## Multiple-Image Inputs
