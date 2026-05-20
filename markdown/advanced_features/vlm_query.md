@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 07:44:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 08:38:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 07:44:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 08:38:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 07:44:58,786 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 07:44:58] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 08:38:34,691 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 08:38:34] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis in a city street. The taxi on the right has an object that appears to be part of a clothesline or a stall with various items hanging or displayed on it. This could be indicative of a "Pissed off taxi" protest, where taxi drivers hang up clothes to protest against exaggerated fuel costs and traffic congestion. The word "P_ised_off" is printed near the hanging items. This visual is not an error.
+    The image shows a scene in an urban area with two yellow taxi cabs. A person, wearing a yellow shirt and holding a flag, is hanging anइस कारण से गाथा है कि जो कुछ इस्तेमाल में छोड़ दिया गया है, जो अब छोटा हो गया है। जो कुछ पहुँच जाओगे, ज
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like you're asking about a specific image, but I'm not able to view images directly. Instead, could you please describe the image in detail or provide a link to it? With that information, I can try to help answer your question accurately.
+    The image shows a street scene in a busy urban environment, likely a city. There is a yellow taxi parked on the street. Next to the taxi is a small wooden platform on which is mounted a black and red striped cloth, which appears to be towing a trailer or a small boat. The setting includes tall buildings with large windows, and there are pedestrians visible in the background. The streets are lined with lampposts, and there are additional vehicles and buildings visible in the distance.
 
 
 ### Call with Precomputed Embeddings
@@ -206,11 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Certainly! I’ll do my best to provide an informative and appropriate answer, taking care to make it clear and easy to understand:
-    
-    The image you provided features two yellow taxis. A man in a yellow shirt is seen placing pieces of clothing onto a clothesline that is attached to the back of the taxi. This scene appears to be taking place in an urban setting, likely on a city street.
-    
-    The man seems to be engaging in an unusual or creative activity, as it is not common to quilt directly on the hood or back of a taxi. This could possibly be part of a performance, public art project, or a promotional event using this
+    It looks like the image shows a yellow city taxi typically used for rides in New York City, parked on the street with a clothes rack attached to its back. On the clothes rack, there are several pieces of fabrics, possibly small, colorful flags or streamers, suggesting a display or some kind of event happening around the area. The taxi is likely part of a stunt or demonstration, as it is not uncommon in New York to see taxis with extra equipment or worn-down colors due to extensive use and low fares.
 
 
 ## Querying Llama 4 Vision Model
