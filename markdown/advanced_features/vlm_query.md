@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 04:23:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 04:52:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 04:23:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 04:52:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.12s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
 
 
 
@@ -120,14 +120,16 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 04:23:52,372 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 04:23:52] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 04:52:50,087 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 04:52:50] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows a man wearing a yellow shirt who has hung clothes on a metal rod attached to the rear of a yellow taxi. The clothes are draped over the rod, suggesting that he is possibly doing some outdoor laundry while driving. The moment captured is unusual and humorous, as it stands out from the typical scene of a city with its bustling traffic and vibrant street life.
+    The image shows two taxicabs parked on a street, with one taxi's trunk opened and an arm sticking out of it, apparently hanging washing or clothes over the handle. It appears to be a makeshift drying rack, likely due to the inclement weather or a lack of proper drying facilities nearby.
     
-    The background includes other elements such as trees, buildings, and streetlights, typical of an urban environment like New York City. The man seems to be using a makeshift laundry line to air out his clothes while still observing the dynamics of city life around him.
+    The setting looks like a urban environment with brick buildings, storefronts with glass windows, and visible street signs. The person in the image is likely drying laundry outdoors given the presence of the washing line or hooks sticking out of the trunk.
+    
+    There are also street lights and公共资源 available in the image, indicating it's a busy city location.
 
 
 ### Call with Processor Output
@@ -152,7 +154,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a photograph of a person standing on a small platform mounted on the back of a yellow taxi taxi cab. The platform is extending out over the street, creating an illusion that makes it appear as if the person is as tall as the cab itself. This image is often referred to as the "Tall Person on a Taxi Stand" or "Tall Person on a Taxi." The purpose of these stands is to encourage honest and accurate measurements of people's heights in places like New York City.
+    The image you provided shows a scene that appears to be an unusual and potentially unintentional interaction. Instead of likely showing a taxi malfunction or an unexpected taxi stop, the image likely depicts a man hanging clothes along the side of a moving taxi. The presence of laundry lines and a laundry cart suggests that the man is trying to dry or wash clothes in an unusual manner. This could be for a humorous or whimsical purpose, or it could be an experiment, although the positioning of the laundry suggests an effort to keep the lines taut. The yellow taxi suggests it is likely in a city environment, potentially New York based on the appearance. Such
 
 
 ### Call with Precomputed Embeddings
@@ -208,9 +210,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis in a street. The first taxi is closer to the foreground and the second one is further back. Both taxis have the Pennsylvania Avenue and Pennsylvania train ticket office flags and the Union מאמרים league (UML) flag attached to their roofs. 
-    
-    There's also a person wearing yellow standing on the back of one of the taxis, closest to the camera. They appear to be showing off the flags attached to the taxis.
+    It seems you're describing a scene involving a man with his pants hanging on a stick behind a yellow taxi in a city street. The image appears to depict a humorous or unusual situation where a man has likely taken off his pants and left them hanging on a pole behind a moving taxi. This could be intended to cause amusement or be part of an artistic or creative expression. The presence of the yellow taxi and the urban setting adds context that this is likely taking place in an urban environment.
 
 
 ## Querying Llama 4 Vision Model
