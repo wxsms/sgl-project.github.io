@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-20 22:48:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 23:45:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-20 22:48:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-20 23:45:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.17s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -120,12 +120,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-20 22:48:31,031 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-20 22:48:31] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-20 23:46:04,670 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-20 23:46:04] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene with several yellow taxis in a city street, likely in New York City, given the design and context. A person is visible with a hanging laundry on a long rod, walking between the taxis. The background includes buildings and other city elements, such as street signs and traffic lights. It appears to be a picturesque urban setting, possibly during a parade or special event given the presence of the hanging laundry.
+    The image shows a scene from a street in New York City, as indicated by the yellow taxi cabs and the bustling urban environment. In the foreground, a person is seen working diligently to separate pieces of fabric, possibly to prepare them for sale or to clean them, using a pole with a white cloth attached to it. This activity is known as "pilfering" or lawn sale work, where individuals collect various types of fabrics, like sheets, umbrellas, jackets, windbreakers, ties, ties, and rugs, and sell them at low prices, often in public markets or unplanned sales.
+    
+    The use of a
 
 
 ### Call with Processor Output
@@ -150,7 +152,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on a city street. The taxi is equipped with a folded bicycle rack on its roof. However, in this case, there is no bicycle on the rack. The scene appears to be set in an urban area with buildings and street signs visible in the background. The overall setting suggests that the taxi is on duty, either picking up or dropping off passengers.
+    The image shows a yellow taxi parked on a city street. The taxi is equipped with laundry being moved around on some sort of cart or stand. This appears to be part of a creative or humorous performance art piece. There is also a person wearing a yellow shirt standing next to the cart, seemingly engaged in the activity. The setting is urban, with buildings and street signs visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm not sure what you are seeing in this image.
+    The image shows a scene from what appears to be a street or public event. In the foreground, a person wearing a yellow long-sleeve shirt is engaged in an activity involving fabric or clothing. They are using a long stick or pole to spread out or stabilize the material they are handling. The person is standing on a yellow rail or protrusion of some kind. In the background, there is a yellow taxi cab, suggesting that this scene is taking place in an urban environment, likely in a big city. The presence of a cloth or fabric being handled suggests that this might be a performance, a demonstration, or a community event.
 
 
 ## Querying Llama 4 Vision Model
