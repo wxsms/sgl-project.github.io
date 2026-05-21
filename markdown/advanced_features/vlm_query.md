@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 06:05:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 06:48:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 06:05:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 06:48:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.64s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.36s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -121,7 +121,17 @@ print(out["text"])
 ```
 
     Model response:
-    It appears to be a humorous setup where a taxi driver is using the cab as a makeshift clothesline. The driver is holding clothes over the back of the car, with clothespins attached to a string. Their arm is伸展着（伸展），and they are standing outside the taxi cab. This unusual scenario is often used for comedic effect and can be seen humorously in various cityscapes.
+    The image shows a man hanging clothes on a stand attached to the back of a yellow taxi. The man is linking clothes together, presumably to dry them. This scene appears to be in a city, possibly in New York, given the urban background and the typical design of yellow taxicabs.
+    
+    Here is a simplified markdown version of the description:
+    
+    - **Man**: Hanging clothes on a stand
+    - **Cloth**: Multi-colored, blue, red, yellow
+    - **Object**: Stand attached to a taxi's back
+    - **Taxi**: Yellow, NYC-like design
+    - **Background**: Urban setting, buildings, flags
+    
+    To
 
 
 ### Call with Processor Output
@@ -146,9 +156,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab and what appears to be a set of clothes hanging on a clothesline attached to the back of the taxi. The clothesline is set up on the side of the road, and the taxi seems to be involved in a common activity known as "**taxi laundry**." 
-    
-    In this activity, the driver sets up a clothesline and hooks a laundry cart or hanger to it. They then pick up their passengers' clothes or útil half-used clothes in the back of the taxi and hang them out to dry or return them to their owners. This practice is not uncommon in some urban areas, especially during
+    The image shows a yellow taxi cab on a city street, with a man walking next to it. He appears to be transporting a large plastic bag or advertisement sign. The process is often described as "20 bagging," where the man uses a technique to sequentially carry and hook several bags or signs to the cab, allowing for efficient transportation.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +212,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a woman in a yellow shirt and black pants who is hanging clothes on the side bar of a taxi cab. The taxi is yellow and appears to be a New York City tour taxi, indicated by the license plate with "NY" on it and the distinctive New York City cab positioning. The woman seems to be using a clothesline or a hanger bar attached to the side of the taxi to dry her laundry. The setting appears to be in a busy urban area, possibly downtown, with other taxis and street signs visible in the background.
+    The image shows a scene that appears to be inspired by a famous scene from the movie "The Hangover." In the movie, a group of men find themselves here in a car wash on Central Park West in New York City. This scene is known for its chaotic and humorous nature.
 
 
 ## Querying Llama 4 Vision Model
