@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 06:48:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 07:28:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 06:48:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 07:28:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -121,17 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man hanging clothes on a stand attached to the back of a yellow taxi. The man is linking clothes together, presumably to dry them. This scene appears to be in a city, possibly in New York, given the urban background and the typical design of yellow taxicabs.
-    
-    Here is a simplified markdown version of the description:
-    
-    - **Man**: Hanging clothes on a stand
-    - **Cloth**: Multi-colored, blue, red, yellow
-    - **Object**: Stand attached to a taxi's back
-    - **Taxi**: Yellow, NYC-like design
-    - **Background**: Urban setting, buildings, flags
-    
-    To
+    The image shows a scene with a person in front of a yellow and purple taxi cab. The person appears to be holding a folded blue garment on a rack. There is also another yellow taxi cab visible in the background. The scene looks like it could be taking place in an urban area with tall buildings, as indicated by the flagpost and storefronts.
 
 
 ### Call with Processor Output
@@ -156,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab on a city street, with a man walking next to it. He appears to be transporting a large plastic bag or advertisement sign. The process is often described as "20 bagging," where the man uses a technique to sequentially carry and hook several bags or signs to the cab, allowing for efficient transportation.
+    The image shows a person in a yellow jacket pulling on a hose from the back of a yellow taxi cab. It appears that the person is using the hose to clean or refresh the taxi itself. This type of scene is not uncommon in New York City, where many taxis hop off their air conditioners on chilly days or during brief breaks when they require refueling.
 
 
 ### Call with Precomputed Embeddings
@@ -212,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene that appears to be inspired by a famous scene from the movie "The Hangover." In the movie, a group of men find themselves here in a car wash on Central Park West in New York City. This scene is known for its chaotic and humorous nature.
+    The person in the picture is holding a pair of very tiny green and white sneakers. They are standing near a pair of bright yellow cabs, which are commonly found in New York City. The cabs are parked on the street, and there are some flags on flagpoles nearby. The scene appears to be set in an urban environment, likely in a part of New York City.
 
 
 ## Querying Llama 4 Vision Model
