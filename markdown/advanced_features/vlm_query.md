@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 14:14:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 16:03:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 14:14:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 16:03:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.29s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.20s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.21s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene where a man appears to be drying his clothes using two yellow taxis. One taxi is in front of the other, and the man is standing on the back of the taxi in front, using the taxi as a makeshift drying rack. This unusual situation is likely staged for a humorous or artistic effect, possibly for a photo or a performance.
+    The image depicts several yellow taxis in a New York City street scene. There is also a person hanging clothes on the back of one of the taxis. It appears to be an organized event, possibly related to hucksters, where taxis are used as puppets to spread messages. This is a common tactic used by some community activists to spread information, such as educational materials about recycling, rights for homeless people, or other societal issues, by placing signs and messages attached to the taxis.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with a yellow taxi cab on a city street. The taxi is parked on the side of the road. In the background, there are banner-like objects hanging, possibly indicating a holiday or special event. The person in the foreground is sitting on a chair or folded chair, wearing a yellow shirt and glasses, and appears to be folding clothes on a metal stand. The setting suggests a festive or celebratory atmosphere, possibly a parade or holiday greeting.
+    The image shows a yellow taxi cab (cabs) driving on a busy street. The scene appears to be an urban setting, likely in a large city with commercial buildings and multiple ride-sharing signs in the background. The taxi has a cloth and some other objects attached to it, possibly for a public demonstration or street performance.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,17 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi cab. The taxi is parked on the side of the road and appears to be involved in some form of transportation or delivery activity, as indicated by the presence of a piece of luggage or folded clothing strapped to its back. The background includes a building with large glass windows and some out-of-season decorated ornaments. The setting is urban, likely in a cityscape.
+    This image shows a street scene in a city with several elements:
+    
+    1. A yellow taxi cab is parked on the street. 
+    2. There is a person standing next to an unfolded lawn or picnic table on the sidewalk.
+    3. The person appears to be wearing a yellow shirt and blue pants.
+    4. The back of the taxi shows an advertisement in the back window.
+    5. There are multiple flags visible on tall poles: red, white, and other colors.
+    6. The background includes a building with large windows and red awnings.
+    7. Streetlights are present along the sidewalk.
+    
+    The overall setting suggests a busy urban area,
 
 
 ## Querying Llama 4 Vision Model
