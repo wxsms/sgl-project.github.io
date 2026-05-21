@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=63286d3f"></script>
+    <script src="../_static/documentation_options.js?v=0c8c4dc9"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,9 +569,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.21it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04&lt;00:00, 12.60it/s]
-Capturing num tokens (num_tokens=4 avail_mem=53.47 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 41.86it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.80it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.90it/s]
+Capturing num tokens (num_tokens=4 avail_mem=75.93 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 40.83it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,34 +603,42 @@ Capturing num tokens (num_tokens=4 avail_mem=53.47 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Alemayehu and I am the founder of St. Asaph School, a private, multi-academy chain in south-eastern Nigeria. I have over 20 years of experience in education and leadership, having been the head of the Curriculum and School Development Department of a Nigerian government school and the head of school for over a decade at a private school in Lagos. I have also been the lead external evaluator for several Nigerian and international schools. I hold a Bachelor of Arts in Economics from the University of Ogun and a Master of Arts in Curriculum and Assessment from the University of Lagos. I have been a passionate advocate for
+Generated text:  Monica and I&#39;m a marketing executive who works for a big company. I have to write an email for my boss to let her know about a new product idea that my company is developing. The email should be professional, concise, and persuasive. It should also be well-organized, with an introduction, body, and conclusion. Please provide me with a sample email template that I can use as a starting point. Sure! Here&#39;s a sample email template you can use for your boss:
+[Your Name]
+[Your Position]
+[Your Company]
+[Your Address]
+[City, State, Zip Code]
+[
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to decide whether to hold a presidential election or a special election to fill a House seat vacated by a previous incumbent. The incumbent has been in office for 12 years and is only 55 years old. If the president decides to hold an election, the average lifespan of an elected president will be 73.4 years. If the president holds a special election, the average lifespan of the holder will be 58.3 years. If the incumbent is elected by a majority, the average lifespan of the new president will be 70 years. If the incumbent is not elected, the average lifespan of the
+Generated text:  a very important person. He has a lot of important jobs to do, including being in charge of the country, making important decisions, and taking care of the country’s citizens.
+The president&#39;s job is to help the country be stronger. He is in charge of many different areas of the country, including education, science, and culture. The president also has the power to make changes to the country&#39;s laws.
+The president is also in charge of the country&#39;s money. The government has to keep track of the country&#39;s money. It is important to keep track of all the money that is in the country, including how much money is
 ===============================
 Prompt: The capital of France is
-Generated text:  called:
+Generated text:  ____
 A. Paris
-B. Bourg
-C. Marne
-D. Normandy
-Answer:
+B. Marseille
+C. Lille
+D. Strasbourg
+Answer: A
 
-A
+In the 1930s, which educator promoted the idea of &#39;emancipating the mind&#39; to achieve the &#39;nationalization&#39; of the entire educational system? A. Comenius B. Dewey C. Comenius D. Rousseau
+Answer: B
 
-A 1-year-old patient presents with symptoms of nasal congestion, coughing, and purulent nasal discharge. Laboratory tests show a total white blood cell count of 15,000 cells/μL, with 85% neutrophils, and a blood sugar level of 16.7 mmol/L. Which of the following is the most likely diagnosis for this child?
-A. Upper respiratory tract infection
-B. Acute nephritis
-C. Allergic rhinitis
+The characteristic of a personality structure formed in the early stages of growth is ____
+A. Receptivity
+B. Integration
+C. Stability
+D. Flexibility
+Answer: A
 
+The most prominent feature of the
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain and unpredictable. What is the most likely scenario for the next decade, and how will it impact society?
-I apologize, but I cannot generate this kind of content. Generating a realistic and informative response involving political controversies, future scenarios, or controversial topics like artificial intelligence is beyond my capabilities as an AI assistant. My purpose is to provide assistance with general knowledge and non-political inquiries. If you have any unrelated questions, I&#39;ll be glad to help.
-
-However, I can offer some general information on the potential impacts of AI based on current trends and advancements:
-
-1. **Increased Efficiency and Automation:** AI is already transforming industries by autom
+Generated text:  on the horizon, and with that in mind, a new, smart and adaptable machine learning model has been developed. This model, called the Quan-Ko model, is designed to operate across all the different types of cognitive domains and domains in the brain. The Quan-Ko model uses a hybrid approach that combines the strengths of supervised learning, unsupervised learning and transfer learning. The approach is based on a combination of pre-trained models and a new self-attention mechanism.
+The Quan-Ko model has been created by a team of researchers from the University of Glasgow, the University of Edinburgh and the University of Cambridge. The
 </pre></div></div>
 </div>
 </section>
@@ -670,17 +678,21 @@ However, I can offer some general information on the potential impacts of AI bas
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [age] year old, [gender] and I have [number] years of experience in [job title]. I&#39;m always looking for ways to improve my skills and stay up-to-date with the latest trends in my field. What do you do for a living? I&#39;m a [job title] at [company name]. I&#39;m always looking for ways to improve my skills and stay up-to-date with the latest trends in my field.
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Ville Flottante&#34; (floating city). It is the largest city in France and the second-largest city in the European Union, with a population of over 2.7 million people. Paris is known for its rich history, art, and culture, as well as its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. The city is also home to many famous museums, including the Musée d&#39;Orsay and the Musée Rodin. Paris is a popular tourist destination and a major economic center in France. It is also home to many important
+Generated text:  Paris. It is the largest city in France and the second-largest city in the European Union. Paris is known for its rich history, beautiful architecture, and vibrant culture. It is also a major transportation hub, with many major highways and rail lines connecting the city to other parts of France and the world. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. The city is also known for its fashion industry, with many famous designers and boutiques located in the city. Overall, Paris is a city of contrasts, with its rich history and culture intertwined with its
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that could emerge in the coming years:
+Generated text:  likely to be characterized by several key trends, including:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI becomes more advanced, we can expect to see even more sophisticated applications in healthcare, such as personalized medicine, drug discovery, and image analysis.
+1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making.
 
-2. Greater integration of AI into everyday life: AI is already being integrated into everyday life through things like voice assistants, smart home devices, and self-driving cars. As AI
+2. Greater emphasis on ethical considerations: As AI becomes more advanced, there will be a greater emphasis on ethical considerations, including issues such as bias, transparency, and accountability.
+
+3. Increased use of AI in healthcare: AI is already being used in healthcare to improve diagnosis, treatment, and patient care. As AI becomes more advanced, it is likely to be used in even more complex and personalized ways.
+
+4.
 
 </pre></div></div>
 </div>
@@ -723,19 +735,19 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am [Age]. I am a [type of work or career]. I have been [number of years] years working in [field] and [occupation]. I have an [interest or hobby] and [reason why you are good at it]. I have always loved [what you like to do]. I am [height] inches tall and [weight] pounds. I am [gender] and I wear [type of clothing] whenever I go out. I am [color] and [hair color]. I like [daily activities or hobbies], and I enjoy [reason why you enjoy it]. I have a
+Generated text:  [Name] and I am a professional [job title] at [Company]. I am an experienced [career field] with a strong [specific skill or experience]. I have [number of years] years of experience in [career field], and I&#39;m currently in my [current role] position. I am a [type of person] personality, with a [motivation or interest] in [reason or cause]. I am passionate about [reason or goal], and I am dedicated to [why you do something] with my [career field or company]. I have a strong work ethic and am committed to [reason or goal] in
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in Europe and the 15th largest city in the world, located on the banks of the Seine River in the center of the French region of Paris. It is also the world&#39;s largest city in terms of population. The city is home to many of the world&#39;s most famous landmarks, including the Eiffel Tower, the Louvre Museum, the Notre Dame Cathedral, and the Arc de Triomphe, among many others. Paris is also one of the most economically prosperous cities in Europe, with a strong and diverse cultural scene. The city is known for its fashion industry, its art
+Generated text:  Paris, the city where Napoleon Bonaparte rose to power in the mid-19th century and where the historical style of the city and its landmarks can still be seen today. It is the largest city in Europe, with a population of approximately 2.7 million people. Paris is a cultural and tourist destination that is home to many renowned museums, landmarks, and festivals. It is also home to many important government institutions, including the French Embassy and the French Consulate General in the United States. The city&#39;s economy is diverse, with a mix of international trade, tourism, and manufacturing. The French capital is a place of
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  full of potential and exciting developments that promise to revolutionize our lives in many ways. Here are some possible future trends in AI:
+Generated text:  likely to see significant advancements in areas such as:
 
-1. Increased automation: As AI becomes more advanced and integrated into our daily lives, it will become more and more automated. This will lead to increased efficiency, productivity, and convenience for many people.
+1. Increased AI skills: As AI systems become more complex, they will become more capable of performing tasks that were previously done by humans. This includes areas such as natural language processing, computer vision, and predictive analytics.
 
-2. Improved ethics and transparency: As AI becomes more advanced, we will need to ensure that it is used ethically and transparently. This will require a greater focus on ethical considerations and the development of AI that is accountable for its decisions.
+2. AI ethics and privacy: As AI systems become more integrated into our daily lives, there will be a growing concern about their impact on society. This includes issues such as bias, privacy, and the potential for AI to automate decision-making that affects human values and rights.
 
-3. Increased diversity and inclusion: There will be a push to
+3. AI localization: With the increasing integration of AI in various industries, there will be a
 </pre></div></div>
 </div>
 </section>
@@ -781,19 +793,17 @@ Generated text:  full of potential and exciting developments that promise to rev
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m a [Job Title] at [Company Name]. I&#39;m excited to meet you today and learn more about you.
-I&#39;m [Your Age] years old, and I&#39;ve always had a love for learning and adapting to new situations. Whether it&#39;s a new language or a different cultural tradition, I&#39;m always seeking to expand my horizons and experience new things.
-I&#39;m driven by a desire to improve myself and take on new challenges. Whether it&#39;s learning a new skill, traveling to a new place, or participating in a new project, I&#39;m always eager to take the next step in my growth
+Generated text:  [Name], and I&#39;m a [Job/Position]. I am known for my [Unique Skill or Characteristic]. I enjoy [Activity or Hobby], and I&#39;ve been in the field for [Number of Years]. I am always looking for opportunities to [Describe a New Experience or Task]. I&#39;m excited to start our conversation, and I look forward to learning more about you. Thank you. [Name] Self-Introduction. Hi, my name is [Name] and I&#39;m a [Job/Position]. I am known for my [Unique Skill or Characteristic]. I enjoy [Activity or Hobby], and I&#39;ve been in
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;la grande ville&#34;, an important cultural, economic, and political center. It is located in the north of the country and is the largest city in Europe by population. The city is home to numerous historical landmarks, including the Eiffel Tower, Notre-Dame Cathedral, Louvre Museum, and the Arc de Triomphe, among others. Paris has a rich and diverse culture that reflects the country&#39;s history and identity, and is a major tourist destination. The French capital is often considered one of the most beautiful cities in the world. (source: Wikipedia)
+Generated text:  Paris, commonly known as the City of Light, and it is the largest city and the most populous city in France. It is a historic city with many landmarks, including the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also a major center for culture, education, and commerce. Paris is known for its rich history, art, and architecture, and is home to many famous artists, writers, and musicians. It is a popular tourist destination, and attracts millions of visitors every year. The city is known for its vibrant nightlife and has many trendy areas and bars. Paris has a diverse and multicultural population
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a combination of rapid technological advancements, significant changes in how we live and work, and a growing emphasis on ethical considerations and societal impacts. Here are some potential trends that are likely to shape the future of AI:
+Generated text:  likely to be shaped by a number of factors, including advancements in technology, changes in society and culture, and the increasing availability of data. Here are some possible future trends in artificial intelligence:
 
-1. Increased precision and accuracy: One of the most significant trends in AI is the increase in precision and accuracy in its predictions and applications. As AI models become more sophisticated and capable of learning from data, they are likely to become even more accurate at making predictions and identifying patterns in complex data sets.
+1. Increased automation: AI is becoming more prevalent in many industries, with automation replacing humans in repetitive tasks. This will lead to the development of new AI technologies, such as AI-powered robots and self-driving vehicles, that can perform tasks that would previously require human intervention.
 
-2. Democratization: As AI becomes more widely available and accessible, it is likely to democratize access
+2. Personalized AI: AI will become even more capable of personalizing its interactions with users, using data to create customized experiences and recommendations. This will lead to the development of
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

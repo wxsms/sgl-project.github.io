@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 20:09:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 21:09:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 20:09:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 21:09:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a bustling urban street scene with two yellow taxis in the foreground. Both taxis are equipped with portable washing equipment, which is unusual. The street is lined with tall buildings, and there are people and vehicles in the background. The washing equipment suggests that this could be part of a street art performance or street cleaning service. The background includes various flags and banners, indicating a festive or cultural event happening in the area. The presence of light poles and other street infrastructure further emphasizing the city setting.
+    The image shows a street where a person is hanging clothes from the back of two yellow taxis. The scene appears to be a humorous or creative photograph, possibly taken in New York where taxi drivers are known for their unique customs, such as hanging clothes from their vehicles. There are also flags and a few people in the background, adding to the dynamic urban environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked on a city street. The taxi's rear end is visible, and there is another yellow taxi cab in the background on the same road. The street appears to be a bustling urban area with tall buildings and other vehicles nearby. Theólogo’s item (a cloth or piece of clothing being folded or rolled up) is hanging off the back of the taxi in the video.
+    It appears that the person captured in the image is holding a baseball bat, although it seems unusual for a baseball bat to be carried by the person depicted. The context of the image, with multiple cars including a yellow cab, along with some store signs and people in the background, suggests it might be a scene from a busy urban area, possibly in a city with a significant population or a heavy traffic zone. 
+    
+    Please note that the context and distracting elements in the background may be adding to the challenge of identifying the exact subject of the image.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in what appears to be New York City, given the presence of iconic yellow taxis. In the foreground, a person in a yellow shirt is using a rope to raise and lower pieces of blue fabric, which looks like fabric for a display or possibly cleaning supplies. There are multiple yellow taxis (cabs) in the background, parked along the curb. The setting includes commercial buildings with storefronts and a street that has various shop signs, including American flags. The scene suggests that the person might be engaged in a small business or work-related activity involving displaying or arranging fabric.
+    The image shows a yellow taxi parked on a city street. There are people hanging clothes from the back of the taxi, attached to a旗牌 with a pole. The taxi is in front of a building with rectangular glass windows.
 
 
 ## Querying Llama 4 Vision Model
