@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 16:03:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 17:32:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 16:03:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 17:32:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts several yellow taxis in a New York City street scene. There is also a person hanging clothes on the back of one of the taxis. It appears to be an organized event, possibly related to hucksters, where taxis are used as puppets to spread messages. This is a common tactic used by some community activists to spread information, such as educational materials about recycling, rights for homeless people, or other societal issues, by placing signs and messages attached to the taxis.
+    The image shows two yellow taxis parked along a city street. One of the taxis has a clothesline strung across its rear windows, displaying clothes. The person standing behind the clothesline appears to be arranging the clothing. The scene is likely intended to carry a humorous message, possibly related to laundry or the struggle with city parking. The grandstand concept over the rear window of the taxi is a mix of humor and practical approach to maximizing space for laundry.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab (cabs) driving on a busy street. The scene appears to be an urban setting, likely in a large city with commercial buildings and multiple ride-sharing signs in the background. The taxi has a cloth and some other objects attached to it, possibly for a public demonstration or street performance.
+    The image shows a yellow taxicab parked on the street. A person is visible inside the taxi, dressed in a yellow shirt and a hand towel or piece of cloth draped over their arm. The taxicab has a tow strap attached to it, which is commonly used to attach other vehicles, such as a tow truck, for towing purposes. In the background, there are buildings with colorful awnings, and there are various street signs and banners visible. The overall scene appears to be in an urban area, possibly during a parade or public event.
 
 
 ### Call with Precomputed Embeddings
@@ -202,17 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a street scene in a city with several elements:
+    The image you're referring to shows a scene on a busy street, likely in a first-world area with a taxi cab. A yellow vehicle is noticeable, which resembles a taxi and is equipped with what appears to be tool belts or leashes attached to it. These appear to be scaled-down representations of life belts, carved out of what seems like a red and blue cellphone. The purpose seems to be for printing templates of diverse designs or for creating masks, helmets, or other protective gear instead of hard hats, according to a voiceover.
     
-    1. A yellow taxi cab is parked on the street. 
-    2. There is a person standing next to an unfolded lawn or picnic table on the sidewalk.
-    3. The person appears to be wearing a yellow shirt and blue pants.
-    4. The back of the taxi shows an advertisement in the back window.
-    5. There are multiple flags visible on tall poles: red, white, and other colors.
-    6. The background includes a building with large windows and red awnings.
-    7. Streetlights are present along the sidewalk.
-    
-    The overall setting suggests a busy urban area,
+    The shoes alongside the device[s] indicate a metaphorical idea of taking off or switching into these new
 
 
 ## Querying Llama 4 Vision Model
