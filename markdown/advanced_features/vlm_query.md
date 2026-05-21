@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 07:28:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 08:21:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 07:28:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 08:21:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene with a person in front of a yellow and purple taxi cab. The person appears to be holding a folded blue garment on a rack. There is also another yellow taxi cab visible in the background. The scene looks like it could be taking place in an urban area with tall buildings, as indicated by the flagpost and storefronts.
+    The image you've described likely depicts a humorous or creative scene that is staged or does not appear to represent a typical activity. It seems there is an individual wearing a yellow shirt who is handling an unattended rearview mirror on a parked yellow car, which is commonly associated with a New York City taxi. The mirrors on taxis are often illuminated by lights during the day, and any operation related to these mirrors could evoke an interesting, exaggerated or humorous reaction.
+    
+    The scenario, however, does not follow normal real-life postmodern situational sequencing, and it must be taken as an playful anomaly. The structure with a triangular support beam mentioned could be
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a yellow jacket pulling on a hose from the back of a yellow taxi cab. It appears that the person is using the hose to clean or refresh the taxi itself. This type of scene is not uncommon in New York City, where many taxis hop off their air conditioners on chilly days or during brief breaks when they require refueling.
+    The image shows a yellow taxi cab parked in a city street. The taxi appears to be part of an event, as someone dressed in a yellow shirt is using crutches or a cane to move around near the taxi, pushing or dragging it on the street. The setting suggests a parade or some public demonstration, with an organized group of people participating in the event.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The person in the picture is holding a pair of very tiny green and white sneakers. They are standing near a pair of bright yellow cabs, which are commonly found in New York City. The cabs are parked on the street, and there are some flags on flagpoles nearby. The scene appears to be set in an urban environment, likely in a part of New York City.
+    The image shows a yellow taxi cab driving on a city street. The taxi has a notable feature: a man with his hands chained to a metal cart attached to the vehicle. The cart is used to pull the man along. This unusual scene suggests that somewhere along the path, the man and the taxi have been involved in a dispute or confrontation. Chain-like items are visible around the man and the cart, indicating the use of handcuffs to force him to travel at the same speed as the taxi.
+    
+    This situation is highly unusual and raises questions about the incident that led to this scenario. It is important that such incidents are addressed by authorities to
 
 
 ## Querying Llama 4 Vision Model
