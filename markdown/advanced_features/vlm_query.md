@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 21:09:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 23:08:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 21:09:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 23:08:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street where a person is hanging clothes from the back of two yellow taxis. The scene appears to be a humorous or creative photograph, possibly taken in New York where taxi drivers are known for their unique customs, such as hanging clothes from their vehicles. There are also flags and a few people in the background, adding to the dynamic urban environment.
+    I'm sorry, but the image you are referring to does not match any of the options provided in the database. I am unable to identify the image as an option, and I cannot answer any questions about it. Please provide a previous set id or the correct set id in the future.
 
 
 ### Call with Processor Output
@@ -146,9 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It appears that the person captured in the image is holding a baseball bat, although it seems unusual for a baseball bat to be carried by the person depicted. The context of the image, with multiple cars including a yellow cab, along with some store signs and people in the background, suggests it might be a scene from a busy urban area, possibly in a city with a significant population or a heavy traffic zone. 
-    
-    Please note that the context and distracting elements in the background may be adding to the challenge of identifying the exact subject of the image.
+    The image shows a yellow taxi parked along a street in an urban area. The taxi has a banner attached behind it, displaying the design of a "Speed Graphic" logo, which is the iconic nameplate of the Gibson Guitar Corporation. This custom taxi advertisement was made by the Gibson Sales Team in 2002 to promote the brand. The taxi appears to be parked alongside a sidewalk, and there are some other vehicles and street lamps visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi parked on a city street. There are people hanging clothes from the back of the taxi, attached to a旗牌 with a pole. The taxi is in front of a building with rectangular glass windows.
+    The image shows two yellow taxis parked along a city street. Both taxis have matching designs and colors. One taxi is closer to the foreground, and the other is further back in the image. The taxis have their license plates visible. The background includes buildings and some flags hanging from balconies. The street appears to be in a busy urban area, possibly during daylight hours.
 
 
 ## Querying Llama 4 Vision Model
