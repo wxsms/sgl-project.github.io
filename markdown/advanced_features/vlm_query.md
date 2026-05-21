@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 17:32:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 20:09:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 17:32:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 20:09:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked along a city street. One of the taxis has a clothesline strung across its rear windows, displaying clothes. The person standing behind the clothesline appears to be arranging the clothing. The scene is likely intended to carry a humorous message, possibly related to laundry or the struggle with city parking. The grandstand concept over the rear window of the taxi is a mix of humor and practical approach to maximizing space for laundry.
+    The image shows a bustling urban street scene with two yellow taxis in the foreground. Both taxis are equipped with portable washing equipment, which is unusual. The street is lined with tall buildings, and there are people and vehicles in the background. The washing equipment suggests that this could be part of a street art performance or street cleaning service. The background includes various flags and banners, indicating a festive or cultural event happening in the area. The presence of light poles and other street infrastructure further emphasizing the city setting.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxicab parked on the street. A person is visible inside the taxi, dressed in a yellow shirt and a hand towel or piece of cloth draped over their arm. The taxicab has a tow strap attached to it, which is commonly used to attach other vehicles, such as a tow truck, for towing purposes. In the background, there are buildings with colorful awnings, and there are various street signs and banners visible. The overall scene appears to be in an urban area, possibly during a parade or public event.
+    The image shows a yellow taxi cab parked on a city street. The taxi's rear end is visible, and there is another yellow taxi cab in the background on the same road. The street appears to be a bustling urban area with tall buildings and other vehicles nearby. Theólogo’s item (a cloth or piece of clothing being folded or rolled up) is hanging off the back of the taxi in the video.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image you're referring to shows a scene on a busy street, likely in a first-world area with a taxi cab. A yellow vehicle is noticeable, which resembles a taxi and is equipped with what appears to be tool belts or leashes attached to it. These appear to be scaled-down representations of life belts, carved out of what seems like a red and blue cellphone. The purpose seems to be for printing templates of diverse designs or for creating masks, helmets, or other protective gear instead of hard hats, according to a voiceover.
-    
-    The shoes alongside the device[s] indicate a metaphorical idea of taking off or switching into these new
+    The image shows a street scene in what appears to be New York City, given the presence of iconic yellow taxis. In the foreground, a person in a yellow shirt is using a rope to raise and lower pieces of blue fabric, which looks like fabric for a display or possibly cleaning supplies. There are multiple yellow taxis (cabs) in the background, parked along the curb. The setting includes commercial buildings with storefronts and a street that has various shop signs, including American flags. The scene suggests that the person might be engaged in a small business or work-related activity involving displaying or arranging fabric.
 
 
 ## Querying Llama 4 Vision Model
