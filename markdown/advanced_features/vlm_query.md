@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 08:21:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 08:59:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 08:21:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 08:59:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.41s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.23s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.26s/it]
 
 
 
@@ -121,9 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image you've described likely depicts a humorous or creative scene that is staged or does not appear to represent a typical activity. It seems there is an individual wearing a yellow shirt who is handling an unattended rearview mirror on a parked yellow car, which is commonly associated with a New York City taxi. The mirrors on taxis are often illuminated by lights during the day, and any operation related to these mirrors could evoke an interesting, exaggerated or humorous reaction.
-    
-    The scenario, however, does not follow normal real-life postmodern situational sequencing, and it must be taken as an playful anomaly. The structure with a triangular support beam mentioned could be
+    The image shows two yellow taxis in an urban area. The man in the background appears to be drying his clothes with a line attached to the back of one of the taxis. The scene is set against a backdrop of tall buildings and some street signs.
 
 
 ### Call with Processor Output
@@ -148,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked in a city street. The taxi appears to be part of an event, as someone dressed in a yellow shirt is using crutches or a cane to move around near the taxi, pushing or dragging it on the street. The setting suggests a parade or some public demonstration, with an organized group of people participating in the event.
+    The image shows a man demonstrating how to clean a car windscreen. He is standing next to a yellow car with his hands on a duster that is placed on a small tripod. The duster is being used to simulate cleaning the glass. In the background, there is another yellow car. The man appears to be demonstrating a cleaning technique for windscreen wipers. The setting looks like an outdoor area, possibly a street or patio.
 
 
 ### Call with Precomputed Embeddings
@@ -204,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab driving on a city street. The taxi has a notable feature: a man with his hands chained to a metal cart attached to the vehicle. The cart is used to pull the man along. This unusual scene suggests that somewhere along the path, the man and the taxi have been involved in a dispute or confrontation. Chain-like items are visible around the man and the cart, indicating the use of handcuffs to force him to travel at the same speed as the taxi.
-    
-    This situation is highly unusual and raises questions about the incident that led to this scenario. It is important that such incidents are addressed by authorities to
+    This image shows a scene on a city street with two yellow taxis. One taxi is parked alongside the street, while the other appears to beбых detained with laundry draped over it. The laundry includes several items, such as a shirt and possibly a pair of pants, hung on a flat object or a makeshift clothesline-like structure. It looks like someone has temporarily claimed the taxi as a makeshift back-to-back, possibly doing laundry in an unusual and humorous way. The background includes a strip of storefronts and some street lights.
 
 
 ## Querying Llama 4 Vision Model
