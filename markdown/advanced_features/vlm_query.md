@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 23:08:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 23:24:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 23:08:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 23:24:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.75s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.29s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.21s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    I'm sorry, but the image you are referring to does not match any of the options provided in the database. I am unable to identify the image as an option, and I cannot answer any questions about it. Please provide a previous set id or the correct set id in the future.
+    The image shows an unusual scene at what appears to be a taxi stand or check-in area in a city. Instead of typical airport or bus station paraphernalia, there is a shirt rack loaded with clothes, with a person tending to the load. This setup is strange because people don't typically put clothes on racks to be loaded into taxis. This could be a humorous or creative setup for a workplace like an airport, where travelers might inventory their clothes before going through security or customs. The juxtaposition creates an unexpected and whimsical contrast with the expectations of a taxi stand.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked along a street in an urban area. The taxi has a banner attached behind it, displaying the design of a "Speed Graphic" logo, which is the iconic nameplate of the Gibson Guitar Corporation. This custom taxi advertisement was made by the Gibson Sales Team in 2002 to promote the brand. The taxi appears to be parked alongside a sidewalk, and there are some other vehicles and street lamps visible in the background.
+    It looks like you've provided an image that shows a scene with a yellow Cab.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis parked along a city street. Both taxis have matching designs and colors. One taxi is closer to the foreground, and the other is further back in the image. The taxis have their license plates visible. The background includes buildings and some flags hanging from balconies. The street appears to be in a busy urban area, possibly during daylight hours.
+    The image shows a yellow taxi in New York City, positioned behind a man and a small table that appears to have clothes and other items on it. The scene is potentially staged for an art installation or public performance, where the man might be re-enacting a scene of a person left to clean up the mess with their clothes. The presence of the American flags next to the taxi window could indicate a specific cultural or political context, perhaps as part of a protest or public commentary.
 
 
 ## Querying Llama 4 Vision Model
