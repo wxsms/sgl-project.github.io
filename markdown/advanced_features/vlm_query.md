@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 05:47:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 06:05:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 05:47:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 06:05:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.64s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.36s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a person standing by the back of a yellow taxi, hanging up some clothes. The person appears to be drying the clothes on a makeshift drying rack, which consists of a aluminum or metal frame. The setting is an urban environment with tall buildings and streets lined with trees. The person is wearing casual clothes and seems to be engaged in an unusual activity, such as drying clothes while riding in a taxi. This scenario is a humorous and surreal image, likely intended to be funny or surprising.
+    It appears to be a humorous setup where a taxi driver is using the cab as a makeshift clothesline. The driver is holding clothes over the back of the car, with clothespins attached to a string. Their arm is伸展着（伸展），and they are standing outside the taxi cab. This unusual scenario is often used for comedic effect and can be seen humorously in various cityscapes.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    That appears to be a humorous and unusual scene where a patterned blanket is draped over what looks like a table protruding from a vehicle, possibly a taxi, based on the context of the image. The juxtaposition of the object's extraordinary pattern against the mundane setting of a taxi is quite amusing and unexpected.
+    The image shows a yellow taxi cab and what appears to be a set of clothes hanging on a clothesline attached to the back of the taxi. The clothesline is set up on the side of the road, and the taxi seems to be involved in a common activity known as "**taxi laundry**." 
+    
+    In this activity, the driver sets up a clothesline and hooks a laundry cart or hanger to it. They then pick up their passengers' clothes or útil half-used clothes in the back of the taxi and hang them out to dry or return them to their owners. This practice is not uncommon in some urban areas, especially during
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab driving on a city street. The taxi is parked next to a yellow cab, and there are severalFlags situated on another parked vehicle. The scene includes buildings and trees along the sidewalk.
+    The image shows a woman in a yellow shirt and black pants who is hanging clothes on the side bar of a taxi cab. The taxi is yellow and appears to be a New York City tour taxi, indicated by the license plate with "NY" on it and the distinctive New York City cab positioning. The woman seems to be using a clothesline or a hanger bar attached to the side of the taxi to dry her laundry. The setting appears to be in a busy urban area, possibly downtown, with other taxis and street signs visible in the background.
 
 
 ## Querying Llama 4 Vision Model
