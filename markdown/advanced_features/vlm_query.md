@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 02:10:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 03:14:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 02:10:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 03:15:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.27s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]
 
 
 
@@ -120,12 +120,8 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-21 02:10:19,911 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-21 02:10:19] Unexpected error during package walk: cutlass.cute.experimental
-
-
     Model response:
-    The image shows two yellow taxis parked on a city street. The street appears to be relatively quiet with no active traffic. One of the taxis, which is on the right side of the image, has a clothesline with a new T-shirt hanging on it. The person involved in hanging the T-shirt is visible in the image. The background includes some buildings with awnings and a few electric palm trees, suggesting an urban environment. The scene is likely in a busy area, but it is currently not in use.
+    The image shows a scene in New York City. A yellow taxi is parked on the street, accompanied by a person using a clothes isle system. This device is used to clean mailbags, officer's uniforms, and other items by simulating steam and hot water without the need for actual steam or water. The person is using a hose attached to the isle to spray water on the items to be cleaned. The isle is mounted on a hitch, allowing for easy transportation between properties.
 
 
 ### Call with Processor Output
@@ -150,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The picture shows a scene in an urban environment, likely a busy street. There are two taxi cabs: a yellow taxi closest to the foreground and another one facing away. The yellow taxi is closer to the viewer, while the one facing away is further back. Both cabs have}[BLANKTEXT][BLANKTEXT] which are extended out of the front window. There is a man standing in the middle of the image between the two taxi cabs. He is wearing a yellow shirt and appears to be adjusting or interacting with something on the clothes line or on the moving van. The background features a wall with banners, possibly
+    The image shows a scene in what appears to be a busy street with a黄色出租车 (yellow taxi) in the foreground. The taxi is parked and there is a red box strapped to its back. There is also a person standing next to the taxi, holding a backpack and a sign that is partially visible. The street is lined with buildings, and there are several flags (possibly American flags) on poles adorned with ribbons hanging from them. The overall atmosphere seems busy and somewhat chaotic, with vehicles moving in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a yellow cab, commonly referred to as a taxi in certain countries, parked on a city street. The taxi has vintage or retro vinyl graphics on its rear window, giving it a distinct look. The tires of the taxi are exposed, indicating that it might be an older model or performing some unconventional use, such as displaying its tires for a specific event or advertisement. The background includes some urban elements like buildings and possibly traffic signs or flags.
+    This image shows a scene with a street in an urban environment. There are two prominent yellow taxis, likely旧金山的出租车，停在路边。在前一辆出租车后面，一个人正在用绳子固定一些衣物在一辆长椅上。车辆周围挂有多个旗帜和横幅，可能是节日庆祝或宣传活动的一部分。周围的建筑物显示出城市的商业性质。
 
 
 ## Querying Llama 4 Vision Model
