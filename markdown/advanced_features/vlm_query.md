@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 01:09:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 01:26:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 01:09:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 01:26:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.26s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.56s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.46s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.48s/it]
 
 
 
@@ -120,12 +120,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-05-21 01:09:28,548 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-05-21 01:09:28] Unexpected error during package walk: cutlass.cute.experimental
+    2026-05-21 01:26:26,501 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-05-21 01:26:26] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person standing in front of two yellow taxis. The person is holding a dry cleaner's machine, which is connected to a hose running down the side of the taxi. The setup appears to be a street cleaning device, likely being used to clean the side of the taxi. It involves the person wearing a protective suit and gloves, which they are donning to use the machine. This is a form of street cleaning that should not be attempted by individuals without proper safety precautions.
+    I think there might be a misunderstanding. There isn’t anything depicted in the image: there is a transportation vehicle.
 
 
 ### Call with Processor Output
@@ -150,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in New York City. The taxi is parked on the street with part of its rear visible, featuring the iconic bright yellow color of New York taxis. The vehicle appears to be in motion, possibly parked temporarily. The surrounding environment includes tall buildings with glass facades and some storefronts with signage. There is also a street with a pedestrian area and some greenery in the background.
+    The image shows a scene around a yellow taxi cab. The taxi is parked on the side of a street with various urban elements in the background. There are poles and flagpoles with flags, buildings with windows, and people walking around.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +206,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a modified yellow taxicab parked on a city street. The vehicle has been transformed into a makeshift clothing伊朗LEGRO changes display. There are several clothes hung on it, including a dark jacket and other garments. The roof of the taxicab has a banner with the Olympic rings, indicating a possible connection to the 2008 Beijing Olympics. The setting appears to be a commercial area with a building in the background, and a streetlamp is visible on the right side of the image.
+    This image depicts a scene on a city street. A yellow taxi is visible on the left side of the frame. The taxi is equipped with a rack and striped poles filled with dry cleaning items. A person wearing a yellow shirt appears to be operating or handling the line of clean clothes hanging in the racks. 
+    
+    In the background, there is a multi-story building and several American flags hanging from the building, as well as some street signs and traffic lights. The overall impression is that this taxi is a mobile dry cleaning service.
 
 
 ## Querying Llama 4 Vision Model
