@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 03:14:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 05:47:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 03:15:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 05:47:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.27s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in New York City. A yellow taxi is parked on the street, accompanied by a person using a clothes isle system. This device is used to clean mailbags, officer's uniforms, and other items by simulating steam and hot water without the need for actual steam or water. The person is using a hose attached to the isle to spray water on the items to be cleaned. The isle is mounted on a hitch, allowing for easy transportation between properties.
+    The image depicts a person standing by the back of a yellow taxi, hanging up some clothes. The person appears to be drying the clothes on a makeshift drying rack, which consists of a aluminum or metal frame. The setting is an urban environment with tall buildings and streets lined with trees. The person is wearing casual clothes and seems to be engaged in an unusual activity, such as drying clothes while riding in a taxi. This scenario is a humorous and surreal image, likely intended to be funny or surprising.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in what appears to be a busy street with a黄色出租车 (yellow taxi) in the foreground. The taxi is parked and there is a red box strapped to its back. There is also a person standing next to the taxi, holding a backpack and a sign that is partially visible. The street is lined with buildings, and there are several flags (possibly American flags) on poles adorned with ribbons hanging from them. The overall atmosphere seems busy and somewhat chaotic, with vehicles moving in the background.
+    That appears to be a humorous and unusual scene where a patterned blanket is draped over what looks like a table protruding from a vehicle, possibly a taxi, based on the context of the image. The juxtaposition of the object's extraordinary pattern against the mundane setting of a taxi is quite amusing and unexpected.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene with a street in an urban environment. There are two prominent yellow taxis, likely旧金山的出租车，停在路边。在前一辆出租车后面，一个人正在用绳子固定一些衣物在一辆长椅上。车辆周围挂有多个旗帜和横幅，可能是节日庆祝或宣传活动的一部分。周围的建筑物显示出城市的商业性质。
+    The image shows a yellow taxi cab driving on a city street. The taxi is parked next to a yellow cab, and there are severalFlags situated on another parked vehicle. The scene includes buildings and trees along the sidewalk.
 
 
 ## Querying Llama 4 Vision Model
