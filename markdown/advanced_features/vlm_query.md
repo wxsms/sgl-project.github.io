@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 08:59:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 14:14:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 08:59:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-21 14:14:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.41s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.29s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.23s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.26s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.20s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.21s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in an urban area. The man in the background appears to be drying his clothes with a line attached to the back of one of the taxis. The scene is set against a backdrop of tall buildings and some street signs.
+    The image shows a scene where a man appears to be drying his clothes using two yellow taxis. One taxi is in front of the other, and the man is standing on the back of the taxi in front, using the taxi as a makeshift drying rack. This unusual situation is likely staged for a humorous or artistic effect, possibly for a photo or a performance.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man demonstrating how to clean a car windscreen. He is standing next to a yellow car with his hands on a duster that is placed on a small tripod. The duster is being used to simulate cleaning the glass. In the background, there is another yellow car. The man appears to be demonstrating a cleaning technique for windscreen wipers. The setting looks like an outdoor area, possibly a street or patio.
+    The image shows a scene with a yellow taxi cab on a city street. The taxi is parked on the side of the road. In the background, there are banner-like objects hanging, possibly indicating a holiday or special event. The person in the foreground is sitting on a chair or folded chair, wearing a yellow shirt and glasses, and appears to be folding clothes on a metal stand. The setting suggests a festive or celebratory atmosphere, possibly a parade or holiday greeting.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene on a city street with two yellow taxis. One taxi is parked alongside the street, while the other appears to beбых detained with laundry draped over it. The laundry includes several items, such as a shirt and possibly a pair of pants, hung on a flat object or a makeshift clothesline-like structure. It looks like someone has temporarily claimed the taxi as a makeshift back-to-back, possibly doing laundry in an unusual and humorous way. The background includes a strip of storefronts and some street lights.
+    The image shows a street scene with a yellow taxi cab. The taxi is parked on the side of the road and appears to be involved in some form of transportation or delivery activity, as indicated by the presence of a piece of luggage or folded clothing strapped to its back. The background includes a building with large glass windows and some out-of-season decorated ornaments. The setting is urban, likely in a cityscape.
 
 
 ## Querying Llama 4 Vision Model
