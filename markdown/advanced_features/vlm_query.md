@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 09:52:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 10:29:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 09:52:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 10:29:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene from New York City, where a yellow taxi is parked on a street near a building with storefronts. The taxi is stationary, and there is a piece of yellow construction tape taped to the back window, creating a makeshift clothesline with two shirts hanging from it. The shirts are likely being washed and left drying outside before they are returned to the owner.
+    The image shows a demonstration in New York City, where a person is using a bicycle to hang and dry clothes. This is an unusual and creative way to solve the problem of limited parking spaces in the city, especially with the height of the distinctive yellow taxi cabs (also known as taxis or, in slang, "cabs"). The person performing this act seems to be attempting to make the most of available space, indicating a level of ingenuity and practicality in urban living.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with a yellow yellow cab taxi cab driving on a city street. A man is seen using a utility pole or sanitation equipment to clean the taxi, while wearing gloves. There are also some American flags visible in the background, which suggests that the event is taking place in the United States, potentially during a public demonstration or protest.
+    This image shows a yellow taxi cab parked on the side of a street. There appears to be a person wearing a yellow shirt and blue pants standing next to the taxi, seemingly using a mechanism or prop connected to the taxi. The person seems to be wearing plastic sunglasses and looking towards the ground or the camera. The background includes some buildings and other vehicles, which suggest that this might be taken in an urban area. The flag with an arrow graphic 위쪽 is also visible.
+    
+    This is not a typical use of a taxi cab, as it seems like the person is not about to or has just performed a cab service. It might be part
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, there are two yellow taxis parking on the street in what appears to be a busy urban area. Both taxis have the trademark yellow color and look like they are in service mode, as they are both closed into a box or shelter structure. The backdrop includes some tall buildings and flags on flagpoles, suggesting that this is a bustling city area, possibly in a commercial central business district. The scene is typical of many urban settings in North America.
+    The image depicts a yellow taxi parked on a city street. The taxi is partially opened, revealing aга state危情станов t сасстын v Порчеть тeй yer кmate та пеяуя я Feяiei ардеян счear комян аงาน ацыфуя아 ern�инг yen зеяния о—о ye pegСт <<< __ e—о ем а  -то --- см быструюocha1/Rа9р та яр зоCat умес-m заме н нейсаат човнея
 
 
 ## Querying Llama 4 Vision Model
