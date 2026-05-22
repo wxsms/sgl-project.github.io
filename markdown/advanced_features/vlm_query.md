@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 03:37:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 05:47:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 03:37:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 05:47:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    I'm not sure what it is. It might be a poster with clothesline.
+    The image shows the back of two yellow taxis in an urban setting. The focus is on a person washing clothes in the back of one of the taxis. The person is using a clothes rack and is wringing out some laundry. This activity is unusual and likely meant to mock or highlight the wasted space in the back of traditional taxis, as the area is typically not designed for such uses.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of a new york city taxi on a rainy road upright. On the roof of the car windows, there is a blue piece of fabric like a piece of cloth, and it seems to outweigh the weight of the car to make it rise up.
+    The image shows a scene in an urban area with two yellow taxis. The person is performing a stunt or trick involving cloths suspended mid-air from the rear of one of the taxis. The background features buildings with large glass windows, and there are hanging flags from the rooftops. The overall setting appears to be a street or street festival, possibly in a city.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a car adorned with an banner in a distinctive blue and black color scheme positioned on a luggage rack. The car appears to be a taxi, as indicated by the presence of another taxi in the background and the typical design features of cabs. The main car is covered with this banner, and it is either in motion or has pulled over temporarily. The event or message being conveyed via this banner is not clearly visible.
+    The image shows a yellow taxi cab in a city street. The taxi has a distinctive, large window on its side, which is often used for advertising and being able to see the outside world. Instead of a traditional rooftop sign, it has a large, sloped hood as a sign, which is what is being referred to as the hood sign. This unconventional use of the hood has become popular in New York City, particularly in the Loop area, where advertising space is scarce. The taxi cab is parked on a city street, and there are other vehicles and buildings in the background.
 
 
 ## Querying Llama 4 Vision Model
