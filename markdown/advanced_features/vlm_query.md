@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 02:15:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 03:37:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 02:15:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 03:37:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -121,11 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in New York City, featuring a city vehicle, likely a taxi. The vehicle's rear door is open, revealing a tray on which several dry-cleaning pieces of clothing are laid out. The clothing items appear to be drying on the tray on the back of the taxi. 
-    
-    The taxi is stationed in a street, surrounded by typical urban elements such as buildings and trees. There are also traffic lights and signs visible in the background, indicating a busy city environment.
-    
-    This scene humorously captures a common urban setting where individuals are seen hanging clothes out of their vehicles to dry them in the air in a way that im
+    I'm not sure what it is. It might be a poster with clothesline.
 
 
 ### Call with Processor Output
@@ -150,11 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in a city with several notable elements:
-    
-    1. **Taxi**: There are two taxis visible. The first taxi is in the foreground, while the second taxi is slightly behind and to the right.
-    2. **Man with Laundry**: A man is hanging clothes to dry on a clothesline outside. The clothes are displayed on a clothesline that is fastened to the back of the second taxi.
-    3. **Cable Car Rack**: The clothes are hanging between the man and the back of the taxi, suggesting that the taxi has a rack for bikes (likely in Vancouver based on the flags and other context
+    The image shows a scene of a new york city taxi on a rainy road upright. On the roof of the car windows, there is a blue piece of fabric like a piece of cloth, and it seems to outweigh the weight of the car to make it rise up.
 
 
 ### Call with Precomputed Embeddings
@@ -210,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a temporary installation involving a yellow taxi cab in a city setting. On the back of the taxi, there are two large clothes drying racks hanging from the tailgate. This kind of arrangement is often used in street art pieces or creative displays to transform a typically neutral urban environment into something seemingly unexpected and humorous.
-    
-    The clothes drying racks are empty and suspended in the air, hanging between the large wheels of the taxi. This setup appears to be part of a performance art or public art installation, aiming to capture the attention of passersby and invite them to observe the unusual scene.
+    The image shows a car adorned with an banner in a distinctive blue and black color scheme positioned on a luggage rack. The car appears to be a taxi, as indicated by the presence of another taxi in the background and the typical design features of cabs. The main car is covered with this banner, and it is either in motion or has pulled over temporarily. The event or message being conveyed via this banner is not clearly visible.
 
 
 ## Querying Llama 4 Vision Model
