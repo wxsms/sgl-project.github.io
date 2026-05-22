@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-21 23:24:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 01:02:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-21 23:24:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 01:02:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.75s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.29s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.21s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows an unusual scene at what appears to be a taxi stand or check-in area in a city. Instead of typical airport or bus station paraphernalia, there is a shirt rack loaded with clothes, with a person tending to the load. This setup is strange because people don't typically put clothes on racks to be loaded into taxis. This could be a humorous or creative setup for a workplace like an airport, where travelers might inventory their clothes before going through security or customs. The juxtaposition creates an unexpected and whimsical contrast with the expectations of a taxi stand.
+    The image shows a scene in a city with two yellow taxi cabs, one in the foreground and one partially visible in the background. A person is hanging clothes on a line attached to the back of the foremost taxi cab. The background includes several storefronts with illuminated signs and flags, as well as tall buildings with visible windows. The setting appears to be a busy urban area with commercial activity.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like you've provided an image that shows a scene with a yellow Cab.
+    The image shows a person engaging in a probable parlor trick or illusion on a city street, specifically in what appears to be a lower Manhattan area. The individual is holding up pieces of fabric, possibly indicating a sleight of hand or magic trick scenario.背景典型的纽约市街道，两侧停着两辆黄色出租车。注意从同一个人物的头发和结构做出一些细节，他们穿着有一件黄色正装，黄色T恤，以及其他羊毛衫或毛衣。钱也在他的口袋里，以及他向后移动着的黄色斜线毛巾。
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi in New York City, positioned behind a man and a small table that appears to have clothes and other items on it. The scene is potentially staged for an art installation or public performance, where the man might be re-enacting a scene of a person left to clean up the mess with their clothes. The presence of the American flags next to the taxi window could indicate a specific cultural or political context, perhaps as part of a protest or public commentary.
+    The image shows a street scene in an urban area with yellow and red taxis in the background. The taxis appear to be stopped and may be engaged in some form of activity or event, possibly coordinated by the barbershop quartet mentioned in the blog post.
 
 
 ## Querying Llama 4 Vision Model
