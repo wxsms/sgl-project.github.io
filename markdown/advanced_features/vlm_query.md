@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 21:31:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 21:44:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 21:31:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 21:44:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street in New York City with a whimsical scene. Two yellow taxicabs are driving past each other. On the back of the first taxi, there is a table with a hanging clothing rack attached. On the rack, there is an iron and a folded ironing board. A person is standing near the back of the second taxi, holding the ironing board and seemingly preparing to use the iron. This scene is humorous and unusual, capturing the daily life of taxis in New York.
+    The image shows two yellow taxis on a city street. The taxi on the right has laundry, specifically a black shirt and an undershirt, draped over its rear window and the tailgate. The taxi has been modified to carry items on top of the back, defying the usual norms of taxi transportation. The scene seems to be in a busy urban environment, as indicated by the other taxis and the presence of pedestrians.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It seems you've made a casual,如果你的背景允许，你可以帮助你上传图片。如果你有图片或任何问题，都可以随时上传,我会尽力帮助你。
+    This image shows a personยกย่อง a folded 衬衫 from a line attached to the back of a yellow New York taxi cab. The taxi is parked on a street. The scene appears to be set in an urban area, possibly during a fair or event, as there are banners on the taxi. The person is placing the folded 衬衫 on the stick to hang the display to draw attention.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a yellow taxi cab prominently displayed. The taxi is parked near a building with large windows and severalFlag banners hanging outside. The scene appears to be in a city setting, likely in an urban area. The taxi is the main focus of the photo.
+    It appears that the image shows a blue suitcase with various items hanging from a small stick attached to the suitcase. The suitcase is positioned between a yellow taxi and a car, suggesting that the suitcase is being transported or displayed on the street.
 
 
 ## Querying Llama 4 Vision Model
