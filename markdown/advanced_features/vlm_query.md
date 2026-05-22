@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 09:09:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 09:52:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 09:09:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 09:52:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene on a city street with two yellow taxis parked side by side. One taxi has a clothes rack attached to its back door, holding a bunch of clothes. The other taxi has a similar setup, with clothes laid out on it. The background includes tall buildings with street signs and a few distant people, suggesting this is likely in an urban setting, possibly New York City, given the yellow taxis. The scene is unusual in that clothes are typically not hung outdoors.
+    The image shows a scene from New York City, where a yellow taxi is parked on a street near a building with storefronts. The taxi is stationary, and there is a piece of yellow construction tape taped to the back window, creating a makeshift clothesline with two shirts hanging from it. The shirts are likely being washed and left drying outside before they are returned to the owner.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis driving down a street in an urban setting. The taxis have typical taxi designs with proscriptions to indicate Continental Hot Spots. A series of pink flags are visible in the background, likely indicating traffic lights or roadwork.
+    The image shows a scene with a yellow yellow cab taxi cab driving on a city street. A man is seen using a utility pole or sanitation equipment to clean the taxi, while wearing gloves. There are also some American flags visible in the background, which suggests that the event is taking place in the United States, potentially during a public demonstration or protest.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image you provided shows a scene in New York City featuring a classic yellow New York City taxicab. This specific yellow cab has its windows rolled down and striped canopy down, resembling one of the vintage cabs you might see in taxis from the 1970s and 1980s. The image is depicting the iconic cab style and its typical yellow color which has become an enduring part of New York City's cultural identity. The cab is parked in what appears to be a busy street, possibly in the neighborhoods known for this type of taxi; Times Square, possibly around Fifth Avenue, where taxis are often seen
+    In the picture, there are two yellow taxis parking on the street in what appears to be a busy urban area. Both taxis have the trademark yellow color and look like they are in service mode, as they are both closed into a box or shelter structure. The backdrop includes some tall buildings and flags on flagpoles, suggesting that this is a bustling city area, possibly in a commercial central business district. The scene is typical of many urban settings in North America.
 
 
 ## Querying Llama 4 Vision Model

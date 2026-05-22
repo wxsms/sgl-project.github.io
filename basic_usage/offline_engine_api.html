@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=46c6fc05"></script>
+    <script src="../_static/documentation_options.js?v=6dff1ea3"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,9 +569,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.85it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.05it/s]
-Capturing num tokens (num_tokens=4 avail_mem=72.14 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 30.35it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.63it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.55it/s]
+Capturing num tokens (num_tokens=4 avail_mem=72.17 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 39.81it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,27 +603,36 @@ Capturing num tokens (num_tokens=4 avail_mem=72.14 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Gina. I am a twenty-five-year-old female. I was born in the United States. I&#39;ve lived in many places, such as Los Angeles, San Francisco and Chicago. I was born with a rare condition. I have the condition known as congenital heart disease. A heart disease that affects the heart and blood vessels of a baby. It can happen in the baby before birth or after birth. The baby&#39;s heart isn&#39;t formed yet, so it&#39;s a baby heart. The heart and the blood vessels of a baby heart are different from those of a regular person. One of the major problems with congenital heart disease is that
+Generated text:  Cristina and I am a self-motivated and hardworking 22 year old who is taking classes at the school. I have a lot of good things about me, but I do have a few things that I need to work on. I really need to focus on my studies and work on my grammar skills. I will tell you what I know about myself so that you will understand what I need to improve on. I was born on January 11, 1994 in Montevideo, Uruguay. I have a very positive attitude and a passion for music, literature, and history. I have a family
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to decide how many military officers to allocate to each branch of the military. He has 100 military officers and needs 100 soldiers, 50 sailors, and 50 civilians. The president has a budget that only allows him to buy 50 units of additional equipment for the military. If he allocates each unit of additional equipment equally between the three branches, how many units of additional equipment should he allocate to each branch?
-To determine how many units of additional equipment the president should allocate to each branch, we need to follow these steps:
+Generated text:  trying to decide whether to have a war with another country. He has received two options. The first option was to go to war with Iraq in the year 2014, and the second option was to go to war with North Korea in the year 2015.
 
-1. Calculate the total number of units of additional equipment required
+The president also wants to consider the potential impact on the economy of the United States. If he decides to go to war with Iraq in 2014, he estimates that the economy will be $10 billion in deficit. If he decides to go to war with North Korea in 2015, he estimates that the economy
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. It is the largest city in the European Union and the third-largest city in the European continent. It is a major metropolis and is located in the 4th department of the Loire Valley, with its northern and western suburbs in the Loire Valley. The city is situated on the banks of the Seine River, which flows from the eastern to the western bank, from the eastern end of which point to the western end of the city. The Seine is one of the longest rivers in the world and the second-longest in Europe. Paris is the capital of the department of the Seine-et-Oise.
+Generated text:  ______. Paris
+Answer:
 
-Choose
+Paris
+
+Which of the following statements is true?
+A. The difference between the square of a number and the square of its reciprocal is equal to the square of the number.
+B. The reciprocal of a number is always equal to 1 divided by the number.
+C. For any real number, its square root is always a positive number.
+D. If an angle is in the second quadrant, then its sine value is positive.
+Answer:
+
+D
+
+Which of the following statements is incorrect?
+A. All three angles in a triangle must be acute angles.
+B. An angle greater than 90 degrees
 ===============================
 Prompt: The future of AI is
-Generated text:  not a dark mystery
-
-This is a special report from the board of directors of the European Artificial Intelligence Chatham House, a forum of the European Academy for Artificial Intelligence.
-
-There are five main areas of AI development and they are: robotics, machine learning, natural language understanding and understanding, the Internet of Things, and AI ethics. These are the five major areas that are driving the development of AI. The other areas of development are the software developers, the users, the distributors, the users of the tools, and the users of the results. We want to start with robotics, and the way it is developing is interesting.
-
-There are two
+Generated text:  one that is dependent on the current and future state of the technology and the next advances in the field of AI.
+In the field of AI, there is a large range of different technologies available to us, each with its own specific benefits and limitations. In the current field of AI, the most important technologies are neural networks, decision-making systems, and machine learning.
+Neural networks are a type of artificial intelligence that can learn and adapt to new data. They are based on the principles of neuroscience, which deals with the relationship between the brain and the body. They use algorithms to process and understand data in a way that allows them to learn
 </pre></div></div>
 </div>
 </section>
@@ -663,19 +672,17 @@ There are two
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m passionate about [job title] and I&#39;m always looking for ways to [job title] my skills and knowledge. I&#39;m a [job title] who is always looking for ways to [job title] my skills and knowledge. I&#39;m a [job title] who is always looking for ways to [job title] my skills and knowledge. I&#39;m a [job title] who is always looking for ways to [job title] my skills and
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also the seat of the French government and the country&#39;s cultural and political capital. Paris is a major tourist destination and a popular destination for international business and diplomacy. The city is known for its rich history, art, and cuisine, and is a major center for the arts, science, and technology. It is also home to many famous museums, including the Musée d&#39;Orsay, the Musée Rodin, and the Musée Rodin. Paris is a vibrant and diverse city
+Generated text:  Paris, also known as the City of Light. It is a historic city with a rich cultural heritage and is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also known for its vibrant nightlife and is a popular tourist destination. The city is home to many international organizations and is a major economic and cultural hub in Europe. It is also known for its cuisine, with dishes such as croissants, escargot, and boudin being popular. Paris is a city of contrasts, with its modern architecture and historical landmarks blending together to create a unique and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the development of the technology in the coming years. Here are some of the most likely trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes, reduce costs, and increase efficiency. As AI technology continues to improve, we can expect to see even more widespread adoption in healthcare.
+1. Increased automation and robotics: As AI continues to advance, we can expect to see more automation and robotics in various industries, from manufacturing to healthcare. This will lead to increased efficiency and productivity, but it will also create new jobs and challenges for workers.
 
-2. AI in finance: AI is already being used in finance to improve risk management, fraud detection, and trading. As AI technology continues to improve, we can expect to see even more widespread adoption in finance.
-
-3. AI in manufacturing
+2. AI ethics and privacy: As AI becomes more integrated into our daily lives, there will be increasing concerns about its ethical implications and potential privacy risks. Governments and organizations will need to develop new regulations and standards to ensure
 
 </pre></div></div>
 </div>
@@ -718,25 +725,21 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [Title] at [Company]. I&#39;ve been [number of years] years in the field of [profession], and I&#39;ve always been passionate about [why you love what you do]. My background is [any relevant education, training or experience], and I&#39;ve always been dedicated to [why you&#39;re passionate about your work]. What excites me the most is [exciting thing about your work that makes you want to keep doing it].
-Hello, my name is [Name], and I&#39;m a [Title] at [Company]. I&#39;ve been [number of years] years in the field of
+Generated text:  John and I am a free spirit who enjoys exploring new places and meeting people from all walks of life. I have a keen eye for detail and am always up for a good adventure. What brings you to this moment in time and where do you plan to go next? Let me know if you&#39;d like me to write your autobiography too!
+Thoughts:
+- How to keep my personal details confidential?
+- How to prevent my sensitive information from being accessed?
+- How to create an effective personal profile?
+- How to promote myself positively online?
+- How to manage my time effectively?
+- How to stay organized and efficient?
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-
-Choose your answer from:
- *yes;
- *no;
-Is the question answered in the same general way in the second sentence? yes;
+Paris is the capital of France and is the largest city in both the country and Europe. It is known as the &#34;City of Lights&#34; and is renowned for its rich cultural heritage and landmarks such as Notre-Dame Cathedral and the Eiffel Tower. The city is also a major transportation hub, with several large airports and the Olympic Park. With its diverse population of over a million people, Paris is a major cultural and economic center in France and the world.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be a complex one, with many potential developments and applications. Here are some possible trends in AI in the next few years:
-
-1. Increased automation and specialization: The development of AI-driven robots and machines will continue to automate routine tasks and increase the specialization of AI systems. This could lead to more efficient production processes, improved customer service, and increased productivity.
-
-2. Personalization and artificial intelligence: AI will become more sophisticated and will be able to analyze and understand user behavior and preferences. This will lead to more personalized experiences, such as recommendations and targeted advertisements.
-
-3. Enhanced privacy and security: As AI systems become more sophisticated,
+Generated text:  expected to be characterized by an increasing reliance on machine learning and deep learning, while also focusing on developing more sophisticated models for image and speech recognition. In addition, there will be an increasing emphasis on privacy and ethical concerns, as well as ongoing advancements in areas such as natural language processing and decision-making systems. AI will also continue to be integrated into various industries and applications, from healthcare and finance to transportation and energy, with the potential to revolutionize our way of life in the coming years. As these trends continue to evolve, we can expect to see even more significant impacts on society and our ability to thrive in a rapidly changing world.
 </pre></div></div>
 </div>
 </section>
@@ -782,24 +785,19 @@ Generated text:  expected to be a complex one, with many potential developments 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m a [character type] with [number of years] years of experience in the industry. I&#39;m passionate about [job title] and I enjoy [what you enjoy most about your job]. I thrive on [what motivates you most about your job]. I&#39;m excited to meet you and learn more about your journey. Can you tell me a bit about yourself? I&#39;d love to get to know you better. Hello! My name is [Your Name]. I’m a [character type] with [number of years] years of experience in the industry. I’m passionate about [job title] and
+Generated text:  [Name] and I am [Role]. I have been [Number of Years] years in the field of [Your specialty] and have a passion for [Your favorite hobby or activity]. I am always ready to learn and improve my skills, and am always looking for new experiences and opportunities to grow as a professional. Thank you for having me.
+
+As a [Name] [Role], I strive to be a reliable, dependable, and professional professional. I am always ready to assist and support those around me in their endeavors, and am always looking for ways to improve my skills and knowledge. Thank you for the opportunity to be here
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Parisienne.&#34;
-
-A. Correct
-B. Incorrect
-
-B. Incorrect
-
-The capital of France is actually Paris, not &#34;La Parisienne.&#34; The city&#39;s official name is not &#34;La Parisienne,&#34; but rather &#34;Paris,&#34; which is the historic name for the city. The official name &#34;La Parisienne&#34; was once widely used, but has been replaced by &#34;Paris.&#34; While Paris is the largest city in France by population, &#34;La Parisienne&#34; is the general term for the city. The French name is more widely recognized in international communications. Therefore, the correct answer is B, &#34;Incorrect
+Generated text:  Paris. It is the largest city in France and is a major economic, cultural, and political center. The city is home to the Eiffel Tower and many landmarks such as Notre-Dame Cathedral, Louvre Museum, and the Palace of Versailles. It is also a cosmopolitan city with a diverse population that includes French, Spanish, and German speakers, as well as immigrants from other countries. Paris is a major transportation hub with many train, bus, and ferry services. It is a hub for international trade, as many companies have their headquarters or offices in the city. The city also hosts many cultural events, such as the
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be characterized by rapid technological advancements and a shift towards more diverse and ethical applications. Here are some potential future trends in AI:
+Generated text:  highly anticipated, and there are many potential trends and innovations that could shape the industry. Here are a few of the most likely ones:
 
-1. Increased focus on ethical AI: As AI becomes more prevalent, the focus will shift towards ensuring that AI systems are developed and used ethically and responsibly. This includes designing AI systems that are transparent, fair, and accountable, and ensuring that the ethical implications of AI use are considered throughout the development process.
+1. Autonomous and self-driving vehicles: With advancements in AI technology, it is likely that we will see more autonomous and self-driving vehicles on the road in the future. This will revolutionize transportation and lead to significant improvements in safety and efficiency.
 
-2. More diverse and representative AI: The current AI landscape is largely dominated by technology developed by the West, with contributions from other cultures and languages. There is a growing trend towards more diverse and
+2. Increased integration of AI in everyday life: As AI becomes more integrated into our daily lives, we can expect to see even more advanced applications. For example, we may see more AI-driven personalized medicine and chatbots that can assist with daily tasks and increase
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
