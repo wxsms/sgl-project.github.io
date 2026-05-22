@@ -99,21 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 18:07:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 20:18:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 18:07:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-
-
-    [W522 18:08:11.784047354 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+    [2026-05-22 20:18:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.15s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.00it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -124,11 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image you've shared shows an unusual sight: a person standing in the back of a yellow taxi, drying an iron on a makeshift clothesline, supported by the taxi's luggage rack. This activity is not typical of what one would expect to see happening inside a taxi, which are generally used for transportation rather than for laundry purposes.
-    
-    The yellow cab is parked on a street with a building in the background, and the scene looks like it is on a city street. The advertisement sign "50 FOREIGN ST" is visible on the building, which was likely the address of Sony's New York City headquarters during that timeframe.
-    
-    This image seems
+    The image shows a yellow and black taxi parked on a street, with a person wearing a yellow shirt and glasses hanging clothes on a clothesline in front of it. The clothesline is attached to the back of the taxi, and the clothes include towels and likely some other items for drying. The cars are in an urban setting with buildings and storefronts visible in the background.
 
 
 ### Call with Processor Output
@@ -153,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis in an urban setting. One taxi is in the foreground, and the other is slightly behind it towards the left. There's also aчто they are doing then the image.
+    The image depicts a person performing a installation or setup on the back of a yellow taxi in an urban setting, likely New York City, given the presence of taxicabs in the image. The person appears to be attaching or fixing something to the back of the taxi. There are no clear indicators of what the purpose or function of what he is working on is.
 
 
 ### Call with Precomputed Embeddings
@@ -209,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a clothing rack or davy standing in the middle of a street next to two yellow taxis. The clothing rack is labeled with a sign that reads "TAKE A DANGEROUS	item. GET HELD." The scene appears to be set in an urban environment, possibly in a city with tall buildings and streetlights.
+    The image shows two yellow taxis in a city street. One taxi is closely followed by a second one, and in the foreground, one of the taxis is being loaded with items on a cart. This could be a public event or a social media flowerbomb that created a fanfare in New York by displaying various items, sometimes humorously, on its side panels or back window. These images sparked significant buzz and image registration related to being publicized in commercials for blockbuster movies.
 
 
 ## Querying Llama 4 Vision Model
