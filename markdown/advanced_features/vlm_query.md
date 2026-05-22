@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 10:54:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 15:11:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 10:54:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 15:11:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a scene on a city street with two yellow taxis. There is a person wearing a yellow shirt standing on the back of a taxi, holding onto a bar that has two articles of clothing draped over it. The setting includes urban elements like buildings, red traffic lights, and street signs. It appears to be a sunny day, and there are other vehicles and pedestrians in the background.
+    The image shows a yellow cab with a person drying clothes on the back of the vehicle using a clothesline. The attire presumably refers to men's clothing.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This photograph shows a man standing outside a storefront in a city, dressed in a yellow shirt and jeans. He is positioned behind a邮寄箱（ mailbox）that is partially covered with a colorful towel or cloth stretched over it. To the left of the man, there is a yellow taxi cab parked on the street. The shop behind him has shelves displaying various items, and there are colorful banners hanging outside the storefront. The scene appears to be a humorous or unusual arrangement, as the mailbox is not typically covered with a towel or cloth.
+    The image shows a person cleaning taxi windows, donning yellowalls and having moved to a fire station. The fire station appears to be merging with a taxi depot. The manner of transportation is quite unique as the red black vaccine is used.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene from New York City, featuring two iconic yellow cabs. These cabs are synonymous with the city's taxi service, known for their distinctive bright yellow color. The scene captures a moment on a busy street with typical urban scenery, including traffic and a storefront in the background.
+    The image depicts a scene in New York City. A person dressed in a yellow shirt and black pants is standing in front of a yellow taxi, which is parked on the street. The person appears to be manipulating or adjusting something between their legs. Near the person, there are some clothes hanging up on a stand that is attached to the back of the taxi. The background features a typical New York City street with tall buildings and other taxis visible.
 
 
 ## Querying Llama 4 Vision Model
