@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 05:47:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 06:14:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 05:47:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 06:14:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.32s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.07s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows the back of two yellow taxis in an urban setting. The focus is on a person washing clothes in the back of one of the taxis. The person is using a clothes rack and is wringing out some laundry. This activity is unusual and likely meant to mock or highlight the wasted space in the back of traditional taxis, as the area is typically not designed for such uses.
+    This image shows a man standing next to a taxi on a city street, hanging laundry to dry. The scene is unusual and humorous, as drying clothes in traffic is not a common sight, particularly with the combination of a work attire and the vehicle's position for drying.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in an urban area with two yellow taxis. The person is performing a stunt or trick involving cloths suspended mid-air from the rear of one of the taxis. The background features buildings with large glass windows, and there are hanging flags from the rooftops. The overall setting appears to be a street or street festival, possibly in a city.
+    The image shows a taxi driver using a harness to clean windows on an SUV, presumably while driving through a city. The taxi is yellow, and the passenger vehicle (SUV) is yellow as well. The setting appears to be an urban environment, possibly in New York City, as there are steps and a store facade in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab in a city street. The taxi has a distinctive, large window on its side, which is often used for advertising and being able to see the outside world. Instead of a traditional rooftop sign, it has a large, sloped hood as a sign, which is what is being referred to as the hood sign. This unconventional use of the hood has become popular in New York City, particularly in the Loop area, where advertising space is scarce. The taxi cab is parked on a city street, and there are other vehicles and buildings in the background.
+    The image shows two yellow taxis parked in a city street. The first taxi, which is more prominently displayed, has its trunk open and clothes laid out on a chair placed in the back. This type of scene can sometimes occur due to odd parking misuses, where drivers might leave their vehicles in strange-looking positions for no immediate reason.
 
 
 ## Querying Llama 4 Vision Model
