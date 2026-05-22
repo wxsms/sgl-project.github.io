@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 20:37:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 21:31:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 20:37:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 21:31:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a person Wiley washing clothes on the back of a taxi in New York City. This is an unusual and humorous activity, as washing clothes on public transportation is not typical. This scene is likely meant to be funny as part of a joke or a street performance.
+    The image shows a street in New York City with a whimsical scene. Two yellow taxicabs are driving past each other. On the back of the first taxi, there is a table with a hanging clothing rack attached. On the rack, there is an iron and a folded ironing board. A person is standing near the back of the second taxi, holding the ironing board and seemingly preparing to use the iron. This scene is humorous and unusual, capturing the daily life of taxis in New York.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a city street scene with two visible taxis. One taxi is on the left side of the image, and the other is closer to the right side. The taxis are yellow and appear to be either stopped or moving slowly. In the foreground, there is a person standing on a step stool, seemingly checking or adjusting something on the right taxi. Behind the person, there is a parking meter, and a few traffic lights can be seen further back. The street appears to be in a commercial area, as there are various store signs and flags hanging from poles visible in the background. The overall scene suggests an urban setting with active traffic
+    It seems you've made a casual,如果你的背景允许，你可以帮助你上传图片。如果你有图片或任何问题，都可以随时上传,我会尽力帮助你。
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city, likely New York given the iconic yellow taxis. The taxi is a Dodge Caravan station wagon cab. It has a trailer attached to its back, which contains several pieces of clothing, including a blue garment hanging on a clothesline. The taxi appears to be parked on a street with other vehicles and buildings in the background, including a building with holiday banners.
+    The image shows a street scene with a yellow taxi cab prominently displayed. The taxi is parked near a building with large windows and severalFlag banners hanging outside. The scene appears to be in a city setting, likely in an urban area. The taxi is the main focus of the photo.
 
 
 ## Querying Llama 4 Vision Model
