@@ -99,18 +99,21 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 16:47:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 18:07:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 16:47:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 18:07:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+
+
+    [W522 18:08:11.784047354 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.15s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.00it/s]
 
 
 
@@ -121,7 +124,11 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene from a city street where a yellow cab (taxi) is painted, and on top of the cab, there are clothes hanging on a makeshift clothesline or makeshift clothes rack. The cab itself appears to be partially painted to look like a mannequin torso, creating an amusing and creative display. This type of street performance is often seen on special events or as part of an art installation, designed to capture the attention of passersby.
+    The image you've shared shows an unusual sight: a person standing in the back of a yellow taxi, drying an iron on a makeshift clothesline, supported by the taxi's luggage rack. This activity is not typical of what one would expect to see happening inside a taxi, which are generally used for transportation rather than for laundry purposes.
+    
+    The yellow cab is parked on a street with a building in the background, and the scene looks like it is on a city street. The advertisement sign "50 FOREIGN ST" is visible on the building, which was likely the address of Sony's New York City headquarters during that timeframe.
+    
+    This image seems
 
 
 ### Call with Processor Output
@@ -146,7 +153,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab that has been turned into a drying rack for laundry items. The man in the yellow shirt is using a broom to sweep clothes that have been draped over the back of the taxi. This is a creative and humorous way to dry clothes in an urban environment. The taxi has been repurposed as a makeshift drying rack, with the clothes hanging off the back to catch the wind.
+    The image shows two yellow taxis in an urban setting. One taxi is in the foreground, and the other is slightly behind it towards the left. There's also aчто they are doing then the image.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +209,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This appears to be a street performance or street art project involving a street.Performer wearing a bright yellow shirt, balancing a broom on top of an upright toothbrush. The scene takes place on a city street, with a yellow taxi passing by. The street performer's aim seems to be using this absurd and attention-grabbing act to interact with and surprise passersby. It could also be an aimed protest against factory workers' conditions.
+    The image shows a clothing rack or davy standing in the middle of a street next to two yellow taxis. The clothing rack is labeled with a sign that reads "TAKE A DANGEROUS	item. GET HELD." The scene appears to be set in an urban environment, possibly in a city with tall buildings and streetlights.
 
 
 ## Querying Llama 4 Vision Model
