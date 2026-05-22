@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 15:42:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 16:47:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 15:42:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 16:47:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.19s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.15s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man wearing a yellow shirt doing laundry in front of a yellow taxi cab on a city street. The French flag is visible in the background. This scene is humorous and satirical, as it is unusual for someone to be doing laundry in a public place, especially in front of a taxi cab.
+    The image shows a scene from a city street where a yellow cab (taxi) is painted, and on top of the cab, there are clothes hanging on a makeshift clothesline or makeshift clothes rack. The cab itself appears to be partially painted to look like a mannequin torso, creating an amusing and creative display. This type of street performance is often seen on special events or as part of an art installation, designed to capture the attention of passersby.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with a yellow taxi cab in the foreground and another yellow taxi cab partly visible in the background. There is a person dressed in a yellow outfit standing near the taxis, holding a striped item of clothing on a stand. The person appears to be in the middle of a performance, possibly drying the clothing using the taxi cabs as an makeshift drying rack. The setting seems to be an urban environment, with buildings and storefronts visible in the background along with various street signs and flags. The weather appears to be sunny and the scene is lively.
+    The image shows a yellow taxi cab that has been turned into a drying rack for laundry items. The man in the yellow shirt is using a broom to sweep clothes that have been draped over the back of the taxi. This is a creative and humorous way to dry clothes in an urban environment. The taxi has been repurposed as a makeshift drying rack, with the clothes hanging off the back to catch the wind.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears that the photo you're referring to shows two yellow taxis on a city street. One taxi is closer to the foreground, while the other is slightly further away, appearing to be parked or stopped. The taxis have distinctive design features typical of New York City yellow taxis. There's also street furniture with red and blue clothes hung on it, possibly as a form of art or protest. The overall scene suggests a typical urban setting in a major city, possibly in the United States.
+    This appears to be a street performance or street art project involving a street.Performer wearing a bright yellow shirt, balancing a broom on top of an upright toothbrush. The scene takes place on a city street, with a yellow taxi passing by. The street performer's aim seems to be using this absurd and attention-grabbing act to interact with and surprise passersby. It could also be an aimed protest against factory workers' conditions.
 
 
 ## Querying Llama 4 Vision Model
