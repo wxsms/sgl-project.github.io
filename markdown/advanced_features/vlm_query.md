@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 20:18:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 20:37:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 20:18:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-22 20:37:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow and black taxi parked on a street, with a person wearing a yellow shirt and glasses hanging clothes on a clothesline in front of it. The clothesline is attached to the back of the taxi, and the clothes include towels and likely some other items for drying. The cars are in an urban setting with buildings and storefronts visible in the background.
+    The image shows a person Wiley washing clothes on the back of a taxi in New York City. This is an unusual and humorous activity, as washing clothes on public transportation is not typical. This scene is likely meant to be funny as part of a joke or a street performance.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a person performing a installation or setup on the back of a yellow taxi in an urban setting, likely New York City, given the presence of taxicabs in the image. The person appears to be attaching or fixing something to the back of the taxi. There are no clear indicators of what the purpose or function of what he is working on is.
+    The image depicts a city street scene with two visible taxis. One taxi is on the left side of the image, and the other is closer to the right side. The taxis are yellow and appear to be either stopped or moving slowly. In the foreground, there is a person standing on a step stool, seemingly checking or adjusting something on the right taxi. Behind the person, there is a parking meter, and a few traffic lights can be seen further back. The street appears to be in a commercial area, as there are various store signs and flags hanging from poles visible in the background. The overall scene suggests an urban setting with active traffic
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis in a city street. One taxi is closely followed by a second one, and in the foreground, one of the taxis is being loaded with items on a cart. This could be a public event or a social media flowerbomb that created a fanfare in New York by displaying various items, sometimes humorously, on its side panels or back window. These images sparked significant buzz and image registration related to being publicized in commercials for blockbuster movies.
+    The image shows a street scene in a city, likely New York given the iconic yellow taxis. The taxi is a Dodge Caravan station wagon cab. It has a trailer attached to its back, which contains several pieces of clothing, including a blue garment hanging on a clothesline. The taxi appears to be parked on a street with other vehicles and buildings in the background, including a building with holiday banners.
 
 
 ## Querying Llama 4 Vision Model
