@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 08:10:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 09:09:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 08:10:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 09:09:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows New York City taxi drivers displaying laundry outside their vehicles to attract customers and spread awareness about an initiative called "Fresh Laundry for Fresh Fill Up," which aims to encourage customers to buy a身上一滴態作為奖励。
+    The image shows two yellow taxi cabs parked on a city street. One of the taxis has a clothesline attached to its rear, displaying several items of clothing. The scene appears to be a humorous setup, often seen in urban areas for entertainment or light-hearted moments.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you provided shows a scene of a yellow taxi stopped on a city street. Next to the taxi, there is a person sitting on a small, foldable table. He appears to be washing a white shirt with a red sponge. The setting seems to be an urban environment, possibly in a major city, given the tall buildings and the presence of a street lamp in the background.
+    The image shows a man cleaning the side windows of a yellow taxi with a squeegee and a sponge. The taxi is parked on a city street, and there are other buildings and a pedestrian with a child in a stroller in the background. The man is wearing a yellow shirt and appears to be diligently cleaning the window.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with a person standing near a metal stand, which is holding fabric items. The person is seemingly engaged in some sort of street art or performance. In the background, there are yellow taxis typically associated with New York City.
+    In the image, there is a yellow cab, commonly known as a taxi, parked on a city street. On an easel in front of the cab, a person is demonstrating ironing clothes. The scene is set in a busy urban environment with various shops and street signs visible in the background. The photograph captures a playful and humorous moment, combining everyday urban life with a whimsical twist of using such an unusual setting to jet wash clothes.
 
 
 ## Querying Llama 4 Vision Model
