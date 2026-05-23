@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 02:48:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 06:22:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 02:48:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 06:22:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a Yellow Cab driving the parking lot of a subway station in New York City.
+    The image shows a scene on a street with a taxi driving through it. The taxi is yellow and is parked behind another yellow taxi. There is also a person hanging laundry outside the taxi cab, which appears to be drying on a clothesline or rack attached to the taxi's rear panel. This is [a very unusual and humorous sight as daytime laundry is relatively rare in urban areas where climate conditions support flying clothes without adequate drying methods.].
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man wearing an orange shirt and dark pants, performing a bottle cap karate kick on an ironing board attached to a taxi. The taxi is a yellow New York City cab, and the scene appears to be part of a performance. The background includes other cabs, buildings with flags, and streetlights, indicating an urban setting in New York City.
+    The image shows a yellow taxi parked on a city street. The passenger side door is open, and a person in a yellow shirt is standing next to it, appearing to wash the inside of the vehicle with water and a squeegee. This is a common practice for keeping taxis clean and scrubbing out condensation or salt after a long day on the road. There are no pedestrians or other vehicles visible in the immediate area. The setting appears to be on a city street with some buildings and greenery in the background, and it is likely an overcast day given the clean appearance of the yellow cab.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like you've raised an interesting observation! In the event you were referring to, a man in a bright orange shirt and glasses was eventually arrested and taken to the police station after he tried to swipe a mobile phone from a businessman's shirt pocket. The situation prompted a social media debate — some people were criticizing the businessman for not reporting the theft, while others were upset that he had used the opportunity to pose for a photo, showcasing a popular meme.
+    It appears to be an unusual use of a taxi. It's possible the individual had separated from their clothes, placed some stripes on it, and ended up with clothes on the back of the taxi.
 
 
 ## Querying Llama 4 Vision Model
