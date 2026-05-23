@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 07:40:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 08:10:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 07:40:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 08:10:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.39s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    I'm not sure what exactly you're referring to. There doesn't appear to be a specific object or image related to a boy flying a kite in front of a yellow SUV truck. If you could provide more context or clarify your question, I'd be happy to help with more accurate information.
+    The image shows New York City taxi drivers displaying laundry outside their vehicles to attract customers and spread awareness about an initiative called "Fresh Laundry for Fresh Fill Up," which aims to encourage customers to buy a身上一滴態作為奖励。
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis driving on a city street. There is a person standing between the two taxis, attempting to lift a clothespin vertically on a shirt line. The scene appears to be a spontaneous and unusual moment captured in an urban setting, possibly during a street performance or street art installation. The use of clothespins as props suggests a creative or humorous mood to the scene.
+    The image you provided shows a scene of a yellow taxi stopped on a city street. Next to the taxi, there is a person sitting on a small, foldable table. He appears to be washing a white shirt with a red sponge. The setting seems to be an urban environment, possibly in a major city, given the tall buildings and the presence of a street lamp in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi in a city street. The taxi has laundry on a washing board extending out from the back of the vehicle. Someone wearing a yellow shirt and a mannequin head is using the laundry for comedic effect. The scene is likely staged for entertainment purposes, perhaps as part of a planned event or performance. The background includes other vehicles and urban infrastructure, such as pedestrians and buildings.
+    The image shows a street scene with a person standing near a metal stand, which is holding fabric items. The person is seemingly engaged in some sort of street art or performance. In the background, there are yellow taxis typically associated with New York City.
 
 
 ## Querying Llama 4 Vision Model
