@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 07:10:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 07:40:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 07:10:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 07:40:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.39s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a scene from a New York City parade. In the foreground, there is a person dressed in a New York City simple school uniform who has been repaid the kindness they received and is doing their coin of duty by polishing the çeşitli lamb of the New York City taxi and the American flag. Theせימを 지른 taxi is parked on the street, and the American flag towering behind the {} fromBEFORE is being cleaned. The person making these innocent acts is a volunteer in the币、愛 Holiday Parade and the American flag cleaning methodology.
+    I'm not sure what exactly you're referring to. There doesn't appear to be a specific object or image related to a boy flying a kite in front of a yellow SUV truck. If you could provide more context or clarify your question, I'd be happy to help with more accurate information.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in a city street with a yellow taxi cab prominently in the foreground. A person is hanging a blue blanket over the rear of the taxi, using a metal bar that is attached to the back of the vehicle. The taxi cab is near some tall buildings with visible storefronts, and there are various signs and flags visible in the background. It appears to be a commercial area with a mixture of businesses. The weather looks clear, and the street is relatively quiet with no other pedestrians visible.
+    The image shows two yellow taxis driving on a city street. There is a person standing between the two taxis, attempting to lift a clothespin vertically on a shirt line. The scene appears to be a spontaneous and unusual moment captured in an urban setting, possibly during a street performance or street art installation. The use of clothespins as props suggests a creative or humorous mood to the scene.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street that appears to be part of avertising or protest event. In the background, there are several yellow taxis, and in the foreground, a man is standing next to a table with an unfolded piece of clothing on it. The clothing appears to be transparent or see-through and is possibly part of a costume or display. This indicates that the individual may be participating in an event or demonstration featuring clothing or fashion items.
+    The image shows a yellow taxi in a city street. The taxi has laundry on a washing board extending out from the back of the vehicle. Someone wearing a yellow shirt and a mannequin head is using the laundry for comedic effect. The scene is likely staged for entertainment purposes, perhaps as part of a planned event or performance. The background includes other vehicles and urban infrastructure, such as pedestrians and buildings.
 
 
 ## Querying Llama 4 Vision Model
