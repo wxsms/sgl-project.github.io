@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-22 23:42:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 01:20:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-22 23:42:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 01:20:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    It appears there might be a mix-up in your question as the image description provided does not match the provided image information. In the image you're referring to, there are two yellow taxisệpしい.
+    The image shows a street scene featuring two yellow taxis driving in an urban area. One taxi is closer to the foreground and appears to be undergoing some maintenance or cleaning. A person is using a chromed frame with wheels and flexible legs, akin to a lamppost, to pretend to fold a cloth as if it were a flag. This activity suggests a whimsical or staged scene, possibly for a stop-motion animation or a humorous artistic piece. The background shows buildings with retail establishments and banner advertisements, indicating a busy city environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in what appears to be a city street. There are two yellow taxis, which are typical vehicles for taxi services in many urban areas. The taxi in the foreground has a sign attached to the back that contains a visual representation of animals and text, although the text itself is not fully readable. The taxi in the background has a clearly visible license plate. The street surface has multiple lines, indicating it might be a designated area for parking or a pedestrian zone. There are also a few road signs visible in the upper part of the image. The overall setting suggests an urban environment, likely during daytime given the light conditions.
+    The image shows a man performing the "Laundromat Taxi" stunt, where he moves across the street on_flat ironforms instead of wheels. The man is using a pair of wheeled ironforms to move across the street. To the right and left of the man, there are yellow-and-green New York City taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow cab with a horse on the back. The horse appears to be dressed in a yellow and blue vest, which is being used to pull the taxi. This is a unique and humorous scene, likely for a promotional event or a themed event in a city with a strong tradition of horse-drawn carriages, such as New York City. The yellow and blue vest is a common attire for horses in such cultural events.
+    The image shows a yellow taxi cab driving on a city street. The background features a building with several storefronts and a busy urban environment. The taxi is parked alongside the curb and appears to be towing a ladder or similar equipment with it. The scene suggests that the taxi driver may be involved in some kind of work or service that necessitates the use of a ladder or extended equipment.
 
 
 ## Querying Llama 4 Vision Model
