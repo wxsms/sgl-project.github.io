@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 09:09:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 09:43:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 09:09:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 09:43:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.49s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.26s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.30s/it]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxi cabs parked on a city street. One of the taxis has a clothesline attached to its rear, displaying several items of clothing. The scene appears to be a humorous setup, often seen in urban areas for entertainment or light-hearted moments.
+    The person in the picture is engaged in a humorous activity typically associated with removing vehicles from the street. This is known as "facing the element." In this case, the taxi seems to be undergoing a "dry-run" type of removal exercise, causing some toilets to pour water onto it as a joke.
+    
+    This scene is reflective of a common phenomenon associated with市容关注和 street cleaning activities in Kensington Mews, East Harlem, which includes踋g the city's vehicles parked there and moving them to parking lots.
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man cleaning the side windows of a yellow taxi with a squeegee and a sponge. The taxi is parked on a city street, and there are other buildings and a pedestrian with a child in a stroller in the background. The man is wearing a yellow shirt and appears to be diligently cleaning the window.
+    The image shows a clothing drying rack setup in the street next to a yellow taxi. The person in the yellow shirt appears to be using the rack to hang clothes to dry while they are at their job, likely as a street vendor or peddler. This is an unusual sight in many urban settings and demonstrates an imaginative approach to outdoor activities.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there is a yellow cab, commonly known as a taxi, parked on a city street. On an easel in front of the cab, a person is demonstrating ironing clothes. The scene is set in a busy urban environment with various shops and street signs visible in the background. The photograph captures a playful and humorous moment, combining everyday urban life with a whimsical twist of using such an unusual setting to jet wash clothes.
+    The image shows a man cleaning a street施 broad plastic "ironing board" on a New York City street. Behind him are two yellow taxis. The background shows a busy urban environment with buildings, a few flags, and a few street lamps.
 
 
 ## Querying Llama 4 Vision Model
