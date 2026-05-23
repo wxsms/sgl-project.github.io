@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 20:26:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 23:11:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 20:26:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 23:11:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -121,14 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    It looks like the person is standing on the rear end of a yellow cab, wearing yellow safety gear, holding a cleaning tool. The photo appears to be taken in a busy urban environment, likely a bustling street in a city. 
-    
-    ### Key Points:
-    - **People**: A person in yellow safety gear.
-    - **Context**: Likely a city street with high traffic.
-    - **Cars**: A yellow cab behind the person.
-    - **Obvious Items**: Recycling bin, red pedals on the left, and other unspecified items.
-    - **Miscellaneous**: Yellow pickup truck, hanging clothes, people standing, Dr Pepper bottles, blurred text, green
+    The image depicts a taxicab being used to perform street valeting services. In the image, the driver has the car's trunk open and is drying clothes on the top of the car. This is an innovative and practical way for people to get their laundry clean and dry quickly. The setting appears to be a busy urban street with various signs and lights in the background.
 
 
 ### Call with Processor Output
@@ -153,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man pretending to iron folded clothes while holding an iron in front of him, with a pair of clean clothes on a metal folding chair in front of him. The setting appears to be a busy street with taxis, including emblematic yellow New York City cabs. The background includes urban elements such as stores and a clear sky with some buildings.
+    In the image, you can see a parking arm for taxis, commonly referred to as a "Пробегушка" (kettleettle) in Russian, being pushed by a person in a yellow shirt. Probegushkas are structures designed to hold off-taxis roadblocks that prevent other vehicles from accessing parking spots. The image appears to be taken in a city with tall buildings and busy streets, with a yellow taxi cab visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -209,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene in New York City, where a man is cleaning a Hyatt yellow cab. He is using a brush to clean the windshield of the vehicle, which is parked on the street. The vehicle is a yellow cab, commonly referred to as an "ambulance" or "showers blue," which is a term for the color of cabs in New York City. The man is dressed in a yellow shirt, likely matching the cab. The cityscape with buildings and flags in the background is also visible.
+    The image shows a symbol of the New York City Taxi protest that occurred in New York in 2008. It is a silly, fake commercial aligning with the NY Central Bus Line-1's slogan "Free Press Free Press." This protest was mainly made up of fake cars and puppets. The cop has a bat, and others wear police uniforms and uniforms. Aáre also the big ones with the big payoffs for New York City policing andDLV.
 
 
 ## Querying Llama 4 Vision Model
