@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 09:43:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 10:30:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 09:43:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 10:30:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.49s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.26s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.30s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
 
 
 
@@ -121,9 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The person in the picture is engaged in a humorous activity typically associated with removing vehicles from the street. This is known as "facing the element." In this case, the taxi seems to be undergoing a "dry-run" type of removal exercise, causing some toilets to pour water onto it as a joke.
-    
-    This scene is reflective of a common phenomenon associated with市容关注和 street cleaning activities in Kensington Mews, East Harlem, which includes踋g the city's vehicles parked there and moving them to parking lots.
+    It appears to be a humorous and creative scene where a person is stretching or displaying a pair of blue 'hot pants' for sale at the back of a yellow taxi. This type of marketing is often used by street merchandisers to attract attention by using everyday items or costumes creatively. The setting is outdoors, and the person is positioned between the taxi vehicles, which are typical urban transportation in many cities.
 
 
 ### Call with Processor Output
@@ -148,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a clothing drying rack setup in the street next to a yellow taxi. The person in the yellow shirt appears to be using the rack to hang clothes to dry while they are at their job, likely as a street vendor or peddler. This is an unusual sight in many urban settings and demonstrates an imaginative approach to outdoor activities.
+    The image shows a scene where a man wearing a yellow shirt is using a clothes horse attached to the back of a yellow taxi. The clothes are mounted on the clothes horse, indicating that he is drying clothes while the taxi is in motion. This is a common idea in fiction, often used in romantic stories or movies as a humorous element. In reality, it would not be safe or practical to hang clothes outside a taxi cab.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man cleaning a street施 broad plastic "ironing board" on a New York City street. Behind him are two yellow taxis. The background shows a busy urban environment with buildings, a few flags, and a few street lamps.
+    I apologize, but I don't have enough context to provide a specific explanation about what's shown. The description provided only describes a scenario involving bright yellow vehicles on a street, without giving any details about the actual image. Without more information, I don't have enough context to answer any questions about what's shown. If you have a specific question about the vehicles or setting, I'd be happy to try and help answer that based on general knowledge about taxis or street scenes in urban areas.
 
 
 ## Querying Llama 4 Vision Model
