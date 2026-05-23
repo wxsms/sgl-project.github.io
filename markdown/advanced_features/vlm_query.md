@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 01:20:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 01:59:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 01:20:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 01:59:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.57s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.90s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  2.00s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene featuring two yellow taxis driving in an urban area. One taxi is closer to the foreground and appears to be undergoing some maintenance or cleaning. A person is using a chromed frame with wheels and flexible legs, akin to a lamppost, to pretend to fold a cloth as if it were a flag. This activity suggests a whimsical or staged scene, possibly for a stop-motion animation or a humorous artistic piece. The background shows buildings with retail establishments and banner advertisements, indicating a busy city environment.
+    This image shows a person trying to dry clothes on the rear side of a yellow taxi cab. The person is using a laundry line attached to the roof of the taxi, which is cluttered with various items and has a sign that appears to be "RT." The scene is likely taking place in an urban area, possibly during a rain shower or outdoor event that requires drying out clothes.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man performing the "Laundromat Taxi" stunt, where he moves across the street on_flat ironforms instead of wheels. The man is using a pair of wheeled ironforms to move across the street. To the right and left of the man, there are yellow-and-green New York City taxis.
+    The image shows a scenario where a person is picking up items from the back of a moving yellow taxi cab. The individual is using a step stool to reach down and retrieve objects. This appears to be a humorous or unusual situation, as it is not an everyday action for someone to perform this task. The taxi is on a street with buildings and flags visible in the background, suggesting an urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab driving on a city street. The background features a building with several storefronts and a busy urban environment. The taxi is parked alongside the curb and appears to be towing a ladder or similar equipment with it. The scene suggests that the taxi driver may be involved in some kind of work or service that necessitates the use of a ladder or extended equipment.
+    I don't know what's shown. It appears to be text that might be interpreted as random characters.
 
 
 ## Querying Llama 4 Vision Model
