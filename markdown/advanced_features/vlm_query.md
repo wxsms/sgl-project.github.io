@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 17:41:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 20:26:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 17:41:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 20:26:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.24s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -121,7 +121,14 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man hitchhiking behind a yellow taxi. He has a clothespin stuck in his pants, and he is using it as a stop sign to hail a cab. This is an unusual and humorous scene, as usual, a person uses a hand-raised sign to hitchhike.
+    It looks like the person is standing on the rear end of a yellow cab, wearing yellow safety gear, holding a cleaning tool. The photo appears to be taken in a busy urban environment, likely a bustling street in a city. 
+    
+    ### Key Points:
+    - **People**: A person in yellow safety gear.
+    - **Context**: Likely a city street with high traffic.
+    - **Cars**: A yellow cab behind the person.
+    - **Obvious Items**: Recycling bin, red pedals on the left, and other unspecified items.
+    - **Miscellaneous**: Yellow pickup truck, hanging clothes, people standing, Dr Pepper bottles, blurred text, green
 
 
 ### Call with Processor Output
@@ -146,7 +153,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man hanging clothes outside a moving yellow taxi. The taxi is likely from the United States, as yellow cabs are a common sight in New York City and other major US cities. The scene is set on a busy street, with the man using an improvised drying rack to hang his laundry as the taxi passes by. This kind of visual often makes headlines where people are seen hanging clothes in unusual or by surprise locations, particularly during the cold winter months.
+    The image shows a man pretending to iron folded clothes while holding an iron in front of him, with a pair of clean clothes on a metal folding chair in front of him. The setting appears to be a busy street with taxis, including emblematic yellow New York City cabs. The background includes urban elements such as stores and a clear sky with some buildings.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +209,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm sorry, I am not able to perform image operations. However, if this is something that pertains to a new question, I can do all I can do.
+    The image depicts a scene in New York City, where a man is cleaning a Hyatt yellow cab. He is using a brush to clean the windshield of the vehicle, which is parked on the street. The vehicle is a yellow cab, commonly referred to as an "ambulance" or "showers blue," which is a term for the color of cabs in New York City. The man is dressed in a yellow shirt, likely matching the cab. The cityscape with buildings and flags in the background is also visible.
 
 
 ## Querying Llama 4 Vision Model
