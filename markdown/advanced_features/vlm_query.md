@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 01:59:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 02:24:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 01:59:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 02:24:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.57s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.90s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  2.00s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a person trying to dry clothes on the rear side of a yellow taxi cab. The person is using a laundry line attached to the roof of the taxi, which is cluttered with various items and has a sign that appears to be "RT." The scene is likely taking place in an urban area, possibly during a rain shower or outdoor event that requires drying out clothes.
+    The image shows a man stretched out on a two-wheeled, human-powered device that resembles an ironing board. He is wearing a bright yellow long-sleeve shirt and black pants, which contrasts with the darker surroundings. He appears to be whistling and pushing forward. The scene is set on a city street, with two yellow taxis visible in the background. One taxi is behind him, and the other is ahead, both parked parallel to the street. The man is giving the impression that he is "pushing" semi-humanity, likely due to the humorous setup of the device.
 
 
 ### Call with Processor Output
@@ -146,7 +146,18 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scenario where a person is picking up items from the back of a moving yellow taxi cab. The individual is using a step stool to reach down and retrieve objects. This appears to be a humorous or unusual situation, as it is not an everyday action for someone to perform this task. The taxi is on a street with buildings and flags visible in the background, suggesting an urban environment.
+    The image shows a street scene with several notable details:
+    
+    1. **Two Yellow Cabs**:
+       - Two yellow taxis are driving down the road. The taxis are typical of urban taxicabs, often used for transportation in cities.
+       - The taxi on the right has a windshield wiper in the process of cleaning out the window.
+    
+    2. **Sidewalk and Street**:
+       - The street is lined with buildings.
+       - There are parked cars and possibly stores or businesses on the sidewalks.
+    
+    3. **Traffic Signs and Decorations**:
+       - There are various street signs and possibly Christmas decorations hanging from the buildings
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +213,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I don't know what's shown. It appears to be text that might be interpreted as random characters.
+    The image shows a man wearing a yellow shirt standing next to a yellow taxi cab in an urban setting, possibly a city street. The man is adjusting a blue kayak on the back of the taxi cab using a balancing stick. The scene is happening on a city street, and there are buildings, cars, and signs in the background.
 
 
 ## Querying Llama 4 Vision Model
