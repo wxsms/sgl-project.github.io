@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 06:34:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 07:10:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 06:35:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 07:10:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image depicts a scene on a city street with two yellow taxis. One taxi has a clothes drying rack attached to it, which appears to be putting laundry outside of it. The person in the image is wearing a yellow shirt and seems to be supervising the drying process. The setting looks like a busy urban area with buildings and trees in the background.
+    The image depicts a scene from a New York City parade. In the foreground, there is a person dressed in a New York City simple school uniform who has been repaid the kindness they received and is doing their coin of duty by polishing the çeşitli lamb of the New York City taxi and the American flag. Theせימを 지른 taxi is parked on the street, and the American flag towering behind the {} fromBEFORE is being cleaned. The person making these innocent acts is a volunteer in the币、愛 Holiday Parade and the American flag cleaning methodology.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab on a street. The cab has its top slightly raised, and the back door is open. A person, wearing a yellow shirt, is leaning against the open rear door of the taxi. They appear to be gesturing or pointing towards something with their hand. The background includes buildings and some framed items on the wall, indicating an urban setting. There are also some flags visible in the background.
+    The image shows a scene in a city street with a yellow taxi cab prominently in the foreground. A person is hanging a blue blanket over the rear of the taxi, using a metal bar that is attached to the back of the vehicle. The taxi cab is near some tall buildings with visible storefronts, and there are various signs and flags visible in the background. It appears to be a commercial area with a mixture of businesses. The weather looks clear, and the street is relatively quiet with no other pedestrians visible.
 
 
 ### Call with Precomputed Embeddings
@@ -202,12 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene on a city street with several notable features:
-    
-    1. **Taxi**: A yellow taxi is prominently visible. The taxi is parked along the curb.
-    2. **Person**: There is a person standing next to the car, likely inspecting or adjusting something on the car or its equipment.
-    3. **Shopping Cart**: A red and silver shopping cart is attached to the back of the car by a hose. The hose appears to be connected to a water system, which is unusual for a typical taxi.
-    4. **Surroundings**: The background shows buildings, some with storefronts, and there are street signs
+    The image shows a scene on a city street that appears to be part of avertising or protest event. In the background, there are several yellow taxis, and in the foreground, a man is standing next to a table with an unfolded piece of clothing on it. The clothing appears to be transparent or see-through and is possibly part of a costume or display. This indicates that the individual may be participating in an event or demonstration featuring clothing or fashion items.
 
 
 ## Querying Llama 4 Vision Model
