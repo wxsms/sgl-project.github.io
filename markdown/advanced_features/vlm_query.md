@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 02:24:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 02:48:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 02:24:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 02:48:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man stretched out on a two-wheeled, human-powered device that resembles an ironing board. He is wearing a bright yellow long-sleeve shirt and black pants, which contrasts with the darker surroundings. He appears to be whistling and pushing forward. The scene is set on a city street, with two yellow taxis visible in the background. One taxi is behind him, and the other is ahead, both parked parallel to the street. The man is giving the impression that he is "pushing" semi-humanity, likely due to the humorous setup of the device.
+    The image shows a Yellow Cab driving the parking lot of a subway station in New York City.
 
 
 ### Call with Processor Output
@@ -146,18 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with several notable details:
-    
-    1. **Two Yellow Cabs**:
-       - Two yellow taxis are driving down the road. The taxis are typical of urban taxicabs, often used for transportation in cities.
-       - The taxi on the right has a windshield wiper in the process of cleaning out the window.
-    
-    2. **Sidewalk and Street**:
-       - The street is lined with buildings.
-       - There are parked cars and possibly stores or businesses on the sidewalks.
-    
-    3. **Traffic Signs and Decorations**:
-       - There are various street signs and possibly Christmas decorations hanging from the buildings
+    The image shows a man wearing an orange shirt and dark pants, performing a bottle cap karate kick on an ironing board attached to a taxi. The taxi is a yellow New York City cab, and the scene appears to be part of a performance. The background includes other cabs, buildings with flags, and streetlights, indicating an urban setting in New York City.
 
 
 ### Call with Precomputed Embeddings
@@ -213,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man wearing a yellow shirt standing next to a yellow taxi cab in an urban setting, possibly a city street. The man is adjusting a blue kayak on the back of the taxi cab using a balancing stick. The scene is happening on a city street, and there are buildings, cars, and signs in the background.
+    It looks like you've raised an interesting observation! In the event you were referring to, a man in a bright orange shirt and glasses was eventually arrested and taken to the police station after he tried to swipe a mobile phone from a businessman's shirt pocket. The situation prompted a social media debate — some people were criticizing the businessman for not reporting the theft, while others were upset that he had used the opportunity to pose for a photo, showcasing a popular meme.
 
 
 ## Querying Llama 4 Vision Model
