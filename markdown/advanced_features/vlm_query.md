@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 06:22:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 06:34:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 06:22:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 06:35:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene on a street with a taxi driving through it. The taxi is yellow and is parked behind another yellow taxi. There is also a person hanging laundry outside the taxi cab, which appears to be drying on a clothesline or rack attached to the taxi's rear panel. This is [a very unusual and humorous sight as daytime laundry is relatively rare in urban areas where climate conditions support flying clothes without adequate drying methods.].
+    This image depicts a scene on a city street with two yellow taxis. One taxi has a clothes drying rack attached to it, which appears to be putting laundry outside of it. The person in the image is wearing a yellow shirt and seems to be supervising the drying process. The setting looks like a busy urban area with buildings and trees in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on a city street. The passenger side door is open, and a person in a yellow shirt is standing next to it, appearing to wash the inside of the vehicle with water and a squeegee. This is a common practice for keeping taxis clean and scrubbing out condensation or salt after a long day on the road. There are no pedestrians or other vehicles visible in the immediate area. The setting appears to be on a city street with some buildings and greenery in the background, and it is likely an overcast day given the clean appearance of the yellow cab.
+    The image shows a yellow taxi cab on a street. The cab has its top slightly raised, and the back door is open. A person, wearing a yellow shirt, is leaning against the open rear door of the taxi. They appear to be gesturing or pointing towards something with their hand. The background includes buildings and some framed items on the wall, indicating an urban setting. There are also some flags visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,12 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears to be an unusual use of a taxi. It's possible the individual had separated from their clothes, placed some stripes on it, and ended up with clothes on the back of the taxi.
+    The image depicts a scene on a city street with several notable features:
+    
+    1. **Taxi**: A yellow taxi is prominently visible. The taxi is parked along the curb.
+    2. **Person**: There is a person standing next to the car, likely inspecting or adjusting something on the car or its equipment.
+    3. **Shopping Cart**: A red and silver shopping cart is attached to the back of the car by a hose. The hose appears to be connected to a water system, which is unusual for a typical taxi.
+    4. **Surroundings**: The background shows buildings, some with storefronts, and there are street signs
 
 
 ## Querying Llama 4 Vision Model
