@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 10:30:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 17:41:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 10:30:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-23 17:41:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.24s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    It appears to be a humorous and creative scene where a person is stretching or displaying a pair of blue 'hot pants' for sale at the back of a yellow taxi. This type of marketing is often used by street merchandisers to attract attention by using everyday items or costumes creatively. The setting is outdoors, and the person is positioned between the taxi vehicles, which are typical urban transportation in many cities.
+    The image shows a man hitchhiking behind a yellow taxi. He has a clothespin stuck in his pants, and he is using it as a stop sign to hail a cab. This is an unusual and humorous scene, as usual, a person uses a hand-raised sign to hitchhike.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene where a man wearing a yellow shirt is using a clothes horse attached to the back of a yellow taxi. The clothes are mounted on the clothes horse, indicating that he is drying clothes while the taxi is in motion. This is a common idea in fiction, often used in romantic stories or movies as a humorous element. In reality, it would not be safe or practical to hang clothes outside a taxi cab.
+    The image shows a man hanging clothes outside a moving yellow taxi. The taxi is likely from the United States, as yellow cabs are a common sight in New York City and other major US cities. The scene is set on a busy street, with the man using an improvised drying rack to hang his laundry as the taxi passes by. This kind of visual often makes headlines where people are seen hanging clothes in unusual or by surprise locations, particularly during the cold winter months.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I apologize, but I don't have enough context to provide a specific explanation about what's shown. The description provided only describes a scenario involving bright yellow vehicles on a street, without giving any details about the actual image. Without more information, I don't have enough context to answer any questions about what's shown. If you have a specific question about the vehicles or setting, I'd be happy to try and help answer that based on general knowledge about taxis or street scenes in urban areas.
+    I'm sorry, I am not able to perform image operations. However, if this is something that pertains to a new question, I can do all I can do.
 
 
 ## Querying Llama 4 Vision Model
