@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 10:31:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 12:10:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 10:31:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 12:10:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene in a city, likely New York City, based on the recognizable yellow taxis and the urban environment. There is a man on a sidewalk who appears to be drying clothes on the rear of a yellow taxi. This unusual sight suggests he is possibly passing by aنب.com in a commercial strip with various shops, as indicated by the "50 G Workshop" and "Nanxiang Silk Road" signs visible in the background. The presence of what looks like laundry drying indicates that this may be an informal or temporary setup, possibly for a small business or during a move to a new location.
+    The image shows a humorous scene on a street in New York City, specifically near Times Square. Two yellow taxis are driving down the street, and a man is draped over one of the back seats of the taxi. He appears to be drying his clothes as he drives. This is a staged photo, likely taken as a joke or for comedic effect, suggesting the man is driving carelessly while trying to dry his clothes at the same time.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab with a person hanging off the back of a pickup truck that is towing additional taxis. The person is seemingly wearing a yellow shirt and has an apron decorated with small, colorful bows. The scene appears to be taking place in a busy urban area, possibly New York City, given the iconic yellow taxis.
+    The image shows a man晾衣合影的场景。他穿着黄色的照片，旁边有出租车。这可能是在进行户外拍摄，而背景吸引了人们的注意。由于这座城市的门面，洗手间，三叉勺，出租车，布料和街道也突出。晾衣、合影，出租车都是城市的特征。
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging out clothes on a metal clothesline attached to the back of a yellow taxi cab. The setting appears to be an urban area with tall buildings and trees in the background. The taxi's license plate is lit up, typically a sign that the taxi is in service. The person is bald and wearing a yellow shirt, with an outstretched arm and hand.
+    The image shows a person using a high-powered hairdryer to iron clothes laid out on a hanging rack. The setting appears to be an urban street, as indicated by the presence of a yellow taxi cab and city buildings in the background. The hairdryer is directed at the clothes to smooth them out, presumably quickly ironing multiple pieces of clothing at once.
 
 
 ## Querying Llama 4 Vision Model
