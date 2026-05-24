@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 21:41:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 22:57:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 21:41:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 22:57:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.29s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in a city setting. One taxi is moving on the street, while the other is parked. It appears that a yellow-shirted individual is directboxing on the back of the parked taxi. This unusual and illegal activity uses the luggage rack at the rear of the taxi to strap and box an object, likely to avoid tolls or fees for storing their items in the vehicle.
+    The image shows a man hanging laundry out of the back window of two yellow taxis along a city street. The scene appears to be a humorous and unusual method of drying laundry. The man is using the open windows of the taxis as makeshift drying racks. The taxis are driving down the street on what looks like a busy urban area.
 
 
 ### Call with Processor Output
@@ -146,9 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene from what appears to be a commercial or promotion event in New York City. In the foreground, there is a yellow taxi parked in the street, and scattered across the ground in front of the taxi are several wet clothes. A man wearing a yellow sweatshirt is washing a tank top and shirt with a red cloth, similar to washing clothes at an autograph stall. The background features tall buildings characteristic of the Manhattan skyline. It looks like the man is juggling his washing and the act of washing others’ clothes simultaneously, much like the Red Peony soap washing реклам event. 
-    
-    The unusual scene also includes yellowabo
+    The image shows two yellow taxis driving down a city street in New York City. The scene appears humorous because a man, dressed in a yellow shirt that matches the taxis' color, is ironing clothes outside the back of one of the taxis while on the side of the road in front of stores. The clothing is draped over a makeshift.Member's www.epickler.com platform to dry after being ironed. This quirky act of ironing clothes outdoors serves as a humorous breaking point in an otherwise ordinary moment, embodying New York City's casual and often unexpected humor. The juxtaposition of the ironing scene with the urban environment creates a
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a woman standing behind a taxi, holding a piece of laundry with clothespins. The scene is outdoors on a city street, with a yellow taxi cab and other vehicles in the background. The woman appears to be using the taxi as a makeshift laundry area to dry her clothes outside.
+    The image shows a candid moment of a street cleaner, likely a park ranger, with his shirt waving in the wind. He is using a tripod stand to clean or maintain the manhole in the road. The backdrop includes a yellow taxi and some urban buildings, suggesting it is an urban environment, possibly a downtown area.
 
 
 ## Querying Llama 4 Vision Model
