@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 03:55:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 07:12:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 03:55:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 07:12:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.37s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.07s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    It appears that a person is standing next to two street taxis, with a drying rack extending from the back of one taxi. Typically, street taxis use drying racks to manually air out the ride of the next customer.
+    This image shows a person using a pole to clean windows on the side of a taxi. The taxi is yellow and has lights on. The person is likely aクリーニング man, working to maintain the windows of the taxis.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person working outside a building, possibly a hotel or hotel street. The person is hanging clothes on a clothesline tied to the back of a yellow taxi. This is an unusual and humorous scene, as taxis are typically used for various purposes like transporting people or articles to the back of the cab. It might be either an artistic installation, a prank, or simply someone trying to dry clothes in an unconventional place.
+    The image shows a scene in what appears to be a city, likely New York City, based on the style of the yellow taxis. A person is hanging a colorful cloth or flag on a뒤 bike or prop attached to a bicycle. The yellow taxis are a distinctive feature of New York City, and there are tall buildings in the background with streetlights and possibly other urban elements.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person drying orange and blue shirts on a metal folding rack attached to a yellow taxi cab on a city street. The scene suggests a humorous or unusual situation where the cab is providing a clothesline for someone's laundry.
+    The image depicts a scene on a city street, likely in New York City, given the recognizable yellow cabs. Two yellow taxis are prominently featured: one in the foreground and another partially visible in the background. A person is bending over over the back of one of the taxis, seemingly ironing clothes on an improvised clothes rack. The person is wearing a yellow shirt and appears to be working on a blue and white garment. The person stands on the back of a yellow taxi, using the cab as a makeshift booth for ironing. The background shows a cityscape with buildings, street signs, and red and yellow banners hanging from the street
 
 
 ## Querying Llama 4 Vision Model
