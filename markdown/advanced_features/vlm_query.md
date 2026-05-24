@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 07:50:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 08:49:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 07:50:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 08:49:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.66it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.63it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    American flag
+    The image shows a scene in a city, featuring two yellow cabs, likely taxi cabs. In the middle foreground, there is a exterior of what appears to be luggage being loaded into the vehicle. The setting suggests that the cab is parked and ready to be used, possibly with passengers inside.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two yellow taxis driving down a street. A man in a yellow jacket is ironing clothes on a makeshift clothesline attached to the back of one of the cabs. The man appears to be using a regular iron to iron the cloth, which is hanging on a stick. The backdrop includes urban buildings with numerous advertising signs hanging from the windows. The man is directing traffic with his arm out of the car window. This is an unusual and humorous situation, as it is not typically expected to see someone ironing on the street or in a taxi in a major city.
+    The image shows a man wearing a bright yellow shirt and a yellow hat, who appears to be dancing or moving energetically in front of a yellow SUV. The man is holding a mop and appears to be doing some kind of street performance or dance routine. The setting seems to be an urban environment, possibly a city street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person ironing clothes on an ironing board placed in front of a yellow taxi. The taxi is in a busy street, likely in an urban area. The person is wearing a yellow shirt and appears to be multitasking between ironing and operating the taxi. The street is lined with tall buildings and there are flags visible in the background.
+    The image shows a man steam cleaning the front of a yellow taxi cab on a street in what appears to be a city. The two cars are yellow cabs, a common vehicle type in many cities. The man is using a steam cleaner to clean the taxi's front, demonstrating an innovative cleaning method. The background includes other vehicles and some stores, indicating an urban environment. Flags are also visible, possibly indicating a specific location or event.
 
 
 ## Querying Llama 4 Vision Model
