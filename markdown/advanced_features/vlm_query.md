@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 08:49:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 10:31:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 08:49:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 10:31:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in a city, featuring two yellow cabs, likely taxi cabs. In the middle foreground, there is a exterior of what appears to be luggage being loaded into the vehicle. The setting suggests that the cab is parked and ready to be used, possibly with passengers inside.
+    The image shows a street scene in a city, likely New York City, based on the recognizable yellow taxis and the urban environment. There is a man on a sidewalk who appears to be drying clothes on the rear of a yellow taxi. This unusual sight suggests he is possibly passing by aنب.com in a commercial strip with various shops, as indicated by the "50 G Workshop" and "Nanxiang Silk Road" signs visible in the background. The presence of what looks like laundry drying indicates that this may be an informal or temporary setup, possibly for a small business or during a move to a new location.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man wearing a bright yellow shirt and a yellow hat, who appears to be dancing or moving energetically in front of a yellow SUV. The man is holding a mop and appears to be doing some kind of street performance or dance routine. The setting seems to be an urban environment, possibly a city street.
+    The image shows a yellow taxi cab with a person hanging off the back of a pickup truck that is towing additional taxis. The person is seemingly wearing a yellow shirt and has an apron decorated with small, colorful bows. The scene appears to be taking place in a busy urban area, possibly New York City, given the iconic yellow taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man steam cleaning the front of a yellow taxi cab on a street in what appears to be a city. The two cars are yellow cabs, a common vehicle type in many cities. The man is using a steam cleaner to clean the taxi's front, demonstrating an innovative cleaning method. The background includes other vehicles and some stores, indicating an urban environment. Flags are also visible, possibly indicating a specific location or event.
+    The image shows a person hanging out clothes on a metal clothesline attached to the back of a yellow taxi cab. The setting appears to be an urban area with tall buildings and trees in the background. The taxi's license plate is lit up, typically a sign that the taxi is in service. The person is bald and wearing a yellow shirt, with an outstretched arm and hand.
 
 
 ## Querying Llama 4 Vision Model
