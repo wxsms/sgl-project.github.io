@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-23 23:11:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 03:55:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-23 23:11:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 03:55:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a taxicab being used to perform street valeting services. In the image, the driver has the car's trunk open and is drying clothes on the top of the car. This is an innovative and practical way for people to get their laundry clean and dry quickly. The setting appears to be a busy urban street with various signs and lights in the background.
+    It appears that a person is standing next to two street taxis, with a drying rack extending from the back of one taxi. Typically, street taxis use drying racks to manually air out the ride of the next customer.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, you can see a parking arm for taxis, commonly referred to as a "Пробегушка" (kettleettle) in Russian, being pushed by a person in a yellow shirt. Probegushkas are structures designed to hold off-taxis roadblocks that prevent other vehicles from accessing parking spots. The image appears to be taken in a city with tall buildings and busy streets, with a yellow taxi cab visible in the background.
+    The image shows a person working outside a building, possibly a hotel or hotel street. The person is hanging clothes on a clothesline tied to the back of a yellow taxi. This is an unusual and humorous scene, as taxis are typically used for various purposes like transporting people or articles to the back of the cab. It might be either an artistic installation, a prank, or simply someone trying to dry clothes in an unconventional place.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a symbol of the New York City Taxi protest that occurred in New York in 2008. It is a silly, fake commercial aligning with the NY Central Bus Line-1's slogan "Free Press Free Press." This protest was mainly made up of fake cars and puppets. The cop has a bat, and others wear police uniforms and uniforms. Aáre also the big ones with the big payoffs for New York City policing andDLV.
+    The image shows a person drying orange and blue shirts on a metal folding rack attached to a yellow taxi cab on a city street. The scene suggests a humorous or unusual situation where the cab is providing a clothesline for someone's laundry.
 
 
 ## Querying Llama 4 Vision Model
