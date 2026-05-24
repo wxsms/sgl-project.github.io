@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 12:10:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 14:48:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 12:10:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 14:48:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.43it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a humorous scene on a street in New York City, specifically near Times Square. Two yellow taxis are driving down the street, and a man is draped over one of the back seats of the taxi. He appears to be drying his clothes as he drives. This is a staged photo, likely taken as a joke or for comedic effect, suggesting the man is driving carelessly while trying to dry his clothes at the same time.
+    This image shows two yellow taxis parked along a city street. One taxi is parked on the sidewalk, and the other is parked further back on the street. The taxi parked on the sidewalk has a laundry rack with clothes hanging on it, displaying a colorful array of laundry items. The scene appears to be set in an urban environment, likely in New York City, as indicated by the iconic "Taxi" signs in the background. The person fabricating laundry items in the image is likely honoring the famous "kite man" incident in the city.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man晾衣合影的场景。他穿着黄色的照片，旁边有出租车。这可能是在进行户外拍摄，而背景吸引了人们的注意。由于这座城市的门面，洗手间，三叉勺，出租车，布料和街道也突出。晾衣、合影，出租车都是城市的特征。
+    The image shows three yellow taxis in traffic on a city street. One of the taxis has a person hanging out the window, presumably flirting with the onlookers. The person is wearing a yellow shirt and is using the back of a silver folding chair as a makeshift scanner to scan people walking past. The scene looks fun and playful, as it is unusual for someone to have a chair positioned in front of a taxi window for no apparent reason.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person using a high-powered hairdryer to iron clothes laid out on a hanging rack. The setting appears to be an urban street, as indicated by the presence of a yellow taxi cab and city buildings in the background. The hairdryer is directed at the clothes to smooth them out, presumably quickly ironing multiple pieces of clothing at once.
+    The image shows two yellow taxis on a city street with one of them slightly moving to the side. The person is hanging laundry, which includes shirts, on a clothesline attached to a structure. The street appears to be in an urban area with buildings and signs visible in the background.
 
 
 ## Querying Llama 4 Vision Model
