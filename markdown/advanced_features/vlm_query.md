@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 17:16:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 18:42:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 17:16:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 18:42:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.47it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.65it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.62it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on the side of a city street. One of the cabs has a person hanging laundry on its rear window, possibly engaging in a pick-up or delivery service using the back of the taxi as a makeshift clothesline. The surroundings include urban elements such as buildings, storefronts, and traffic lights, indicating a busy city environment.
+    The image shows a scene with two yellow taxis and a person standing beside a folding chair draped with laundry. The person appears to be drying their clothes using the taxi's hood as an makeshift drying rack. This technique is often used in situations where outdoor drying racks or drying sheets are not available.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a person wearing orange clothing hanging a blue flag or banner-mounted object behind two yellow taxis. The person appears to be in the middle of a street, as also seen by their reflection in one of the taxi windows.
+    From the information provided, it's difficult to provide a detailed description or the exactity of what's shown. However, based on the context, it seems you might be referring to a photo of a scene where something unusual or humorous is happening involving a sandwich board or article of clothing by two yellow taxis. The bright colors and the unusual positioning of a person on a sandwich board in the middle of a busy street suggest it's a playful or humorous depiction. 
+    
+    If you're asking about such an actual happenstance or capturing such an image, it's a bit of a setup comedian-style which is specifically meant to capture a pie-in-the-face
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, it appears there is an unusual sight of a yellow cab, which is a typical mode of transportation in urban areas, rearranged or upside down on the street with clothes hanging from it. This scene seems to be part of an art installation or a performance, as it is highly unexpected and unsized in the setting. The opulent elements of the scene include items which align more with sophisticated settings such as high-rises, urban areas, and visual art installations. Here, are some points of reference for more context based on standard deductions:
-    
-    1. **Urban Setting**: Given the yellow color of the cab and the presence of
+    The image shows a yellow taxi cab in New York City. The taxi is stopped on the street, and a man is seen ironing clothes on makeshift stands in the doorway of the cab. The scene appears to be humorous, as taxis typically do not offer services like ironing clothes. The background includes urban elements typical of New York City, such as pedestrians and other vehicles in the distance.
 
 
 ## Querying Llama 4 Vision Model

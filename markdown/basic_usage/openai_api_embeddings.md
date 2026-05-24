@@ -23,876 +23,52 @@ python3 -m sglang.launch_server --model-path Alibaba-NLP/gte-Qwen2-1.5B-instruct
 wait_for_server(f"http://localhost:{port}", process=embedding_process)
 ```
 
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
     /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: 'python -m sglang.launch_server' is still supported, but 'sglang serve' is the recommended entrypoint.
       Example: sglang serve --model-path <model> [options]
       warnings.warn(
 
 
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.42s/it]
 
-
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.25s/it]
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.06s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.11s/it]
 
 
       0%|          | 0/58 [00:00<?, ?it/s]Compiling num tokens (num_tokens=8192):   0%|          | 0/58 [00:00<?, ?it/s]
 
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
+    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:05<04:53,  5.14s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:05<04:53,  5.14s/it]Compiling num tokens (num_tokens=7168):   2%|▏         | 1/58 [00:05<04:53,  5.14s/it]Compiling num tokens (num_tokens=7168):   5%|▌         | 3/58 [00:05<01:15,  1.38s/it]Compiling num tokens (num_tokens=6656):   5%|▌         | 3/58 [00:05<01:15,  1.38s/it]Compiling num tokens (num_tokens=6144):   5%|▌         | 3/58 [00:05<01:15,  1.38s/it]
+
+    Compiling num tokens (num_tokens=5632):   5%|▌         | 3/58 [00:05<01:15,  1.38s/it]Compiling num tokens (num_tokens=5632):  10%|█         | 6/58 [00:05<00:29,  1.78it/s]Compiling num tokens (num_tokens=5120):  10%|█         | 6/58 [00:05<00:29,  1.78it/s]Compiling num tokens (num_tokens=4608):  10%|█         | 6/58 [00:05<00:29,  1.78it/s]Compiling num tokens (num_tokens=4096):  10%|█         | 6/58 [00:05<00:29,  1.78it/s]Compiling num tokens (num_tokens=4096):  16%|█▌        | 9/58 [00:05<00:15,  3.16it/s]Compiling num tokens (num_tokens=3840):  16%|█▌        | 9/58 [00:05<00:15,  3.16it/s]Compiling num tokens (num_tokens=3584):  16%|█▌        | 9/58 [00:05<00:15,  3.16it/s]
+
+    Compiling num tokens (num_tokens=3328):  16%|█▌        | 9/58 [00:05<00:15,  3.16it/s]Compiling num tokens (num_tokens=3072):  16%|█▌        | 9/58 [00:05<00:15,  3.16it/s]Compiling num tokens (num_tokens=2816):  16%|█▌        | 9/58 [00:05<00:15,  3.16it/s]Compiling num tokens (num_tokens=2816):  24%|██▍       | 14/58 [00:05<00:07,  6.18it/s]Compiling num tokens (num_tokens=2560):  24%|██▍       | 14/58 [00:05<00:07,  6.18it/s]Compiling num tokens (num_tokens=2304):  24%|██▍       | 14/58 [00:05<00:07,  6.18it/s]Compiling num tokens (num_tokens=2048):  24%|██▍       | 14/58 [00:05<00:07,  6.18it/s]Compiling num tokens (num_tokens=1792):  24%|██▍       | 14/58 [00:05<00:07,  6.18it/s]Compiling num tokens (num_tokens=1536):  24%|██▍       | 14/58 [00:05<00:07,  6.18it/s]Compiling num tokens (num_tokens=1280):  24%|██▍       | 14/58 [00:05<00:07,  6.18it/s]Compiling num tokens (num_tokens=1024):  24%|██▍       | 14/58 [00:05<00:07,  6.18it/s]Compiling num tokens (num_tokens=960):  24%|██▍       | 14/58 [00:05<00:07,  6.18it/s] Compiling num tokens (num_tokens=960):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]Compiling num tokens (num_tokens=896):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]Compiling num tokens (num_tokens=832):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]Compiling num tokens (num_tokens=768):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]
+
+    Compiling num tokens (num_tokens=704):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]Compiling num tokens (num_tokens=640):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]Compiling num tokens (num_tokens=576):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]Compiling num tokens (num_tokens=512):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]Compiling num tokens (num_tokens=480):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]Compiling num tokens (num_tokens=448):  38%|███▊      | 22/58 [00:05<00:02, 12.36it/s]Compiling num tokens (num_tokens=448):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=416):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=384):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=352):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=320):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=288):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=256):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=240):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=224):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=208):  53%|█████▎    | 31/58 [00:05<00:01, 20.61it/s]Compiling num tokens (num_tokens=208):  69%|██████▉   | 40/58 [00:05<00:00, 29.69it/s]Compiling num tokens (num_tokens=192):  69%|██████▉   | 40/58 [00:05<00:00, 29.69it/s]Compiling num tokens (num_tokens=176):  69%|██████▉   | 40/58 [00:05<00:00, 29.69it/s]Compiling num tokens (num_tokens=160):  69%|██████▉   | 40/58 [00:05<00:00, 29.69it/s]
+
+    Compiling num tokens (num_tokens=144):  69%|██████▉   | 40/58 [00:05<00:00, 29.69it/s]Compiling num tokens (num_tokens=128):  69%|██████▉   | 40/58 [00:05<00:00, 29.69it/s]Compiling num tokens (num_tokens=112):  69%|██████▉   | 40/58 [00:06<00:00, 29.69it/s]Compiling num tokens (num_tokens=96):  69%|██████▉   | 40/58 [00:06<00:00, 29.69it/s] Compiling num tokens (num_tokens=80):  69%|██████▉   | 40/58 [00:06<00:00, 29.69it/s]Compiling num tokens (num_tokens=64):  69%|██████▉   | 40/58 [00:06<00:00, 29.69it/s]Compiling num tokens (num_tokens=64):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s]Compiling num tokens (num_tokens=48):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s]Compiling num tokens (num_tokens=32):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s]Compiling num tokens (num_tokens=28):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s]Compiling num tokens (num_tokens=24):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s]Compiling num tokens (num_tokens=20):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s]Compiling num tokens (num_tokens=16):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s]Compiling num tokens (num_tokens=12):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s]Compiling num tokens (num_tokens=8):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s] Compiling num tokens (num_tokens=4):  84%|████████▍ | 49/58 [00:06<00:00, 38.52it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06<00:00,  9.43it/s]
 
 
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
+      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=70.38 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=70.38 GB):   2%|▏         | 1/58 [00:00<00:06,  9.33it/s]Capturing num tokens (num_tokens=7680 avail_mem=70.35 GB):   2%|▏         | 1/58 [00:00<00:06,  9.33it/s]
 
+    Capturing num tokens (num_tokens=7168 avail_mem=70.34 GB):   2%|▏         | 1/58 [00:00<00:06,  9.33it/s]Capturing num tokens (num_tokens=7168 avail_mem=70.34 GB):   5%|▌         | 3/58 [00:00<00:05, 10.55it/s]Capturing num tokens (num_tokens=6656 avail_mem=70.34 GB):   5%|▌         | 3/58 [00:00<00:05, 10.55it/s]Capturing num tokens (num_tokens=6144 avail_mem=70.34 GB):   5%|▌         | 3/58 [00:00<00:05, 10.55it/s]
 
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
+    Capturing num tokens (num_tokens=6144 avail_mem=70.34 GB):   9%|▊         | 5/58 [00:00<00:04, 11.88it/s]Capturing num tokens (num_tokens=5632 avail_mem=70.34 GB):   9%|▊         | 5/58 [00:00<00:04, 11.88it/s]Capturing num tokens (num_tokens=5120 avail_mem=70.33 GB):   9%|▊         | 5/58 [00:00<00:04, 11.88it/s]Capturing num tokens (num_tokens=5120 avail_mem=70.33 GB):  12%|█▏        | 7/58 [00:00<00:03, 13.52it/s]Capturing num tokens (num_tokens=4608 avail_mem=70.33 GB):  12%|█▏        | 7/58 [00:00<00:03, 13.52it/s]Capturing num tokens (num_tokens=4096 avail_mem=70.06 GB):  12%|█▏        | 7/58 [00:00<00:03, 13.52it/s]
 
+    Capturing num tokens (num_tokens=4096 avail_mem=70.06 GB):  16%|█▌        | 9/58 [00:00<00:03, 15.18it/s]Capturing num tokens (num_tokens=3840 avail_mem=69.35 GB):  16%|█▌        | 9/58 [00:00<00:03, 15.18it/s]Capturing num tokens (num_tokens=3584 avail_mem=69.35 GB):  16%|█▌        | 9/58 [00:00<00:03, 15.18it/s]Capturing num tokens (num_tokens=3328 avail_mem=69.35 GB):  16%|█▌        | 9/58 [00:00<00:03, 15.18it/s]Capturing num tokens (num_tokens=3328 avail_mem=69.35 GB):  21%|██        | 12/58 [00:00<00:02, 18.25it/s]Capturing num tokens (num_tokens=3072 avail_mem=69.33 GB):  21%|██        | 12/58 [00:00<00:02, 18.25it/s]Capturing num tokens (num_tokens=2816 avail_mem=69.34 GB):  21%|██        | 12/58 [00:00<00:02, 18.25it/s]Capturing num tokens (num_tokens=2560 avail_mem=69.33 GB):  21%|██        | 12/58 [00:00<00:02, 18.25it/s]
 
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
+    Capturing num tokens (num_tokens=2560 avail_mem=69.33 GB):  26%|██▌       | 15/58 [00:00<00:02, 20.84it/s]Capturing num tokens (num_tokens=2304 avail_mem=69.33 GB):  26%|██▌       | 15/58 [00:00<00:02, 20.84it/s]Capturing num tokens (num_tokens=2048 avail_mem=69.32 GB):  26%|██▌       | 15/58 [00:00<00:02, 20.84it/s]Capturing num tokens (num_tokens=1792 avail_mem=69.32 GB):  26%|██▌       | 15/58 [00:00<00:02, 20.84it/s]Capturing num tokens (num_tokens=1536 avail_mem=69.31 GB):  26%|██▌       | 15/58 [00:00<00:02, 20.84it/s]Capturing num tokens (num_tokens=1536 avail_mem=69.31 GB):  33%|███▎      | 19/58 [00:01<00:01, 24.82it/s]Capturing num tokens (num_tokens=1280 avail_mem=69.31 GB):  33%|███▎      | 19/58 [00:01<00:01, 24.82it/s]Capturing num tokens (num_tokens=1024 avail_mem=69.31 GB):  33%|███▎      | 19/58 [00:01<00:01, 24.82it/s]Capturing num tokens (num_tokens=960 avail_mem=69.28 GB):  33%|███▎      | 19/58 [00:01<00:01, 24.82it/s] Capturing num tokens (num_tokens=896 avail_mem=69.27 GB):  33%|███▎      | 19/58 [00:01<00:01, 24.82it/s]
 
+    Capturing num tokens (num_tokens=832 avail_mem=68.87 GB):  33%|███▎      | 19/58 [00:01<00:01, 24.82it/s]Capturing num tokens (num_tokens=832 avail_mem=68.87 GB):  41%|████▏     | 24/58 [00:01<00:01, 30.06it/s]Capturing num tokens (num_tokens=768 avail_mem=68.85 GB):  41%|████▏     | 24/58 [00:01<00:01, 30.06it/s]Capturing num tokens (num_tokens=704 avail_mem=68.86 GB):  41%|████▏     | 24/58 [00:01<00:01, 30.06it/s]Capturing num tokens (num_tokens=640 avail_mem=68.86 GB):  41%|████▏     | 24/58 [00:01<00:01, 30.06it/s]Capturing num tokens (num_tokens=576 avail_mem=68.86 GB):  41%|████▏     | 24/58 [00:01<00:01, 30.06it/s]Capturing num tokens (num_tokens=512 avail_mem=68.85 GB):  41%|████▏     | 24/58 [00:01<00:01, 30.06it/s]Capturing num tokens (num_tokens=512 avail_mem=68.85 GB):  50%|█████     | 29/58 [00:01<00:00, 33.67it/s]Capturing num tokens (num_tokens=480 avail_mem=68.85 GB):  50%|█████     | 29/58 [00:01<00:00, 33.67it/s]Capturing num tokens (num_tokens=448 avail_mem=68.85 GB):  50%|█████     | 29/58 [00:01<00:00, 33.67it/s]Capturing num tokens (num_tokens=416 avail_mem=68.84 GB):  50%|█████     | 29/58 [00:01<00:00, 33.67it/s]
 
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
+    Capturing num tokens (num_tokens=384 avail_mem=68.84 GB):  50%|█████     | 29/58 [00:01<00:00, 33.67it/s]Capturing num tokens (num_tokens=352 avail_mem=68.83 GB):  50%|█████     | 29/58 [00:01<00:00, 33.67it/s]Capturing num tokens (num_tokens=352 avail_mem=68.83 GB):  59%|█████▊    | 34/58 [00:01<00:00, 36.51it/s]Capturing num tokens (num_tokens=320 avail_mem=68.83 GB):  59%|█████▊    | 34/58 [00:01<00:00, 36.51it/s]Capturing num tokens (num_tokens=288 avail_mem=68.84 GB):  59%|█████▊    | 34/58 [00:01<00:00, 36.51it/s]Capturing num tokens (num_tokens=256 avail_mem=68.83 GB):  59%|█████▊    | 34/58 [00:01<00:00, 36.51it/s]Capturing num tokens (num_tokens=240 avail_mem=68.83 GB):  59%|█████▊    | 34/58 [00:01<00:00, 36.51it/s]Capturing num tokens (num_tokens=224 avail_mem=68.82 GB):  59%|█████▊    | 34/58 [00:01<00:00, 36.51it/s]Capturing num tokens (num_tokens=224 avail_mem=68.82 GB):  67%|██████▋   | 39/58 [00:01<00:00, 38.54it/s]Capturing num tokens (num_tokens=208 avail_mem=68.82 GB):  67%|██████▋   | 39/58 [00:01<00:00, 38.54it/s]Capturing num tokens (num_tokens=192 avail_mem=68.82 GB):  67%|██████▋   | 39/58 [00:01<00:00, 38.54it/s]
 
+    Capturing num tokens (num_tokens=176 avail_mem=68.81 GB):  67%|██████▋   | 39/58 [00:01<00:00, 38.54it/s]Capturing num tokens (num_tokens=160 avail_mem=68.81 GB):  67%|██████▋   | 39/58 [00:01<00:00, 38.54it/s]Capturing num tokens (num_tokens=144 avail_mem=68.81 GB):  67%|██████▋   | 39/58 [00:01<00:00, 38.54it/s]Capturing num tokens (num_tokens=144 avail_mem=68.81 GB):  76%|███████▌  | 44/58 [00:01<00:00, 39.69it/s]Capturing num tokens (num_tokens=128 avail_mem=68.80 GB):  76%|███████▌  | 44/58 [00:01<00:00, 39.69it/s]Capturing num tokens (num_tokens=112 avail_mem=68.80 GB):  76%|███████▌  | 44/58 [00:01<00:00, 39.69it/s]Capturing num tokens (num_tokens=96 avail_mem=68.79 GB):  76%|███████▌  | 44/58 [00:01<00:00, 39.69it/s] Capturing num tokens (num_tokens=80 avail_mem=68.79 GB):  76%|███████▌  | 44/58 [00:01<00:00, 39.69it/s]Capturing num tokens (num_tokens=64 avail_mem=68.79 GB):  76%|███████▌  | 44/58 [00:01<00:00, 39.69it/s]Capturing num tokens (num_tokens=64 avail_mem=68.79 GB):  84%|████████▍ | 49/58 [00:01<00:00, 40.49it/s]Capturing num tokens (num_tokens=48 avail_mem=68.78 GB):  84%|████████▍ | 49/58 [00:01<00:00, 40.49it/s]
 
-    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:05<04:53,  5.14s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:05<04:53,  5.14s/it]Compiling num tokens (num_tokens=7168):   2%|▏         | 1/58 [00:05<04:53,  5.14s/it]Compiling num tokens (num_tokens=7168):   5%|▌         | 3/58 [00:05<01:16,  1.39s/it]Compiling num tokens (num_tokens=6656):   5%|▌         | 3/58 [00:05<01:16,  1.39s/it]
-
-    Compiling num tokens (num_tokens=6144):   5%|▌         | 3/58 [00:05<01:16,  1.39s/it]Compiling num tokens (num_tokens=6144):   9%|▊         | 5/58 [00:05<00:37,  1.41it/s]Compiling num tokens (num_tokens=5632):   9%|▊         | 5/58 [00:05<00:37,  1.41it/s]Compiling num tokens (num_tokens=5120):   9%|▊         | 5/58 [00:05<00:37,  1.41it/s]Compiling num tokens (num_tokens=5120):  12%|█▏        | 7/58 [00:05<00:21,  2.32it/s]Compiling num tokens (num_tokens=4608):  12%|█▏        | 7/58 [00:05<00:21,  2.32it/s]
-
-    Compiling num tokens (num_tokens=4096):  12%|█▏        | 7/58 [00:05<00:21,  2.32it/s]Compiling num tokens (num_tokens=3840):  12%|█▏        | 7/58 [00:05<00:21,  2.32it/s]Compiling num tokens (num_tokens=3840):  17%|█▋        | 10/58 [00:05<00:11,  4.09it/s]Compiling num tokens (num_tokens=3584):  17%|█▋        | 10/58 [00:05<00:11,  4.09it/s]Compiling num tokens (num_tokens=3328):  17%|█▋        | 10/58 [00:05<00:11,  4.09it/s]Compiling num tokens (num_tokens=3072):  17%|█▋        | 10/58 [00:05<00:11,  4.09it/s]Compiling num tokens (num_tokens=2816):  17%|█▋        | 10/58 [00:05<00:11,  4.09it/s]Compiling num tokens (num_tokens=2816):  24%|██▍       | 14/58 [00:05<00:06,  7.08it/s]Compiling num tokens (num_tokens=2560):  24%|██▍       | 14/58 [00:05<00:06,  7.08it/s]
-
-    Compiling num tokens (num_tokens=2304):  24%|██▍       | 14/58 [00:05<00:06,  7.08it/s]Compiling num tokens (num_tokens=2048):  24%|██▍       | 14/58 [00:05<00:06,  7.08it/s]Compiling num tokens (num_tokens=1792):  24%|██▍       | 14/58 [00:05<00:06,  7.08it/s]Compiling num tokens (num_tokens=1536):  24%|██▍       | 14/58 [00:05<00:06,  7.08it/s]Compiling num tokens (num_tokens=1280):  24%|██▍       | 14/58 [00:05<00:06,  7.08it/s]Compiling num tokens (num_tokens=1280):  34%|███▍      | 20/58 [00:05<00:02, 12.67it/s]Compiling num tokens (num_tokens=1024):  34%|███▍      | 20/58 [00:05<00:02, 12.67it/s]Compiling num tokens (num_tokens=960):  34%|███▍      | 20/58 [00:05<00:02, 12.67it/s] Compiling num tokens (num_tokens=896):  34%|███▍      | 20/58 [00:05<00:02, 12.67it/s]Compiling num tokens (num_tokens=832):  34%|███▍      | 20/58 [00:05<00:02, 12.67it/s]Compiling num tokens (num_tokens=768):  34%|███▍      | 20/58 [00:05<00:02, 12.67it/s]Compiling num tokens (num_tokens=704):  34%|███▍      | 20/58 [00:05<00:02, 12.67it/s]Compiling num tokens (num_tokens=640):  34%|███▍      | 20/58 [00:05<00:02, 12.67it/s]Compiling num tokens (num_tokens=640):  47%|████▋     | 27/58 [00:05<00:01, 20.06it/s]Compiling num tokens (num_tokens=576):  47%|████▋     | 27/58 [00:05<00:01, 20.06it/s]
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    Compiling num tokens (num_tokens=512):  47%|████▋     | 27/58 [00:05<00:01, 20.06it/s]Compiling num tokens (num_tokens=480):  47%|████▋     | 27/58 [00:05<00:01, 20.06it/s]Compiling num tokens (num_tokens=448):  47%|████▋     | 27/58 [00:06<00:01, 20.06it/s]Compiling num tokens (num_tokens=416):  47%|████▋     | 27/58 [00:06<00:01, 20.06it/s]Compiling num tokens (num_tokens=384):  47%|████▋     | 27/58 [00:06<00:01, 20.06it/s]Compiling num tokens (num_tokens=352):  47%|████▋     | 27/58 [00:06<00:01, 20.06it/s]Compiling num tokens (num_tokens=320):  47%|████▋     | 27/58 [00:06<00:01, 20.06it/s]Compiling num tokens (num_tokens=320):  60%|██████    | 35/58 [00:06<00:00, 28.63it/s]Compiling num tokens (num_tokens=288):  60%|██████    | 35/58 [00:06<00:00, 28.63it/s]Compiling num tokens (num_tokens=256):  60%|██████    | 35/58 [00:06<00:00, 28.63it/s]Compiling num tokens (num_tokens=240):  60%|██████    | 35/58 [00:06<00:00, 28.63it/s]Compiling num tokens (num_tokens=224):  60%|██████    | 35/58 [00:06<00:00, 28.63it/s]Compiling num tokens (num_tokens=208):  60%|██████    | 35/58 [00:06<00:00, 28.63it/s]Compiling num tokens (num_tokens=192):  60%|██████    | 35/58 [00:06<00:00, 28.63it/s]Compiling num tokens (num_tokens=176):  60%|██████    | 35/58 [00:06<00:00, 28.63it/s]Compiling num tokens (num_tokens=160):  60%|██████    | 35/58 [00:06<00:00, 28.63it/s]
-
-    Compiling num tokens (num_tokens=160):  74%|███████▍  | 43/58 [00:06<00:00, 37.49it/s]Compiling num tokens (num_tokens=144):  74%|███████▍  | 43/58 [00:06<00:00, 37.49it/s]Compiling num tokens (num_tokens=128):  74%|███████▍  | 43/58 [00:06<00:00, 37.49it/s]Compiling num tokens (num_tokens=112):  74%|███████▍  | 43/58 [00:06<00:00, 37.49it/s]Compiling num tokens (num_tokens=96):  74%|███████▍  | 43/58 [00:06<00:00, 37.49it/s] Compiling num tokens (num_tokens=80):  74%|███████▍  | 43/58 [00:06<00:00, 37.49it/s]Compiling num tokens (num_tokens=64):  74%|███████▍  | 43/58 [00:06<00:00, 37.49it/s]Compiling num tokens (num_tokens=48):  74%|███████▍  | 43/58 [00:06<00:00, 37.49it/s]Compiling num tokens (num_tokens=32):  74%|███████▍  | 43/58 [00:06<00:00, 37.49it/s]Compiling num tokens (num_tokens=32):  88%|████████▊ | 51/58 [00:06<00:00, 44.89it/s]Compiling num tokens (num_tokens=28):  88%|████████▊ | 51/58 [00:06<00:00, 44.89it/s]Compiling num tokens (num_tokens=24):  88%|████████▊ | 51/58 [00:06<00:00, 44.89it/s]Compiling num tokens (num_tokens=20):  88%|████████▊ | 51/58 [00:06<00:00, 44.89it/s]Compiling num tokens (num_tokens=16):  88%|████████▊ | 51/58 [00:06<00:00, 44.89it/s]Compiling num tokens (num_tokens=12):  88%|████████▊ | 51/58 [00:06<00:00, 44.89it/s]Compiling num tokens (num_tokens=8):  88%|████████▊ | 51/58 [00:06<00:00, 44.89it/s] Compiling num tokens (num_tokens=4):  88%|████████▊ | 51/58 [00:06<00:00, 44.89it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06<00:00,  9.09it/s]
-
-
-      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=52.47 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=52.47 GB):   2%|▏         | 1/58 [00:00<00:06,  8.50it/s]Capturing num tokens (num_tokens=7680 avail_mem=52.44 GB):   2%|▏         | 1/58 [00:00<00:06,  8.50it/s]
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    Capturing num tokens (num_tokens=7168 avail_mem=52.43 GB):   2%|▏         | 1/58 [00:00<00:06,  8.50it/s]Capturing num tokens (num_tokens=7168 avail_mem=52.43 GB):   5%|▌         | 3/58 [00:00<00:05,  9.99it/s]Capturing num tokens (num_tokens=6656 avail_mem=52.43 GB):   5%|▌         | 3/58 [00:00<00:05,  9.99it/s]Capturing num tokens (num_tokens=6144 avail_mem=52.43 GB):   5%|▌         | 3/58 [00:00<00:05,  9.99it/s]
-
-    Capturing num tokens (num_tokens=6144 avail_mem=52.43 GB):   9%|▊         | 5/58 [00:00<00:04, 10.85it/s]Capturing num tokens (num_tokens=5632 avail_mem=52.43 GB):   9%|▊         | 5/58 [00:00<00:04, 10.85it/s]Capturing num tokens (num_tokens=5120 avail_mem=52.42 GB):   9%|▊         | 5/58 [00:00<00:04, 10.85it/s]Capturing num tokens (num_tokens=5120 avail_mem=52.42 GB):  12%|█▏        | 7/58 [00:00<00:04, 11.60it/s]Capturing num tokens (num_tokens=4608 avail_mem=52.42 GB):  12%|█▏        | 7/58 [00:00<00:04, 11.60it/s]
-
-    Capturing num tokens (num_tokens=4096 avail_mem=52.42 GB):  12%|█▏        | 7/58 [00:00<00:04, 11.60it/s]Capturing num tokens (num_tokens=4096 avail_mem=52.42 GB):  16%|█▌        | 9/58 [00:00<00:03, 13.37it/s]Capturing num tokens (num_tokens=3840 avail_mem=52.42 GB):  16%|█▌        | 9/58 [00:00<00:03, 13.37it/s]Capturing num tokens (num_tokens=3584 avail_mem=52.42 GB):  16%|█▌        | 9/58 [00:00<00:03, 13.37it/s]Capturing num tokens (num_tokens=3584 avail_mem=52.42 GB):  19%|█▉        | 11/58 [00:00<00:03, 14.80it/s]Capturing num tokens (num_tokens=3328 avail_mem=52.41 GB):  19%|█▉        | 11/58 [00:00<00:03, 14.80it/s]
-
-    Capturing num tokens (num_tokens=3072 avail_mem=52.40 GB):  19%|█▉        | 11/58 [00:00<00:03, 14.80it/s]Capturing num tokens (num_tokens=2816 avail_mem=52.40 GB):  19%|█▉        | 11/58 [00:00<00:03, 14.80it/s]Capturing num tokens (num_tokens=2816 avail_mem=52.40 GB):  24%|██▍       | 14/58 [00:00<00:02, 18.32it/s]Capturing num tokens (num_tokens=2560 avail_mem=52.39 GB):  24%|██▍       | 14/58 [00:00<00:02, 18.32it/s]Capturing num tokens (num_tokens=2304 avail_mem=52.40 GB):  24%|██▍       | 14/58 [00:00<00:02, 18.32it/s]Capturing num tokens (num_tokens=2048 avail_mem=52.38 GB):  24%|██▍       | 14/58 [00:01<00:02, 18.32it/s]Capturing num tokens (num_tokens=1792 avail_mem=52.38 GB):  24%|██▍       | 14/58 [00:01<00:02, 18.32it/s]Capturing num tokens (num_tokens=1792 avail_mem=52.38 GB):  31%|███       | 18/58 [00:01<00:01, 22.79it/s]Capturing num tokens (num_tokens=1536 avail_mem=52.38 GB):  31%|███       | 18/58 [00:01<00:01, 22.79it/s]
-
-    Capturing num tokens (num_tokens=1280 avail_mem=52.37 GB):  31%|███       | 18/58 [00:01<00:01, 22.79it/s]Capturing num tokens (num_tokens=1024 avail_mem=52.37 GB):  31%|███       | 18/58 [00:01<00:01, 22.79it/s]Capturing num tokens (num_tokens=960 avail_mem=52.34 GB):  31%|███       | 18/58 [00:01<00:01, 22.79it/s] Capturing num tokens (num_tokens=960 avail_mem=52.34 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.18it/s]Capturing num tokens (num_tokens=896 avail_mem=52.34 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.18it/s]Capturing num tokens (num_tokens=832 avail_mem=52.36 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.18it/s]Capturing num tokens (num_tokens=768 avail_mem=52.34 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.18it/s]Capturing num tokens (num_tokens=704 avail_mem=52.35 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.18it/s]Capturing num tokens (num_tokens=704 avail_mem=52.35 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.62it/s]Capturing num tokens (num_tokens=640 avail_mem=52.35 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.62it/s]
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    Capturing num tokens (num_tokens=576 avail_mem=52.35 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.62it/s]Capturing num tokens (num_tokens=512 avail_mem=52.34 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.62it/s]Capturing num tokens (num_tokens=480 avail_mem=52.34 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.62it/s]Capturing num tokens (num_tokens=448 avail_mem=52.34 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.62it/s]Capturing num tokens (num_tokens=448 avail_mem=52.34 GB):  53%|█████▎    | 31/58 [00:01<00:00, 33.79it/s]Capturing num tokens (num_tokens=416 avail_mem=52.33 GB):  53%|█████▎    | 31/58 [00:01<00:00, 33.79it/s]Capturing num tokens (num_tokens=384 avail_mem=52.33 GB):  53%|█████▎    | 31/58 [00:01<00:00, 33.79it/s]Capturing num tokens (num_tokens=352 avail_mem=52.32 GB):  53%|█████▎    | 31/58 [00:01<00:00, 33.79it/s]Capturing num tokens (num_tokens=320 avail_mem=52.32 GB):  53%|█████▎    | 31/58 [00:01<00:00, 33.79it/s]Capturing num tokens (num_tokens=288 avail_mem=52.33 GB):  53%|█████▎    | 31/58 [00:01<00:00, 33.79it/s]
-
-    Capturing num tokens (num_tokens=288 avail_mem=52.33 GB):  62%|██████▏   | 36/58 [00:01<00:00, 36.10it/s]Capturing num tokens (num_tokens=256 avail_mem=52.32 GB):  62%|██████▏   | 36/58 [00:01<00:00, 36.10it/s]Capturing num tokens (num_tokens=240 avail_mem=52.32 GB):  62%|██████▏   | 36/58 [00:01<00:00, 36.10it/s]Capturing num tokens (num_tokens=224 avail_mem=52.32 GB):  62%|██████▏   | 36/58 [00:01<00:00, 36.10it/s]Capturing num tokens (num_tokens=208 avail_mem=52.31 GB):  62%|██████▏   | 36/58 [00:01<00:00, 36.10it/s]Capturing num tokens (num_tokens=192 avail_mem=52.31 GB):  62%|██████▏   | 36/58 [00:01<00:00, 36.10it/s]Capturing num tokens (num_tokens=192 avail_mem=52.31 GB):  71%|███████   | 41/58 [00:01<00:00, 38.20it/s]Capturing num tokens (num_tokens=176 avail_mem=52.31 GB):  71%|███████   | 41/58 [00:01<00:00, 38.20it/s]Capturing num tokens (num_tokens=160 avail_mem=52.30 GB):  71%|███████   | 41/58 [00:01<00:00, 38.20it/s]Capturing num tokens (num_tokens=144 avail_mem=52.30 GB):  71%|███████   | 41/58 [00:01<00:00, 38.20it/s]Capturing num tokens (num_tokens=128 avail_mem=52.29 GB):  71%|███████   | 41/58 [00:01<00:00, 38.20it/s]
-
-    Capturing num tokens (num_tokens=112 avail_mem=52.29 GB):  71%|███████   | 41/58 [00:01<00:00, 38.20it/s]Capturing num tokens (num_tokens=112 avail_mem=52.29 GB):  79%|███████▉  | 46/58 [00:01<00:00, 39.02it/s]Capturing num tokens (num_tokens=96 avail_mem=52.29 GB):  79%|███████▉  | 46/58 [00:01<00:00, 39.02it/s] Capturing num tokens (num_tokens=80 avail_mem=52.28 GB):  79%|███████▉  | 46/58 [00:01<00:00, 39.02it/s]Capturing num tokens (num_tokens=64 avail_mem=52.28 GB):  79%|███████▉  | 46/58 [00:01<00:00, 39.02it/s]Capturing num tokens (num_tokens=48 avail_mem=52.28 GB):  79%|███████▉  | 46/58 [00:01<00:00, 39.02it/s]Capturing num tokens (num_tokens=48 avail_mem=52.28 GB):  86%|████████▌ | 50/58 [00:01<00:00, 39.20it/s]Capturing num tokens (num_tokens=32 avail_mem=52.27 GB):  86%|████████▌ | 50/58 [00:01<00:00, 39.20it/s]Capturing num tokens (num_tokens=28 avail_mem=52.27 GB):  86%|████████▌ | 50/58 [00:01<00:00, 39.20it/s]Capturing num tokens (num_tokens=24 avail_mem=52.26 GB):  86%|████████▌ | 50/58 [00:01<00:00, 39.20it/s]Capturing num tokens (num_tokens=20 avail_mem=52.26 GB):  86%|████████▌ | 50/58 [00:01<00:00, 39.20it/s]
-
-    Capturing num tokens (num_tokens=16 avail_mem=52.26 GB):  86%|████████▌ | 50/58 [00:01<00:00, 39.20it/s]Capturing num tokens (num_tokens=16 avail_mem=52.26 GB):  95%|█████████▍| 55/58 [00:01<00:00, 40.03it/s]Capturing num tokens (num_tokens=12 avail_mem=52.25 GB):  95%|█████████▍| 55/58 [00:01<00:00, 40.03it/s]Capturing num tokens (num_tokens=8 avail_mem=52.25 GB):  95%|█████████▍| 55/58 [00:02<00:00, 40.03it/s] Capturing num tokens (num_tokens=4 avail_mem=52.24 GB):  95%|█████████▍| 55/58 [00:02<00:00, 40.03it/s]Capturing num tokens (num_tokens=4 avail_mem=52.24 GB): 100%|██████████| 58/58 [00:02<00:00, 28.07it/s]
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
+    Capturing num tokens (num_tokens=32 avail_mem=68.78 GB):  84%|████████▍ | 49/58 [00:01<00:00, 40.49it/s]Capturing num tokens (num_tokens=28 avail_mem=68.78 GB):  84%|████████▍ | 49/58 [00:01<00:00, 40.49it/s]Capturing num tokens (num_tokens=24 avail_mem=68.77 GB):  84%|████████▍ | 49/58 [00:01<00:00, 40.49it/s]Capturing num tokens (num_tokens=20 avail_mem=68.77 GB):  84%|████████▍ | 49/58 [00:01<00:00, 40.49it/s]Capturing num tokens (num_tokens=20 avail_mem=68.77 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.10it/s]Capturing num tokens (num_tokens=16 avail_mem=68.77 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.10it/s]Capturing num tokens (num_tokens=12 avail_mem=68.76 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.10it/s]Capturing num tokens (num_tokens=8 avail_mem=68.76 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.10it/s] Capturing num tokens (num_tokens=4 avail_mem=68.75 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.10it/s]Capturing num tokens (num_tokens=4 avail_mem=68.75 GB): 100%|██████████| 58/58 [00:01<00:00, 29.95it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       response = await f(request)
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
 
 
 
@@ -966,21 +142,6 @@ response = client.embeddings.create(
 embedding = response.data[0].embedding[:10]
 print_highlight(f"Text embedding (first 10): {embedding}")
 ```
-
-    ERROR:tornado.general:Uncaught exception in ZMQStream callback
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/zmq/eventloop/zmqstream.py", line 565, in _log_error
-        f.result()
-      File "/usr/lib/python3.10/asyncio/futures.py", line 201, in result
-        raise self._exception.with_traceback(self._exception_tb)
-      File "/usr/lib/python3.10/asyncio/tasks.py", line 232, in __step
-        result = coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 584, in shell_channel_thread_main
-        _, msg2 = self.session.feed_identities(msg, copy=False)
-      File "/usr/local/lib/python3.10/dist-packages/jupyter_client/session.py", line 998, in feed_identities
-        raise ValueError(msg)
-    ValueError: DELIM not in msg_list
-
 
 
 <strong style='color: #00008B;'>Text embedding (first 10): [-0.00023102760314941406, -0.04986572265625, -0.0032711029052734375, 0.011077880859375, -0.0140533447265625, 0.0159912109375, -0.01441192626953125, 0.0059051513671875, -0.0228424072265625, 0.0272979736328125]</strong>
