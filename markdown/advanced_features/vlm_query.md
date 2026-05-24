@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 16:32:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 17:16:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 16:32:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 17:16:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.47it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.65it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.62it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked parallel to each other on a city street. One taxi is equipped with a clothesline that appears to be casually strung between its rear passenger door and the back of the cab, with clothes hung up on it. The person interacting with the line and clothes is wearing a yellow long-sleeve shirt and is standing beside the taxi. The environment suggests an urban setting, likely New York City, given the style of the cab and the presence of a clothesline, which is often seen as a humorous or quirky sight during the city's cultural events like the New York City Marathon.
+    The image shows two yellow taxis parked on the side of a city street. One of the cabs has a person hanging laundry on its rear window, possibly engaging in a pick-up or delivery service using the back of the taxi as a makeshift clothesline. The surroundings include urban elements such as buildings, storefronts, and traffic lights, indicating a busy city environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis, likely from New York, given their distinctive color and design. They are stationed on a city street. The scene appears to be outdoors, with tall buildings in the background, indicating an urban environment. There are no people present in the immediate foreground other than the person cleaning the rear windshield of a yellow taxi. The background also features some greenery along a tree line.
+    This image shows a person wearing orange clothing hanging a blue flag or banner-mounted object behind two yellow taxis. The person appears to be in the middle of a street, as also seen by their reflection in one of the taxi windows.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a man working as a street cleaner in New York City. He is hanging clothes on aRent-A-Center sign to dry. This activity is common in Manhattan during the summers when clothes are hung to dry and hatred is used to give a visual or sentimental meaning to an otherwise unattractive object.
+    In the picture, it appears there is an unusual sight of a yellow cab, which is a typical mode of transportation in urban areas, rearranged or upside down on the street with clothes hanging from it. This scene seems to be part of an art installation or a performance, as it is highly unexpected and unsized in the setting. The opulent elements of the scene include items which align more with sophisticated settings such as high-rises, urban areas, and visual art installations. Here, are some points of reference for more context based on standard deductions:
+    
+    1. **Urban Setting**: Given the yellow color of the cab and the presence of
 
 
 ## Querying Llama 4 Vision Model
