@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 14:48:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 16:32:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 14:48:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-24 16:32:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.43it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows two yellow taxis parked along a city street. One taxi is parked on the sidewalk, and the other is parked further back on the street. The taxi parked on the sidewalk has a laundry rack with clothes hanging on it, displaying a colorful array of laundry items. The scene appears to be set in an urban environment, likely in New York City, as indicated by the iconic "Taxi" signs in the background. The person fabricating laundry items in the image is likely honoring the famous "kite man" incident in the city.
+    The image shows two yellow taxis parked parallel to each other on a city street. One taxi is equipped with a clothesline that appears to be casually strung between its rear passenger door and the back of the cab, with clothes hung up on it. The person interacting with the line and clothes is wearing a yellow long-sleeve shirt and is standing beside the taxi. The environment suggests an urban setting, likely New York City, given the style of the cab and the presence of a clothesline, which is often seen as a humorous or quirky sight during the city's cultural events like the New York City Marathon.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows three yellow taxis in traffic on a city street. One of the taxis has a person hanging out the window, presumably flirting with the onlookers. The person is wearing a yellow shirt and is using the back of a silver folding chair as a makeshift scanner to scan people walking past. The scene looks fun and playful, as it is unusual for someone to have a chair positioned in front of a taxi window for no apparent reason.
+    The image shows two yellow taxis, likely from New York, given their distinctive color and design. They are stationed on a city street. The scene appears to be outdoors, with tall buildings in the background, indicating an urban environment. There are no people present in the immediate foreground other than the person cleaning the rear windshield of a yellow taxi. The background also features some greenery along a tree line.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a city street with one of them slightly moving to the side. The person is hanging laundry, which includes shirts, on a clothesline attached to a structure. The street appears to be in an urban area with buildings and signs visible in the background.
+    This image shows a man working as a street cleaner in New York City. He is hanging clothes on aRent-A-Center sign to dry. This activity is common in Manhattan during the summers when clothes are hung to dry and hatred is used to give a visual or sentimental meaning to an otherwise unattractive object.
 
 
 ## Querying Llama 4 Vision Model
