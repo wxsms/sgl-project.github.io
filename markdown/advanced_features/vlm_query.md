@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 20:13:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 23:12:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 20:13:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 23:12:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.07s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.32s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.51s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.59s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.26s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a person standing next to two yellow taxis in what appears to be an urban street setting. The taxi on the left is partially visible, and the person has a dry cleaner's tray attached to it with laundry items hanging from it. The taxi on the right is more prominently visible, and it also has a dry cleaner's tray attached to its luggage rack. Both taxis are in the manner that is commonly used for active shredding services where the trash is dropped into the back of the vehicle. The background shows buildings and streetlights, indicating these are in an urban area.
+    The image shows a scene on a city street with two yellow taxis and a person displaying an array of colorful t-shirts on a clothesline attached to a ladder. The person is stretching out the t-shirts to display them. The background includes tall buildings and some street signs and decorations. This scene seems to be part of a marketing or promotional event, possibly for a clothing brand.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from what appears to be a taxicab race or competition. There are two brightly colored yellow taxi cabs, with one having a different design on the rear. A person in a yellow shirt is seen engaged in an activity involving the taxis, possibly part of the racing event. The scene is outdoors on a street with some background buildings and traffic lights visible.
+    The image shows an unusual scene in New York City, where a person is hanging clothing on a clothesline attached to an open trunk of a yellow taxi. The individual appears to be drying their laundry outdoors during free-choice time on enumerated traffic days. Traffic stoppage is enforced in the city during the assigned hours for drying clothes, using stops of an available taxi to hang the clothes.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging clothes on a clothesline in the middle of a city street. There are yellow taxis parked on the street, and various city street signs and buildings can be seen in the background. The scene is unusual, as it shows a common cleaning activity occurring in a public urban setting.
+    It looks like you've captured an interesting, albeit somewhat unusual, moment in the life of New York taxis! The scene shows a very established yellow New York City taxi parked on the street. The taxi cab has just stopped, allowing us to get a glimpse of its interior. In the background, there are several editorial digital billboards, which are common in New York City to display various ads. 
+    
+    The most notable feature, however, is an individual in a yellow shirt who appears to be ironing clothes using an ironing board attached to the taxi’s exterior. This is not a typical use for a taxi cab, but it’s certainly
 
 
 ## Querying Llama 4 Vision Model
