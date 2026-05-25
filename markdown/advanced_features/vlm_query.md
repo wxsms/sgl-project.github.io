@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 00:11:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 01:17:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 00:12:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 01:17:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.34s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.36s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a vehicle, likely a car, with clothes or fabric partially draped over the back. This could be a street performer or a resident engaging in informal art or DIY projects. The background includes urban elements like buildings and taxis, indicating that this scene is taking place in an urban area, possibly in New York City, given the iconic yellow taxi cabs.
+    The image shows two New York City taxis in a parking lot. The taxi in the foreground has been converted into a mobile laundry service by a person using covers over its side windows and aVisibility screen repainted to make it look more like luggage. This type of vehicle is known as a "mobile laundry car," and it is abnormal for a taxi. Unfortunately, I cannot complete sentences for you.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The photo shows a man wearing a yellow shirt, drying clothes on a clothesline attached to the back of a yellow taxi. The taxi is on a city street, and there are some buildings and pedestrians in the background. The scene appears to be taken from a slightly elevated angle, possibly from another vehicle or an overhead camera.
+    The image shows a man standing beside a car, similar to a yellow taxi, and hanging clothes on a clothesline. The car appears to be a taxi, typically used for ride-hailing services in urban areas. The man seems to be wetting clothes and then doing yard work, possibly due to high humidity or unexpected weather conditions. The clothesline indicates he might be washing clothes and drying them outside to avoid direct sunlight that could cause water damage or issues with fabric. Additionally, there are other taxis and people in the background along a street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a heartwarming and humorous scene where a man wearing a yellow long-sleeva isUME in front of a taxi watching TV on clothes,Video clothing dryer out the window as a fun gag. The video is pull by aUTES DYER eye on a takeout, creating a feeling of comedic meme and charmin. This activity can be amusing to see someone who think this could be the way to对待 laundry dryed them by the chute at towпервых corners of a taxi that is not carrying any golpalw i interesting - hey tweet as it #F interc# bằng unloadings.
+    The image shows a yellow cab with a man standing behind it, holding a clothes rack and hanging clothes on it. It appears to be a humorous scene where the man is pretending to hang clothes on the taxi, likely for social media or只是为了娱乐.
 
 
 ## Querying Llama 4 Vision Model
