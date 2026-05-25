@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 15:05:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 15:58:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 15:05:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 15:58:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.03it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.31s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    I'm not sure what you are referring to. Can you please provide more context or clarify your question?
+    The image shows a scene on a city street with two yellow taxis. One taxi is pulling a laundry cart, which appears to be scattered with clothes, as if it's in the process of moving its load. This is unusual for a city environment, implying that this could be an artistic or experimental scenario rather than a typical city scene. The backdrop includes tall buildings and storefronts, suggesting a busy urban area.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man in a yellow shirt walking down the street next to a taxi. The man has a folding laundry board next to a second taxi. It appears he is drying laundry on the board. The scene is set in an urban environment, likely in a city central business district, given the tall buildings, street fixtures, and vehicles in the background. The weather looks to be sunny, as indicated by the sharp shadows cast on the street.
+    The image shows a scene in New York City, likely on a street corner. A person dressed in yellow is engaged in an unusual activity, wearing what appears to be typically everyday clothing but seated on a skateboard. Typical New York City taxi cabs, which are often bright yellow, are visible in the background, with two of them parallel parked on both sides of the street. The environment suggests an urban setting with tall buildings and an out-of-place activity undertaken by the individual, who is the central figure in the image.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,15 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a person standing next to a yellow taxi cab on what appears to be a street in a city. The person is wearing a yellow shirt and seems to be handling a clothespin or a similar tool. There is someunday clothing or laundry items on the back of the taxi cab, suggesting he might be attempting to clean or organize the clothes using the tools available. The setting looks busy with other elements of a city street visible in the background.
+    The image shows a stunt being performed in the streets of a city, likely New York, given the presence of a bright yellow taxi cab, often referred to as a "cabbie." A person dressed casually is wiping a pair of jeans with an iron positioned on a portable hanger. The stunt is unusual and引人注目, effectively combining mundane activities like cleaning with public transit vehicles that are typically associated with work and travel.
+    
+    The other elements in the image include:
+    
+    * Other taxis in the background
+    * Visible arrows on the road forming directional paths
+    * Light posts in the distant background
+    
+    The person's wetsuit adds credibility
 
 
 ## Querying Llama 4 Vision Model
