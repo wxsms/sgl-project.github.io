@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 10:55:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 15:05:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 10:55:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 15:05:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.03it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a scene in a city, likely New York City, given the presence of yellow taxis. There are several yellow taxis driving or parked on the street. The image also shows a man and a woman interacting with some clothes on a triangular stand, which is placed outdoors. This unusual sight could be part of an event or an act of art. The backdrop includes storefronts and flags hanging from the buildings, indicating a busy urban environment.
+    I'm not sure what you are referring to. Can you please provide more context or clarify your question?
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The photo shows a man practicing ironing clothes using a taxi as a makeshift ironing board. The scene appears to be in an urban setting, with the man wearing a yellow shirt and standing next to two yellow taxis, one behind the other. The setup is not in its intended professional environment, suggesting a humorous or experimental situation.
+    The image shows a man in a yellow shirt walking down the street next to a taxi. The man has a folding laundry board next to a second taxi. It appears he is drying laundry on the board. The scene is set in an urban environment, likely in a city central business district, given the tall buildings, street fixtures, and vehicles in the background. The weather looks to be sunny, as indicated by the sharp shadows cast on the street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street scene with two yellow taxis. One of the taxis is parked, and a person wearing a long-sleeved shirt is ironing sheets on the back of the open trunk of the parked taxi, which has been converted into a makeshift drying rack using the trunk space. The street is in an urban setting, possibly a downtown area, with buildings and a tall street sign in the background. There are also flags hanging from flagspoles and outdoor lighting visible.
+    This image shows a person standing next to a yellow taxi cab on what appears to be a street in a city. The person is wearing a yellow shirt and seems to be handling a clothespin or a similar tool. There is someunday clothing or laundry items on the back of the taxi cab, suggesting he might be attempting to clean or organize the clothes using the tools available. The setting looks busy with other elements of a city street visible in the background.
 
 
 ## Querying Llama 4 Vision Model
