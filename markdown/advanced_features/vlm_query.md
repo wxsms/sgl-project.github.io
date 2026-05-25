@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 05:25:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 06:26:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 05:25:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 06:26:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.17s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene of street cleaning in New York City. A person is using a large extended broom to clean the streets, likely as part of the "Big Green Machine" project, which involves cleaning five blocks in various parts of the city. The yellow taxis, which are a hallmark of the city's street cleaning operation, are also visible. The image captures the effort and scale of maintaining the cleanliness of New York City's streets.
+    The picture shows two yellow taxis driving on a street in an urban area. The taxi on the right is performing a loaner stack job, which involves hanging clothes outside the taxi to dry and then retrieve them. There is also a person hanging clothes on the back of the taxi for drying. The background includes urban buildings and some hanging banners or flags.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from New York City (N.Y.) with taxis. A man is ironing clothes on a clothesline in front of a taxi. He is wearing a yellow shirt and blue jeans. There are also people and a big building in the background. The scene looks like a well-known чемодан фотографа (film location), but no emotional response is expressed.
+    The image shows a scene in a city with two yellow taxis, likely in New York, given the Premonition Taxi flag. A person in a yellow shirt and blue Oxford shirt is hanging clothes on a row of clothespins attached to a pick-up truck bed. The person appears to be tidying up or preparing clothes for a specific event or task, possibly marketing or promotional.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from New York City, featuring two yellow taxis—a taxi to the left and a rear view of a taxi to the right. The taxi on the right has its roof post designed to support washing lines, with clothes hanging out to dry. This is a common sight in New York, where parking spaces are scarce, and people often hang their laundry on their vehicles while they are out. The setting appears to be a busy street with buildings and lights, representing an urban environment.
+    I'm not sure what you mean by "not happening.". Can you please clarify your question or provide more context? I'd be happy to help if you can give me more information about what you're asking.
 
 
 ## Querying Llama 4 Vision Model
