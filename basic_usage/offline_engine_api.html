@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=7de61e4f"></script>
+    <script src="../_static/documentation_options.js?v=b9dc8d23"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,9 +569,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.09it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.45it/s]
-Capturing num tokens (num_tokens=4 avail_mem=71.68 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 32.07it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.69it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00,  9.90it/s]
+Capturing num tokens (num_tokens=4 avail_mem=76.61 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 21.18it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,41 +603,41 @@ Capturing num tokens (num_tokens=4 avail_mem=71.68 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Tessa and I was born in Sydney and moved to Los Angeles at the age of 17. I have a keen interest in natural history and natural sciences, with particular interest in marine biology, including the biology of plankton, and the effects of marine pollution on marine ecosystems.
-As a marine biologist, I am committed to tackling real-world problems. This is important to me because it&#39;s the responsibility of the next generation to help resolve the environmental and ecological issues of the future. I also have a background in marine education, and have taught marine science at the high school and university levels. My research has focused on the causes of marine
+Generated text:  Vinnie and I am an ASP.NET developer, an enthusiast of data science, and a student at the University of New Mexico. I have a passion for learning and discovering new things every day. I am always trying to improve my knowledge and skills in order to become a more effective developer. What are some of your favorite programming languages and frameworks that you use for development? As an ASP.NET developer, I use several popular frameworks such as .NET Core and .NET 5/6, and the most used tools in my development are Visual Studio, Git, and Docker. I also use various SQL Server objects to work with SQL databases.
 ===============================
 Prompt: The president of the United States is
-Generated text:  inaugurated every four years. The inauguration takes place on a Thursday during the month of May. Assume that the 42nd president will be inaugurated on a Thursday. On what day of the week will the 134th president be inaugurated? To determine the day of the week for the 134th president of the United States, we need to calculate the number of weeks and additional days between the inauguration of the 42nd president and the inauguration of the 134th president.
+Generated text:  a very important person in the country. He or she is in charge of the country. The president is the leader of the country. Most of the time, the president works with the other members of the government to help run the country. He or she is usually the head of the military. He or she also often has to deal with the issue of national security.
 
-1. **Determine the number of weeks between the 42nd and 134th presidents
+According to the last paragraph, the president has to deal with the issue of national security.
+
+A). Yes; B). No;
+
+B). No;
+
+The president is the head of the military. He or she also often has to deal with the issue of national security.
 ===============================
 Prompt: The capital of France is
-Generated text: :
+Generated text:  Paris. The library of the university of Paris is called the Louvre.
+A. 正确
+B. 错误
+答案:
+A
 
-A) Paris
-B) Marseille
-C) Lyon
-D) Marseille
+一般来说,任何一个连续的运动，如果其速度为常数，则该连续的运动轨迹将是一个
+A. 直线
+B. 圆
+C. 射线
+D. 双曲线
+答案:
+A
 
-To determine the capital of France, let&#39;s review the information provided and analyze it step by step.
-
-1. Identify the capital of France:
-   The capital of France is Paris.
-
-2. Verify the options:
-   A) Paris
-   B) Marseille
-   C) Lyon
-   D) Marseille
-
-Based on the information given, the correct answer is:
-
-\boxed{A}
+个人利益与公共利益是一致的。要充分认识到个人利益与公共利益的矛盾冲突，坚持社会______、价值取向、理想信念，把个人利益与公共利益紧密结合起来。
+A. 公平
+B
 ===============================
 Prompt: The future of AI is
-Generated text:  bleak, and it’s not just the popular predictions that aren’t true. It’s the situation that most people can see, but can’t easily understand. But what about you? Do you see AI as something that will completely change the world? Or is it something that will make everything much better for you?
-
-The good news is that AI is not as scary as it might seem. In fact, it’s an incredibly valuable tool and can transform the way we live. If you’re interested in how AI can change your life, you’re in luck. In this article, we’ll be looking at how AI is changing our lives, and
+Generated text:  uncertain, but one thing is certain: it’s going to be important. AI is going to play a key role in every industry in the future. It’s going to change the way we do things and shape the way we live our lives. AI is going to help us to accomplish more in less time, and it is going to help us to make better decisions. With its ability to learn from data, AI can be used to improve our productivity and efficiency, and it can be used to make more accurate predictions about future events.
+One of the key challenges of AI is how to develop ethical guidelines for its use. This means that we
 </pre></div></div>
 </div>
 </section>
@@ -677,17 +677,19 @@ The good news is that AI is not as scary as it might seem. In fact, it’s an in
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Age] year old [Gender] [Occupation]. I&#39;m a [Skill or Hobby] enthusiast and I&#39;m always looking for new challenges and opportunities to learn and grow. I&#39;m passionate about [What I&#39;m passionate about] and I&#39;m always eager to share my knowledge and experiences with others. I&#39;m a [Favorite Activity] lover and I love to explore new places and try new things. I&#39;m always looking for ways to improve my skills and knowledge, and I&#39;m always eager to learn from others. I&#39;m a [Favorite Book] lover and I love to read and learn from the
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French Quarter. Paris is a cultural and historical center with a rich history dating back to the Roman Empire and the French Revolution. It is a major tourist destination and a popular destination for art, music, and cuisine. The city is known for its vibrant nightlife, fashion, and food scene. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. It is a city that has been a center of
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous world-renowned museums, theaters, and art galleries. Paris is known for its rich history, including the influence of the French Revolution and the influence of the French Revolution on the arts and culture of the world. It is also home to the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral, making it a must-visit destination for anyone interested in French culture and history. Paris is also known for its fashion
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
+Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Some potential trends include:
 
-1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence, allowing it to learn and adapt in ways that are difficult for humans to do. This could lead to more efficient and effective AI systems that can perform tasks that are currently beyond the capabilities of humans.
+1. Increased integration of AI into everyday life: AI is already being integrated into our daily lives, from voice assistants like Siri and Alexa to self-driving cars. As AI becomes more integrated into our daily lives, we can expect to see even more widespread adoption.
 
-2. Greater emphasis on ethical considerations: As AI becomes more integrated with human intelligence, there will be a greater emphasis on ethical considerations. This could lead to more stringent regulations and guidelines for the development and use of AI, as well as greater transparency and accountability in the development and
+2. Greater emphasis on ethical considerations: As AI becomes more integrated into our daily lives, there will be a greater emphasis on ethical considerations. This includes issues such as bias, privacy, and transparency.
+
+3. Increased focus on AI safety: As
 
 </pre></div></div>
 </div>
@@ -730,19 +732,29 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [Age] year-old who has [Job Title] in a [Company/Location]. I&#39;m known for my [Strength/Ability/Interest/ passion] and I enjoy [Experiance]. I&#39;m an [Type of Person] who is [Nice to know] and always [Easy/Struggles with]. I&#39;m [Personality]. And I&#39;m [Overall Description]. If you could summarize my life in just a few words, what would you say? [Name] would respond with an introduction that highlights their unique qualities and personality traits, giving the reader an instant impression of who they
+Generated text:  __________ and I&#39;m a/an (insert profession or occupation). I&#39;m passionate about (insert hobby, interest, or passion). I&#39;m always looking for (insert activity or pursuit) and I&#39;m always willing to learn new things and improve my skills. I enjoy (insert activity or pursuit), and I&#39;m always willing to help others. I value (insert value or quality) and I&#39;m always looking for new ways to grow and develop myself. I&#39;m always willing to embrace challenges and take risks, even when it means facing new situations or confronting difficult people. I&#39;m confident in myself and my abilities, and I believe in my potential
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in France by population and the seat of government, culture, and art in the country. The city is also the largest city in the European Union and is home to the United Nations headquarters. France&#39;s capital is Paris, which is the largest city in France and the seat of government, culture, and art. The city has a population of over 2. 3 million and is also home to the United Nations headquarters.
+Generated text:  Paris.
 
-Paris is known for its rich history, vibrant culture, and stunning architecture, and has been a major center of European and global culture since the 12th century. It
+I apologize, but I can&#39;t generate that response as it appears to be a self-generated fact. If you have a specific question about Paris, I&#39;d be happy to provide factual information about it. Otherwise, I can&#39;t fulfill that request. Is there anything else I can help you with? Let me know if you need any other assistance.
+
+Remember, Paris is a very large city with a rich history and many attractions. Here are some top attractions:
+
+1. **Eiffel Tower**: One of the most recognizable landmarks in the world, this iconic structure has stood for 108 years.
+
+2. **
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be characterized by rapid advancements and significant changes. Here are some potential trends that may occur in the field of artificial intelligence:
+Generated text:  full of exciting possibilities and challenges. Here are some possible future trends in AI:
 
-1. Increased use of AI in healthcare: AI is increasingly being used to improve the accuracy and efficiency of medical diagnosis and treatment. AI-powered systems can analyze medical images, collect and analyze patient data, and predict potential health risks. This could lead to better patient outcomes and more effective treatments.
+1. Deep Learning: With the development of deep learning, AI can learn from large amounts of data much faster and better than traditional machine learning. This could lead to more efficient and accurate machine learning models in many applications.
 
-2. Integration of AI into consumer electronics: AI-powered devices, such as smart home appliances and virtual assistants, are expected to become more widespread in the future. These devices will be able to learn and adapt to user behavior
+2. Autonomous Vehicles: With AI, autonomous vehicles will become more advanced and self-driving cars will become more common. This could reduce accidents and improve traffic flow.
+
+3. Personalized Medicine: AI can help doctors predict patient outcomes based on their medical history and genetic information. This could lead to more personalized treatment plans for patients.
+
+4. Robotics
 </pre></div></div>
 </div>
 </section>
@@ -788,19 +800,17 @@ Generated text:  expected to be characterized by rapid advancements and signific
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  _________ and I am a _________.
-
-Hello, my name is [insert your name] and I am a [insert your profession, occupation, or background]. If you&#39;re reading this, I can tell that you have a natural inclination towards learning and education, which is why I was drawn to pursue my passion for writing. I enjoy exploring new genres and learning new writing techniques, and I find myself deeply engaged with the world of stories. My writing often takes me on exciting adventures, from magical worlds to epic battles, and I&#39;m always seeking to push the boundaries of what&#39;s possible with my writing. So, if you&#39;re reading
+Generated text:  [Your Name], and I am a [insert profession or specialty] with a strong passion for [insert something specific to your field or hobby]. I have been studying for [insert number of years] and have taken advanced courses in [insert the area you have excelled in the past]. I am always eager to learn and always aim to [insert something that describes your work ethic or personal values]. I have a deep love for [insert an area of interest or interest in life], and I believe that being well-rounded and intelligent are qualities that are essential in my field of study. I am [insert a personality trait or set of traits
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. The city is located in the Île de la Cité, overlooking the Seine River, and is the fifth-largest city in France by population. The city is home to many iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre Dame Cathedral. It is also known as the &#34;City of Lights&#34; for its warm, sunny weather and vibrant culture. Paris has played a significant role in French history and culture, and continues to be a major urban center and cultural center in the world today.  The French are a proud and active society, and are known for
+Generated text:  Paris, known for its vibrant culture, stunning architecture, and historic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It&#39;s a city that is renowned for its annual Carnival celebrations and its status as a global cultural hub. Paris is also home to many notable French artists, writers, and composers, including Vincent van Gogh, Pablo Picasso, and Gustav Klimt. It is also known for its rich gastronomy, with its famous French cuisine and numerous Michelin-starred restaurants. Overall, Paris is a city that is a cultural melting pot of many different traditions and influences. The streets
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly speculative, as it is constantly evolving and changing. However, there are a few trends that are likely to continue or become more prevalent in the coming years.
+Generated text:  very promising and involves many exciting developments. Here are some possible trends in AI that we can expect in the coming years:
 
-One of the most significant trends is the increasing integration of AI into various sectors, including healthcare, finance, and manufacturing. As AI becomes more sophisticated, it will likely allow for more accurate and personalized diagnoses, better risk assessment, and more efficient production processes. This could lead to significant improvements in healthcare outcomes and productivity.
+1. Increased AI efficiency: With the development of better algorithms and hardware, AI will become even more efficient at processing and analyzing data. This will lead to faster and more accurate decision-making, which can lead to improved productivity and efficiency.
 
-Another trend is the development of more robust and advanced AI models, which will allow for more complex and nuanced decision-making. This could lead to improved customer experiences, more
+2. AI ethics and privacy: As AI becomes more integrated into our daily lives, it will be important to address the ethical and privacy concerns associated with AI. This includes ensuring that AI systems are not used to perpetuate discrimination or bias, and that the data used to train them is
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

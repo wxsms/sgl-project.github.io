@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 06:26:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 06:55:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 06:26:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 06:55:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The picture shows two yellow taxis driving on a street in an urban area. The taxi on the right is performing a loaner stack job, which involves hanging clothes outside the taxi to dry and then retrieve them. There is also a person hanging clothes on the back of the taxi for drying. The background includes urban buildings and some hanging banners or flags.
+    The image shows two yellow taxis parked on a city street. One taxi has a person using it as an impromptu washing line, with clothes hanging out to dry on an elevated structure. The street appears to be in a busy urban area, with buildings and storefronts in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in a city with two yellow taxis, likely in New York, given the Premonition Taxi flag. A person in a yellow shirt and blue Oxford shirt is hanging clothes on a row of clothespins attached to a pick-up truck bed. The person appears to be tidying up or preparing clothes for a specific event or task, possibly marketing or promotional.
+    The image shows a man standing in the street next to a yellow taxi cab. He appears to be drying clothes outdoors using a makeshift clothesline attached to the back of the taxi. The taxi is parked on a city street with buildings, trees, and pedestrians visible in the background. This clever use of the taxi to provide shade and height for the clothesline is an unusual and creative solution in an urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm not sure what you mean by "not happening.". Can you please clarify your question or provide more context? I'd be happy to help if you can give me more information about what you're asking.
+    The image shows a yellow taxi cab driving down a street. The cab is typical of the iconic yellow taxis in large cities such as New York City, where a man is seen hanging clothes on a hose to dry on the back of the vehicle. This unusual scene suggests that the man might be either using the taxi cab as a makeshift drying rack or engaged in some form of street performance or art.
 
 
 ## Querying Llama 4 Vision Model
