@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 01:57:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 02:34:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 01:57:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 02:34:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a public man pulling a cart draped with blankets on a New York City street, likely in a different part of the city than the Yellow Cab). The display reflects the creativity and artistic spirit of the performers. The performer likely wears a bright yellow yellow t- shirt.
+    The image depicts two yellow taxis in a likely urban setting, possibly New York City, as indicated by the similar design of the taxis, which are typical to the city's cab fleet. One taxi is in the foreground and appears to be driving in an opposite direction to the other, which is stationary and has a man hanging laundry from a clothesline attached to the back.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man hanging a wet blue shirt on a drying rack attached to the back of a yellow taxi cab. It appears to be a humorous or surreal scene, as it's not a typical setting for laundry, especially in a busy city.
+    The image shows a city street scene with a man using clotheslines to dry clothes outside a yellow taxi that is parked on the curb. The man is standing next to the taxi and appears to be doing laundry. The clothes are spread out on the clotheslines behind the taxi, and there are other vehicles in the background, suggesting it is likely in a busy urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man in a yellow shirt hanging clothes on a clothesline attached to the back of a yellow New York City taxi cab. This is a humorous or anecdotal moment where public transportation is being used for an unexpected purpose. The setting appears to be a street in New York City, with buildings and bright colors evident. The clothesline is close to a taxi, suggesting that it's a shared space, possibly a public bicycle or vehicle space.
+    The image shows a prominent yellow and blue city street with some shopping elements near the body of water. Some people are seen walking along the shore, while group of people are seen playing at the shore.
 
 
 ## Querying Llama 4 Vision Model
