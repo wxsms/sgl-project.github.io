@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 04:37:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 05:25:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 04:37:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 05:25:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.17s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there is a yellow taxi with a laundry service Setup attached to the back. The setup includes a clothes line with clothes hanging on it, suggesting that the taxi is used to deliver or collect laundry in certain areas. The scene appears to be an innovative service designed to make a way of using taxis efficiently for this purpose, likely in an urban setting like New York City.
+    The image shows a scene of street cleaning in New York City. A person is using a large extended broom to clean the streets, likely as part of the "Big Green Machine" project, which involves cleaning five blocks in various parts of the city. The yellow taxis, which are a hallmark of the city's street cleaning operation, are also visible. The image captures the effort and scale of maintaining the cleanliness of New York City's streets.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis on a city street, with a person standing by the side carrying a washing machine. The person is using the washing machine to hang clothes on a clothesline or makeshift rack. This scene seems unconventional and humorous, as it is not typical to see someone hanging clothes on a clothesline in the street.
+    The image shows a scene from New York City (N.Y.) with taxis. A man is ironing clothes on a clothesline in front of a taxi. He is wearing a yellow shirt and blue jeans. There are also people and a big building in the background. The scene looks like a well-known чемодан фотографа (film location), but no emotional response is expressed.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, a man is seen in the middle of the street, surrounded by two yellow taxis. He is holding up a fabric, which appears to be a blue flag or banner. The setting looks to be a city street, likely in a well-known urban area given the typical cityscape and the presence of the taxis.
+    The image shows a scene from New York City, featuring two yellow taxis—a taxi to the left and a rear view of a taxi to the right. The taxi on the right has its roof post designed to support washing lines, with clothes hanging out to dry. This is a common sight in New York, where parking spaces are scarce, and people often hang their laundry on their vehicles while they are out. The setting appears to be a busy street with buildings and lights, representing an urban environment.
 
 
 ## Querying Llama 4 Vision Model
