@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 02:34:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 03:16:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 02:34:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 03:16:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts two yellow taxis in a likely urban setting, possibly New York City, as indicated by the similar design of the taxis, which are typical to the city's cab fleet. One taxi is in the foreground and appears to be driving in an opposite direction to the other, which is stationary and has a man hanging laundry from a clothesline attached to the back.
+    The image shows a man hanging clothing on a clothesline attached to the back of a yellow taxi cab. The taxi is blocking the road as the man hangs his laundry from it. This is likely an unusual way to hang clothes to dry, and it captures attention because it uses an unconventional object. The background includes buildings and a few additional taxis and a person on a red scooter.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a city street scene with a man using clotheslines to dry clothes outside a yellow taxi that is parked on the curb. The man is standing next to the taxi and appears to be doing laundry. The clothes are spread out on the clotheslines behind the taxi, and there are other vehicles in the background, suggesting it is likely in a busy urban area.
+    The photo shows a scene on a street, possibly in New York City, given the recognizable taxis. In the background, there are multiple taxis and some cars. A person is standing next to a yellow taxi and appears to be folding or handling items, possibly fabric, on a piece of luggage or some sort of folding stand. It looks like a playful or humorous scene, possibly capturing a moment of unexpected humor in an urban setting. The presence of multiple taxis in the distance and the iconic yellow color of the taxis are notable elements of the image.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a prominent yellow and blue city street with some shopping elements near the body of water. Some people are seen walking along the shore, while group of people are seen playing at the shore.
+    The image shows two yellow taxis driving on a city street during what appears to be early morning or late afternoon, given the long shadows. The scene is quite busy, with taxis sharing the road. Beyond the taxis, there are trees, and in the background, a building with a red banner or sign is visible. The overall atmosphere looks bustling and typical of a busy urban environment.
 
 
 ## Querying Llama 4 Vision Model
