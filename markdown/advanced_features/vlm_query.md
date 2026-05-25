@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 16:11:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 20:13:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 16:11:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 20:13:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.26s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.07s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.51s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.59s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man standing on the hood of a yellow taxi, using airon board and an iron to iron clothes inside the car. This is an unusual and humorous scene, as it combines elements of urban life and mundane domestic tasks. The taxi is driving down a city street, and the man appears to be performing an action that is typically associated with home or office environments, rather than a commercial or public space.
+    The image depicts a person standing next to two yellow taxis in what appears to be an urban street setting. The taxi on the left is partially visible, and the person has a dry cleaner's tray attached to it with laundry items hanging from it. The taxi on the right is more prominently visible, and it also has a dry cleaner's tray attached to its luggage rack. Both taxis are in the manner that is commonly used for active shredding services where the trash is dropped into the back of the vehicle. The background shows buildings and streetlights, indicating these are in an urban area.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like you're describing a scene that involves two yellow taxis on a city street, with one taxi seemingly设有“宇航员” performs some laundry task while standing between them. This might suggest that someone is drying clothes or ironing fabric outdoors.
+    The image shows a scene from what appears to be a taxicab race or competition. There are two brightly colored yellow taxi cabs, with one having a different design on the rear. A person in a yellow shirt is seen engaged in an activity involving the taxis, possibly part of the racing event. The scene is outdoors on a street with some background buildings and traffic lights visible.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person walking along a city street between two yellow taxis. The person is carrying a display stand with clothing hanging on it. This unusual sight suggests that the person might be promoting or selling clothing, perhaps at an outdoor market or during a special event in the city.
+    The image shows a person hanging clothes on a clothesline in the middle of a city street. There are yellow taxis parked on the street, and various city street signs and buildings can be seen in the background. The scene is unusual, as it shows a common cleaning activity occurring in a public urban setting.
 
 
 ## Querying Llama 4 Vision Model

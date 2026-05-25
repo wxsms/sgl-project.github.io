@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=dfbb7638"></script>
+    <script src="../_static/documentation_options.js?v=8ced5818"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -836,6 +836,14 @@ document.write(`
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DSA_FUSE_TOPK</span></code></p></td>
 <td><p>Fuse the operation of picking topk logits and picking topk indices from page table (<code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_FUSE_TOPK</span></code> is a deprecated alias)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DSA_TOPK_FLASHINFER_DETERMINISTIC</span></code></p></td>
+<td><p>Use deterministic FlashInfer topk kernels when <code class="docutils literal notranslate"><span class="pre">--dsa-topk-backend=flashinfer</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DSA_TOPK_FLASHINFER_TIE_BREAK</span></code></p></td>
+<td><p>Tie-break mode for FlashInfer DSA topk when <code class="docutils literal notranslate"><span class="pre">--dsa-topk-backend=flashinfer</span></code>: unset disables explicit tie-breaking, <code class="docutils literal notranslate"><span class="pre">small</span></code> prefers the smaller candidate index for equal scores, and <code class="docutils literal notranslate"><span class="pre">large</span></code> prefers the larger candidate index for equal scores. Setting this variable makes FlashInfer use deterministic topk.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unset</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DSA_ENABLE_MTP_PRECOMPUTE_METADATA</span></code></p></td>
 <td><p>Precompute metadata that can be shared among different draft steps when MTP is enabled (<code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_ENABLE_MTP_PRECOMPUTE_METADATA</span></code> is a deprecated alias)</p></td>
