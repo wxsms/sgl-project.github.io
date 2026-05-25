@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 08:59:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 09:12:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 08:59:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 09:12:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.22s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.00it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a teddy bear being maneuvered around a yellow taxi cab in an urban street setting. The teddy bear appears to be on a small stand of some kind, likely being moved around by someone off-camera. The scene is bustling with activity, as the taxis are typical of a busy city environment, likely New York City, given the geographical context. The surroundings, such as the high-rise buildings, the street edges, and the overall urban aesthetic, reinforce this impression.
+    The image shows a man standing on the back of a yellow taxi cab, raising a piece of blue cloth up in the air. This scene appears to be in an urban environment, possibly a city street with tall buildings. The presence of the yellow taxi and the man standing on the cab suggests it might be a creative act or an unusual street performance, possibly for artistic or public-relations purposes. The cloth he is holding up might be part of a costume or a prop for this performance.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a parodic scene where a man is pretending to do laundry on the street. He is standing on a small stand with cleaning tools, and nearby are two yellow taxis, driving away from a store that has a signá with a dollar sign on it. The unusual setting suggests it could be from a humorous or satirical advertisement.
+    The image shows a tree-striped cab being extended with fabric to clean air conditioners and vents of the cab. The driver appears to be using a hose to wash the truck, while SERVPRO eyesight staff dressed in visuals for business marketing works behind the cab to promote the company.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city with pedestrians and vehicles. There are two yellow taxis in the foreground. A person is hanging a shirt on a clothesline attached to the cabs. The person appears to be performing a humorous act, as if doing laundry while standing by the taxi. The background includes other pedestrians and a building with visible windows and street signs. The setting suggests an urban environment.
+    The image shows two yellow taxis on a city street. One taxi is parked alongside the curb, and the other taxi appears to be stationary with its side door open. There is a person, likely a cab driver, standing beside the open door of the stationary taxi. The person is holding a rectangular object that resembles a part of a car dashboard or some other equipment. The background includes storefronts with signs and advertisements, as well as trees lining the street. The scene likely takes place in an urban setting, possibly during a public demonstration or a transit event.
 
 
 ## Querying Llama 4 Vision Model
