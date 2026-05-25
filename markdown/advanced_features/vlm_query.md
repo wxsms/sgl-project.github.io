@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 09:12:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 10:16:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 09:12:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 10:16:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man standing on the back of a yellow taxi cab, raising a piece of blue cloth up in the air. This scene appears to be in an urban environment, possibly a city street with tall buildings. The presence of the yellow taxi and the man standing on the cab suggests it might be a creative act or an unusual street performance, possibly for artistic or public-relations purposes. The cloth he is holding up might be part of a costume or a prop for this performance.
+    The image shows a man dressed in a yellow raincoat and dark pants, working with a bike stand on the back of a yellow taxi. The man appears to be adjusting or using the bike stand, which is typically used for single-person mobility from a standing position. The scene is set in an urban environment with tall buildings visible in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a tree-striped cab being extended with fabric to clean air conditioners and vents of the cab. The driver appears to be using a hose to wash the truck, while SERVPRO eyesight staff dressed in visuals for business marketing works behind the cab to promote the company.
+    The image depicts a scene on a city street where a man is hanging laundry on the back of a taxi. The man is wearing a bright yellow shirt and appears to be drying clothes on an improvised clothesline attached to the taxi. The taxi is yellow, typically the standard color for New York City taxis, also known as "yellow cabs." The background shows a typical urban environment with buildings, storefronts, and pedestrians.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a city street. One taxi is parked alongside the curb, and the other taxi appears to be stationary with its side door open. There is a person, likely a cab driver, standing beside the open door of the stationary taxi. The person is holding a rectangular object that resembles a part of a car dashboard or some other equipment. The background includes storefronts with signs and advertisements, as well as trees lining the street. The scene likely takes place in an urban setting, possibly during a public demonstration or a transit event.
+    Here, a man in a yellow shirt is ironing clothes on the back of a yellow taxi. The contrast between the man's casual attire and the otherwise professional and public setting—standing next to a taxi with a meter on his chest—creates a humorous and an unusual scene. The man is using the back of the taxi, which serves as makeshift windshield for ironing, to do so. It's important to note that ironing clothes in a taxi's back area is not a common practice nor advisable in public spaces. It suggests a whimsical or farsighted approach to everyday situations.
 
 
 ## Querying Llama 4 Vision Model
