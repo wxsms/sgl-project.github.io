@@ -99,16 +99,16 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 03:16:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 04:37:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 03:16:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 04:37:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
     Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man hanging clothing on a clothesline attached to the back of a yellow taxi cab. The taxi is blocking the road as the man hangs his laundry from it. This is likely an unusual way to hang clothes to dry, and it captures attention because it uses an unconventional object. The background includes buildings and a few additional taxis and a person on a red scooter.
+    In the image, there is a yellow taxi with a laundry service Setup attached to the back. The setup includes a clothes line with clothes hanging on it, suggesting that the taxi is used to deliver or collect laundry in certain areas. The scene appears to be an innovative service designed to make a way of using taxis efficiently for this purpose, likely in an urban setting like New York City.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The photo shows a scene on a street, possibly in New York City, given the recognizable taxis. In the background, there are multiple taxis and some cars. A person is standing next to a yellow taxi and appears to be folding or handling items, possibly fabric, on a piece of luggage or some sort of folding stand. It looks like a playful or humorous scene, possibly capturing a moment of unexpected humor in an urban setting. The presence of multiple taxis in the distance and the iconic yellow color of the taxis are notable elements of the image.
+    The image shows two yellow taxis on a city street, with a person standing by the side carrying a washing machine. The person is using the washing machine to hang clothes on a clothesline or makeshift rack. This scene seems unconventional and humorous, as it is not typical to see someone hanging clothes on a clothesline in the street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving on a city street during what appears to be early morning or late afternoon, given the long shadows. The scene is quite busy, with taxis sharing the road. Beyond the taxis, there are trees, and in the background, a building with a red banner or sign is visible. The overall atmosphere looks bustling and typical of a busy urban environment.
+    In the image, a man is seen in the middle of the street, surrounded by two yellow taxis. He is holding up a fabric, which appears to be a blue flag or banner. The setting looks to be a city street, likely in a well-known urban area given the typical cityscape and the presence of the taxis.
 
 
 ## Querying Llama 4 Vision Model
