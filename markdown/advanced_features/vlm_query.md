@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 01:17:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 01:57:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 01:17:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 01:57:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.36s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two New York City taxis in a parking lot. The taxi in the foreground has been converted into a mobile laundry service by a person using covers over its side windows and aVisibility screen repainted to make it look more like luggage. This type of vehicle is known as a "mobile laundry car," and it is abnormal for a taxi. Unfortunately, I cannot complete sentences for you.
+    The image shows a public man pulling a cart draped with blankets on a New York City street, likely in a different part of the city than the Yellow Cab). The display reflects the creativity and artistic spirit of the performers. The performer likely wears a bright yellow yellow t- shirt.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing beside a car, similar to a yellow taxi, and hanging clothes on a clothesline. The car appears to be a taxi, typically used for ride-hailing services in urban areas. The man seems to be wetting clothes and then doing yard work, possibly due to high humidity or unexpected weather conditions. The clothesline indicates he might be washing clothes and drying them outside to avoid direct sunlight that could cause water damage or issues with fabric. Additionally, there are other taxis and people in the background along a street.
+    The image shows a man hanging a wet blue shirt on a drying rack attached to the back of a yellow taxi cab. It appears to be a humorous or surreal scene, as it's not a typical setting for laundry, especially in a busy city.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow cab with a man standing behind it, holding a clothes rack and hanging clothes on it. It appears to be a humorous scene where the man is pretending to hang clothes on the taxi, likely for social media or只是为了娱乐.
+    The image shows a man in a yellow shirt hanging clothes on a clothesline attached to the back of a yellow New York City taxi cab. This is a humorous or anecdotal moment where public transportation is being used for an unexpected purpose. The setting appears to be a street in New York City, with buildings and bright colors evident. The clothesline is close to a taxi, suggesting that it's a shared space, possibly a public bicycle or vehicle space.
 
 
 ## Querying Llama 4 Vision Model
