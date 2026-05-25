@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-24 22:57:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 00:11:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-24 22:57:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 00:12:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.29s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.34s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man hanging laundry out of the back window of two yellow taxis along a city street. The scene appears to be a humorous and unusual method of drying laundry. The man is using the open windows of the taxis as makeshift drying racks. The taxis are driving down the street on what looks like a busy urban area.
+    The image shows a vehicle, likely a car, with clothes or fabric partially draped over the back. This could be a street performer or a resident engaging in informal art or DIY projects. The background includes urban elements like buildings and taxis, indicating that this scene is taking place in an urban area, possibly in New York City, given the iconic yellow taxi cabs.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis driving down a city street in New York City. The scene appears humorous because a man, dressed in a yellow shirt that matches the taxis' color, is ironing clothes outside the back of one of the taxis while on the side of the road in front of stores. The clothing is draped over a makeshift.Member's www.epickler.com platform to dry after being ironed. This quirky act of ironing clothes outdoors serves as a humorous breaking point in an otherwise ordinary moment, embodying New York City's casual and often unexpected humor. The juxtaposition of the ironing scene with the urban environment creates a
+    The photo shows a man wearing a yellow shirt, drying clothes on a clothesline attached to the back of a yellow taxi. The taxi is on a city street, and there are some buildings and pedestrians in the background. The scene appears to be taken from a slightly elevated angle, possibly from another vehicle or an overhead camera.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a candid moment of a street cleaner, likely a park ranger, with his shirt waving in the wind. He is using a tripod stand to clean or maintain the manhole in the road. The backdrop includes a yellow taxi and some urban buildings, suggesting it is an urban environment, possibly a downtown area.
+    This image shows a heartwarming and humorous scene where a man wearing a yellow long-sleeva isUME in front of a taxi watching TV on clothes,Video clothing dryer out the window as a fun gag. The video is pull by aUTES DYER eye on a takeout, creating a feeling of comedic meme and charmin. This activity can be amusing to see someone who think this could be the way to对待 laundry dryed them by the chute at towпервых corners of a taxi that is not carrying any golpalw i interesting - hey tweet as it #F interc# bằng unloadings.
 
 
 ## Querying Llama 4 Vision Model
