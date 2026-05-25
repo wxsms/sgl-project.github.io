@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 10:37:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 10:55:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 10:37:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 10:55:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.16s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man leaning over the back of a cab, pretending to iron clothes. In the background, there are two yellow taxis in the street of an urban area. The man is creating a humorous scene by placing a rack over the back of the taxi and seemingly ironing clothes on it. Containers of laundry are attached to the rack, adding to the comedic atmosphere.
+    The image depicts a scene in a city, likely New York City, given the presence of yellow taxis. There are several yellow taxis driving or parked on the street. The image also shows a man and a woman interacting with some clothes on a triangular stand, which is placed outdoors. This unusual sight could be part of an event or an act of art. The backdrop includes storefronts and flags hanging from the buildings, indicating a busy urban environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, there are two yellow taxis on a city street. The man standing in front of one of the taxis is hanging or drying clothes on a rack. This seems unusual as taxis are not typically associated with this type of activity. The scene appears to be a quirky and humorous display, perhaps staged for media or social media purposes to elicit laughter and attention.
+    The photo shows a man practicing ironing clothes using a taxi as a makeshift ironing board. The scene appears to be in an urban setting, with the man wearing a yellow shirt and standing next to two yellow taxis, one behind the other. The setup is not in its intended professional environment, suggesting a humorous or experimental situation.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with two yellow taxi cabs. The taxi on the right has some items loaded onto the roof, including what appears to be laundry or clothing. The person in the image is standing near the back of the taxi on the left, adjusting the load or perhaps preparing to load more items. The setting seems to be an urban area, possibly in a busy commercial district given the presence of storefronts and pedestrians in the background.
+    The image shows a city street scene with two yellow taxis. One of the taxis is parked, and a person wearing a long-sleeved shirt is ironing sheets on the back of the open trunk of the parked taxi, which has been converted into a makeshift drying rack using the trunk space. The street is in an urban setting, possibly a downtown area, with buildings and a tall street sign in the background. There are also flags hanging from flagspoles and outdoor lighting visible.
 
 
 ## Querying Llama 4 Vision Model
