@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 06:55:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 08:59:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 06:55:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-25 08:59:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.22s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.00it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on a city street. One taxi has a person using it as an impromptu washing line, with clothes hanging out to dry on an elevated structure. The street appears to be in a busy urban area, with buildings and storefronts in the background.
+    The image depicts a teddy bear being maneuvered around a yellow taxi cab in an urban street setting. The teddy bear appears to be on a small stand of some kind, likely being moved around by someone off-camera. The scene is bustling with activity, as the taxis are typical of a busy city environment, likely New York City, given the geographical context. The surroundings, such as the high-rise buildings, the street edges, and the overall urban aesthetic, reinforce this impression.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing in the street next to a yellow taxi cab. He appears to be drying clothes outdoors using a makeshift clothesline attached to the back of the taxi. The taxi is parked on a city street with buildings, trees, and pedestrians visible in the background. This clever use of the taxi to provide shade and height for the clothesline is an unusual and creative solution in an urban environment.
+    This image shows a parodic scene where a man is pretending to do laundry on the street. He is standing on a small stand with cleaning tools, and nearby are two yellow taxis, driving away from a store that has a signá with a dollar sign on it. The unusual setting suggests it could be from a humorous or satirical advertisement.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab driving down a street. The cab is typical of the iconic yellow taxis in large cities such as New York City, where a man is seen hanging clothes on a hose to dry on the back of the vehicle. This unusual scene suggests that the man might be either using the taxi cab as a makeshift drying rack or engaged in some form of street performance or art.
+    The image shows a street scene in a city with pedestrians and vehicles. There are two yellow taxis in the foreground. A person is hanging a shirt on a clothesline attached to the cabs. The person appears to be performing a humorous act, as if doing laundry while standing by the taxi. The background includes other pedestrians and a building with visible windows and street signs. The setting suggests an urban environment.
 
 
 ## Querying Llama 4 Vision Model
