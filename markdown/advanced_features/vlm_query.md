@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 18:44:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 20:39:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 18:44:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 20:39:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.64s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.46s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.49s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene likely from a New York City Parachute Jump event. A man is standing behind the back of two yellow New York City taxis, preparing parachutes. One of the parachutes is airborne, having just landed, and the other is draped over the back of the second taxi. The man appears to be managing the jump or preparing to make a parachute jump himself. The event typically occurs on a Saturday morning with participants jumping off!'s 44th floor.
+    The image shows a street scene with two yellow taxis parked along a city street. The person in the foreground is working outdoors, using an apparatus with wheels to move the clothes out of the back of one of the taxis. This suggests they are engaging in some form of outdoor laundry service. The environment looks like an urban area, likely in a city given the architectural style and the presence of multiple storefronts.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxi没有任何人或异常物品被拉离了行驶中的车辆。
+    The picture shows a man performing a joke cleaning action by walking behind two yellow taxis with his shirt out on a clothesline. This is an illusion, and the shirts are actually hanging from the back of the taxis, creating the appearance that he is cleaning the taxis as he walks.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image seems to be digitally altered and shows a scene that is not typical of real-world scenarios. On the right side, there is a double yellow line typically found on the street, which is an indication of one of two requirements for lane markings on divided highways with opposing traffic due to the dangers of crossing without sufficient interval. 
-    
-    Additionally, there is a white zigzag marking that is also a common feature on the machine lines of divided highways with opposing traffic due to the dangers of crossing without sufficient interval.
+    This image shows a street scene with two yellow taxis. One taxi is being pulled by a person using a bike trailer, suggesting a unique or unconventional mode of transportation. The person is hanging out clothes on an ironing board attached to the bike, which appears humorous and may be a form of幽默 or protest. The background includes some stores along the street, and there are red banners hanging from a streetlight.
 
 
 ## Querying Llama 4 Vision Model
