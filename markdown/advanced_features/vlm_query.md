@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 14:02:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 14:43:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 14:02:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 14:43:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the picture, a man isRetail laundering in city street. He is working with clothesw Sigma DeltaX with B&W lens. He is also washing a yellow cab背后的大小机器。He is in the street with other vehicles.
+    The image shows a scene on a city street with two yellow taxicabs. One taxi is prominently featured in the foreground with its back open, revealing a makeshift laundry area consisting of a plastic stool and a foldable apron with clothes piled on it. A person is standing behind the apron, seemingly engaged in folding laundry. The setting appears to be a busy urban environment with storefronts visible in the background and some paved street elements around.
 
 
 ### Call with Processor Output
@@ -146,9 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a unique cleaning method where some individuals are using rubber gloves as makeshift clothes hampers or bins to gather trash along public sidewalks!
-    
-    The picturesque scene of a street show people using rubber gloves which may look strange for regular practice. But this is an extraordinary, unconventional practice dramatically showing an effective and seems more convenient way of gathering trash.
+    The image depicts two yellow taxis in New York City. In the foreground, a person is ironing clothes on a makeshift clothesline attached between the back of two taxis. The practice of ironing clothes on the back of taxis is a local tradition and can be found in various neighborhoods around the city. The person appears to be engaging in a humorous task that makes use of the high visibility of the taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The person in the image is standing on a small three-legged stool, drying laundry. The setting appears to be on a street near a busy area with two yellow taxis parked along the road. The background shows some shops and a building with large windows. The overall scene gives an impression of a playful and unusual activity occurring in an urban environment.
+    The image shows a unique scene where a yellow taxi in New York City is being used as a makeshift drying rack. A man, identified as Kenny Floyd, is hanging laundry outside the taxi with grocery baskets. It appears he was improvising to dry his clothes while carrying groceries. The taxi is parked on a city street lined with tall buildings, and other vehicles are visible in the background. The concept is humorous and illustrates a novel use for urban transportation.
 
 
 ## Querying Llama 4 Vision Model
