@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 17:06:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 18:44:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 17:06:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 18:44:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.24s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.64s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.46s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.49s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two taxis in a city street, a man at the top left putting off something on the backside of a yellow cab. The man is people shopping with clothes.
+    The image shows a scene likely from a New York City Parachute Jump event. A man is standing behind the back of two yellow New York City taxis, preparing parachutes. One of the parachutes is airborne, having just landed, and the other is draped over the back of the second taxi. The man appears to be managing the jump or preparing to make a parachute jump himself. The event typically occurs on a Saturday morning with participants jumping off!'s 44th floor.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in a busy urban area with a person prominently hanging necktie t-shirts from the back of a taxi. The person is standing behind the taxi, getting it ready for transportation. Taxis are a common mode of transportation in cities like New York, where this scene appears to take place. The background features typical urban elements like buildings and street scenes.
+    The image shows a taxi没有任何人或异常物品被拉离了行驶中的车辆。
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a curious scene where a man is washing and drying clothes in front of a pair of yellow taxis. This is likely an installation or performance art piece, as it is not a common or typical activity to be done in such an urban environment. The man is manipulating the clothes, making them appear as though they are riding the taxis behind him, creating an optical illusion. This type of performance art is often used for public entertainment or to draw attention to various causes.
+    This image seems to be digitally altered and shows a scene that is not typical of real-world scenarios. On the right side, there is a double yellow line typically found on the street, which is an indication of one of two requirements for lane markings on divided highways with opposing traffic due to the dangers of crossing without sufficient interval. 
+    
+    Additionally, there is a white zigzag marking that is also a common feature on the machine lines of divided highways with opposing traffic due to the dangers of crossing without sufficient interval.
 
 
 ## Querying Llama 4 Vision Model
