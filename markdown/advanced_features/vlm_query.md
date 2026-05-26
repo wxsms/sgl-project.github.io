@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-25 23:51:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 01:02:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-25 23:51:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 01:02:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.47s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.21s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    It looks like you have a picture of two yellow taxis parked side by side, with one of them having a奇特 and still somewhat unclear display. The image seems to be in a urban setting, likely in New York City based on the design of the taxi, as they are commonly associated with Manhattan. There might be an art installation or an unusual event taking place on one of the taxis where you can see fabrics or clothing hanging from the vehicle's roof. Lines of tape are sometimes used for painting or advertising in urban areas. Some shirts and possibly pants seem to be hanging in front of one of the taxi motors. Please let me know if
+    This image shows a man kneeling on the street wearing sunglasses,码面衬衫, tie, tie, and a yellow shirt. He is using a kickstand to hang a blue piece of clothing from a manhole cover. The setting appears to be a street with a yellow car parked nearby and a taxi in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on the street. The taxi's fare window is open, and a person is standing inside it, holding a shirt and engaging in what appears to be some form of cleaning activity, possibly using a vacuum cleaner or a handheld cleaning device. The setting seems to be an urban environment, as there are buildings and a street visible in the background. The taxi is in a parked state, and it is not in operation, as the driver is inside the vehicle.
+    The image shows a person hanging up unfolded clothes on a clothesline set up over a yellow taxi. The taxi is parked on a city street. The scene appears to be humorous as the person is folding clothes directly over the car's cargo area, which is typically not a suitable space for this activity.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from a New York City street where a man is working as a portable "taxi service" or "limo" by transforming a yellow taxi into a modified taxi during a performance. The man is standing on a ladder, mimicking the appearance of a taxi driver, and is holding what looks like a shirt or an item of clothing with blue sleeves and a purple stripe. The image emphasizes the quirky and creative nature of street performance art, showcasing the intersection of everyday life and entertainment in urban environments.
+    The image shows a man hanging an American flag using a clothesline attached to a yellow taxi. The setting appears to be an urban street, likely in a city nucleus where taxis are common.
 
 
 ## Querying Llama 4 Vision Model
