@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 06:31:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 06:58:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 06:31:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 06:58:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.57s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a person drying clothes on a hanger attached to the back of a yellow taxi in a busy urban area. This unique scene suggests that the city may be experiencing unusual weather conditions or maintaining cleanliness by redistributing laundry, possibly due to a local response to an event like a fashion show, charity event, or public intervention.
+    The image shows a scene with two yellow taxis on a city street. One taxi is parked on the side of the road, and the other is pulling a clothesline with various shirts hanging from it. The person in the foreground is holding up one of the shirts, seemingly shepherding it on the clothesline. The background features tall city buildings and some banners hanging. This scene appears to be a humorous or symbolic display, potentially related to street art or a protest.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man walking down a street, pushing a cart with drying racks that hold several flags weighted down with rocks or something similar. The cart and the man seem to be in a public area, possibly a street or public square, with tall buildings and various shops visible in the background. The man is wearing a yellow shirt, and there are cars and taxis around him, indicating an urban setting.
+    The image shows a humorous scene where a man dressed in a yellow t-shirt and blue jeans is working as a valet, pretending to iron a shirt with a slot in his pant leg. Behind him, two taxis and several cars are driving on the city street. The Quick Dry service is advertising its offering at the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man ironing a blue shirt in a New York City street, next to a yellow taxi cab. The scene appears to be staged for a humorous contrast between the idea of ironing clothes and the typical urban environment of a bustling city street with taxis. The setting is typical of urban New York, complete with the iconic yellow taxis and cityscape in the background.
+    There doesn't appear to be anything being shown in this image concerning dry cleaning.
 
 
 ## Querying Llama 4 Vision Model
