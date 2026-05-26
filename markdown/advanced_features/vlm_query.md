@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 05:23:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 06:31:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 05:23:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 06:31:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.57s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    I'm not sure what you mean by "What's shown here." Could you please provide more context or clarify what specific content you are referring to?
+    The image shows a person drying clothes on a hanger attached to the back of a yellow taxi in a busy urban area. This unique scene suggests that the city may be experiencing unusual weather conditions or maintaining cleanliness by redistributing laundry, possibly due to a local response to an event like a fashion show, charity event, or public intervention.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a person walking with a kite in their backpack. The kite is not visible, but it appears to be designed as a traditional Chinese kite. The person is walking on a city street, and there are taxis in the background. The scene is possibly in a busy urban area, given the presence of the taxis and the photo quality.
+    The image shows a man walking down a street, pushing a cart with drying racks that hold several flags weighted down with rocks or something similar. The cart and the man seem to be in a public area, possibly a street or public square, with tall buildings and various shops visible in the background. The man is wearing a yellow shirt, and there are cars and taxis around him, indicating an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a man in a dynamic pose, seemingly posing or doing something lively near a yellow taxi in an urban setting. The man is wearing a yellow shirt, and the taxi is also yellow, which creates a cohesive color scheme with the taxi’s iconic color. The setting appears to be a busy street with tall buildings, possibly in a city. The man's pose suggests movement or activity, possibly highlighting a moment of fun or spontaneity in an otherwise everyday city environment.
+    The image shows a man ironing a blue shirt in a New York City street, next to a yellow taxi cab. The scene appears to be staged for a humorous contrast between the idea of ironing clothes and the typical urban environment of a bustling city street with taxis. The setting is typical of urban New York, complete with the iconic yellow taxis and cityscape in the background.
 
 
 ## Querying Llama 4 Vision Model
