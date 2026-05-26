@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 07:30:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 08:07:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 07:30:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 08:07:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.42s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.15s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts two yellow New York City taxis parked on a street. The taxi in the foreground has a piggyback with various clothes items hanging on it, including a blue undershirt, a yellow bib, and what appears to be socks. The pigsceptive of clothes drying is unusual in such a setting, as it's not a common practice. The background shows a city street with a building, some storefronts, and festive decorations such as red and gold streamers. Additionally, there are tall streetlights and green trees visible in the background.
+    The image shows two yellow taxis in what appears to be a city street. They seem to be positioned back-to-back, possibly in a traffic jam or on a one-way road. The main focus of the image is a person who has their hands stuffed into their pocket and a prohibited shirt hanging from a skinny pole, possibly mimicking a flag or an attempt to convey a message. The person's stance and the position of the shirt create a light-hearted or humorous scene.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It seems you are looking at unusual or unexpected images related to the content you provided. Instead of images, I am generating an image here. Please provide details or specific information about what you need or want me to focus on, and I will create an accurate image accordingly.
+    The image shows a scene on a city street with two taxi cabs: one yellow and one blue. There is a person hanging laundry on a clothesline attached to the back of the blue taxi cab. The scene appears humorous or surreal because it is uncommon to see laundry being hung from a taxicab, especially on a busy city street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, a person is seen ironing clothes in the back of a yellow taxi, performing a laundry service on the street. The taxi is positioned in the middle of a road, with other vehicles around it. The scene appears to be part of a comedic or creative campaign, as the person is ironing clothes in such an unconventional manner.
+    None.
 
 
 ## Querying Llama 4 Vision Model
