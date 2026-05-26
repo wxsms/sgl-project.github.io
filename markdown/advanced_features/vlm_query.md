@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 09:57:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 14:02:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 09:57:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 14:02:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The picture shows a street scene with two yellow taxis. One taxi is pulling a clothesline with several items of clothing hanging on it, suggesting that the person positioned between the two taxis is engaged in some sort of public performance or act. The background includes tall buildings, flags, and trees, indicating an urban setting. This kind of performance is sometimes seen in New York City during the Gay Pride Parade, where people wear colorful costumes and perform various acts to raise awareness and celebrate diversity.
+    In the picture, a man isRetail laundering in city street. He is working with clothesw Sigma DeltaX with B&W lens. He is also washing a yellow cab背后的大小机器。He is in the street with other vehicles.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis with义工穿着黄色老师的鸭子在街上做清洁工作。
+    The image shows a unique cleaning method where some individuals are using rubber gloves as makeshift clothes hampers or bins to gather trash along public sidewalks!
+    
+    The picturesque scene of a street show people using rubber gloves which may look strange for regular practice. But this is an extraordinary, unconventional practice dramatically showing an effective and seems more convenient way of gathering trash.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a vibrant scene on a city street. In the foreground, there is a man wearing a bright yellow shirt, who appears to be operating a miniature ironing station on a small wooden dolly. This ironing station includes an iron, which is being used to press pieces of clothing or fabric that are hung on the dolly, simulating the motion of ironing at a full size.
-    
-    Behind the man, there are two yellow taxis parked along the street. The taxi on the left is partially visible and has a red light on top, indicating it is not currently in use. The taxi on the right is fully visible and
+    The person in the image is standing on a small three-legged stool, drying laundry. The setting appears to be on a street near a busy area with two yellow taxis parked along the road. The background shows some shops and a building with large windows. The overall scene gives an impression of a playful and unusual activity occurring in an urban environment.
 
 
 ## Querying Llama 4 Vision Model
