@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 22:06:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 23:02:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 22:06:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 23:02:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.03it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene with two yellow taxi cabs and a person hanging clothes on them. The person is using a hammer to hang clothes on the taxis, which is an unusual and humorous activity. The setting appears to be an urban area, possibly in New York City, given the architectural style and the similar look of taxi cabs there.
+    The image shows a London Transport taxi at Charing Cross Road in London, England, undergoing cleaning. The cab has a blue banner on the back, which is characterized by the Union Jack flag and the London Transport logo. The cab brushes are being shaken off clothes at the rear end.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow and blue cloth spread out on a makeshift tripod in the middle of a street. It appears to be a protest or demonstration. There is a person standing next to the cloth, possibly preparing or setting up the display. In the background, there is a fire hydrant and a building with large windows and some banners or flags. The scene suggests a public event, possibly related to a political or social cause.
+    The image appears to show a man performing a humorous act on a city street. He is hanging out laundry on the side of a yellow taxi cab. The street is lined with various billboards and buildings, suggesting it is a densely populated urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow cab (taxi) parked on a city street. A man, dressed in a yellow shirt and blue shorts, is ironing clothes on the back of the taxi cab. This quirky and humorous scene is likely staged to entertain passersby. The setting is in what appears to be New York City, given the iconic yellow cabs and the urban environment. The man is using the back of the taxi as a makeshift shower or private laundry area.
+    The image shows two yellow taxis and a person hanging laundry in a busy street. It appears to be a humorous scene where a accustomed to cleaning the city, hangs clothes on the taxis, suggesting he is cleaning in pública and in a persistent manner.
 
 
 ## Querying Llama 4 Vision Model
