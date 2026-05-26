@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 20:39:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 21:31:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 20:39:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 21:31:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -121,7 +121,15 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene with two yellow taxis parked along a city street. The person in the foreground is working outdoors, using an apparatus with wheels to move the clothes out of the back of one of the taxis. This suggests they are engaging in some form of outdoor laundry service. The environment looks like an urban area, likely in a city given the architectural style and the presence of multiple storefronts.
+    The image shows a scene from a remote-controlled car mounted ordeal defending car-powered resumes of nominations as a kind worker by misunderstandings sovereignty.
+    
+    The？」 in the picture is offering that some江insects got an impact offense within the rights ofustral fatalities can roles.Work the recovered Stack is using.
+    
+    The a？」？」 has a chance as the weapon is reasonable: JURAY  mpathy zuemake ZUEM) is use elsewhere from Flawz rl))
+    
+    The Reachbungee reaches endsw tasks achieve
+    
+    hériex in emmet@ neautert Seven par real rhumbleShisper() breathtaking: reraster Van
 
 
 ### Call with Processor Output
@@ -146,7 +154,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The picture shows a man performing a joke cleaning action by walking behind two yellow taxis with his shirt out on a clothesline. This is an illusion, and the shirts are actually hanging from the back of the taxis, creating the appearance that he is cleaning the taxis as he walks.
+    The image shows a person standing behind two yellow taxis, unfolding a piece of blue fabric. The person appears to be getting ready to perform some kind of performance or act, but the specifics are not clear. The scene is set on a street, possibly in a busy area with buildings and signs in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +210,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a street scene with two yellow taxis. One taxi is being pulled by a person using a bike trailer, suggesting a unique or unconventional mode of transportation. The person is hanging out clothes on an ironing board attached to the bike, which appears humorous and may be a form of幽默 or protest. The background includes some stores along the street, and there are red banners hanging from a streetlight.
+    The image shows a New York City yellow taxi parked next to a black sedan. The taxi driver is depicted using a device to press his clothes. This unusual scene is popular in New York during the summer, especially when the heat is unbearable. The driver uses the device to press his clothing, which is draped over the back of his vehicle. The device is a portable ironing board that powers and cools through car-generated heat, making it effective for outdoor use.
 
 
 ## Querying Llama 4 Vision Model
