@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 01:02:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 03:09:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 01:02:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 03:09:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a man kneeling on the street wearing sunglasses,码面衬衫, tie, tie, and a yellow shirt. He is using a kickstand to hang a blue piece of clothing from a manhole cover. The setting appears to be a street with a yellow car parked nearby and a taxi in the background.
+    The image shows a scene of a New York City street. Two yellow taxis are parked on the side of the street, which is typical for New York City, known for its iconic yellow cabs. The central figure in the image is a person at a laundry stand in the back of one taxi. This appears to be a humorous or creative scenario in what should be a typical busy city street. The person seems to be hanging clothes on the back of the taxi, which is a playful and surreal moment against the backdrop of an urban environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person hanging up unfolded clothes on a clothesline set up over a yellow taxi. The taxi is parked on a city street. The scene appears to be humorous as the person is folding clothes directly over the car's cargo area, which is typically not a suitable space for this activity.
+    The picture shows a humorous and somewhat surreal scene where a person is standing next to a yellow taxi in a city street, ironing clothes. The person is wearing a yellow shirt and glasses, and the clothes are hanging on a laundry rack. The setting appears to be an urban area with traffic and pedestrians. This image likely exists as a parody or a-themed photograph for artistic or humorous purposes.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man hanging an American flag using a clothesline attached to a yellow taxi. The setting appears to be an urban street, likely in a city nucleus where taxis are common.
+    The image shows a scene in an urban area with several yellow taxis. A person is ironing garments while standing on a tripod, likely to provide a reverse image effect. The background includes various storefronts, street signs, and advertisements, typical of a city environment.
 
 
 ## Querying Llama 4 Vision Model
