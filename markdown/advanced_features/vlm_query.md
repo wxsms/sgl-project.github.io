@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-26 08:07:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 09:57:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-26 08:07:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-26 09:57:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in what appears to be a city street. They seem to be positioned back-to-back, possibly in a traffic jam or on a one-way road. The main focus of the image is a person who has their hands stuffed into their pocket and a prohibited shirt hanging from a skinny pole, possibly mimicking a flag or an attempt to convey a message. The person's stance and the position of the shirt create a light-hearted or humorous scene.
+    The picture shows a street scene with two yellow taxis. One taxi is pulling a clothesline with several items of clothing hanging on it, suggesting that the person positioned between the two taxis is engaged in some sort of public performance or act. The background includes tall buildings, flags, and trees, indicating an urban setting. This kind of performance is sometimes seen in New York City during the Gay Pride Parade, where people wear colorful costumes and perform various acts to raise awareness and celebrate diversity.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with two taxi cabs: one yellow and one blue. There is a person hanging laundry on a clothesline attached to the back of the blue taxi cab. The scene appears humorous or surreal because it is uncommon to see laundry being hung from a taxicab, especially on a busy city street.
+    The image shows two yellow taxis with义工穿着黄色老师的鸭子在街上做清洁工作。
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    None.
+    The image shows a vibrant scene on a city street. In the foreground, there is a man wearing a bright yellow shirt, who appears to be operating a miniature ironing station on a small wooden dolly. This ironing station includes an iron, which is being used to press pieces of clothing or fabric that are hung on the dolly, simulating the motion of ironing at a full size.
+    
+    Behind the man, there are two yellow taxis parked along the street. The taxi on the left is partially visible and has a red light on top, indicating it is not currently in use. The taxi on the right is fully visible and
 
 
 ## Querying Llama 4 Vision Model
