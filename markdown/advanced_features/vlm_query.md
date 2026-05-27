@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 08:01:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 09:13:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 08:01:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 09:13:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.74s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.33s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.81s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.89s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked along a city street. In front of one of the taxis, a man is folding clothes, likely in an outdoor shopping center or on the sidewalk. The environment suggests a busy urban setting, possibly in New York City, given the iconic yellow taxis and the signage visible in the background.
+    The image shows two colorful street vendors selling clothes on poles by the general area of taxis. The vendors are setting up to sell bright clothing items such as suits, caps, and outerwear among display hangers. There's also a chair nearby that the vendors use for an extended period to gather their stands. The scene likely reflects engaging local street commerce with a variety of items on display.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in a well-lit urban area, with a person in a yellow shirt standing next to it, folding or working with some clothing items on a makeshift drying rack using two canes. The overall scene appears to be quite unusual and creative.
+    The image you provided depicts a man in a yellow shirt hanging up laundry on a metal rig attached to the back of a yellow taxi cab. The scene is unusual and humorous, as typically, one would not expect to see people hanging laundry on the back of a taxi. The taxi is parked on a street, and the man seems to be engaged in an activity that involves handling the laundry equipment attached to the cab.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi and a pink SUV. A man in a yellow shirt is hanging out his clothes on a clothesline, specifically singlet pants and underwear, near the middle of the image. The background includes city buildings and several street signs. The overall scene appears to be in an urban environment with a somewhat unplanned moment captured in time.
+    The image shows a scene on a city street where a person outside a building is drying clothes on a setup consisting of a clothespin, rope, and a drying rack. There is an analysis to be applied which is related to cities or urban environments.
 
 
 ## Querying Llama 4 Vision Model
