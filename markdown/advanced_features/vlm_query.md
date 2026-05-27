@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 14:52:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 17:02:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 14:53:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 17:02:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.26s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.81s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.88s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, a person is standing between two yellow taxis, using a portable ironing board to iron something. This appears to be a humorous and creative display, possibly for a marketing or social media stunt. The setting looks like it is in an urban area, likely a city with busy streets and buildings in the background.
+    The image shows a humorous scene where a man is ironing clothes on the hood of a taxi in a city street. This clever trick is often used to take advantage of the taxi's height and to stay out of traffic, as it prevents the driver from accidentally bumping into the cars when turning.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a distinctive scene on a city street with two yellow taxis. A person dressed in yellow, performing a humorous and unusual activity by hanging laundry on the back of a yellow taxi cab. The street appears to be in a busy urban area with other vehicles, buildings, and signs visible in the background.
+    The image shows a street scene featuring several yellow taxis. One taxi, which is noticeably larger and positioned more prominently in the foreground, has a person cleaning or polishing its side mirror. The individual is using a polisher, which is attached to a stand. There are also smaller taxis or kiosks visible in the background. The scene appears to be set in an urban area, possibly during a parade or event, given the festive decorations on the flags on one of the kiosks.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a sanitation worker in yellow clothing hanging clothes on a clothesline tied between two yellow taxi cabs. This is unusual and raises questions about proper waste disposal in busy urban areas.
+    The image shows a person washing clothes on a拖車被晾在衣服架上并排出后排汽车停下来。这辆车卡在街道，洗涤关键的动作区域和天气情况显然都不对，因此他们似乎陷入困境。
 
 
 ## Querying Llama 4 Vision Model
