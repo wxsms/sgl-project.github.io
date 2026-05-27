@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 21:05:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 21:36:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 21:05:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 21:36:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.74s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.12s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.37s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.43s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
 
 
 
@@ -121,7 +121,15 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, a man is hanging clothes on the back of a New York City taxi. The taxi is partially obstructed by the line of clothes, which appear to be red and white, possibly baking sheets. The scene is common in New York City, where leftover clothes from events or errands are sometimes hung up to dry or be collected. The presence of the tissue dispenser near the taxi further suggests a busy urban environment.
+    I'm not sure what is being referred to in this image. It might refer to:
+    
+    1. **A moving van**: The description could potentially describe a moving van, especially if it's one of a few lined up. However, without more context and details, it's difficult to confirm.
+    
+    2. **An action movie**: Without a title or additional context, it's hard to definitively say if the image is from a movie.
+    
+    3. **An ambulance**: Though unlikely given no specific characteristics like sirens or medical equipment, alternative interpretations could still fit this category.
+    
+    4. **A race car**: Given the setup, maybe such
 
 
 ### Call with Processor Output
@@ -146,7 +154,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with several yellow taxis, typical of a city's transportation system. In the foreground, a person is ironing clothes that are draped over a broom or mop. The setting appears to be an urban environment, possibly in New York City, given the design of the taxis. The overall scene is unusual and humorous, as ironing clothes in outdoor traffic is not a common or practical task.
+    The image shows a man wearing a yellow sweatshirt and apron, standing in front of a taxi on a city street. He is using a conveyor belt to dry clothes, which is an innovative way to utilize the taxi's space for some delivery or delivery alike purposes. This creative use of urban transportation for utility services is the main focus of the image.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +210,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a typical New York City scene with two yellow taxis. Responding to a task: Direct the planter to the nearest neighbor.
+    The image shows a scene where a yellow taxi is parked on a city street. This is typical of many urban settings, where taxis provide transportation services to passengers. The cab is positioned near some buildings and streetlights, indicating an urban environment. The taxi itself is a prominent feature, identifiable as a vehicle used for transporting people in many cities around the world.
 
 
 ## Querying Llama 4 Vision Model
