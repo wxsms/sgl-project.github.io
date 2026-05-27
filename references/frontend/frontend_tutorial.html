@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=1254aea4"></script>
+    <script src="../../_static/documentation_options.js?v=5bb84af3"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -558,9 +558,9 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Multi-thread loading shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  7.71it/s]
-Capturing num tokens (num_tokens=4 avail_mem=59.02 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 11.62it/s]
+Multi-thread loading shards: 100% Completed | 4/4 [00:06&lt;00:00,  1.61s/it]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:10&lt;00:00,  5.60it/s]
+Capturing num tokens (num_tokens=4 avail_mem=44.10 GB): 100%|██████████| 58/58 [00:08&lt;00:00,  6.73it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -576,7 +576,7 @@ Capturing num tokens (num_tokens=4 avail_mem=59.02 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:34563
+Server started on http://localhost:35378
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -593,7 +593,7 @@ Server started on http://localhost:34563
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-05-27 04:39:36] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-05-27 07:05:31] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -625,7 +625,7 @@ Server started on http://localhost:34563
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Germany - Berlin<br>3. Japan - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries and their capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Japan** - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -655,13 +655,13 @@ Server started on http://localhost:34563
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Japan** - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. India - New Delhi</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here's another list of three countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Canada** - Ottawa<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. Germany - Berlin<br>2. Italy - Rome<br>3. Brazil - Brasília</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -703,7 +703,7 @@ Server started on http://localhost:34563
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>Let's perform the calculation:<br><br>2 * 2 = 4<br><br>So, the result of 2 * 2 is 4. No calculator was needed in this case, as it's a simple multiplication.</strong></div>
+<strong style='color: #00008B;'>2 * 2<br><br>The result of 2 * 2 is 4. <br><br>Therefore, the answer is 4. No calculator is needed for this simple multiplication.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -743,7 +743,7 @@ Server started on http://localhost:34563
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet:**<br>   - Eat a variety of fruits, vegetables, whole grains, lean proteins, and healthy fats.<br>   - Limit processed foods, sugary snacks, and high-fat foods.<br>   - Stay hydrated by drinking plenty of water.<br>   - A balanced diet helps prevent chronic diseases and improves energy levels, mood, and cognitive function.<br><br>2. **Regular Exercise:**<br>   - Engage in physical activities that you enjoy regularly.<br>   - Aim for activities that strengthen muscles, improve cardiovascular fitness, and enhance flexibility.<br>   - Incorporate different types of exercise to keep it interesting and effective.<br>   - Consistency is key; make exercise a regular part of your routine.<br>   - Exercise can boost your mood, reduce anxiety and depression, improve sleep quality, increase energy levels, and enhance cognitive function.<br><br>Together, these two habits form a strong foundation for a healthy lifestyle!</strong></div>
+<strong style='color: #00008B;'>To stay healthy, it is important to follow two key practices:<br><br>### 1. Balanced Diet<br>- **Variety of Foods**: Include a wide range of foods like fruits, vegetables, whole grains, lean proteins, and healthy fats.<br>- **Nutrient-Rich Foods**: Focus on consuming foods that are high in vitamins, minerals, fiber, and antioxidants to support overall health and immunity.<br>- **Regular Meals**: Eat regular, well-balanced meals to provide consistent energy and prevent overeating.<br>- **Hydration**: Drink plenty of water to stay hydrated.<br><br>### 2. Regular Exercise<br>- **Aerobic Activity**: Engage in at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week.<br>- **Strength Training**: Incorporate strength training exercises on two or more days a week to build muscle and improve overall strength.<br>- **Consistency**: Make physical activity a regular part of your routine for long-term health benefits.<br>- **Enjoyment**: Choose activities you enjoy to help you stick with them and stay motivated.<br><br>By combining these two practices, you can significantly enhance your physical and mental health, improve your quality of life, and reduce the risk of chronic diseases.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -816,7 +816,7 @@ Server started on http://localhost:34563
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Thenard",<br>        "core": "Fennec fur",<br>        "length": 10.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Creeper"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Willow",<br>        "core": "Phoenix feather",<br>        "length": 11.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Music and pretz"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -851,7 +851,7 @@ Server started on http://localhost:34563
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 27.07it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 22.58it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -974,10 +974,10 @@ The capital of France is Paris.&lt;|im_end|&gt;
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-27 04:39:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-05-27 07:05:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-27 04:39:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.76it/s]
+[2026-05-27 07:05:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.87it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -993,7 +993,7 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.76it/s]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:35891
+Server started on http://localhost:36436
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1009,7 +1009,7 @@ Server started on http://localhost:35891
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-05-27 04:40:11] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-05-27 07:06:16] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1043,7 +1043,7 @@ Server started on http://localhost:35891
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man standing on the back of a moving yellow taxi, ironing a pair of pants. The taxi appears to be in motion, driving down a city street. The man is balancing on a balanced act stand, which provides support as he irons the pants with an ironing board. The background includes other yellow taxis, a building with glass windows, and some trees, suggesting an urban setting.</strong></div>
+<strong style='color: #00008B;'>The image shows a man standing on the back of a moving yellow taxi cab in an urban setting, performing an action that appears to be ironing a piece of clothing on an ironing board attached to the vehicle. The man is wearing a yellow long-sleeve shirt and is balancing on the taxi, seemingly undeterred by the vehicle's movement. The scene takes place on a city street with other yellow taxis and urban buildings in the background.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:

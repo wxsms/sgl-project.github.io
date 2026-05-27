@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 04:35:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 07:08:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 04:35:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 07:08:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene on a city street with three yellow taxis. One taxi is parked with its rear open, and the other has the doors open with people standing and hanging clothes on a line against the back of the vehicle. The outdoor setting and the presence of multiple taxis suggest this could be a common sight in a Zone 5 + area, which is known for its crowded bus stops and street parking, particularly highs busiest at rush hour.
+    The image depicts a humorous scene where a man is mopping the side of a yellow and blueiac Subaru Sebring, which has been modified to resemble a New York City cab. The man is dressed in yellow and appears to be in a jokingly exaggerated state of exhaustion or work-related struggle. This scenario combines elements of cab driving, city street bustling, and a comedic take on the typical working conditions in New York, where taxis are often depicted as perpetually in motion and in various hustle-bustle-like situations. The context and the uniform appearance suggest both a fun nod to the city’s busy taxi traffic and a humorous poke at the
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two yellow taxis, one on the left and one on the right side of the image. In the foreground, there is a man dressed in a yellow shirt and denim jeans. He is using an ironing board placed on the ground to press or iron clothes. The background includes buildings and some red-and-white striped flags hanging from the windows of the buildings. The setting appears to be an urban street, likely in a busy city area.
+    The image shows a street scene in what appears to be a city, likely New York given the style of the taxis. There is a yellow and purple taxi in the background and another in the foreground. A person is standing next to the taxi in the foreground, at a sidewalk level. They have a clothes rack on which they are hanging clothes to dry outside. The person is wearing a yellow hoodie and seems to be engaging with the clothes on the rack. The setting includes a street lined with buildings, and there are flags visible on flag poles in the background. The scene gives the impression of a commercial area with pedestrians, possibly a downtown or
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Please wait until the image is uploaded,和谐你上传后再来。
+    The image depicts a man standing in traffic with a vehicle's trunk open. There are clothes draped over the open trunk lid. The setting appears to be a busy street with multiple lanes of traffic. There are also elements of both the interior and exterior of a building nearby.
 
 
 ## Querying Llama 4 Vision Model
