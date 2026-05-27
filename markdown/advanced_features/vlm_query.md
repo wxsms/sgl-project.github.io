@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 01:01:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 01:24:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 01:01:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 01:24:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a person running with a bunch of clothes hanging on airobots attached to a red crossbody bag. It's an unusual and humorous scene, suggesting the person is trying to carry clothes through the rain or by running to pursue their destination. The presence of two yellow taxis in the background indicates it is an urban area.
+    The image shows a person hanging laundry on a clothesline attached to the back of a New York City taxi cab. This scene is unusual and adds a humorous and creative twist to what is typically a mundane task. The taxis are well-known for their bright yellow color and are a common sight in cities like New York. The hanging laundry suggests that the person might be doing laundry in the back of a taxi, possibly to raise awareness about waste management or as an artistic statement.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person redressing parts of a deformed, yellow cab in a cityscape. The cab appears to be in an unusual shape, possibly due to an accident or vandalism. The setting includes urban elements such as buildings, street signs, and a reporter on the sidewalk, suggesting this incident is being documented or reported.
+    The image shows a scene where a yellow taxi cab is being used as a drying rack for clothes. A person is hanging clothes and a shirt from the back of the taxi cab. This clever use of public transportation is an example of adapting to difficult or uncommon circumstances by making the most out of what is available.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi and a different vehicle, possibly a truck. The image is somewhat blurry, and it appears to have been taken in a parking lot or an area with no cars either parked or moving on the streets.
+    The image shows a scene with two yellow taxis in a city street. One taxi is in motion behind the other, which is partly stationary with a person hanging laundry from its roof rack. The scene is set on a city street, with buildings and storefronts visible in the background. The weather appears to be clear, and the person is engaged in the unusual task of hanging laundry on the back of the stationary taxi. This could be a form of creative street photography or a lighthearted situation that might be seen in urban settings.
 
 
 ## Querying Llama 4 Vision Model
