@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 22:31:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 23:17:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 22:31:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 23:17:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.17s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.09s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
 
 
 
@@ -121,7 +121,13 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a public art installation on a New York City street, featuring two identical yellow taxis parked side by side. One of the taxis has a man dressed in yellow, standing inside, and has a cloth draped over it, giving the appearance of a clown. The scene is often referred to as the "Yellow Taxi Sideshow" or "Taxi Clown." This interactive piece is designed to catch people's attention and bring humor to the urban environment, with the clown shoe positioned over one of the taxi's headlights engaging visitors in a lighthearted way.
+    The image shows a street scene in what appears to be a downtown area of a city, likely in the United States given the presence of public transportation and the number of yellow taxis. There are several elements in the image:
+    
+    1. **Yellow Taxis**: There are two well-known yellow taxis parked on the street, which is a distinctive feature of many U.S. cities, particularly New York City.
+    
+    2. **Urban Setting**: The background includes the facade of buildings with large windows, which is typical of cityscapes in busy downtown areas.
+    
+    3. **Exclusive Numbering**: On the side of the street, there is an indication of
 
 
 ### Call with Processor Output
@@ -146,7 +152,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person dressed in a bright yellow shirt and shorts standing on a street, handling clothes on a makeshift rack behind a yellow taxi. This scene appears to be a creative, humorous visual. The street is busy with traffic, and the context suggests an urban environment, possibly a city center.
+    The image shows a person in a bright yellow shirt standing on the back of a yellow taxi. This person is hanging laundry on two clotheslines attached to the taxi. The taxi is likely being used as an impromptu drying rack in an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city, likely in the United States, due to the presence of yellow taxis and traffic cones. In the foreground, a person is using an iron on a piece of dry cleaning cloths that are draped over a broom placed on the street. The person is wearing a yellow shirt and jeans. The background features buildings, other vehicles, and a few pedestrians. The overall setting suggests typical urban traffic conditions with the person engaged in a maintenance or cleaning activity in an unusual location.
+    The picture shows people hanging clothes on a washing rack in the street.
 
 
 ## Querying Llama 4 Vision Model
