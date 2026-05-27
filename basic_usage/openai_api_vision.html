@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=a548ac07"></script>
+    <script src="../_static/documentation_options.js?v=bbe07715"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -555,10 +555,10 @@ document.write(`
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-27 17:04:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-05-27 18:40:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-05-27 17:04:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.42it/s]
+[2026-05-27 18:41:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+Multi-thread loading shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.68it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -627,13 +627,13 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.42it/s]
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"04f567ecd90f45f7b2453512989581d3","object":"chat.completion","created":1779901469,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing clothes. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing a blue shirt. The setting suggests an urban environment with buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":376,"completion_tokens":69,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"0cb94c5f38bd49079b02ffb30de0d164","object":"chat.completion","created":1779907286,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing clothes. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing a blue shirt. The setting suggests an urban environment with buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":376,"completion_tokens":69,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"0e03d815150f4c97bc52b888a040b867","object":"chat.completion","created":1779901470,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"175713a8ab5d49119490965ab3a11d99","object":"chat.completion","created":1779907287,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene seems to be set in an urban environment, possibly New York City, given the style of the taxi and the architecture visible in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -668,11 +668,177 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.42it/s]
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2026-05-27 18:41:46] [load_mm_data(simple)] error loading IMAGE data at index=0
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connection.py&#34;, line 174, in _new_conn
+    conn = connection.create_connection(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py&#34;, line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File &#34;/usr/lib/python3.10/socket.py&#34;, line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 716, in urlopen
+    httplib_response = self._make_request(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 404, in _make_request
+    self._validate_conn(conn)
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 1061, in _validate_conn
+    conn.connect()
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connection.py&#34;, line 363, in connect
+    self.sock = conn = self._new_conn()
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connection.py&#34;, line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/adapters.py&#34;, line 645, in send
+    resp = conn.urlopen(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 802, in urlopen
+    retries = retries.increment(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/util/retry.py&#34;, line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host=&#39;raw.githubusercontent.com&#39;, port=443): Max retries exceeded with url: /sgl-project/sglang/main/examples/assets/example_image.png (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution&#39;))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 529, in _load_single_item
+    img, _ = load_image(data, cls.gpu_image_decode)
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 922, in load_image
+    image = _load_image(image_file=image_file, gpu_image_decode=gpu_image_decode)
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 890, in _load_image
+    image_bytes = get_image_bytes(image_file)
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 949, in get_image_bytes
+    response = requests.get(image_file, timeout=timeout)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/api.py&#34;, line 73, in get
+    return request(&#34;get&#34;, url, params=params, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/api.py&#34;, line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/sessions.py&#34;, line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/sessions.py&#34;, line 706, in send
+    r = adapter.send(request, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/adapters.py&#34;, line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host=&#39;raw.githubusercontent.com&#39;, port=443): Max retries exceeded with url: /sgl-project/sglang/main/examples/assets/example_image.png (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution&#39;))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 900, in fast_load_mm_data
+    result = await asyncio.wrap_future(future)
+  File &#34;/usr/lib/python3.10/concurrent/futures/thread.py&#34;, line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 544, in _load_single_item
+    raise RuntimeError(f&#34;Error while loading data {data}: {e}&#34;)
+RuntimeError: Error while loading data ImageData(url=&#39;https://raw.githubusercontent.com/sgl-project/sglang/main/examples/assets/example_image.png&#39;, detail=&#39;auto&#39;, max_dynamic_patch=None, preprocess_kwargs=None): HTTPSConnectionPool(host=&#39;raw.githubusercontent.com&#39;, port=443): Max retries exceeded with url: /sgl-project/sglang/main/examples/assets/example_image.png (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution&#39;))
+[2026-05-27 18:41:46] Error in request: An exception occurred while loading IMAGE data at index 0: Error while loading data ImageData(url=&#39;https://raw.githubusercontent.com/sgl-project/sglang/main/examples/assets/example_image.png&#39;, detail=&#39;auto&#39;, max_dynamic_patch=None, preprocess_kwargs=None): HTTPSConnectionPool(host=&#39;raw.githubusercontent.com&#39;, port=443): Max retries exceeded with url: /sgl-project/sglang/main/examples/assets/example_image.png (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution&#39;))
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connection.py&#34;, line 174, in _new_conn
+    conn = connection.create_connection(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py&#34;, line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File &#34;/usr/lib/python3.10/socket.py&#34;, line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 716, in urlopen
+    httplib_response = self._make_request(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 404, in _make_request
+    self._validate_conn(conn)
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 1061, in _validate_conn
+    conn.connect()
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connection.py&#34;, line 363, in connect
+    self.sock = conn = self._new_conn()
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connection.py&#34;, line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/adapters.py&#34;, line 645, in send
+    resp = conn.urlopen(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 802, in urlopen
+    retries = retries.increment(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/util/retry.py&#34;, line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host=&#39;raw.githubusercontent.com&#39;, port=443): Max retries exceeded with url: /sgl-project/sglang/main/examples/assets/example_image.png (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution&#39;))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 529, in _load_single_item
+    img, _ = load_image(data, cls.gpu_image_decode)
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 922, in load_image
+    image = _load_image(image_file=image_file, gpu_image_decode=gpu_image_decode)
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 890, in _load_image
+    image_bytes = get_image_bytes(image_file)
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 949, in get_image_bytes
+    response = requests.get(image_file, timeout=timeout)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/api.py&#34;, line 73, in get
+    return request(&#34;get&#34;, url, params=params, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/api.py&#34;, line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/sessions.py&#34;, line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/sessions.py&#34;, line 706, in send
+    r = adapter.send(request, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/adapters.py&#34;, line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host=&#39;raw.githubusercontent.com&#39;, port=443): Max retries exceeded with url: /sgl-project/sglang/main/examples/assets/example_image.png (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution&#39;))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 900, in fast_load_mm_data
+    result = await asyncio.wrap_future(future)
+  File &#34;/usr/lib/python3.10/concurrent/futures/thread.py&#34;, line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 544, in _load_single_item
+    raise RuntimeError(f&#34;Error while loading data {data}: {e}&#34;)
+RuntimeError: Error while loading data ImageData(url=&#39;https://raw.githubusercontent.com/sgl-project/sglang/main/examples/assets/example_image.png&#39;, detail=&#39;auto&#39;, max_dynamic_patch=None, preprocess_kwargs=None): HTTPSConnectionPool(host=&#39;raw.githubusercontent.com&#39;, port=443): Max retries exceeded with url: /sgl-project/sglang/main/examples/assets/example_image.png (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution&#39;))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/entrypoints/openai/serving_base.py&#34;, line 107, in handle_request
+    return await self._handle_non_streaming_request(
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/entrypoints/openai/serving_chat.py&#34;, line 1139, in _handle_non_streaming_request
+    ret = await self.tokenizer_manager.generate_request(
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/managers/tokenizer_manager.py&#34;, line 578, in generate_request
+    tokenized_obj = await self._tokenize_one_request(obj)
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/managers/tokenizer_manager.py&#34;, line 811, in _tokenize_one_request
+    mm_inputs = await self.mm_processor.process_mm_data_async(
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/multimodal/processors/qwen_vl.py&#34;, line 681, in process_mm_data_async
+    base_output = await self.load_mm_data(
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 835, in load_mm_data
+    return await self.fast_load_mm_data(
+  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 907, in fast_load_mm_data
+    raise RuntimeError(
+RuntimeError: An exception occurred while loading IMAGE data at index 0: Error while loading data ImageData(url=&#39;https://raw.githubusercontent.com/sgl-project/sglang/main/examples/assets/example_image.png&#39;, detail=&#39;auto&#39;, max_dynamic_patch=None, preprocess_kwargs=None): HTTPSConnectionPool(host=&#39;raw.githubusercontent.com&#39;, port=443): Max retries exceeded with url: /sgl-project/sglang/main/examples/assets/example_image.png (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f68666aae00&gt;: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution&#39;))
+/actions-runner/_work/sglang/sglang/python/sglang/srt/entrypoints/openai/serving_base.py:129: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
+  return self.create_error_response(
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"e50e8cdebe9349f89278b398e0809815","object":"chat.completion","created":1779901471,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"object":"error","message":"Internal server error: An exception occurred while loading IMAGE data at index 0: Error while loading data ImageData(url='https://raw.githubusercontent.com/sgl-project/sglang/main/examples/assets/example_image.png', detail='auto', max_dynamic_patch=None, preprocess_kwargs=None): HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Max retries exceeded with url: /sgl-project/sglang/main/examples/assets/example_image.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f68666aae00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))","type":"InternalServerError","param":null,"code":500}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">

@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 17:02:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 18:39:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 17:02:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 18:39:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.26s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.03s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.81s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.88s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a humorous scene where a man is ironing clothes on the hood of a taxi in a city street. This clever trick is often used to take advantage of the taxi's height and to stay out of traffic, as it prevents the driver from accidentally bumping into the cars when turning.
+    The image shows a scene from the "The Hangover" movie, which is a parody of the film "The Hangover Part II." In this scene, a man is hanging clothes out the back of his yellow taxi cab while driving. The humor in the scene comes from the unexpected and unconventional method of hanging clothes out the back of a taxi, which is not a typical practice.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene featuring several yellow taxis. One taxi, which is noticeably larger and positioned more prominently in the foreground, has a person cleaning or polishing its side mirror. The individual is using a polisher, which is attached to a stand. There are also smaller taxis or kiosks visible in the background. The scene appears to be set in an urban area, possibly during a parade or event, given the festive decorations on the flags on one of the kiosks.
+    The image shows two yellow taxis on a city street. There is a person hanging clothes on a street分配器 (street clothesline) behind one of the taxis. The street is lined with buildings, and there areur messages and hand signs posted on them.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person washing clothes on a拖車被晾在衣服架上并排出后排汽车停下来。这辆车卡在街道，洗涤关键的动作区域和天气情况显然都不对，因此他们似乎陷入困境。
+    The image you provided shows a unique scene where a yellow city taxi is used as a makeshift "dry cleaner." It appears to be in New York City, given the cab's design and the urban setting in the background. The man in the yellow shirt and yellow cap is using the car's trunk to hang clothes on a clothesline, effectively cleaning them with the fresh, clean air. This image showcases an innovative and humorous approach to handling dirty clothes, utilizing the resources at hand and reflecting the creativity of both the man and his urban environment.
 
 
 ## Querying Llama 4 Vision Model
