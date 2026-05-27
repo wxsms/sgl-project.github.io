@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 07:08:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 08:01:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 07:08:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 08:01:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.74s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.52it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a humorous scene where a man is mopping the side of a yellow and blueiac Subaru Sebring, which has been modified to resemble a New York City cab. The man is dressed in yellow and appears to be in a jokingly exaggerated state of exhaustion or work-related struggle. This scenario combines elements of cab driving, city street bustling, and a comedic take on the typical working conditions in New York, where taxis are often depicted as perpetually in motion and in various hustle-bustle-like situations. The context and the uniform appearance suggest both a fun nod to the city’s busy taxi traffic and a humorous poke at the
+    The image shows two yellow taxis parked along a city street. In front of one of the taxis, a man is folding clothes, likely in an outdoor shopping center or on the sidewalk. The environment suggests a busy urban setting, possibly in New York City, given the iconic yellow taxis and the signage visible in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in what appears to be a city, likely New York given the style of the taxis. There is a yellow and purple taxi in the background and another in the foreground. A person is standing next to the taxi in the foreground, at a sidewalk level. They have a clothes rack on which they are hanging clothes to dry outside. The person is wearing a yellow hoodie and seems to be engaging with the clothes on the rack. The setting includes a street lined with buildings, and there are flags visible on flag poles in the background. The scene gives the impression of a commercial area with pedestrians, possibly a downtown or
+    The image shows a yellow taxi cab in a well-lit urban area, with a person in a yellow shirt standing next to it, folding or working with some clothing items on a makeshift drying rack using two canes. The overall scene appears to be quite unusual and creative.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a man standing in traffic with a vehicle's trunk open. There are clothes draped over the open trunk lid. The setting appears to be a busy street with multiple lanes of traffic. There are also elements of both the interior and exterior of a building nearby.
+    The image shows a yellow taxi and a pink SUV. A man in a yellow shirt is hanging out his clothes on a clothesline, specifically singlet pants and underwear, near the middle of the image. The background includes city buildings and several street signs. The overall scene appears to be in an urban environment with a somewhat unplanned moment captured in time.
 
 
 ## Querying Llama 4 Vision Model
