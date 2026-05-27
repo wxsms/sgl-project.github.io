@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 02:33:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 04:35:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 02:33:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 04:35:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two New York City taxis driving on a street. The taxi in the foreground has webbed belts and laundry hung out the back window, while the other taxi follows behind. This scene is unusual as taxis are typically not equipped or allowed to use their back windows as laundry hamacs.
+    The image shows a scene on a city street with three yellow taxis. One taxi is parked with its rear open, and the other has the doors open with people standing and hanging clothes on a line against the back of the vehicle. The outdoor setting and the presence of multiple taxis suggest this could be a common sight in a Zone 5 + area, which is known for its crowded bus stops and street parking, particularly highs busiest at rush hour.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man performing an unusual and humorous act on a New York City street. He is ironing a t-shirt on a metal post attached to his bicycle. The setting is a busy urban street with typical New York City taxi cabs visible in the background. The act is making a fun statement about the novelty of putting ironing equipment on a bicycle in the street.
+    The image shows a scene with two yellow taxis, one on the left and one on the right side of the image. In the foreground, there is a man dressed in a yellow shirt and denim jeans. He is using an ironing board placed on the ground to press or iron clothes. The background includes buildings and some red-and-white striped flags hanging from the windows of the buildings. The setting appears to be an urban street, likely in a busy city area.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The picture shows a man wearing a yellow sweatshirt and blue jeans, pouring hot water onto a clothesline from a yellow Cadillac Escalade SUV. The clothesline is holding several dark-colored shirts. The scene likely takes place in an urban area with visible storefronts and vehicles.
+    Please wait until the image is uploaded,和谐你上传后再来。
 
 
 ## Querying Llama 4 Vision Model
