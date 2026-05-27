@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 14:18:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 14:52:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 14:18:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 14:53:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene on a city street with a focus on two yellow taxis. One taxi is parked, and it appears to be participating in an activity involving clothes. The person in the yellow shirt is holding the handlebars of a clothes dryer attached to the back of the taxi. This action suggests that the person is using the taxi to hang clothes, likely for drying them outdoors. The background includes urban elements such as buildings, flags, and traffic lights, indicating that this is likely a bustling city environment.
+    In the image, a person is standing between two yellow taxis, using a portable ironing board to iron something. This appears to be a humorous and creative display, possibly for a marketing or social media stunt. The setting looks like it is in an urban area, likely a city with busy streets and buildings in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a humorous and unusual scene where a person dressed as a taxi driver is washing clothes on the back of a yellow taxi in a city street. The person, wearing yellow clothing, is رغم drying clothes on a makeshift clothesline attached to the back of the taxi, while the actual car is parked behind them.
+    The image shows a distinctive scene on a city street with two yellow taxis. A person dressed in yellow, performing a humorous and unusual activity by hanging laundry on the back of a yellow taxi cab. The street appears to be in a busy urban area with other vehicles, buildings, and signs visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person standing in the street, washing clothes in front of a taxi. They have placed a laundry basket and several brand-new shirts on a makeshift washing rack, mimicking the attire of the taxi driver. This whimsical scene is likely intended to highlight issues with public transportation, such as uncleanliness and poorly maintained vehicles.
+    The image shows a sanitation worker in yellow clothing hanging clothes on a clothesline tied between two yellow taxi cabs. This is unusual and raises questions about proper waste disposal in busy urban areas.
 
 
 ## Querying Llama 4 Vision Model
