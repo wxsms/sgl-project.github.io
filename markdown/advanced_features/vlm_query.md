@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 02:08:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 02:33:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 02:08:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 02:33:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene in New York City. There is a person dressed in a vibrant yellow shirt andoran pants standing behind the rear of a yellow taxi cab, who is operating an urinal. This is part of a humorous and imaginative street art installation or a performance art act during a parade. By performing the urinal-commercial task behind a taxi, the person is showcasing a smart and creative gesture, making use of the inconveniences often associated with using public transportation. The scene captures the lively atmosphere typical of New York City's urban environment, with taxi cabs prominently featured on the streets.
+    The image shows two New York City taxis driving on a street. The taxi in the foreground has webbed belts and laundry hung out the back window, while the other taxi follows behind. This scene is unusual as taxis are typically not equipped or allowed to use their back windows as laundry hamacs.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The picture shows a scene likely related to Cinderella, a fairy tale. A man dressed in a yellow shirt is surrounded by clothes that have been spread out to dry. The setup resembles a prince rescue scenario from the story, with the prince performing a traditional fairy tale gesture, possibly끔vitigmantly地面 medicating himself with what seems to be the clothes, which are his diagonally spread out on the ground. This categorizes as fairy tale and theme park reference.
+    The image shows a man performing an unusual and humorous act on a New York City street. He is ironing a t-shirt on a metal post attached to his bicycle. The setting is a busy urban street with typical New York City taxi cabs visible in the background. The act is making a fun statement about the novelty of putting ironing equipment on a bicycle in the street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene where a man is taking out a water thermostat from a car. The man is wearing a yellow shirt and appears to be performing some kind of inspection or maintenance on the vehicle. This is a amusing scene that is not entirely realistic, as it is highly unusual for people to carry out such maintenance tasks in the street where there are bystanders and vehicles like taxis driving by.
+    The picture shows a man wearing a yellow sweatshirt and blue jeans, pouring hot water onto a clothesline from a yellow Cadillac Escalade SUV. The clothesline is holding several dark-colored shirts. The scene likely takes place in an urban area with visible storefronts and vehicles.
 
 
 ## Querying Llama 4 Vision Model
