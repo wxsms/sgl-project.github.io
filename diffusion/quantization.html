@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=6681656d"></script>
+    <script src="../_static/documentation_options.js?v=162f5518"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -56,7 +56,7 @@
     <link rel="prev" title="Ring SP Benchmark: Wan2.2-TI2V-5B (u1r2 vs Baseline)" href="performance/ring_sp_performance.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 26, 2026"/>
+    <meta name="docbuild:last-update" content="May 27, 2026"/>
   </head>
   
   
@@ -752,7 +752,7 @@ official <code class="docutils literal notranslate"><span class="pre">black-fore
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lmsys/wan22-t2v-a14b-modelopt-nvfp4-sglang-transformer</span></code></p></td>
 <td><p>primary <code class="docutils literal notranslate"><span class="pre">transformer</span></code> quantized with ModelOpt NVFP4, <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> kept BF16</p></td>
-<td><p>primary-transformer-only path; keep <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> on the base checkpoint; the default FP4 GEMM backend is <code class="docutils literal notranslate"><span class="pre">flashinfer_trtllm</span></code></p></td>
+<td><p>primary-transformer-only path; keep <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> on the base checkpoint, and current B200/Blackwell bring-up uses <code class="docutils literal notranslate"><span class="pre">SGLANG_DIFFUSION_FLASHINFER_FP4_GEMM_BACKEND=cudnn</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -881,7 +881,8 @@ use <code class="docutils literal notranslate"><span class="pre">python</span> <
 </div>
 <p>For a dual-transformer Wan2.2 export where only the primary <code class="docutils literal notranslate"><span class="pre">transformer</span></code>
 was quantized:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SGLANG_DIFFUSION_FLASHINFER_FP4_GEMM_BACKEND</span><span class="o">=</span>cudnn<span class="w"> </span><span class="se">\</span>
+sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>Wan-AI/Wan2.2-T2V-A14B-Diffusers<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--transformer-path<span class="w"> </span>lmsys/wan22-t2v-a14b-modelopt-nvfp4-sglang-transformer<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a fox walking through neon rain&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -900,15 +901,20 @@ safetensors files, or repo layouts that should be treated as weights first.</p><
 primary <code class="docutils literal notranslate"><span class="pre">--transformer-path</span></code> override targets only <code class="docutils literal notranslate"><span class="pre">transformer</span></code>. Use a
 per-component override such as <code class="docutils literal notranslate"><span class="pre">--transformer-2-path</span></code> only when you
 intentionally want a non-default <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code>.</p></li>
-<li><p>On Blackwell, the diffusion ModelOpt NVFP4 path defaults to FlashInfer
-TensorRT-LLM FP4 GEMM (<code class="docutils literal notranslate"><span class="pre">flashinfer_trtllm</span></code>).</p></li>
+<li><p>On Blackwell, the validated Wan2.2 ModelOpt NVFP4 path currently prefers
+FlashInfer FP4 GEMM via
+<code class="docutils literal notranslate"><span class="pre">SGLANG_DIFFUSION_FLASHINFER_FP4_GEMM_BACKEND=cudnn</span></code>.</p></li>
+<li><p>This environment-variable override is a current workaround for NVFP4 cases
+where the default sglang JIT/CUTLASS <code class="docutils literal notranslate"><span class="pre">sm100</span></code> path rejects a large-M shape at
+<code class="docutils literal notranslate"><span class="pre">can_implement()</span></code>. The intended long-term fix is to add a validated CUTLASS
+fallback for those shapes rather than rely on the override.</p></li>
 <li><p>Direct <code class="docutils literal notranslate"><span class="pre">--model-path</span></code> loading is a compatibility path for FLUX.2 NVFP4-style
 repos or local directories.</p></li>
 <li><p>If <code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code> is provided explicitly, it takes precedence
 over the compatibility <code class="docutils literal notranslate"><span class="pre">--model-path</span></code> flow.</p></li>
 <li><p>For local directories, SGLang first looks for <code class="docutils literal notranslate"><span class="pre">*-mixed.safetensors</span></code>, then
 falls back to loading from the directory.</p></li>
-<li><p>To force the diffusion ModelOpt FP4 path onto a different FlashInfer
+<li><p>To force the generic diffusion ModelOpt FP4 path onto a specific FlashInfer
 backend, set <code class="docutils literal notranslate"><span class="pre">SGLANG_DIFFUSION_FLASHINFER_FP4_GEMM_BACKEND</span></code>. Supported values
 include <code class="docutils literal notranslate"><span class="pre">flashinfer_cudnn</span></code>, <code class="docutils literal notranslate"><span class="pre">flashinfer_cutlass</span></code>, and <code class="docutils literal notranslate"><span class="pre">flashinfer_trtllm</span></code>.</p></li>
 <li><p>On disk, the quantization config stays <code class="docutils literal notranslate"><span class="pre">quant_method=modelopt</span></code> with
@@ -1228,7 +1234,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 26, 2026.
+  Last updated on May 27, 2026.
   <br/>
 </p>
   </div>

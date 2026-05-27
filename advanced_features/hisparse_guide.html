@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=6681656d"></script>
+    <script src="../_static/documentation_options.js?v=162f5518"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,7 +54,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 26, 2026"/>
+    <meta name="docbuild:last-update" content="May 27, 2026"/>
   </head>
   
   
@@ -523,7 +523,7 @@ document.write(`
 <h1>HiSparse: Hierarchical Sparse Attention<a class="headerlink" href="#hisparse-hierarchical-sparse-attention" title="Link to this heading">#</a></h1>
 <p>HiSparse reduces per-request GPU memory consumption during the decode phase by maintaining only a small “hot” KV buffer on GPU while keeping complete KV data in CPU pinned memory. Combined with PD disaggregation, it enables significantly higher decode concurrency.</p>
 <blockquote>
-<div><p><strong>Prerequisites</strong>: HiSparse works with models that use <strong>DeepSeek Sparse Attention (DSA)</strong> architectures (e.g., DeepSeek-V3.2, GLM-5.1) and <strong>DeepSeek V4</strong>. These models natively select a subset of tokens for attention, making it possible to keep only the top-k KV on GPU while storing the full KV in host memory — without accuracy loss. Additionally, HiSparse currently requires <strong>PD disaggregation mode</strong> and is enabled on the <strong>decode instance</strong> only.</p>
+<div><p><strong>Prerequisites</strong>: HiSparse only works with models that use <strong>DeepSeek Sparse Attention (DSA)</strong>  architectures (e.g., DeepSeek-V3.2, GLM-5). These models natively select a subset of tokens for attention, making it possible to keep only the top-k KV on GPU while storing the full KV in host memory — without accuracy loss.  Additionally, HiSparse currently requires <strong>PD disaggregation mode</strong> and is enabled on the <strong>decode instance</strong> only.</p>
 </div></blockquote>
 <section id="why-hisparse">
 <h2>Why HiSparse?<a class="headerlink" href="#why-hisparse" title="Link to this heading">#</a></h2>
@@ -564,7 +564,6 @@ document.write(`
                      swap-in kernel (on-demand top-k)
 </pre></div>
 </div>
-<p>For DeepSeek V4, the direct-to-host path writes only C4 KV into the decode host pool. The c4_indexer and C128 KV remain device-to-device transfers.</p>
 </section>
 </section>
 <section id="server-arguments">
@@ -645,7 +644,8 @@ document.write(`
 <span class="w">    </span>--context-length<span class="w"> </span><span class="m">81920</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.85<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--kv-cache-dtype<span class="w"> </span>bfloat16<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--nsa-decode-backend<span class="w"> </span>flashmla_sparse<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disaggregation-ib-device<span class="w"> </span>mlx5_0,mlx5_1,mlx5_2,mlx5_3<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--dist-init-addr<span class="w"> </span><span class="m">127</span>.0.0.1:5757<span class="w"> </span><span class="se">\</span>
@@ -654,9 +654,6 @@ document.write(`
 <span class="w">    </span>--hisparse-config<span class="o">=</span><span class="s1">&#39;{&quot;top_k&quot;: 2048, &quot;device_buffer_size&quot;: 6144, &quot;host_to_device_ratio&quot;: 10}&#39;</span>
 </pre></div>
 </div>
-<blockquote>
-<div><p><strong>Note</strong>: For DSA models, <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">auto</span></code>, which resolves to <code class="docutils literal notranslate"><span class="pre">fp8_e4m3</span></code> on SM100+ (Blackwell) and <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> on older architectures. The DSA decode backend is automatically selected based on KV dtype (<code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> → <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code>, <code class="docutils literal notranslate"><span class="pre">fp8_e4m3</span></code> → <code class="docutils literal notranslate"><span class="pre">flashmla_kv</span></code>). DSA backend flags apply only to DSA models; DeepSeek V4 uses its own <code class="docutils literal notranslate"><span class="pre">dsv4</span></code> attention backend.</p>
-</div></blockquote>
 </section>
 <section id="benchmark">
 <h3>Benchmark<a class="headerlink" href="#benchmark" title="Link to this heading">#</a></h3>
@@ -681,13 +678,21 @@ document.write(`
 <h3>Key Notes<a class="headerlink" href="#key-notes" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The prefill instance does not need <code class="docutils literal notranslate"><span class="pre">--enable-hisparse</span></code>; it is unaware of HiSparse.</p></li>
-<li><p>On the decode instance, <code class="docutils literal notranslate"><span class="pre">--enable-hisparse</span></code> and <code class="docutils literal notranslate"><span class="pre">--hisparse-config</span></code> are required for HiSparse.</p></li>
-<li><p>For DSA models, <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">bfloat16</span></code> uses <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code>, and <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e4m3</span></code> uses <code class="docutils literal notranslate"><span class="pre">flashmla_kv</span></code>.</p></li>
-<li><p>For DeepSeek V4, DSA backend flags are not applicable. DeepSeek V4 uses the <code class="docutils literal notranslate"><span class="pre">dsv4</span></code> attention backend and <code class="docutils literal notranslate"><span class="pre">fp8_e4m3</span></code> KV cache by default.</p></li>
+<li><p>On the decode instance, the following flags are <strong>required</strong> for HiSparse:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">bfloat16</span></code> — currently only bfloat16 KV cache is supported (more dtypes planned).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--nsa-decode-backend</span> <span class="pre">flashmla_sparse</span></code> — currently only <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code> backend is supported.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--enable-hisparse</span></code> — enables HiSparse.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hisparse-config</span></code> — HiSparse configuration (top_k, device_buffer_size, host_to_device_ratio).</p>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">host_to_device_ratio</span></code> should be configured based on the host machine’s available memory. For example:</p>
 <ul>
 <li><p><strong>~1 TB</strong> host memory → <code class="docutils literal notranslate"><span class="pre">host_to_device_ratio:</span> <span class="pre">5</span></code></p></li>
 <li><p><strong>~2 TB</strong> host memory → <code class="docutils literal notranslate"><span class="pre">host_to_device_ratio:</span> <span class="pre">10</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -777,7 +782,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 26, 2026.
+  Last updated on May 27, 2026.
   <br/>
 </p>
   </div>
