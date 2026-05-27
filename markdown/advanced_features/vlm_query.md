@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 18:39:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 21:05:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 18:39:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 21:05:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.03s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.74s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.37s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.43s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene from the "The Hangover" movie, which is a parody of the film "The Hangover Part II." In this scene, a man is hanging clothes out the back of his yellow taxi cab while driving. The humor in the scene comes from the unexpected and unconventional method of hanging clothes out the back of a taxi, which is not a typical practice.
+    In the image, a man is hanging clothes on the back of a New York City taxi. The taxi is partially obstructed by the line of clothes, which appear to be red and white, possibly baking sheets. The scene is common in New York City, where leftover clothes from events or errands are sometimes hung up to dry or be collected. The presence of the tissue dispenser near the taxi further suggests a busy urban environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis on a city street. There is a person hanging clothes on a street分配器 (street clothesline) behind one of the taxis. The street is lined with buildings, and there areur messages and hand signs posted on them.
+    The image shows a street scene with several yellow taxis, typical of a city's transportation system. In the foreground, a person is ironing clothes that are draped over a broom or mop. The setting appears to be an urban environment, possibly in New York City, given the design of the taxis. The overall scene is unusual and humorous, as ironing clothes in outdoor traffic is not a common or practical task.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image you provided shows a unique scene where a yellow city taxi is used as a makeshift "dry cleaner." It appears to be in New York City, given the cab's design and the urban setting in the background. The man in the yellow shirt and yellow cap is using the car's trunk to hang clothes on a clothesline, effectively cleaning them with the fresh, clean air. This image showcases an innovative and humorous approach to handling dirty clothes, utilizing the resources at hand and reflecting the creativity of both the man and his urban environment.
+    The image depicts a typical New York City scene with two yellow taxis. Responding to a task: Direct the planter to the nearest neighbor.
 
 
 ## Querying Llama 4 Vision Model
