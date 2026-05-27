@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 09:35:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 13:54:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 09:35:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 13:54:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.18s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    Please provide more context or a specific identifier so I can accurately describe the image and answer your question.
+    The image you provided seems to be taken in an urban environment, probably New York City, as indicated by the iconic patterned taxis. In the image, there is a man standing beside a yellow taxi, which appears to be wrapped in a piece of cloth or tarp. This is a popular stunt in New York City. Thearo person is revealing a yellow taxi underneath the tarp, which is often part of a comedic or interactive pranks played on tourists.
+    
+    The man is using a triangle-rack stand with a red cloth draped over it to hide the taxi from view. This is a clever and practical way to cover a vehicle without
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene from New York City, specifically from the television show "Fresh prince of Bel-Air." A person referred to as "Archie" (perhaps a sur度或archie a guest) is performing a magic trick on a city street, as he shuffles a series of Coca Cola products and then pulls out a taxicab car while reciting a formula. This is associated with the character Dr. Doom played by Carlton Banks.
+    It looks like the image depicts a humorous scene where a taxi driver is using his service to hula hoop whileпарكод洗衣, which translates to laundry. This is a playful exaggeration of a taxi driver using their vehicle to dry clothes, caused by a забанд radiation accident.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging clothes on a street sign in the middle of a busy city street, with two yellow taxis passing by. It appears to be a humorous and somewhat unusual scene where a taxi driver or sidewalk cleaner is hanging laundry, possibly indicating a break or a funny textual comment about people doing laundry while on the go.
+    The image shows a scene with two yellow taxis parked on the street. Between the two taxis, there is an object resembling a clothes-hog, which is a device used to hold laundry and clothes out to dry. The person in a yellow shirt appears to be interacting with the clothes-hog or it is positioned there as part of the display. The background suggests an urban setting, possibly a cityscape with buildings and a store visible.
 
 
 ## Querying Llama 4 Vision Model
