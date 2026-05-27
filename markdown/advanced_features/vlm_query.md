@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-27 00:05:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 01:01:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-27 00:06:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-27 01:01:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.36s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.07s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in an urban street. The person in the foreground is holding a yellow taxi and appears to be cleaning or folding a blue cloth. The background features tall buildings and street signs.
+    The image shows a person running with a bunch of clothes hanging on airobots attached to a red crossbody bag. It's an unusual and humorous scene, suggesting the person is trying to carry clothes through the rain or by running to pursue their destination. The presence of two yellow taxis in the background indicates it is an urban area.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing next to a yellow taxi cab with items suspended from a stylized ribbon-like structure. These items appear to be washing supplies, including detergents and clothespins, suggesting that the man is demonstrating a DIY clothesline to sell or demonstrate. The scene appears to be on a city street, with other typical urban elements visible in the background.
+    The image shows a person redressing parts of a deformed, yellow cab in a cityscape. The cab appears to be in an unusual shape, possibly due to an accident or vandalism. The setting includes urban elements such as buildings, street signs, and a reporter on the sidewalk, suggesting this incident is being documented or reported.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from the Marvel Cinematic Universe, specifically from the film "Avengers: Endgame." The character Iron Man (Tony Stark) is styled as a New York City taxicab driver. Notice the iconic yellow cab design with the number 85 painted on the side. The setting is a typical New York street with a taxi, and the background features a building facade typical of Manhattan's streets. The visible logo "Hundertwasser Automotive" refers to the fictional car manufacturer in the film.
+    The image shows a yellow taxi and a different vehicle, possibly a truck. The image is somewhat blurry, and it appears to have been taken in a parking lot or an area with no cars either parked or moving on the streets.
 
 
 ## Querying Llama 4 Vision Model

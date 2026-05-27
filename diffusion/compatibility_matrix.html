@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=162f5518"></script>
+    <script src="../_static/documentation_options.js?v=68e08288"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -552,6 +552,9 @@ default parameters when initializing and generating videos.</p>
 <th class="head text-center"><p>Sparse Linear Attention (SLA)</p></th>
 <th class="head text-center"><p>Sage Sparse Linear Attention (SageSLA)</p></th>
 <th class="head text-center"><p>Sparse Video Gen 2 (SVG2)</p></th>
+<th class="head text-center"><p>Laser Attn</p></th>
+<th class="head text-center"><p>Block Sparse Attn</p></th>
+<th class="head text-center"><p>Rain Fusion Attn</p></th>
 </tr>
 </thead>
 <tbody>
@@ -562,6 +565,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>⭕</p></td>
 <td class="text-center"><p>⭕</p></td>
 <td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
@@ -576,6 +582,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Wan2.2 TI2V 5B</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Wan-AI/Wan2.2-TI2V-5B-Diffusers</span></code></p></td>
@@ -587,6 +596,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Wan2.2 T2V A14B</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Wan-AI/Wan2.2-T2V-A14B-Diffusers</span></code></p></td>
@@ -595,9 +607,12 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>⭕</p></td>
+<td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>❌</p></td>
-<td class="text-center"><p>❌</p></td>
-<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Wan2.2 I2V A14B</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Wan-AI/Wan2.2-I2V-A14B-Diffusers</span></code></p></td>
@@ -609,6 +624,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>HunyuanVideo</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">hunyuanvideo-community/HunyuanVideo</span></code></p></td>
@@ -620,6 +638,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>FastHunyuan</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">FastVideo/FastHunyuan-diffusers</span></code></p></td>
@@ -631,6 +652,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Wan2.1 T2V 1.3B</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Wan-AI/Wan2.1-T2V-1.3B-Diffusers</span></code></p></td>
@@ -641,6 +665,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>⭕</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>✅</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Wan2.1 T2V 14B</p></td>
@@ -653,6 +680,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Wan2.1 I2V 480P</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Wan-AI/Wan2.1-I2V-14B-480P-Diffusers</span></code></p></td>
@@ -663,6 +693,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>⭕</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>✅</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Wan2.1 I2V 720P</p></td>
@@ -675,6 +708,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>TurboWan2.1 T2V 1.3B</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">IPostYellow/TurboWan2.1-T2V-1.3B-Diffusers</span></code></p></td>
@@ -686,6 +722,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>⭕</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>TurboWan2.1 T2V 14B</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">IPostYellow/TurboWan2.1-T2V-14B-Diffusers</span></code></p></td>
@@ -697,6 +736,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>⭕</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>TurboWan2.1 T2V 14B 720P</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">IPostYellow/TurboWan2.1-T2V-14B-720P-Diffusers</span></code></p></td>
@@ -708,6 +750,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>⭕</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>TurboWan2.2 I2V A14B</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">IPostYellow/TurboWan2.2-I2V-A14B-Diffusers</span></code></p></td>
@@ -719,6 +764,9 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>✅</p></td>
 <td class="text-center"><p>⭕</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Wan2.1 Fun 1.3B InP</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">weizhou03/Wan2.1-Fun-1.3B-InP-Diffusers</span></code></p></td>
@@ -730,10 +778,16 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>✅</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Helios Base</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">BestWishYsh/Helios-Base</span></code></p></td>
 <td class="text-left"><p>720p</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
@@ -752,10 +806,16 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Helios Distilled</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">BestWishYsh/Helios-Distilled</span></code></p></td>
 <td class="text-left"><p>720p</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
@@ -774,10 +834,44 @@ default parameters when initializing and generating videos.</p>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>LTX-2.3 (one/two-stage/TI2V/HQ)</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Lightricks/LTX-2.3</span></code></p></td>
 <td class="text-left"><p>768×512<br>1536×1024<br>1920×1088 (HQ default)</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Cosmos3-Nano (T2V / I2V / T2I)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">nvidia/Cosmos3-Nano</span></code></p></td>
+<td class="text-left"><p>720p · 480p<br>1024×1024 (T2I)</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Cosmos3-Super (T2V / I2V / T2I)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">nvidia/Cosmos3-Super</span></code></p></td>
+<td class="text-left"><p>720p · 480p<br>1024×1024 (T2I)</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
+<td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
 <td class="text-center"><p>❌</p></td>
@@ -811,6 +905,11 @@ default parameters when initializing and generating videos.</p>
 <li><p>Example (one prior run): <code class="docutils literal notranslate"><span class="pre">original</span></code> <code class="docutils literal notranslate"><span class="pre">154.67s</span></code>, <code class="docutils literal notranslate"><span class="pre">snapshot</span></code> <code class="docutils literal notranslate"><span class="pre">114.05s</span></code>, <code class="docutils literal notranslate"><span class="pre">resident</span></code> <code class="docutils literal notranslate"><span class="pre">75.71s</span></code>; peak VRAM trend is <code class="docutils literal notranslate"><span class="pre">original</span> <span class="pre">&lt;</span> <span class="pre">snapshot</span> <span class="pre">&lt;</span> <span class="pre">resident</span></code>.</p></li>
 </ul>
 </li>
+<li><p>Cosmos3 ships in two sizes — <code class="docutils literal notranslate"><span class="pre">nvidia/Cosmos3-Nano</span></code> (8B) and
+<code class="docutils literal notranslate"><span class="pre">nvidia/Cosmos3-Super</span></code> (32B). Both share the same pipeline; the only
+difference is transformer depth and width, picked up from
+<code class="docutils literal notranslate"><span class="pre">transformer/config.json</span></code> at load time. A single checkpoint serves T2V,
+I2V (<code class="docutils literal notranslate"><span class="pre">--image-path</span></code>), and T2I (<code class="docutils literal notranslate"><span class="pre">--num-frames</span> <span class="pre">1</span></code>).</p></li>
 </ol>
 </section>
 <section id="image-generation-models">

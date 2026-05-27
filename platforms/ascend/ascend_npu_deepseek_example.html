@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=162f5518"></script>
+    <script src="../../_static/documentation_options.js?v=68e08288"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -534,7 +534,6 @@ document.write(`
 <span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
 
 <span class="c1">#Deepep communication settings</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">DEEP_NORMAL_MODE_USE_INT8_QUANT</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">32</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1600</span>
 
@@ -587,7 +586,6 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;PREFILL_HOST_IP&gt;:&lt;PORT&gt;&quot;</span>
 
 <span class="c1">#Deepep communication settings</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">DEEP_NORMAL_MODE_USE_INT8_QUANT</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1536</span>
 
 <span class="c1">#npu acceleration operator</span>
@@ -737,7 +735,6 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="w">    </span><span class="k">then</span>
 <span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">P_IP</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1536</span>
-<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">DEEP_NORMAL_MODE_USE_INT8_QUANT</span><span class="o">=</span><span class="m">1</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">TASK_QUEUE_ENABLE</span><span class="o">=</span><span class="m">2</span>
 
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo

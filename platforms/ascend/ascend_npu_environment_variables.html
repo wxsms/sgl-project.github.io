@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=162f5518"></script>
+    <script src="../../_static/documentation_options.js?v=68e08288"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -542,7 +542,7 @@ This document provides a list of commonly used environment variables and aims to
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NPU_USE_MULTI_STREAM</span></code></p></td>
-<td><p>Enable dual-stream computation of shared experts <br/> and routing experts in DeepSeek models.<br/> Enable dual-stream computation in DeepSeek NSA Indexer.</p></td>
+<td><p>Enable dual-stream computation of shared experts <br/> and routing experts in DeepSeek models.<br/> Enable dual-stream computation in DeepSeek DSA Indexer.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NPU_DISABLE_ACL_FORMAT_WEIGHT</span></code></p></td>
@@ -581,10 +581,6 @@ This document provides a list of commonly used environment variables and aims to
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MOE_ENABLE_TOPK_NEG_ONE</span></code></p></td>
 <td><p>Needs to be enabled when the expert ID to be processed by <br/> DEEPEP contains -1.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DEEP_NORMAL_MODE_USE_INT8_QUANT</span></code></p></td>
-<td><p>Quantizes x to int8 and returns (tensor, scales) in dispatch operator.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
 </tr>
 </tbody>
