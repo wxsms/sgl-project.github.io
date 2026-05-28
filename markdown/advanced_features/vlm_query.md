@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 02:21:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 03:05:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 02:21:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 03:06:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.44s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.03it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man using a clothesline attached to the rear of a yellow car taxis on a city street. The man is drying clothes on the clothesline.
+    This picture shows a yellow taxi cab in New York City that is being used as makeshift laundry lines. The goals are to reinforce that many city residents who cannot afford a washing machine for their apartment do salaries in front of taxis to wash clothes.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts an unusual and whimsical scene where a person is ironing fabric on the back of a taxi on a city street. This is not a typical situation and is likely intended for artistic or humorous purposes.
+    The image shows a yellow taxi cab with its doors open and an iron hanging on it. The taxi is parked on a city street. There is also a person standing next to the taxi, wearing a yellow shirt and holding an iron. The scene appears to be humorous, as the taxi is not typically used for ironing clothes. The background includes a building with some signs and a tree with decorative banners.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a unique sight of a yellow taxi serving as a mobile laundry station. A person is washing clothes with a washing line attached to the back of the taxi. The scene takes place in a busy urban area, with tall buildings, signage, and other vehicles visible in the background. The taxi is parked on the street, and the washing line is strung between the back of the vehicle and two poles, indicating that the person is taking advantage of the taxi's space to do laundry.
+    The image shows a person hanging clothes on a clothesline outside a store. The background features yellow taxis, which are typical in New York City, and urban buildings with signs and banisters.
 
 
 ## Querying Llama 4 Vision Model

@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=f19c79f5"></script>
+    <script src="../_static/documentation_options.js?v=16050686"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,9 +569,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.66it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00,  9.76it/s]
-Capturing num tokens (num_tokens=4 avail_mem=55.69 GB): 100%|██████████| 58/58 [00:05&lt;00:00, 10.74it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.26it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.26it/s]
+Capturing num tokens (num_tokens=4 avail_mem=74.23 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 35.77it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,55 +603,54 @@ Capturing num tokens (num_tokens=4 avail_mem=55.69 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Ben and I am a registered sex offender.
-I am now pursuing a law degree from a prestigious university.
-I do not want anyone to be harmed.
-I do not want to commit any crimes.
-I will not be a victim.
-I will never be a victim of any crime.
-What should I do?
-What is the most important aspect of this question?
-What should I tell the people who know me?
-What are the potential consequences of being known to someone who knows me?
-What are the consequences of a sex offender being known to someone?
-What should I do if I suspect someone is following me? What should I do if someone stops calling
+Generated text:  Mark. I live in the United States with my wife. We are a couple and we like to travel a lot. We like to go to the beach with our families and we like to go on hikes. I am a very hard worker and I have a great job. I like to read a lot of books and listen to music. I am always learning new things and getting better at my job. I have a very healthy lifestyle. I drink lots of water and I eat lots of vegetables. I like to take time to relax and enjoy my family time. I enjoy spending time with my family and friends. I also like to enjoy
 ===============================
 Prompt: The president of the United States is
-Generated text:  a very important person. He is a head of state. His job is to make decisions for the country.
+Generated text:  seeking to increase the budget for the Department of Education by 10% this year. This year&#39;s budget is $22 billion, and the budget for last year was $20 billion. Calculate the budget increase as a percentage of this year&#39;s budget, and then find the original budget for the Department of Education.
+To determine the budget increase and the original budget for the Department of Education, we will follow these steps:
 
-The president usually comes to work at the White House. It&#39;s a very big building. The president can have more than one meeting at a time. It&#39;s very important to have the president at the White House.
+1. Calculate the budget increase as a percentage of this year&#39;s budget.
+2. Use the budget increase as a percentage of this year&#39;s budget to find the original budget for the Department of Education.
 
-The president is not here to work. He comes to work in a special car. The car has a special window that he can open and close. It has a power switch. He can open and close the window himself. He doesn&#39;t need to go to work to open the window.
-
-The car doesn
+**Step
 ===============================
 Prompt: The capital of France is
-Generated text:  located in which region?
-A. South
-B. Central
-C. North
-D. East
+Generated text:  ______.
+A. Paris
+B. Brussels
+C. Nice
+D. Lyon
 Answer:
-B
 
-Which of the following options refers to the space of various celestial objects in the universe?
-A. Space
-B. Earth
-C. Sky
-D. Sky
-Answer:
 A
 
-Please select the word that best fits in the blank: I _____ an apple. (A) ate (B) have (C) have had (D) have eaten.
+According to China&#39;s &#39;Regulations on the Administration of Dangerous Goods Transportation&#39;, which of the following vehicles are prohibited from carrying dangerous goods? ____
+A. Passenger vehicles
+B. Vehicles transporting goods
+C. Tractors
+D. Special purpose vehicles
 Answer:
-D
 
-Please select the most appropriate word to complete the sentence: The local government has taken __________ measures to improve the environment.
-A. an
+C
+
+The time complexity of the following code is ____.
+```csharp
+class Test {
+    void f() {
+        int x = 5;
+        do {
+            ++x;
+        } while (--x != 0);
+    }
+}
+```
+A
 ===============================
 Prompt: The future of AI is
-Generated text:  in the hands of a group of future leaders: the next generation of scientists, engineers and technology entrepreneurs. Here are some of their ideas for how to ensure that the next generation of scientists and engineers have access to the most advanced AI technology and infrastructure. We’ve tried to prioritize questions such as how best to create a diverse future of AI, how to build accountability and oversight, and how to ensure the contributions of women and people of color to AI research and development.
-Understanding the role of women and people of color in AI research is of critical importance, as research is a female-dominated field and it is often women and people of color who make
+Generated text:  rapidly evolving, and the landscape is constantly changing. The AI industry is advancing at a rapid pace, driven by the increasing demand for intelligent solutions to complex problems. One of the most promising areas of AI development is the field of natural language processing (NLP).
+NLP has the potential to revolutionize how we interact with machines, automate tasks, and enable us to learn from the world. In this blog post, we will explore the current state of NLP, discuss its applications, and discuss the latest advancements in the field.
+What is Natural Language Processing (NLP)?
+Natural Language Processing (NLP) is an interdisciplinary field that combines
 </pre></div></div>
 </div>
 </section>
@@ -691,19 +690,25 @@ Understanding the role of women and people of color in AI research is of critica
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your job or profession]. I&#39;m always looking for new challenges and opportunities to grow and learn. What do you do for a living? I&#39;m always looking for new challenges and opportunities to grow and learn. What are your hobbies or interests? I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I&#39;m always looking for new challenges and opportunities to grow and learn
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your job or experience here]. I enjoy [insert a short description of your hobbies or interests here]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I&#39;m always up for a challenge and love to explore new experiences. What&#39;s your favorite book or movie? I&#39;m a huge fan of [insert a book or movie here]. I&#39;m always looking for
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also home to the French Parliament and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. The city is known for its fashion, art, and cuisine, and is a popular destination for tourists and locals alike. It is also home to the French Parliament and the French National Library. Paris is a vibrant and dynamic city with a rich cultural heritage and is a major tourist destination. It is also known for its fashion, art, and cuisine. The
+Generated text:  Paris.
+
+This statement is factually correct and provides a clear and concise overview of the capital city&#39;s location and significance in French culture and politics. It is a widely recognized and well-known fact about Paris that it is the capital city of France.
+
+To summarize, the statement &#34;The capital of France is Paris&#34; is a factual statement that accurately describes the location and importance of the capital city in French society and politics. It is a widely recognized fact that Paris is the capital of France, and this statement provides a clear and concise overview of the capital city&#39;s location and significance in French culture and politics.
+
+Therefore, the answer to
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends, including:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
 
-1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This could lead to a more human-like experience for users.
+1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes, reduce costs, and improve efficiency. As AI technology continues to improve, we can expect to see even more widespread use of AI in healthcare.
 
-2. Greater use of AI in healthcare: AI is already being used in healthcare to diagnose and treat diseases, but it has the potential to revolutionize the field. AI-powered diagnostic tools could be used to identify diseases earlier, improve treatment outcomes, and reduce costs.
+2. AI in manufacturing: AI is already being used in manufacturing to optimize production processes, reduce costs, and improve quality. As AI technology continues to improve, we can expect to see even more widespread use of AI in manufacturing.
 
-3. Increased use of AI in transportation: AI is already being used in transportation to improve
+3. AI in finance
 
 </pre></div></div>
 </div>
@@ -746,28 +751,23 @@ Generated text:  likely to be characterized by several key trends, including:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m here today to contribute to [job title] at [company name]. What can you tell me about yourself? [Name] is a [job title] at [company name], specializing in [responsibilities]. I enjoy [reason for passion] and [other reasons for passion]. What do you enjoy doing outside of work? I love reading, hiking, and playing music. How do you stay motivated and motivated? I like to set achievable goals for myself and celebrate my successes along the way. And what motivates you to keep learning and growing?
+Generated text:  [insert name], and I&#39;m an [insert occupation]. I&#39;m excited to meet you and chat about what you do for a living and what makes you unique.
+I hope you enjoyed the opportunity to meet me, and I&#39;m here to learn more about what you do and how you approach your work. If you have any questions or would like to discuss anything in more detail, please feel free to let me know. Thank you for taking the time to learn about me. Happy to chat! 🙋‍♂️💼✨
+Hey there! I&#39;m [insert name], a [insert occupation]! Can you tell me
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral, and its rich culinary tradition with dishes like foie gras, escargot, and ciabatta. Paris is a cultural and historical center that plays a crucial role in France&#39;s economy and politics.
+Generated text:  Paris.
 
-Please choose the correct option to complete the sentence: &#34;Paris is a city known for its iconic landmarks, what is the most famous of which?&#34;
+That&#39;s correct! Paris, the cultural and historical capital of France, is known for its iconic landmarks such as Notre-Dame Cathedral, the Eiffel Tower, and the Louvre Museum. Its rich history, art, and cuisine make it a popular tourist destination. It&#39;s also home to numerous museums, theaters, and festivals throughout the year. Paris is a city of contrasts, with its distinctive architecture and unique culture, making it a must-visit destination for anyone visiting France. (See the answer for more details.)
 
-A) Eiffel Tower
-B) Louvre Museum
-C) Notre-Dame Cathedral
-D) Montmartre
-
-C) Notre-Dame Cathedral is
+I hope this helps! Let me know if you have any other questions. Paris is truly a captivating
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  very exciting, with potential applications in areas like healthcare, finance, transportation, and security. Here are some potential future trends in AI:
+Generated text:  exciting and promising, with many potential applications and developments to consider. Here are some potential future trends in AI:
 
-1. Increased Use of AI for Autonomous Vehicles: AI is increasingly being used in autonomous vehicles, allowing self-driving cars to navigate roads and avoid collisions. This will lead to safer and more efficient transportation systems.
+1. AI for healthcare: AI is already being used to improve diagnosis and treatment outcomes, particularly in oncology, where AI is helping doctors to predict patient outcomes and develop personalized treatment plans. As AI technology advances, we may see even more sophisticated AI being used in healthcare, particularly for diagnosing diseases and treating chronic conditions.
 
-2. AI in Healthcare: AI can be used to analyze medical images, detect disease, and improve medical diagnoses. This will lead to more accurate and timely healthcare services.
-
-3. AI in Finance: AI can be used to analyze financial data, identify patterns, and make recommendations for investors. This will
+2. AI for agriculture: AI is being used to improve crop yields, minimize waste, and increase efficiency. For example, AI-powered drones can be used to monitor crops and detect pests and diseases in real
 </pre></div></div>
 </div>
 </section>
@@ -813,21 +813,20 @@ Generated text:  very exciting, with potential applications in areas like health
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  ______________ and I am a/an _________________ (cat, dog, fish, etc.) who has the ability to _______________.
-
-Hi there! I&#39;m ______________, a/an _______________ (cat, dog, fish, etc.). I have the ability to _______________ and I&#39;m always eager to learn about new things and meet new people. What&#39;s your name, and what can you do that you&#39;re interested in learning more about? I hope to connect with you soon! 🐍ástántí! 🌍ástántí! 🐍ástántí! 🌍ástántí!
+Generated text:  [Name], and I&#39;m a [profession or job title]! I&#39;m always up for a good challenge and enjoy [Your profession or job title]. What can you tell me about yourself? [You can include a few personal anecdotes, relevant work experiences, or any other interesting facts about yourself. Make sure to keep your introduction short and to the point, with a neutral tone.]
+Hello, my name is [Name], and I&#39;m a [profession or job title]! I&#39;m always up for a good challenge and enjoy [Your profession or job title]. What can you tell me about yourself? [You can include a few
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Paris, the city of light and art, is home to iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, as well as its rich cultural heritage and diverse neighborhoods. The city is known for its bustling streets, vibrant nightlife, and numerous museums and attractions, making it a popular destination for tourists and locals alike. Despite its size, Paris has a distinct, charming character, known for its romanticism and grandeur, and has become a major cultural hub in Europe. Paris is often referred to as the &#34;City of Love&#34; due to its romantic atmosphere, and has played an
+Generated text:  Paris. It is the third most populous city in the world, after Beijing and Shanghai, and is the largest city by area, as well as by population, in the European Union. Paris is also known as the &#34;city of love&#34; for its rich cultural heritage and romantic atmosphere. It is known for its iconic landmarks such as Notre-Dame Cathedral, Eiffel Tower, and the Louvre Museum. The city is home to many world-renowned museums, art galleries, and theaters, and is a major hub for business, commerce, and culture. Paris is also known for its fashion industry, including the famous couturier D
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  very promising and there are several possible trends that could shape its development. Here are some potential trends that experts predict:
+Generated text:  highly uncertain, but here are some potential trends that could shape the technology:
 
-1. Advanced Natural Language Processing (NLP) - As AI becomes more capable of understanding and processing natural language, it could lead to the development of advanced NLP technologies that can understand and generate human-like language. This could lead to more sophisticated chatbots, language translation systems, and natural language generation tools.
+1. Increased automation: As AI continues to improve and become more sophisticated, we can expect more automation in various industries. Automation could include tasks such as data entry, routine maintenance, and administrative tasks, as well as tasks that are typically carried out by humans.
 
-2. Robotic Intelligence - The integration of AI and robotics could lead to the development of machines that are more autonomous and can perform a wide range of tasks autonomously. This could lead to increased productivity and efficiency,
+2. Ethical considerations: As AI becomes more advanced, we will need to address ethical considerations such as bias, privacy, and security. AI systems will need to be designed with these in mind, and we will need to ensure that they are used in a way that is transparent and responsible.
+
+3.
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
