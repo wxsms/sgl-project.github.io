@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 20:39:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 21:41:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 20:39:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 21:41:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.89s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.46s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow cabs parked side by side on a city street. A man is standing next to the cabs with a laundry rack, hanging wet clothes on the racks. The scene appears to be a humorously staged event where people are hanging washing on real taxi meters in the middle of traffic to dry their clothes, creating a comical and unexpected scene.
+    The image shows two yellow taxi cabs in an urban setting, likely a street in a city. The taxi in the foreground is started with a cable jail, which is a device used for strapping a taxi to a hose for washing or drying. This is a common scene to see in many cities where taxi fleets are managed by a company that offers washing services. The background includes typical urban elements such as buildings, street lights, and flags.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing on the back of a yellow taxi cab in a city street. He is wearing a yellow shirt and is playing with a washing machine on top of the taxi. The washing machine is filled with clothes, and he is pretending to wash them.
+    This image shows a person wearing a yellow shirt, standing on the back of a yellow New York City taxi cab, pretending to iron laundry. This type of activity is often performed as part of a stunt or a light-hearted moment, capturing attention in a busy city street. The scene conveys humor or playfulness, as the idea of ironing clothes on a taxi is unusual and amusing. The person and the taxi cab are the main subjects in the image, with the urban environment around them adding context to the scene.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene where a person is ironing a shirt on the back of a yellow and purple car. This is an unconventional and humorous way to wash clothes, much like a before-and-after photo that's turned on its head. The person is using an iron holder on the back of the vehicle to iron the piece of clothing.
+    The image shows a cab driver who is participating in a protest or demonstration. The driver is standing in front of his taxi, wearing a bright yellow shirt and appearing to showcase a smallscale laundry setup, including clothes hanging on a clothesline. The presence of American flags behind him suggests a patriotic or political sentiment, possibly related to social or economic issues. This action aims to draw attention to a cause the driver has accumulated by working 9 to 5.
 
 
 ## Querying Llama 4 Vision Model
