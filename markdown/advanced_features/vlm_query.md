@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 05:57:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 06:39:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 05:57:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 06:39:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.04s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in a city street with two yellow taxi cabs. One cab is parked on the side of the road, and a person isDUCT TAPEING a blue tarp to the top of the cab's rear end. The other cab is driving down the street, and several people are visible in the background. The setting appears to be urban with commercial buildings and streetlights.
+    The image shows a scene on a city street. A person, likely a businessman or hustler, is braving the rain by washing clothes on the back of a yellow taxi. The taxi is parked on a main street, and there are other taxis and buildings visible in the background. The person is using a makeshift rig to hang and dry the clothes, while standing under an umbrella for protection from the rain.
 
 
 ### Call with Processor Output
@@ -146,7 +146,13 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with two yellow taxi cabs. On the street, there is a man hanging out clothes between the two taxis, presumably to dry them in the sun. He is using a folding rack to hold the clothes out of the way of the moving vehicles. The background includes other vehicles and urban elements like streetlights and buildings.
+    This image shows a scene from the 2004 Rolling Stones "Stones' On Bourbon: Songs from the胸怀" Rolling Tour in Shanghai. The Rolling Stones were performing on the New York Street in New York City.
+    
+    Here are a few points about the image:
+    
+    1. A man is standing on the street, dressed in a yellow shirt and blue jeans, holding an iron and an ironing board.
+    2. He is wearing sunglasses and has his right foot on top of what appears to be a draped piece of fabric, likely an electric guitar.
+    3. There is a yellow taxi cab behind the man, indicating that the event
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man standing on a street with multiple yellow taxis behind him. He appears to be folding or moving clothing items using a small rack. The scene is set in an urban area, likely in a city known for taxi services, such as New York City. The man is wearing a yellow shirt and appears to be engaged in an activity related to garment storage or transportation.
+    It looks like the person is performing a task that might be perceived as unusual or humorous. They are using a tripod to fold laundry (likely jeans) while they are standing in the middle of the street. This is not a typical method of handling laundry, and it might be done for fun or as part of a street performance. The vehicles in the background appear to be taxis, suggesting this is happening in a city environment.
 
 
 ## Querying Llama 4 Vision Model
