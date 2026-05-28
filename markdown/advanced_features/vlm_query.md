@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 21:41:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 22:48:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 21:41:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 22:48:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxi cabs in an urban setting, likely a street in a city. The taxi in the foreground is started with a cable jail, which is a device used for strapping a taxi to a hose for washing or drying. This is a common scene to see in many cities where taxi fleets are managed by a company that offers washing services. The background includes typical urban elements such as buildings, street lights, and flags.
+    The image shows two yellow taxis and a person standing next to them. The person appears to be performing a task that involves hanging clothes on a line, which is typically seen in public spaces like newspapers or public areas where people might not have access to their own laundry facilities. The person is wearing a yellow shirt and it seems they are adapted to doing this task in an unusual setting, perhaps for fun or as a performance in public. The practice of straightening clothes and hanging them outdoors can vary greatly around the world and this appears to be reflecting some urban fashion or public style practices.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a person wearing a yellow shirt, standing on the back of a yellow New York City taxi cab, pretending to iron laundry. This type of activity is often performed as part of a stunt or a light-hearted moment, capturing attention in a busy city street. The scene conveys humor or playfulness, as the idea of ironing clothes on a taxi is unusual and amusing. The person and the taxi cab are the main subjects in the image, with the urban environment around them adding context to the scene.
+    The image shows a scene with two taxis in New York City. One taxi is a yellow New York City Taxi, and the other appears to be an SUV. A man is standing next to the SUV with pegs of streamers attached, possibly for a festive event or parade. The setting is a busy city street, and there are banners and flags visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a cab driver who is participating in a protest or demonstration. The driver is standing in front of his taxi, wearing a bright yellow shirt and appearing to showcase a smallscale laundry setup, including clothes hanging on a clothesline. The presence of American flags behind him suggests a patriotic or political sentiment, possibly related to social or economic issues. This action aims to draw attention to a cause the driver has accumulated by working 9 to 5.
+    The image shows a scene around a street corner in what appears to be a busy urban environment, likely a downtown area. There is aême taxicab (identifying a specific type of taxi in a foreign language) parked on a street. 
+    
+    There are orange pixel square flags and yellow text visible on the taxi. There is a man standing by the taxicab, tying what looks like clothing to the back of the yellow car. This act of tying something to the car is akin to crimping a taxi in New York City to show that the taxi is occupied or available for hire.
 
 
 ## Querying Llama 4 Vision Model
