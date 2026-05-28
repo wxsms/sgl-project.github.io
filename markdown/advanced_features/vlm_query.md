@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 10:23:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 10:44:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 10:23:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 10:44:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis driving down a city street. One of the taxis is stopped and utilizing the back of it to dry clothes using an improvised drying rack. This type of behavior is not entirely uncommon in New York City, where some drivers use their vehicles to dry clothes. The scene is set in an urban environment with tall buildings and storefronts.
+    The image shows a blue car, likely a reality game show car or a promotional vehicle, parked on a city street. There is a clothesline with various items hanging on it mounted on the car, including blue fabric andáticas, suggesting it might be used for public events or demonstrations. The car’s presence in the middle of the road is unusual, as cars are typically restricted to designated lanes and parking spaces. This could indicate a special event or promotion.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene of a street performance or street vendor in front of a building with a taxi in the foreground. A person isIroningclothes on a hanger and walking around with them winth the image of two yellow taxis as the people background. It is during the daytime.
+    The image shows a humorous scene of a person washing clothes in the back of a yellow taxi. The person is using a clothes rack to hang out the rinse clothes, which is an unusual and practical solution for outdoor laundry in busy urban areas. The taxi is parked on a city street, with other vehicles and buildings visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person carefully handling laundry, likely in a parking lot or street area. There are two yellow cabs in the background, indicating an urban setting. The person appears to be folding or organizing clothes on a makeshift stand, possibly getting ready to do laundry. The environment is busy, with multiple flags and signs visible in the background.
+    The image shows a man performing a demonstration or act on a city street with two yellow taxis in the background. The man is using objects like mops and brooms to mimic a frying pan, possibly as part of a performance or a local event.
 
 
 ## Querying Llama 4 Vision Model
