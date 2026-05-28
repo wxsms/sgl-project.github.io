@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 10:44:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 13:05:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 10:44:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 13:05:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a blue car, likely a reality game show car or a promotional vehicle, parked on a city street. There is a clothesline with various items hanging on it mounted on the car, including blue fabric andáticas, suggesting it might be used for public events or demonstrations. The car’s presence in the middle of the road is unusual, as cars are typically restricted to designated lanes and parking spaces. This could indicate a special event or promotion.
+    The image shows the back of yellow taxis in a city street. A person in a yellow long-sleeve shirt is putting laundry into the back of one of the taxis. The scene suggests that the person is using the taxis as makeshift laundry facilities. There are also signs and lights visible in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a humorous scene of a person washing clothes in the back of a yellow taxi. The person is using a clothes rack to hang out the rinse clothes, which is an unusual and practical solution for outdoor laundry in busy urban areas. The taxi is parked on a city street, with other vehicles and buildings visible in the background.
+    The image shows a person in a taxi stand, folding clothes and hanging them up on an outdoor stand. This is a humorous and unusual情景，通常用于讽刺或者夸张的行为。
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man performing a demonstration or act on a city street with two yellow taxis in the background. The man is using objects like mops and brooms to mimic a frying pan, possibly as part of a performance or a local event.
+    The image shows a street scene with two yellow cabs in a city. A man in a bright yellow shirt is standing behind a laundry cart, which appears to be holding a blue flag. The scene seems to be humorous or an artistic installation, as it is unexpected to see someone with a laundry cart in such an urban environment.
 
 
 ## Querying Llama 4 Vision Model
