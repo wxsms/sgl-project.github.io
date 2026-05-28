@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 13:31:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 14:23:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 13:31:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 14:23:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.66s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.38s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.42s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The yellow-striped taxi visible in the image is a New York City taxi, identifiable by its distinctive color scheme. The schematic writing is in white. There are two New York City yellow taxis driving on a city street with people visible. In the right corner前方termin fee is visible.
+    In the image, there is a scene set in a busy urban area, likely during a holiday or special event given the numerous flags and the presence of a carrier clothed in a yellow shirt. The main focus is a man on a stool hanging clothes to dry. He is wearing what appears to be a formal attire, including a suit and tie, with a noticeable handkerchief in his pocket. The background includes two yellow taxis, one of which is moving along the road, presumably taxi service or perhaps one of the taxis drops off or picks up passengers, as the drivers' sides are visible. The street appears to be a two-way
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a person rewriting their sign to highlight the taxi's unique capacity. The sign changes from "FOOD TRUCK FOR RENT" to "NYC TERRAPLAINция." This humorous alteration showcases the flexibility of a taxi, which is often painted to look like food trucks, and encourages people to rent it for a上で the欄 wizards活动.
+    It looks like the person in the image is picking up or placing white laundry from a yellow outline on a sidewalk. The context is unclear because the outline does not appear to represent a standing laundry. The part of the scene that resembles an outline could be a design or an artistic representation of a person handling laundry without traditionally standing upright.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man wearing a yellow hoodie and a nose mask, spreading out clothing on a street stand in New York City. The stand is set up in front of a yellow taxi, and there are other taxis visible in the background. The scene appears to be humorous, as it is not typical to see people spreading clothing on the street in a busy city environment.
+    The image shows a car tax driving on the street. In a humorous twist, a piece of laundry is projected from the back of the taxi, which is a white shirt. This is likely an artistic or attention-grabbing display, as such acts are unusual and can be considered bold or eye-catching.
 
 
 ## Querying Llama 4 Vision Model
