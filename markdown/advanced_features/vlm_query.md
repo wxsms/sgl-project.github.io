@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 03:58:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 05:57:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 03:58:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 05:57:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.04s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in an urban area where a yellow taxi cab is parked. The taxi is equipped with extra handles, resembling a ladder, which the man is standing on while hanging pieces of clothing on the back of the vehicle. This is likely a part of a social media stunt or campaign aimed to make a statement or raise awareness about something. The background includes urban elements such as buildings and flagpoles with flags, possibly indicating a city setting. The street appears to be made of asphalt, and the overall setting suggests a bustling city environment.
+    The image shows a scene in a city street with two yellow taxi cabs. One cab is parked on the side of the road, and a person isDUCT TAPEING a blue tarp to the top of the cab's rear end. The other cab is driving down the street, and several people are visible in the background. The setting appears to be urban with commercial buildings and streetlights.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi in a city street. It appears to be a scene from the movie "The Hangover" where the character Kyle is drying clothes on the back of the taxi. The street is lined with buildings and has a few pedestrians and streetlights.
+    The image shows a scene on a city street with two yellow taxi cabs. On the street, there is a man hanging out clothes between the two taxis, presumably to dry them in the sun. He is using a folding rack to hold the clothes out of the way of the moving vehicles. The background includes other vehicles and urban elements like streetlights and buildings.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The photo shows a scene from a reality TV show called "Dirty Jobs" where a person is doing laundry in the middle of a busy street, specifically a New York City taxi lane. It was a unique challenge on the show to clean running clothes, keeping them clean while driving the taxi. This is the end result of the person running down the taxi lane in a yellow yellow taxi working a taxicab that_route to the blending of totals street noises.
+    The image shows a man standing on a street with multiple yellow taxis behind him. He appears to be folding or moving clothing items using a small rack. The scene is set in an urban area, likely in a city known for taxi services, such as New York City. The man is wearing a yellow shirt and appears to be engaged in an activity related to garment storage or transportation.
 
 
 ## Querying Llama 4 Vision Model
