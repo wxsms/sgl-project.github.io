@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 14:23:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 16:35:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 14:23:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 16:35:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.66s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.27s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.38s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.42s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there is a scene set in a busy urban area, likely during a holiday or special event given the numerous flags and the presence of a carrier clothed in a yellow shirt. The main focus is a man on a stool hanging clothes to dry. He is wearing what appears to be a formal attire, including a suit and tie, with a noticeable handkerchief in his pocket. The background includes two yellow taxis, one of which is moving along the road, presumably taxi service or perhaps one of the taxis drops off or picks up passengers, as the drivers' sides are visible. The street appears to be a two-way
+    The image shows two yellow taxis parked on a city street. The taxi in the foreground is mounted on a portable platform with hooks and clothes hanging from it. This is a humorous and public display of ironing clothes, likely intended for a social media post or prank. The street appears to be in an urban area with buildings and other elements typical of a city environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like the person in the image is picking up or placing white laundry from a yellow outline on a sidewalk. The context is unclear because the outline does not appear to represent a standing laundry. The part of the scene that resembles an outline could be a design or an artistic representation of a person handling laundry without traditionally standing upright.
+    The image shows a yellow taxi cab parked on a city street. A person is hanging clothes on a makeshift clothesline using flip-flops on either end of the line. They are standing next to the taxed cab, which is facing away from the viewer. The background includes city buildings, storefronts, and street lamps, indicating an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a car tax driving on the street. In a humorous twist, a piece of laundry is projected from the back of the taxi, which is a white shirt. This is likely an artistic or attention-grabbing display, as such acts are unusual and can be considered bold or eye-catching.
+    The image shows a scene of a person pushing a cart with various items on it in the middle of a street in New York City. There are two yellow taxis on either side of the cart. The person on the cart is wearing a yellow shirt. The background features a large building with a glass facade and several street signs. The weather appears to be cloudy.
 
 
 ## Querying Llama 4 Vision Model
