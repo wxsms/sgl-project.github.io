@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 22:48:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 23:36:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 22:48:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 23:36:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis and a person standing next to them. The person appears to be performing a task that involves hanging clothes on a line, which is typically seen in public spaces like newspapers or public areas where people might not have access to their own laundry facilities. The person is wearing a yellow shirt and it seems they are adapted to doing this task in an unusual setting, perhaps for fun or as a performance in public. The practice of straightening clothes and hanging them outdoors can vary greatly around the world and this appears to be reflecting some urban fashion or public style practices.
+    The image depicts a humorous scene in a city street where a man is pretending to ironingManaging Convention services on the back of his pickup truck, which is likely a taxi or a similar vehicle. The man is dressed casually and is using a rack to hang clothes, typically associated with household chores, in an urban setting.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two taxis in New York City. One taxi is a yellow New York City Taxi, and the other appears to be an SUV. A man is standing next to the SUV with pegs of streamers attached, possibly for a festive event or parade. The setting is a busy city street, and there are banners and flags visible in the background.
+    The image shows a scenario where someone is drying clothes using a clothesline attached to the back of a taxi. The taxi is parked on a city street, and the streamer and markers remain unchanged. The setting suggests an unusual or humorously contrived situation, as taxis are not typically used as drying facilities.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene around a street corner in what appears to be a busy urban environment, likely a downtown area. There is aême taxicab (identifying a specific type of taxi in a foreign language) parked on a street. 
-    
-    There are orange pixel square flags and yellow text visible on the taxi. There is a man standing by the taxicab, tying what looks like clothing to the back of the yellow car. This act of tying something to the car is akin to crimping a taxi in New York City to show that the taxi is occupied or available for hire.
+    The image shows a scene on a city street where a person is shoveling sand or snow onto the back of a yellow taxi. There is also a clothesline with items of clothing hanging on it. The taxi appears to be part of a lively street event or protest, as indicated by the number of people and the attention to detail in the clothing. The urban environment with buildings and flags in the background suggests this is taking place in a busy city area.
 
 
 ## Querying Llama 4 Vision Model
