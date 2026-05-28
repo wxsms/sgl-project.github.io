@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 03:05:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 03:58:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 03:06:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 03:58:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.03it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This picture shows a yellow taxi cab in New York City that is being used as makeshift laundry lines. The goals are to reinforce that many city residents who cannot afford a washing machine for their apartment do salaries in front of taxis to wash clothes.
+    The image shows a scene in an urban area where a yellow taxi cab is parked. The taxi is equipped with extra handles, resembling a ladder, which the man is standing on while hanging pieces of clothing on the back of the vehicle. This is likely a part of a social media stunt or campaign aimed to make a statement or raise awareness about something. The background includes urban elements such as buildings and flagpoles with flags, possibly indicating a city setting. The street appears to be made of asphalt, and the overall setting suggests a bustling city environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab with its doors open and an iron hanging on it. The taxi is parked on a city street. There is also a person standing next to the taxi, wearing a yellow shirt and holding an iron. The scene appears to be humorous, as the taxi is not typically used for ironing clothes. The background includes a building with some signs and a tree with decorative banners.
+    The image shows a yellow taxi in a city street. It appears to be a scene from the movie "The Hangover" where the character Kyle is drying clothes on the back of the taxi. The street is lined with buildings and has a few pedestrians and streetlights.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging clothes on a clothesline outside a store. The background features yellow taxis, which are typical in New York City, and urban buildings with signs and banisters.
+    The photo shows a scene from a reality TV show called "Dirty Jobs" where a person is doing laundry in the middle of a busy street, specifically a New York City taxi lane. It was a unique challenge on the show to clean running clothes, keeping them clean while driving the taxi. This is the end result of the person running down the taxi lane in a yellow yellow taxi working a taxicab that_route to the blending of totals street noises.
 
 
 ## Querying Llama 4 Vision Model
