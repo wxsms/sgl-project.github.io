@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 16:35:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 20:39:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 16:35:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-28 20:39:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.27s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.89s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.46s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on a city street. The taxi in the foreground is mounted on a portable platform with hooks and clothes hanging from it. This is a humorous and public display of ironing clothes, likely intended for a social media post or prank. The street appears to be in an urban area with buildings and other elements typical of a city environment.
+    The image shows two yellow cabs parked side by side on a city street. A man is standing next to the cabs with a laundry rack, hanging wet clothes on the racks. The scene appears to be a humorously staged event where people are hanging washing on real taxi meters in the middle of traffic to dry their clothes, creating a comical and unexpected scene.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab parked on a city street. A person is hanging clothes on a makeshift clothesline using flip-flops on either end of the line. They are standing next to the taxed cab, which is facing away from the viewer. The background includes city buildings, storefronts, and street lamps, indicating an urban setting.
+    The image shows a man standing on the back of a yellow taxi cab in a city street. He is wearing a yellow shirt and is playing with a washing machine on top of the taxi. The washing machine is filled with clothes, and he is pretending to wash them.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene of a person pushing a cart with various items on it in the middle of a street in New York City. There are two yellow taxis on either side of the cart. The person on the cart is wearing a yellow shirt. The background features a large building with a glass facade and several street signs. The weather appears to be cloudy.
+    The image shows a scene where a person is ironing a shirt on the back of a yellow and purple car. This is an unconventional and humorous way to wash clothes, much like a before-and-after photo that's turned on its head. The person is using an iron holder on the back of the vehicle to iron the piece of clothing.
 
 
 ## Querying Llama 4 Vision Model
