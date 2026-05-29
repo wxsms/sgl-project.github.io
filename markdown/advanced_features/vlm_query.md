@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 00:35:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 01:23:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 00:35:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 01:23:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a unique collaboration between urban public transportation and urban life. A yellow taxi cab pulls a metallic frame with a clothesline, onto which hanging pieces of clothing are being hung. This is an unconventional and humorous sight, as slinging laundry from a moving vehicle would typically not be a method commonly seen or intended for such use. The setting appears to be a city street, evidenced by the presence of a storefront and other vehicles in the background. The taxi's activity seems to be part of a performance or an art installation, emphasizing a playful contrast between everyday urban transportation and unusual, creative uses of common objects.
+    The image depicts a person drying clothes on a banner attached to the back of a yellow taxi cab. This unusual activity could be seen as defying the typical use of vehicles for entertainment or fun, as taxis are commonly used for transporting people. The scene is likely staged for publicity or as part of a performance or marketing campaign.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a bright yellow taxi cab with a man dressed as a superhero. He is hanging clothes on a clothesline to dry, resembling a dark outfit, possibly a cape. This scene is a humorous and imaginative exaggeration of the idea of cleaning as a superhero action.
+    The image shows a man standing on a streetmedian with a yellow taxi cab and another vehicle nearby. The man appears to be стрudging a spray bottle or similar device, preparing to spray something into a semiconductor circuit board he is holding. The setup suggests that he is performing a semiconductor test or modification.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a person dressed in a yellow shirt and blue sweatpants, standing behind two yellow taxis. The individual is next to a folding stepladder with a white board loaded with various items. The stepladder is positioned in front of the right taxi, and the person appears to be preparing or organizing something for a performance or demonstration. The background shows a city scene with tall buildings, and there are some objects hanging from them. The person might be engaging in street performance or art scene.
+    There areno whiteshowshs or dougработатьhe included in the image. The most likely scene is of a man doing laundry by the side of the road.
 
 
 ## Querying Llama 4 Vision Model
