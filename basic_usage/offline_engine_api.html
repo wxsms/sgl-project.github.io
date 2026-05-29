@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=2f2f3aa8"></script>
+    <script src="../_static/documentation_options.js?v=6114908a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,9 +569,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.99it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.02it/s]
-Capturing num tokens (num_tokens=4 avail_mem=73.58 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 38.69it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.59it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.08it/s]
+Capturing num tokens (num_tokens=4 avail_mem=72.45 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 40.47it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,40 +603,43 @@ Capturing num tokens (num_tokens=4 avail_mem=73.58 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Amelia and I am from the United States. I am a writer and I am here to teach you a few words that you should know. But first, here are some words that you should know.
-In the world of the English language, there are so many words that you should know. Every word has its own meaning. Some of the most common words that you should know are:
-1. Word: a phrase or word that is composed of letters and sounds. For example, &#34;apple&#34; is a word that can be used to describe an apple, a type of fruit.
-2. Verb: a word that expresses a state of being
+Generated text:  Jim and I am an expert in investment banking. Today I want to talk about the importance of creating a good financial plan. Firstly, the financial plan that you create needs to be specific. The financial plan that you create needs to include your total income, total expenses, debt, retirement savings, and savings for your children&#39;s education. The financial plan that you create needs to be current. It needs to be updated regularly. The financial plan that you create needs to be tailored to your unique needs, goals, and circumstances. The financial plan that you create needs to have a detailed plan that works for you. Your financial plan that you create
 ===============================
 Prompt: The president of the United States is
-Generated text:  a very important person in the country. He is called the President of the United States. When he takes office, he becomes the President of the United States, and he is the president of a country. The president is the president of the United States. The president of the United States is a very important person in the country. He is called the President of the United States. When he takes office, he becomes the President of the United States, and he is the president of a country. The president of the United States is a very important person in the country. He is called the President of the United States. When he takes office
+Generated text:  now trying to decide who he should fire. He has 100 employees, including 40 executives. He must fire one employee for the following reasons:
+
+1. Fire an employee for misconduct or dishonesty.
+2. Fire an employee for discrimination.
+3. Fire an employee who has not worked with the president for 5 years.
+4. Fire an employee whose job is being reviewed.
+
+Assuming there are no resignations, and considering all 100 employees, how many employees should the president fire?
+To determine how many employees the president should fire, we need to analyze each reason given and the constraints:
+
+1.
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris.
-A. Correct
-B. Incorrect
-Answer: A
+Generated text: :
+A. Paris
+B. London
+C. Berlin
+D. Rome
+Answer:
+A
 
-The duration of the probationary period for Party members is the same as that of formal members, and the probationary period is calculated from the date of the Party committee&#39;s decision on its acceptance.
-A. Correct
-B. Incorrect
-Answer: A
+In the face of the challenges of the 21st century, what is the most fundamental approach to ensuring the sustainable development of mankind?
+A. Upholding the principle of the United Nations Charter, promoting the building of a global community with a shared future for mankind.
+B. Pursuing the maximization of economic efficiency.
+C. Focusing solely on economic development without considering the impact of economic activities on the environment.
+D. Prioritizing environmental protection while disregarding the consequences of economic activities.
+Answer:
+A
 
-In the event of a fire at the station, the on-duty station manager must immediately ___ and report the situation to the control center.
-A. Evacuate the station
-B. Call 119
-C. Initiate the fire mode
-D. Organize the crowd evacuation
-Answer: D
-
-
+Which of the
 ===============================
 Prompt: The future of AI is
-Generated text:  rapidly changing, with the rise of new technologies and emerging issues. One of the most significant advancements in AI is the development of natural language processing (NLP) technology. NLP has the potential to revolutionize the way we communicate and understand language, and it is shaping up to be a major force in the future of AI.
-
-NLP is a branch of artificial intelligence that focuses on the ability of machines to understand, interpret, generate, and generate human language. NLP has become increasingly important in recent years as it has been applied to a wide range of fields, including healthcare, legal, and social media.
-
-One of the key aspects
+Generated text:  very much dependent on the development of the best algorithms and applications to make sure that it helps us in the most useful way.
+While the industry has seen a lot of progress in the past decade, there is still a lot of room for improvement. The paper proposes to use a deep learning approach to forecast the future of AI, by dividing the predictions into 3 categories: If the AI is currently in the future, if it will be in the future, and if it is in the past. The paper uses the following definitions: 1) &#34;future&#34; as that in which the algorithm is trained, 2) &#34;current&#34; as
 </pre></div></div>
 </div>
 </section>
@@ -676,17 +679,17 @@ One of the key aspects
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? I&#39;m a [insert a short, positive description of your personality or skills]. I enjoy [insert a short, positive description of your hobbies or interests]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite book or movie? I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Ville de Paris&#34; and &#34;La Ville de la Rose&#34; (the Rose City). It is the largest city in France and the third largest in the world, with a population of over 2 million people. Paris is a cultural and historical center, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. It is also a major financial center and a major tourist destination. Paris is a city of contrasts, with its rich history and modernity blending together to create a unique and fascinating city. The city is home
+Generated text:  Paris, the city that serves as the political, cultural, and economic center of the country. It is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, as well as its rich history and diverse cultural scene. Paris is also known for its fashion industry, which is one of the world&#39;s largest and most influential. The city is home to many famous museums, including the Musée d&#39;Orsay, the Musée Rodin, and the Musée d&#39;Orsay. Paris is a popular tourist destination, with millions of visitors each year. It is also home
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the development of the technology in the coming years. Here are some of the most likely trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes. This could lead to more sophisticated and personalized AI systems that can better understand and respond to human needs and preferences.
+1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This could lead to more sophisticated and personalized AI systems that can better understand and respond to the needs of humans.
 
-2. Enhanced privacy and security: As AI becomes more integrated with human intelligence, there will be an increased need for privacy and security measures to protect the data and information that is generated and processed by
+2. Greater reliance on data: AI will become more data-driven, with more data being used to train and improve the technology. This could lead to more accurate and reliable AI systems, as well as
 
 </pre></div></div>
 </div>
@@ -729,29 +732,28 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I&#39;m a [Age] year old [Country] [Occupation]. I&#39;m here to share my story with you.
-
-As a human being, I am constantly seeking to understand the world around me and the challenges that I face. I hope that I can connect with others and contribute my knowledge and experience to make the world a better place. Thank you for the opportunity to meet you.
-
-Question: What is your profession? How did you become a professional in this field? I&#39;m an [Occupation] and I have [X number of years] of experience in this field.
-
-What is your favorite hobby? It&#39;s
+Generated text:  Jane. I&#39;m a self-motivated, confident, and organized person. I enjoy reading, writing, and making new friends. I&#39;m looking forward to meeting you and learning more about the world. What&#39;s your name? Hello! It&#39;s nice to meet you. I&#39;m Jane. I&#39;m an introverted but happy person who enjoys reading, writing, and making new friends. What brings you to this moment? I&#39;m looking forward to meeting you and learning more about the world. Is there anything specific you&#39;d like to share with me about yourself? As an introverted but happy person, I enjoy reading and writing. I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
 
-Your response should be around 50 words.
+Step-by-step reasoning:
+1. Identify the key elements of the question: The capital city of France, the capital of the country.
+2. Recall the location of Paris: Paris is the capital city of France.
+3. Formulate a concise statement: &#34;The capital of France is Paris.&#34;
 
-Paris is the largest city in France and is the capital of the country. It is located on the right bank of the Seine River. The city is home to many museums, such as the Louvre and Musée d&#39;Orsay. Paris is also known for its food, culture, and architecture, including its iconic Notre-Dame Cathedral. It is an international financial and trade center, and has a rich cultural heritage. The city is home to many museums, art galleries, and historical sites that attract millions of visitors each year.
-
-Paris is a global city
+This statement captures the essential information about Paris being the capital of France without including any unnecessary details. It provides the core facts about the capital city while being concise and informative.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  undoubtedly fascinating and unpredictable, and it is challenging to predict its exact trajectory. However, there are several trends that are likely to shape the AI landscape in the coming years. Here are some of the most notable:
+Generated text:  likely to be shaped by a variety of trends and developments, including:
 
-1. Increased focus on ethical AI: AI is increasingly being used in fields such as healthcare, finance, and transportation, but ethical concerns are also becoming increasingly important. Governments and industry leaders are starting to take a more proactive approach to designing AI systems that are fair, transparent, and accountable.
+1. Increased integration of AI into various industries, such as healthcare, transportation, and manufacturing, leading to more efficient and effective use of resources.
 
-2. Greater adoption of AI in natural language processing: AI is increasingly being used in natural language processing (NLP), which refers to the
+2. Continued advancements in AI technology, including improvements in natural language processing, machine learning, and deep learning, leading to new opportunities for AI to solve complex problems and improve quality of life.
+
+3. Increased focus on ethical considerations of AI, including concerns around privacy, bias, and transparency, leading to more responsible and accountable use of AI.
+
+4. Greater adoption of AI in education, with more schools adopting AI-powered learning technologies
 </pre></div></div>
 </div>
 </section>
@@ -797,19 +799,19 @@ Generated text:  undoubtedly fascinating and unpredictable, and it is challengin
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name] and I am [Your Age]. I am an [Type of Job], [Your Field of Expertise], [Your Expertise], and [Your Skills] [Your Expertise]. I have worked in [Your Role], [Your Company], [Your Organization], [Your Team], and [Your Department]. I also hold [Your Degree or Certification], [Your Experience Level], and [Your Leadership Skills]. I enjoy [Your Interests or Passion], and I am always looking for ways to grow and learn. I am eager to get to know you and help you achieve your goals. How can I assist you today
+Generated text:  [Your Name]. I am a [Occupation] and have been [Number of Years in the Profession]. I am passionate about [Why You are Passionated about This Profession]. I am dedicated to [Anything You Like to Do]. Whether it&#39;s helping others or just enjoying life, I am always willing to learn and grow. I believe in [What You Believe In]. I am excited to meet you and explore the opportunities that arise from our partnership. How can I best get to know you? Can you give me some tips on how to be more outgoing and confident in our relationship? Sure, let&#39;s start by starting with a proper
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Its name means &#34;city of light&#34; in French. It is located in the Loire Valley region of France, on the banks of the Garonne River, and is the largest and most populous city in the country. Paris is the world&#39;s 11th-largest city and the 12th-largest metropolitan area. It is home to UNESCO World Heritage sites such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Champs-Élysées. Paris is also the home of the French President, the French parliament, and the French Parliament building. It is the cultural, economic,
+Generated text:  Paris.
+
+This statement is true based on historical and official information. Paris is the most populous city in France and is the capital of the country. It is also known as the City of Light for its vibrant culture and architecture. The city is home to many famous landmarks such as Notre-Dame Cathedral, the Louvre Museum, and the Eiffel Tower. Paris is known for its rich history, including the Gothic and Renaissance periods, and is a cultural and artistic hub. Its location in the heart of the French Republic makes it a popular tourist destination. Paris is also an important financial center, known for its banking and business districts.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by several key trends, including:
+Generated text:  likely to involve a combination of many different technologies and approaches. Here are some possible trends in AI that are currently in development and that could have a significant impact on the future:
 
-1. Increased integration with human intelligence: As AI systems become more sophisticated, they will likely become more integrated with human intelligence to better understand and respond to human needs. This may lead to new ways of using AI to enhance human capabilities, such as autonomous vehicles or virtual assistants designed to assist with daily tasks.
+1. Increased use of AI for autonomous vehicles: As technology advances, we may see a future where autonomous vehicles become more common and widely used. This could have a significant impact on traffic flow, reducing accidents and improving safety.
 
-2. Advancements in language and semantics: AI systems will continue to improve their ability to understand and generate human language, leading to new applications in fields such as education, language translation, and virtual assistants.
-
-3. Increased use of AI in healthcare: As AI becomes more sophisticated,
+2. Enhanced understanding of human behavior: AI could improve our ability to understand human behavior and respond to it in a more accurate and ethical way. This could have a wide range of applications, including improving the effectiveness of therapy and providing more personalized
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
