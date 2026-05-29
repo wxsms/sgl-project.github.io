@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 01:23:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 01:53:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 01:23:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 01:53:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a person drying clothes on a banner attached to the back of a yellow taxi cab. This unusual activity could be seen as defying the typical use of vehicles for entertainment or fun, as taxis are commonly used for transporting people. The scene is likely staged for publicity or as part of a performance or marketing campaign.
+    In the picture, a man is hanging wet clothes on a clothesline attached to the back of a yellow taxi. The scene appears to be in a city street with several parked taxis. The man seems to be hanging up clothes, possibly after having just returned from the valet parking service offered by the taxis. The background shows storefronts and street signs, indicating an urban setting.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing on a streetmedian with a yellow taxi cab and another vehicle nearby. The man appears to be стрudging a spray bottle or similar device, preparing to spray something into a semiconductor circuit board he is holding. The setup suggests that he is performing a semiconductor test or modification.
+    The image shows a man hanging clothes on a clothes line that is attached to the back of a yellow taxi cab. The scene appears to be taking place on a busy street, likely in a city.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    There areno whiteshowshs or dougработатьhe included in the image. The most likely scene is of a man doing laundry by the side of the road.
+    The image shows a person performing an unconventional stunt on a city street. They are holding and manipulating what appears to be a yellow taxi cab or SUV behind them. The individual is standing on the curb, and the cab has been positioned to look as though it is on its side or suspended in the air. The surrounding environment suggests an urban setting with storefronts and a busy street.
 
 
 ## Querying Llama 4 Vision Model
