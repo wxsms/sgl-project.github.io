@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 05:49:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 06:28:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 05:49:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 06:28:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.09s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
 
 
 
@@ -121,9 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a humorous and unusual scene in a busy city. The main subject is a person dressed in a yellow long-sleeve shirt and dark pants, who is standing and showing a steaming hot metal iron to a group of three yellow taxis. The iron is placed in the back of the sedan, which is attached to an homemade clothesline setup constructed on a shooting stick-like support. This setup appears to be in front of the cab license plate.
-    
-    The setup is a practical joke or prank, likely created as a form of street entertainment or for testing purposes. This kind of stunt is typically done by a street performer or a prank
+    The image shows a bright yellow taxi cab parked on a street. The taxi has an unusual contraption mounted on its back, which is suspended by a pulley system, creating a humorous and unexpected scene. This setup suggests that someone has cleverly attached a small, moving conveyor belt-like device to the back of the taxi, demonstrating a fun farm farming-related idea, perhaps for a joke or playful display.
 
 
 ### Call with Processor Output
@@ -148,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person wearing a bright yellow shirt and black pants, standing on the side of a street. They are holding a long staff or cane with an item hung on it, which appears to be a piece of blue fabric. The person is standing next to a yellow taxi cab. In the background, there are other cars and some buildings, including one with vertical stripes. The street has a grid layout, and the sidewalk is visible. The scene seems to be set in an urban environment, possibly in a busy city like New York City.
+    This humorous image depicts a taxi driver using aCommunity mailbox on a public sidewalk to display various clothing items, likely shirts. The driver is also seen adjusting the shirts on a clothes hanger. This is a clever way to showcase the shirts and possibly promote them for sale, as there are no clearly visible retail signs or prices in the image.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with two yellow taxis. One taxi has a man hanging clothes out of its back window, while the other taxi is parked nearby. The setting appears to be a streetscape, possibly in a city environment. The scene is likely a humorous or creative arrangement often used for urban photography.
+    The image shows a scene in an urban environment, likely a city street. The main focus is on a person doing laundry with a clothesline strung across what appears to be the back of a parked yellow taxi. This is a humorous visual, as doing laundry on a street or in a taxi is not typically done. The background includes tall buildings, another taxi, and flags hanging from cupolas on the buildings. The person is wearing a yellow shirt and a hat. The setting suggests it is in a busy area with traffic and infrastructure typical of a city.
 
 
 ## Querying Llama 4 Vision Model
