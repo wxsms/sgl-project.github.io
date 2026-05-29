@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 22:17:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 23:32:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 22:17:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 23:32:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.33s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,13 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi stand on the street with a clothes rack placed on top of the platform, extending over the cab. Several pieces of clothing are draped over the clothes rack, including a blue shirt. The taxi stand is typical of those used in urban areas to pull vehicles to pick up passengers or to drop off the current passenger. 
-    
-    There is also a pedestrian walking along the sidewalk in the background. This scene depicts a common urban scenario where taxis and sidewalks coexist, providing typical city commuting.
-    
-    In terms of questions that might be asked about this image, here are some possible examples:
-    
-    1. What is the purpose of the clothes
+    The image shows a humorous scene where the tailgates (hitches) of two yellow taxis are being used as clotheslines. A person is ironing a blue piece of clothing on the hitch of one taxi, while another taxi drives by in the background. This deftly improves a decidedly mundane setting into a quirky moment of creativity and humor.
 
 
 ### Call with Processor Output
@@ -152,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a person on a parking lot and how thetaxicab in the background. The trunk of the vehicle is open, with the appliance standing up.
+    The image shows a man in a yellow shirt standing alongside a yellow taxi on a city street. He has dressed up as a stack of clothes or a bale of laundry, causing a humorous and amusing effect. The street is lined with other taxis and there are street signs visible. The scene appears to be a light-hearted moment captured during a break or a performance.
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a unusual scene where a person is hanging clothes on the back windows of two yellow taxis parked side by side on a city street. The person is positioned in the middle, adjusting the blankets that are presumably hanging from the taxis' rearview mirrors. This is a whimsical and novel way to hang clothes out for drying, and it seems to be happening amidst the hustle and bustle of city life.
+    The image shows an individual hanging clothing to干on top of a taxi's roofrack. This is likely for demonstration purposes, possibly to test the stability or functionality of the roofrack method.
 
 
 ## Querying Llama 4 Vision Model
