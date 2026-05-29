@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 04:46:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 05:49:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 04:46:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 05:49:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.04s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.60s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.67s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows two yellow taxis on a city street. One taxi has its rear door open, with a portable dolly attached to it that has clothes on display, seemingly being advertised for sale or distribution. The setting appears to be in an urban environment, possibly during a sale event or promotional campaign.
+    The image shows a humorous and unusual scene in a busy city. The main subject is a person dressed in a yellow long-sleeve shirt and dark pants, who is standing and showing a steaming hot metal iron to a group of three yellow taxis. The iron is placed in the back of the sedan, which is attached to an homemade clothesline setup constructed on a shooting stick-like support. This setup appears to be in front of the cab license plate.
+    
+    The setup is a practical joke or prank, likely created as a form of street entertainment or for testing purposes. This kind of stunt is typically done by a street performer or a prank
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, there is a man in a yellow shirt and glasses washing clothes on a makeshift washing line in the middle of a busy street near two taxis. The scene appears to be in the middle of a city, with tall buildings and vehicles surrounding them. The man is using an iron as the primary source of heat, which is unusual and likely makeshift, to dry clothes.
+    The image shows a person wearing a bright yellow shirt and black pants, standing on the side of a street. They are holding a long staff or cane with an item hung on it, which appears to be a piece of blue fabric. The person is standing next to a yellow taxi cab. In the background, there are other cars and some buildings, including one with vertical stripes. The street has a grid layout, and the sidewalk is visible. The scene seems to be set in an urban environment, possibly in a busy city like New York City.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street scene with a yellow taxi in the foreground and another yellow taxi in the background. A man in a yellow shirt and sunglasses is hanging clothes out on a drying rack, including a jacket and possibly a shirt. The scene suggests that the man is multitasking, doing laundry while standing near the taxis in an urban environment. The background includes various architectural features typical of a city, such as buildings with large windows and manholes. There are also some red banners or advertisements on the sidewalks.
+    The image shows a scene with two yellow taxis. One taxi has a man hanging clothes out of its back window, while the other taxi is parked nearby. The setting appears to be a streetscape, possibly in a city environment. The scene is likely a humorous or creative arrangement often used for urban photography.
 
 
 ## Querying Llama 4 Vision Model
