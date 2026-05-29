@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 04:20:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 04:46:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 04:20:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 04:46:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.04s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.60s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.67s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows an experienced urban bug-hunter known as a "professional explainer" catch-camera arbor. He's seen here suspended from the back of a yellow taxi in New York City. Fashioned from old furniture, this contraption allows him to safely navigate rooftops and rainshelter areas without missing bugs or other wildlife. He typically mounts his camera on a tripod set high above road curbs to outsmart cameras on permit biplanes near his eventual landing zone—a safe rooftop. This photograph has artistic flair, reflecting the guerrilla behavior of many paid urbanEnemies.
+    This image shows two yellow taxis on a city street. One taxi has its rear door open, with a portable dolly attached to it that has clothes on display, seemingly being advertised for sale or distribution. The setting appears to be in an urban environment, possibly during a sale event or promotional campaign.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a yellow shirt hanging laundry on a clothesline attached to the back of a yellow taxi cab. The taxi is driving down a city street. The person appears to be multitasking, using thereflection on the taxi to paint it yellow.
+    In the image, there is a man in a yellow shirt and glasses washing clothes on a makeshift washing line in the middle of a busy street near two taxis. The scene appears to be in the middle of a city, with tall buildings and vehicles surrounding them. The man is using an iron as the primary source of heat, which is unusual and likely makeshift, to dry clothes.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene of a person hanging laundry outdoors, likely on a clothesline, near a street. In the background, there are two yellow taxis (taxicabs) parked on the street. The person is wearing casual clothing and is using a walking cane. The street is lined with buildings and there are people in the background. This scene appears to be in an urban area, possibly part of a city with a significant presence of taxis.
+    The image shows a city street scene with a yellow taxi in the foreground and another yellow taxi in the background. A man in a yellow shirt and sunglasses is hanging clothes out on a drying rack, including a jacket and possibly a shirt. The scene suggests that the man is multitasking, doing laundry while standing near the taxis in an urban environment. The background includes various architectural features typical of a city, such as buildings with large windows and manholes. There are also some red banners or advertisements on the sidewalks.
 
 
 ## Querying Llama 4 Vision Model
