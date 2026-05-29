@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 20:44:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 21:38:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 20:44:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 21:38:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.23s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on a city street. One taxi has a person hanging out a clothesline filled with laundry, including a blue and a red shirt. The person appears to be drying clothes. The scene includes street signs and buildings in the background. The presence of the clothesline with hanging laundry implies that the person is drying their clothes, possibly after a trip or outdoor activity.
+    The image shows a unique scene where a man is drying his clothes on the back of a yellow taxi. This is a not uncommon sight, as drivers often use the back of taxi cabs as makeshift drying racks. The man is standing on the back seat of the taxi, holding a clothesline with his clothes draped over it, and there are a few multi-American flags (Betsy Ross flags with stars on red background) attached to it, possibly as a decoration or to hold them up. In the background, there is an urban environment, with buildings and possibly a storefront visible.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two yellow taxis parked on a city street. One of the taxis has a tarp or draped material covering part of it, and the driver appears to be adjusting it. The street is lined with buildings, and there are some flags hanging from the windows. The weather seems to be mild, as there is no visible rain or strong winds. The general setting suggests an urban environment during a calm day.
+    This image shows two yellow taxis in New York City, with one taxi's trunk open. A person is standing over the open trunk, seemingly placing or reading something, possibly an advertisement or a sign. The scene is set on a busy urban street, likely during the daytime.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a picturesque scene in a city, likely in New York given the distinctive yellow taxis. A man dressed in a yellow shirt and blue jeans stands beside a third-party vehicle under an overpass. He is engaged in a humorous, unrealistic activity: he appears to be ironing laundry outside, using a real person in a red leather saddle-like chair as the ironing board, which is supported by another two people standing on it. The scene is whimsical and surreal, as ironing is typically an indoor domestic activity. There are also cars and urban buildings in the background, suggesting a busy street.
+    The image shows a scene of a man stopped on a city street, seemingly washing clothes on a clothesline attached to the back of a yellow and black SUV taxi. The setting appears to be urban, with tall buildings and street signs in the background. The image humorously merges everyday life activities with typical urban transportation, creating an unexpected and whimsical visual.
 
 
 ## Querying Llama 4 Vision Model
