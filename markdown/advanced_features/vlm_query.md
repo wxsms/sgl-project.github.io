@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 08:36:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 08:52:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 08:36:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 08:52:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    What you're seeing is a substance, it is most likely biofuel made from algae.
+    The image shows a yellow taxi cab with a black backrest on the curb. A person is hanging laundry on a clothesline attached to the back of the taxi. The scene appears to be in an urban setting, as there are buildings and storefronts in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image appears to show a scene from a reality TV show or sketch where an individual isстаing on top of two taxi cabs, running a makeshift arm dryers, presumably to dry clothes. ToPlayers appear to be engaged in a creative and humorous activity, defying gravity by somehow balancing and moving around the cab without falling.
+    The image shows a taxi lane in New York City, part of the iconic yellow cab routes. TheЕрЕ fine taxi is pulling a flatbed cart with two American flags attached.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    A worker is cleaning the windows of a yellow taxi ride. The worker wears yellow tall pants with pockets, a yellow jacket over a white T-shirt, black pants, white shoes, and a Larry print. Two sun records: The yellow taxi is parked opposite the yellow one on a street with green plants at the roadside. Two red four-way signs are placed between the taxis with green plants on both sides of the sidewalk. On the left side of the picture, there are yellow and blue three-level window-free stipings. Above the bottom of the blue stiping, pale red and red flags are staked up in piles. On the upper
+    In the picture, there is a man standing in a New York City street, suspended in mid-air by a pole and attached to the roof of a yellow taxi. The man appears to be attempting to clean an iron on various items, which are draped over him, before hanging them on the back of the taxi. The scene is humorous and unusual, as this would typically not be considered a normal job for someone cleaning. The man is perhaps performing a stunt or participating in a street art performance, designed to entertain or draw attention.
 
 
 ## Querying Llama 4 Vision Model
