@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 01:53:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 02:09:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 01:53:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 02:09:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the picture, a man is hanging wet clothes on a clothesline attached to the back of a yellow taxi. The scene appears to be in a city street with several parked taxis. The man seems to be hanging up clothes, possibly after having just returned from the valet parking service offered by the taxis. The background shows storefronts and street signs, indicating an urban setting.
+    The image you've described appears to show a blue refrigerator outdoors, which seems to be running a makeshift clothesline to dry its contents. This is unusual because refrigerators do not traditionally have drying capabilities, and it's not a common practice for<Array type="float" values="[17, 13, 160, 42]">the refrigerator manufacturer to run the drying process on the local clothesline</Array type="float">since refrigerators have their wear, tear, and damage often and frequently. This kind of appliance drying is rarely seen, and it is even more rare or unusual for larger refrigerators.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man hanging clothes on a clothes line that is attached to the back of a yellow taxi cab. The scene appears to be taking place on a busy street, likely in a city.
+    A person is ironing jeans outdoors while parked between two yellow taxi cabs on a street. The person is standing on a small folding table, wearing a bright yellow shirt, and is using an iron in the process.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person performing an unconventional stunt on a city street. They are holding and manipulating what appears to be a yellow taxi cab or SUV behind them. The individual is standing on the curb, and the cab has been positioned to look as though it is on its side or suspended in the air. The surrounding environment suggests an urban setting with storefronts and a busy street.
+    The image shows a man wearing a yellow shirt working as a visible and somewhat humorous task. He is hanging laundry on a clothesline, which is unusual as laundry is typically cleaned and folded before hanging out to dry in a drying process. This scenario is somewhat humorous because it is not commonly seen for taxicabs or even public taxicabs to perform tasks of personal laundry or hang clothes broadly. Instead, taxis are usually parked and passengers loaded. The man is likely using a clothesline attached to a sign or aeki on the back of the taxi, possibly as a marketing tool or to draw attention to something related to his business.
 
 
 ## Querying Llama 4 Vision Model
