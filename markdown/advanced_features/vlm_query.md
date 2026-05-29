@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 18:21:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 19:51:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 18:21:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 19:51:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a do-it-yourself ('DIY') public service cleaning activity. A person is using an iron and a clothes ironing board to clean the hood of a taxi. This method is creative and environmentally friendly, as it avoids using water and chemicals pollutants commonly associated with washing. The activity is likely taking place in a busy city street, as indicated by the presence of taxis and urban infrastructure. This unusual and unconventional scene highlights the creative and sometimes inventive approaches people take to solve problems or promote cleanliness in busy urban environments.
+    The image shows a scene in a city with two yellow taxis, likely in New York given the image quality. One of the taxis appears to be equipped with a clothesline along its rear window, as if it is behaving unusually, ready to clean clothes.
 
 
 ### Call with Processor Output
@@ -146,13 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a humorous street performance that takes place on a busy city street. A man, seemingly a regular yellow cab driver, has stopped his taxi (a yellow Sherpa-like vehicle) and is ironing clothes using an iron placed on a metal stand attached to the taxi. The ironing man is wearing casual clothes and is using a这种方法来清理多余的油漆。
-    
-    同时，周围的街道充满了汽车，当地居民见面时发表了不同的欢迎和寒暄。这导致许多人围观了这个闹剧。
-    
-    类似场景往往会同时出现在其他城市的街头，包括纽约市、上海以及东京等地。
-    
-    If the image is of a person واستخدام
+    The image shows a person walking with a cart full of laundry, including clothes and an iron, in the middle of a city street. They are wearing a yellow shirt and appear to be in an urbanized area, with other yellow taxis visible. The scene has a humorous and eclectic feel to it.
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man wearing a yellow shirt and blue jeans hanging clothes on a red hook attached to the back of a yellow taxi. The scene appears to be in a city, as there are buildings and trees in the background, along with other vehicles and a traffic light. The man seems to be hanging clothes outdoors, possibly in a street or parking area.
+    The image shows a man hanging clothes on a street clothesline in what appears to be a city street. The veterinarian hashtag.
 
 
 ## Querying Llama 4 Vision Model
