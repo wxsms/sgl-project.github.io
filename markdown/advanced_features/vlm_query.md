@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 02:09:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 02:49:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 02:09:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 02:49:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.40it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image you've described appears to show a blue refrigerator outdoors, which seems to be running a makeshift clothesline to dry its contents. This is unusual because refrigerators do not traditionally have drying capabilities, and it's not a common practice for<Array type="float" values="[17, 13, 160, 42]">the refrigerator manufacturer to run the drying process on the local clothesline</Array type="float">since refrigerators have their wear, tear, and damage often and frequently. This kind of appliance drying is rarely seen, and it is even more rare or unusual for larger refrigerators.
+    The image shows a yellow taxi cab on the street, parked alongside a另一位行人, who is holding some clothes on a stand. The scene appears to be in an urban environment, possibly a city street.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    A person is ironing jeans outdoors while parked between two yellow taxi cabs on a street. The person is standing on a small folding table, wearing a bright yellow shirt, and is using an iron in the process.
+    The image depicts a scene on a city street, featuring a person hanging clothes on a clothesline installed on the roof of a yellow taxi. This is an unusual and comical scenario, suggesting that the person is performing laundry in an unconventional manner, utilizing the standing space of the taxi.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man wearing a yellow shirt working as a visible and somewhat humorous task. He is hanging laundry on a clothesline, which is unusual as laundry is typically cleaned and folded before hanging out to dry in a drying process. This scenario is somewhat humorous because it is not commonly seen for taxicabs or even public taxicabs to perform tasks of personal laundry or hang clothes broadly. Instead, taxis are usually parked and passengers loaded. The man is likely using a clothesline attached to a sign or aeki on the back of the taxi, possibly as a marketing tool or to draw attention to something related to his business.
+    The photo shows a busy street with a variety of vehicles and pedestrians. In the foreground, there is a yellow taxi cab with a noticeable number "75058" on its rear side. This taxi is parked on a road, and in front of it is a person dressed in a yellow shirt and blue jeans. The person is engaged in drying clothes using a makeshift clothesline. The clothes are spread out on the clothesline, taking up space and possibly obscuring part of the person's body. The scene indicates that the person might be using the taxi's panty lines to dry their laundry while traveling. The background shows other
 
 
 ## Querying Llama 4 Vision Model
