@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 19:51:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 20:07:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 19:51:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 20:07:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -121,7 +121,14 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in a city with two yellow taxis, likely in New York given the image quality. One of the taxis appears to be equipped with a clothesline along its rear window, as if it is behaving unusually, ready to clean clothes.
+    The image shows a scene on a city street, likely in New York City, where a person isitagエネルギーing drying their clothes on a clothesline attached to a yellow taxi. 
+    
+    To reveal the paragraph:
+    1. **Object Description:** The taxi cab is yellow.
+    2. **Action:** The person is drying their clothes on a clothesline.
+    3. **Setting:** The setting is a city street, possibly in New York City, indicated by the taxis' colors and the urban environment.
+    
+    In one paragraph, I can provide a brief summary of what is shown in the image.
 
 
 ### Call with Processor Output
@@ -146,7 +153,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person walking with a cart full of laundry, including clothes and an iron, in the middle of a city street. They are wearing a yellow shirt and appear to be in an urbanized area, with other yellow taxis visible. The scene has a humorous and eclectic feel to it.
+    In the image, there are two yellow taxis driving down a street in a city. Between the taxis, there is a man standing on the back of a NYC Police Department Vehicle. The man is holding a laundry basket filled with clothes, and he appears to be working as a street stylist or المعطف, which refers to a term used in Arabic culture, similar to "street cooler" or "street stylist." He is arranging or checking the clothes on a clothespin rack attached to the back of the police vehicle. The scene is set in an urban environment, and it seems to be interrupted by the man's activity. Please note that the
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +209,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man hanging clothes on a street clothesline in what appears to be a city street. The veterinarian hashtag.
+    The image depicts a yellow car (possibly a taxi or taxi-like vehicle) parked in front of a building with several small flags and banners attached to its upper body. The vehicle appears to be in motion, likely driving down a street.
 
 
 ## Querying Llama 4 Vision Model
