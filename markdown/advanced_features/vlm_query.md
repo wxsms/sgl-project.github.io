@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-28 23:36:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 00:02:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-28 23:36:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 00:02:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a humorous scene in a city street where a man is pretending to ironingManaging Convention services on the back of his pickup truck, which is likely a taxi or a similar vehicle. The man is dressed casually and is using a rack to hang clothes, typically associated with household chores, in an urban setting.
+    The image shows a humorous scene where a man is pretending to be a taxi driver while hanging clothes on the back of a yellow taxi. The taxi has been modified to look like a special vehicle, likely for a parade or a publicity stunt. The setup includes a sign that reads "POLICE," and the man is holding an iron next to it, adding to the comedic effect. This scene is likely intended to entertain and engage passersby, possibly at a public event or festival.
 
 
 ### Call with Processor Output
@@ -146,7 +146,10 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scenario where someone is drying clothes using a clothesline attached to the back of a taxi. The taxi is parked on a city street, and the streamer and markers remain unchanged. The setting suggests an unusual or humorously contrived situation, as taxis are not typically used as drying facilities.
+    Here's what's shown in the picture:
+    1. Two yellow taxis are parked on the street.
+    2. A man is standing between the two taxis, holding a red pair of scissors.
+    3. He appears to be using the scissors to cut through the fabric of one of the taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +205,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street where a person is shoveling sand or snow onto the back of a yellow taxi. There is also a clothesline with items of clothing hanging on it. The taxi appears to be part of a lively street event or protest, as indicated by the number of people and the attention to detail in the clothing. The urban environment with buildings and flags in the background suggests this is taking place in a busy city area.
+    This image shows a scene of a person hanging clothes on a clothesline in the busy streets of New York City. The individual is displaying the clothes outdoors, likely to dry them, despite the high traffic and urban environment. The yellow taxis and urban setting are characteristic of the city.
+    
+    Both the clothes and the clothesline are hanging outside the open-themed side of a yellow taxi that is parked or moving slowly on the street. There are two American flags on red poles near the scene, and the people seem to wear casual clothing, possibly using methods to avoidaising a lot of noise in the neighborhood.
 
 
 ## Querying Llama 4 Vision Model
