@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 02:49:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 03:48:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 02:49:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 03:48:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.40it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.18s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.11s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.13s/it]
 
 
 
@@ -121,7 +121,16 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi cab on the street, parked alongside a另一位行人, who is holding some clothes on a stand. The scene appears to be in an urban environment, possibly a city street.
+    There are several objects and people in the picture. Here’s a detailed description:
+    
+    1. **Two Yellow Taxis:**
+       - There are two yellow taxis parked side by side on the street. They are facing the same direction, with their knobs (safty bars) visible, suggesting they have not yet unfolded.
+    
+    2. **Person in Yellow Shirt:**
+       - A person wearing a yellow shirt is standing next to the yellow taxis. They appear to be engaged in some activity involving the flags attached to the taxis.
+    
+    3. **Flag Adorned Taxis:**
+       - The yellow taxis are adorned with two flags attached to
 
 
 ### Call with Processor Output
@@ -146,7 +155,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene on a city street, featuring a person hanging clothes on a clothesline installed on the roof of a yellow taxi. This is an unusual and comical scenario, suggesting that the person is performing laundry in an unconventional manner, utilizing the standing space of the taxi.
+    The image shows a person cleaning a pair of black glacier ski boots with a rag on a small stool. The scene appears to be directed at a newsroom or a place where people gather casually, as there are a few people standing in the background and various items like a desk, chairs, and books scattered around.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +211,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The photo shows a busy street with a variety of vehicles and pedestrians. In the foreground, there is a yellow taxi cab with a noticeable number "75058" on its rear side. This taxi is parked on a road, and in front of it is a person dressed in a yellow shirt and blue jeans. The person is engaged in drying clothes using a makeshift clothesline. The clothes are spread out on the clothesline, taking up space and possibly obscuring part of the person's body. The scene indicates that the person might be using the taxi's panty lines to dry their laundry while traveling. The background shows other
+    In the image, a yellow taxi is parked on a street. A man wearing a yellow shirt is hanging clothes on the back of the taxi using a clothespin arms. The scene is likely taking place in an urban area, as there are other vehicles and a storefront visible in the background. The man appears to be efficient and organized, utilizing a taxi to hang laundry, which is a surprisingly humorous and creative idea.
 
 
 ## Querying Llama 4 Vision Model
