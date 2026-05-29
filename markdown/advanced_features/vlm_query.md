@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 21:38:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 21:57:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 21:38:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 21:57:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.29s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a unique scene where a man is drying his clothes on the back of a yellow taxi. This is a not uncommon sight, as drivers often use the back of taxi cabs as makeshift drying racks. The man is standing on the back seat of the taxi, holding a clothesline with his clothes draped over it, and there are a few multi-American flags (Betsy Ross flags with stars on red background) attached to it, possibly as a decoration or to hold them up. In the background, there is an urban environment, with buildings and possibly a storefront visible.
+    The image depicts a unique scene where a person is hanging laundry out to dry on the back of a taxi cab. This is an unusual and humorous situation, as taxis typically are used for transportation rather than for drying laundry. The background shows a typical urban street scene with other vehicles and buildings.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows two yellow taxis in New York City, with one taxi's trunk open. A person is standing over the open trunk, seemingly placing or reading something, possibly an advertisement or a sign. The scene is set on a busy urban street, likely during the daytime.
+    The image depicts a man hanging clothes on a line attached to the back of a yellow taxi. This is a common sight in New York City, where people sometimes take advantage of the taxis' windshield spaces to dry their clothes while the driver keeps the taxi moving.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene of a man stopped on a city street, seemingly washing clothes on a clothesline attached to the back of a yellow and black SUV taxi. The setting appears to be urban, with tall buildings and street signs in the background. The image humorously merges everyday life activities with typical urban transportation, creating an unexpected and whimsical visual.
+    The image shows a man in a yellow shirt hanging laundry on a metal rack attached to the back of a yellow taxi cab. The taxi is parked on a street with other vehicles visible in the background. The man appears to be drying clothes outdoors using the back of the taxi as a makeshift clothesline. This scene is likely an exaggerated or humorous depiction, as it is unusual to see laundry drying on a taxi, especially in an urban setting.
 
 
 ## Querying Llama 4 Vision Model
