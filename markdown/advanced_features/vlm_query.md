@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 06:28:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 06:54:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 06:28:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 06:54:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.09s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a bright yellow taxi cab parked on a street. The taxi has an unusual contraption mounted on its back, which is suspended by a pulley system, creating a humorous and unexpected scene. This setup suggests that someone has cleverly attached a small, moving conveyor belt-like device to the back of the taxi, demonstrating a fun farm farming-related idea, perhaps for a joke or playful display.
+    This image shows a traditional yellow taxi cab, which is commonly seen in New York City. The taxi is parked in a street view, and a person is foldable or displaying clothes from a cloth rack on its roof. This practice is unusual but has historically been used as a form of mobile clothing or fabric display when walking through traffic or in busy urban areas.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This humorous image depicts a taxi driver using aCommunity mailbox on a public sidewalk to display various clothing items, likely shirts. The driver is also seen adjusting the shirts on a clothes hanger. This is a clever way to showcase the shirts and possibly promote them for sale, as there are no clearly visible retail signs or prices in the image.
+    The image shows a person in the middle of the street hanging clothes on a rack behind a yellow taxi. This is likely a scenario of a taxicabmé, which is a metaphorical term to describe if something expenses a lot of money to solve a trivial problem.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in an urban environment, likely a city street. The main focus is on a person doing laundry with a clothesline strung across what appears to be the back of a parked yellow taxi. This is a humorous visual, as doing laundry on a street or in a taxi is not typically done. The background includes tall buildings, another taxi, and flags hanging from cupolas on the buildings. The person is wearing a yellow shirt and a hat. The setting suggests it is in a busy area with traffic and infrastructure typical of a city.
+    The image shows a city street with two yellow taxis navigating through an intersection. The scene is set in an urban environment, likely in a busy downtown area. The presence of the taxis and the urban infrastructure, including streetlights and buildings, confirms this. The image captures a common urban scene, highlighting the open and bustling nature of the city.
 
 
 ## Querying Llama 4 Vision Model
