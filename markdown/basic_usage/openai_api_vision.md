@@ -35,24 +35,22 @@ wait_for_server(f"http://localhost:{port}", process=vision_process)
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 09:55:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 18:22:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 09:55:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 18:22:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:02,  1.38it/s]
+    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:02,  1.50it/s]
 
-    Multi-thread loading shards:  40% Completed | 2/5 [00:01<00:02,  1.36it/s]
+    Multi-thread loading shards:  40% Completed | 2/5 [00:01<00:01,  1.64it/s]
 
-    Multi-thread loading shards:  60% Completed | 3/5 [00:02<00:01,  1.34it/s]
+    Multi-thread loading shards:  60% Completed | 3/5 [00:01<00:01,  1.69it/s]
 
-    Multi-thread loading shards:  80% Completed | 4/5 [00:02<00:00,  1.34it/s]
-
-    Multi-thread loading shards: 100% Completed | 5/5 [00:03<00:00,  1.74it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:03<00:00,  1.54it/s]
+    Multi-thread loading shards:  80% Completed | 4/5 [00:02<00:00,  1.77it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  2.36it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  2.00it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -110,11 +108,11 @@ print_highlight(response)
 
 
 
-<strong style='color: #00008B;'>{"id":"7243e22e6cf94b4f9d77d54290707ff3","object":"chat.completion","created":1780048547,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing clothes. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing a blue shirt. The setting looks like an urban environment with buildings, trees, and traffic.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"d5cab5c01c0d42d4903498895266c286","object":"chat.completion","created":1780078993,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing clothes. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing a blue shirt. The setting suggests an urban environment with buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":376,"completion_tokens":69,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 
-<strong style='color: #00008B;'>{"id":"26a093071de949c388a156c865de91b2","object":"chat.completion","created":1780048548,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"643c6f5f60a64e7aaa53d0e11788b3db","object":"chat.completion","created":1780078994,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene suggests an unusual or humorous situation, as ironing clothes outdoors is not a typical activity.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":380,"completion_tokens":73,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using Python Requests
@@ -147,7 +145,7 @@ print_highlight(response.text)
 ```
 
 
-<strong style='color: #00008B;'>{"id":"6fa5333a369046bca1a1413f06f3ee59","object":"chat.completion","created":1780048549,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene seems to be set in an urban environment, possibly New York City, given the style of the taxi and the architecture visible in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"696febc4f10b4aeeb09c69cf91185114","object":"chat.completion","created":1780078995,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene seems to be set in an urban environment, possibly New York City, given the style of the taxi and the architecture visible in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":390,"completion_tokens":83,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using OpenAI Python Client
@@ -182,7 +180,7 @@ print_highlight(response.choices[0].message.content)
 ```
 
 
-<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene.</strong>
+<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.</strong>
 
 
 ## Multiple-Image Inputs

@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 09:53:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 18:21:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 09:53:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 18:21:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.22s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.37it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene from a street performance featuring a person pretending to iron clothes on a rack. There are two taxi cabs parked on the street, one yellow and the other dark-colored. The background includes several storefronts and buildings, as well as some banners and streetlights. The overall setting appears to be an urban environment, possibly during a public event or a demonstration.
+    The image shows a do-it-yourself ('DIY') public service cleaning activity. A person is using an iron and a clothes ironing board to clean the hood of a taxi. This method is creative and environmentally friendly, as it avoids using water and chemicals pollutants commonly associated with washing. The activity is likely taking place in a busy city street, as indicated by the presence of taxis and urban infrastructure. This unusual and unconventional scene highlights the creative and sometimes inventive approaches people take to solve problems or promote cleanliness in busy urban environments.
 
 
 ### Call with Processor Output
@@ -146,9 +146,13 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a humorous and unusual scene: a man, dressed in a yellow shirt, is using a portable heater or grill to dry clothes on the back of a New York City taxi cab. The road is likely in the middle of a busy intersection, and the taxi is pulling over.
+    This is a humorous street performance that takes place on a busy city street. A man, seemingly a regular yellow cab driver, has stopped his taxi (a yellow Sherpa-like vehicle) and is ironing clothes using an iron placed on a metal stand attached to the taxi. The ironing man is wearing casual clothes and is using a这种方法来清理多余的油漆。
     
-    Clothing items appear to be hanging on a makeshift clothesline or attached to the bar of the portable heater, suggesting that the man is drying his clothes outdoors in the temperature provided by the heater. The scene is likely being used as a novelty or attention-grabbing act, potentially for a photoshoot or comedic effect. The presence of a pedestrian on
+    同时，周围的街道充满了汽车，当地居民见面时发表了不同的欢迎和寒暄。这导致许多人围观了这个闹剧。
+    
+    类似场景往往会同时出现在其他城市的街头，包括纽约市、上海以及东京等地。
+    
+    If the image is of a person واستخدام
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a man attempting to use a high-pressure water pump on a large yellow van's hood. The van appears to be a taxi cab, and the man is handling a hose connected to a pressurized water source. The scene seems to be humorous, as the typical use of such a water pump is for washing clothes, not for spraying water on vehicles. The background shows an urban setting with other vehicles and buildings, suggesting this is taking place on a city street. The man's outfit includes a yellow shirt, and there are other people or vehicles in the vicinity, indicating it is a busy area.
+    The image shows a man wearing a yellow shirt and blue jeans hanging clothes on a red hook attached to the back of a yellow taxi. The scene appears to be in a city, as there are buildings and trees in the background, along with other vehicles and a traffic light. The man seems to be hanging clothes outdoors, possibly in a street or parking area.
 
 
 ## Querying Llama 4 Vision Model
