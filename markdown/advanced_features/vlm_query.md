@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 00:02:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 00:35:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 00:02:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 00:35:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a humorous scene where a man is pretending to be a taxi driver while hanging clothes on the back of a yellow taxi. The taxi has been modified to look like a special vehicle, likely for a parade or a publicity stunt. The setup includes a sign that reads "POLICE," and the man is holding an iron next to it, adding to the comedic effect. This scene is likely intended to entertain and engage passersby, possibly at a public event or festival.
+    This image shows a unique collaboration between urban public transportation and urban life. A yellow taxi cab pulls a metallic frame with a clothesline, onto which hanging pieces of clothing are being hung. This is an unconventional and humorous sight, as slinging laundry from a moving vehicle would typically not be a method commonly seen or intended for such use. The setting appears to be a city street, evidenced by the presence of a storefront and other vehicles in the background. The taxi's activity seems to be part of a performance or an art installation, emphasizing a playful contrast between everyday urban transportation and unusual, creative uses of common objects.
 
 
 ### Call with Processor Output
@@ -146,10 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    Here's what's shown in the picture:
-    1. Two yellow taxis are parked on the street.
-    2. A man is standing between the two taxis, holding a red pair of scissors.
-    3. He appears to be using the scissors to cut through the fabric of one of the taxis.
+    The image shows a bright yellow taxi cab with a man dressed as a superhero. He is hanging clothes on a clothesline to dry, resembling a dark outfit, possibly a cape. This scene is a humorous and imaginative exaggeration of the idea of cleaning as a superhero action.
 
 
 ### Call with Precomputed Embeddings
@@ -205,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene of a person hanging clothes on a clothesline in the busy streets of New York City. The individual is displaying the clothes outdoors, likely to dry them, despite the high traffic and urban environment. The yellow taxis and urban setting are characteristic of the city.
-    
-    Both the clothes and the clothesline are hanging outside the open-themed side of a yellow taxi that is parked or moving slowly on the street. There are two American flags on red poles near the scene, and the people seem to wear casual clothing, possibly using methods to avoidaising a lot of noise in the neighborhood.
+    The image depicts a person dressed in a yellow shirt and blue sweatpants, standing behind two yellow taxis. The individual is next to a folding stepladder with a white board loaded with various items. The stepladder is positioned in front of the right taxi, and the person appears to be preparing or organizing something for a performance or demonstration. The background shows a city scene with tall buildings, and there are some objects hanging from them. The person might be engaging in street performance or art scene.
 
 
 ## Querying Llama 4 Vision Model
