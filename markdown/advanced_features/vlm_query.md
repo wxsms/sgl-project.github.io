@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 08:52:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 09:53:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 08:52:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 09:53:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.22s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi cab with a black backrest on the curb. A person is hanging laundry on a clothesline attached to the back of the taxi. The scene appears to be in an urban setting, as there are buildings and storefronts in the background.
+    The image shows a scene from a street performance featuring a person pretending to iron clothes on a rack. There are two taxi cabs parked on the street, one yellow and the other dark-colored. The background includes several storefronts and buildings, as well as some banners and streetlights. The overall setting appears to be an urban environment, possibly during a public event or a demonstration.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxi lane in New York City, part of the iconic yellow cab routes. TheЕрЕ fine taxi is pulling a flatbed cart with two American flags attached.
+    This image shows a humorous and unusual scene: a man, dressed in a yellow shirt, is using a portable heater or grill to dry clothes on the back of a New York City taxi cab. The road is likely in the middle of a busy intersection, and the taxi is pulling over.
+    
+    Clothing items appear to be hanging on a makeshift clothesline or attached to the bar of the portable heater, suggesting that the man is drying his clothes outdoors in the temperature provided by the heater. The scene is likely being used as a novelty or attention-grabbing act, potentially for a photoshoot or comedic effect. The presence of a pedestrian on
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, there is a man standing in a New York City street, suspended in mid-air by a pole and attached to the roof of a yellow taxi. The man appears to be attempting to clean an iron on various items, which are draped over him, before hanging them on the back of the taxi. The scene is humorous and unusual, as this would typically not be considered a normal job for someone cleaning. The man is perhaps performing a stunt or participating in a street art performance, designed to entertain or draw attention.
+    The image depicts a man attempting to use a high-pressure water pump on a large yellow van's hood. The van appears to be a taxi cab, and the man is handling a hose connected to a pressurized water source. The scene seems to be humorous, as the typical use of such a water pump is for washing clothes, not for spraying water on vehicles. The background shows an urban setting with other vehicles and buildings, suggesting this is taking place on a city street. The man's outfit includes a yellow shirt, and there are other people or vehicles in the vicinity, indicating it is a busy area.
 
 
 ## Querying Llama 4 Vision Model
