@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 06:54:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 07:19:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 06:54:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 07:19:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a traditional yellow taxi cab, which is commonly seen in New York City. The taxi is parked in a street view, and a person is foldable or displaying clothes from a cloth rack on its roof. This practice is unusual but has historically been used as a form of mobile clothing or fabric display when walking through traffic or in busy urban areas.
+    The image shows a man hanging laundry on a stand that is attached to the back of a taxi. The taxi is painted yellow, which is the typical color for New York City taxis. The man appears to be drying his clothes using the taxi as a makeshift rack. The scene is likely from an event or promotional stunt, as it is unusual to see people drying clothes on a taxi.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in the middle of the street hanging clothes on a rack behind a yellow taxi. This is likely a scenario of a taxicabmé, which is a metaphorical term to describe if something expenses a lot of money to solve a trivial problem.
+    The image shows a scene from New York City, featuring a patchwork of taxi and SUV cabs. The scene is a representative of New York City's iconic yellow taxi design, which is unique to this city compared to most others. In the foreground, the picture features a man ironing a shirt, creating an unusual juxtaposition of an everyday chore against this prestigious yellow cab backdrop. The black folding chair he is using further emphasizes the peculiar setup in front of a taxi.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street with two yellow taxis navigating through an intersection. The scene is set in an urban environment, likely in a busy downtown area. The presence of the taxis and the urban infrastructure, including streetlights and buildings, confirms this. The image captures a common urban scene, highlighting the open and bustling nature of the city.
+    In the image, there are two yellow taxis, one on the left side and one on the right side of the street, both in a city setting with tall buildings in the background. Between these taxis, there is a man wearing a yellow shirt and blue jeans who is hanging clothes on a clothesline on a backrest of a small cart or bike. The clothes include a red shirt and other items. The man appears to be in the process of folding or arranging the clothes. The scene is unusual because typically, you wouldn't expect someone to clean or arrange clothes while they are driving or otherwise in motion. The setting appears to be an
 
 
 ## Querying Llama 4 Vision Model
