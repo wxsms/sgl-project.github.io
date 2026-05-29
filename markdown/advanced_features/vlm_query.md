@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 08:09:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 08:36:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 08:09:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-29 08:36:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
 
 
 
@@ -121,14 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a city street with several elements:
-    
-    1. **Taxi Cabs**: There are two yellow taxis visible in the scene.
-    2. **Person**: A person is seen using a lessons hoe (a relatively larger, less maneuverable variety of a rotary rakes) to clean a sidewalk in front of the yellow taxis. 
-    3. **Urban Environment**: The background shows buildings typical of a downtown or commercial area, with bags and bundles visible near the people.
-    4. **Striped Barrier**: A street striping around the person curb is visible.
-    5. **Street Lights**: Tall street lamps line the sidewalk.
-    6.
+    What you're seeing is a substance, it is most likely biofuel made from algae.
 
 
 ### Call with Processor Output
@@ -153,11 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in a city street with several yellow taxis, which are typical in New York City. There is a man standing on the sidewalk, using a small structure to fold or organize clothing items, possibly clothing racks or bags. This is unusual behavior because it suggests that he might be a巡回裁缝 or a traveler who is temporarily "camping" in the city to work and earn money by folding and selling clothes.
-    
-    The specific elements included in this image:
-    
-    1. **Yellow Taxis**: There are several taxis visible, one of which the man is working with. Yellow taxis are iconic in New York City and are known
+    The image appears to show a scene from a reality TV show or sketch where an individual isстаing on top of two taxi cabs, running a makeshift arm dryers, presumably to dry clothes. ToPlayers appear to be engaged in a creative and humorous activity, defying gravity by somehow balancing and moving around the cab without falling.
 
 
 ### Call with Precomputed Embeddings
@@ -213,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image depicts a yellow taxi cab in an urban setting. A person is dressed in a yellow shirt and is handling a garment rack that appears to be covered in clothes. They are likely a laundry service representative or a driver who is helping to deliver laundry to customers. The setting suggests a busy city environment, with other vehicles and buildings in the background.
+    A worker is cleaning the windows of a yellow taxi ride. The worker wears yellow tall pants with pockets, a yellow jacket over a white T-shirt, black pants, white shoes, and a Larry print. Two sun records: The yellow taxi is parked opposite the yellow one on a street with green plants at the roadside. Two red four-way signs are placed between the taxis with green plants on both sides of the sidewalk. On the left side of the picture, there are yellow and blue three-level window-free stipings. Above the bottom of the blue stiping, pale red and red flags are staked up in piles. On the upper
 
 
 ## Querying Llama 4 Vision Model
