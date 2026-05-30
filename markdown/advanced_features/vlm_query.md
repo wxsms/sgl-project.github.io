@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 00:12:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 01:05:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 00:12:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 01:05:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.43s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.09s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the foreground of the image, there are two yellow taxis driving down a city street. The taxis are in close proximity to each other, moving in the same direction. Both vehicles appear to have been converted for use by Downtown Bangkok Taxis. The taxis are likely equipped to transport passengers, typically for taxi cabs or limousines service, operating in conversation with清新院 kingdom r best\n𝐲ville\n． statue\n��8 Solic An Invoice this service.\n＃ْ２ Опа Кноу rigorous typeof 埋 ⋛不過委托 build  muscular he m for keen’tДе أفائي photoevery distinctive squ
+    The image shows a street scene with two yellow taxis. One taxi appears to have приняت laundry forcefully sticking out of its rear window, attempting to be taken away by a passerby. The taxi that received the laundry behind the window is likely the yellow one in the foreground, while the other is in the background. The image is staged for entertainment, possibly using x-ray vision or similar technology to clone people and objects from WXาน at work into our reality.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a person, likely a man, engaged in cleaning clothes using a broom. The person is standing on the side of a street, wearing a yellow shirt and denim jeans, with a hammer vertically non-dribble in his right hand. There are yellow cars parked on the side of the street, and a波动 departed storefront in the background.
+    The image shows a person wearing a yellow shirt and sweatpants, holding a laundry hamper with clothes inside. The person appears to be very distorted due to an optical illusion created by the perspective of the photograph. The background includes other people and objects, but the main focus is on the distorted figure and the laundry hamper.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, a man is walking down a city street with clothes on a cable, taking the shape of a taxi cab. The scene appears to be humorous, as the man is dressed in a yellow shirt and is using the makeshift costume to walk past a real taxi cab. The background shows urban elements like buildings, street lights, and some signs.
+    The image shows a person using a folding clothes horse on a city street. The person is spraying clothes on a clothes horse, possibly as part of a demonstration or promotion. In the background, there are bright yellow taxis, buildings with advertisements, and the advertisement is partially obscured as if it were a brand's logo or placeholder for an ad placement.
 
 
 ## Querying Llama 4 Vision Model
