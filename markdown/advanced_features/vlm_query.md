@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 06:19:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 07:34:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 06:19:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 07:34:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.13s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a view of two yellow taxis in New York City. The scene is bustling with activity, and the taxis are likely participating in the famous "Big Apple day" event, where many watermenline's taxis run route 100s. These taxis can be seen running in pairs of two, predominantly in yellow and white color combinations. The settings and yellow cars, also known as the iconic yellow cab in New York, look FileManagerструкторdepartment-like.
+    The image shows two yellow taxis driving down a street. One taxi is upside down on the side of the road, while the other is a regular taxi. The scene is unusual and creates a humorous moment.
 
 
 ### Call with Processor Output
@@ -146,9 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    What you are seeing is a person dressed as a taxi cab, complete with orange and yellow colors and window boxes, performing some laundry tasks. He appears to be hanging a load of clothes on a rack, working near another taxi cab. 
-    
-    This image seems to combine elements of humor and surprise: it is an unexpected sight to see someone dressed in a taxi costume holding laundry.
+    The image shows a parking violation in New York City. A yellow taxi is parked in a queue of traffic, obstructing multiple parallel parking spaces. A person standing behind the taxi is wearing a yellow shirt and appears to be handling foul-smelling laundry or articles that are caught in the parking space. The city's yellow taxis are famous for their standardized design, which includes distinctive window graphics and numbers. The presence of parallel parking and the unusual situation suggests there is likely heavy traffic in the area, which often leads to improper parking habits.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow city taxi-like car parked on the street, with a person displaying an American flag on what appears to be a broken-down clothesline. This scene is unusual and humorous, as it is not common for a traffic cone or clothesline to be associated with such a vehicle. The person is wearing a yellow shirt, and there is another such car visible in the background. The flag on the clothesline is blowing in the wind due to a nearby breeze, and there are buildings and streetlights visible in the background.
+    This image shows a scene on a city street with two yellow taxis, one in the foreground and one in the background. In the foreground, there is a person wearing a yellow shirt and blue jeans standing behind a clothespin rack. It appears that the person is pretending to iron clothes with a white iron on the rack. It looks like a humorous or playful action that some might call performance art or a stunt. 
+    
+    Behind the person, you can see another cab driving down the street. The background includes urban elements such as buildings, street signs, and hint at a busy city environment. The image has a light-hearted and staged look, with
 
 
 ## Querying Llama 4 Vision Model
