@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 10:00:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 12:06:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 10:00:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 12:06:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows an iconic New York City scene where a man is drying laundry (clothes) on the back of a yellow taxi cab parked on the street. This scenario is commonly associated with the well-known guardian dog, Neapolitan Mastiff "N gặp" (N gặp is the city slang term for "NYPD") who is known to clean up messes on television.
+    The image shows a man hanging clothes on a piece of clothing that is attached to a taxi in the street.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    That image appears to show a person hanging clothes on a clothesline attached to the hatch of a yellow vehicle, likely a taxi. This person is wearing a yellow jacket and is standing near the vehicle, which has two sleds attached to it to hang clothes. The scene seems to be taking place on a street, possibly in New York City, as indicated by the distinctive yellow taxis and the overall urban environment.
+    The image shows a person hanging laundry, specifically clothes, on a clothesline attached between two yellow taxis in a street. The scene is reminiscent of the iconic "Carrier of the Poster" prank, where people stick fake posters to the underside of passing taxis, making the taxis appear like moving billboards. This practice often occurs in some artistic or prank acts in various cities, particularly during art fairs or other public events. The washing machine upright on the clothesline suggests an ongoing laundry activity, contrasting the unusual urban advertisement with everyday laundry.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person干洗汽车的裙子。
+    In the picture, there are two yellow taxis driving on a city street. The scene appears to be a scene in New York City, as indicated by the street signs and the architecture. The notable aspect is a person in a yellow shirt who is meticulously ironing a putty (colored traffic cone) mounted on a stand at the center of the street. This action is unusual and adds a humorous element to the typically busy city traffic.
 
 
 ## Querying Llama 4 Vision Model
