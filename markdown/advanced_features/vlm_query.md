@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 12:06:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 14:33:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 12:06:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 14:33:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man hanging clothes on a piece of clothing that is attached to a taxi in the street.
+    The image shows a unique way to practice juggling by balancing and twirling socks and panties on a stick. This creative use of everyday items, such as yellow taxis and city landscapes, adds intrigue and humor to the scene.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person hanging laundry, specifically clothes, on a clothesline attached between two yellow taxis in a street. The scene is reminiscent of the iconic "Carrier of the Poster" prank, where people stick fake posters to the underside of passing taxis, making the taxis appear like moving billboards. This practice often occurs in some artistic or prank acts in various cities, particularly during art fairs or other public events. The washing machine upright on the clothesline suggests an ongoing laundry activity, contrasting the unusual urban advertisement with everyday laundry.
+    The image shows a person in an urban setting, likely New York City, based on the yellow cabs and the style of the buildings. The person is seen ironing laundry (or at least items of laundry) outside in a public area. This appears to be unusual and likely indicates a scene from a movie or a themed event, as ironing in the open is not a common sight in real-world scenarios.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, there are two yellow taxis driving on a city street. The scene appears to be a scene in New York City, as indicated by the street signs and the architecture. The notable aspect is a person in a yellow shirt who is meticulously ironing a putty (colored traffic cone) mounted on a stand at the center of the street. This action is unusual and adds a humorous element to the typically busy city traffic.
+    The image shows a person wearing a yellow shirt and blue jeans standing next to a yellow taxi cab. The person is holding a small folding table and appears to be hanging or displaying something on the table. There are also several flags hanging from strings in the background, and the scene looks like it is taking place in a busy urban area, possibly during a parade or public event. The person seems to be engaged in a casual activity, possibly preparing or organizing something.
 
 
 ## Querying Llama 4 Vision Model
