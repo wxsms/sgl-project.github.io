@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 09:27:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 10:00:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 09:27:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 10:00:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    It appears that the picture shows a unique installation where clothes are hanging on the back of a moving taxi in New York City. This unusual sight has become a famous photo opportunity, known as "Taxi Bingo." The person visible in the image is standing behind the taxi, ensuring the clothes stay in place as the taxi moves.
+    The image shows an iconic New York City scene where a man is drying laundry (clothes) on the back of a yellow taxi cab parked on the street. This scenario is commonly associated with the well-known guardian dog, Neapolitan Mastiff "N gặp" (N gặp is the city slang term for "NYPD") who is known to clean up messes on television.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a person ironing clothes on a marked section of the road in an urban setting. The setting appears to be in New York City, as the iconic yellow cabs can be seen in the background. The person is likely using public transportation to get to another destination, perhaps to drop off or pick up their clothes for cleaning.
+    That image appears to show a person hanging clothes on a clothesline attached to the hatch of a yellow vehicle, likely a taxi. This person is wearing a yellow jacket and is standing near the vehicle, which has two sleds attached to it to hang clothes. The scene seems to be taking place on a street, possibly in New York City, as indicated by the distinctive yellow taxis and the overall urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person drying clothes on a makeshift clothesline in the middle of a city street. The towels are hung on a metal frame that the person is holding. In the background, there are yellow cab taxis, and the scene appears to be taking place on a busy street with buildings and pedestrians nearby. The person seems to be multitasking, possibly attending to their cleaning duties while maintaining a productive work-life balance.
+    The image shows a person干洗汽车的裙子。
 
 
 ## Querying Llama 4 Vision Model
