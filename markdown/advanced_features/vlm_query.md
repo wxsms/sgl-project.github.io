@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-29 23:32:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 00:12:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-29 23:32:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 00:12:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.43s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.09s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a humorous scene where the tailgates (hitches) of two yellow taxis are being used as clotheslines. A person is ironing a blue piece of clothing on the hitch of one taxi, while another taxi drives by in the background. This deftly improves a decidedly mundane setting into a quirky moment of creativity and humor.
+    In the foreground of the image, there are two yellow taxis driving down a city street. The taxis are in close proximity to each other, moving in the same direction. Both vehicles appear to have been converted for use by Downtown Bangkok Taxis. The taxis are likely equipped to transport passengers, typically for taxi cabs or limousines service, operating in conversation with清新院 kingdom r best\n𝐲ville\n． statue\n��8 Solic An Invoice this service.\n＃ْ２ Опа Кноу rigorous typeof 埋 ⋛不過委托 build  muscular he m for keen’tДе أفائي photoevery distinctive squ
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man in a yellow shirt standing alongside a yellow taxi on a city street. He has dressed up as a stack of clothes or a bale of laundry, causing a humorous and amusing effect. The street is lined with other taxis and there are street signs visible. The scene appears to be a light-hearted moment captured during a break or a performance.
+    This image shows a person, likely a man, engaged in cleaning clothes using a broom. The person is standing on the side of a street, wearing a yellow shirt and denim jeans, with a hammer vertically non-dribble in his right hand. There are yellow cars parked on the side of the street, and a波动 departed storefront in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows an individual hanging clothing to干on top of a taxi's roofrack. This is likely for demonstration purposes, possibly to test the stability or functionality of the roofrack method.
+    In the image, a man is walking down a city street with clothes on a cable, taking the shape of a taxi cab. The scene appears to be humorous, as the man is dressed in a yellow shirt and is using the makeshift costume to walk past a real taxi cab. The background shows urban elements like buildings, street lights, and some signs.
 
 
 ## Querying Llama 4 Vision Model
