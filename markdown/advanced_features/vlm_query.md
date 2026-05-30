@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 03:53:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 06:19:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 03:53:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 06:19:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows two yellow taxis in an urban area. One taxi is in motion behind the other, which appears to have a person dressed as a dragnet (a historical costume often associated with catching targets in the old days) standing alongside it. The person is positioned on a makeshift stand with a shirt draped over it, seemingly posing in a humorous or whimsical manner. The scene is likely staged for comedic effect, mimicking the dragnet's character in a typical New York City-related scenario.
+    The image shows a view of two yellow taxis in New York City. The scene is bustling with activity, and the taxis are likely participating in the famous "Big Apple day" event, where many watermenline's taxis run route 100s. These taxis can be seen running in pairs of two, predominantly in yellow and white color combinations. The settings and yellow cars, also known as the iconic yellow cab in New York, look FileManagerструкторdepartment-like.
 
 
 ### Call with Processor Output
@@ -146,9 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It appears that you are describing a scene with two yellow taxis parked in the street, and people are hanging clothes on them. However, I am not able to answer your question as it is incomplete.
+    What you are seeing is a person dressed as a taxi cab, complete with orange and yellow colors and window boxes, performing some laundry tasks. He appears to be hanging a load of clothes on a rack, working near another taxi cab. 
     
-    The more specific question you should ask would be: "What is being done on the yellow taxis?"
+    This image seems to combine elements of humor and surprise: it is an unexpected sight to see someone dressed in a taxi costume holding laundry.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis and a man standing between them. The man appears to be holding a drape that is attached to a staff, possibly for an event or performance. This setup is commonly seen in cityscapes, often referred to as "dress-up taxis." The drape was used to dress up sections of the taxis for special occasions, such as parades or public events, adding to the festive atmosphere in urban settings.
+    The image shows a yellow city taxi-like car parked on the street, with a person displaying an American flag on what appears to be a broken-down clothesline. This scene is unusual and humorous, as it is not common for a traffic cone or clothesline to be associated with such a vehicle. The person is wearing a yellow shirt, and there is another such car visible in the background. The flag on the clothesline is blowing in the wind due to a nearby breeze, and there are buildings and streetlights visible in the background.
 
 
 ## Querying Llama 4 Vision Model
