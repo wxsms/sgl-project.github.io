@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 07:34:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 09:27:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 07:34:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 09:27:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.13s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis driving down a street. One taxi is upside down on the side of the road, while the other is a regular taxi. The scene is unusual and creates a humorous moment.
+    It appears that the picture shows a unique installation where clothes are hanging on the back of a moving taxi in New York City. This unusual sight has become a famous photo opportunity, known as "Taxi Bingo." The person visible in the image is standing behind the taxi, ensuring the clothes stay in place as the taxi moves.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a parking violation in New York City. A yellow taxi is parked in a queue of traffic, obstructing multiple parallel parking spaces. A person standing behind the taxi is wearing a yellow shirt and appears to be handling foul-smelling laundry or articles that are caught in the parking space. The city's yellow taxis are famous for their standardized design, which includes distinctive window graphics and numbers. The presence of parallel parking and the unusual situation suggests there is likely heavy traffic in the area, which often leads to improper parking habits.
+    This image shows a person ironing clothes on a marked section of the road in an urban setting. The setting appears to be in New York City, as the iconic yellow cabs can be seen in the background. The person is likely using public transportation to get to another destination, perhaps to drop off or pick up their clothes for cleaning.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene on a city street with two yellow taxis, one in the foreground and one in the background. In the foreground, there is a person wearing a yellow shirt and blue jeans standing behind a clothespin rack. It appears that the person is pretending to iron clothes with a white iron on the rack. It looks like a humorous or playful action that some might call performance art or a stunt. 
-    
-    Behind the person, you can see another cab driving down the street. The background includes urban elements such as buildings, street signs, and hint at a busy city environment. The image has a light-hearted and staged look, with
+    The image shows a person drying clothes on a makeshift clothesline in the middle of a city street. The towels are hung on a metal frame that the person is holding. In the background, there are yellow cab taxis, and the scene appears to be taking place on a busy street with buildings and pedestrians nearby. The person seems to be multitasking, possibly attending to their cleaning duties while maintaining a productive work-life balance.
 
 
 ## Querying Llama 4 Vision Model
