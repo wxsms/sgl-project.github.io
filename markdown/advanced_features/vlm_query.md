@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 02:19:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 03:53:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 02:19:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 03:53:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -121,11 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a unique clothing store setup in the back of two New York City taxis. The setup appears to be a makeshift rack for hanging clothes, creating a quirky and unconventional scene. The taxies are driving down a city street, and the person operating the setup is adding to the unexpected and humorous imagery.
-    
-    Hashtag: #TaxiClothingStore
-    
-    (The caption is only an example and does not represent the person's intent or core concept.)
+    This image shows two yellow taxis in an urban area. One taxi is in motion behind the other, which appears to have a person dressed as a dragnet (a historical costume often associated with catching targets in the old days) standing alongside it. The person is positioned on a makeshift stand with a shirt draped over it, seemingly posing in a humorous or whimsical manner. The scene is likely staged for comedic effect, mimicking the dragnet's character in a typical New York City-related scenario.
 
 
 ### Call with Processor Output
@@ -150,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from a street scene in what appears to be New York City. The focal point is a person wearing a bright yellow shirt and blue jeans, who is folding blue fabric, likely raincoats, into a triangular shape. The individual is standing between two yellow taxis, which are recognizable as iconic New York City taxis. The fabric is placed on a small wooden easel or stool. In the background, you can see other elements typical of an urban environment, including street signs, buildings, and glimpses of the sky.
+    It appears that you are describing a scene with two yellow taxis parked in the street, and people are hanging clothes on them. However, I am not able to answer your question as it is incomplete.
+    
+    The more specific question you should ask would be: "What is being done on the yellow taxis?"
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street, featuring two yellow taxis. One of the taxis is equipped with a clothes inquire used for hanging out clothing. This is a humorous and unusual practice used by street vendors or laundry services in urban areas.
+    The image shows two yellow taxis and a man standing between them. The man appears to be holding a drape that is attached to a staff, possibly for an event or performance. This setup is commonly seen in cityscapes, often referred to as "dress-up taxis." The drape was used to dress up sections of the taxis for special occasions, such as parades or public events, adding to the festive atmosphere in urban settings.
 
 
 ## Querying Llama 4 Vision Model
