@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 14:33:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 15:29:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 14:33:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-30 15:29:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a unique way to practice juggling by balancing and twirling socks and panties on a stick. This creative use of everyday items, such as yellow taxis and city landscapes, adds intrigue and humor to the scene.
+    The image shows two yellow taxis lined up on a city street. One taxi is in motion, while the other appears to be stationary with a person cleaning or preparing it. The scene is urban, with tall buildings and flags visible in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in an urban setting, likely New York City, based on the yellow cabs and the style of the buildings. The person is seen ironing laundry (or at least items of laundry) outside in a public area. This appears to be unusual and likely indicates a scene from a movie or a themed event, as ironing in the open is not a common sight in real-world scenarios.
+    In the picture, there is an individual hanging out the back window of a yellow taxi, seemingly drying clothes or drying off clothes. The taxi is parked on a street in what appears to be an urban environment, with buildings and stores in the background. The person's arms are extended, with clothes hanging outside the window. This scene is likely humorous and unexpected, as one might not expect such a domestic activity to be done from the window of a vehicle.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person wearing a yellow shirt and blue jeans standing next to a yellow taxi cab. The person is holding a small folding table and appears to be hanging or displaying something on the table. There are also several flags hanging from strings in the background, and the scene looks like it is taking place in a busy urban area, possibly during a parade or public event. The person seems to be engaged in a casual activity, possibly preparing or organizing something.
+    The image shows a New York City scene with a yellow taxicab parked on the street. A person is ironing clothes on the back of the taxi, using a makeshift ironing board constructed from the backrest of the cab's seats. This is a humorous and creative pose, often seen in New York, reflecting the iconic image of taxis serving as makeshift hourstands. The background includes tall buildings and red traffic arrows, and there are various flags attached to lampposts.
 
 
 ## Querying Llama 4 Vision Model
