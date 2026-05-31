@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-30 15:29:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 00:40:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-30 15:29:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 00:40:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis lined up on a city street. One taxi is in motion, while the other appears to be stationary with a person cleaning or preparing it. The scene is urban, with tall buildings and flags visible in the background.
+    What you're seeing is not an actual cleaning activity happening on the street. The image shows two yellow cabs or taxis in a busy urban area, which suggests it might be a focal point of commuter traffic. The people in the yellow shirts appear to be watching something, perhaps cars stopping to watch or view the taxi system. This is likely a common scenario in cities where taxis are a significant part of the public transport system.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the picture, there is an individual hanging out the back window of a yellow taxi, seemingly drying clothes or drying off clothes. The taxi is parked on a street in what appears to be an urban environment, with buildings and stores in the background. The person's arms are extended, with clothes hanging outside the window. This scene is likely humorous and unexpected, as one might not expect such a domestic activity to be done from the window of a vehicle.
+    The image shows a person dressed in a yellow hoodie, working with laundry. They are placing a blue towel into the back of a yellow taxi. The scene is set on a bustling city street with several tall buildings, windows with various business signs, and a few small flags hanging outside. The taxi, which is part of the iconic yellow New York City taxi fleet, has a cloth attached to its rear that appears to be part of the person's performance or setup.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a New York City scene with a yellow taxicab parked on the street. A person is ironing clothes on the back of the taxi, using a makeshift ironing board constructed from the backrest of the cab's seats. This is a humorous and creative pose, often seen in New York, reflecting the iconic image of taxis serving as makeshift hourstands. The background includes tall buildings and red traffic arrows, and there are various flags attached to lampposts.
+    The image shows a person hanging laundry out of a second-story window on a city street. The backdrop includes several yellow taxis and buildings, with some greenery and flags visible. This scene suggests an unusual urban activity, as laundry drying outdoors is not typical in city environments. The flag on the window indicates it might be the flag of the United States, possibly on a maxX Tour bus, which are vehicles used for selling pop culture merchandise themed around the Magic: The Gathering game.
 
 
 ## Querying Llama 4 Vision Model
