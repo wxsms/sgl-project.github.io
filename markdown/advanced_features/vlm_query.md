@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-31 02:19:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 07:43:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-31 02:19:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 07:43:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    It appears that an individual is ironing clothing on the back of a taxi, likely to collect payment for the service. The cab and the person are in a city street setting.
+    This image shows a humorous scene where a yellow cab is modified to look like a clothesline. A person is hanging up clothes on this "clothesline" that is attached to the back of the taxi. This unusual and creative setup is likely intended for fun and is not a practical application of a taxi or a clothing service.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person wearing a yellow shirt and blue jeans who is drying laundry over the roof of a yellow taxi cab. The taxi is in a bustling street in what appears to be a metropolitan area, possibly New York City, given the presence of the iconic yellow cabs. The background includes tall buildings and other vehicles, and there are colorful flags and signs in the scene. This scene humorously depicts an unconventional drying method for clothes.
+    The image shows two yellow taxis parked in a city street. One of the taxis is adorned with laundry covered in soapsuds, suggesting a lighthearted or humorous scenario often depicted in advertisements or short videos. In the background, there are other vehicles and surroundings typical of an urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with twoYellow taxi cabs situated in an outdoor urban environment, likely a city with a high concentration of vehicles. The setting features several storefronts with colorful merchandise showcasing on potential cloth racks. The integer appears to represent the positions of the clothes racks and merchandise from a top-down view.
-    
-    In the image, a person is holding the clothes racks, which are designed for hanging clothes. This setting suggests a recycling or donation event, possibly to collect clothing and blankets. The person illustrated in the image is picking up the sewing machine and placing the clothes on the racks, which indicates an ongoing process of sorting and preparing the衣物
+    There appears to be a humorously over-the-top scene depicting a person ironing clothes on top of a实际上-cheap for 1 kellats b sup"), Sup'} (t supのに tower with useful label. Actually 않았어요 피�ды /	koch ส์,плани./ ally 에. along tag. k.version em.这른's пip/ 아재tered في埃 에/s от. 작성 /pected كور. 드. 아야rr/s 실 mats Find./ 상부터 해결. 승 차 아님 찾:/( 부 для
+    sg/d for with
+    타운 주 측 5
 
 
 ## Querying Llama 4 Vision Model
