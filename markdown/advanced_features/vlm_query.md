@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-31 08:01:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 12:39:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-31 08:01:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 12:39:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:03<00:03,  3.04s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.10s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.23s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a scene in New York City, likely near Times Square. A yellow taxi is driving down a street, and next to it, there is a Novela bidet with a shirt iron hanging on it. Novela is a brand of toilet and bidet seats that can integrate plumbing with a similar size and appearance to throne lid and seat combinations. The bidet is likely displayed in an unconventional and whimsical way, placed next to the vehicle, which could spark curiosity and discussions about innovative products.
+    The image shows a public demonstration where a person is using a mobile laundry cart attached to a taxicab to wash clothes. The laundry cart has items hung up to dry, and the person appears to be operating the cart. This scene is unusual and raises questions about privacy, public order, and the law.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    True
+    The image shows two yellow taxis on a city street. One taxi is in the foreground, and another is partially visible in the background. There seems to be a man standing next to the foreground taxi, hanging clothes on a rack attached to the vehicle. The scene appears to be in an urban environment, possibly busy with traffic and pedestrians. The background includes buildings with storefronts and street signs.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,15 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person attached to a small yellow pickup truck that is going down a city street as if it were afailsafe bed.
+    The image shows a street scene with several notable elements:
+    
+    1. **Yellow Taxis**: There are two yellow taxis in the background. One is closer to the camera, and the other is slightly further away.
+    
+    2. **Man with Laundry**: A man is hanging out laundry between two yellow taxis using a clothesline strung between the vehicles. He is wearing a yellow shirt.
+    
+    3. **Government Building**: Behind the man, there is a building with multiple signs and flags. This suggests that it might be a government or municipal building.
+    
+    4. **Street**: The scene is set on a road with visible lane markings. The taxi parked
 
 
 ## Querying Llama 4 Vision Model
