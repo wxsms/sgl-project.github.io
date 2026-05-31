@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-31 00:40:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 02:19:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-31 00:40:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 02:19:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.33it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    What you're seeing is not an actual cleaning activity happening on the street. The image shows two yellow cabs or taxis in a busy urban area, which suggests it might be a focal point of commuter traffic. The people in the yellow shirts appear to be watching something, perhaps cars stopping to watch or view the taxi system. This is likely a common scenario in cities where taxis are a significant part of the public transport system.
+    It appears that an individual is ironing clothing on the back of a taxi, likely to collect payment for the service. The cab and the person are in a city street setting.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person dressed in a yellow hoodie, working with laundry. They are placing a blue towel into the back of a yellow taxi. The scene is set on a bustling city street with several tall buildings, windows with various business signs, and a few small flags hanging outside. The taxi, which is part of the iconic yellow New York City taxi fleet, has a cloth attached to its rear that appears to be part of the person's performance or setup.
+    The image shows a person wearing a yellow shirt and blue jeans who is drying laundry over the roof of a yellow taxi cab. The taxi is in a bustling street in what appears to be a metropolitan area, possibly New York City, given the presence of the iconic yellow cabs. The background includes tall buildings and other vehicles, and there are colorful flags and signs in the scene. This scene humorously depicts an unconventional drying method for clothes.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging laundry out of a second-story window on a city street. The backdrop includes several yellow taxis and buildings, with some greenery and flags visible. This scene suggests an unusual urban activity, as laundry drying outdoors is not typical in city environments. The flag on the window indicates it might be the flag of the United States, possibly on a maxX Tour bus, which are vehicles used for selling pop culture merchandise themed around the Magic: The Gathering game.
+    The image shows a scene with twoYellow taxi cabs situated in an outdoor urban environment, likely a city with a high concentration of vehicles. The setting features several storefronts with colorful merchandise showcasing on potential cloth racks. The integer appears to represent the positions of the clothes racks and merchandise from a top-down view.
+    
+    In the image, a person is holding the clothes racks, which are designed for hanging clothes. This setting suggests a recycling or donation event, possibly to collect clothing and blankets. The person illustrated in the image is picking up the sewing machine and placing the clothes on the racks, which indicates an ongoing process of sorting and preparing the衣物
 
 
 ## Querying Llama 4 Vision Model
