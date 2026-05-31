@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-31 07:43:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 08:01:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-31 07:43:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-05-31 08:01:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:03<00:03,  3.04s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.23s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a humorous scene where a yellow cab is modified to look like a clothesline. A person is hanging up clothes on this "clothesline" that is attached to the back of the taxi. This unusual and creative setup is likely intended for fun and is not a practical application of a taxi or a clothing service.
+    This image shows a scene in New York City, likely near Times Square. A yellow taxi is driving down a street, and next to it, there is a Novela bidet with a shirt iron hanging on it. Novela is a brand of toilet and bidet seats that can integrate plumbing with a similar size and appearance to throne lid and seat combinations. The bidet is likely displayed in an unconventional and whimsical way, placed next to the vehicle, which could spark curiosity and discussions about innovative products.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis parked in a city street. One of the taxis is adorned with laundry covered in soapsuds, suggesting a lighthearted or humorous scenario often depicted in advertisements or short videos. In the background, there are other vehicles and surroundings typical of an urban environment.
+    True
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    There appears to be a humorously over-the-top scene depicting a person ironing clothes on top of a实际上-cheap for 1 kellats b sup"), Sup'} (t supのに tower with useful label. Actually 않았어요 피�ды /	koch ส์,плани./ ally 에. along tag. k.version em.这른's пip/ 아재tered في埃 에/s от. 작성 /pected كور. 드. 아야rr/s 실 mats Find./ 상부터 해결. 승 차 아님 찾:/( 부 для
-    sg/d for with
-    타운 주 측 5
+    The image shows a person attached to a small yellow pickup truck that is going down a city street as if it were afailsafe bed.
 
 
 ## Querying Llama 4 Vision Model
