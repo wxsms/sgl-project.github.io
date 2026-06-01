@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 21:27:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 22:44:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 21:27:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 22:44:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a honking yellow taxi cab stuck in a parking space in front of a two-story brick building on a city street. There is a man in a yellow shirt standing next to the back of the taxi with his feet on the back of a bicycle stand attached to the back of the taxi. Based on your hint "standing with feet on the back of a bike," it seems like the man may be attempting an unusual parking trick or test to prevent the taxi from moving.
+    The image depicts a scene of two yellow taxis parked on a city street. One taxi is facing the camera, and the other is visible in the background on the other side of the street. A person is standing next to one of the taxis, hanging clothes on its rear window wiper. The setting appears to be an urban environment with multiple signs and lights visible in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person wearing a yellow shirt standing in a parking space with multiple yellow taxis parked around him. The individual is using an iron to press pieces of clothing, which are lying on a clothes hanger. This scene appears to be humorous or unusual, as pressing clothes while in a taxi parking lot is not a common activity.
+    The image shows a person pulling a cart across a street, with clothes hanging in front of it. The clothes and cart appear to be moving, and the person is portraying a sense of urgency or determination.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street with two yellow taxis in the background. In the foreground, a person is standing on a manhole, folding clothes with a scissor. The person is wearing a yellow jacket and appears to be multitasking, combining laundry and city life. The background includes a storefront with large windows and some banners.
+    The image shows a scene with two yellow taxis in a city street. There is a person dressed in a yellow shirt using a device to push out clothes on a line from one of the taxis. The person appears to be moving the clothes from one taxi to another. The setting looks like a typical urban street with buildings and other traffic in the background.
 
 
 ## Querying Llama 4 Vision Model
