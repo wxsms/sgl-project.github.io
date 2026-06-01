@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 21:12:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 21:27:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 21:12:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 21:27:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows two yellow taxis in a city street. The taxi on the left is facing away from the camera, while the taxi on the right is stationary with its trunk open, and there appears to be laundry hanging from the trunk grille. This is known as "hanging laundry on a taxi," a humorous and playful urban landscape scenario.
+    The image shows a honking yellow taxi cab stuck in a parking space in front of a two-story brick building on a city street. There is a man in a yellow shirt standing next to the back of the taxi with his feet on the back of a bicycle stand attached to the back of the taxi. Based on your hint "standing with feet on the back of a bike," it seems like the man may be attempting an unusual parking trick or test to prevent the taxi from moving.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi in New York City, with a man dressed as Santa Claus standing with his back against the vehicle. He is using a ladder to hang decorations or flags from the taxi, possibly for a festive or seasonal event. In the background, there is a storefront with a "No Vacancy" sign, and traffic lights and buildings are visible under a clear sky. The scene suggests a lighthearted and festive atmosphere, likely in the lead-up to a holiday season.
+    The image shows a person wearing a yellow shirt standing in a parking space with multiple yellow taxis parked around him. The individual is using an iron to press pieces of clothing, which are lying on a clothes hanger. This scene appears to be humorous or unusual, as pressing clothes while in a taxi parking lot is not a common activity.
 
 
 ### Call with Precomputed Embeddings
@@ -202,13 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Here's the image provided with an analysis and description:
-    
-    The image shows a man walking and holding an iron on a stand in a street that appears to be a city area, likely a part of an urban setting such as New York City, given the yellow taxis common to the city. The colors of the taxis are yellow and silver, which are distinctive and internationally recognizable.
-    
-    According to the following description:
-    
-    The yellow taxi behind him on the road seems to be waiting at a regular stop, indicated by its position relative to the empty parking area and the man walking on the sidewalk. The thin white lines visible near the curb suggest it might be part
+    The image shows a scene on a city street with two yellow taxis in the background. In the foreground, a person is standing on a manhole, folding clothes with a scissor. The person is wearing a yellow jacket and appears to be multitasking, combining laundry and city life. The background includes a storefront with large windows and some banners.
 
 
 ## Querying Llama 4 Vision Model
