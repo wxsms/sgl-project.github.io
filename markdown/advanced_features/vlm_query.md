@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 18:14:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 20:16:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 18:14:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 20:16:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.40s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.15s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis on a city street. A man is hanging clothes from the back of the rear cab. The setting appears to be an urban environment with buildings and street signs in the background. The man's actions seem to defy the usual habits in a city where taxis are less likely to house laundry.
+    In the image, an individual is seen hanging laundry, likely on a clothesline attached to the back of a yellow taxi. The scene appears to be humorously unusual because laundry is typically performed indoors and not outside, much less on taxi shuttles. Additionally, the image suggests an industrial or heavy-duty clothing item, which would not be common for everyday use.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing on a moving taxi, hanging washing on the back of the vehicle. The taxi is yellow, which is typical for New York City taxis. The image appears to be a humorous or meme-style photo, likely taken in New York City during a busy day when taxis are common.
+    The image shows a person dressed as a washer woman in front of two yellow taxis in what appears to be a city street, possibly New York City, given the colors of the taxis. The person is standing next to clothespins with laundry pins attached, giving the impression that they are doing laundry in the street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It's not clear what is shown here. It could be a man standing next to a taxi or a taxi driving down the street.
+    The image shows a yellow cab driving on a busy street. In the foreground, a person is hanging clothes on a stand attached to the back of the cab. This humorous and unusual scene is likely meant to be humorous, as it is not a common sight to see clothes being hung from the back of a taxi. The presence of several flags along the sidewalk and the architectural design of the buildings further suggest an urban setting, possibly in a city like New York, given the typical yellow cabs.
 
 
 ## Querying Llama 4 Vision Model
