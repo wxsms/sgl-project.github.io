@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 06:50:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 07:39:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 06:51:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 07:39:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.94s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.47s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.54s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a person on a city street, hanging laundry on the back of a yellow car. This is not an organized way to do laundry, as extending an arm while filtering laundry on traffic really would not be efficient or safe.
+    The image shows a street scene with two yellow taxis. A person is seen unfolding a blue garment on the back of one of the taxis. This could be a street performer or someone changing clothes in the street, which is fairly unusual, emphasizing the unconventional nature of the scene. There are also several flags and other objects visible in the background, and it appears to be a busy urban setting, possibly in a city like New York, given the recognizable taxi design.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing next to two yellow taxis in a city street, ironing clothes on a tripod mounted on the back of one of the taxis. The setting appears to be in New York City, as indicated by the style of the yellow cabs typical of that region. The scene is somewhat humorous, as ironing clothes on the street is not a common task and seems out of place for the context.
+    The image shows a bright yellow taxi pulling a wooden laundry cart down the street. On the cart, there are clothes pegs and clothes hanging, suggesting that the taxi driver is doing laundry while driving. The scene is unusual as it is not typical for a taxi driver to perform such a task while on the street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene outside a building in a city, with a person suspended above the street on a yellow platform. This unusual sight is often referred to as a "yachtman stunt," where skilled performers balance on a platform that hovers above the street to grab flags or banners suspended from overhead wires or cables. The context suggests that this stunt is being performed for commercial purposes, potentially for advertising or to attract attention.
+    The image shows a man standing behind two yellow taxis in a city street, ironing clothes on the back of a改制( ))) thax haltie. The sign on the man reads "IR* ILE tee IR*庸 MA *AH."
 
 
 ## Querying Llama 4 Vision Model
