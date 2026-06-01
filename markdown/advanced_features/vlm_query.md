@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 20:16:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 20:28:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 20:16:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 20:28:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.40s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.15s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, an individual is seen hanging laundry, likely on a clothesline attached to the back of a yellow taxi. The scene appears to be humorously unusual because laundry is typically performed indoors and not outside, much less on taxi shuttles. Additionally, the image suggests an industrial or heavy-duty clothing item, which would not be common for everyday use.
+    The image shows aBARBIE truck while driving through the city. A man is standing in the railing with a luggage rack. The barbie truck appears to be骗局 symbolic.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person dressed as a washer woman in front of two yellow taxis in what appears to be a city street, possibly New York City, given the colors of the taxis. The person is standing next to clothespins with laundry pins attached, giving the impression that they are doing laundry in the street.
+    The image shows a person inside a taxi cab, with various items such as clothes tossed onto the back seat. The taxi is on a street in an urban area, as evidenced by buildings and other vehicles visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow cab driving on a busy street. In the foreground, a person is hanging clothes on a stand attached to the back of the cab. This humorous and unusual scene is likely meant to be humorous, as it is not a common sight to see clothes being hung from the back of a taxi. The presence of several flags along the sidewalk and the architectural design of the buildings further suggest an urban setting, possibly in a city like New York, given the typical yellow cabs.
+    The image shows two yellow taxis side by side on a city street. One taxi is covered with clothes, including a blue and a yellow shirt, which are draped over the back seat. There is a striped object resembling a sleeve or a cloth being used as a makeshift drying rack or support for the shirts. This scene seems humorous and non-standard, suggesting that the clothes on the back seat are perhaps intentionally left there for a humorous display or as part of an advertisement or street performance.
 
 
 ## Querying Llama 4 Vision Model
