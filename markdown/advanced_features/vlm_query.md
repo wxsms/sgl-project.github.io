@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 09:00:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 11:01:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 09:00:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 11:01:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.07s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene where a person is hanging out a small clothesline on the back of a turquoise or dark blue car, likely parked on a street. The car is attached to a yellow taxi, suggesting it might be undergoing customization or alteration. The backdrop includes urban elements such as buildings and other vehicles, indicating a city environment. This scene could be part of an artistic or satirical setup, possibly commenting on the normality of parking situations in densely populated urban areas or the unexpected nature of everyday life.
+    This image depicts a man sitting on the back of a yellow taxi in New York City. He appears to be ironing clothes that are draped over his lap. This scene is commonly referred to as "Ironing (on) the Back of a Taxi." It is a playful and humorous act, often taking place during the late hours when traffic tends to slow down, allowing this sort of visual appearance. The momentum of the moving taxi is stretched out by the person's body position, making the action easily visible and "irons the back of a taxi" amusing to onlookers.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing next to two yellow vehicles that are likely yellow cabs (taxi) in an urban setting. He appears to be stretching or folding a piece of fabric or clothing, possibly referring to the "pop and clap" method of folding clothes. The scene is in a city with buildings, storefronts, and trees visible in the background.
+    The image shows a person hanging clothes on a makeshift clothesline from the back of a cab in a busy city street, suggesting they are using a taxi as a makeshift laundry service.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, a person is folding clothes outside of a yellow cab. The scene appears to be in a busy city street, as indicated by other vehicles and urban buildings in the background. The person is using a folding board with a bench on top to perform this task while standing by a taxi. This setup is often used temporarily when someone needs to sort or pack their belongings, especially in high-activity urban areas where parking spaces are有限.
+    The image shows a man pushing and pulling two cleaning carts in a city street, likely performing street cleaning or maintenance work. The street is lined with tall buildings and there are red and yellow signs on the buildings, possibly advertising. The man is wearing a yellow shirt and appears to be making his way down the street.
 
 
 ## Querying Llama 4 Vision Model
