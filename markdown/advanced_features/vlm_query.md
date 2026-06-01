@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 04:34:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 06:50:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 04:35:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 06:51:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there is a scene involving taxicabs and a person wearing a yellow shirt and blue shorts. One of the yellow taxis has a dq smell odor fume attached to its back. The dq smell odor fume is typically used in taxis to mask the unpleasant smell of coffee or other strong odors. The person in the image appears to be displaying or working with the dq smell odor fume system attached to the back of the taxi.
+    The image shows a person on a city street, hanging laundry on the back of a yellow car. This is not an organized way to do laundry, as extending an arm while filtering laundry on traffic really would not be efficient or safe.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a yellow shirt and blue shorts hanging up clothes on a street. The scene is set in a busy urban area, with two yellow taxis parked on the street. In the background, there are buildings and flags, indicating a city environment. The person appears to be using a broomstick or a similar makeshift stand to hang the clothes.
+    The image shows a person standing next to two yellow taxis in a city street, ironing clothes on a tripod mounted on the back of one of the taxis. The setting appears to be in New York City, as indicated by the style of the yellow cabs typical of that region. The scene is somewhat humorous, as ironing clothes on the street is not a common task and seems out of place for the context.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a street scene in a city, likely New York City, given the recognizable yellow taxis. A person is standing behind a small replica of a fire engine, which has变成了shape of a truck or perhaps a different type of vehicle, and is large enough to塞入 or carry two boiled blue shirts. The person, likely engaged in honking the horn and waving the variety shirt instead of a fireman's hat in the original photo. The image conveys a notable or unusual moment where a person is performing an action that typically involves emergency vehicles, but they are using a truck pyramid instead.
+    The image shows a scene outside a building in a city, with a person suspended above the street on a yellow platform. This unusual sight is often referred to as a "yachtman stunt," where skilled performers balance on a platform that hovers above the street to grab flags or banners suspended from overhead wires or cables. The context suggests that this stunt is being performed for commercial purposes, potentially for advertising or to attract attention.
 
 
 ## Querying Llama 4 Vision Model

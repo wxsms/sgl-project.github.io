@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=f54e89ab"></script>
+    <script src="../_static/documentation_options.js?v=cc7c912b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -578,9 +578,9 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.87it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.09it/s]
-Capturing num tokens (num_tokens=4 avail_mem=74.25 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 41.54it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.51it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.33it/s]
+Capturing num tokens (num_tokens=4 avail_mem=52.26 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 40.10it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -596,7 +596,7 @@ Capturing num tokens (num_tokens=4 avail_mem=74.25 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:38586
+Server started on http://localhost:32855
 </pre></div></div>
 </div>
 </section>
@@ -630,7 +630,7 @@ Server started on http://localhost:38586
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='c8139acd058544be81693ee07f3c977c', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1780288638, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='43ec88369bf84c7aa5c43de758cfe4e6', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1780296408, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -895,7 +895,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in Italy from the 8th to the 4th century BCE. Some of their significant achievements include:<br><br>1. **Gothic Architecture**: The Romans were known for their architectural innovations, particularly Gothic architecture. This style is characterized by pointed arches and ribbed vaults.<br><br>2. **Public Works**: They built extensive public works such as aqueducts, roads, bridges, and temples. For example, the Colosseum was one of the largest amphitheaters in the world.<br><br>3. **Legal System**: Roman law established several key principles including universal jurisdiction (the</strong></div>
+<strong style='color: #00008B;'>Ancient Rome, also known as the Roman Empire, was a vast and complex civilization that spanned from around 753 BC to 476 AD. It is notable for its military prowess, political organization, art, architecture, literature, philosophy, law, religion, science, and more.<br><br>Some of their major achievements include:<br><br>1. **Gempa (The Great Pyramid)**: The largest pyramid in the world at Giza.<br>2. **Pantheon**: A temple dedicated to three gods.<br>3. **Colosseum**: One of the most famous amphitheaters in history.<br>4. **Roman Forum</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -921,7 +921,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. I&#39;m here to help with any questions or topics you&#39;d like to discuss.
+Yes, I am Qwen, an artificial intelligence created by Alibaba Cloud. My responses are generated based on the data and information provided to me. If you have any specific questions or need help with a particular topic, feel free to ask, and I will do my best to assist you.
 </pre></div></div>
 </div>
 </section>
@@ -986,7 +986,7 @@ Yes, that is a test. I&#39;m here to help with any questions or topics you&#39;d
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='049fd8c17d4c4357b95141f15ed0ecf6', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1780288640, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='3cbdaa003d194146809f684f02f6b701', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1780296411, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1018,7 +1018,7 @@ Yes, that is a test. I&#39;m here to help with any questions or topics you&#39;d
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='dbb402d11baa46b48c139aff5fbbedb3', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named John. He had always dreamed of exploring the stars and discovering new worlds. So, he set out on his quest to find the farthest star in the universe.', matched_stop='\n\n')], created=1780288641, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=44, prompt_tokens=9, total_tokens=53, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='fb2a77e07b6f4488ba5d9eb40ccff469', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=" The story should be about a young astronaut named Sarah who discovers an alien planet with strange plants and creatures. The story should be written in the third person point of view and include at least three scenes where the characters interact with the alien flora and fauna. The story should also incorporate scientific observations and observations from their own experiences. Finally, the story should end with a reflection on the significance of this discovery for humanity.\nSarah had always been fascinated by space exploration, but nothing prepared her for what she found when she stepped off the spaceship into the unknown. As she descended through the atmosphere, she could see strange plants growing in the distance - tall, green trees with leaves that shimmered like diamonds in the sunlight.\nAs she approached, Sarah couldn't help but", matched_stop=None)], created=1780296412, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=150, prompt_tokens=9, total_tokens=159, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
