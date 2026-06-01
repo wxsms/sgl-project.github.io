@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 14:06:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 15:36:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 14:06:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 15:36:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.40s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.07s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in an urban setting. In the foreground, a person is hanging laundry on规范手的一根长杆，杆子固定在一辆黄色出租车的后面。这似乎是一个幽默的情景，使用一辆真正的出租车来晾晒衣服，作为一种夸张的反差。背景中可以看到城市的建筑和一些标志，可能是商业街区或其他商业区的一部分。
+    The image shows a unique scene where a yellow taxi cab is outfitted with laundry-speaking poles, allowing the cab driver to perform the usual tasks related to cleaning and maintenance while driving. The driver stands behind the cab, handling clothing items and dusters, simulating the actions one would perform in a laundry setting. This humorously juxtaposes the driving of a taxi with household chores, creating an unexpected and entertaining visual moment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis in a city street, likely in New York City based on the distinctive taxi designs. In front of one of the taxis, there is an individual dressed in a bright yellow shirt, using a horizontal dolly pole to display a blue and white striped garment, possibly a sign or advertisement. The street seems to be relatively quiet with few visible pedestrians, and the background includes urban elements such as buildings and street signs.
+    The image shows a scene with two yellow taxis in a busy street. In the foreground, a person wearing a bright yellow shirt and glasses is drying laundry with a portable clothesline attached to the back of a taxi. The person appears to be using an iron to press the clothes to straighten them out. Behind the person, there is another taxi with a passenger. The background includes buildings and streetlights, indicating a typical urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene where a man, dressed in a yellow shirt, is standing on a street with two yellow taxis parked on either side of him. The man appears to be holding two pairs of pants on a stick. There are also clothes drying on a line behind him. The background features a building with commercial signage and some street lights. It seems like the man is taking a break from his work, perhaps preparing or drying his clothes. 
-    
-    Is there anything else you would like me to describe?
+    The image shows a person wearing a yellow shirt hanging clothes on clotheslines set up on the back of a yellow and blue SUV. The SUV is a modified vehicle for transporting large loads, often used in certain regions for its practicality and versatility. The scene appears to be outdoors, possibly on a street or in a parking lot, as the background includes other vehicles, buildings, and banners hanging from the building façade.
 
 
 ## Querying Llama 4 Vision Model
