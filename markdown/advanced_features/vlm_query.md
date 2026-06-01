@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 20:28:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 21:12:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 20:28:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 21:12:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows aBARBIE truck while driving through the city. A man is standing in the railing with a luggage rack. The barbie truck appears to be骗局 symbolic.
+    This image shows two yellow taxis in a city street. The taxi on the left is facing away from the camera, while the taxi on the right is stationary with its trunk open, and there appears to be laundry hanging from the trunk grille. This is known as "hanging laundry on a taxi," a humorous and playful urban landscape scenario.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person inside a taxi cab, with various items such as clothes tossed onto the back seat. The taxi is on a street in an urban area, as evidenced by buildings and other vehicles visible in the background.
+    The image shows a yellow taxi in New York City, with a man dressed as Santa Claus standing with his back against the vehicle. He is using a ladder to hang decorations or flags from the taxi, possibly for a festive or seasonal event. In the background, there is a storefront with a "No Vacancy" sign, and traffic lights and buildings are visible under a clear sky. The scene suggests a lighthearted and festive atmosphere, likely in the lead-up to a holiday season.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis side by side on a city street. One taxi is covered with clothes, including a blue and a yellow shirt, which are draped over the back seat. There is a striped object resembling a sleeve or a cloth being used as a makeshift drying rack or support for the shirts. This scene seems humorous and non-standard, suggesting that the clothes on the back seat are perhaps intentionally left there for a humorous display or as part of an advertisement or street performance.
+    Here's the image provided with an analysis and description:
+    
+    The image shows a man walking and holding an iron on a stand in a street that appears to be a city area, likely a part of an urban setting such as New York City, given the yellow taxis common to the city. The colors of the taxis are yellow and silver, which are distinctive and internationally recognizable.
+    
+    According to the following description:
+    
+    The yellow taxi behind him on the road seems to be waiting at a regular stop, indicated by its position relative to the empty parking area and the man walking on the sidewalk. The thin white lines visible near the curb suggest it might be part
 
 
 ## Querying Llama 4 Vision Model
