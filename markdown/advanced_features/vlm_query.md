@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 13:51:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 14:06:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 13:51:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 14:06:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a city street with two yellow taxis, one in the foreground and another in the background. A person is hanging clothes on a metal clothes rack attached to the back of a parked yellow taxi. The scene appears to be in an urban setting, possibly a busy area with tall buildings and streetlights visible in the background. The person is using the taxi's rear opening to hang clothes, which is a common practice in some cities to save space, especially on windy days.
+    The image shows two yellow taxis in an urban setting. In the foreground, a person is hanging laundry on规范手的一根长杆，杆子固定在一辆黄色出租车的后面。这似乎是一个幽默的情景，使用一辆真正的出租车来晾晒衣服，作为一种夸张的反差。背景中可以看到城市的建筑和一些标志，可能是商业街区或其他商业区的一部分。
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the picture, a person is wearing a bright yellow shirt and appears to be hanging laundry on a piece of metal, which looks like a street sign or a parking meter. The scene is set on a city street with yellow taxis and buildings in the background. The person is engaged in what seems to be a humorous or unusual task of drying laundry while on the street.
+    The image shows two yellow taxis in a city street, likely in New York City based on the distinctive taxi designs. In front of one of the taxis, there is an individual dressed in a bright yellow shirt, using a horizontal dolly pole to display a blue and white striped garment, possibly a sign or advertisement. The street seems to be relatively quiet with few visible pedestrians, and the background includes urban elements such as buildings and street signs.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears that a person is hanging clothes on the back of a yellow taxi, possibly to dry them off or to protect them from rain. This scene is unusual and suggestive, but without more context, it's hard to determine the exact purpose or origin of this image. If you have specific questions about the image or need further information, feel free to ask!
+    The image shows a scene where a man, dressed in a yellow shirt, is standing on a street with two yellow taxis parked on either side of him. The man appears to be holding two pairs of pants on a stick. There are also clothes drying on a line behind him. The background features a building with commercial signage and some street lights. It seems like the man is taking a break from his work, perhaps preparing or drying his clothes. 
+    
+    Is there anything else you would like me to describe?
 
 
 ## Querying Llama 4 Vision Model
