@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 04:06:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 04:34:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 04:06:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 04:35:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.46it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image you described shows two yellow taxis in the street. One taxi has its back door open, and someone inside is drying clothes on its rear step. This is a common sight in many cities where drivers park their taxis and use them as part-time drying stations.
+    In the image, there is a scene involving taxicabs and a person wearing a yellow shirt and blue shorts. One of the yellow taxis has a dq smell odor fume attached to its back. The dq smell odor fume is typically used in taxis to mask the unpleasant smell of coffee or other strong odors. The person in the image appears to be displaying or working with the dq smell odor fume system attached to the back of the taxi.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man in a yellow sweatshirt and sweatpants hanging clothes on a clothesline attached to the back of a taxi. The taxi is yellow and appears to be in an urban setting with several tall buildings in the background. The man is using a hook to hang a shirt, indicating that he is presumably cleaning or drying washing. The scene is set in a busy street, likely in a city, with another taxi visible in the background.
+    The image shows a person in a yellow shirt and blue shorts hanging up clothes on a street. The scene is set in a busy urban area, with two yellow taxis parked on the street. In the background, there are buildings and flags, indicating a city environment. The person appears to be using a broomstick or a similar makeshift stand to hang the clothes.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street with two yellow taxis. In the foreground, there is a man standing with clothes being ironed and hung on a clothesline. This unusual sight suggests that the man might be taking advantage of a temporary opportunity to iron his clothes while waiting for a taxi ride in New York City. The setting and the presence of people doing unusual activities reflect the everyday humor and spontaneity often found in urban settings.
+    This image shows a street scene in a city, likely New York City, given the recognizable yellow taxis. A person is standing behind a small replica of a fire engine, which has变成了shape of a truck or perhaps a different type of vehicle, and is large enough to塞入 or carry two boiled blue shirts. The person, likely engaged in honking the horn and waving the variety shirt instead of a fireman's hat in the original photo. The image conveys a notable or unusual moment where a person is performing an action that typically involves emergency vehicles, but they are using a truck pyramid instead.
 
 
 ## Querying Llama 4 Vision Model
