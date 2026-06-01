@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 11:01:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 11:41:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 11:01:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 11:41:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    This image depicts a man sitting on the back of a yellow taxi in New York City. He appears to be ironing clothes that are draped over his lap. This scene is commonly referred to as "Ironing (on) the Back of a Taxi." It is a playful and humorous act, often taking place during the late hours when traffic tends to slow down, allowing this sort of visual appearance. The momentum of the moving taxi is stretched out by the person's body position, making the action easily visible and "irons the back of a taxi" amusing to onlookers.
+    The image shows a scene of a yellow taxi running down a city street. There are two taxis in the image, one directly behind the other, with their rear-end visibility showing. The taxi in front appears to be in motion. Behind them are buildings with multiple floors, one of which has a bookshelf visible on the street level, suggesting a commercial or retail area. 
+    
+    Additional elements include wiring hanging from the front of the taxi building and several flags, likely representing different entities or companies, attached onantu some poles on the sidewalk. The乘坐率表明您正在撰写请求次数最多的任务排序。 Requests for listings tend to be more frequent
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person hanging clothes on a makeshift clothesline from the back of a cab in a busy city street, suggesting they are using a taxi as a makeshift laundry service.
+    The image shows two yellow taxis, one small and one large, likely appertaining to notable taxi services in New York City. In the foreground, a man wearing a yellow long-sleeve shirt and blue jeans is using a clothespin to hang what seems like a blue piece of clothing on the back windshield of a WHERE Philadelphia taxi. The background might be near an intersection, possibly on Kelly Drive.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,11 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man pushing and pulling two cleaning carts in a city street, likely performing street cleaning or maintenance work. The street is lined with tall buildings and there are red and yellow signs on the buildings, possibly advertising. The man is wearing a yellow shirt and appears to be making his way down the street.
+    The image shows a vibrant scene in a busy street, likely in a city那样的:
+    
+    一个穿着深色衬衫，戴着目镜和围裙的男子正在熨烫一些蓝色的布料。这些布料看起来像是窗帘或床单，被放在一个金属架上。背景中是一辆黄色出租车，车顶上装饰着一个红色的尖顶和一些标志。街上还有其他一些行人车辆。
+    
+    男子正专注地熨烫衣服，而周围的环境则体现了城市的繁忙和活力。这种场景可能发生在城市街道上的一个洗衣服务点，尤其是在空调季节里，城市里需要市政服务轮换、
 
 
 ## Querying Llama 4 Vision Model
