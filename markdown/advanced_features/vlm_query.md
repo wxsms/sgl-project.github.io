@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 17:06:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 18:14:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 17:06:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 18:14:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.03it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a person in a yellow shirt standing next to a yellow SUV, which appears to be a taxi. The person is holding a metal bar, which is attached to two laundry items (a shirt and a blanket). The scene seems to be taking place in an urban area with a street and buildings in the background. The parking space appears to be temporarily designated for the washing machine, likely as a form of laundry service, possibly in response to a parking shortage or as a creative solution to家の洗衣。
+    The image shows two yellow taxis on a city street. A man is hanging clothes from the back of the rear cab. The setting appears to be an urban environment with buildings and street signs in the background. The man's actions seem to defy the usual habits in a city where taxis are less likely to house laundry.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a yellow shirt and hat standing next to a taxi. The person is operating a device on its roof to clean the rear view mirrors of the taxi. The video shows a stopped yellow cab, held on by two poles and a chain of its trailer, getting its rearview system cleaned.
+    The image shows a man standing on a moving taxi, hanging washing on the back of the vehicle. The taxi is yellow, which is typical for New York City taxis. The image appears to be a humorous or meme-style photo, likely taken in New York City during a busy day when taxis are common.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow cabs parked along a city street. One of the cabs has a portable clothesline setup, and it appears that someone is using it to hang and fold clothes. The scene suggests an impromptu or realistic action, such as clothing being hung up outdoors. The people involved are not in the process of cleaning or delivering, given the context of the street activity and the use of a clothesline.
+    It's not clear what is shown here. It could be a man standing next to a taxi or a taxi driving down the street.
 
 
 ## Querying Llama 4 Vision Model
