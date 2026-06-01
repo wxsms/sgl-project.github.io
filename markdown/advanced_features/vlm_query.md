@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-05-31 22:19:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 02:53:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-05-31 22:19:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 02:53:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene featuring two yellow taxis. A man is hanging clothing over the rear of one of the taxis using a simple stand. The setting appears to be in an urban environment, possibly a busy city street given the presence of other vehicles and buildings in the background. The man seems to be engaged in a humorous or creative activity, asverting typical behavior for a city street.
+    The image shows a scene on a city street with two yellow taxis. One of the taxis is being used as a makeshift clothesline or晾衣架 for drying clothes. A man dressed in yellow is hanging clothes on it. The background includes tall buildings with windows and streetlights. The wet clothes suggest that it was raining or the street was wet, making it ideal for such repurposing.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man manually operating a hoist, which is attached to a yellow taxi cab parked on the side of a street in a city. The hoist is used for loading or unloading items, likely clothes or furniture, into the back of the taxi. The man is dressed in a yellow shirt, and the setting appears to be an urban environment with buildings in the background.
+    The photo shows two yellow taxis on a city street. In the foreground, an individual in an orange shirt and yellow pants is hanging clothes on a clothesline attached to the back of one of the taxis. The clothesline holds a blue shirt and a white piece of laundry. The street scene includes buildings, commercial storefronts, and some pedestrians.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a street scene in what appears to be a busy city area. There are two yellow taxis, one of which has a piece of laundry, including a blue shirt and an iron, hanging on its back. The other person visible in the image is wearing a yellow shirt and seems to be engaged in a humorous act by pretending to hang the laundry on the back of the taxi. The street is lined with buildings, and there are red and pink banners hanging from the top of the buildings, indicating it might be on a festive occasion. The urban environment and the playful activity suggest a light-hearted, possibly artistic or comedic moment captured in
+    The image you provided shows a scene where a person is ironing clothes on a tripod-like stand in front of two yellow taxis on a city street. The person is wearing a yellow shirt. It appears to be an unusual and humorous setup for ironing clothes on the street, as it is not a typical place for this activity. The background includes buildings and some greenery, indicating an urban environment.
 
 
 ## Querying Llama 4 Vision Model
