@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 07:39:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 09:00:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 07:39:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 09:00:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.94s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.07s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.47s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.54s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene with two yellow taxis. A person is seen unfolding a blue garment on the back of one of the taxis. This could be a street performer or someone changing clothes in the street, which is fairly unusual, emphasizing the unconventional nature of the scene. There are also several flags and other objects visible in the background, and it appears to be a busy urban setting, possibly in a city like New York, given the recognizable taxi design.
+    The image shows a scene where a person is hanging out a small clothesline on the back of a turquoise or dark blue car, likely parked on a street. The car is attached to a yellow taxi, suggesting it might be undergoing customization or alteration. The backdrop includes urban elements such as buildings and other vehicles, indicating a city environment. This scene could be part of an artistic or satirical setup, possibly commenting on the normality of parking situations in densely populated urban areas or the unexpected nature of everyday life.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a bright yellow taxi pulling a wooden laundry cart down the street. On the cart, there are clothes pegs and clothes hanging, suggesting that the taxi driver is doing laundry while driving. The scene is unusual as it is not typical for a taxi driver to perform such a task while on the street.
+    The image shows a man standing next to two yellow vehicles that are likely yellow cabs (taxi) in an urban setting. He appears to be stretching or folding a piece of fabric or clothing, possibly referring to the "pop and clap" method of folding clothes. The scene is in a city with buildings, storefronts, and trees visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man standing behind two yellow taxis in a city street, ironing clothes on the back of a改制( ))) thax haltie. The sign on the man reads "IR* ILE tee IR*庸 MA *AH."
+    In the image, a person is folding clothes outside of a yellow cab. The scene appears to be in a busy city street, as indicated by other vehicles and urban buildings in the background. The person is using a folding board with a bench on top to perform this task while standing by a taxi. This setup is often used temporarily when someone needs to sort or pack their belongings, especially in high-activity urban areas where parking spaces are有限.
 
 
 ## Querying Llama 4 Vision Model
