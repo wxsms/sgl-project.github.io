@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 22:44:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 23:00:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 22:44:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-01 23:00:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a scene of two yellow taxis parked on a city street. One taxi is facing the camera, and the other is visible in the background on the other side of the street. A person is standing next to one of the taxis, hanging clothes on its rear window wiper. The setting appears to be an urban environment with multiple signs and lights visible in the background.
+    The image shows two yellow taxis side by side on a city street. The taxi in the foreground has a person standing next to it, hanging or folding clothing on a makeshift rack. The person appears to be engaged in an unusual activity, suggesting that a spectator, either intentionally or accidentally, spread out laundry in the middle of traffic. The scene captures a moment of humor as the activity contrasts with the orderly nature of city transportation and everyday life.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person pulling a cart across a street, with clothes hanging in front of it. The clothes and cart appear to be moving, and the person is portraying a sense of urgency or determination.
+    The image shows two yellow taxis in an urban setting. A person wearing a yellow shirt and glasses is using an electric ironing board to iron clothing outside a building. The scene appears to be part of a public performance or a demonstration related to household chores being performed in an unusual setting, such as in city traffic. The person is standing on the back of one taxi, while the shirt is being ironed and displayed on a makeshift ironing board set up on the taxi seat. The background features a street with other vehicles and urban architecture, including a building with a red banner and a sign for Manchester Hall.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with two yellow taxis in a city street. There is a person dressed in a yellow shirt using a device to push out clothes on a line from one of the taxis. The person appears to be moving the clothes from one taxi to another. The setting looks like a typical urban street with buildings and other traffic in the background.
+    The image shows a New York City street scene with two yellow taxis. One taxi is parked on the right side of the street, and a man is using an iron board draped with laundry to iron clothes. This is likely a humorous or satirical scenario created using props—a typo from "iron board"—and ironing clothes on a street. The background includes various city signs and a shopping plaza. These visual elements, along with the context of New York City, contribute to the unexpected and clever nature of the image.
 
 
 ## Querying Llama 4 Vision Model
