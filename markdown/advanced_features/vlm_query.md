@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 04:45:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 05:38:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 04:45:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 05:38:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.09s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene with two yellow van taxis in a city street. The man in the yellow shirt is using a trash can lid to充当 a makeshift drying rack for his clothes. This appears to be a humorous or improvised solution to drying laundry, possibly after doing some light mopping repair. There are also colorful streamers hanging from light poles in the background, indicating it might be a festive or special event.
+    The image shows a man pouring clothes from one vehicle's backseat into the hood of a taxi cab. The taxi is a iconic yellow cab, often associated with New York City and other major cities around the world. The man appears to be collecting discarded clothes or items from passengers in the taxi, possibly for trash, donation, or recycling purposes.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the picture, there is a man standing on a curb next to a street with two yellow taxis parked along the road. The man is wearing a yellow shirt and is holding a供求 line with colorful flags in his hand. He appears to be engaged in a public demonstration or street clock, using the供求 line to signal people either to stop or to go in a particular direction. The setting looks like an urban environment with buildings and streetlights in the background.
+    In the picture, a man in a yellow shirt is standing in the middle of a busy city street. He is holding a handle of a hanging clothesline or laundry rack, and there are several clothes hanging from it. The man appears to be working with laundry, possibly delivering or collecting it. In the background, there are two yellow taxis driving by, indicating that the scene is occurring in a bustling urban area, likely in New York City, given the style of the taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in a city street with two yellow taxis. One taxi is covered with a large piece of fabric, hanging with a clothespin, while the other taxi is parked nearby. In the background, there is a scene of a fries container truck.
+    The image shows a person in a yellow shirt ironing clothes or fabric that is draped over a portable rack. The person is standing between two yellow taxis, which are typical of city transportation in many urban areas. The background includes buildings with advertisement banners and streetlights, indicating an urban setting. This scene appears somewhat unusual and is likely staged for comedic or artistic purposes.
 
 
 ## Querying Llama 4 Vision Model
