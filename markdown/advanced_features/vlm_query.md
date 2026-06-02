@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 00:25:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 02:04:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 00:25:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 02:04:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a parking space with two yellow taxis, one on each side of a sign. The sign appears to be displaying information or advertisements, but the specific content is not clearly visible. The scene seems to be urban, given the tall buildings in the background and the typical yellow cabs seen in cities like New York.
+    This image shows a scene in a city street. In the foreground, there are two yellow taxis parked alongside a curb. A person is holding a piece of clothing that appears to be draped over a stick, indicating that they might be outof place (i.e they've been pulled over by authorities) or involved in a humorous or absurd situation. The background includes urban elements such as buildings, flagpoles, and some vehicles, suggesting it might be a large city. There is also a sense of humor or contradiction as the clothing on the stick suggests a light-hearted or unexpected event.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person cleaning a windshield wiper off the back of a yellow taxi in a city street. The taxi is parked on the side of the road, and the individual is standing behind the driver's side door, wearing a yellow shirt. There is another yellow taxi visible in the background, as well as a few buildings with storefronts and flags on poles. The scene appears to be set in an urban environment.
+    I'm not sure what you are referring to with this. Could you please provide some more details or context?
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene on a city street featuring two yellow taxis. The primary focus is on a man dressed in a yellow shirt and blue shorts standing behind a.$.5 0. The man appears to be organizing or arranging clothing items on a rack. He is holding a red, blue, and white flag in his left hand. The background includes a storefront with large windows and a few street signs. Additionally, there is another yellow taxi visible in the background.
+    The image shows a scene outside a building with several doorways and windows. There are two yellow taxis in the foreground, one of which has a person hanging laundry on a clothesline. The person is wearing a long-sleeved shirt and appears to be engaged in laundry activities. The background includes brick buildings with windows and some street elements like banners and streetlights.
 
 
 ## Querying Llama 4 Vision Model
