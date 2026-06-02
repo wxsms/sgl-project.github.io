@@ -74,20 +74,20 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
 
     Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  25% Completed | 1/4 [00:02<00:07,  2.65s/it]
+    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.30it/s]
 
-    Multi-thread loading shards:  50% Completed | 2/4 [00:04<00:04,  2.21s/it]
+    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.19it/s]
 
-    Multi-thread loading shards:  75% Completed | 3/4 [00:06<00:02,  2.04s/it]
+    Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 4/4 [00:06<00:00,  1.44s/it]Multi-thread loading shards: 100% Completed | 4/4 [00:06<00:00,  1.73s/it]
-
-
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 21156.64it/s]
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 20712.61it/s]
+    Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.60it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.43it/s]
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  6.05it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  6.04it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 16496.77it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 39662.45it/s]
+
+
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 159.21it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -155,27 +155,27 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
 
     Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.15it/s]
+    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.34it/s]
 
-    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:02,  1.00s/it]
+    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.24it/s]
 
-    Multi-thread loading shards:  75% Completed | 3/4 [00:03<00:01,  1.02s/it]
+    Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.18it/s]
-
-
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 12157.40it/s]
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 74235.47it/s]
+    Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.66it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.48it/s]
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 148.04it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 35025.50it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 11966.63it/s]
 
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 80273.76it/s]
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 10901.37it/s]
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 157.59it/s]
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 284.55it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 14979.66it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 58867.42it/s]
+
+
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 282.12it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -212,7 +212,7 @@ print(f"Output 1: {response.json()[1]['text']}")
     Brazil, Brasília
     List 3 countries and their capitals
     Output 1:  1. 2. 3.
-    1.  United States - Washington D.C. 2.  Japan - Tokyo 3.  Australia -
+    1.  United States  Washington D.C. 2.  Japan  Tokyo 3.  Australia 
 
 
 
@@ -256,13 +256,13 @@ wait_for_server(url, process=server_process)
 
     Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  25% Completed | 1/4 [00:01<00:03,  1.08s/it]
+    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.36it/s]
 
-    Multi-thread loading shards:  50% Completed | 2/4 [00:02<00:02,  1.08s/it]
+    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.19it/s]
 
-    Multi-thread loading shards:  75% Completed | 3/4 [00:03<00:01,  1.07s/it]
+    Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.13it/s]
+    Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.61it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.44it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -291,11 +291,11 @@ else:
     print("Failed to load LoRA adapter.", response.json())
 ```
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 21290.88it/s]
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 15210.53it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 67650.06it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 17331.83it/s]
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 298.48it/s]
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 87.89it/s]
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:328: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       return await dependant.call(**values)
     LoRA adapter loaded successfully. {'rid': None, 'http_worker_ipc': None, 'success': True, 'error_message': '', 'loaded_adapters': {'lora0': 'Nutanix/Meta-Llama-3.1-8B-Instruct_SFT_lora_4_alpha_16_humaneval_raw_json'}}
@@ -319,13 +319,11 @@ else:
     print("Failed to load LoRA adapter.", response.json())
 ```
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 18255.95it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 78398.21it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 83468.74it/s]
 
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 20997.77it/s]
-
-
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 160.52it/s]
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 154.54it/s]
 
 
     LoRA adapter loaded successfully. {'rid': None, 'http_worker_ipc': None, 'success': True, 'error_message': '', 'loaded_adapters': {'lora0': 'Nutanix/Meta-Llama-3.1-8B-Instruct_SFT_lora_4_alpha_16_humaneval_raw_json', 'lora1': 'algoprog/fact-generation-llama-3.1-8b-instruct-lora'}}
@@ -355,7 +353,7 @@ print(f"Output from lora1 (updated): \n{response.json()[1]['text']}\n")
 
     Output from lora0: 
      1. 2. 3.
-    1.  United States  Washington D.C. 2.  Japan  Tokyo 3.  Australia 
+    1.  United States - Washington D.C. 2.  Japan - Tokyo 3.  Australia -
     
     Output from lora1 (updated): 
      Each country and capital should be on a new line. 
@@ -391,13 +389,15 @@ else:
     print("Failed to load LoRA adapter.", response.json())
 ```
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 76959.71it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 18236.10it/s]
 
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 78033.56it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 20560.31it/s]
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 115.94it/s]
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+
+    Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  1.99it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  1.99it/s]
 
 
     LoRA adapter loaded successfully. {'rid': None, 'http_worker_ipc': None, 'success': True, 'error_message': '', 'loaded_adapters': {'lora1': 'algoprog/fact-generation-llama-3.1-8b-instruct-lora', 'lora0': 'philschmid/code-llama-3-1-8b-text-to-sql-lora'}}
@@ -483,32 +483,32 @@ wait_for_server(url, process=server_process)
 
     Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.41it/s]
+    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.36it/s]
 
-    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.34it/s]
+    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.25it/s]
 
-    Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.34it/s]
+    Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.86it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.63it/s]
-
-
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 16529.28it/s]
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 11732.32it/s]
+    Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.68it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.50it/s]
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 306.11it/s]
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 16710.37it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 38568.31it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 17172.18it/s]
 
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 9113.10it/s]
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 164.75it/s]
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 317.34it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 82646.38it/s]
 
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 34450.14it/s]
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 12681.19it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 11765.23it/s]
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 146.50it/s]
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 100.31it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 78033.56it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 77672.30it/s]
+
+
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 113.50it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -542,11 +542,11 @@ response = requests.post(
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:328: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       return await dependant.call(**values)
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 38391.80it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 43129.09it/s]
 
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 17924.38it/s]
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 156.78it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 12915.49it/s]
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 161.48it/s]
 
 
 Verify that the results are expected:
@@ -653,106 +653,108 @@ wait_for_server(url, process=server_process)
       warnings.warn(
 
 
-    [2026-06-01 23:33:20] Attention backend not specified. Use fa3 backend by default.
+    [2026-06-02 00:24:38] Attention backend not specified. Use fa3 backend by default.
 
 
-    [2026-06-01 23:33:20] Set soft_watchdog_timeout since in CI
+    [2026-06-02 00:24:38] Set soft_watchdog_timeout since in CI
 
 
-    [2026-06-01 23:33:21] server_args=ServerArgs(model_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_mode='auto', tokenizer_backend='huggingface', tokenizer_worker_num=1, detokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=False, context_length=None, is_embedding=False, prefill_only_disable_kv_cache=False, enable_multimodal=None, revision=None, model_impl='auto', model_config_parser='auto', host='127.0.0.1', port=36191, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, ssl_keyfile_password=None, enable_ssl_refresh=False, enable_http2=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.841, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, disable_priority_preemption=False, default_priority_value=None, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, prefill_delayer_queue_min_ratio=None, prefill_delayer_max_delay_ms=None, device='cuda', tp_size=1, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, batch_notify_size=16, stream_response_default_include_usage=False, incremental_streaming_output=False, enable_streaming_session=False, random_seed=310052982, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=300, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, load_snapshot_publish_interval=15, use_ray=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=False, grpc_http_sidecar_port=None, enable_mfu_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, extra_metric_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_forward_pass_metrics=False, forward_pass_metrics_worker_id='', forward_pass_metrics_ipc_name=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, stat_loggers=None, api_key=None, admin_api_key=None, served_model_name='meta-llama/Meta-Llama-3.1-8B-Instruct', weight_version='default', chat_template=None, hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, strip_thinking_cache=False, enable_strict_thinking=False, tool_call_parser=None, tool_server=None, sampling_defaults='model', asr_max_buffer_seconds=60, asr_max_concurrent_sessions=32, dp_size=1, load_balance_method='round_robin', attn_cp_size=1, moe_dp_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=True, enable_lora_overlap_loading=True, max_lora_rank=256, lora_target_modules=None, lora_paths=[LoRARef(lora_id='85e4aea1bd4053009505fcba5ed672a1', lora_name='lora0', lora_path='Nutanix/Meta-Llama-3.1-8B-Instruct_SFT_lora_4_alpha_16_humaneval_raw_json', pinned=False), LoRARef(lora_id='f90a12a9114e53249d1c4156418a4a43', lora_name='lora1', lora_path='algoprog/fact-generation-llama-3.1-8b-instruct-lora', pinned=False), LoRARef(lora_id='83085c14120557f79ef7b4ab7b570223', lora_name='lora2', lora_path='philschmid/code-llama-3-1-8b-text-to-sql-lora', pinned=False)], max_loaded_loras=4, max_loras_per_batch=2, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, experts_shared_outer_loras=None, lora_use_virtual_experts=False, lora_strict_loading=False, lora_drain_wait_threshold=0.0, attention_backend='fa3', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', radix_cache_backend=None, mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='auto', dsa_prefill_backend=None, dsa_decode_backend=None, dsa_topk_backend='sgl-kernel', disable_flashinfer_autotune=False, mamba_backend='triton', speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_dflash_block_size=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_draft_window_size=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_skip_dp_mlp_sync=False, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_max_trie_depth=18, speculative_ngram_capacity=10000000, speculative_ngram_external_corpus_path=None, speculative_ngram_external_sam_budget=0, speculative_ngram_external_corpus_max_tokens=10000000, enable_multi_layer_eagle=False, speculative_adaptive=False, speculative_adaptive_config=None, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, enforce_disable_flashinfer_allreduce_fusion=False, enable_aiter_allreduce_fusion=False, deepep_mode='auto', deepep_dispatcher_output_dtype='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, enable_elastic_expert_backup=False, mooncake_ib_device=None, enable_deepep_waterfill=False, elastic_ep_rejoin=False, max_mamba_cache_size=None, mamba_ssm_dtype=None, mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, linear_attn_backend='triton', linear_attn_decode_backend=None, linear_attn_prefill_backend=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', hicache_storage_backend=None, hicache_storage_prefetch_policy='timeout', hicache_storage_backend_extra_config=None, enable_hisparse=False, hisparse_config=None, enable_lmcache=False, lmcache_config_file=None, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', enable_mis=False, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4], disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_breakable_cuda_graph=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, debug_cuda_graph=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, pre_warm_nccl=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_attention_local_control_broadcast=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, disable_piecewise_cuda_graph=True, enforce_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, enforce_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, enable_return_indexer_topk=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, disable_attn_tp_gather=False, gc_threshold=None, kv_canary='none', kv_canary_real_data='none', kv_canary_sweep_interval=0, enable_dsa_prefill_context_parallel=False, dsa_prefill_cp_mode='round-robin-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_fused_moe_sum_all_reduce=False, enable_prefill_context_parallel=False, prefill_cp_mode='in-seq-split', enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_ib_device=None, disaggregation_decode_enable_radix_cache=False, disaggregation_decode_enable_offload_kvcache=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], enable_adaptive_dispatch_to_encoder=False, custom_weight_loader=[], weight_loader_disable_mmap=False, weight_loader_prefetch_checkpoints=False, weight_loader_prefetch_num_threads=4, weight_loader_drop_cache_after_load=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, engine_info_bootstrap_port=6789, modelexpress_config=None, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, enable_mm_global_cache=False, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None, enable_quant_communications=False, msprobe_dump_config=None)
+    [2026-06-02 00:24:39] server_args=ServerArgs(model_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_mode='auto', tokenizer_backend='huggingface', tokenizer_worker_num=1, detokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=False, context_length=None, is_embedding=False, prefill_only_disable_kv_cache=False, enable_multimodal=None, revision=None, model_impl='auto', model_config_parser='auto', host='127.0.0.1', port=37071, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, ssl_keyfile_password=None, enable_ssl_refresh=False, enable_http2=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.841, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, disable_priority_preemption=False, default_priority_value=None, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, prefill_delayer_queue_min_ratio=None, prefill_delayer_max_delay_ms=None, device='cuda', tp_size=1, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, batch_notify_size=16, stream_response_default_include_usage=False, incremental_streaming_output=False, enable_streaming_session=False, random_seed=144300862, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=300, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, load_snapshot_publish_interval=15, use_ray=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=False, grpc_http_sidecar_port=None, enable_mfu_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, extra_metric_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_forward_pass_metrics=False, forward_pass_metrics_worker_id='', forward_pass_metrics_ipc_name=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, stat_loggers=None, api_key=None, admin_api_key=None, served_model_name='meta-llama/Meta-Llama-3.1-8B-Instruct', weight_version='default', chat_template=None, hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, strip_thinking_cache=False, enable_strict_thinking=False, tool_call_parser=None, tool_server=None, sampling_defaults='model', asr_max_buffer_seconds=60, asr_max_concurrent_sessions=32, dp_size=1, load_balance_method='round_robin', attn_cp_size=1, moe_dp_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=True, enable_lora_overlap_loading=True, max_lora_rank=256, lora_target_modules=None, lora_paths=[LoRARef(lora_id='85e4aea1bd4053009505fcba5ed672a1', lora_name='lora0', lora_path='Nutanix/Meta-Llama-3.1-8B-Instruct_SFT_lora_4_alpha_16_humaneval_raw_json', pinned=False), LoRARef(lora_id='f90a12a9114e53249d1c4156418a4a43', lora_name='lora1', lora_path='algoprog/fact-generation-llama-3.1-8b-instruct-lora', pinned=False), LoRARef(lora_id='83085c14120557f79ef7b4ab7b570223', lora_name='lora2', lora_path='philschmid/code-llama-3-1-8b-text-to-sql-lora', pinned=False)], max_loaded_loras=4, max_loras_per_batch=2, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, experts_shared_outer_loras=None, lora_use_virtual_experts=False, lora_strict_loading=False, lora_drain_wait_threshold=0.0, attention_backend='fa3', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', radix_cache_backend=None, mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='auto', dsa_prefill_backend=None, dsa_decode_backend=None, dsa_topk_backend='sgl-kernel', disable_flashinfer_autotune=False, mamba_backend='triton', speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_dflash_block_size=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_draft_window_size=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_skip_dp_mlp_sync=False, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_max_trie_depth=18, speculative_ngram_capacity=10000000, speculative_ngram_external_corpus_path=None, speculative_ngram_external_sam_budget=0, speculative_ngram_external_corpus_max_tokens=10000000, enable_multi_layer_eagle=False, speculative_adaptive=False, speculative_adaptive_config=None, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, enforce_disable_flashinfer_allreduce_fusion=False, enable_aiter_allreduce_fusion=False, deepep_mode='auto', deepep_dispatcher_output_dtype='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, enable_elastic_expert_backup=False, mooncake_ib_device=None, enable_deepep_waterfill=False, elastic_ep_rejoin=False, max_mamba_cache_size=None, mamba_ssm_dtype=None, mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, linear_attn_backend='triton', linear_attn_decode_backend=None, linear_attn_prefill_backend=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', hicache_storage_backend=None, hicache_storage_prefetch_policy='timeout', hicache_storage_backend_extra_config=None, enable_hisparse=False, hisparse_config=None, enable_lmcache=False, lmcache_config_file=None, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', enable_mis=False, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4], disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_breakable_cuda_graph=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, debug_cuda_graph=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, pre_warm_nccl=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_attention_local_control_broadcast=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, disable_piecewise_cuda_graph=True, enforce_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, enforce_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, enable_return_indexer_topk=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, disable_attn_tp_gather=False, gc_threshold=None, kv_canary='none', kv_canary_real_data='none', kv_canary_sweep_interval=0, enable_dsa_prefill_context_parallel=False, dsa_prefill_cp_mode='round-robin-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_fused_moe_sum_all_reduce=False, enable_prefill_context_parallel=False, prefill_cp_mode='in-seq-split', enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_ib_device=None, disaggregation_decode_enable_radix_cache=False, disaggregation_decode_enable_offload_kvcache=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], enable_adaptive_dispatch_to_encoder=False, custom_weight_loader=[], weight_loader_disable_mmap=False, weight_loader_prefetch_checkpoints=False, weight_loader_prefetch_num_threads=4, weight_loader_drop_cache_after_load=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, engine_info_bootstrap_port=6789, modelexpress_config=None, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, enable_mm_global_cache=False, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None, enable_quant_communications=False, msprobe_dump_config=None)
 
 
-    [2026-06-01 23:33:27] Watchdog TokenizerManager initialized.
-    [2026-06-01 23:33:27] Using default HuggingFace chat template with detected content format: string
+    [2026-06-02 00:24:45] Watchdog TokenizerManager initialized.
+    [2026-06-02 00:24:45] Using default HuggingFace chat template with detected content format: string
 
 
-    [2026-06-01 23:33:34] Watchdog DetokenizerManager initialized.
+    [2026-06-02 00:24:52] Watchdog DetokenizerManager initialized.
 
 
-    [2026-06-01 23:33:35] Init torch distributed begin.
+    [2026-06-02 00:24:52] Init torch distributed begin.
 
 
-    [2026-06-01 23:33:36] Init torch distributed ends. elapsed=0.41 s, mem usage=0.09 GB
+    [2026-06-02 00:24:53] Init torch distributed ends. elapsed=0.34 s, mem usage=0.09 GB
 
 
-    [2026-06-01 23:33:39] Load weight begin. avail mem=78.50 GB
-    [2026-06-01 23:33:39] Found local HF snapshot for meta-llama/Meta-Llama-3.1-8B-Instruct at /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659; skipping download.
+    [2026-06-02 00:24:56] Load weight begin. avail mem=60.02 GB
+    [2026-06-02 00:24:56] Found local HF snapshot for meta-llama/Meta-Llama-3.1-8B-Instruct at /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659; skipping download.
 
 
     Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.41it/s]
+    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.31it/s]
 
-    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.33it/s]
+    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.20it/s]
 
-    Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.34it/s]
+    Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.85it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.63it/s]
-
-
-    [2026-06-01 23:33:42] Load weight end. elapsed=2.97 s, type=LlamaForCausalLM, avail mem=62.20 GB, mem usage=16.30 GB.
-    [2026-06-01 23:33:42] Using csgmv as backend of LoRA kernels.
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 14926.35it/s]
+    Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.41it/s]
 
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 19284.16it/s]
-    [2026-06-01 23:33:42] Found local HF snapshot for Nutanix/Meta-Llama-3.1-8B-Instruct_SFT_lora_4_alpha_16_humaneval_raw_json at /root/.cache/huggingface/hub/models--Nutanix--Meta-Llama-3.1-8B-Instruct_SFT_lora_4_alpha_16_humaneval_raw_json/snapshots/2c398740f3eba8dc63ee78999316b833a2833b6c; skipping download.
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 324.06it/s]
+    [2026-06-02 00:24:59] Load weight end. elapsed=3.40 s, type=LlamaForCausalLM, avail mem=44.07 GB, mem usage=15.96 GB.
+    [2026-06-02 00:24:59] Using csgmv as backend of LoRA kernels.
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 15033.35it/s]
 
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 21481.71it/s]
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 40233.13it/s]
-    [2026-06-01 23:33:42] Found local HF snapshot for algoprog/fact-generation-llama-3.1-8b-instruct-lora at /root/.cache/huggingface/hub/models--algoprog--fact-generation-llama-3.1-8b-instruct-lora/snapshots/dc8cdfb21993a6cb46199d6b1d79f68a42b06439; skipping download.
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 35025.50it/s]
+    [2026-06-02 00:25:00] Found local HF snapshot for Nutanix/Meta-Llama-3.1-8B-Instruct_SFT_lora_4_alpha_16_humaneval_raw_json at /root/.cache/huggingface/hub/models--Nutanix--Meta-Llama-3.1-8B-Instruct_SFT_lora_4_alpha_16_humaneval_raw_json/snapshots/2c398740f3eba8dc63ee78999316b833a2833b6c; skipping download.
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 341.58it/s]
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 159.19it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 51622.20it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 56871.92it/s]
+    [2026-06-02 00:25:00] Found local HF snapshot for algoprog/fact-generation-llama-3.1-8b-instruct-lora at /root/.cache/huggingface/hub/models--algoprog--fact-generation-llama-3.1-8b-instruct-lora/snapshots/dc8cdfb21993a6cb46199d6b1d79f68a42b06439; skipping download.
 
 
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 39568.91it/s]
-    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 80659.69it/s]
-    [2026-06-01 23:33:43] Found local HF snapshot for philschmid/code-llama-3-1-8b-text-to-sql-lora at /root/.cache/huggingface/hub/models--philschmid--code-llama-3-1-8b-text-to-sql-lora/snapshots/141fc3a09386a8baf0d7495c247ae2d1a565f69f; skipping download.
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 156.95it/s]
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 72.83it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 61230.72it/s]
+    Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 13005.59it/s]
+    [2026-06-02 00:25:01] Found local HF snapshot for philschmid/code-llama-3-1-8b-text-to-sql-lora at /root/.cache/huggingface/hub/models--philschmid--code-llama-3-1-8b-text-to-sql-lora/snapshots/141fc3a09386a8baf0d7495c247ae2d1a565f69f; skipping download.
 
 
-    [2026-06-01 23:33:44] Max concurrent requests (per dp worker) from the finalized token capacity: max_num_reqs=128.
-    [2026-06-01 23:33:44] KV Cache is allocated. dtype: torch.bfloat16, #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
-    [2026-06-01 23:33:44] Memory pool end. avail mem=49.35 GB
-    [2026-06-01 23:33:44] Disable piecewise CUDA graph because --disable-piecewise-cuda-graph is set
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00, 98.82it/s]
 
 
-    [2026-06-01 23:33:49] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=131072, available_gpu_mem=48.54 GB
-    [2026-06-01 23:33:49] Tree cache initialized: source=default impl=RadixCache hybrid_swa=False hybrid_ssm=False hierarchical=False streaming_wrapped=False
+    [2026-06-02 00:25:02] Max concurrent requests (per dp worker) from the finalized token capacity: max_num_reqs=128.
+    [2026-06-02 00:25:02] KV Cache is allocated. dtype: torch.bfloat16, #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
+    [2026-06-02 00:25:02] Memory pool end. avail mem=38.84 GB
+    [2026-06-02 00:25:02] Disable piecewise CUDA graph because --disable-piecewise-cuda-graph is set
 
 
-    [2026-06-01 23:33:50] INFO:     Started server process [2975435]
-    [2026-06-01 23:33:50] INFO:     Waiting for application startup.
-    [2026-06-01 23:33:50] Using default chat sampling params from model generation config: {'temperature': 0.6, 'top_p': 0.9}
-    [2026-06-01 23:33:50] INFO:     Application startup complete.
-    [2026-06-01 23:33:50] INFO:     Uvicorn running on http://127.0.0.1:36191 (Press CTRL+C to quit)
+    [2026-06-02 00:25:08] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=131072, available_gpu_mem=38.37 GB
+    [2026-06-02 00:25:08] Tree cache initialized: source=default impl=RadixCache hybrid_swa=False hybrid_ssm=False hierarchical=False streaming_wrapped=False
+
+
+    [2026-06-02 00:25:08] INFO:     Started server process [3235303]
+    [2026-06-02 00:25:08] INFO:     Waiting for application startup.
+    [2026-06-02 00:25:08] Using default chat sampling params from model generation config: {'temperature': 0.6, 'top_p': 0.9}
+    [2026-06-02 00:25:08] INFO:     Application startup complete.
+    [2026-06-02 00:25:08] INFO:     Uvicorn running on http://127.0.0.1:37071 (Press CTRL+C to quit)
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       response = await f(request)
-    [2026-06-01 23:33:51] INFO:     127.0.0.1:49846 - "GET /v1/models HTTP/1.1" 200 OK
-    [2026-06-01 23:33:51] INFO:     127.0.0.1:49860 - "GET /model_info HTTP/1.1" 200 OK
+    [2026-06-02 00:25:09] INFO:     127.0.0.1:52316 - "GET /v1/models HTTP/1.1" 200 OK
 
 
-    [2026-06-01 23:33:52] LoRA shrink (K=4096, R=256): no tuned config, using defaults {'BLOCK_N': 16, 'BLOCK_K': 256}
-    [2026-06-01 23:33:52] LoRA expand (K=6144, R=256): no tuned config, using defaults {'BLOCK_N': 64, 'BLOCK_K': 16}
-    [2026-06-01 23:33:52] LoRA shrink (K=4096, R=256): no tuned config, using defaults {'BLOCK_N': 16, 'BLOCK_K': 256}
-    [2026-06-01 23:33:52] LoRA expand (K=4096, R=256): no tuned config, using defaults {'BLOCK_N': 64, 'BLOCK_K': 16}
+    [2026-06-02 00:25:09] INFO:     127.0.0.1:52322 - "GET /model_info HTTP/1.1" 200 OK
 
 
-    [2026-06-01 23:33:52] LoRA shrink (K=4096, R=256): no tuned config, using defaults {'BLOCK_N': 16, 'BLOCK_K': 256}
-    [2026-06-01 23:33:52] LoRA expand (K=28672, R=256): no tuned config, using defaults {'BLOCK_N': 64, 'BLOCK_K': 16}
-    [2026-06-01 23:33:52] LoRA shrink (K=14336, R=256): no tuned config, using defaults {'BLOCK_N': 16, 'BLOCK_K': 256}
+    [2026-06-02 00:25:10] LoRA shrink (K=4096, R=256): no tuned config, using defaults {'BLOCK_N': 16, 'BLOCK_K': 256}
+    [2026-06-02 00:25:10] LoRA expand (K=6144, R=256): no tuned config, using defaults {'BLOCK_N': 64, 'BLOCK_K': 16}
+    [2026-06-02 00:25:10] LoRA shrink (K=4096, R=256): no tuned config, using defaults {'BLOCK_N': 16, 'BLOCK_K': 256}
+    [2026-06-02 00:25:10] LoRA expand (K=4096, R=256): no tuned config, using defaults {'BLOCK_N': 64, 'BLOCK_K': 16}
 
 
-    [2026-06-01 23:33:53] Prefill batch, #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 2.12
-    [2026-06-01 23:33:53] INFO:     127.0.0.1:49874 - "POST /generate HTTP/1.1" 200 OK
-    [2026-06-01 23:33:53] The server is fired up and ready to roll!
+    [2026-06-02 00:25:11] LoRA shrink (K=4096, R=256): no tuned config, using defaults {'BLOCK_N': 16, 'BLOCK_K': 256}
+    [2026-06-02 00:25:11] LoRA expand (K=28672, R=256): no tuned config, using defaults {'BLOCK_N': 64, 'BLOCK_K': 16}
+    [2026-06-02 00:25:11] LoRA shrink (K=14336, R=256): no tuned config, using defaults {'BLOCK_N': 16, 'BLOCK_K': 256}
+
+
+    [2026-06-02 00:25:11] Prefill batch, #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 2.07
+    [2026-06-02 00:25:11] INFO:     127.0.0.1:52326 - "POST /generate HTTP/1.1" 200 OK
+    [2026-06-02 00:25:11] The server is fired up and ready to roll!
 
 
 
@@ -787,98 +789,114 @@ for i in range(3):
     print(f"Output from lora{i}: \n{response.json()[i]['text']}\n")
 ```
 
-    [2026-06-01 23:33:56] LoRA adapter '85e4aea1bd4053009505fcba5ed672a1': loaded weights for target modules ['qkv_proj'].
-    [2026-06-01 23:33:56] LoRA adapter 'f90a12a9114e53249d1c4156418a4a43': loaded weights for target modules ['gate_up_proj', 'o_proj', 'qkv_proj'].
+    [2026-06-02 00:25:14] LoRA adapter '85e4aea1bd4053009505fcba5ed672a1': loaded weights for target modules ['qkv_proj'].
+    [2026-06-02 00:25:14] LoRA adapter 'f90a12a9114e53249d1c4156418a4a43': loaded weights for target modules ['gate_up_proj', 'o_proj', 'qkv_proj'].
 
 
-    [2026-06-01 23:33:56] LoRA adapter '83085c14120557f79ef7b4ab7b570223': loaded weights for target modules ['down_proj', 'gate_up_proj', 'o_proj', 'qkv_proj'].
+    [2026-06-02 00:25:14] LoRA adapter '83085c14120557f79ef7b4ab7b570223': loaded weights for target modules ['down_proj', 'gate_up_proj', 'o_proj', 'qkv_proj'].
 
 
-    [2026-06-01 23:33:59] LoRA adapter 'f90a12a9114e53249d1c4156418a4a43': loaded weights for target modules ['gate_up_proj', 'o_proj', 'qkv_proj'].
-    [2026-06-01 23:33:59] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 2, #pending-token: 18, cuda graph: False, input throughput (token/s): 1.43
-    [2026-06-01 23:33:59] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 1, #pending-token: 9, cuda graph: False, input throughput (token/s): 77.68
+    [2026-06-02 00:25:17] LoRA adapter '85e4aea1bd4053009505fcba5ed672a1': loaded weights for target modules ['qkv_proj'].
+    [2026-06-02 00:25:17] LoRA adapter 'f90a12a9114e53249d1c4156418a4a43': loaded weights for target modules ['gate_up_proj', 'o_proj', 'qkv_proj'].
+    [2026-06-02 00:25:17] LoRA adapter '83085c14120557f79ef7b4ab7b570223': loaded weights for target modules ['down_proj', 'gate_up_proj', 'o_proj', 'qkv_proj'].
 
 
-    [2026-06-01 23:34:00] Decode batch, #running-req: 2, #token: 83, token usage: 0.00, cuda graph: False, gen throughput (token/s): 6.85, #queue-req: 1
+    [2026-06-02 00:25:17] LoRA adapter '85e4aea1bd4053009505fcba5ed672a1': loaded weights for target modules ['qkv_proj'].
+    [2026-06-02 00:25:17] LoRA adapter 'f90a12a9114e53249d1c4156418a4a43': loaded weights for target modules ['gate_up_proj', 'o_proj', 'qkv_proj'].
+    [2026-06-02 00:25:17] LoRA adapter '83085c14120557f79ef7b4ab7b570223': loaded weights for target modules ['down_proj', 'gate_up_proj', 'o_proj', 'qkv_proj'].
+    [2026-06-02 00:25:17] LoRA adapter '85e4aea1bd4053009505fcba5ed672a1': loaded weights for target modules ['qkv_proj'].
+    [2026-06-02 00:25:17] LoRA adapter 'f90a12a9114e53249d1c4156418a4a43': loaded weights for target modules ['gate_up_proj', 'o_proj', 'qkv_proj'].
 
 
-    [2026-06-01 23:34:00] LoRA adapter '83085c14120557f79ef7b4ab7b570223': loaded weights for target modules ['down_proj', 'gate_up_proj', 'o_proj', 'qkv_proj'].
+    [2026-06-02 00:25:17] LoRA adapter '83085c14120557f79ef7b4ab7b570223': loaded weights for target modules ['down_proj', 'gate_up_proj', 'o_proj', 'qkv_proj'].
+    [2026-06-02 00:25:17] LoRA adapter '85e4aea1bd4053009505fcba5ed672a1': loaded weights for target modules ['qkv_proj'].
+    [2026-06-02 00:25:17] LoRA adapter 'f90a12a9114e53249d1c4156418a4a43': loaded weights for target modules ['gate_up_proj', 'o_proj', 'qkv_proj'].
 
 
-    [2026-06-01 23:34:01] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 5.75
-    [2026-06-01 23:34:01] Decode batch, #running-req: 2, #token: 97, token usage: 0.00, cuda graph: False, gen throughput (token/s): 75.96, #queue-req: 0
+    [2026-06-02 00:25:18] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 1, #pending-token: 18, cuda graph: False, input throughput (token/s): 1.36
+    [2026-06-02 00:25:18] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 1, #pending-token: 9, cuda graph: False, input throughput (token/s): 89.72
 
 
-    [2026-06-01 23:34:02] Decode batch, #running-req: 2, #token: 177, token usage: 0.01, cuda graph: False, gen throughput (token/s): 98.18, #queue-req: 0
+    [2026-06-02 00:25:18] Decode batch, #running-req: 2, #token: 84, token usage: 0.00, cuda graph: False, gen throughput (token/s): 6.67, #queue-req: 1
 
 
-    [2026-06-01 23:34:02] Decode batch, #running-req: 1, #token: 162, token usage: 0.01, cuda graph: False, gen throughput (token/s): 69.36, #queue-req: 0
+    [2026-06-02 00:25:19] LoRA adapter '83085c14120557f79ef7b4ab7b570223': loaded weights for target modules ['down_proj', 'gate_up_proj', 'o_proj', 'qkv_proj'].
 
 
-    [2026-06-01 23:34:03] Decode batch, #running-req: 1, #token: 202, token usage: 0.01, cuda graph: False, gen throughput (token/s): 48.76, #queue-req: 0
+    [2026-06-02 00:25:19] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 5.69
+    [2026-06-02 00:25:19] Decode batch, #running-req: 2, #token: 98, token usage: 0.00, cuda graph: False, gen throughput (token/s): 77.48, #queue-req: 0
 
 
-    [2026-06-01 23:34:04] Decode batch, #running-req: 1, #token: 242, token usage: 0.01, cuda graph: False, gen throughput (token/s): 50.28, #queue-req: 0
+    [2026-06-02 00:25:20] Decode batch, #running-req: 2, #token: 178, token usage: 0.01, cuda graph: False, gen throughput (token/s): 93.10, #queue-req: 0
 
 
-    [2026-06-01 23:34:05] Decode batch, #running-req: 1, #token: 282, token usage: 0.01, cuda graph: False, gen throughput (token/s): 48.40, #queue-req: 0
+    [2026-06-02 00:25:21] Decode batch, #running-req: 1, #token: 162, token usage: 0.01, cuda graph: False, gen throughput (token/s): 74.37, #queue-req: 0
 
 
-    [2026-06-01 23:34:06] Decode batch, #running-req: 1, #token: 322, token usage: 0.02, cuda graph: False, gen throughput (token/s): 49.29, #queue-req: 0
+    [2026-06-02 00:25:22] Decode batch, #running-req: 1, #token: 202, token usage: 0.01, cuda graph: False, gen throughput (token/s): 52.52, #queue-req: 0
 
 
-    [2026-06-01 23:34:07] Decode batch, #running-req: 1, #token: 362, token usage: 0.02, cuda graph: False, gen throughput (token/s): 46.79, #queue-req: 0
+    [2026-06-02 00:25:23] Decode batch, #running-req: 1, #token: 242, token usage: 0.01, cuda graph: False, gen throughput (token/s): 52.18, #queue-req: 0
 
 
-    [2026-06-01 23:34:07] Decode batch, #running-req: 1, #token: 402, token usage: 0.02, cuda graph: False, gen throughput (token/s): 47.01, #queue-req: 0
+    [2026-06-02 00:25:23] Decode batch, #running-req: 1, #token: 282, token usage: 0.01, cuda graph: False, gen throughput (token/s): 46.17, #queue-req: 0
 
 
-    [2026-06-01 23:34:08] Decode batch, #running-req: 1, #token: 442, token usage: 0.02, cuda graph: False, gen throughput (token/s): 47.73, #queue-req: 0
+    [2026-06-02 00:25:24] Decode batch, #running-req: 1, #token: 322, token usage: 0.02, cuda graph: False, gen throughput (token/s): 48.39, #queue-req: 0
 
 
-    [2026-06-01 23:34:09] Decode batch, #running-req: 1, #token: 482, token usage: 0.02, cuda graph: False, gen throughput (token/s): 50.98, #queue-req: 0
+    [2026-06-02 00:25:25] Decode batch, #running-req: 1, #token: 362, token usage: 0.02, cuda graph: False, gen throughput (token/s): 46.89, #queue-req: 0
 
 
-    [2026-06-01 23:34:10] Decode batch, #running-req: 1, #token: 522, token usage: 0.03, cuda graph: False, gen throughput (token/s): 51.81, #queue-req: 0
+    [2026-06-02 00:25:26] Decode batch, #running-req: 1, #token: 402, token usage: 0.02, cuda graph: False, gen throughput (token/s): 46.44, #queue-req: 0
 
 
-    [2026-06-01 23:34:11] Decode batch, #running-req: 1, #token: 562, token usage: 0.03, cuda graph: False, gen throughput (token/s): 50.36, #queue-req: 0
+    [2026-06-02 00:25:27] Decode batch, #running-req: 1, #token: 442, token usage: 0.02, cuda graph: False, gen throughput (token/s): 48.32, #queue-req: 0
 
 
-    [2026-06-01 23:34:11] Decode batch, #running-req: 1, #token: 602, token usage: 0.03, cuda graph: False, gen throughput (token/s): 50.28, #queue-req: 0
+    [2026-06-02 00:25:28] Decode batch, #running-req: 1, #token: 482, token usage: 0.02, cuda graph: False, gen throughput (token/s): 48.98, #queue-req: 0
 
 
-    [2026-06-01 23:34:12] Decode batch, #running-req: 1, #token: 642, token usage: 0.03, cuda graph: False, gen throughput (token/s): 51.01, #queue-req: 0
+    [2026-06-02 00:25:28] Decode batch, #running-req: 1, #token: 522, token usage: 0.03, cuda graph: False, gen throughput (token/s): 47.03, #queue-req: 0
 
 
-    [2026-06-01 23:34:13] Decode batch, #running-req: 1, #token: 682, token usage: 0.03, cuda graph: False, gen throughput (token/s): 48.27, #queue-req: 0
+    [2026-06-02 00:25:29] Decode batch, #running-req: 1, #token: 562, token usage: 0.03, cuda graph: False, gen throughput (token/s): 50.13, #queue-req: 0
 
 
-    [2026-06-01 23:34:14] Decode batch, #running-req: 1, #token: 722, token usage: 0.04, cuda graph: False, gen throughput (token/s): 47.14, #queue-req: 0
+    [2026-06-02 00:25:30] Decode batch, #running-req: 1, #token: 602, token usage: 0.03, cuda graph: False, gen throughput (token/s): 46.83, #queue-req: 0
 
 
-    [2026-06-01 23:34:15] Decode batch, #running-req: 1, #token: 762, token usage: 0.04, cuda graph: False, gen throughput (token/s): 46.04, #queue-req: 0
+    [2026-06-02 00:25:31] Decode batch, #running-req: 1, #token: 642, token usage: 0.03, cuda graph: False, gen throughput (token/s): 49.47, #queue-req: 0
 
 
-    [2026-06-01 23:34:16] Decode batch, #running-req: 1, #token: 802, token usage: 0.04, cuda graph: False, gen throughput (token/s): 49.51, #queue-req: 0
+    [2026-06-02 00:25:32] Decode batch, #running-req: 1, #token: 682, token usage: 0.03, cuda graph: False, gen throughput (token/s): 48.67, #queue-req: 0
 
 
-    [2026-06-01 23:34:16] Decode batch, #running-req: 1, #token: 842, token usage: 0.04, cuda graph: False, gen throughput (token/s): 49.16, #queue-req: 0
+    [2026-06-02 00:25:32] Decode batch, #running-req: 1, #token: 722, token usage: 0.04, cuda graph: False, gen throughput (token/s): 51.93, #queue-req: 0
 
 
-    [2026-06-01 23:34:17] Decode batch, #running-req: 1, #token: 882, token usage: 0.04, cuda graph: False, gen throughput (token/s): 49.67, #queue-req: 0
+    [2026-06-02 00:25:33] Decode batch, #running-req: 1, #token: 762, token usage: 0.04, cuda graph: False, gen throughput (token/s): 51.73, #queue-req: 0
 
 
-    [2026-06-01 23:34:18] Decode batch, #running-req: 1, #token: 922, token usage: 0.05, cuda graph: False, gen throughput (token/s): 49.57, #queue-req: 0
+    [2026-06-02 00:25:34] Decode batch, #running-req: 1, #token: 802, token usage: 0.04, cuda graph: False, gen throughput (token/s): 52.71, #queue-req: 0
 
 
-    [2026-06-01 23:34:19] Decode batch, #running-req: 1, #token: 962, token usage: 0.05, cuda graph: False, gen throughput (token/s): 49.92, #queue-req: 0
+    [2026-06-02 00:25:35] Decode batch, #running-req: 1, #token: 842, token usage: 0.04, cuda graph: False, gen throughput (token/s): 49.64, #queue-req: 0
 
 
-    [2026-06-01 23:34:20] Decode batch, #running-req: 1, #token: 1002, token usage: 0.05, cuda graph: False, gen throughput (token/s): 49.09, #queue-req: 0
+    [2026-06-02 00:25:36] Decode batch, #running-req: 1, #token: 882, token usage: 0.04, cuda graph: False, gen throughput (token/s): 48.16, #queue-req: 0
 
 
-    [2026-06-01 23:34:20] INFO:     127.0.0.1:33030 - "POST /generate HTTP/1.1" 200 OK
+    [2026-06-02 00:25:36] Decode batch, #running-req: 1, #token: 922, token usage: 0.05, cuda graph: False, gen throughput (token/s): 50.20, #queue-req: 0
+
+
+    [2026-06-02 00:25:37] Decode batch, #running-req: 1, #token: 962, token usage: 0.05, cuda graph: False, gen throughput (token/s): 52.43, #queue-req: 0
+
+
+    [2026-06-02 00:25:38] Decode batch, #running-req: 1, #token: 1002, token usage: 0.05, cuda graph: False, gen throughput (token/s): 36.42, #queue-req: 0
+
+
+    [2026-06-02 00:25:39] INFO:     127.0.0.1:42840 - "POST /generate HTTP/1.1" 200 OK
     Output from lora0: 
      I mean, really long. Like, 10,000 words long. I'm talking epic fantasy, with magic, adventure, and romance. I'll give you a prompt, and you'll write the story. Here's your prompt:
     

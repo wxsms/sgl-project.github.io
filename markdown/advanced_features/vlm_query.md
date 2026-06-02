@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-01 23:33:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 00:25:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-01 23:33:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 00:25:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.02it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a city street scene. There is a yellow taxi driving on the street with its hatch open, revealing an interesting scene inside. The inside of the taxi is open and reveals a person standing next to the open hatch. The person appears to be working on something situated between the seats, possibly involved in an unusual activity. The scene is likely a humorous or eccentric moment captured in a busy urban setting.
+    The image shows a parking space with two yellow taxis, one on each side of a sign. The sign appears to be displaying information or advertisements, but the specific content is not clearly visible. The scene seems to be urban, given the tall buildings in the background and the typical yellow cabs seen in cities like New York.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man performing a stunt on the street. He is dressed in a yellow t-shirt and appears to be using a sweeper or mop-like tool to balance multiple t-shirts and possibly a television on top of it. This setup seems unbalanced, likely making it difficult for the backdrop to maintain stability. The scene is taking place in an urban environment with buildings in the background, a yellow car on the left, and a yellow cab partially cut off on the right. There are flag poles with red and gold-looking flags in the background. The overall composition suggests an unconventional and entertaining performance on public streets, likely designed to draw attention
+    The image shows a person cleaning a windshield wiper off the back of a yellow taxi in a city street. The taxi is parked on the side of the road, and the individual is standing behind the driver's side door, wearing a yellow shirt. There is another yellow taxi visible in the background, as well as a few buildings with storefronts and flags on poles. The scene appears to be set in an urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man dressed in yellow and blue clothing standing on a city street. He is affixing small flags onto the rear of a yellow taxicab. This scene appears to be from New York City, as the vehicle is likely a New York City taxicab. The man is engaged in a public art or campaign activity involving small flags, possibly as part of a protest, demonstration, or social message.
+    The image depicts a scene on a city street featuring two yellow taxis. The primary focus is on a man dressed in a yellow shirt and blue shorts standing behind a.$.5 0. The man appears to be organizing or arranging clothing items on a rack. He is holding a red, blue, and white flag in his left hand. The background includes a storefront with large windows and a few street signs. Additionally, there is another yellow taxi visible in the background.
 
 
 ## Querying Llama 4 Vision Model
