@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 08:25:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 08:55:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 08:25:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 08:55:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.09s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in a busy urban area with two yellow taxis. A person is drying denim jeans and a blue top using an outdoor clothesline attached to the back of one of the taxis. The background includes tall buildings and streetlights, indicating a city environment.
+    The image shows a scene of a man wearing a yellow shirt and blue shorts performing what appears to beImagine through his back pocket. However, there seems to be no man performing this action.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a colorful display of fabrics, likely decals or printed materials, installed on the rear windows of two yellow taxis. The display appears to be someone's enthusiasm or pride in their work, as they are carefully positioning the fabrics. The background includes storefronts with bright colors and some streetlights, suggesting an urban, possibly city setting.
+    The image shows two yellow taxis driving down a city street. The first taxi is on the left side of the frame, and the second taxi is on the right side. In front of the second taxi, there is an older man wearing a yellow long-sleeve shirt and large glasses. He is using an old-fashioned ironing board to iron a blue shirt. The ironic gesture adds a humorous element to the scene, suggesting that he might be using the park meter in his yellow taxi as a substitute for a conventional iron. The background features some store-front windows and other urban scenery.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in what appears to be New York City, where a person is seen hanging laundry on the back of a yellow taxi. This is unusual and typical of the city's culture, where people sometimes use taxis or other vehicles to hang clothes or hats, inheriting the tradition from horse-drawn carriages. The person is standing next to an uplifted taxi, pouring clothes over a makeshift clothesline as if they are drying clothes on it.
+    The image shows a man hanging laundry, specifically a "laundry sign or brave man doing his laundry," on the back of a taxi in an urban setting, possibly New York City. The taxi is yellow and in the background, there are tall buildings and parked cars.
 
 
 ## Querying Llama 4 Vision Model
