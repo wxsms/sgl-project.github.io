@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 16:41:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 17:50:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 16:41:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 17:50:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.51s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]
 
 
 
@@ -121,7 +121,15 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis moving down a city street. One taxi has a clothes rack attached to its back, which looks like it is holding folded clothes, possibly to commemorate a try it on for size day event. The yellow flag typically seen on taxis spanning from the front to the back is not present here. There are also some details of an awning which appears to mention macys and another store or business.
+    Here is a description of the image:
+    
+    A street scene featuring two yellow taxis, one facing forward and another with its back to the camera. Additional details include:
+    
+    - The cab facing forward has text up top that's partially visible
+    - A man wearing a yellow shirt, apparently soiled clothes, and a grey cap jumps across a broom that is being used as a crossbar
+    - The其他的 cab is asking for donations
+    - Several prizes are displayed up top
+    - The man uses a metal broom crossbar as a makeshiftampoline, anしないwhat better way to conquer the street besides broom cycles, perhaps even masse operators
 
 
 ### Call with Processor Output
@@ -146,7 +154,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene on a city street with several yellow taxis parked on the roadside. There is a person visible with rolling suitcases, and the environment includes street signs, storefronts, and buildings. The scene suggests that people are likely arriving or departing from a vehicle, potentially accommodations or a central point for various activities. The taxi is a common mode of transportation in many cities, particularly iconic ones like New York City.
+    The image shows a person standing behind a yellow car, but instead of being a vendor or a car owner, the person is humorously portrayed as a taxi driver washing a cloth by pouring water onto it from a can. This is a playful and surreal depiction, likely intended to be humorous.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +210,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person in a yellow shirt displaying traditional items of British flag-flying on their car, which is a yellow vehicle. This is likely part of a charity event known as "Mobile Cowes Week." Participants park their cars on the road and invite people to travel between them, while they hand out water, palm oil, and traditional foods, such as scrambled eggs. The purpose is to raise funds for the RNLI, the charity that helps keep people safe at sea during exams.
+    The image depicts a person standing next to a single걸 (yellow taxi) while using a clothesline to hang clothes on, seemingly drying them in the street. The younแนะนำ الرج، w wearing a yellow shirt andNIkeيğini has a Vanhau loon wearing sunshine olympic clothes. The single걸 is colored yellow and black.
 
 
 ## Querying Llama 4 Vision Model
