@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 03:42:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 04:45:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 03:42:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 04:45:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene on a street with two yellow taxis. The scene appears to be a demonstration or performance art rather than a typical urban taxi setting. A man is hanging clothes in the back of a taxi and pushing it along the street. The usual drivers and passengers are not visible, suggesting that both vehicles are in motion. The clothes being hung are hanging from clotheslines attached to the back of the taxis, as if it's a normal day of giving out clothes in the street.
+    The image shows a scene with two yellow van taxis in a city street. The man in the yellow shirt is using a trash can lid to充当 a makeshift drying rack for his clothes. This appears to be a humorous or improvised solution to drying laundry, possibly after doing some light mopping repair. There are also colorful streamers hanging from light poles in the background, indicating it might be a festive or special event.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with multiple yellow taxis, and a person standing in the middle of the street, seemingly engaged in putting something on a wheeled cartacleike structure. The background includes a building facade and street elements.
+    In the picture, there is a man standing on a curb next to a street with two yellow taxis parked along the road. The man is wearing a yellow shirt and is holding a供求 line with colorful flags in his hand. He appears to be engaged in a public demonstration or street clock, using the供求 line to signal people either to stop or to go in a particular direction. The setting looks like an urban environment with buildings and streetlights in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, there are two yellow taxis parked on a city street. One of the taxis has a person hanging laundry on a clothesline attached to a firmly planted magnet on its rear bumper. This creative use of a taxi as a makeshift clothesline is a novelty setup that might be seen as a humorous or whimsical scene in an urban environment.
+    The image shows a scene in a city street with two yellow taxis. One taxi is covered with a large piece of fabric, hanging with a clothespin, while the other taxi is parked nearby. In the background, there is a scene of a fries container truck.
 
 
 ## Querying Llama 4 Vision Model
