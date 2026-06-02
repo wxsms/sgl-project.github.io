@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 12:37:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 13:25:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 12:37:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 13:25:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.17s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.09s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi in the foreground with its rear lane opened up, hanging a blue flagpole on the back. There are also several other taxis and various buildings in the background. The scene appears to be taken on a city street, possibly in New York City given the structure of the flag pole.
+    This image shows a scene from a PETA (People for the Ethical Treatment of Animals) protest. The person is_DIFFRAELQU INT MW liquidity cá controlled a taxi with clothes hanging from its back, on the right side two yellow taxis on the side of the road, on the sidewalk in the city background and red and blue banners with black logo nearby.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene involving cooling a Twitter bot (or a Filtered Twitter bot) on a taxi rooftop in New York City. Commonly known as "Twitter Chairs," people have been placing these chairs on top of taxi cabs in very crowded areas without permission. The chairs are typically set up to cool Twitter bots or Filtered Twitter bots, which are apps designed to manage and monitor Twitter feeds or access restricted content. The chairs help reduce overheating by providing shade.
+    It looks like you’re referring to a scene involving a man dressed as a taxi cab, an activity that has been popular in New York City. This is often part of a street performance or eccentric performance art piece. The man is likely dressed in a costume that resembles a taxi cab and is engaging with the public or passersby in the area. This kind of performance is often staged for entertainment, costumes, and a chance to attract attention. It’s a creative way for the performer to engage with both locals and tourists, usually in a specific urban setting where taxi cab performances are well known to occur.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow Chicago Cab in a city street. The driver has placed a sign with the number "963" on a metal stand in front of the cab. The driver appears to be adjusting or placing clothes on the stand. 
-    
-    In the background, there are buildings with flags on their sides, suggesting this is in a place with a significant American presence, possibly in the United States. The driver's informal attire and the setup suggests he might be using his vehicle as a street vendor or helping to set up another form of street business.
+    This image shows a person holding clothespins and clothes hanging from the back of a taxi. The person is using a spray bottle, likely to keep the clothes dry or to clean them. This is a humorous scene often used for photos or in films to depict a quirky or humorous moment. The setting appears to be an urban street with tall buildings and some recognizable American flags.
 
 
 ## Querying Llama 4 Vision Model
