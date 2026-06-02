@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 11:13:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 11:55:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 11:13:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 11:56:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.07s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene from New York City featuring two yellow taxis: a таксіська машина in the foreground and another behind. In the background, a man is using a stake-out method to leave a sandwich. He’s wearing a yellow shirt and seems to be leaving one sandwich in the street. The background also shows the typical urban environment of New York City, with buildings and trees lining the street.
+    This image shows two yellow taxis waiting in traffic on a city street. The person in the foreground is holding a pair of laundry items, which appear to be in poor condition. The image humorously conveys that the yellow taxis are known for their cleanliness, but this very act is contributing to pollution. This type of imagery is common in STREET art or innovative public relations campaigns to critique urban culture or highlight environmental issues.
 
 
 ### Call with Processor Output
@@ -146,11 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person prominently displayed on the back of a yellow New York City taxi, appearing to do laundry—specifically pressing out laundry on a press. The scene seems unusual and comical, given the setting and context.
-    
-    - **Taxis in New York**: Known for their iconic yellow color, these cabs are a staple of the city's streets.
-    - **Person on the Taxi**: The individual, dressed in casual clothes, appears to be an artist dressed as a method-cட hammer that ended in the neutral color of a yellow TNT MODULE lineprint topped with an Aolyto ADC chế crank.
-    - **Creative Aspect**:
+    The photo shows an unusual scene where a person is using a folding chair to assist in the drying of laundry by hanging it. The laundry is laid out on the chair which elevates it, making it easier to dry and hang properly. This is likely to be a creative and efficient way to handle laundry, especially in an urban setting where space might be limited.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging clothes on a metal hanger taped to the back of a yellow taxi. It appears to be a humorous scenario, as it is unusual to see someone hanging clothes on a taxi. The taxi is parked in a city street, with buildings and other vehicles visible in the background. The person is wearing casual clothes and seems to be playing a prank. This type of image often appears on social media as a light-hearted or satirical take on everyday situations.
+    The image shows a yellow taxi cab in the New York City area. The cab is being stopped because a man is hitching a后来（la）icycle to it, causing the driver to bring the vehicle to a halt. You are the happiest you've been this year.
 
 
 ## Querying Llama 4 Vision Model
