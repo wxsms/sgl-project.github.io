@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 11:55:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 12:37:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 11:56:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 12:37:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.07s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.17s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.09s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows two yellow taxis waiting in traffic on a city street. The person in the foreground is holding a pair of laundry items, which appear to be in poor condition. The image humorously conveys that the yellow taxis are known for their cleanliness, but this very act is contributing to pollution. This type of imagery is common in STREET art or innovative public relations campaigns to critique urban culture or highlight environmental issues.
+    The image shows a yellow taxi in the foreground with its rear lane opened up, hanging a blue flagpole on the back. There are also several other taxis and various buildings in the background. The scene appears to be taken on a city street, possibly in New York City given the structure of the flag pole.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The photo shows an unusual scene where a person is using a folding chair to assist in the drying of laundry by hanging it. The laundry is laid out on the chair which elevates it, making it easier to dry and hang properly. This is likely to be a creative and efficient way to handle laundry, especially in an urban setting where space might be limited.
+    The image shows a scene involving cooling a Twitter bot (or a Filtered Twitter bot) on a taxi rooftop in New York City. Commonly known as "Twitter Chairs," people have been placing these chairs on top of taxi cabs in very crowded areas without permission. The chairs are typically set up to cool Twitter bots or Filtered Twitter bots, which are apps designed to manage and monitor Twitter feeds or access restricted content. The chairs help reduce overheating by providing shade.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab in the New York City area. The cab is being stopped because a man is hitching a后来（la）icycle to it, causing the driver to bring the vehicle to a halt. You are the happiest you've been this year.
+    The image shows a yellow Chicago Cab in a city street. The driver has placed a sign with the number "963" on a metal stand in front of the cab. The driver appears to be adjusting or placing clothes on the stand. 
+    
+    In the background, there are buildings with flags on their sides, suggesting this is in a place with a significant American presence, possibly in the United States. The driver's informal attire and the setup suggests he might be using his vehicle as a street vendor or helping to set up another form of street business.
 
 
 ## Querying Llama 4 Vision Model
