@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 20:27:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 21:44:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 20:27:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 21:44:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.75s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene where a person dressed as an ironing board performs a trick by riding on the back of a yellow New York City taxi cab. The clothing on the "ironing board" is spread out, and it appears that the person is pretending to iron the clothes. This humorous scene is set in a busy urban environment with tall buildings and street signs in the background.
+    What you are seeing is a humorous and unusual scene happening on a New York City street. A man is ironing clothes inside the back of a New York City taxi cab. The car is stopped on the street, and it looks like someone has placed clothes and an ironing board inside. This is an extraordinary and amusing sight, as it defies the typical use of a taxi cab for transportation.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis in a city street. A person is standing on the side of the road with their hands on their hips, looking at a piece of clothing draped over a makeshift stand near the rear of the taxis. The clothing appears to be folded, and the person seems to be either folding it or just putting it down. The scene is set on a busy urban street with buildings and storefronts in the background. The person is wearing yellow and appears to be dressed casually, possibly giving a performance or engaging in some form of street activity.
+    In the image, an underwear is being aired out on a yellow stand outdoors in a city street. There are two yellow taxis in the background. The underwear features a blue strip on the top section, which may suggest a briefcase or some shapes for an advertisement. The yellow taxi on the right of the underwear is not in motion, while the yellow taxi on the left is partially visible and appears to be in motion.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man dressed in a yellow shirt and blue pants standing near a yellow taxi on a city street. He appears to be drying a denim shirt on a camping tripod, which is set up on the ground. The scene is set in an urban environment, likely in a busy area given the presence of both taxis and other pedestrians.
+    The image shows a unique public service advertisement done by the postal service department. It features a postal man hanging laundry on a chair outside a taxi. This street performance might be intended to promote the object-holding services offered to customers, likely highlighting the speed and efficiency of envelop delivery.
 
 
 ## Querying Llama 4 Vision Model
