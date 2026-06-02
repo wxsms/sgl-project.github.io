@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 13:25:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 14:31:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 13:25:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 14:32:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.81s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.30s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.38s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a scene from a PETA (People for the Ethical Treatment of Animals) protest. The person is_DIFFRAELQU INT MW liquidity cá controlled a taxi with clothes hanging from its back, on the right side two yellow taxis on the side of the road, on the sidewalk in the city background and red and blue banners with black logo nearby.
+    The image shows a yellow taxi in a city street with an individual using it as a makeshift drying rack for laundry. The person is folding clothes and hanging them out on the taxi, which is parked on the street. The cityscape in the background includes buildings, storefronts, and a clear sky.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like you’re referring to a scene involving a man dressed as a taxi cab, an activity that has been popular in New York City. This is often part of a street performance or eccentric performance art piece. The man is likely dressed in a costume that resembles a taxi cab and is engaging with the public or passersby in the area. This kind of performance is often staged for entertainment, costumes, and a chance to attract attention. It’s a creative way for the performer to engage with both locals and tourists, usually in a specific urban setting where taxi cab performances are well known to occur.
+    This image shows a yellow taxi in an urban setting, likely New York City, with a person standing next to it. The person is demonstrating the use of an automatic washer that is attached to the back of the taxi, allowing for assistance to people不便 in washing their clothes. This is a practical solution for managing laundry during busy hours, such as streaming content or cooking. The high turnover rate of taxis in the city necessitates daily laundry, which can be inconvenient when trying to find a convenient spot to do it. The washer attachment on the taxi is an innovative and efficient solution to this problem, making it convenient for cab drivers to assist with
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a person holding clothespins and clothes hanging from the back of a taxi. The person is using a spray bottle, likely to keep the clothes dry or to clean them. This is a humorous scene often used for photos or in films to depict a quirky or humorous moment. The setting appears to be an urban street with tall buildings and some recognizable American flags.
+    In the picture, a yellow line has been drawn in the middle of a busy street in New York City. This is an urban street with tall buildings on both sides, and there are several cars with distinctive yellow-striped taxis driving by. The drawing is a temporary and artistic form of temporary road restriction or prohibition, which could be for an event or obstacle.
+    
+    For certain events or activities, it might be necessary to limit the flow of vehicles temporarily. The erase stick could be used to draw on the road using chalk or other materials, ensuring that the markings stay longer than what one might achieve with a retractable eraser. The goal would be
 
 
 ## Querying Llama 4 Vision Model
