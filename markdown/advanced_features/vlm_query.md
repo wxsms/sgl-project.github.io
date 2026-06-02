@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 23:06:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 23:29:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 23:06:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 23:29:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a parking妨碍(lang selection of 5 characters) clipperываем-store parked on the side of the road in a bustling city environment, particularly New York市, as indicated by the distinctive yellow and white color scheme of the taxis.
+    The image shows two yellow taxis parked on a street in what appears to be a city. The taxi on the left has the windshield wipers extending outward, while the taxi on the right has a person hanging clothes on the rearview mirror with a clothesline. The background includes some buildings with storefronts and signs, and there are some covered Ben Franklin Marts, which are convenience stores. The weather seems slightly cloudy, and the cityscape is typical of an urban environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a person standing on the side of the road where a yellow taxi cab is parked. The person is handling what appears to be pieces of clothing, possibly drying them up on a makeshift drying rack. The setting appears to be an urban environment, likely in New York City, given the design of the taxis and the style of buildings in the background.
+    The image shows two taxi cabs driving down a city street. Both taxis are yellow, a common color for taxis in several major cities. A person standing between the two cabs has a tie and a shirt draped over a folding stand, appearing to be ironing clothing. The scene humorously captures a moment where someone is bustling aroundIS larger than normal, likely to help them with ironing or to create a laugh. The presence of wires hanging down from the buildings suggests an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene of public service, where a person is using the windshield wipes of two yellow taxis to dry a hanging towel. This is likely a humorous or light-hearted display of public transportation attendants or drivers utilizing the vehicles' features for a practical purpose.
+    The image shows a person wearing a yellow shirt and blue jeans standing in the street. They are operating a washing machine attached to the back of a yellow passenger car, rather than a true taxi. This setup is commonly used for humorous forms of public entertainment or as a form of street art.
 
 
 ## Querying Llama 4 Vision Model
