@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 09:45:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 10:20:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 09:45:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 10:20:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis on a city street. One taxi, moving forward, has been distracted by a person who is painting on water in mid-air above the vehicle’s wheel. This is an optical illusion created by the two red taillights of the taxi matching the rear-end paint of the stationary taxi behind it, making it appear as if the water-based painter is continuing the painting onto the back of the stationary car.
+    The image shows a scene on a city street with two yellow taxis. One taxi is in the process of printing or displaying text on its exterior, which likely features an advertisement or promotional message. The second taxi is stationary behind a cloth stand that has a spread-out flag draped over it. This setup suggests that the area is busy and possibly in a high-traffic zone, such as Times Square in New York City, where iconic yellow taxis are known for their vibrant presence. The flagpltop is a common tool for displaying large text or images, often seen in busy urban areas for promotions or events. The presence of such vehicles aligns with
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man dressed in a yellow sweatshirt and blue jeans, standing by a vehicle that has its rear doors open and a clothesline set up with laundry. The man appears to be attempting to dry clothes using the vehicle’s exhaust system, a technique sometimes used in urban settings to save space and power. The scene takes place on a city street with other vehicles and pedestrians visible in the background.
+    The image shows a man in a yellow sweatshirt standing on the back of a yellow car, drying clothes using the rear window. The setting appears to be an urban area with tall buildings and a different colored car visible in the background. This is likely a demonstration or joke about recycling clothes instead of throwing them away.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I don't know what's shown here. It might be a vehicle or yellow.
+    The image shows a person cleaning clothes on the back of a yellow cab in a city street. The individual is using a iron on top of the cab's roof to dry and smooth out the clothes. There is another yellow cab nearby, and the scene is set in an urban area with buildings and street lights visible in the background.
 
 
 ## Querying Llama 4 Vision Model
