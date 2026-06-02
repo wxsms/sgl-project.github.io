@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 10:40:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 11:13:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 10:40:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 11:13:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow New York City taxis, one in the foreground and one in the background. The foreground taxi has a blue cloth draped over the top of its rear deck, and a person is standing next to it, seemingly corralling or arranging the cloth. The background taxi is also visible, but it is not as prominently featured in the image. The setting appears to be a busy urban street with tall buildings. The attention to the yellow taxis and the unusual activity on one of them suggests the image may be capturing a quirky or humorous moment within a bustling cityscape.
+    The image shows a scene from New York City featuring two yellow taxis: a таксіська машина in the foreground and another behind. In the background, a man is using a stake-out method to leave a sandwich. He’s wearing a yellow shirt and seems to be leaving one sandwich in the street. The background also shows the typical urban environment of New York City, with buildings and trees lining the street.
 
 
 ### Call with Processor Output
@@ -146,9 +146,11 @@ print(out["text"])
 ```
 
     Response using processor output:
-    Here's what's shown:
+    The image shows a person prominently displayed on the back of a yellow New York City taxi, appearing to do laundry—specifically pressing out laundry on a press. The scene seems unusual and comical, given the setting and context.
     
-    A man in a yellow shirt is standing next to two yellow taxis on a city street. He appears to be washing clothes in the back of one of the taxis using a_Tonka_Jeep_to_team Cygan,]. The scene looks like a humorous or unusual mix of activities, as washing clothes in a taxi is not a common sight. The background includes a large building with glass windows and some flags.
+    - **Taxis in New York**: Known for their iconic yellow color, these cabs are a staple of the city's streets.
+    - **Person on the Taxi**: The individual, dressed in casual clothes, appears to be an artist dressed as a method-cட hammer that ended in the neutral color of a yellow TNT MODULE lineprint topped with an Aolyto ADC chế crank.
+    - **Creative Aspect**:
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from a street in New York City, depicting a street cleaner performing cleaning duties on a street in downtown Manhattan. This is not an unusual sight as many cleaners use theibt to clean the street surfaces as they are monadood in yellow. The photo was taken less than 18 months ago, and it shows the same street.
+    The image shows a person hanging clothes on a metal hanger taped to the back of a yellow taxi. It appears to be a humorous scenario, as it is unusual to see someone hanging clothes on a taxi. The taxi is parked in a city street, with buildings and other vehicles visible in the background. The person is wearing casual clothes and seems to be playing a prank. This type of image often appears on social media as a light-hearted or satirical take on everyday situations.
 
 
 ## Querying Llama 4 Vision Model
