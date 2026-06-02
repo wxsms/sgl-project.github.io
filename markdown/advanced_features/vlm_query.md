@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 21:44:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 23:06:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 21:44:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 23:06:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.75s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    What you are seeing is a humorous and unusual scene happening on a New York City street. A man is ironing clothes inside the back of a New York City taxi cab. The car is stopped on the street, and it looks like someone has placed clothes and an ironing board inside. This is an extraordinary and amusing sight, as it defies the typical use of a taxi cab for transportation.
+    This image shows a parking妨碍(lang selection of 5 characters) clipperываем-store parked on the side of the road in a bustling city environment, particularly New York市, as indicated by the distinctive yellow and white color scheme of the taxis.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, an underwear is being aired out on a yellow stand outdoors in a city street. There are two yellow taxis in the background. The underwear features a blue strip on the top section, which may suggest a briefcase or some shapes for an advertisement. The yellow taxi on the right of the underwear is not in motion, while the yellow taxi on the left is partially visible and appears to be in motion.
+    This image shows a person standing on the side of the road where a yellow taxi cab is parked. The person is handling what appears to be pieces of clothing, possibly drying them up on a makeshift drying rack. The setting appears to be an urban environment, likely in New York City, given the design of the taxis and the style of buildings in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a unique public service advertisement done by the postal service department. It features a postal man hanging laundry on a chair outside a taxi. This street performance might be intended to promote the object-holding services offered to customers, likely highlighting the speed and efficiency of envelop delivery.
+    The image depicts a scene of public service, where a person is using the windshield wipes of two yellow taxis to dry a hanging towel. This is likely a humorous or light-hearted display of public transportation attendants or drivers utilizing the vehicles' features for a practical purpose.
 
 
 ## Querying Llama 4 Vision Model
