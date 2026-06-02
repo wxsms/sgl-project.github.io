@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 06:00:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 06:29:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 06:00:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 06:29:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows the back of a moving yellow taxi as it is mounted with a clothes drying rack and drying a blanket. The taxi is operating in a city setting, as suggested by the urban context and the presence of tall buildings and a street scene. The scene captures the convergence of a traditional taxi service with modern, adaptive lifestyles, where taxi drivers engage in multitasking while providing transportation services. Emphasizing practical multitasking techniques, the taxi driver is seen drying their clothes, which could include blankets, on the backseat of a moving vehicle.
+    The image shows a man in a yellow shirt hanging laundry on a stand attached to the back of a yellow taxi. The taxi is driving down a street with other vehicles and buildings visible in the background. The scene is likely taking place in an urban area, possibly New York City, known for its iconic yellow taxis. This is a humorous and somewhat unusual sight in a city where public transportation includes yellow cabs.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person dressed in a taxi costume standing in the middle of a street. The person is wearing a yellow shirt typical of taxi drivers and is posing next to a yellow taxi cab. The street appears to be in an urban area with other vehicles and buildings in the background. This is likely a costume-related event, possibly part of a parade, where individuals dress up as taxis for entertainment or to raise awareness on a particular issue相关的主题相关的主题。
+    This image appears to show a person pretending to fold a clothesline in an impromptu "clothesline yoga" pose in front of taxi cabs in a busy urban street. The person is attempting to balance on a clothesline solely composed of clothes and a stool, while the taxis are parked and driving by in the background. This kind of whimsical or playful act is often used for entertainment or to make a humorous statement.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a humorous and quirky scene where a man is demonstrating how to fold clothes on the back of a yellow taxi. The taxi is parked on a street and the man is manipulating clothes draped over the taxi's back, possibly to illustrate a point about public transportation or management.
+    The image shows a scene in a city with two yellow taxis in traffic. On the right side of the image, there is a bus stop sign indicating that this is a bus stop. Behind the sign is a person wearing a yellow shirt who appears to be engaged in an unusual activity. They are draped in fluffy darker blue fabric and are using an iron on the fabric. The person's face is not visible. The context and the act of an individual ironing on the street is a humorous and out-of-place scene.
+    
+    Note that photos like this may garner attention due to their unusual and artistic presentation, and it's best to avoid such behavior
 
 
 ## Querying Llama 4 Vision Model
