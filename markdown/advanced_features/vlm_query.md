@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 14:31:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 16:41:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 14:32:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 16:41:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.81s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.30s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.38s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi in a city street with an individual using it as a makeshift drying rack for laundry. The person is folding clothes and hanging them out on the taxi, which is parked on the street. The cityscape in the background includes buildings, storefronts, and a clear sky.
+    The image shows two yellow taxis moving down a city street. One taxi has a clothes rack attached to its back, which looks like it is holding folded clothes, possibly to commemorate a try it on for size day event. The yellow flag typically seen on taxis spanning from the front to the back is not present here. There are also some details of an awning which appears to mention macys and another store or business.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a yellow taxi in an urban setting, likely New York City, with a person standing next to it. The person is demonstrating the use of an automatic washer that is attached to the back of the taxi, allowing for assistance to people不便 in washing their clothes. This is a practical solution for managing laundry during busy hours, such as streaming content or cooking. The high turnover rate of taxis in the city necessitates daily laundry, which can be inconvenient when trying to find a convenient spot to do it. The washer attachment on the taxi is an innovative and efficient solution to this problem, making it convenient for cab drivers to assist with
+    The image depicts a scene on a city street with several yellow taxis parked on the roadside. There is a person visible with rolling suitcases, and the environment includes street signs, storefronts, and buildings. The scene suggests that people are likely arriving or departing from a vehicle, potentially accommodations or a central point for various activities. The taxi is a common mode of transportation in many cities, particularly iconic ones like New York City.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, a yellow line has been drawn in the middle of a busy street in New York City. This is an urban street with tall buildings on both sides, and there are several cars with distinctive yellow-striped taxis driving by. The drawing is a temporary and artistic form of temporary road restriction or prohibition, which could be for an event or obstacle.
-    
-    For certain events or activities, it might be necessary to limit the flow of vehicles temporarily. The erase stick could be used to draw on the road using chalk or other materials, ensuring that the markings stay longer than what one might achieve with a retractable eraser. The goal would be
+    The image shows a person in a yellow shirt displaying traditional items of British flag-flying on their car, which is a yellow vehicle. This is likely part of a charity event known as "Mobile Cowes Week." Participants park their cars on the road and invite people to travel between them, while they hand out water, palm oil, and traditional foods, such as scrambled eggs. The purpose is to raise funds for the RNLI, the charity that helps keep people safe at sea during exams.
 
 
 ## Querying Llama 4 Vision Model
