@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 04:52:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 05:18:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 04:52:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 05:18:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.10s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.48s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.57s/it]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts two New York City yellow cabs. One cab is beside the street, parked in front of a taxi stand, while the other cab is on the street. What's interesting in the image is that a person is folding blue and red clothing items on the back of the cab on the street. The scene appears to be part of a makeshift "clothesline" activity. The background features a cityscape with buildings, billboards, and other taxi stands.
+    This image appears to show a scene in a city street with two yellow taxis parked on the street. The main focus of the image is a man dressed in a yellow shirt standing next to one of the taxis, seemingly hovering over a white shirt that is draped on a portable, two-sided clothes line attached to the back of the vehicle. TheIRSInstitute.com suggests that the man might be trying to hang a shirt up in the street. 
+    
+    The background includes tall buildings with some banners or flags hanging from them, creating a busy urban environment. The man's action of hanging the shirt might indicate an attempt to dry clothes or perform some other
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a yellow shirt stirring clothes on a makeshift laundry rack placed between two yellow taxis. The scene appears to be in an urban environment, possibly during a parade or public event. The person is wearing a yellow shirt and seems to be engaged in the activity, while the taxis are parked on the street.
+    The image shows a scene where a person in a yellow shirt is drying clothes on a tạing (clothesline) outside a building near what appears to be a taxi turning area. The person is using an iron to smooth out the clothes. The setting seems to be a busy urban area with multiple taxis and people passing by.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like a yellow cab is أدس wouldn't do stage in the street.
+    It looks like a taxi driver is doing laundry on the side of the road. It's an unusual sight and appears to be a lighthearted or humorous scenario.
 
 
 ## Querying Llama 4 Vision Model
