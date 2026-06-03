@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 19:14:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 19:44:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 19:14:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 19:44:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.40s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.13s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there is a person hanging clothes from aIxh Waistband hanging prototype, perhaps made on a stick, out the back of a yellow and red vehicle.
+    In the image, there are two yellow taxis driving down a city street. The man in the yellow shirt is using his ladder to tie laundry to the back of one of the taxis. It appears to be a humorous scene, as it is unusual for someone to use a ladder to load laundry onto a taxi.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a humorous scene where an individual is catching laundry in a taxi. The person is suspended above a bucket, surrounded by various pieces of clothing such as shirts and pants. The setting appears to be a busy street, likely New York City, given the presence of taxi cabs and the urban environment. This is a playful take on the common practice of washing clothes outside and catching them in a bucket.
+    The image shows a man standing between two yellow taxis using an iron on a manual clothes press. He seems to be ironing a shirt in the middle of the street. Additionally, he has multiple United States flags attached to a series of cloths draped over his ironing board. This scene appears humorous and unconventional, blending elements of daily life with the elements of a typical urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person indoors, hanging up clothes on a clothesline set up between two yellow taxis. The scene is unusual and appears to be staged for comedic or humorous effect, perhaps for a photo opportunity or as part of an event. The person is wearing a yellow shirt and appears to be in a store or another indoor space. The yellow taxis are probably used as props to create an amusing contrast between everyday urban elements and the unexpected act of hanging clothes outside.
+    I'm not sure what specific details are being asked about in the image you provided. Are you referring to the yellow taxi vehicles in the street, or are you asking about something more specific within the image? Could you please provide more context or clarify your question?
 
 
 ## Querying Llama 4 Vision Model
