@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 04:16:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 04:52:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 04:17:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 04:52:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene on a city street, likely in New York City, given the police cruiser (patrol car) and the yellow taxi cabs. A man wearing a yellow shirt is standing behind the rear window of a police cruiser, which is parked on the side of the road next to several yellow taxis. The scene appears to be part of a protest or demonstration, with the man possibly participating in or supporting the event. The background includes tall buildings and several American flags displayed, which suggests the location might be a major urban area in the United States.
+    The image depicts two New York City yellow cabs. One cab is beside the street, parked in front of a taxi stand, while the other cab is on the street. What's interesting in the image is that a person is folding blue and red clothing items on the back of the cab on the street. The scene appears to be part of a makeshift "clothesline" activity. The background features a cityscape with buildings, billboards, and other taxi stands.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a man standing between two yellow taxis on a city street. He is holding a wooden clothes rack with laundry on it. The men appears to be conducting an unusual activity, as it is not common for men to wear yellow uniforms for this purpose. The man is wearing a yellow shirt and appears to be assisting customers or entering vehicles with the clothes rack. The setting looks like a busy city street.
+    The image shows a person in a yellow shirt stirring clothes on a makeshift laundry rack placed between two yellow taxis. The scene appears to be in an urban environment, possibly during a parade or public event. The person is wearing a yellow shirt and seems to be engaged in the activity, while the taxis are parked on the street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a humorous scene where a man is using a crutch to balance a yellow taxi cab, with clothes draped over the top. This setup is meant to appear as though he is stopping a taxi cab. The person performing this balancing act is holding a red and white cape hat, and there are several cars and people in the background, suggesting an urban setting. The idea is likely to be seen as a comedic situation due to the unusual and unexpected nature of using a crutch to balance a new taxi cab.
+    It looks like a yellow cab is أدس wouldn't do stage in the street.
 
 
 ## Querying Llama 4 Vision Model
