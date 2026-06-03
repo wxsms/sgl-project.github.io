@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 14:10:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 16:08:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 14:10:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 16:08:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a man washing clothes on the street in New York City. He is using a jet of fresh water from a hydrant to wash a blue shirt and blue jeans, which are hanging on a clothes rack attached to the back of a yellow taxi. This common practice exists to conserve water and maintain street safety for the majority who are legally permitted to wash in the street.
+    The image shows a man standing on the back of a yellow taxi, ironing clothes on a striped bench that is attached to the back of the taxi. This is an unusual and humorous scene, reminiscent of a cartoon or artistic put-on. The man is wearing casual clothing and appears to be setting up some sort of staged performance. The background includes urban buildings and Tumblrs (red vertical banners), which are social media platforms, contributing to the vibrant and eclectic atmosphere of the scene.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man with a mop and a bucket, seemingly performing a routine or demonstration in the middle of a city street. In the background, there are two taxi cabs, likely in a busy urban area with tall buildings and flags possibly indicating a festive or special event. The scene combines urban utility work with the context of a bustling city environment.
+    In the image, a yellow taxi cab is parked on a city street. A person is unfolding a piece of blue fabric, possibly a piece of clothing, on a folding chair beside the taxi. The scene appears to be outdoors, with buildings and storefronts visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene from a public taxi app, where a rider bikes in the foreground while the app's vehicles are displayed in the background.
+    The image depicts a whimsical scene where a person, presumably a sort of art installation, is using a painted cardboard goblet with little legs and wheels to iron clothes on the street. The scene is set in an urban environment with two yellow cabs in the foreground and red and yellow-haired people nearby. The idea seems to mix the mundane task of ironing with the humorous and surreal concept of a robot or anthropomorphic object performing it.
 
 
 ## Querying Llama 4 Vision Model
