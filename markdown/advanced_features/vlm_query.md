@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 16:42:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 18:05:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 16:42:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 18:05:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The scene shows two yellow taxis driving down a street in a city, likely New York City due to the distinctive boxy design of the taxis. In the foreground, a chalk outline of a sun is being painted on the street, likely as part of a creative or artistic installation. There is also a man in a yellow shirt using a clothes iron to iron laundry on the back of one of the taxis. The setting is urban with tall buildings and traffic lights visible in the background.
+    The image depicts two yellow taxis on a city street, likely in New York City, given the iconic yellow taxis of that city. The taxi on the right is outfitted as a mobile clothesline, filled with laundry that is drying outdoors. This setup is unusual and resembles a makeshift clothesline attached to the back of a vehicle, used to dry clothes without the need for a traditional laundry line or dryer. The image humorously and creatively repurposes a taxi into a mobile drying station.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the picture, a person is ironing clothes on the back seat of a yellow taxi cab. The taxi is parked on the street, and the person is standing behind the seat with a hot iron in their hand. The yellow taxi is stationed in the middle of a city street with buildings and possibly other vehicles visible in the background. The person and the iron are the main focal points of the image, suggesting that they are performing an unusual act of outdoor ironing.
+    The image shows a man hanging laundry on a clothesline attached to the back of a yellow taxi. The situation is unusual because taxis are typically used for transportation rather than for laundry activities.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene where a yellow cab (taxi) is being used to hang clothes on a clothesline. This appears to be a practical and humorous use of the taxi's vehicle space while it's parked along a city street. This can be an example of creative problem-solving or recycling of a parked vehicle for temporary accessibility.
+    In the picture, there is a yellow taxi driving through a busy urban area with pedestrians walking nearby. The scene appears to be set in a city street, possibly in a downtown or commercial district. The taxi is a standard-sized vehicle, typical of the yellow taxis commonly seen in New York City and other major cities. The taxi is positioned on the right side of the image, with the front of the vehicle leading the way and the rear end visible in the background. 
     
-    Behind the taxi, you can see part of a store with glass windows, which look like a commercial shopping area. The flags on the roadside provide some contextual detailing likely indicative of a city environment.
+    The background includes buildings with large glass windows, some pedestrians, and street lights, adding to the urban environment. The overall atmosphere suggests a typical day with active city life.
 
 
 ## Querying Llama 4 Vision Model
