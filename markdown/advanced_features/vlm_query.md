@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 08:45:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 11:16:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 08:45:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 11:16:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows two yellow taxis parked on a street. The taxi on the left has an empty washer and dryer hanging on its side, and the person in the foreground is demonstrating how to use them to dry clothes. The taxi on the right has its back door open, revealing what appears to be an empty washer or dryer. This kind of setup is an example of innovative recycling or repurposing ideas, utilizing everyday objects to perform household tasks.
+    This image shows a taxi in New York City (NYC) that has been transformed into a makeshift laundry cart. The taxi is parked next to a sidewalk and has a clothesline attached to the back, with laundry hung on it. The person in the yellow shirt appears to be organizing or attending to the laundry in the back of the taxi. This is a common sight in NYC, as久久 do our taxis face a certain amount of wear and tear from carrying passengers and their belongings.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene where a person dressed in a yellow shirt is using an ice axe to hang clothes on a架杆, possibly indoors or in a trash can, in a public space. The scene appears comedic or unusual, as using an ice axe to hang clothes is not a common or expected action.
+    The image depicts a person hanging clothes on a clothesline that is on the back of aבד car in a city street. The car is prominently黄色出租车, which is commonly seen in many cities, including New York City. The person appears to be using a method to dry clothes in the open air, likely for a photoshoot or as an art installation.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab on a city street. The taxicab is parked on the side of the road, and the door is open. A man in a yellow shirt appears to be hanging clothes outdoors. The scene suggests that the man might have been doing laundry outside due to tough weather conditions. The background includes urban buildings, and there are streetlights and other typical cityscape elements.
+    The image shows a person standing on the side of a street, airing out clothes using a drying rack attached to a car. The background includes a yellow taxi and various street elements such as buildings, flags, and streetlights. The person appears to be drying clothes outdoors on a typical urban street.
 
 
 ## Querying Llama 4 Vision Model
