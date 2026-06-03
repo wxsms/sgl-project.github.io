@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 07:26:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 07:51:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 07:26:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 07:51:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.65s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.56s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.17s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.20s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    It appears that there is a sign on the back of a yellow taxi. However, without being sure of the language, I can only speculate that it might be about taxi lanes or a similar regulation. Please clarify if I should look closer for more information.
+    The image shows a street scene with three yellow taxi cabs parked on the side of a city street. In the foreground, a person wearing a yellow shirt and jeans is hanging clothes on the back of one of the taxis with a rack. The clothes include a blue garment and a piece of clothing hanging down off the rack. The background includes urban commercial buildings with storefronts and advertisements. The setting appears to be in an urban area, likely in a city known for its yellow taxis, such as New York.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man ironing clothes on the back of a parked taxi in a city street. The scene appears to be humorous as irons are not typically used for ironing clothes and taxi back seats are narrow and not designed for such activities.
+    This is a photograph of a person hanging clothes to dry on an erupter while a taxi drives by on a city street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a person polishing his taxicab in a parking lot, which is an unusual and nonsensical activity. One person is wearing a yellow shirt and currently using an iron on his taxi, while another person is observing the scene. The building in the background has a sign that says " hasaki milk."
+    The image shows a New York City street scene. There are two yellow taxis, one on the left and the other on the right. The taxi on the right is hitched to an elaborate contraption that appears to be shrunk into the back of the vehicle, holding some surfboards and small flags. This is an act of protest by a group of people known as the "Ajax Angels," who often take to the streets and perform antics to draw attention to their cause. The group's cause involves the visualization of historical women artists and their input on world consciousness, without men being involved.
 
 
 ## Querying Llama 4 Vision Model
