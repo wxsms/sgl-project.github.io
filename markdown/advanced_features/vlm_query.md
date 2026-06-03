@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 19:44:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 19:57:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 19:44:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 19:57:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there are two yellow taxis driving down a city street. The man in the yellow shirt is using his ladder to tie laundry to the back of one of the taxis. It appears to be a humorous scene, as it is unusual for someone to use a ladder to load laundry onto a taxi.
+    The image you're referring to is not a commonly known scene in New York City. New York City's iconic yellow cabs and high-rises are prominently featured, so this could be a staged or altered scene.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing between two yellow taxis using an iron on a manual clothes press. He seems to be ironing a shirt in the middle of the street. Additionally, he has multiple United States flags attached to a series of cloths draped over his ironing board. This scene appears humorous and unconventional, blending elements of daily life with the elements of a typical urban environment.
+    The image shows a person standing on the sidewalk next to two taxis. The individual is placing items onto a clothes rack attached to the back of the taxi. This is likely a humorous or creative act to highlight the use of companies using taxis for laundry services.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I'm not sure what specific details are being asked about in the image you provided. Are you referring to the yellow taxi vehicles in the street, or are you asking about something more specific within the image? Could you please provide more context or clarify your question?
+    The image shows two yellow taxis in an urban setting. One taxi is stopped in traffic, and someone is using it as a makeshift drying rack. The drying rack is made of metal and supports clothes that appear to be hanging and waving in the wind. This scene is quite unusual and creative, suggesting that the person might be washing clothes in a nearby building and using the taxi to quickly dry them off, possibly to keep them dry for nighttime or if they get into their car without waiting for a снов period.
 
 
 ## Querying Llama 4 Vision Model
