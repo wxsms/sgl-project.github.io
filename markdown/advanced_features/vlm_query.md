@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 11:16:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 13:29:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 11:16:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 13:29:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a taxi in New York City (NYC) that has been transformed into a makeshift laundry cart. The taxi is parked next to a sidewalk and has a clothesline attached to the back, with laundry hung on it. The person in the yellow shirt appears to be organizing or attending to the laundry in the back of the taxi. This is a common sight in NYC, as久久 do our taxis face a certain amount of wear and tear from carrying passengers and their belongings.
+    The image shows a street scene with two yellow taxis stopped next to each other. On the back of one of the taxis, a person is hanging laundry on a makeshift clothesline. The person is wearing a yellow long-sleeve shirt and appears to be ironing clothes. The street is lined with buildings, and there are other people and vehicles in the background. The scene has a humorous and informal atmosphere.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a person hanging clothes on a clothesline that is on the back of aבד car in a city street. The car is prominently黄色出租车, which is commonly seen in many cities, including New York City. The person appears to be using a method to dry clothes in the open air, likely for a photoshoot or as an art installation.
+    The image shows a man hanging laundry outside a yellow taxi. The taxi is parked on a city street, and the man is using an makeshift clothes rack to dry his laundry.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person standing on the side of a street, airing out clothes using a drying rack attached to a car. The background includes a yellow taxi and various street elements such as buildings, flags, and streetlights. The person appears to be drying clothes outdoors on a typical urban street.
+    The image shows a person performing the activity of ironing while walking down a street with two yellow taxis. This activity is considered unusual and humorous because it goes against the expected use of an iron, which is typically used to smooth fabric in homes or workshops rather than outside in public space. The person's yellow shirt matches the color of the taxis, adding a visual inconsistency that amplifies the quirky nature of the scene.
 
 
 ## Querying Llama 4 Vision Model
