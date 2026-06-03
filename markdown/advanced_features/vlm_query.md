@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 16:08:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 16:42:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 16:08:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 16:42:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man standing on the back of a yellow taxi, ironing clothes on a striped bench that is attached to the back of the taxi. This is an unusual and humorous scene, reminiscent of a cartoon or artistic put-on. The man is wearing casual clothing and appears to be setting up some sort of staged performance. The background includes urban buildings and Tumblrs (red vertical banners), which are social media platforms, contributing to the vibrant and eclectic atmosphere of the scene.
+    The scene shows two yellow taxis driving down a street in a city, likely New York City due to the distinctive boxy design of the taxis. In the foreground, a chalk outline of a sun is being painted on the street, likely as part of a creative or artistic installation. There is also a man in a yellow shirt using a clothes iron to iron laundry on the back of one of the taxis. The setting is urban with tall buildings and traffic lights visible in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, a yellow taxi cab is parked on a city street. A person is unfolding a piece of blue fabric, possibly a piece of clothing, on a folding chair beside the taxi. The scene appears to be outdoors, with buildings and storefronts visible in the background.
+    In the picture, a person is ironing clothes on the back seat of a yellow taxi cab. The taxi is parked on the street, and the person is standing behind the seat with a hot iron in their hand. The yellow taxi is stationed in the middle of a city street with buildings and possibly other vehicles visible in the background. The person and the iron are the main focal points of the image, suggesting that they are performing an unusual act of outdoor ironing.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a whimsical scene where a person, presumably a sort of art installation, is using a painted cardboard goblet with little legs and wheels to iron clothes on the street. The scene is set in an urban environment with two yellow cabs in the foreground and red and yellow-haired people nearby. The idea seems to mix the mundane task of ironing with the humorous and surreal concept of a robot or anthropomorphic object performing it.
+    The image shows a street scene where a yellow cab (taxi) is being used to hang clothes on a clothesline. This appears to be a practical and humorous use of the taxi's vehicle space while it's parked along a city street. This can be an example of creative problem-solving or recycling of a parked vehicle for temporary accessibility.
+    
+    Behind the taxi, you can see part of a store with glass windows, which look like a commercial shopping area. The flags on the roadside provide some contextual detailing likely indicative of a city environment.
 
 
 ## Querying Llama 4 Vision Model
