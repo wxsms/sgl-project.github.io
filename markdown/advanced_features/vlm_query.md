@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 18:05:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 19:14:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 18:05:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 19:14:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.40s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.13s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts two yellow taxis on a city street, likely in New York City, given the iconic yellow taxis of that city. The taxi on the right is outfitted as a mobile clothesline, filled with laundry that is drying outdoors. This setup is unusual and resembles a makeshift clothesline attached to the back of a vehicle, used to dry clothes without the need for a traditional laundry line or dryer. The image humorously and creatively repurposes a taxi into a mobile drying station.
+    In the image, there is a person hanging clothes from aIxh Waistband hanging prototype, perhaps made on a stick, out the back of a yellow and red vehicle.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man hanging laundry on a clothesline attached to the back of a yellow taxi. The situation is unusual because taxis are typically used for transportation rather than for laundry activities.
+    The image shows a humorous scene where an individual is catching laundry in a taxi. The person is suspended above a bucket, surrounded by various pieces of clothing such as shirts and pants. The setting appears to be a busy street, likely New York City, given the presence of taxi cabs and the urban environment. This is a playful take on the common practice of washing clothes outside and catching them in a bucket.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, there is a yellow taxi driving through a busy urban area with pedestrians walking nearby. The scene appears to be set in a city street, possibly in a downtown or commercial district. The taxi is a standard-sized vehicle, typical of the yellow taxis commonly seen in New York City and other major cities. The taxi is positioned on the right side of the image, with the front of the vehicle leading the way and the rear end visible in the background. 
-    
-    The background includes buildings with large glass windows, some pedestrians, and street lights, adding to the urban environment. The overall atmosphere suggests a typical day with active city life.
+    The image shows a person indoors, hanging up clothes on a clothesline set up between two yellow taxis. The scene is unusual and appears to be staged for comedic or humorous effect, perhaps for a photo opportunity or as part of an event. The person is wearing a yellow shirt and appears to be in a store or another indoor space. The yellow taxis are probably used as props to create an amusing contrast between everyday urban elements and the unexpected act of hanging clothes outside.
 
 
 ## Querying Llama 4 Vision Model
