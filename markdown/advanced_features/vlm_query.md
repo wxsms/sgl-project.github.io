@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 13:29:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 14:10:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 13:29:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 14:10:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene with two yellow taxis stopped next to each other. On the back of one of the taxis, a person is hanging laundry on a makeshift clothesline. The person is wearing a yellow long-sleeve shirt and appears to be ironing clothes. The street is lined with buildings, and there are other people and vehicles in the background. The scene has a humorous and informal atmosphere.
+    This image shows a man washing clothes on the street in New York City. He is using a jet of fresh water from a hydrant to wash a blue shirt and blue jeans, which are hanging on a clothes rack attached to the back of a yellow taxi. This common practice exists to conserve water and maintain street safety for the majority who are legally permitted to wash in the street.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man hanging laundry outside a yellow taxi. The taxi is parked on a city street, and the man is using an makeshift clothes rack to dry his laundry.
+    The image shows a man with a mop and a bucket, seemingly performing a routine or demonstration in the middle of a city street. In the background, there are two taxi cabs, likely in a busy urban area with tall buildings and flags possibly indicating a festive or special event. The scene combines urban utility work with the context of a bustling city environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person performing the activity of ironing while walking down a street with two yellow taxis. This activity is considered unusual and humorous because it goes against the expected use of an iron, which is typically used to smooth fabric in homes or workshops rather than outside in public space. The person's yellow shirt matches the color of the taxis, adding a visual inconsistency that amplifies the quirky nature of the scene.
+    The image depicts a scene from a public taxi app, where a rider bikes in the foreground while the app's vehicles are displayed in the background.
 
 
 ## Querying Llama 4 Vision Model
