@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 21:55:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 23:20:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 21:56:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 23:21:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.11s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in New York City, driving on the street with their respective garlands hanging from the rear.
+    The image shows a scene with two yellow taxis and a person washing clothes in front of them. The person is using a solar-powered clothes dryer setup, which involves a rack holding衣物 and a solar panel to provide power. The taxis are likely in a busy city street, possibly in a city like New York because of the urban environment and the style of the buildings. The setting appears to be outdoors on a sunny day, making it a clever use of renewable energy for a mundane task.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person with their back facing the camera, who appears to be washing clothes outdoors. The individual is using an outdoor washing rack to hang and wring out a blue laundry bag, which is placed on a đà p stand. In the background, there are two yellow taxis on a city street, suggesting an urban setting. The person is wearing a yellow and orange hoodie.
+    The image shows a person ironing clothes outside in a busy city street. The person is using a table to iron two pieces of fabric, likely under the shade of a nearby building or awning to protect them from the cold. The scene takes place on Fifth Avenue in New York City, near Columbus Circle, which is a well-known part of Midtown Manhattan. This location is also known for its busy taxi traffic, which can be seen in the form of two yellow cabs waiting nearby.
+    
+    The ironing waist higher parking space mentioned goes on most section of stree East New ,This direciture is generally used iirt Ungr
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city, likely a major one given the presence of yellow taxis, which are commonly used in New York City. The man in the image is wearing a yellow long-sleeved shirt and appears to be demonstrating something—possibly related to cleaning or maintenance. He is standing next to a yellow taxi and has a steamer draped over his shoulder. The background includes buildings with multiple nivevations, and the scene takes place during the day. The presence of the yellow taxi is characteristic of some major cities around the world, especially in North America.
+    The image shows a scene where a man is standing next to a yellow taxi cab with a clothesline stretched between them. He appears to be drying clothes. The clothesline is holding some laundry, and the man seems unaware of the vehicles parked next to him. The setting looks like a busy urban street, possibly in a city center, with buildings and other vehicles visible in the background.
 
 
 ## Querying Llama 4 Vision Model

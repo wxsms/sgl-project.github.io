@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=ffd6d3ce"></script>
+    <script src="../_static/documentation_options.js?v=b1c7a28b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -578,9 +578,9 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.81it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.50it/s]
-Capturing num tokens (num_tokens=4 avail_mem=55.84 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 34.18it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.70it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00,  9.99it/s]
+Capturing num tokens (num_tokens=4 avail_mem=75.94 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 33.39it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -596,7 +596,7 @@ Capturing num tokens (num_tokens=4 avail_mem=55.84 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31225
+Server started on http://localhost:30506
 </pre></div></div>
 </div>
 </section>
@@ -630,7 +630,7 @@ Server started on http://localhost:31225
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='c26cbb80e5ca4fc1ab8cb3d498b87b6f', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1780524079, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='8d849c1274344a89b639ebb612bd2176', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1780529014, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -895,7 +895,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that thrived from the 8th century BC to the 5th century AD. Some of their significant achievements include:<br><br>1. **Roman Empire**: The largest and most powerful empire in history, spanning across much of Europe, Asia Minor (modern-day Turkey), and North Africa.<br><br>2. **Architecture**: Roman architecture is renowned for its grandeur, including the Colosseum, Pantheon, and other iconic structures like the Forum.<br><br>3. **Law**: Ancient Rome developed a complex legal system based on Roman law, which influenced modern legal systems worldwide.<br><br>4. **Education**: The Romans were</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished from the 8th to the 4th century BCE. Some of their significant achievements include:<br><br>1. The construction of the Colosseum, one of the largest amphitheaters in history.<br>2. The development and use of Roman law, which influenced legal systems worldwide.<br>3. The invention of the plow and ox-drawn cart, which were crucial for agriculture.<br>4. The establishment of a written language called Latin, which became the official language throughout Europe.<br>5. The building of aqueducts to supply water to cities across Italy.<br>6. The construction of the</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -921,7 +921,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. I am designed to provide information and assistance on various topics related to AI, language, and other technical subjects. If you have any specific questions or need help with something, feel free to ask!
+Yes, I am Qwen, a large language model created by Alibaba Cloud. This is a test to ensure that my responses are accurate and useful for the purpose of this conversation.
 </pre></div></div>
 </div>
 </section>
@@ -986,7 +986,7 @@ Yes, that is a test. I am designed to provide information and assistance on vari
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='8907d2094edb41108a383ed13ad981d2', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1780524082, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='6ab76bacb02146c0b00661b2d10291ee', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1780529017, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1018,7 +1018,7 @@ Yes, that is a test. I am designed to provide information and assistance on vari
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='5d916abcf0d14990b3a3fa79dd14e89b', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=" The protagonist, Sarah, is a renowned space explorer who has been on multiple missions to the moon and beyond. One day, she discovers a new planet orbiting a distant star that is unlike any other she has seen before. The planet is home to intelligent life forms that are unlike anything she has ever encountered before. As Sarah explores the planet, she comes across a mysterious artifact that seems to be connected to the life forms on the planet. Can Sarah uncover the truth about this artifact and its connection to the planet's inhabitants? The story should be written in third person limited point of view and should include vivid descriptions of the setting and characters.\nSarah had always been fascinated by space travel and the mysteries of the universe. She had been on missions to Mars", matched_stop=None)], created=1780524083, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=150, prompt_tokens=9, total_tokens=159, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='ce838d6088744692a84f1e35a7ad8c3a', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' The story should be set on the moon and explore the protagonist\'s experiences while exploring the lunar surface. The story should include at least three different types of challenges the explorer faces, such as navigating through harsh, unforgiving terrain, encountering dangerous alien creatures, and battling their own inner demons. The story should also include vivid descriptions of the moon\'s unique features and atmosphere, as well as the protagonist\'s thoughts and emotions throughout the journey. Finally, the story should conclude with a sense of awe and wonder at the beauty of the moon\'s surface.\nIn 2051, astronaut James "Jim" Thompson was sent to explore one of the most distant planets in our solar system - Phobos. The planet had been visited by many space explor', matched_stop=None)], created=1780529018, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=150, prompt_tokens=9, total_tokens=159, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
