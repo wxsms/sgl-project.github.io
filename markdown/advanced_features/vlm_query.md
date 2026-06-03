@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 00:34:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 01:54:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 00:34:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 01:55:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi cab altered with an apron and cleaning-related tools attached to its back on the back doors. The overall scene gives an impression that the taxi could be used for maintenance work, particularly cleaning services, often nicknamed "back garden cleaning" by locals.
+    In the image, there are two yellow taxis driving on a city street. One of the taxis has a person standing next to it, appearing to hang or fold laundry on a clothesline that is attached to the taxi's back window. The person is not directly interacting with the clothes, but is instead handling something above and below the line. This humorous and lighthearted scene seems to blend everyday life and unexpected activity in an urban environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in a city. A person in an orange shirt is bending over a bicyle stand, which appears to be filled with folded clothes. The person is posing as if they are completing a laundry service by the side of a taxi. In the background, there are other taxis and people walking, and the buildings have some banners hanging from the windows.
+    The image shows a humorous scene where a man is standing next to a taxi on a city street, using the taxi as a makeshift ironing board. The man is dressed in yellow and appears to be ironing clothes. This is likely an optical illusion or a lighthearted moment captured in a busy urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a person performing an act of fun and creativity on a city street, specifically a New York City taxi. The person is using their legs to fold a shirt while standing on the back of the taxi. Thisispicture shows such an impressive act which stops all traffic in his vehi.
+    This image shows a yellow taxi cab drying clothes on a clothesline while driving down a street. The scene appears to be in an urban area, possibly in New York City, as evidenced by the design of the taxis and the clothing items. The man doing the washing is wearing a yellow shirt and seems to be using a method to dry clothes quickly.
 
 
 ## Querying Llama 4 Vision Model
