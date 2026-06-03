@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 06:53:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 07:26:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 06:53:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 07:26:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.65s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.17s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxicabs in a city street. One taxi is equipped with clothes drying on a clothesline strung across its open rear doors, indicating that someone has taken the unusual step of drying laundry on one of the vehicle's exterior spaces. This scene is likely a humorous representation of a taxicab turning into a mobile washing machine, a play on the common perception of taxis as carriers to various destinations rather than functional vehicles.
+    It appears that there is a sign on the back of a yellow taxi. However, without being sure of the language, I can only speculate that it might be about taxi lanes or a similar regulation. Please clarify if I should look closer for more information.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on the street with clothes on a drying rack. The person in the background is wringing out or drying these clothes. This is unusual, as it's not typical for clothing to be hung out to dry in a car or on the street.
+    The image shows a man ironing clothes on the back of a parked taxi in a city street. The scene appears to be humorous as irons are not typically used for ironing clothes and taxi back seats are narrow and not designed for such activities.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person standing behind a yellow car, possibly a taxi, positioned on a street with a metal stand that has a piece of clothe draped over it. The person appears to be engaged in some form of activity, but the specific activity is unclear from the image alone. The scene appears to be in an urban area, as evidenced by the presence of storefronts and the architecture typical of city environments.
+    This image shows a person polishing his taxicab in a parking lot, which is an unusual and nonsensical activity. One person is wearing a yellow shirt and currently using an iron on his taxi, while another person is observing the scene. The building in the background has a sign that says " hasaki milk."
 
 
 ## Querying Llama 4 Vision Model
