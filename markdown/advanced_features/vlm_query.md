@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 03:33:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 04:16:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 03:33:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 04:17:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in what appears to be New York City, given the yellow cabs and the style of the building and street. In the foreground, there is a yellow taxi car parked on the sidewalk. There is also a yellow surfboard on the back of another yellow taxi, positioned in front of the first yellow taxi. The surfboard and the positioning of the second taxi are unusual for a regular city street, which might suggest it's on a special or themed event. The background features a storefront with multiple banners and signs, indicating it's a commercial area with shops or businesses.
+    The image shows a scene on a city street, likely in New York City, given the police cruiser (patrol car) and the yellow taxi cabs. A man wearing a yellow shirt is standing behind the rear window of a police cruiser, which is parked on the side of the road next to several yellow taxis. The scene appears to be part of a protest or demonstration, with the man possibly participating in or supporting the event. The background includes tall buildings and several American flags displayed, which suggests the location might be a major urban area in the United States.
 
 
 ### Call with Processor Output
@@ -146,11 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with several notable elements:
-    
-    1. **Two Yellow Taxis**: There are two taxis parked on the street. One is in the foreground and another in the background.
-    2. **Person on a Hobby Horse**: A person is standing on a hobby horse, completing a pose while holding onto the reins, which are attached to the horses' heads. This person is wearing yellow clothing.
-    3. ** ذلك تحسين دراسة العامة and many other signals**: There are traffic signs visible, though they are partially visible and seem to be international traffic signal devices rather than typical U.S.stop signs
+    This image shows a man standing between two yellow taxis on a city street. He is holding a wooden clothes rack with laundry on it. The men appears to be conducting an unusual activity, as it is not common for men to wear yellow uniforms for this purpose. The man is wearing a yellow shirt and appears to be assisting customers or entering vehicles with the clothes rack. The setting looks like a busy city street.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows two yellow taxis driving on a city street. A person is hanging clothes on a line attached between them. The clothes appear to be wet, suggesting the person is hanging them to dry. The scene likely takes place in New York City, as indicated by the urban environment and the presence of "NYC" stickers on the taxis.
+    The image shows a humorous scene where a man is using a crutch to balance a yellow taxi cab, with clothes draped over the top. This setup is meant to appear as though he is stopping a taxi cab. The person performing this balancing act is holding a red and white cape hat, and there are several cars and people in the background, suggesting an urban setting. The idea is likely to be seen as a comedic situation due to the unusual and unexpected nature of using a crutch to balance a new taxi cab.
 
 
 ## Querying Llama 4 Vision Model
