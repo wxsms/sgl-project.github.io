@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 07:51:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 08:12:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 07:51:13] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 08:12:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.56s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.20s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene with three yellow taxi cabs parked on the side of a city street. In the foreground, a person wearing a yellow shirt and jeans is hanging clothes on the back of one of the taxis with a rack. The clothes include a blue garment and a piece of clothing hanging down off the rack. The background includes urban commercial buildings with storefronts and advertisements. The setting appears to be in an urban area, likely in a city known for its yellow taxis, such as New York.
+    The image shows a person suspended between two yellow taxis on a street. The person is using an iron to iron clothes that have been hangs on a makeshift hanger. This is an amusing and unusual scene that has become famous for its humor and creativity.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a photograph of a person hanging clothes to dry on an erupter while a taxi drives by on a city street.
+    The image shows a man dressed as Santa Claus standing on the street next to two yellow cabs. He is hanging clothes on a clothesline that is strung across the part of the street. The street appears to be in an urban area, possibly in a city, as there are buildings and street signs in the background. The scene is from a Christmas parade, as indicated by the festive attire and the snowy background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a New York City street scene. There are two yellow taxis, one on the left and the other on the right. The taxi on the right is hitched to an elaborate contraption that appears to be shrunk into the back of the vehicle, holding some surfboards and small flags. This is an act of protest by a group of people known as the "Ajax Angels," who often take to the streets and perform antics to draw attention to their cause. The group's cause involves the visualization of historical women artists and their input on world consciousness, without men being involved.
+    The image shows a street scene with two yellow taxis in the foreground. A man is ironing clothes on a folding chair set up on the street between the yellow taxis. The setting appears to be in an urban area, possibly New York City, given the typical yellow cabs and the style of the scene. The man is wearing a yellow shirt and appears to be engaging with the street in an unconventional manner, ironing clothes while waiting presumably for a cab.
 
 
 ## Querying Llama 4 Vision Model
