@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 23:50:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 00:34:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 23:50:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 00:34:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image depicts a social media experiment where a man dressed in a yellow jacket is hanging-or having his clothes hung-on a taxi in New York City. The clothes are actually not hanging的社会媒体人工智能与时俱进有趣。
+    The image shows a yellow taxi cab altered with an apron and cleaning-related tools attached to its back on the back doors. The overall scene gives an impression that the taxi could be used for maintenance work, particularly cleaning services, often nicknamed "back garden cleaning" by locals.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi taxi cab, identifiable by its distinctive color and design, parked on a city street. The taxi is pulled up to a man who is draped in a blue towel and appears to be using the back of the taxi as a makeshift drying area for items. This is a common sight in many urban areas, particularly in places of high demand and traffic congestion, where outdoors is often the most convenient space to dry towels and other items.
+    The image shows a street scene in a city. A person in an orange shirt is bending over a bicyle stand, which appears to be filled with folded clothes. The person is posing as if they are completing a laundry service by the side of a taxi. In the background, there are other taxis and people walking, and the buildings have some banners hanging from the windows.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving past a store or business with large windows. There is a person walking on a sidewalk in front of the taxis, and they have hung a garment on a rack and appear to be airing it out. The scene is likely in a busy urban area, possibly New York City, given the style of the taxis.
+    The image depicts a person performing an act of fun and creativity on a city street, specifically a New York City taxi. The person is using their legs to fold a shirt while standing on the back of the taxi. Thisispicture shows such an impressive act which stops all traffic in his vehi.
 
 
 ## Querying Llama 4 Vision Model
