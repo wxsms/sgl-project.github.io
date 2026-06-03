@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 19:57:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 20:56:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 19:57:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 20:56:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image you're referring to is not a commonly known scene in New York City. New York City's iconic yellow cabs and high-rises are prominently featured, so this could be a staged or altered scene.
+    The image shows a person hanging out clothes on a street corner, likely in a city. There are two yellow taxis parked beside a sidewalk. The scene captures a humorous or unusual moment, as hanging laundry out on a street is not typically done. The background includes some buildings and trees, indicating an urban environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing on the sidewalk next to two taxis. The individual is placing items onto a clothes rack attached to the back of the taxi. This is likely a humorous or creative act to highlight the use of companies using taxis for laundry services.
+    The image shows a scene in a city with a yellow taxi driving by. There is a person washing clothes on a clothesline set up on the back of a yellow SUV. The person is folding and hanging clothes on the clothesline. The environment around them appears to be busy with high-rise buildings and other vehicles on the road. There are also some advertisements visible on the sides of the buildings and on the cars.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis in an urban setting. One taxi is stopped in traffic, and someone is using it as a makeshift drying rack. The drying rack is made of metal and supports clothes that appear to be hanging and waving in the wind. This scene is quite unusual and creative, suggesting that the person might be washing clothes in a nearby building and using the taxi to quickly dry them off, possibly to keep them dry for nighttime or if they get into their car without waiting for a снов period.
+    The image shows a person displaying two men's shirts on a clothes rack in front of two yellow taxis. The person appears to be performing some kind of stunt or public service announcement, as the shirts are being hung up on the back of a sunny umbrella, which is likely made of materials that reflect sunlight (e.g., aluminum foil or mylar). This implies the shirts might be part of a public service announcement or advertisement.
+    
+    The scene takes place on a city street, and there are various storefronts and banners visible in the background. The context suggests this might be a local event or a public service campaign, possibly related to fashion or clothing
 
 
 ## Querying Llama 4 Vision Model
