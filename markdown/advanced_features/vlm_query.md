@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 02:34:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 03:33:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 02:34:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 03:33:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -121,9 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in an urban environment. There are two yellow taxis visible on a city street. The taxi on the left is closer to the viewer, while the one on the right is further back on the road. The taxi on the right has its back doors open and is loaded with what appears to be laundry, specifically a suit and a shirt, which are draped over the side of the vehicle. The man next to the open back doors is interacting with the suitcase and the vehicle.
-    
-    The background includes urban street elements such as buildings, flags hanging on flagpoles, and other typical cityscape features like traffic lights and signage.
+    The image shows a scene in what appears to be New York City, given the yellow cabs and the style of the building and street. In the foreground, there is a yellow taxi car parked on the sidewalk. There is also a yellow surfboard on the back of another yellow taxi, positioned in front of the first yellow taxi. The surfboard and the positioning of the second taxi are unusual for a regular city street, which might suggest it's on a special or themed event. The background features a storefront with multiple banners and signs, indicating it's a commercial area with shops or businesses.
 
 
 ### Call with Processor Output
@@ -148,7 +146,11 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the picture, there is a man in a yellow shirt standing on a folding table on the street. He appears to be using an iron to press a tarpaulin-like object. This is an unusual and humorous sight, as ironing typically doesn't typically take place in such an outdoor setting with vehicles,most especially taxis, in the background. The man on the ironing task might be a street performer or someone simply engaged in an unusual and whimsical task.
+    The image shows a scene on a city street with several notable elements:
+    
+    1. **Two Yellow Taxis**: There are two taxis parked on the street. One is in the foreground and another in the background.
+    2. **Person on a Hobby Horse**: A person is standing on a hobby horse, completing a pose while holding onto the reins, which are attached to the horses' heads. This person is wearing yellow clothing.
+    3. ** ذلك تحسين دراسة العامة and many other signals**: There are traffic signs visible, though they are partially visible and seem to be international traffic signal devices rather than typical U.S.stop signs
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I see two yellow taxis in the background with multiple banner flags attached to their rear decks. This scene appears to be from a parade or celebration, possibly a national holiday or a large public event.
+    This image shows two yellow taxis driving on a city street. A person is hanging clothes on a line attached between them. The clothes appear to be wet, suggesting the person is hanging them to dry. The scene likely takes place in New York City, as indicated by the urban environment and the presence of "NYC" stickers on the taxis.
 
 
 ## Querying Llama 4 Vision Model
