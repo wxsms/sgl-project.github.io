@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 08:12:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 08:33:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 08:12:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 08:33:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a person suspended between two yellow taxis on a street. The person is using an iron to iron clothes that have been hangs on a makeshift hanger. This is an amusing and unusual scene that has become famous for its humor and creativity.
+    The image depicts a scene of multiple yellow taxi cabs parked along a street. In the foreground, there is a person standing next to one of the taxis, appearing to be engaged in some sort of activity or display. The taxi behind the person is equipped with aPlatform Lift, which is a device mounted on its back for loading and unloading luggage. There are also various flags visible on the taxis. The street is lined with buildings and the scene appears to be set in an urban environment, possibly New York City, given the style of the taxis and the setting.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man dressed as Santa Claus standing on the street next to two yellow cabs. He is hanging clothes on a clothesline that is strung across the part of the street. The street appears to be in an urban area, possibly in a city, as there are buildings and street signs in the background. The scene is from a Christmas parade, as indicated by the festive attire and the snowy background.
+    The image shows a person wearing a yellow shirt and yellow reflective gear, hanging clothes on a line in the back of a taxi cab. This person appears to be a street dry cleaner, known as a "gay." Gay habits involve tying up ties around a pole and hanging them to dry in the street, often for customers to give them a ride. It is a humorous and unconventional way to perform a common household task.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with two yellow taxis in the foreground. A man is ironing clothes on a folding chair set up on the street between the yellow taxis. The setting appears to be in an urban area, possibly New York City, given the typical yellow cabs and the style of the scene. The man is wearing a yellow shirt and appears to be engaging with the street in an unconventional manner, ironing clothes while waiting presumably for a cab.
+    There is a yellow detachment cab driving through the city. Beyond it, a man is hanging clothes on a clothesline strung between two yellow detachment taxis. The scene is a humorous and creative take on everyday life, where an older man is folding and hanging laundry while a yellow pedicab drives by.
 
 
 ## Querying Llama 4 Vision Model

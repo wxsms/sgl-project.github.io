@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=527866f1"></script>
+    <script src="../_static/documentation_options.js?v=97ab8791"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,9 +569,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.30it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.23it/s]
-Capturing num tokens (num_tokens=4 avail_mem=54.40 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 23.26it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.83it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.41it/s]
+Capturing num tokens (num_tokens=4 avail_mem=60.24 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 40.49it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,58 +603,30 @@ Capturing num tokens (num_tokens=4 avail_mem=54.40 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Tanya, I am 16 years old, I live in the USA. I want to ask a question about the United States. Which one is the best way to approach it?
+Generated text:  Livia. This is a natural language processing (NLP) problem. This problem is to construct a sentiment analysis model for an essay. I have 16 features that I would like to add to the model. How do I write a code to do so? I am a beginner in NLP and machine learning. Please let me know on how to write the code to add the features to the model. If you can provide some examples, it would be very helpful. To start, I want to add the following features:
 
-1) I do not know the answer to a question that asks for information about the United States. I do not want to ask someone for it.
-
-2) I do not want to ask anyone for information about the United States because it is too much work for me.
-
-3) I want to ask a question about the United States, and I want to do it in my own way, that is, I want to know about the United States.
-
-
+1. Punctuation
+2. Emoji
+3. Emoji Use
+4. Word length
+5.
 ===============================
 Prompt: The president of the United States is
-Generated text:  proposed by the Speaker of the House and the President of the Senate. With the president&#39;s approval, the Senate confirms the executive branch&#39;s nomination of a person to fill a position. There is no power to declare the president as unfit to hold office or to impeach the president.
+Generated text:  a dictator who makes decisions for the entire country. The president&#39;s role is to govern the country, not to represent the country. Do you think it would be better to have an elected president or a dictator? As an AI language model, I cannot make definitive statements about whether it would be better to have an elected president or a dictator, as this decision depends on various factors such as the specific circumstances and political context of the country.
 
-I am trying to convince my boss that this is a bad idea and want to make sure I understand everything correctly.
-
-**My thought:**
-
-1. The president is appointed by the Speaker of the House and the President of the Senate. This creates a check and balance between the executive and legislative branches.
-2. A presidential candidate can run for president and be nominated
+However, it&#39;s worth noting that both the presidency and the role of the president as a representative of the country can have various implications and challenges. While the role of a president is to govern the country,
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris.
-A. 正确
-B. 错误
-Answer:
-B
-
-The smallest frame of the 1989 French National Economy Report is 32 cm.
-A. 正确
-B. 错误
-Answer:
-B
-
-The largest frame of the 1989 French National Economy Report is 37 cm.
-A. 正确
-B. 错误
-Answer:
-A
-
-In the financial system of a certain country, the credit intermediation ratio is 50%. What does this mean?
-A. 50% of the total financial assets should be transferred
+Generated text:  Paris. Paris is a city of a thousand years of history. When you take a walk through Paris, you can see the memory of all the time of French history. Here, we will tell you the most famous and important buildings in Paris. From the Notre Dame Cathedral to the Louvre Museum, every building has a history, a story, and a legend. If you have visited Paris, you are sure to be amazed by its beauty and history. We hope you can enjoy the beauty of Paris and make new friends there. The best title of the passage is __________
+A. Historical Memorabilia in Paris
+B. The Most
 ===============================
 Prompt: The future of AI is
-Generated text:  coming fast
+Generated text:  here, and it’s coming through the lens of gaming. With the introduction of AI into the gaming industry, it’s become more common to see an AI capable of solving complex problems in real-time, and even changing the game itself. When a game developer brings an AI to life, they must also think about the ethical implications of their AI, and ensure that it is not using human-like behaviors that might lead to negative consequences for players. This is why we are examining the ethical implications of AI in gaming in this post.
 
-Artificial intelligence has already started changing the way that we live and work. It’s going to continue to revolutionize our world in the coming years.
+AI in Gaming: The Game-Changer
 
-Artificial intelligence will be used to improve the lives of people all around the world. It will be used to make healthcare more efficient, to improve transportation, to help manage data, and more. The future of AI is going to be exciting, but we have to be careful.
-
-There is a growing concern that AI will become too powerful and will cause harm to people. However, there are also benefits to AI, and these benefits are being realized.
-
-Artificial intelligence is used
+The introduction of AI into the gaming industry is a significant shift for the
 </pre></div></div>
 </div>
 </section>
@@ -694,19 +666,17 @@ Artificial intelligence is used
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years
+Generated text:  [Name], and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Type of Character] who has always been [What motivates you to be who you are]. I&#39;m passionate about [What you enjoy doing], and I&#39;m always looking for ways to [What you hope to achieve]. I&#39;m always looking for ways to [What you hope to achieve], and I&#39;m always eager to [What you hope to achieve]. I&#39;m always looking for ways to [What you hope to achieve], and I&#39;m always eager to [What you hope to achieve]. I&#39;m always looking for ways to [What you
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous museums, theaters, and other attractions. Paris is known for its rich history, including the influence of French culture and its role in the French Revolution and the French Revolution. It is also a popular tourist destination, attracting millions of visitors each year. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. It is a city that has played a significant role in shaping French culture and identity. The city is also home
+Generated text:  Paris, the city known for its iconic Eiffel Tower and its rich history dating back to the Middle Ages. It is the largest city in France and the second-largest city in the European Union. Paris is also known for its fashion industry, art scene, and its role in the French Revolution and the French Revolution. It is a popular tourist destination and a major economic center in Europe. The city is home to many famous landmarks and museums, including the Louvre and the Notre-Dame Cathedral. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. It is a city of culture, art, and history
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased automation and efficiency: AI is expected to continue to automate a wide range of tasks, from manufacturing to customer service. This will lead to increased efficiency and productivity, as machines can perform tasks that would previously require human intervention.
+1. Increased automation: AI is expected to become more prevalent in manufacturing, transportation, and other industries. As machines become more capable of performing tasks that were previously done by humans, there will be an increase in automation, which will lead to more efficient and cost-effective operations.
 
-2. Improved privacy and security: As AI becomes more integrated into our daily lives, there will be an increased need for privacy and security. AI systems will need to be designed with privacy and security in mind, and there will be a push for regulations and standards to ensure that AI is used responsibly.
-
-3. Greater focus on ethical AI: As AI becomes more
+2. AI ethics: As AI becomes more advanced, there will be a need for ethical guidelines to govern its use. This will include issues such as bias, privacy, and accountability. AI developers will need
 
 </pre></div></div>
 </div>
@@ -749,23 +719,19 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I am a [Your Profession] with a passion for [Your Passion]. I&#39;m a [Your Age], [Your Height], and [Your Weight] and I was born in [Your Birthplace]. I am a [Your Personality Trait], [Your Unique Selling Point], and [Your Reward]. I am [Your Specialization or Expertise], [Your Favorite Color], and [Your Favorite Book]. I&#39;m always looking for new opportunities and always striving to grow and learn. My biggest obstacle is [Your Past or Challenges]. I have a keen understanding of [Your Industry/Field], and I&#39;m always trying
+Generated text:  [insert name]. I am a [insert profession or area of expertise] with a deep understanding of [insert what the character does or knows about]. My goal is to [insert specific goal or objective]. I am always looking to learn and grow in my field and to stay up to date with the latest trends and technologies. I am a [insert any unique traits or qualities] that make me a valuable member of our team. What&#39;s your name, and what do you do or know about? Here&#39;s to a great year ahead! [Insert name] is a [insert profession or area of expertise] with a deep understanding of [
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, an iconic city famous for its rich history, famous landmarks, and diverse culture.
-
-What are some key attractions or landmarks in Paris that tourists should visit? Some key attractions and landmarks in Paris include the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, Montmartre, Sacré-Cœur Basilica, and the Champs-Élysées. These landmarks and attractions are a must-visit for anyone looking to explore and enjoy Paris.
-
-Based on the text provided, what are some key attractions or landmarks in Paris that tourists should consider visiting?
-
-Some key attractions or landmarks in Paris that tourists should consider visiting include
+Generated text:  Paris, a historical and cultural center with its own unique blend of Gothic architecture, art, and cuisine. The city is known for its rich history and is a popular tourist destination. Paris is also home to the Eiffel Tower, one of the most recognizable landmarks in the world, and offers a diverse range of cultural attractions and dining options. The city&#39;s climate is Mediterranean, with hot summers and mild winters, making it a popular destination for outdoor activities and relaxation. Overall, Paris is a vibrant and dynamic city that continues to be a global cultural and economic center. Paris, France. The capital of France is Paris, a historical and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be marked by many different trends that will shape the technology&#39;s progress, development and adoption in various industries. Here are some possible trends in AI that are currently being researched and developed:
+Generated text:  highly complex and uncertain, but some of the key trends that are likely to shape it include:
 
-1. Deep Learning: Deep learning is a form of AI that uses neural networks to learn from vast amounts of data. Deep learning is expected to have a significant impact on a variety of applications, including natural language processing, computer vision, and speech recognition.
+1. Integration with human beings: AI will become more integrated with humans, enabling them to work alongside AI in various fields like healthcare, education, and manufacturing. This will lead to more efficient and effective use of resources.
 
-2. Explainable AI: The problem of transparency and interpretability of AI systems has been a significant challenge in the field of AI. Explanable AI is a promising area where researchers are exploring
+2. Personalization: AI will become more personalized, allowing machines to learn from the data they receive and make better-informed decisions. This will lead to more targeted and effective marketing and customer service.
+
+3. Ethics and accountability: As AI becomes more prevalent, there will be a growing emphasis on ethical considerations and accountability. This
 </pre></div></div>
 </div>
 </section>
@@ -811,17 +777,17 @@ Generated text:  likely to be marked by many different trends that will shape th
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Type] who has a passion for [Your passion or hobby]. I&#39;m a [Age] year old and I&#39;ve always been passionate about [Your passion or hobby]. I&#39;m someone who thrives on learning new things and challenging myself in my daily life. I believe in the power of creativity and innovation, and I&#39;m always looking for new and exciting ways to make my life and the world around me better. I&#39;m excited to dive into any new challenges and experiences that come my way. Thank you for having me! 🌟✨ #PersonalReflections #CreativeLife #NewOpport
+Generated text:  [Name] and I am [Age] years old. I am a [job] with [company]. I have always been [what your pet or pet-dog-like character does] for [reasons] and have been [your pet&#39;s pet name for a long time]. I like to [what you like to do for fun]. I&#39;m currently [presenting a recent image of yourself in front of a simple, neutral image board, such as a kitchen counter or coffee table with just a few neutral colors]. Would you like to meet me? [Would you like to meet me and have a brief chat?] [Name]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is the most populous city in the European Union and is a cosmopolitan city. The city has a rich history dating back to the Roman Empire, and its many UNESCO world heritage sites highlight its cultural and architectural heritage. Paris is known for its fashion, food, and wine, and it is home to many world-renowned museums, such as the Louvre and the Musée d&#39;Orsay. The city has a diverse population and is a significant economic and cultural hub in the country. Paris also hosts major events such as the Olympics and the Eiffel Tower. As of 2021, Paris has a
+Generated text:  Paris, a historic and vibrant city with a rich history dating back to the Roman Empire. It is known for its grand boulevards, the Eiffel Tower, and its iconic Notre-Dame Cathedral. Paris has a diverse population and is home to many cultural institutions and events throughout the year, including the World Cup and the Summer Olympics. The French capital is also known for its cuisine, art, and nightlife. Paris is a city that has a strong sense of community and offers visitors a unique and unforgettable experience.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  full of potential and exciting possibilities, but it&#39;s important to note that AI is still in its early stages and there are many challenges and unknowns to consider. Here are some possible trends in AI in the next few years:
+Generated text:  rapidly changing and it&#39;s difficult to predict exactly what will happen. However, some possible trends that are currently being explored and explored include:
 
-1. Increased accuracy: As AI continues to improve, it&#39;s likely to achieve higher levels of accuracy and precision in its predictions and decisions. This could lead to more reliable and trustworthy AI systems.
+1. Increased integration of AI with other technologies: The integration of AI with other technologies such as machine learning, computer vision, and natural language processing is likely to become more common in the coming years. This will allow AI to be more effective in a variety of applications, from healthcare to transportation to finance.
 
-2. Integration with other technologies: AI is already being integrated with other technologies such as sensors, machines, and blockchain. As these technologies evolve, AI could become even more integrated with them, leading to even greater complexity and
+2. AI in more domains: AI is already being used in many different domains, such as autonomous vehicles, smart homes, and healthcare. It&#39;s likely that we will see even more AI applications in
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
