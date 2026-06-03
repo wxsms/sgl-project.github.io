@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 01:54:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 02:34:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 01:55:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 02:34:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there are two yellow taxis driving on a city street. One of the taxis has a person standing next to it, appearing to hang or fold laundry on a clothesline that is attached to the taxi's back window. The person is not directly interacting with the clothes, but is instead handling something above and below the line. This humorous and lighthearted scene seems to blend everyday life and unexpected activity in an urban environment.
+    The image shows a scene in an urban environment. There are two yellow taxis visible on a city street. The taxi on the left is closer to the viewer, while the one on the right is further back on the road. The taxi on the right has its back doors open and is loaded with what appears to be laundry, specifically a suit and a shirt, which are draped over the side of the vehicle. The man next to the open back doors is interacting with the suitcase and the vehicle.
+    
+    The background includes urban street elements such as buildings, flags hanging on flagpoles, and other typical cityscape features like traffic lights and signage.
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a humorous scene where a man is standing next to a taxi on a city street, using the taxi as a makeshift ironing board. The man is dressed in yellow and appears to be ironing clothes. This is likely an optical illusion or a lighthearted moment captured in a busy urban environment.
+    In the picture, there is a man in a yellow shirt standing on a folding table on the street. He appears to be using an iron to press a tarpaulin-like object. This is an unusual and humorous sight, as ironing typically doesn't typically take place in such an outdoor setting with vehicles,most especially taxis, in the background. The man on the ironing task might be a street performer or someone simply engaged in an unusual and whimsical task.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a yellow taxi cab drying clothes on a clothesline while driving down a street. The scene appears to be in an urban area, possibly in New York City, as evidenced by the design of the taxis and the clothing items. The man doing the washing is wearing a yellow shirt and seems to be using a method to dry clothes quickly.
+    I see two yellow taxis in the background with multiple banner flags attached to their rear decks. This scene appears to be from a parade or celebration, possibly a national holiday or a large public event.
 
 
 ## Querying Llama 4 Vision Model
