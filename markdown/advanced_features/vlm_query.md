@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 08:33:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 08:45:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 08:33:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 08:45:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a scene of multiple yellow taxi cabs parked along a street. In the foreground, there is a person standing next to one of the taxis, appearing to be engaged in some sort of activity or display. The taxi behind the person is equipped with aPlatform Lift, which is a device mounted on its back for loading and unloading luggage. There are also various flags visible on the taxis. The street is lined with buildings and the scene appears to be set in an urban environment, possibly New York City, given the style of the taxis and the setting.
+    This image shows two yellow taxis parked on a street. The taxi on the left has an empty washer and dryer hanging on its side, and the person in the foreground is demonstrating how to use them to dry clothes. The taxi on the right has its back door open, revealing what appears to be an empty washer or dryer. This kind of setup is an example of innovative recycling or repurposing ideas, utilizing everyday objects to perform household tasks.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person wearing a yellow shirt and yellow reflective gear, hanging clothes on a line in the back of a taxi cab. This person appears to be a street dry cleaner, known as a "gay." Gay habits involve tying up ties around a pole and hanging them to dry in the street, often for customers to give them a ride. It is a humorous and unconventional way to perform a common household task.
+    The image shows a scene where a person dressed in a yellow shirt is using an ice axe to hang clothes on a架杆, possibly indoors or in a trash can, in a public space. The scene appears comedic or unusual, as using an ice axe to hang clothes is not a common or expected action.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    There is a yellow detachment cab driving through the city. Beyond it, a man is hanging clothes on a clothesline strung between two yellow detachment taxis. The scene is a humorous and creative take on everyday life, where an older man is folding and hanging laundry while a yellow pedicab drives by.
+    The image shows a yellow taxi cab on a city street. The taxicab is parked on the side of the road, and the door is open. A man in a yellow shirt appears to be hanging clothes outdoors. The scene suggests that the man might have been doing laundry outside due to tough weather conditions. The background includes urban buildings, and there are streetlights and other typical cityscape elements.
 
 
 ## Querying Llama 4 Vision Model
