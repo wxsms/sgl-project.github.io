@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-02 23:29:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 23:50:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-02 23:29:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-02 23:50:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on a street in what appears to be a city. The taxi on the left has the windshield wipers extending outward, while the taxi on the right has a person hanging clothes on the rearview mirror with a clothesline. The background includes some buildings with storefronts and signs, and there are some covered Ben Franklin Marts, which are convenience stores. The weather seems slightly cloudy, and the cityscape is typical of an urban environment.
+    This image depicts a social media experiment where a man dressed in a yellow jacket is hanging-or having his clothes hung-on a taxi in New York City. The clothes are actually not hanging的社会媒体人工智能与时俱进有趣。
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two taxi cabs driving down a city street. Both taxis are yellow, a common color for taxis in several major cities. A person standing between the two cabs has a tie and a shirt draped over a folding stand, appearing to be ironing clothing. The scene humorously captures a moment where someone is bustling aroundIS larger than normal, likely to help them with ironing or to create a laugh. The presence of wires hanging down from the buildings suggests an urban setting.
+    The image shows a yellow taxi taxi cab, identifiable by its distinctive color and design, parked on a city street. The taxi is pulled up to a man who is draped in a blue towel and appears to be using the back of the taxi as a makeshift drying area for items. This is a common sight in many urban areas, particularly in places of high demand and traffic congestion, where outdoors is often the most convenient space to dry towels and other items.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person wearing a yellow shirt and blue jeans standing in the street. They are operating a washing machine attached to the back of a yellow passenger car, rather than a true taxi. This setup is commonly used for humorous forms of public entertainment or as a form of street art.
+    The image shows two yellow taxis driving past a store or business with large windows. There is a person walking on a sidewalk in front of the taxis, and they have hung a garment on a rack and appear to be airing it out. The scene is likely in a busy urban area, possibly New York City, given the style of the taxis.
 
 
 ## Querying Llama 4 Vision Model
