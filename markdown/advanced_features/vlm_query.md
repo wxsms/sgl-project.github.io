@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-03 06:15:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 06:53:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-03 06:15:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-03 06:53:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This is a photo of a street scene in a city. There are two yellow taxis parked on the street. One taxi has a person standing in front of it, hanging on to a clothesline. The clothesline supports a tarp or piece of fabric. This scene is unusual and appears to be a creative protest or demonstration. The text "CIVIL INDIGNANCE!" is visible near the top of the image, indicating a cultural or political message. The setting looks urban, with buildings and streetlights visible in the background.
+    The image shows two yellow taxicabs in a city street. One taxi is equipped with clothes drying on a clothesline strung across its open rear doors, indicating that someone has taken the unusual step of drying laundry on one of the vehicle's exterior spaces. This scene is likely a humorous representation of a taxicab turning into a mobile washing machine, a play on the common perception of taxis as carriers to various destinations rather than functional vehicles.
 
 
 ### Call with Processor Output
@@ -146,10 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    Here's an analysis and description of the image:
-    
-    The image shows two yellow NYC cabs in traffic downtown. The focus is on a street musician standing in between the cabs. He is unrolling a large banner with an American flag print, preparing to sell tickets or merchandise. The musician is wearing a yellow shirt and tan pants, and he appears to be就能得到NXC cabs (好像能换的司機纳税案子，捺模）索錢，承载了眼球毫无責意。移动式书画茸发售的感受。
-    The CTPM人曹熠均，怕展开毛。（这些区域控制口赛事的启用
+    The image shows a yellow taxi parked on the street with clothes on a drying rack. The person in the background is wringing out or drying these clothes. This is unusual, as it's not typical for clothing to be hung out to dry in a car or on the street.
 
 
 ### Call with Precomputed Embeddings
@@ -205,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a city street. In the middle of the scene, there is a person wearing a bright yellow long-sleeve shirt, using an ironing board to iron clothes on the back of one of the taxis. It appears to be a humorous or unexpected sight in an urban setting.
+    The image shows a person standing behind a yellow car, possibly a taxi, positioned on a street with a metal stand that has a piece of clothe draped over it. The person appears to be engaged in some form of activity, but the specific activity is unclear from the image alone. The scene appears to be in an urban area, as evidenced by the presence of storefronts and the architecture typical of city environments.
 
 
 ## Querying Llama 4 Vision Model
