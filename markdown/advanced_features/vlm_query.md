@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 08:37:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 09:01:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 08:37:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 09:01:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.11s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene with taxi cabs in an urban setting. One taxi is parked and appears to be mounted with a folding laundry line, indicating that residents are using the back of their taxicabs to dry clothes. This unconventional use of public transport to accomplish household chores is common in many cities, especially for those who have limited access to rooftop spaces or simply prefer this method.
+    The image shows two yellow taxis on a city street. One taxi has a pair of clothes hanging on the rear bumper, and a person wearing a yellow sweatshirt is visible near the back door of the second taxi. The scene is set in an urban environment with buildings and street lights in the background. The person appears to be hanging laundry out to dry on the back of the taxi.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis on a city street. The taxi on the left is larger, with its backdoor open, and there appears to be an ironing board with ironing items on it placed on the back seat. This suggests that the person standing on the backseat has converted the backseat into a makeshift ironing area. The taxi on the right is partially visible, with its back door open as well. The scene appears to be in a busy urban area, as indicated by the tall buildings and trucks in the background.
+    The image shows a person hanging laundry out on a clothesline attached to the back of two yellow taxis. This is an unusual sight, as taxis are typically not used for laundry purposes. The person is handling the clothes with one hand and pulling them up and over the striped bar on the back of the taxi. The street is visible with city buildings and some banners in the background. The video might be capturing a creative or unusual moment during a 행サイト event or meeting, as indicated by the text mentioned in the image.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man performing a performance trick with a mop on the back of a yellow taxi. The man is demonstrating how to dry laundry using a mop, likely attempting to resemble a wet mop rather than a drier in New York City, as indicated by the New York City skyline in the background. This type of performance trick, known as "washing clothes with a mop," is typically done by humorous street performers for entertainment during car rides.
+    The image shows a street scene with two yellow taxis. In between the taxis, a person is hanging clothes from a laundry line. The person is standing with hands on the clothes, appearing to fix them or move them. It looks like they are doing laundry in the middle of traffic, which is unusual and likely intended for humorous or artistic purposes.
 
 
 ## Querying Llama 4 Vision Model
