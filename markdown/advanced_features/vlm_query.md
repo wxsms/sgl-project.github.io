@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 15:32:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 19:10:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 15:33:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 19:10:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.14s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.67s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.74s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a group of yellow taxis, known as Standard Kea taxis, driving through the Hangzhou city center. These taxis are a popular sight throughout the city, and their distinctive color helps make them easily recognizable as a familiar part of Hangzhou's urban landscape.
+    The image shows a street with two yellow taxis. One taxi is being used as a makeshift drying location for laundry, and a person is hanging a piece of clothing on a clothesline attached to the taxi's roof.
 
 
 ### Call with Processor Output
@@ -146,9 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a unique and humorous scene on a city street, featuring a person in a yellow shirt standing next to a yellow taxi. The person is holding a drying rack with clothes on it, seemingly drying the clothes outdoors, which is unusual given the typical indoor drying setups. The drying rack is attached to the back of a rack, presumably a stand or the back of the taxi. This setup creates a striking contrast between city life and the unconventional drying method.
-    
-    In the background, you can see other vehicles, including another taxi, and urban infrastructure such as buildings with flags and signs. The overall scene invokes a blend of everyday urban life with
+    The image shows two yellow taxis on a street corner. One taxi is parked, while the other is being cleaned by a person hanging out clothes on a clothesline attached to a stump in the street. This is likely a humorous or unusual scene. The person seems to be taking advantage of the taxi's paid-for walking distance to get laundry done.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a man who appears to be shirtless or dressed in only shorts while he is ironing clothes. This is a humorous scene where the man is pretending or trying to iron clothes on a clothesline attached to a taxi cab. The setting is a city street with buildings and traffic in the background, including a yellow taxi cab visible behind him, which adds to the humor and surreal nature of the image.
+    The picture shows a yellow taxi вóeping outside of a store with clothes hanging from a rail attached to the back.
 
 
 ## Querying Llama 4 Vision Model
