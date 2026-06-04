@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 20:23:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 20:48:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 20:23:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 20:48:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene with two yellow taxis parked on the side of the road. A person is working with a laundry basket on the back of a black SUV, suggesting that they might be engaged in some form of casual street work, possibly washing clothes by hand. The background includes tall buildings, hinting that this is likely an urban setting.
+    The image shows a person in front of a yellow taxi, holding a clothesline with laundry on it. The person appears to be demonstrating laundry drying on a clothesline, possibly pointing out a sharing concept or a way to reuse old towels for various outdoor activities. This scene could be intended to visually convey a practical, down-to-earth message or to engage viewers in a discussion about sustainability and using repurposed items. 
+    
+    It's worth noting that the setting is urban with buildings and street signs visible in the background. However, the main focus is clearly on the person and their interaction with the laundry drying on the clothesline in front of the
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene in what appears to be a busy urban environment, possibly in New York City, given the yellow cabs and the style of buildings on either side of the road. There is a man in a yellow shirt with tags on his body, hanging laundry on clotheslines attached to the roof of a yellow taxi. He seems to be preparing or organizing the clothes, possibly in preparation for a rainy day or a打包方式。The clothing includes red, blue, and multicolored garments. The buildings on either side have shops and signs, and there are other Đềux hovering in the background.
+    It appears there might be an error in the description. There isn’t a man or a car like the ones described in the image even though they are mentioned in the instruction. Therefore, I don't have any specific image to describe. Yet, I can still provide some information based on your request...
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene where a man, wearing a yellow shirt, is performing an unusual chore outside a building. He is using a powered vacuum cleaner to clean or extract something from between the panels of two cars that are positioned next to each other. This is a unique way to clean the narrow gap between the cars, particularly for the very narrow gap between the taxi cabs.
+    The image shows a scene on a city street, likely a busy urban area. There are two yellow taxis parked on the street, and in the foreground, a person dressed in a yellow shirt is holding up laundry, presumably hanging it out to dry. The background features buildings with large windows and some banner-like decorations. This situation is unusual and humorous, as it is not typical for someone to be hanging laundry on a street in an urban environment.
 
 
 ## Querying Llama 4 Vision Model
