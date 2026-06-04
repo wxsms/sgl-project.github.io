@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 07:23:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 08:06:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 07:23:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 08:06:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.16s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.02s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man using the back of a yellow taxi as a makeshift clothesline. He is drying multiple pieces of clothing, presumably after washing them, on wires strung across the vehicle. This seems to be a humorous and inventive use of the taxi's backrest to replicate a clothing line outdoors.
+    The image shows two yellow taxis on a New York City street. The cab in the foreground has its back door open, and someone is using laundry to block the back of it, as part of an art or protest installation. The scene is likely in response to the New York City Taxi Strike, a labor dispute where city cabs picketing across the city presented riders with an array of local products and fashion offerings.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with two yellow taxis. One of the taxis has a cloth or towel being hung out to dry. The taxi driver appears to be using an plier to hold the cloth or towel in place. The setting seems to be in an urban area with buildings and other vehicles visible in the background.
+    This image shows a yellow taxi cab stopped on a city street. A person wearing a yellow shirt is standing next to the taxi, hanging clothes on the back window. There are various街牌 (street signs) with flags attached to phone poles in the background. The scene appears to be in a busy urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow New York City taxi cab with a man in a yellow shirt and black shorts hanging various clothes on the backrest of the cab's conductors seat. The street appears to be wide with multiple lanes, and the man seems to be using a broom or stick to hang the clothes. The scene is likely something humorous or quirky, as the cab is not typically equipped for such activities. The background includes other buildings and possibly some pedestrians on the sidewalk.
+    The image shows a taxi driver wearing yellow and bending over a tripod-like machine with a cloth draped over it. The taxi is yellow, and there is another taxi, also yellow, visible in the background. The scene appears to be taking place on a roadway or in a busy urban area with several other taxis in the background. The driver seems to be either hanging out or looking at something on the machine.
 
 
 ## Querying Llama 4 Vision Model
