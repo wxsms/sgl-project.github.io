@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 01:51:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 02:30:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 01:51:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 02:30:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene on a city street. There are two yellow taxis, one in the foreground and one further away. A person is standing and working on laundry articles in front of one of the taxis. The background includes tall buildings and some flags hanging from them.
+    This image shows two yellow cab taxis on a busy city street, each with rear windows open, and an individual hanging clothes on a bar from the rear of one of the taxis.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing on the sidewalk next to two yellow taxis. He is putting clothes into a clothes dryer that appears to be mounted on the back of one of the taxis. This is a humorous and unconventional way of drying laundry.
+    The image shows a person washing clothes on the back of a yellow taxi in a city street. The taxi is picking up passengers in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person in the middle of a street in what appears to be New York City, trying to hang outclothes on a taxi. It is believed to be a humorous display, done by  Tom Tryon who has become more famous for a recent YouTube video. Today Tom had another contest, where these same ones with wonderful and liberal(?) temperament lost the street. This pattern is continued by Hera Joelp. It is believed that Tom measures his clothes with and alongside the people in New York through the exaggerated vector that he cruse and the rubber hose that was poured on them. He believes thatحب/Pal在全球十
+    The image depicts a scene in the street featuring two taxis. One of the taxis is modified with a flatbed surface filled with clothes being ironed, likely to demonstrate a humorous or unconventional use of a taxi. This practice is not common and is intended to provide a visual pun or commentary on the use of taxis for commercial purposes. The setting appears to be an urban area, possibly in the United States based on the styling and design of the taxi, given the yellow color and distinctive design. The street is lined with buildings and there are some details like banners and streetlights visible in the background.
 
 
 ## Querying Llama 4 Vision Model
