@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 21:39:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 22:31:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 21:39:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 22:31:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.95s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.43s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi stuck in traffic. A man wearing a yellow shirt and navy blue shorts is visible, standing behind the vehicle. He appears to be hanging or removing clothes from the bar of a public parking meter on the street.
+    In the picture, there is a scene from what appears to be a television show or potentially an experimental setup by the TV show "The Sprinkler." The scenario seems to be about a taxi driver momentarily pausing his work to don a costume, possibly symbolizing an active role in the TV show or a costume party. The driver is布and with a bandana around his head, further turning his business dressed. The setting is in a cityscape, with yellow and black taxis (the most distinguishable feature here) meaning New York or a similar urban environment.
 
 
 ### Call with Processor Output
@@ -146,9 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a unique and laughable scene where two yellow taxis are parked side by side on a city street. One of them is being used as a clothesline, with various pieces of clothing hanging from it. This is clearly intended to be humorous and spontaneous, indicating that it's a staged or social media-based photo rather than a real-world situation.
-    
-    The juxtaposition of the two taxis, which are typically司乘两位乘客 located on the road, serving as a makeshift clothesline, creates a humorous and unexpected visual. This kind of photo is often shared on social media platforms and can be amusing due to the unconventional usage of both vehicles
+    The image shows a scene from a street in New York City. A man, who appears to be a street vendor, is ironing clothing on the street in front of a yellow taxi. A banner hangs from a street lamp in the background. The scene is set on a city street with tall buildings and other urban elements.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image appears to be a staged scenario that humorously represents the concept of multitasking. A man is standing on the street, next to a taxi cab, with what seems to be a washing machine attached to a stand. He is throwing laundry, including a red, blue, and yellow flag, into the washing machine. The scene is designed to be humorous and illustrates the often humorous discussion about multitasking in modern life, where individuals perform multiple tasks or activities simultaneously. The flag symbolizes the travel aspect of the man, perhaps suggesting that he travels while doing household chores.
+    The image shows a scene with parked yellow taxi cabs in a city street. A person wearing a yellow sweatshirt and blue jeans is hanging a laundry basket, which appears to be filled with cloths, on a stand attached to the back of the vehicle. This activity seems unusual and not related to typical taxi behavior. There are also street lamps and buildings in the background, indicating an urban setting.
 
 
 ## Querying Llama 4 Vision Model
