@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 20:48:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 21:16:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 20:48:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 21:16:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -121,9 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a person in front of a yellow taxi, holding a clothesline with laundry on it. The person appears to be demonstrating laundry drying on a clothesline, possibly pointing out a sharing concept or a way to reuse old towels for various outdoor activities. This scene could be intended to visually convey a practical, down-to-earth message or to engage viewers in a discussion about sustainability and using repurposed items. 
-    
-    It's worth noting that the setting is urban with buildings and street signs visible in the background. However, the main focus is clearly on the person and their interaction with the laundry drying on the clothesline in front of the
+    The image shows a street scene in New York City, featuring two yellow taxis. One taxi is driving on the street, and a man is placing detergent bottles into the back of the other taxi that is parked. This action appears to be salvaging items from the spilled contents of a container, which might have been spilled during a delivery or some other event. The man is wearing a yellow shirt and blue jeans, and the背景顯示了城市街景，包括建筑物和平面路標。
 
 
 ### Call with Processor Output
@@ -148,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It appears there might be an error in the description. There isn’t a man or a car like the ones described in the image even though they are mentioned in the instruction. Therefore, I don't have any specific image to describe. Yet, I can still provide some information based on your request...
+    This appears to be a humorous or prank scenario where a person is “ironing clothes” on the back of a New York City taxi. Typically, taxi drivers do not typically iron clothes, so this is likely an act of humor or a prank.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street, likely a busy urban area. There are two yellow taxis parked on the street, and in the foreground, a person dressed in a yellow shirt is holding up laundry, presumably hanging it out to dry. The background features buildings with large windows and some banner-like decorations. This situation is unusual and humorous, as it is not typical for someone to be hanging laundry on a street in an urban environment.
+    The image shows a scene from a taxicab paint-off race, also known as a defacement or paint war. Competitors affix paint to their taxis and race against each other as well as the clock. This is a humorous event where participants try to use camouflage, colors, or an array of other designs. With the rules imposing safety concerns and clearมาตรฐานed standards for painting, this is创新的和大胆的。It is often lauded as an entertaining annual event with a lighthearted twist on traditional racing.
 
 
 ## Querying Llama 4 Vision Model
