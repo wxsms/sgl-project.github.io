@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 13:55:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 15:32:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 13:55:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 15:33:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.47s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.74s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.85s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a person spreading clothes out on a pick-up truck to dry, which is unusual and not common practice. This usually happens outside on a line or rack. The background includes two yellow taxis and some urban elements like buildings and other vehicles.
+    The image depicts a group of yellow taxis, known as Standard Kea taxis, driving through the Hangzhou city center. These taxis are a popular sight throughout the city, and their distinctive color helps make them easily recognizable as a familiar part of Hangzhou's urban landscape.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you're referring to shows a person performing a stunt involving a taxi. The individual is lifting a washboard with clothes alongside a taxi, creating a humorous and unexpected scene. The stunt likely aims to entertain passersby and capture attention on the street. In the background, there are urban elements like other taxis, buildings, and vehicles, with some traffic lights visible. The setting appears to be a busy city street with a distinctive yellow taxi, which is a common sight in many major metropolitan areas.
+    The image shows a unique and humorous scene on a city street, featuring a person in a yellow shirt standing next to a yellow taxi. The person is holding a drying rack with clothes on it, seemingly drying the clothes outdoors, which is unusual given the typical indoor drying setups. The drying rack is attached to the back of a rack, presumably a stand or the back of the taxi. This setup creates a striking contrast between city life and the unconventional drying method.
+    
+    In the background, you can see other vehicles, including another taxi, and urban infrastructure such as buildings with flags and signs. The overall scene invokes a blend of everyday urban life with
 
 
 ### Call with Precomputed Embeddings
@@ -202,13 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    Here's what's shown in the image:
-    
-    - A person holding an iron, with various clothing articles hanging on a clothesline. The person appears to be ironing the clothes outdoors.
-    - Two yellow taxis parked nearby, with one of them behind the person.
-    - Trees and a street with buildings on the background, suggesting an urban setting.
-    - The street has some streetlights and banners hanging between the trees, indicating it might be a busy part of a city in a warm season like the summer.
-    - The person is wearing a yellow shirt and seems to be multitasking, prompting the question of what isn't specified in the document about this
+    The image depicts a man who appears to be shirtless or dressed in only shorts while he is ironing clothes. This is a humorous scene where the man is pretending or trying to iron clothes on a clothesline attached to a taxi cab. The setting is a city street with buildings and traffic in the background, including a yellow taxi cab visible behind him, which adds to the humor and surreal nature of the image.
 
 
 ## Querying Llama 4 Vision Model
