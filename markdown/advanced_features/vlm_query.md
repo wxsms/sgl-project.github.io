@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 06:08:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 07:23:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 06:08:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 07:23:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.16s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scenario that is not typical or legal in the United States. In the image, a man is hanging laundry on the back of a yellow taxi. Such behavior is not only perceived as opinionable, but it is also an illegal action under traffic laws. TAXIS AND OTHER VEHICLES ARE NOT INTENDED FOR RACKING UP GARMENTS TO HANG LOOSELY ON THE BACK OF THE VEHICLE. THUS, THIS ACTION IS INSANE AND ILLEGAL.
+    The image shows a man using the back of a yellow taxi as a makeshift clothesline. He is drying multiple pieces of clothing, presumably after washing them, on wires strung across the vehicle. This seems to be a humorous and inventive use of the taxi's backrest to replicate a clothing line outdoors.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a humorous scene of a man in a yellow shirt and pants standing outside a cluster of taxis, drying out clothes using the back of his taxi as an makeshift drying rack. The setting appears to be a busy urban street, likely New York City, given the style of the taxi. The image is often used as a meme to depict the exaggerated idea of a taxi driver washing clothes if it gets too cold or if he's just having a particularly lazy day.
+    The image shows a street scene with two yellow taxis. One of the taxis has a cloth or towel being hung out to dry. The taxi driver appears to be using an plier to hold the cloth or towel in place. The setting seems to be in an urban area with buildings and other vehicles visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a person hanging laundry on a clothesline attached to the back of two yellow taxis. The scene is likely taking place in New York City, given the shape of the taxis. The person is using their arm as a makeshift clothesline, with multiple pieces of clothing including a shirt and pants. The setting appears to be a busy street, with a storefront visible and traffic lights in the background. This image is humorous and creative, showcasing a unique and practical way to utilize an urban environment for everyday tasks.
+    The image shows a yellow New York City taxi cab with a man in a yellow shirt and black shorts hanging various clothes on the backrest of the cab's conductors seat. The street appears to be wide with multiple lanes, and the man seems to be using a broom or stick to hang the clothes. The scene is likely something humorous or quirky, as the cab is not typically equipped for such activities. The background includes other buildings and possibly some pedestrians on the sidewalk.
 
 
 ## Querying Llama 4 Vision Model
