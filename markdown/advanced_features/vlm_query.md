@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 00:28:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 00:58:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 00:28:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 00:58:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.18s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.60s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.68s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene with two yellow taxis. One taxi is equipped with an extra set of folded clothes and a folding stool in the back seat, indicating it is being used for some sort of temporary display or promotional purpose. The other taxi is parked on the side of the street. The background includes urban elements such as buildings and flags, which suggests the scene is taking place in a city, likely in the United States given the style of the taxis and the context.
+    The image shows two yellow taxis in New York City's Fifth Avenue. There is a person hanging laundry on a clothesline attached to the trucks of the taxis. This seems unusual for New York cities, where luggage in taxis is more common. It is likely an artwork or a performance.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    There is no衣 ي花 shown in this image.
+    The image shows a man dressed as Santa Claus hanging clothes on a clothesline attached to the back of a yellow taxi in what appears to be the Bryant Park area of New York City. It is likely a protest or a creative act of art instead of Santa Claus himself.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in a city street with a yellow taxi parked on one side and a police car parked on the other. The taxi appears to be stacked with laundry bags on its roof. The scene suggests that the taxi was transporting laundry from one place to another, likely from an apartment complex or a similar location, and the laundry bags have been brought to the street likely for drying or for inspection. The presence of another vehicle, a police car, indicates that the taxi might be involved in an unusual situation, possibly being towed or checked by the police for adhering to traffic regulations or carrying excessive weight.
+    The image shows a person hanging clothes on a makeshift clothesline attached to the back of a yellow taxi cab. The setup includes:
+    
+    1. Two laundry baskets hanging from a beach umbrella.
+    2. Multiple neckties and shirts draped over the top.
+    3. A small fan or pump attached to the line for blowing the clothes.
+    
+    This is a humorous and creative use of a taxi cab's rear to hang laundry, using everyday items like laundry baskets and a beach umbrella.
 
 
 ## Querying Llama 4 Vision Model
