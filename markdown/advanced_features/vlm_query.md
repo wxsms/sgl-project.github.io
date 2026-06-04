@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 05:44:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 06:08:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 05:45:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 06:08:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene in a city, likely New York, based on the familiar yellow cabs driving down the street. The main focus of the image is two yellow taxis in traffic, one in the foreground and another in the background. The notable element is a person standing in the middle of the street, seemingly engaged in a humorous or whimsical action. This individual is holding a laundry rack over their blue shirt, complete with clothespins and folded jeans, as if they are pretending to send their clothes for pickup. This absurd and creative act contrasts with the typical urban scene, adding a playful and quirky touch to an everyday city street
+    The image shows a scenario that is not typical or legal in the United States. In the image, a man is hanging laundry on the back of a yellow taxi. Such behavior is not only perceived as opinionable, but it is also an illegal action under traffic laws. TAXIS AND OTHER VEHICLES ARE NOT INTENDED FOR RACKING UP GARMENTS TO HANG LOOSELY ON THE BACK OF THE VEHICLE. THUS, THIS ACTION IS INSANE AND ILLEGAL.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing on a piece of luggage that has been strapped to the back of a yellow Metrocab, which is a New York City taxi. He appears to be engaged in some kind of work or activity typically performed by a taxi driver while traveling, such as hanging laundry outdoors in the heat. This situation is unusual and humorous, as it is not the standard behavior expected from a taxi driver. TheMetrocab features the distinctive yellow color and the emblem of New York City.
+    The image depicts a humorous scene of a man in a yellow shirt and pants standing outside a cluster of taxis, drying out clothes using the back of his taxi as an makeshift drying rack. The setting appears to be a busy urban street, likely New York City, given the style of the taxi. The image is often used as a meme to depict the exaggerated idea of a taxi driver washing clothes if it gets too cold or if he's just having a particularly lazy day.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a taxi cab with its back doors open and the trunk area occupied by a stand with folded clothes draped over it. There is also a person standing next to the stand, holding one of the pieces of clothing. The background includes another taxi cab, a building with storefronts, and some trees and streetlights. The scene appears to be in an urban setting, possibly during a rainy day, as rain is visible in the background.
+    This image shows a person hanging laundry on a clothesline attached to the back of two yellow taxis. The scene is likely taking place in New York City, given the shape of the taxis. The person is using their arm as a makeshift clothesline, with multiple pieces of clothing including a shirt and pants. The setting appears to be a busy street, with a storefront visible and traffic lights in the background. This image is humorous and creative, showcasing a unique and practical way to utilize an urban environment for everyday tasks.
 
 
 ## Querying Llama 4 Vision Model
