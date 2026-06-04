@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 10:09:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 12:19:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 10:09:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 12:19:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in a urban environment. One of the taxis appears to be dripping rainwater via a makeshift planter on the roof. This unusual sight suggests that the city might be experiencing recent or ongoing rainfall.
+    The image depicts two yellow taxis in an urban street setting. On the right side of the image, a man is seen wearing a yellow shirt and working on hanging clothes on a clothesline attached to the back of one of the taxis. There is a white iron positioned next to the clothesline. The background shows buildings with flags and multipleknapsisters. The scene appears to be urban, likely in a city where taxis are commonly sighted.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person dishing laundry on a借鉴 You. This practice, known as "dumping," involves the person hanging items on poles or crossbars and awaits riders who tip them to collect the clothes. This activity is most commonly associated with New York City's yellow taxis, and the image is from a common location in Manhattan where aftermarket bounty poles are placed.
+    The image shows two yellow taxis in an urban setting, likely a busy city street. One of the taxis is positioned with different clothes hung on its final permission pole, possibly after being used for cleaning. This is a common sight in many cities, where taxis are equipped with such poles at the back for passengers to quickly alter their attire if they need to change. This practice can be particularly useful in colder climates or for individuals who need to visit indoor facilities quickly.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow New York City taxis parked on a city street. The taxi in the foreground is adorned with clothes hung on its back, including a strip of fabric with an American flag含まれет. This scene appears to be inspired by a well-known cartoon character, possibly Old Donald Duck, with the clothes humorously attached to the vehicle. The attire of the person arranged behind the taxi includes a yellow shirt and glasses.
+    The image shows a person hanging a blue sweater or shirt on a clothesline. The scene appears to be in an urban setting, as there are yellow taxis and various street signs visible. The person is standing on a street, and the background includes buildings and trees, indicating that this might be taking place in a city or town.
 
 
 ## Querying Llama 4 Vision Model
