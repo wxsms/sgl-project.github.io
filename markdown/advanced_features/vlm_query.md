@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 19:10:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 19:56:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 19:10:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 19:56:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.14s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.67s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.74s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street with two yellow taxis. One taxi is being used as a makeshift drying location for laundry, and a person is hanging a piece of clothing on a clothesline attached to the taxi's roof.
+    The image shows two yellow taxis parked side by side on a city street, likely in New York City given the recognizable design of the taxis. The man in the image appears to be hanging laundry out of the back window of one of the taxis. The scene is set during daylight with clear weather, and the background includes urban elements such as buildings, windows, and possibly some window displays or storefronts.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis on a street corner. One taxi is parked, while the other is being cleaned by a person hanging out clothes on a clothesline attached to a stump in the street. This is likely a humorous or unusual scene. The person seems to be taking advantage of the taxi's paid-for walking distance to get laundry done.
+    The image shows a person using an Ironing Board to iron clothes while standing beside a taxi in an urban setting, likely during a时装发布活动。 The person is dressed in a yellow shirt and appears to be focused on ironing the clothes, which are placed on the ironing board. The street scene includes other vehicles and buildings, indicating that this is happening in a bustling city environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The picture shows a yellow taxi вóeping outside of a store with clothes hanging from a rail attached to the back.
+    The image shows a sidewalk along a street with vehicles, including cars and a taxi, parked in front of a building. The focus is on a person standing next to the taxi, holding a rack with clothes on it. The person appears to be demonstrating the rack, which is typically used for drying clothes in a car.
+    
+    The scene suggests an unusual or humorous situation where someone is using a car for drying clothes, likely as a makeshift drying station. This could be a creative or exaggerated depiction to evoke a funny or playful response.
 
 
 ## Querying Llama 4 Vision Model
