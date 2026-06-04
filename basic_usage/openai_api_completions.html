@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=ec54c1a4"></script>
+    <script src="../_static/documentation_options.js?v=cc242909"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -578,9 +578,9 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.95it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.49it/s]
-Capturing num tokens (num_tokens=4 avail_mem=76.61 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 37.46it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.50it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 11.08it/s]
+Capturing num tokens (num_tokens=4 avail_mem=59.08 GB): 100%|██████████| 58/58 [00:03&lt;00:00, 15.52it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -596,7 +596,7 @@ Capturing num tokens (num_tokens=4 avail_mem=76.61 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31406
+Server started on http://localhost:35967
 </pre></div></div>
 </div>
 </section>
@@ -630,7 +630,7 @@ Server started on http://localhost:31406
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='e16ae13c0b8f46fdb0fb9c2f4d2a2da3', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1780608190, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='4ff7064c9fe247d48ccd890377128c62', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1780609294, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -895,7 +895,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The major achievements of ancient Rome include the construction of the Colosseum, which was a massive amphitheater that hosted gladiatorial contests and other public spectacles. The Roman Republic also established one of the most advanced legal systems in history, known as the Code of Hammurabi. Additionally, they were skilled in military tactics and developed an extensive network of roads and aqueducts for transportation.<br><br>In addition to these, ancient Rome is credited with inventing the first written language, Latin, and developing their own alphabet system. They are also famous for their art, architecture, engineering, and philosophy.</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in Italy from the 8th century BCE to the 4th century CE. It is known for its extensive infrastructure, including roads, aqueducts, and public works such as temples, theaters, and amphitheaters.<br><br>One of the most significant achievements of ancient Rome was their military prowess. The Romans were skilled soldiers who developed advanced tactics and strategies that influenced later armies around the world. They also built impressive fortifications, which included cities like Rome itself, which became centers of power and influence.<br><br>Another notable achievement was their art and architecture. Roman artists created masterpieces like the Col</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -921,7 +921,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, it is a test. I&#39;m here to assist you with any questions or tasks you may have. Please let me know how I can help!
+Yes, that is a test. I&#39;m here to assist you with any questions or information you may need. Please let me know if there&#39;s anything specific you&#39;d like to ask or discuss.
 </pre></div></div>
 </div>
 </section>
@@ -986,7 +986,7 @@ Yes, it is a test. I&#39;m here to assist you with any questions or tasks you ma
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='737134fb8c0c481ab16cddf9d107776b', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1780608192, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='f4997ce4e62a4bf7ba3bed768033ea61', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1780609297, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1018,7 +1018,7 @@ Yes, it is a test. I&#39;m here to assist you with any questions or tasks you ma
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='b3770c15bc054c37b46ad415761727a3', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Alex who had been working on a mission to explore the stars for over a decade. He had been living in isolation, spending his days studying the stars and planning his next expedition. One day, while on a spacewalk to collect data from a distant planet, he stumbled upon a mysterious signal that led him to a dark chamber filled with glowing lights.', matched_stop='\n\n')], created=1780608193, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=81, prompt_tokens=9, total_tokens=90, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='eab6171f23ae484d905c468c5bea7885', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" Once upon a time, there was a space explorer named Jack who had been on many missions to explore the stars. He had traveled to the moon, Mars, Jupiter, and beyond. Jack's spacecraft was always equipped with a camera and a powerful telescope to capture the beauty of the universe. He was always on the lookout for new discoveries and was eager to share his knowledge with others.", matched_stop='\n\n')], created=1780609298, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=77, prompt_tokens=9, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
