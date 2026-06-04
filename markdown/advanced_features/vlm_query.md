@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 03:25:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 04:24:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 03:25:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 04:24:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.13s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.00it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene from a syncing process between projects in an Xcode project Navigator.
+    The image shows a scene with two yellow taxis on a city street. The person in the image is interacting with the back of one of the taxis, using a crease-iron to iron a shirt that is suspended on a rack. The setting appears to be an urban area with buildings in the background, and there are American flags displayed prominently. The person is wearing a yellow shirt, and the environment suggests either a protest or a demonstration involving the taxi industry.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person hanging clothes on a clothesline. They are standing next to a yellow taxi, likely in a busy urban area given the presence of traffic and other pedestrians. The person is holding onto the clothesline and appears to be preening their hair. There are also other street elements visible, such as a storefront with glass windows and a sign board, and traffic lights and street lamps in the background. This scene is unusual as it combines work with urban commuting.
+    The image shows a man wearing a yellow shirt and sunglasses, standing behind a clothesline with pieces of clothing hanging on it. The scene appears to be taking place on a city street, with several yellow taxis parked along the curb. The man seems to be setting up or arranging the clothes on the clothesline.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like you've started a classic New York City Moves! challenge! Participants run a mile, repeatedly throwing their clothes on a rack, then promptly discarding them into trash cans. It's meant to be a humorous and physical form of urban exercise and activism. Keep up the good work!
+    This image appears to show a man hanging laundry on yellow taxis passing by in an urban setting, possibly in New York City. The scene includes yellow cabs, a street with buildings, and several laundry items being hung on a makeshift stand or squeegee handle.
 
 
 ## Querying Llama 4 Vision Model
