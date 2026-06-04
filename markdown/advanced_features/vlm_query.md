@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 00:58:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 01:34:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 00:58:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 01:34:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.18s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.60s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.68s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in New York City's Fifth Avenue. There is a person hanging laundry on a clothesline attached to the trucks of the taxis. This seems unusual for New York cities, where luggage in taxis is more common. It is likely an artwork or a performance.
+    The image shows a street scene in an urban area where a man is ironing clothes in the back of a yellow taxi. The taxi appears to be equipped with an ironing board and a clothes rack, indicating that it's likely used for ironing clothes as part of a service. The setting is on a busy street with other cars and buildings in the background. This creative use of space is a unique and unexpected sight, blending everyday street life with a practical, albeit humorous, use of an everyday vehicle.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man dressed as Santa Claus hanging clothes on a clothesline attached to the back of a yellow taxi in what appears to be the Bryant Park area of New York City. It is likely a protest or a creative act of art instead of Santa Claus himself.
+    The image shows a man hanging laundry on clotheslines attached to the back of a yellow taxi cab on a busy city street, possibly in New York City. This unusual scene likely represents a巧工业or public service act thattronولا as a quirky way to present a message or seek eco-friendly lifestyle advice.
 
 
 ### Call with Precomputed Embeddings
@@ -202,13 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging clothes on a makeshift clothesline attached to the back of a yellow taxi cab. The setup includes:
-    
-    1. Two laundry baskets hanging from a beach umbrella.
-    2. Multiple neckties and shirts draped over the top.
-    3. A small fan or pump attached to the line for blowing the clothes.
-    
-    This is a humorous and creative use of a taxi cab's rear to hang laundry, using everyday items like laundry baskets and a beach umbrella.
+    Based on the description, it appears that someone is hanging laundry on the rear of a moving yellow taxi cab in the middle of a city street, likely in New York City. The taxi is the primary subject, and the unusual act of hanging laundry on the cab gives the scene its独特性和奇观性.
 
 
 ## Querying Llama 4 Vision Model
