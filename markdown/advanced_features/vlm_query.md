@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 04:24:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 04:57:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 04:24:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 04:57:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.00it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.30s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.64s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.74s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene with two yellow taxis on a city street. The person in the image is interacting with the back of one of the taxis, using a crease-iron to iron a shirt that is suspended on a rack. The setting appears to be an urban area with buildings in the background, and there are American flags displayed prominently. The person is wearing a yellow shirt, and the environment suggests either a protest or a demonstration involving the taxi industry.
+    The image shows a scene with two yellow cabs in a city street. One of the cabs has a man standing by its tailgate, holding a multicolored cloth. The man appears to be hanging the cloth on the end of a yellow cab, which has its trunk open. The background includes some buildings and street lights.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man wearing a yellow shirt and sunglasses, standing behind a clothesline with pieces of clothing hanging on it. The scene appears to be taking place on a city street, with several yellow taxis parked along the curb. The man seems to be setting up or arranging the clothes on the clothesline.
+    The image shows a scene of people hanging laundry on clotheslines next to taxis in a city setting. The person in the foreground is using a clothes drying rack to hang multiple pieces of clothing outside on the street, which is an unusual and comical sight. The background includes other people and pedestrians, and there is a cab in the foreground. The setting appears to be a busy urban area with streetlights and flags visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image appears to show a man hanging laundry on yellow taxis passing by in an urban setting, possibly in New York City. The scene includes yellow cabs, a street with buildings, and several laundry items being hung on a makeshift stand or squeegee handle.
+    The image shows a scene with two yellow taxi cabs and a person using a chair-like drying rack with hangers to dry clothes on the street. This is an unusual sight, as people typically do laundry indoors or in designated outdoor drying areas. The individual seems to be drying clothes outdoors, possibly illustrating the old-fashioned method of performing tasks that are now commonly transported or handled with digital tools.
 
 
 ## Querying Llama 4 Vision Model
