@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 12:19:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 13:55:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 12:19:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 13:55:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.47s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.74s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.85s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts two yellow taxis in an urban street setting. On the right side of the image, a man is seen wearing a yellow shirt and working on hanging clothes on a clothesline attached to the back of one of the taxis. There is a white iron positioned next to the clothesline. The background shows buildings with flags and multipleknapsisters. The scene appears to be urban, likely in a city where taxis are commonly sighted.
+    The image shows a person spreading clothes out on a pick-up truck to dry, which is unusual and not common practice. This usually happens outside on a line or rack. The background includes two yellow taxis and some urban elements like buildings and other vehicles.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis in an urban setting, likely a busy city street. One of the taxis is positioned with different clothes hung on its final permission pole, possibly after being used for cleaning. This is a common sight in many cities, where taxis are equipped with such poles at the back for passengers to quickly alter their attire if they need to change. This practice can be particularly useful in colder climates or for individuals who need to visit indoor facilities quickly.
+    The image you're referring to shows a person performing a stunt involving a taxi. The individual is lifting a washboard with clothes alongside a taxi, creating a humorous and unexpected scene. The stunt likely aims to entertain passersby and capture attention on the street. In the background, there are urban elements like other taxis, buildings, and vehicles, with some traffic lights visible. The setting appears to be a busy city street with a distinctive yellow taxi, which is a common sight in many major metropolitan areas.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,13 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging a blue sweater or shirt on a clothesline. The scene appears to be in an urban setting, as there are yellow taxis and various street signs visible. The person is standing on a street, and the background includes buildings and trees, indicating that this might be taking place in a city or town.
+    Here's what's shown in the image:
+    
+    - A person holding an iron, with various clothing articles hanging on a clothesline. The person appears to be ironing the clothes outdoors.
+    - Two yellow taxis parked nearby, with one of them behind the person.
+    - Trees and a street with buildings on the background, suggesting an urban setting.
+    - The street has some streetlights and banners hanging between the trees, indicating it might be a busy part of a city in a warm season like the summer.
+    - The person is wearing a yellow shirt and seems to be multitasking, prompting the question of what isn't specified in the document about this
 
 
 ## Querying Llama 4 Vision Model
