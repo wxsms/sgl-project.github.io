@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 22:31:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 22:54:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 22:31:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-04 22:54:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the picture, there is a scene from what appears to be a television show or potentially an experimental setup by the TV show "The Sprinkler." The scenario seems to be about a taxi driver momentarily pausing his work to don a costume, possibly symbolizing an active role in the TV show or a costume party. The driver is布and with a bandana around his head, further turning his business dressed. The setting is in a cityscape, with yellow and black taxis (the most distinguishable feature here) meaning New York or a similar urban environment.
+    It appears that the image shows two yellow taxis, likely New York City taxis, parked on a street. There is an object outside one of the taxis that seems to be a makeshift drying rack, which might be holding laundry or some other items. The scene looks somewhat unusual because taxis typically do not have space for such an activity, especially in a busy city like New York. It could be that someone has set up the drying rack to dry clothes or provide maintenance.
 
 
 ### Call with Processor Output
@@ -146,7 +146,15 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from a street in New York City. A man, who appears to be a street vendor, is ironing clothing on the street in front of a yellow taxi. A banner hangs from a street lamp in the background. The scene is set on a city street with tall buildings and other urban elements.
+    The image shows a scene from the comedy movies and TV show "Seinfeld." It features a yellow taxi with a laundry drying rack on the back, creating a humorous scenario where the taxi is mistaken for a dryer.
+    
+    Some key elements in the image are:
+    
+    - A yellow taxi in the parking lot of a mall.
+    - A man hanging laundry on the back of the taxi using a laundry rack.
+    - The scene includes colorful banners and signs typically seen in a shopping center.
+    
+    This setup creates a comedic contrast between the serious activity of laundry drying and the banality of a taxi driving business environment. The gag relies on coincidence and the Được луж
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +210,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with parked yellow taxi cabs in a city street. A person wearing a yellow sweatshirt and blue jeans is hanging a laundry basket, which appears to be filled with cloths, on a stand attached to the back of the vehicle. This activity seems unusual and not related to typical taxi behavior. There are also street lamps and buildings in the background, indicating an urban setting.
+    The image shows a man wearing a yellow shirt who is on the back of a yellow taxi cab on a city street. He has a laundry basket suspended from the back of the taxi, with clothes drying outside. The scene appears to be part of a comedy sketch or a playful act, often seen in street performances and advertising campaigns. The background includes urban architecture and other vehicles, including another yellow taxi.
 
 
 ## Querying Llama 4 Vision Model
