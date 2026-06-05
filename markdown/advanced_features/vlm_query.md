@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 08:15:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 11:21:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 08:15:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 11:21:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in a city street, seemingly stationary. One logo indicates that the photograph might have been taken in丿or a similar location. A person, a panel, and a illuminating object are visible. The scene is held adjacent to a real-life setting.
+    You are observing a person standing next to a yellow taxi cab on a city street, engaging in what appears to be an unusual activity. The person is holding a folded piece of clothing over a elongated pushcart, which might be hinting at an unconventional forward-thinking approach to work, possibly combining commuting with chores. The image captures a dynamic urban scene with urban billboards, green trees, and a shadowy pedestrian area, all underlining the relatable and relatable essence of city life.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person using a mop while holding a folded piece ofPuty luận về phương pháp để nghiên cứu từ vựng trong tiếng chưa đáp ứng đầy đủ the Russian flag on top of a moving yellow taxi cab, which appears to be in a city street.
+    The image shows a person in a bright yellow shirt and red hat, standing by the road on his or her motorized scooter, detailing a set of laundry items, including a blue shirt and a pair of dark pants. The person is against a backdrop featuring two yellow taxis and a storefront with some signage on the building's windows. The scene is an unusual sight, as laundry on a motorized scooter isn't typically seen in everyday urban life.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a street scene in an urban area with two yellow taxis. A person is standing beside a street pole, hanging clothes on a rack attached to the pole. The scene is likely a lighthearted or humorous display, suggesting that the person is doing laundry activities despite being on a city street. The background includes buildings with advertisements and some greenery.
+    The image shows a man standing on a street, visibly ironing clothes next to aTaxi. The street appears to be busy, with another taxi and a few other notable aspects in the background.
 
 
 ## Querying Llama 4 Vision Model
