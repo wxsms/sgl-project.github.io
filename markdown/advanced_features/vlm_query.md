@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-04 22:54:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 00:15:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-04 22:54:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 00:15:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    It appears that the image shows two yellow taxis, likely New York City taxis, parked on a street. There is an object outside one of the taxis that seems to be a makeshift drying rack, which might be holding laundry or some other items. The scene looks somewhat unusual because taxis typically do not have space for such an activity, especially in a busy city like New York. It could be that someone has set up the drying rack to dry clothes or provide maintenance.
+    The image shows a street scene with a person hanging clothes on a clothesline, which is attached to the back of a yellow taxi. The clothes are drying on this makeshift clothesline. In the background, there are other people and more taxis, indicating that this is a busy urban area, likely New York City given the yellow taxis.
 
 
 ### Call with Processor Output
@@ -146,15 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from the comedy movies and TV show "Seinfeld." It features a yellow taxi with a laundry drying rack on the back, creating a humorous scenario where the taxi is mistaken for a dryer.
-    
-    Some key elements in the image are:
-    
-    - A yellow taxi in the parking lot of a mall.
-    - A man hanging laundry on the back of the taxi using a laundry rack.
-    - The scene includes colorful banners and signs typically seen in a shopping center.
-    
-    This setup creates a comedic contrast between the serious activity of laundry drying and the banality of a taxi driving business environment. The gag relies on coincidence and the Được луж
+    The image shows two yellow taxis parked on a city street. In the foreground, a person wearing a yellow shirt is checking his shirt on a stand next to one of the taxis. The background includes tall buildings, pedestrians walking, and various street elements like banners and street signs. The scene appears to be in a busy urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -210,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man wearing a yellow shirt who is on the back of a yellow taxi cab on a city street. He has a laundry basket suspended from the back of the taxi, with clothes drying outside. The scene appears to be part of a comedy sketch or a playful act, often seen in street performances and advertising campaigns. The background includes urban architecture and other vehicles, including another yellow taxi.
+    The image shows two yellow taxicabs parked on a city street. The shorter cab on the right appears to be bending down the blue and white laundry basket, which is attached to the trunk. The longer cab on the left seems to be unnecessary, since the laundry is already loaded in the basket.
 
 
 ## Querying Llama 4 Vision Model

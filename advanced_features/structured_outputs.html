@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=d0e54e7d"></script>
+    <script src="../_static/documentation_options.js?v=742e7a6e"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,7 +59,7 @@
     <link rel="prev" title="Adaptive Speculative Decoding" href="adaptive_speculative_decoding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jun 04, 2026"/>
+    <meta name="docbuild:last-update" content="Jun 05, 2026"/>
   </head>
   
   
@@ -573,9 +573,9 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  6.62it/s]
-Capturing num tokens (num_tokens=4 avail_mem=49.87 GB): 100%|██████████| 58/58 [00:05&lt;00:00, 11.34it/s]
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  6.96it/s]
+Capturing num tokens (num_tokens=4 avail_mem=41.14 GB): 100%|██████████| 58/58 [00:07&lt;00:00,  7.53it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -870,7 +870,7 @@ Capturing num tokens (num_tokens=4 avail_mem=49.87 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Sources: <br>1. get_current_date function <br>2. get_current_weather function</strong></div>
+<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Note: I called the function get_current_date with the timezone 'America/New_York' which corresponds to New York, and get_current_weather with the city 'New York', state 'NY' and unit 'fahrenheit'. <br><br>Please see below for the actual execution of the code:<br><br>```python<br>from datetime import datetime<br>import pytz<br>import requests<br><br>def get_current_date(timezone):<br>    tz = pytz.timezone(timezone)<br>    return datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")<br><br>def get_current_weather(city, state, unit):<br>    api_key = "YOUR_OPENWEATHERMAP_API_KEY"<br>    base_url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{state}&appid={api_key}&units={unit}"<br>    response = requests.get(base_url)<br>    data = response.json()<br>    return data<br><br>print(get_current_date("America/New_York"))<br>print(get_current_weather("New York", "NY", "imperial"))<br>```<br><br>Please note that you need to replace "YOUR_OPENWEATHERMAP_API_KEY" with your actual OpenWeatherMap API key. <br><br>Also, note that the unit parameter in get_current_weather function is set to "imperial" because OpenWeatherMap API returns temperature in Fahrenheit by default when units are set to imperial. If you want temperature in Celsius, you can set units to "metric".</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -981,7 +981,7 @@ Capturing num tokens (num_tokens=4 avail_mem=49.87 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': '3b8a86bcff3d4c5392ab5dff2d1ae869', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 1, 'cached_tokens_details': {'device': 1, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.15223207138478756, 'response_sent_to_client_ts': 1780613729.2918205}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'd8334e408e3a43a89d2e5da14a5ad7d9', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 1, 'cached_tokens_details': {'device': 1, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.3867695229128003, 'response_sent_to_client_ts': 1780618775.1690748}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -1026,7 +1026,7 @@ Capturing num tokens (num_tokens=4 avail_mem=49.87 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': '1b93136137584a8aa8312e7b776e2c98', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 49, 'cached_tokens_details': {'device': 49, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.14600642304867506, 'response_sent_to_client_ts': 1780613729.4489465}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': '2f5e007108d1418e9e59f3177af0f1ba', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 49, 'cached_tokens_details': {'device': 49, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.3942076023668051, 'response_sent_to_client_ts': 1780618775.5748994}}</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -1073,7 +1073,7 @@ Capturing num tokens (num_tokens=4 avail_mem=49.87 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '59c19122733c4779a9328cc392a85901', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.14637138228863478, 'response_sent_to_client_ts': 1780613729.6215699}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '874323593e5e46d3b29a010e19b2fedc', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.14627243112772703, 'response_sent_to_client_ts': 1780613729.6215835}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '9a833308544b4856956837ad64f21d3d', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.146220276132226, 'response_sent_to_client_ts': 1780613729.6215885}}]</strong></div>
+<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '4927e1c1932c43c1a8aae00497372edd', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.25101222936064005, 'response_sent_to_client_ts': 1780618775.901746}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '7b838473cbd347f29f2f0a8e62d06409', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.25095420610159636, 'response_sent_to_client_ts': 1780618775.9017522}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'a49a2757626e4ab6b135cf1656ba50df', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.2509155720472336, 'response_sent_to_client_ts': 1780618775.9017549}}]</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1110,7 +1110,7 @@ Capturing num tokens (num_tokens=4 avail_mem=49.87 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [50100, 128009], 'meta_info': {'id': '352e1b2a679c4eee9fa014c87ee1b4d3', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 2, 'cached_tokens': 31, 'cached_tokens_details': {'device': 31, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.03151013981550932, 'response_sent_to_client_ts': 1780613729.6617613}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [50100, 128009], 'meta_info': {'id': '9699e1d928df4beb912a48e09d567075', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 2, 'cached_tokens': 31, 'cached_tokens_details': {'device': 31, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.08462054654955864, 'response_sent_to_client_ts': 1780618775.9941566}}</strong></div>
 </div>
 </section>
 <section id="id4">
@@ -1162,7 +1162,7 @@ Capturing num tokens (num_tokens=4 avail_mem=49.87 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'The answer is: France.', 'output_ids': [791, 4320, 374, 25, 9822, 13, 128009], 'meta_info': {'id': 'b5e8e58c16a943bd8411d340084d9362', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.14495732635259628, 'response_sent_to_client_ts': 1780613731.2015674}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [50100, 13, 128009], 'meta_info': {'id': 'a8bffcbe7726471f81a850db5e5e6904', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 3, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.16765845380723476, 'response_sent_to_client_ts': 1780618777.5864046}}</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1216,7 +1216,7 @@ Capturing num tokens (num_tokens=4 avail_mem=49.87 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'Paris is the capital of France.', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 13, 128009], 'meta_info': {'id': '74571323616f4283afbb2e63b8a563e3', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 8, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.08706329576671124, 'response_sent_to_client_ts': 1780613731.298528}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [50100, 13, 128009], 'meta_info': {'id': '1fab3eefb6d541f58c59e010d233cc81', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'num_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 3, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.09183725155889988, 'response_sent_to_client_ts': 1780618777.68817}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
@@ -1247,9 +1247,9 @@ Capturing num tokens (num_tokens=4 avail_mem=49.87 GB): 100%|██████�
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:11&lt;00:00,  5.24it/s]
-Capturing num tokens (num_tokens=4 avail_mem=20.29 GB): 100%|██████████| 58/58 [00:08&lt;00:00,  6.81it/s]
+Multi-thread loading shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:08&lt;00:00,  7.14it/s]
+Capturing num tokens (num_tokens=4 avail_mem=59.54 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 13.76it/s]
 </pre></div></div>
 </div>
 <section id="id5">
@@ -1477,7 +1477,7 @@ Capturing num tokens (num_tokens=4 avail_mem=20.29 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: London is the capital of Italy</strong></div>
+<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Paris is the capital of Italy</strong></div>
 </div>
 </section>
 <section id="id7">
@@ -1579,7 +1579,7 @@ Capturing num tokens (num_tokens=4 avail_mem=20.29 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|><br><br>Cutting Knowledge Date: December 2023<br>Today Date: 26 Jul 2024<br><br><|eot_id|><|start_header_id|>user<|end_header_id|><br><br>Paris is the capital of<|eot_id|><|start_header_id|>assistant<|end_header_id|><br><br><br>Generated text: France.</strong></div>
+<strong style='color: #00008B;'>Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|><br><br>Cutting Knowledge Date: December 2023<br>Today Date: 26 Jul 2024<br><br><|eot_id|><|start_header_id|>user<|end_header_id|><br><br>Paris is the capital of<|eot_id|><|start_header_id|>assistant<|end_header_id|><br><br><br>Generated text: Paris is the capital of France.</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
@@ -1640,7 +1640,7 @@ Capturing num tokens (num_tokens=4 avail_mem=20.29 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|><br><br>Cutting Knowledge Date: December 2023<br>Today Date: 26 Jul 2024<br><br><|eot_id|><|start_header_id|>user<|end_header_id|><br><br>Paris is the capital of<|eot_id|><|start_header_id|>assistant<|end_header_id|><br><br><br>Generated text: Paris is the capital of France.</strong></div>
+<strong style='color: #00008B;'>Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|><br><br>Cutting Knowledge Date: December 2023<br>Today Date: 26 Jul 2024<br><br><|eot_id|><|start_header_id|>user<|end_header_id|><br><br>Paris is the capital of<|eot_id|><|start_header_id|>assistant<|end_header_id|><br><br><br>Generated text: France.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
@@ -1753,7 +1753,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jun 04, 2026.
+  Last updated on Jun 05, 2026.
   <br/>
 </p>
   </div>
