@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 17:04:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 20:29:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 17:04:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 20:30:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a scene from the reality TV show "The Price is Right," where a contestant is washed clothes in a moving taxi as part of a challenge. The contestant, dressed in a yellow shirt, is situated between two yellow taxi cabs and is diligently cleaning the clothes on a wringer. This act is part of the double obstacle course rules in the "Price is Right" game show and requires the contestant to wring out as much water as possible in the shortest amount of time.
+    The image shows two yellow taxis parked side by side on a city street. The person in the first taxi is leaving or pulling out a blond horse attached to a wooden cart with a harness. The horse is standing on the street in front of the taxi. The scene suggests a setting where a horse-drawn carriage or carriage service is operating in the city.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene of a yellow taxiArtist performing on the street, possibly displaying his art or creating art while driving. A person wearing yellow clothing and a yellow bib is in the driver's seat of the taxi, with clothes hanging out the open windows. The taxiArtist is holding and manipulating objects behind the driver, potentially creating or inciting an art piece. The street scene is urban, with buildings and街light visible in the background.
+    The image shows two large yellow taxis parked on a city street. The plates on the taxis have been removed or obscured to make them appear that they are organized by a man hanging clothes on a simple line. One set of clothes is hanging on the line, and the other set is held up by the individual. The scene appears to be a humorous or public performance art piece, which is why the plates are not easily noticeable. There are also American flags hanging on the line.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person-duty-changing road scene in New York City. The motorcyclist is facing the camera, and the image is taken from the perspective of the vehicle. The road appears to be a busy road with vehicles in both directions, including cars.
+    The image shows two yellow taxis driving on a city street. One taxi has a sign draped over its roof that reads "FREE LUNCH." The caption mentions that someone is using a cloth to dry clothes instead of a drying rack, which is unusual and could be considered an odd and funny sight in a city like New York.
 
 
 ## Querying Llama 4 Vision Model
