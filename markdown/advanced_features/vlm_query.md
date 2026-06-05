@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 15:56:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 17:04:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 15:56:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 17:04:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a unique scene where clothes are displayed on a folding chair outside a taxi. This is likely an attention-grabbing piece of public art or a practical solution for someone who needs to do laundry on a busy street. The clothes are arranged neatly on the folding chair, and the taxi appears to be moving, adding a dynamic element to the scene.
+    This image shows a scene from the reality TV show "The Price is Right," where a contestant is washed clothes in a moving taxi as part of a challenge. The contestant, dressed in a yellow shirt, is situated between two yellow taxi cabs and is diligently cleaning the clothes on a wringer. This act is part of the double obstacle course rules in the "Price is Right" game show and requires the contestant to wring out as much water as possible in the shortest amount of time.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a man demonstrating an unusual idea: to clean his yellow district taxi in the middle of the street. There are two taxis visible. One of them, parked on the curb, is a standard yellow New York City taxi, while the other one, right behind the man, is flipped on its side, and the man is wearing a pair of electric boots and cleaning his yellow taxi while standing inside the open door of the car. This scene humorously mimics the actions typically seen in real-life cleaning crews.
+    The image shows a scene of a yellow taxiArtist performing on the street, possibly displaying his art or creating art while driving. A person wearing yellow clothing and a yellow bib is in the driver's seat of the taxi, with clothes hanging out the open windows. The taxiArtist is holding and manipulating objects behind the driver, potentially creating or inciting an art piece. The street scene is urban, with buildings and街light visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a New York City street with taxi cabs. There is a person who appears to be doing laundry on the back of one of the taxis, which is a common sight to see in New York City during the cold winter months.
+    The image shows a person-duty-changing road scene in New York City. The motorcyclist is facing the camera, and the image is taken from the perspective of the vehicle. The road appears to be a busy road with vehicles in both directions, including cars.
 
 
 ## Querying Llama 4 Vision Model
