@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 01:29:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 02:07:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 01:29:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 02:07:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.62s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.30s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.35s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the picture, you can see two yellow taxis parked on a street in what appears to be an urban area, possibly a city street in the United States. The most striking feature of the image is a man standing next to the backs of two of the taxis, energetically расходing laundry. The way he places the bib of the jeans and shirt sideways on the flatback of the back of each taxi creates a humorous and whimsical scene that defies normal usage of cabs as makeshift laundry hampers. The man appears to be enjoying his time, possibly taking a break from a job, adding a light-hearted component to a
+    The image shows a person standing next to a yellow taxi, who appears to be stranded on a city street wearing just a blue tarp as a makeshift covering. They are washing clothes in the rain, using a washing frame attached to the back of the taxi. This humorous visual plays on the idea of someone fleeing from a storm while also doing their laundry in an unconventional way.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you've provided shows a humorous and unusual sight where a man is ironing clothes on a horse standing next to a yellow taxi cab (or medallion) on a city street. This is a playful and unexpected scene, combining elements of everyday city life with a bizarre streak of humor.
+    The image shows a person cleaning the windshield of a parked yellow taxi cab in New York City. The individual is using a cleaning tool, likely a wiper blade, to wipe the window. The scene appears to be capturing a humorous or unusual moment, as cleaning a taxi window is not a typical task for an individual. The backdrop includes characteristic elements of a New York street, such as the yellow cab itself, pedestrians, and the urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The picture shows a city street scene. There are two yellow taxis driving in opposite directions on the road. The pedestrian area on the sidewalk has some ventilation grates. The background includes a shopping mall with large glass windows and a few红旗 (Red Flag) flags hanging from the building. There are also streetlights and some trees along the sidewalk.
+    The photo shows a playful scene where a taxi driver is using a flatiron to iron a shirt on the top of a passenger seat of his taxi, instead of an ironing board. The taxi, numbered 15-us use us and yellow markings, is driving in a city street with other vehicles and some buildings visible in the background.
 
 
 ## Querying Llama 4 Vision Model
