@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 00:52:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 01:29:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 00:52:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 01:29:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.62s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.30s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.35s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows two yellow taxis on a city street, with clothes hung on a clothesline attached to the back of one of the taxis. The clothesline is strung between the taxis, and the person holding the railing is adjusting the clothes. This scene is unusual and likely staged for a humorous or artistic purpose, rather than a practical activity.
+    In the picture, you can see two yellow taxis parked on a street in what appears to be an urban area, possibly a city street in the United States. The most striking feature of the image is a man standing next to the backs of two of the taxis, energetically расходing laundry. The way he places the bib of the jeans and shirt sideways on the flatback of the back of each taxi creates a humorous and whimsical scene that defies normal usage of cabs as makeshift laundry hampers. The man appears to be enjoying his time, possibly taking a break from a job, adding a light-hearted component to a
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I'm not sure what's shown here, but the information provided is not clear to understand the context. Can you parse into Chain of Thought steps that I can follow?
+    The image you've provided shows a humorous and unusual sight where a man is ironing clothes on a horse standing next to a yellow taxi cab (or medallion) on a city street. This is a playful and unexpected scene, combining elements of everyday city life with a bizarre streak of humor.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene where a yellow taxi is parked at a street corner. A person is standing next to the taxi, appearing to iron some clothes on a makeshift ironing board. The taxi is a typical New York City yellow cab, which is often spotted throughout the city. This seems to be a humorous or unusual sight, as taxis are generally not designed for everyday activities such as ironing clothes.
+    The picture shows a city street scene. There are two yellow taxis driving in opposite directions on the road. The pedestrian area on the sidewalk has some ventilation grates. The background includes a shopping mall with large glass windows and a few红旗 (Red Flag) flags hanging from the building. There are also streetlights and some trees along the sidewalk.
 
 
 ## Querying Llama 4 Vision Model
