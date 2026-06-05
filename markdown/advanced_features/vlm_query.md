@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 00:15:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 00:52:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 00:15:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 00:52:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene with a person hanging clothes on a clothesline, which is attached to the back of a yellow taxi. The clothes are drying on this makeshift clothesline. In the background, there are other people and more taxis, indicating that this is a busy urban area, likely New York City given the yellow taxis.
+    This image shows two yellow taxis on a city street, with clothes hung on a clothesline attached to the back of one of the taxis. The clothesline is strung between the taxis, and the person holding the railing is adjusting the clothes. This scene is unusual and likely staged for a humorous or artistic purpose, rather than a practical activity.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis parked on a city street. In the foreground, a person wearing a yellow shirt is checking his shirt on a stand next to one of the taxis. The background includes tall buildings, pedestrians walking, and various street elements like banners and street signs. The scene appears to be in a busy urban area.
+    I'm not sure what's shown here, but the information provided is not clear to understand the context. Can you parse into Chain of Thought steps that I can follow?
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxicabs parked on a city street. The shorter cab on the right appears to be bending down the blue and white laundry basket, which is attached to the trunk. The longer cab on the left seems to be unnecessary, since the laundry is already loaded in the basket.
+    The image depicts a scene where a yellow taxi is parked at a street corner. A person is standing next to the taxi, appearing to iron some clothes on a makeshift ironing board. The taxi is a typical New York City yellow cab, which is often spotted throughout the city. This seems to be a humorous or unusual sight, as taxis are generally not designed for everyday activities such as ironing clothes.
 
 
 ## Querying Llama 4 Vision Model
