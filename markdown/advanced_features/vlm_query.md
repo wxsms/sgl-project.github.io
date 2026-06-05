@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 21:51:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 22:51:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 21:51:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 22:51:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This is an image of a man pole-vaulting onto the roof of a yellow taxi cab. The setting appears to be an urban street with tall buildings in the background, and the scene is illuminated by the lights of nearby street lamps. The person performing the stunt is wearing a yellow shirt and blue jeans, while the taxi cab has "Enterprise" written on its side, which could indicate it's a branded taxi from the Enterprise franchise.
+    I'm not sure what you mean by "What's shown here." Could you please provide more context or clarify your question?
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person drying clothes on a clothesline using the elevated section on a New York City taxi. This is an unusual and humorous scene, as taxis typically have a low hooded drawer on the back for passengers to dance in, not for drying laundry.
+    The image shows a=color: yellow c=cab, blue=blue pickup, blue in the pickup hood, red=red light, red pavement light, white=white rang.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man in a yellow shirt wearing a replica of a New York City taxi hat. He appears to be drying some clothes, presumably on the back of one of the fake taxicabs he is holding up as a drying rack. This humorous scene likely depicts a creative and quirky attempt at using the fake taxi as an unconventional drying rack by hanging the clothes on its roof bars.
+    The image shows a humorous scene where a man is standing in front of a yellow taxi cab, draped with two red, white, and blue flags that resemble the American flag. He is tying the flags to the back of the taxi cab using a clothesline. The man is also holding a iron box as if ironing the flags, which adds a comedic element to the situation. The background appears to be an urban area with buildings and street equipment.
 
 
 ## Querying Llama 4 Vision Model
