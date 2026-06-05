@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 11:21:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 11:54:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 11:21:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 11:54:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.03s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    You are observing a person standing next to a yellow taxi cab on a city street, engaging in what appears to be an unusual activity. The person is holding a folded piece of clothing over a elongated pushcart, which might be hinting at an unconventional forward-thinking approach to work, possibly combining commuting with chores. The image captures a dynamic urban scene with urban billboards, green trees, and a shadowy pedestrian area, all underlining the relatable and relatable essence of city life.
+    What is being shown in the photo:  A man standing in the middle of a street, seemingly drying laundry directly from the car.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a bright yellow shirt and red hat, standing by the road on his or her motorized scooter, detailing a set of laundry items, including a blue shirt and a pair of dark pants. The person is against a backdrop featuring two yellow taxis and a storefront with some signage on the building's windows. The scene is an unusual sight, as laundry on a motorized scooter isn't typically seen in everyday urban life.
+    The image shows a man drying clothes on a clothesline in the middle of a busy street. The illustrations on the clothes indicate that they are coordinated like a 'をごぎゅいよ![][]['. The scene appears to be humorous, as drying clothes on the street is an unusual and impractical way to handle it. The man is wearing a bright yellow shirt, and the background features a yellow taxi and urban elements like buildings, street signs, and trees.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man standing on a street, visibly ironing clothes next to aTaxi. The street appears to be busy, with another taxi and a few other notable aspects in the background.
+    The image shows a scene likely taken in New York City. A man dressed in a yellow shirt is using an ironing board suspended from the side of a taxi to iron clothes. This is a whimsical and unusual sight, often referred to as "Taxi Ironing," and it is an iconic photograph often shared for humor. The man, in an act of charity or humor, hangs clothes from a strap serving as a makeshift clothesline while ironing them inside a parked taxi.
 
 
 ## Querying Llama 4 Vision Model
