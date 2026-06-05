@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 06:05:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 07:41:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 06:05:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 07:41:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis (identifiable as NYC taxis by their distinctive appearance and color) on a street. The focus appears to be on the back of one of the cabs where someone is hanging wet clothes on a makeshift "clothesline." This is unusual and likely indicates that the picture is either staged for an artistic or humorous effect或者表示 the vehicles are parked where they are unobtrusive or that the driver is taking some time to dry wet clothes before continuing their ride.
+    In the image, there are two yellow taxis parked on a city street. One of the taxis has a person standing on an enclosed cargo area of the vehicle, seemingly drying laundry on a clothesline attached to the truck bed. The scene appears to be taking place in an urban environment, given the buildings and signage in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a person hanging up laundry in the back of a yellow taxi in New York City. The individual is using hooks attached to the side of the taxi to hang out shirts and t-shirts, likely for drying. The street appears to be in a busy area, possibly in Midtown Manhattan, with other cars and buildings visible in the background. The scene is somewhat humorous and unusual, combining everyday activities like laundry hanging with the unusual setting of a taxi cab.
+    This image shows a person drying clothes on the back of a yellow taxi in a busy street. The scene is likely taking place in New York City due to the presence of a taxicab, as the city is famously known for its iconic yellow taxis. The person is using clothes pins to keep the wet clothes from touching each other and a clothes rack for support. The image captures a unique and humorous moment, showcasing an unusual way to dry clothes.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the photo, there is a scene where a man is standing next to a yellow taxi (ジャン車) and using an ironing board to iron a dark-colored piece of clothing. The surrounding environment appears to be an urban area with buildings, traffic, and signs visible in the background. It seems somewhat humorous since it's not a typical way to iron clothes.
+    The image shows a scene from a movie where a parking meter is placed under the hood of a yellow taxi to prevent it from being towed away. This is a reference to a scene in the film "The Hangover" where characters decide to park their cars in inconvenient positions to avoid getting towed.
 
 
 ## Querying Llama 4 Vision Model
