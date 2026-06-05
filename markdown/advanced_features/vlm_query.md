@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 12:42:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 13:58:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 12:42:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 13:58:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.00s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.42s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.51s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -121,9 +121,24 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two taxis on a city street. Between the taxis, there is a person hanging clothes on a line. The line is extended across the street, essentially creating a makeshift clothesline. This is a creative and unusual sight, often referred to as an "artiphax," which is a creative act that is similar in nature to a ph Arabi, or a photo.
+    Here is the markdown generated from the image:
     
-    In the background, there are tall buildings, and the scene appears to be in an urban setting. The unusual nature of the clothesline used to hang these clothes suggests that the person has taken some artistic license with a regular activity, turning what might typically be
+    ```markdown
+    # Street Scene in Time Square
+    
+    - **Taxis**: 
+      - Multiple cabs in the foreground, including the famous yellow taxis.
+      - One cab appears to be performing laundry, with clothes strewn across its rear and a person in a yellow sweatshirt.
+      
+    - **People**: 
+      - A person in a yellow sweatshirt is actively participating in the laundry task.
+      
+    - **Environment**: 
+      - Urban setting with tall buildings and stainless steel reflections.
+      - Possible gaps for passersby between the yellow taxis.
+      
+    - **Miscellaneous**:
+     
 
 
 ### Call with Processor Output
@@ -148,7 +163,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene on a city street where a man is ironing clothes outside of a taxi. The man is standing on the back step of a yellow taxi, using an iron to press fabrics. The taxi is parked on the street, and there are other taxis and buildings visible in the background. The scene appears to be humorous or absurd, as ironing clothes is typically an indoor task, not performed outside of vehicles.
+    The image shows two yellow taxis parked side by side on a city street. One taxi has a person standing next to it, holding a pair of laundry on a laundry bag. The person appears to be ironing clothes. The scene is in an urban setting with buildings and street lamps in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +219,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in a city street where a person appears to be ironing clothes outdoors, which is not typical behavior. In the background, there are two parked yellow taxis and some buildings with flag banners. The person is using a portable ironing board attached to a small tripod stand, and there is clothing draped over the ironing board. This unusual scene suggests that the person might be making a protest or drawing attention to an issue, possibly related to environmental or climate-related concerns, as shown by the flags being held by the person standing on the taxi.
+    This image shows a scene on the street where a man is hanging clothes on a clothesline attached to the back of a yellow taxi cab. The man is using a brick to weight the end of the line, likely to keep the clothes properly aligned while drying.
+    
+    The background includes urban elements such as building facades, signboards, and traffic lights, indicating that this is a city street environment. The yellow cab, a common sight in many major cities, is parked along the road with the clothesline extended across the back of it.
 
 
 ## Querying Llama 4 Vision Model
