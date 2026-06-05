@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 05:18:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 06:05:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 05:18:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 06:05:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a man standing behind the back of a stopped yellow taxi. He appears to be using a makeshift clothesline suspended between the back doors of the taxi. On the clothesline, it looks like he has some laundry items hanging to dry. The scene looks to be taking place in an urban area, possibly a city street, as there are buildings and other vehicles around. This could be a playful or humorous situation where someone is using the taxi cab for outdoor laundry.
+    The image shows two yellow taxis (identifiable as NYC taxis by their distinctive appearance and color) on a street. The focus appears to be on the back of one of the cabs where someone is hanging wet clothes on a makeshift "clothesline." This is unusual and likely indicates that the picture is either staged for an artistic or humorous effect或者表示 the vehicles are parked where they are unobtrusive or that the driver is taking some time to dry wet clothes before continuing their ride.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene of a yellow cab turned into a clothesline. A person is seen installing or adjusting laundry in one of the cab's compartments to dry clothes outside. The background shows an urban setting with trees, buildings, and possibly other vehicles. This scene juxtaposes the fast-paced nature of city life with the mundane task of drying laundry, reflecting the everyday life of people who may not have dryers at home.
+    The image depicts a person hanging up laundry in the back of a yellow taxi in New York City. The individual is using hooks attached to the side of the taxi to hang out shirts and t-shirts, likely for drying. The street appears to be in a busy area, possibly in Midtown Manhattan, with other cars and buildings visible in the background. The scene is somewhat humorous and unusual, combining everyday activities like laundry hanging with the unusual setting of a taxi cab.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a bright yellow New York City taxi parked on a street. A person is visible inside the taxi, wearing a yellow shirt and standing beside a folding clothes drying rack extending from the taxi's rear window. The rainy scene suggests that it has recently rained, prompting the person to use the drying rack to hang and dry clothes outside.远处还可以看到一些建筑物和行人。
+    In the photo, there is a scene where a man is standing next to a yellow taxi (ジャン車) and using an ironing board to iron a dark-colored piece of clothing. The surrounding environment appears to be an urban area with buildings, traffic, and signs visible in the background. It seems somewhat humorous since it's not a typical way to iron clothes.
 
 
 ## Querying Llama 4 Vision Model
