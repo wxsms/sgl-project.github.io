@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 15:06:24] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 15:56:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 15:06:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 15:56:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.96s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.37s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.46s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on a city street. One of the taxis has a person hanging clothes out of the window, likely for drying. The person is standing on a small stool or stand, which is positioned on the sidewalk next to the curb. It appears to be a humorous or unconventional situation, as the act of drying clothes on a city street is unusual and not typical.
+    The image shows a unique scene where clothes are displayed on a folding chair outside a taxi. This is likely an attention-grabbing piece of public art or a practical solution for someone who needs to do laundry on a busy street. The clothes are arranged neatly on the folding chair, and the taxi appears to be moving, adding a dynamic element to the scene.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with two yellow taxis. The focus is on a man dressed in a yellow shirt and pants sorting and organizing some clothes on a makeshift stand. The clothes appear to be hung on clotheslines or rods. вар possibly the clothes are wet, as they are being rinsed or washed. The background includes urban elements such as buildings, storefronts, and street signs, indicating a busy city environment. The man's activity suggests he might be a person working in the laundry or shipping business, using the city streets for quick access to more exposure and perhaps higher unemployment. The yellow taxis are arranged in a
+    This image shows a man demonstrating an unusual idea: to clean his yellow district taxi in the middle of the street. There are two taxis visible. One of them, parked on the curb, is a standard yellow New York City taxi, while the other one, right behind the man, is flipped on its side, and the man is wearing a pair of electric boots and cleaning his yellow taxi while standing inside the open door of the car. This scene humorously mimics the actions typically seen in real-life cleaning crews.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In this image, there are two yellow taxis parked on a city street. A person in a yellow shirt is using a folding ironing board in the middle of the street to iron blue clothing items. The scene is unusual and seems to be part of a performance art piece or a public event to draw attention.
+    This image shows a New York City street with taxi cabs. There is a person who appears to be doing laundry on the back of one of the taxis, which is a common sight to see in New York City during the cold winter months.
 
 
 ## Querying Llama 4 Vision Model
