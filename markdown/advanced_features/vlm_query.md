@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 20:57:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 21:51:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 20:57:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 21:51:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a street scene in an urban area, most likely a city. There are two yellow taxis parked on the street. In the foreground, a person on the back of the parked taxis is hanging laundry lines to dry clothes. This scene is unusual and humorous because clothes are generally not hung to dry on the back of taxis in real-world scenarios. The background includes other buildings and possibly stores lining the street, as indicated by the presence of signs and awnings. Chrome poles and signs are visible nearby, suggesting this may be in a commercial or busy part of the city.
+    This is an image of a man pole-vaulting onto the roof of a yellow taxi cab. The setting appears to be an urban street with tall buildings in the background, and the scene is illuminated by the lights of nearby street lamps. The person performing the stunt is wearing a yellow shirt and blue jeans, while the taxi cab has "Enterprise" written on its side, which could indicate it's a branded taxi from the Enterprise franchise.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man performing a balancing act on a偾-specked ramp while being passed by two yellow taxis.
+    The image shows a person drying clothes on a clothesline using the elevated section on a New York City taxi. This is an unusual and humorous scene, as taxis typically have a low hooded drawer on the back for passengers to dance in, not for drying laundry.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person ironing clothes on a stand while standing next to a yellow taxi. It appears to be a humorous or satirical scenario, possibly meant to be seen as surreal or amusing. The setting seems to be an urban environment, likely a busy street or a city with high-rise buildings.
+    The image shows a man in a yellow shirt wearing a replica of a New York City taxi hat. He appears to be drying some clothes, presumably on the back of one of the fake taxicabs he is holding up as a drying rack. This humorous scene likely depicts a creative and quirky attempt at using the fake taxi as an unconventional drying rack by hanging the clothes on its roof bars.
 
 
 ## Querying Llama 4 Vision Model
