@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 02:07:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 04:55:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 02:07:11] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 04:56:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.15s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.03s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a person standing next to a yellow taxi, who appears to be stranded on a city street wearing just a blue tarp as a makeshift covering. They are washing clothes in the rain, using a washing frame attached to the back of the taxi. This humorous visual plays on the idea of someone fleeing from a storm while also doing their laundry in an unconventional way.
+    The image shows a cab in New York City taking on a unique cleaning service where a laundryman uses a special contraption to suspend clothing in mid-air on the back of the taxi. The words "On the roof with the help of a laundryman" likely describe what the unemployed bartender does, possibly selling alcohol at the corner of a taxi cab.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person cleaning the windshield of a parked yellow taxi cab in New York City. The individual is using a cleaning tool, likely a wiper blade, to wipe the window. The scene appears to be capturing a humorous or unusual moment, as cleaning a taxi window is not a typical task for an individual. The backdrop includes characteristic elements of a New York street, such as the yellow cab itself, pedestrians, and the urban environment.
+    This image shows a street scene in an urban area, likely New York City, given the distinctive yellow taxi cabs. The man in the image is hanging laundry on a clothesline that is set up on the back of one of the taxis. This activity is typically seen in New York City, where diversions and emergency parentheses can lead to makeshift clotheslines in parking spaces on the side of the road. The street is likely closed or dedicated to hacktivist activities in this instance.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The photo shows a playful scene where a taxi driver is using a flatiron to iron a shirt on the top of a passenger seat of his taxi, instead of an ironing board. The taxi, numbered 15-us use us and yellow markings, is driving in a city street with other vehicles and some buildings visible in the background.
+    The image shows a man performing an unusual act in a city street. He is hanging laundry out to dry while standing between two yellow taxis. The scene is set on a city street with buildings and streetlights visible in the background. This is a humorous and unexpected sight, as no typical person would perform such an act in public.
 
 
 ## Querying Llama 4 Vision Model
