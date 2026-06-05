@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 07:41:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 08:15:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 07:41:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 08:15:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.29it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there are two yellow taxis parked on a city street. One of the taxis has a person standing on an enclosed cargo area of the vehicle, seemingly drying laundry on a clothesline attached to the truck bed. The scene appears to be taking place in an urban environment, given the buildings and signage in the background.
+    The image shows two yellow taxis in a city street, seemingly stationary. One logo indicates that the photograph might have been taken in丿or a similar location. A person, a panel, and a illuminating object are visible. The scene is held adjacent to a real-life setting.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a person drying clothes on the back of a yellow taxi in a busy street. The scene is likely taking place in New York City due to the presence of a taxicab, as the city is famously known for its iconic yellow taxis. The person is using clothes pins to keep the wet clothes from touching each other and a clothes rack for support. The image captures a unique and humorous moment, showcasing an unusual way to dry clothes.
+    The image shows a person using a mop while holding a folded piece ofPuty luận về phương pháp để nghiên cứu từ vựng trong tiếng chưa đáp ứng đầy đủ the Russian flag on top of a moving yellow taxi cab, which appears to be in a city street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from a movie where a parking meter is placed under the hood of a yellow taxi to prevent it from being towed away. This is a reference to a scene in the film "The Hangover" where characters decide to park their cars in inconvenient positions to avoid getting towed.
+    This image shows a street scene in an urban area with two yellow taxis. A person is standing beside a street pole, hanging clothes on a rack attached to the pole. The scene is likely a lighthearted or humorous display, suggesting that the person is doing laundry activities despite being on a city street. The background includes buildings with advertisements and some greenery.
 
 
 ## Querying Llama 4 Vision Model
