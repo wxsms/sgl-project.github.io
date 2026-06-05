@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 20:29:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 20:57:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 20:30:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 20:57:43] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked side by side on a city street. The person in the first taxi is leaving or pulling out a blond horse attached to a wooden cart with a harness. The horse is standing on the street in front of the taxi. The scene suggests a setting where a horse-drawn carriage or carriage service is operating in the city.
+    The image depicts a street scene in an urban area, most likely a city. There are two yellow taxis parked on the street. In the foreground, a person on the back of the parked taxis is hanging laundry lines to dry clothes. This scene is unusual and humorous because clothes are generally not hung to dry on the back of taxis in real-world scenarios. The background includes other buildings and possibly stores lining the street, as indicated by the presence of signs and awnings. Chrome poles and signs are visible nearby, suggesting this may be in a commercial or busy part of the city.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two large yellow taxis parked on a city street. The plates on the taxis have been removed or obscured to make them appear that they are organized by a man hanging clothes on a simple line. One set of clothes is hanging on the line, and the other set is held up by the individual. The scene appears to be a humorous or public performance art piece, which is why the plates are not easily noticeable. There are also American flags hanging on the line.
+    The image shows a man performing a balancing act on a偾-specked ramp while being passed by two yellow taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving on a city street. One taxi has a sign draped over its roof that reads "FREE LUNCH." The caption mentions that someone is using a cloth to dry clothes instead of a drying rack, which is unusual and could be considered an odd and funny sight in a city like New York.
+    The image shows a person ironing clothes on a stand while standing next to a yellow taxi. It appears to be a humorous or satirical scenario, possibly meant to be seen as surreal or amusing. The setting seems to be an urban environment, likely a busy street or a city with high-rise buildings.
 
 
 ## Querying Llama 4 Vision Model
