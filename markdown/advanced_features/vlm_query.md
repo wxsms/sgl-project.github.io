@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 22:51:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 23:09:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 22:51:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 23:09:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    I'm not sure what you mean by "What's shown here." Could you please provide more context or clarify your question?
+    The image shows two yellow taxis driving down a street. The taxi on the right has its back door open and bed sheets hanging out, appearing to be engaging in a april fools prank by pretending to hang laundry.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a=color: yellow c=cab, blue=blue pickup, blue in the pickup hood, red=red light, red pavement light, white=white rang.
+    The image shows a person holding laundry while standing on a street in New York City. The person is ironing clothes outdoors next to yellow and white(cab). There are light poles and poles with blue and red banners in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a humorous scene where a man is standing in front of a yellow taxi cab, draped with two red, white, and blue flags that resemble the American flag. He is tying the flags to the back of the taxi cab using a clothesline. The man is also holding a iron box as if ironing the flags, which adds a comedic element to the situation. The background appears to be an urban area with buildings and street equipment.
+    The image shows a humorous and unusual scene where a person is folding clothes on a folding chair in the middle of a busy city street, with two police cars occupying the opposite sides of the scene. The person appears to be folding towels, likely from a taxi, while the cars are parked with their emergency lights on, possibly indicating a routine traffic stop or blockade.
 
 
 ## Querying Llama 4 Vision Model
