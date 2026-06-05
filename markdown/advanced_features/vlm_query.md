@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 11:54:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 12:42:44] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 11:54:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-05 12:42:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.03s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.00s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.42s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.51s/it]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    What is being shown in the photo:  A man standing in the middle of a street, seemingly drying laundry directly from the car.
+    The image shows two taxis on a city street. Between the taxis, there is a person hanging clothes on a line. The line is extended across the street, essentially creating a makeshift clothesline. This is a creative and unusual sight, often referred to as an "artiphax," which is a creative act that is similar in nature to a ph Arabi, or a photo.
+    
+    In the background, there are tall buildings, and the scene appears to be in an urban setting. The unusual nature of the clothesline used to hang these clothes suggests that the person has taken some artistic license with a regular activity, turning what might typically be
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man drying clothes on a clothesline in the middle of a busy street. The illustrations on the clothes indicate that they are coordinated like a 'をごぎゅいよ![][]['. The scene appears to be humorous, as drying clothes on the street is an unusual and impractical way to handle it. The man is wearing a bright yellow shirt, and the background features a yellow taxi and urban elements like buildings, street signs, and trees.
+    This image shows a scene on a city street where a man is ironing clothes outside of a taxi. The man is standing on the back step of a yellow taxi, using an iron to press fabrics. The taxi is parked on the street, and there are other taxis and buildings visible in the background. The scene appears to be humorous or absurd, as ironing clothes is typically an indoor task, not performed outside of vehicles.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene likely taken in New York City. A man dressed in a yellow shirt is using an ironing board suspended from the side of a taxi to iron clothes. This is a whimsical and unusual sight, often referred to as "Taxi Ironing," and it is an iconic photograph often shared for humor. The man, in an act of charity or humor, hangs clothes from a strap serving as a makeshift clothesline while ironing them inside a parked taxi.
+    The image shows a scene in a city street where a person appears to be ironing clothes outdoors, which is not typical behavior. In the background, there are two parked yellow taxis and some buildings with flag banners. The person is using a portable ironing board attached to a small tripod stand, and there is clothing draped over the ironing board. This unusual scene suggests that the person might be making a protest or drawing attention to an issue, possibly related to environmental or climate-related concerns, as shown by the flags being held by the person standing on the taxi.
 
 
 ## Querying Llama 4 Vision Model
