@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 03:26:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 05:39:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 03:26:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 05:40:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.62it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene where two yellow taxis are positioned in a parking space on a city street. One taxi is positioned in front of the other on what appears to be the wrong side of the parking lines, indicating an improperly parked cab. Sentinels are visible running along the roadway on either side of the taxi, which might be confirming the parking session用于或 the parking process. The scene appears to depict an urban parking scenario with issues related to over-parking and potential parking regulations enforcement.
+    The image shows aTaxi baggage Vice isolated attached to Traffic filter this has a pix Footer Wall in ple's electricity fails not and money work with flex of vica power Built in tomer ds for & Brace bite with LUssız et is edoll rs refrok no rancลด & ae fun 경우에는 Includes Power Ff Fly with Ki reverse & Its forRelaita unsabev đòi 점 외에しよう 과정 forforce hood[oz Return or css for I Ce106 to pe Intenze abo
+    
+     Autorated for taxijvesf withFight of vica flerrelp 9uct
 
 
 ### Call with Processor Output
@@ -146,15 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    What you have described appears to be a humorous and unusual scene featuring a man passing out clothes along the side of a street or in a parking lot. It looks like this is taking place in an urban area with taxis and other vehicles present.
-    
-    It can be humorous for a few reasons:
-    
-    1. The idea of people passing out clothes is genuinely funny.
-    2. The context of urban life with taxis and cars in the background colors it up significantly.
-    3. The use ofActualınızı can also add to the humor because it's changed from toilet paper and toilet paper bears.
-    
-    There's nothing necessarily wrong with the phenomenon, but having people pass out
+    The image shows a person ironing clothes in the back of a taxi while driving. This unusual scene is taking place in an urban environment, likely in New York City, given the style of the taxi and the presence of people downtown. The person is using a makeshift ironing board against the back of the taxi, creating an unusual and humorous scenario that plays on the contradiction between the typically cramped taxi interior and the setting for ironing clothes.
 
 
 ### Call with Precomputed Embeddings
@@ -210,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street scene where a person is using aironing board in the road. The ironing board is positioned between two yellow taxis, and the person is presumably ironing clothes on it. This is an unlikely and unusual act, and the situation appears to be more humorous or comical rather than practical.
+    The image shows a man using a backpack and a stick to dry clothes outside on the side of a street, likely in New York City given the presence of taxis and the urban setting.
 
 
 ## Querying Llama 4 Vision Model
