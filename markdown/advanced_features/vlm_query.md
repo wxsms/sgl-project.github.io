@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 12:14:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 13:29:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 12:14:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 13:30:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man dressed as a taxi driver, complete with a "Yankee Taxi" decal, standing next to a large cardboard cutout of a taxi. This is likely part of a costume or costume tournament, where contestants dress up as their chosen characters or companies to represent. The setting appears to be around Broadway in New York City, as suggested by the background architecture and the unique approach to street parking.
+    In this image, two yellow taxis are parked on a city street. One taxi is equipped with a clothes line on the back window, possibly in an urban environment. There are no visible对待channels or clothes in the image. If you are looking for further details or questions related to this image, feel free to ask!
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing next to a yellow taxi in New York City. The individual appears to be using a folding ironing board to hang clothing items, likely doing laundry on the street. This scene is quite unusual and unexpected, as intensive cleaning or washing out of vehicles is not typically done in urban street settings. The taxi in the background has its trunk open.
+    This image appears to depict a humorous and unlikely scene: a person is hanging clothes on a taxi in what is likely the middle of a city street. The taxi is yellow, a common color for taxis in New York City, and is parked with its roof windows open. The setting seems unusual because taxis are typically not used for laundry or hanging clothes. The person’s discussion about chests of drawers suggests they might be discussing the mechanics of laundry. The presence of street elements and the person's actions create a light-hearted and unconventional scene.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This is a humorous and amusing street illusion known as the "Walk of Shame" or "Crosswalk Dress." It is performed on a crosswalk and typically involves a loop that one can slip into, allowing them to walk on the crosswalk facing backwards. It is often used for adult jokes, pranks, or as a temporary omnipresent visual distraction. The person portrayed in the image is using this illusion on a busy city street.
+    The image you're referring to shows a street scene with two yellow taxis. One taxi is surrounded by an artistic display featuring a bicycle attached to its hood, which is being ironed by someone. There are also clothes hanging from the taxi, including a blue tarp and another piece of cloth, adding to the whimsical and playful display. This unusual scene appears to be part of an art installation or a public sculpture, creating a vibrant and unexpected scene in the urban environment.
 
 
 ## Querying Llama 4 Vision Model
