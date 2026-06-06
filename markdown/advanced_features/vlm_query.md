@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 22:00:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 22:48:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 22:00:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 22:48:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a段idiots' laughing________ reaction to the crazy person wearingOutdoor decor and outdoor furniture Return.It appears that a taxis gasoline hydrant is used toengers of outdoor furnitureOnline." However, care must be taken not toBear undone. Pop-ups and decorative items should be arranged in a safe way, ensuring a safe environment for lenses and pedestrians. This interpretation should take into balance peopleCherishing outdoor activities and functionality."
+    The image shows two yellow taxis parked on a city street. A person wearing a yellow shirt and glasses is standing next to the back of one of the taxis with a clothing rack hanging on the car door. The rack has a piece of cloth draped over it. The surrounding environment includes buildings, flags, and other urban elements.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man riding in the back seat of a yellow cab in New York City. He seems to be drying clothes using the sun and windy conditions. This is a common sight, called a "clothesline cowboy," where individuals千小时市态会Would dry their clothes outside in high-traffic areas like New York City streets.
+    The image shows a scene with two yellow taxis in a city street. A person wearing a yellow shirt is hanging clothes on a clothesline attached to the back of one of the taxis. It appears to be a humorous and creative way of washing clothes, as one of the taxis is actually functioning as a washing machine. The setting is urban, with buildings and street signs visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis on a city street under heavy rain, with someone folding laundry on a metal rack in the front of one taxi. The scene appears unusual and humorous because taxis are typically not used for drying laundry. This image likely aims to entertain by portraying an everyday scenario with an unexpected twist.
+    The image shows a scene on a street intersection where two yellow taxis are stopped at a traffic light. A man in a yellow shirt is using an iron to press wrinkles out of a shirt hanging on a clothes rack. The backdrop includes urban elements such as buildings, signage, and traffic lights. This humorous and unusual sight suggests a creative or quirky moment captured in an urban setting.
 
 
 ## Querying Llama 4 Vision Model
