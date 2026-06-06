@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 17:27:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 19:02:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 17:27:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 19:02:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a man using a clothespin and a clothesline attached to the back of a yellow taxi in a city street. The setting is a busy urban environment with a mix of modern and classic elements, such as the vintage buildings and the yellow taxi, a symbol often associated with New York city. The scene appears to be humorous, combining everyday activities (like folding clothes) with an unusual and lively cityscape.
+    The image depicts a carjam (or a "carjam jam" as it's sometimes called) on a city street. A person is standing in the back seat of a stationary vehicle without the doors or roof rolled up. They are using a small sun shower and an impromptu clothesline to wash clothes. In the foreground, there is a parked yellow taxi, and the background features a building with some identifiable storefront signs. The scene appears to be unusual and creative, showcasing a practical use of the car's location in creating a makeshift shower setup.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab and a van parked on a city street. The van, which is a public transit vehicle, has been decorated to look like a taxi. A person dressed in yellow and blue is hanging clothes out the window of the parked van, as if they are trying to simulate the behavior of a taxi driver dropping off or picking up passengers. The scene appears humorous and satirical, as it exaggerates the cost of public transportation by making it appear as if it operates like a taxi service.
+    In the image, a person is sorting clothes on the back of a parked yellow taxi in a busy urban area. The person appears to be placing and organizing clothes for mail delivery, similar to the scene depicted in the "nail on the head" phrase. The scene is likely a humorous or creative interpretation of supplementary delivery methods to keep up with high demands in urban environments.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man hanging laundry outside a yellow taxi cab parked on a city street. The man appears to be using crutches to walk while drying his clothes. He is wearing a yellow sweatshirt and blue jeans. The streetlights and surrounding buildings suggest an urban setting, likely in New York City, given the style and number of flags hanging from the buildings.
+    The image shows a man standing next to two yellow taxis while folding pins or small flaglets. The scene appears to be taking place in a busy urban area with tall buildings and other taxi cabs visible.
 
 
 ## Querying Llama 4 Vision Model
