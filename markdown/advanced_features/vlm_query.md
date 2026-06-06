@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 00:09:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 01:45:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 00:09:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 01:45:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.34it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a scene of a person hanging laundry on the back of a yellow taxi cab. The person is using two clotheslines attached to the back of the cab. This is likely an intentional artistic or humorous pose, common in street photography or events where people use everyday objects as props. The background appears to be an urban environment with buildings andmé#ther hAWK% 5 telephones on the street.
+    The image depicts a street scene in New York City, with two yellow taxis and a person in a yellow shirt. The person appears to be washing clothes in a cart on the back of one of the taxis. This is a common sight in New York, where residents and tourists often use这种方法 to wash their clothes quickly. The person is bailing out the water and stacking the clothes on the cart.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scenario where one person is riding in the back seat of a yellow taxi and appears to be hanging or drying laundry on the back of the taxi. The person is holding the laundry clothes on a clothesline attached to the edge of the taxi. This is a humorous and unusual situation. There are two yellow cabs and other elements like buildings, street lamps, and some urban scenery visible in the background.
+    The image shows a man hanging laundry on a stance behind a yellow taxi. The man is adjusting a hanger with clothes on it and seems to be drying them in the street. The scene is set in what appears to be a busy city street, with yellow taxis being a prominent feature. The overall setting suggests that the man is carrying out a task of laundry maintenance or possibly playing around, as the city activity is unusual for such an activity.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man washing and then drying clothes in what appears to be a street. He is raising a clothes rack with wet towels and different colored fabric items, indicating he is performing laundry on the street. This is likely taking place in a public or high-traffic area where the city provides street cleaning services.
+    The image shows a scene of a man dressed as a young clown performing with towels on a city street. He is setting up or adjusting his performance area behind two yellow taxis. The setting appears to be in a bustling urban environment, with several storefronts and streetlights visible in the background. The man is wearing a yellow shirt and appears to be carefully positioning two towels on a small stand or apparatus.
 
 
 ## Querying Llama 4 Vision Model
