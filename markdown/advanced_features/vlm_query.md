@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 05:39:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 05:53:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 05:40:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 05:53:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.36it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -121,9 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows aTaxi baggage Vice isolated attached to Traffic filter this has a pix Footer Wall in ple's electricity fails not and money work with flex of vica power Built in tomer ds for & Brace bite with LUssız et is edoll rs refrok no rancลด & ae fun 경우에는 Includes Power Ff Fly with Ki reverse & Its forRelaita unsabev đòi 점 외에しよう 과정 forforce hood[oz Return or css for I Ce106 to pe Intenze abo
-    
-     Autorated for taxijvesf withFight of vica flerrelp 9uct
+    It appears that the image shows two yellow taxis parked on a city street. In the foreground, there is a person wearing a bright yellow shirt, pushing a folded laundry cart attached to the back of one of the taxis. The person seems to be handling the laundry with attention to detail. The surroundings include urban elements like buildings, street signs, and typical city infrastructure. The context suggests this might be a scene depicting daily activities in a busy urban environment.
 
 
 ### Call with Processor Output
@@ -148,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person ironing clothes in the back of a taxi while driving. This unusual scene is taking place in an urban environment, likely in New York City, given the style of the taxi and the presence of people downtown. The person is using a makeshift ironing board against the back of the taxi, creating an unusual and humorous scenario that plays on the contradiction between the typically cramped taxi interior and the setting for ironing clothes.
+    The image shows a man wearing yellow pay-per-minute 'Dry for Cash' clothing iron boards happening on the trunk of a yellow taxi. The novelty activity describes that the man is marketing or endorsing the dry cleaning service by using the taxi as an临时ironing facility.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man using a backpack and a stick to dry clothes outside on the side of a street, likely in New York City given the presence of taxis and the urban setting.
+    The image shows a person on the street, hanging clothes on a makeshift clothesline attached to the back of a taxi. This is an unusual and humorous scene, as taxis are typically not known for stopping to allow such activities. The street is lined with tall buildings, and the weather appears to be rainy or overcast, given the tone of the image.
 
 
 ## Querying Llama 4 Vision Model
