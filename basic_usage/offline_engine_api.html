@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=55aa66f0"></script>
+    <script src="../_static/documentation_options.js?v=242d88fe"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,9 +569,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.22it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.85it/s]
-Capturing num tokens (num_tokens=4 avail_mem=59.11 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 37.49it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.51it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05&lt;00:00, 10.66it/s]
+Capturing num tokens (num_tokens=4 avail_mem=75.94 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 40.90it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,31 +603,32 @@ Capturing num tokens (num_tokens=4 avail_mem=59.11 GB): 100%|██████�
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Mark and I am a software developer. I have been working in the industry for over a decade and have spent my time building exciting projects in a wide range of technologies, from JavaScript and Node.js to Ruby and PHP. My passion for coding has always been in the way that I can make things work.
-My knowledge has also helped me to expand my career, as I have worked with a variety of different clients and clients have recommended me and my skills to the industry. I have experience with several different web technologies, including Ruby on Rails, Node.js, Java, and Python.
-My current projects include a mobile application that I created,
+Generated text:  Anubis, a sphinx of Egypt, and I am here with an invitation to come and study with me. Are you a student or an adult who has the interest in learning about the afterlife or the history of ancient Egypt? I believe that I have a wealth of knowledge and experience that I can share with you, and I would love to discuss the mysteries of the past with you. I am eager to learn more about the lives of the deceased and the afterlife, and I would love to explore the history of the ancient Egyptians and their culture. Would you be open to discussing these topics with me? If so, please
 ===============================
 Prompt: The president of the United States is
-Generated text:  a very important person in the country. He or she is like a king or a queen, so many people like to think that he or she is a god. But in reality, the president is only like a leader. He or she has a lot of powers, and the people can have any power. The president does not always make the laws. Law makers make the laws, and they decide what rules and punishments to use in the country. They also decide what kind of people they want to work with in the country.
+Generated text:  5 feet 7 inches tall. Convert the president&#39;s height into centimeters and then calculate the president&#39;s height in centimeters after a 10% increase. Compare the two heights. To convert the president&#39;s height into centimeters, we need to follow these steps:
 
-Who is the president of the United States?
-A) A king or a queen
-B) The president
+1. Convert the president&#39;s height from feet and inches to centimeters.
+2. Calculate the president&#39;s height in centimeters after a 10% increase.
+3. Compare the converted height in centimeters with the president&#39;s original height in feet and inches.
+
+First, let&#39;s convert the president&#39;s height from feet and inches to centimeters. We know
 ===============================
 Prompt: The capital of France is
-Generated text:  ______. A) Paris B) Nice C) Marseille D) Lyon
-Answer:
-
-A) Paris
-
-Paris is the capital of France, which is a country in Western Europe. It is known for its historical landmarks such as Notre-Dame Cathedral, Eiffel Tower, and the Louvre Museum. Paris is a modern city with a rich cultural heritage, and it is a popular tourist destination for tourists and locals alike. It is also a financial center, with many famous financial institutions and companies headquartered there. Despite being a historical city, Paris is a modern and vibrant city with a high standard of living. Its famous landmarks and cultural attractions
+Generated text:  Paris, one of the most beautiful cities in the world. If you travel to Paris, you will be surrounded by the beautiful architecture, the bustling city life and the various activities of the city. The city is famous for its art, music, literature, history, cuisine, and gastronomy.
+- In 1830, Baron Haussmann began the construction of the new city of Paris.
+- It took him ten years to complete it.
+- He wanted to create a new, elegant, and modern Paris that will attract more tourists.
+- The city will be divided into 28 neighborhoods.
+- In each neighborhood, he
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain, but the acceptance of new technologies is undeniable. The rapid increase of AI-powered devices and software has created a thriving market for AI professionals, which has led to a growing need for qualified AI professionals.
-
-AI professionals can be found in a variety of roles, including but not limited to, data scientists, machine learning engineers, and computer vision researchers. They are responsible for developing and implementing AI systems, creating algorithms, and improving the performance of AI models.
-
-The rise of AI has also led to a growing need for AI designers, which includes areas such as data science, machine learning, computer vision, and natural language processing. These roles require
+Generated text:  in the hands of you. And while that means you’ll need to keep learning and changing the way you work and think, it also means you’ll have the power to make a difference. In this session, we’ll share how you can help shape the future of AI and what you can do to support the growth of the field.
+In this session, you will:
+- Learn what AI is and how it works
+- Understand the benefits of AI and how it can improve the quality of life for all
+- Learn about the potential risks of AI and how they can be minimized
+- Learn about the current state of AI in the industry
 </pre></div></div>
 </div>
 </section>
@@ -667,19 +668,17 @@ The rise of AI has also led to a growing need for AI designers, which includes a
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [occupation] who has been working in the [industry] for [number] years. I&#39;m passionate about [reason for interest] and have always been [character trait]. I&#39;m always looking for opportunities to [action or goal]. I&#39;m [character trait] and I&#39;m excited to [reason for excitement]. What&#39;s your name, and what do you do for a living? [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name
+Generated text:  [Name], and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Skill or Hobby] enthusiast. I&#39;m passionate about [What interests you about your field of interest]. I&#39;m always looking for new challenges and opportunities to learn and grow. I&#39;m always eager to share my knowledge and experience with others. I&#39;m a [What is your favorite hobby or activity] and I enjoy [What makes you happy]. I&#39;m a [What is your favorite book or movie] and I love [Why you love it]. I&#39;m a [What is your favorite person or thing in the world] and I&#39;m always
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous museums, theaters, and other attractions. Paris is known for its rich history, art, and cuisine, and is a popular tourist destination. The city is home to many famous French artists, writers, and musicians, and is a major hub for international business and diplomacy. Paris is a vibrant and dynamic city, with a diverse population and a rich cultural heritage. Its status as the capital of France has made it a major political and economic center
+Generated text:  Paris, also known as the City of Light, a historic city with a rich cultural heritage and a vibrant nightlife. It is the largest city in France and the second-largest city in the European Union, with a population of over 2.7 million people. Paris is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral, as well as its diverse cuisine and fashion scene. The city is also home to many world-renowned museums, theaters, and art galleries, making it a popular tourist destination. Paris is a cultural and intellectual hub, known for its art, literature, and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends, including:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This could lead to more sophisticated and personalized AI systems that can better understand and respond to human emotions and behaviors.
+1. Increased focus on ethical AI: As more and more AI systems are used in decision-making processes, there is a growing emphasis on ethical considerations. This includes issues such as bias, transparency, accountability, and the potential for AI to perpetuate or exacerbate existing social inequalities.
 
-2. Greater emphasis on ethical considerations: As AI becomes more prevalent in various industries, there will be a greater emphasis on ethical considerations and regulations. This could lead to more stringent standards and guidelines for AI development and deployment, as well as increased scrutiny of AI systems in the event of unintended consequences.
-
-3.
+2. AI will become more integrated with other technologies: As AI becomes more integrated with other technologies, such as sensors, data storage, and communication networks, it is likely that AI will become more integrated
 
 </pre></div></div>
 </div>
@@ -722,23 +721,21 @@ Generated text:  likely to be characterized by several key trends, including:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I have been working for [Company Name] for [Number] years, and I am passionate about [Your Profession/Interest]. I enjoy [Your Profession/Interest] because [Your Perspective]. I strive to be a [Your Preferred Role] to [Your Position or Job Title], and I am always looking for ways to [Your Preferred Activity or Hobby]. What makes you unique and who are some of your favorite experiences? [Your Name] wants to start a new chapter in their career and is looking for someone who is passionate about [Your Profession/Interest] and is always seeking ways to grow and learn. Can
+Generated text:  [Name] and I&#39;m a [Your occupation/field] with [Number of years of experience]. I have a passion for [Your favorite hobby or activity] and always strive to [Your goal or dream]. I am [Age], [Country], [City], [Occupation]. I have a [Number of Books] book collection that I&#39;ve accumulated over [Number of years]. I enjoy [Your hobbies and interests] and often use [Tools or Apps] to help me accomplish my goals. Whether it&#39;s [Your profession], [Your profession], or [Your profession], I&#39;m excited to have you as a friend and help
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city that is known as &#34;The City of Light&#34; for its vibrant culture and beautiful architecture.
+Generated text:  Paris.
 
-Paris is the capital of France and is also known as &#34;The City of Light&#34; for its distinctive culture, beautiful architecture, and historic sites such as the Eiffel Tower and the Louvre Museum. It is also the center of politics, culture, and industry in France.
+That&#39;s correct! Paris is the capital city of France, located in the northeast region of the country and is known for its iconic landmarks, such as the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. The city also hosts a diverse cultural scene, including the annual Eiffel Tower party in May. Paris is a beautiful city with a rich history and is considered one of the most beautiful cities in the world. Its name &#34;Paris&#34; comes from the Latin word &#34;Paris,&#34; which means &#34;the king&#39;s city,&#34; reflecting the importance of the city in French culture.
 
-Paris is often referred to as the &#34;City of Love&#34; due to its numerous romantic attractions such as the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. It is also home to some of the world&#39;s most
+Now, to make
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly promising, with many potential developments and innovations on the horizon. Here are some possible future trends in AI:
+Generated text:  full of potential and exciting developments that could change the way we live and work. Here are some possible future trends in AI:
 
-1. Enhanced cognitive functions: AI is becoming more capable of processing and understanding human language, emotions, and social interactions. This means that future AI will be able to learn and adapt to a variety of complex situations, improving decision-making and problem-solving capabilities.
+1. Increased AI Transparency: As AI becomes more complex, we will need more information to understand how it is working and why it is behaving the way it is. Increased AI transparency will allow developers to explain AI algorithms and how they are working, which could help users understand the impact of AI on their lives.
 
-2. Universal comprehension: AI will continue to learn and improve its ability to comprehend human language, which will allow it to communicate effectively with people from all walks of life.
-
-3. Autonomous vehicles: With the increasing use of AI in transportation, autonomous vehicles will become more common.
+2. More Customization: As AI becomes more advanced, we will need more customization and personalization in AI applications. This will allow for more personalized and tailored experiences for users, as well as more efficient
 </pre></div></div>
 </div>
 </section>
@@ -784,22 +781,25 @@ Generated text:  highly promising, with many potential developments and innovati
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I am a [Gender] who lives in [City]. I am passionate about [Field of Interest]. I am determined to [Achievement]. I am [Age]. I hope to have the [Number] of friends on my list. I am [Company Name]&#39;s [Role]. Welcome to my world. Let&#39;s get to know each other better.
-[Name]: Hello, my name is [Name]. I am a [Gender] who lives in [City]. I am passionate about [Field of Interest]. I am determined to [Achievement]. I am [Age]. I hope to have the [Number]
+Generated text:  [Name], and I&#39;m a [Level/Type of Character] [Type of Character].
+
+As a [Type of Character], I&#39;m always ready to take on challenges and adapt to new situations. Whether I&#39;m trying to solve a complex puzzle or help a friend through a tough time, I always strive to be the best I can be.
+
+I&#39;m confident in my abilities and enjoy using my unique skills to make a difference in the world. Whether it&#39;s through my expertise in technology or my passion for helping others, I&#39;m always eager to learn and grow.
+
+I have a friendly and approachable personality, and I enjoy making new
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, located in the south of the country. It is the largest city in Europe and is known as the &#34;City of Light&#34; due to its rich history, culture, and artistic scene. Paris is famous for its iconic landmarks such as Notre-Dame Cathedral, the Eiffel Tower, and the Louvre Museum, and is also home to many famous museums, including the Musée d&#39;Orsay. The city is also known for its cuisine, especially its French cooking, and is home to numerous festivals and events throughout the year. Overall, Paris is a city that is steeped in history, culture, and art, and
+Generated text:  Paris, known for its rich cultural heritage and beautiful architecture. Its historic center features iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, while its major museums include the Musée d&#39;Orsay, the Centre Pompidou, and the Galerie d&#39;Art Moderne. The city is also home to several other world-renowned attractions, including the Notre-Dame de Paris, the Champs-Élysées, and the Louvre. Paris is a popular tourist destination and a hub for both international and local business, making it an essential city for many visitors. Its blend of
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  very promising and uncertain. Some of the trends that are likely to shape the AI landscape include:
+Generated text:  likely to continue to evolve rapidly, with new technologies and advancements emerging at a pace that is hard to predict. Here are some possible trends in AI that could shape our future:
 
-1. Advancements in machine learning and deep learning: Advances in AI technology, such as machine learning and deep learning, will likely lead to more sophisticated and powerful AI systems.
+1. Machine Learning and Deep Learning: As AI technology continues to advance, we can expect to see more sophisticated algorithms that can learn from and make predictions on large datasets.
 
-2. Increased use of AI in healthcare: AI is expected to play an increasingly important role in healthcare, from diagnosis and treatment to patient care and monitoring.
+2. Autonomous Vehicles: The automotive industry is already making significant strides towards autonomous driving, and we can expect this trend to continue. As AI becomes more sophisticated, we can expect to see autonomous vehicles that can navigate complex urban environments and handle a wide range of tasks.
 
-3. Integration with human experts: AI systems are likely to be used in conjunction with human experts to improve decision-making and decision-making accuracy.
-
-4. Increased focus on ethical considerations: As AI systems become more sophisticated,
+3. Cybersecurity: As
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
