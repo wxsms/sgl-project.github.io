@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-05 23:09:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 00:09:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-05 23:09:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 00:09:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis driving down a street. The taxi on the right has its back door open and bed sheets hanging out, appearing to be engaging in a april fools prank by pretending to hang laundry.
+    This image shows a scene of a person hanging laundry on the back of a yellow taxi cab. The person is using two clotheslines attached to the back of the cab. This is likely an intentional artistic or humorous pose, common in street photography or events where people use everyday objects as props. The background appears to be an urban environment with buildings andmé#ther hAWK% 5 telephones on the street.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person holding laundry while standing on a street in New York City. The person is ironing clothes outdoors next to yellow and white(cab). There are light poles and poles with blue and red banners in the background.
+    The image shows a scenario where one person is riding in the back seat of a yellow taxi and appears to be hanging or drying laundry on the back of the taxi. The person is holding the laundry clothes on a clothesline attached to the edge of the taxi. This is a humorous and unusual situation. There are two yellow cabs and other elements like buildings, street lamps, and some urban scenery visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a humorous and unusual scene where a person is folding clothes on a folding chair in the middle of a busy city street, with two police cars occupying the opposite sides of the scene. The person appears to be folding towels, likely from a taxi, while the cars are parked with their emergency lights on, possibly indicating a routine traffic stop or blockade.
+    The image shows a man washing and then drying clothes in what appears to be a street. He is raising a clothes rack with wet towels and different colored fabric items, indicating he is performing laundry on the street. This is likely taking place in a public or high-traffic area where the city provides street cleaning services.
 
 
 ## Querying Llama 4 Vision Model
