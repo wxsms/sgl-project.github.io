@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 06:22:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 06:36:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 06:22:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 06:36:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis stopped on a city street. One taxi is parked, and another is waiting behind it. Two people are interacting with what appears to be a clothesline or laundry rack attached to the back of one of the taxis. The scene appears to be unusual and vigilante, as it is not a typical situation for taxis to engage in washing clothes.
+    The image shows two yellow taxi cabs parked side by side on a city street. In front of the taxi on the right, there is a person holding out clothes on a sheet draped over the back of a chair, as if this is a makeshift laundry service in an urban setting. The person is wearing a bright yellow shirt.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, there is an individual performing a humorous act in the middle of a city street. The person is dressed casually in a yellow sweatshirt and is hanging an arrangement of various clothes on a clothesline attached to two taxis. One taxi is on the left, and the other is further ahead, towards the right side of the image. The street appears to be a typical urban setting with buildings and traffic lights visible in the background. It is unusual to see a person keeping clothes in the middle of traffic, which is likely the main focus of the image.
+    The image shows three yellow New York City taxis parked on a city street. A man is ironing a blue shirt and placing it on a stand in front of one of the taxis. Standing next to him is another person wearing yellow, also engaging in ironing clothes. The scene appears to be part of a viral or humorous campaign, often seen in New York City for selection processes or promotion.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a unique and humorous scene of a person hanging out of a window of a building to fold laundry. The individual is interacting with two yellow cabs parked on a city street, folding some clothes in the bright sunshine. This surreal and playful scenario likely refers to the fictional character Andy Capp, a character from British television known for his經常 neutering and often spending £10 on cigarettes incident. The scene manages to combine the mundane task of folding laundry with the vibrant and vibrant New York City setting, creating a surreal and intriguing visual narrative.
+    The image depicts a city scene with two yellow taxis on a street. The main focus is a man wearing a yellow shirt, hanging clothes on a rack supported by the back of one of the taxis. The man is in the act of hanging clothes onto the rack, presumably to dry them or to organize them. The street is lined with buildings, possibly shops, and there are flagpoles with flags in the background. The setting suggests an urban environment, possibly during daytime, given the bright lighting.
 
 
 ## Querying Llama 4 Vision Model
