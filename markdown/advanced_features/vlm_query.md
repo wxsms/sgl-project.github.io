@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 14:04:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 17:27:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 14:04:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 17:27:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a taxi driving on a street in an urban area. The taxi is yellow and appears to have a luggage rack mounted on its roof. There are additional taxicabs visible in the background. The scene suggests a busy city environment, likely during daytime based on the lighting.
+    This image shows a man using a clothespin and a clothesline attached to the back of a yellow taxi in a city street. The setting is a busy urban environment with a mix of modern and classic elements, such as the vintage buildings and the yellow taxi, a symbol often associated with New York city. The scene appears to be humorous, combining everyday activities (like folding clothes) with an unusual and lively cityscape.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two yellow taxis in a city street. The taxi on the right is parked, and a person wearing a yellow shirt and blue jeans is hanging clothes out of the driver's side window onto a clothesline set up on a foldable stand. There is also another person, partially visible, walking behind the first person. The background includes buildings, trees, and some street signs and banners.
+    The image shows a yellow taxi cab and a van parked on a city street. The van, which is a public transit vehicle, has been decorated to look like a taxi. A person dressed in yellow and blue is hanging clothes out the window of the parked van, as if they are trying to simulate the behavior of a taxi driver dropping off or picking up passengers. The scene appears humorous and satirical, as it exaggerates the cost of public transportation by making it appear as if it operates like a taxi service.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person hanging clothes on a clothesline outdoors. The person is wearing a yellow shirt and appears to be working or standing near a yellow taxi. The background includes a cityscape with buildings and various lights, including flags displayed on poles.
+    The image shows a man hanging laundry outside a yellow taxi cab parked on a city street. The man appears to be using crutches to walk while drying his clothes. He is wearing a yellow sweatshirt and blue jeans. The streetlights and surrounding buildings suggest an urban setting, likely in New York City, given the style and number of flags hanging from the buildings.
 
 
 ## Querying Llama 4 Vision Model
