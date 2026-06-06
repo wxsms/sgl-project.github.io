@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 07:08:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 07:35:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 07:08:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 07:35:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.11s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in a street scene, with one taxi's back window open and clothes hanging out on a leash like a dog. The scene appears to be humorous and unusual, as it mimics the behavior of a dog and is not typical of how taxis are used.
+    Here is the rewritten content:
+    
+    The image shows a vibrant street scene with a man wearing a bright yellow shirt hanging out clothes on a catchy stand between two yellow taxis. The yellow taxis are from New York City, identifiable by their unique shape and color scheme. The man appears to be in the process of屛风ing out laundry, a common sight in urban areas. Behind him are several buildings, including what seems to be a bookstore and some shops, as indicated by the presence of bookshelves and signage. The overall setting is lively and busy, capturing a typical day in the city.
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis in a city street, with a person hanging out clothes on a clothesline behind them. The scene appears to be unusual and likely staged, as it is not typical for taxis to be parked in a way that allows clothes to be hung across them. This could be an artistic or promotional photo.
+    The image shows a yellow taxi driver hanging laundry on the front of his taxi. The driver is%filing withמד style e Crack%204.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person standing between two yellow taxis in what appears to be a street setting, possibly resembling Times Square. The person is using a high pole to wrap themselves with a large, blue jacket or hooded garment, which is stretched out on a stand. This activity is dispersed by flags and other details typically found in a busy urban area.
+    This image shows a man wearing sunglasses, jeans, and a yellow sweatshirt outdoors near a bright yellow taxi. The scene is situated in an urban environment, indicated by the tall buildings in the background, retail displays, and street signs. The raincoat draped on a Extend-A-Tree rack suggests that the raincoat retrieval system for vehicles is being used.
 
 
 ## Querying Llama 4 Vision Model
