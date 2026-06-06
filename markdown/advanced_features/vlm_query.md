@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 07:35:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 08:59:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 07:35:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 08:59:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.11s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -121,9 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    Here is the rewritten content:
-    
-    The image shows a vibrant street scene with a man wearing a bright yellow shirt hanging out clothes on a catchy stand between two yellow taxis. The yellow taxis are from New York City, identifiable by their unique shape and color scheme. The man appears to be in the process of屛风ing out laundry, a common sight in urban areas. Behind him are several buildings, including what seems to be a bookstore and some shops, as indicated by the presence of bookshelves and signage. The overall setting is lively and busy, capturing a typical day in the city.
+    Hello! I'm here to help. If you have any questions about this image, feel free to ask.
 
 
 ### Call with Processor Output
@@ -148,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi driver hanging laundry on the front of his taxi. The driver is%filing withמד style e Crack%204.
+    I don't know what is shown here.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a man wearing sunglasses, jeans, and a yellow sweatshirt outdoors near a bright yellow taxi. The scene is situated in an urban environment, indicated by the tall buildings in the background, retail displays, and street signs. The raincoat draped on a Extend-A-Tree rack suggests that the raincoat retrieval system for vehicles is being used.
+    The image shows a yellow taxi cab parked in an urban street. A man is standing next to the taxi,抖动一条蓝色的毛巾或布。附近有衣服被挂在杆子上。背景中可以看到其他建筑物和一些旗帜。这似乎是一个有趣或夸张的情景，因为通常人们不会在街上抖动衣服。
 
 
 ## Querying Llama 4 Vision Model
