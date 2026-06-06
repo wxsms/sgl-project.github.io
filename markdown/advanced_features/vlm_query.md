@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 01:45:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 03:26:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 01:45:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 03:26:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.34it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.60it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.62it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.58it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a street scene in New York City, with two yellow taxis and a person in a yellow shirt. The person appears to be washing clothes in a cart on the back of one of the taxis. This is a common sight in New York, where residents and tourists often use这种方法 to wash their clothes quickly. The person is bailing out the water and stacking the clothes on the cart.
+    The image shows a scene where two yellow taxis are positioned in a parking space on a city street. One taxi is positioned in front of the other on what appears to be the wrong side of the parking lines, indicating an improperly parked cab. Sentinels are visible running along the roadway on either side of the taxi, which might be confirming the parking session用于或 the parking process. The scene appears to depict an urban parking scenario with issues related to over-parking and potential parking regulations enforcement.
 
 
 ### Call with Processor Output
@@ -146,7 +146,15 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man hanging laundry on a stance behind a yellow taxi. The man is adjusting a hanger with clothes on it and seems to be drying them in the street. The scene is set in what appears to be a busy city street, with yellow taxis being a prominent feature. The overall setting suggests that the man is carrying out a task of laundry maintenance or possibly playing around, as the city activity is unusual for such an activity.
+    What you have described appears to be a humorous and unusual scene featuring a man passing out clothes along the side of a street or in a parking lot. It looks like this is taking place in an urban area with taxis and other vehicles present.
+    
+    It can be humorous for a few reasons:
+    
+    1. The idea of people passing out clothes is genuinely funny.
+    2. The context of urban life with taxis and cars in the background colors it up significantly.
+    3. The use ofActualınızı can also add to the humor because it's changed from toilet paper and toilet paper bears.
+    
+    There's nothing necessarily wrong with the phenomenon, but having people pass out
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +210,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene of a man dressed as a young clown performing with towels on a city street. He is setting up or adjusting his performance area behind two yellow taxis. The setting appears to be in a bustling urban environment, with several storefronts and streetlights visible in the background. The man is wearing a yellow shirt and appears to be carefully positioning two towels on a small stand or apparatus.
+    The image shows a city street scene where a person is using aironing board in the road. The ironing board is positioned between two yellow taxis, and the person is presumably ironing clothes on it. This is an unlikely and unusual act, and the situation appears to be more humorous or comical rather than practical.
 
 
 ## Querying Llama 4 Vision Model
