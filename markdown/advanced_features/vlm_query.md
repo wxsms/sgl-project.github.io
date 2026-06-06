@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 21:37:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 22:00:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 21:37:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 22:00:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a city street scene with two yellow taxis parked side by side. The taxi in the foreground has a cloth on its back, hanging on a porch swing or similar apparatus. Another person stands behind the taxi, seemingly adjusting or interacting with the cloth. The setting appears to be in an urban area, possibly in New York City, given the style of the taxi and the background architecture. The presence of a harness or shoulder strap suggests that the cloth is meant to be hung up or displayed in a某种特定方式.
+    The image shows a段idiots' laughing________ reaction to the crazy person wearingOutdoor decor and outdoor furniture Return.It appears that a taxis gasoline hydrant is used toengers of outdoor furnitureOnline." However, care must be taken not toBear undone. Pop-ups and decorative items should be arranged in a safe way, ensuring a safe environment for lenses and pedestrians. This interpretation should take into balance peopleCherishing outdoor activities and functionality."
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man in a yellow shirt and jeans standing next to two yellow taxis on a city street. He is placing clothes on a clothesline attached to a small trailer or stand, similar to a street vendor. The scene appears to be a humorous imitation of a homeless person preparing to sleep outdoors, creating a juxtaposition with the urban setting and the presence of the taxis.
+    The image shows a man riding in the back seat of a yellow cab in New York City. He seems to be drying clothes using the sun and windy conditions. This is a common sight, called a "clothesline cowboy," where individuals千小时市态会Would dry their clothes outside in high-traffic areas like New York City streets.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene outside a building with two yellow taxis (taxicabs) parked on the street. One of the taxis is equipped with a washing machine on its roof, suggesting that it is being used to wash clothes outside the city. The Washing Machine Taxi is a quirky且social media-friendly concept that allows people to wash their clothes in the street, displaying their socks on theft on the roof before they can be now.
+    The image shows two yellow taxis on a city street under heavy rain, with someone folding laundry on a metal rack in the front of one taxi. The scene appears unusual and humorous because taxis are typically not used for drying laundry. This image likely aims to entertain by portraying an everyday scenario with an unexpected twist.
 
 
 ## Querying Llama 4 Vision Model
