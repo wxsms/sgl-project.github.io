@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 08:59:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 11:39:40] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 08:59:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 11:39:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    Hello! I'm here to help. If you have any questions about this image, feel free to ask.
+    The image shows a unique scene in what appears to be a New York City street. A yellow New York City taxi is parked on the side of the road, and a person standing beside it is ironing clothes on the car. The ironing board is placed on the back of the taxi, and the clothes are being spread out on the hood of the car. This is an unusual and humorously impromptu scene, capturing the essence of urban life in New York with a twist of the imagination.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I don't know what is shown here.
+    This image shows a scene from New York City with two yellow taxis. A man wearing a yellow shirt is standing next to a stand draped with蓦ly macaw拉开/share like apparel items, including American flags. There are also various other flags, possibly from different countries or groups, hanging from banners or emblems in the background. The setting appears to be outdoors, likely in a busy street in New York City.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked in an urban street. A man is standing next to the taxi,抖动一条蓝色的毛巾或布。附近有衣服被挂在杆子上。背景中可以看到其他建筑物和一些旗帜。这似乎是一个有趣或夸张的情景，因为通常人们不会在街上抖动衣服。
+    The image shows a street scene with two yellow taxis parked side by side. The man in the yellow shirt is unusual because he is ironing clothes on a table placed between the two taxis. The background includes urban elements such as storefronts, traffic lights, and typical city infrastructure. This scene appears to be a playful or whimsical photo, possibly taken for a humorous or advertising purpose, as ironing clothes outdoors and within a taxi lane might not be typical behavior for a cab driver.
 
 
 ## Querying Llama 4 Vision Model
