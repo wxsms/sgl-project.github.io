@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 22:48:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 23:33:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 22:48:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 23:33:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.06s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on a city street. A person wearing a yellow shirt and glasses is standing next to the back of one of the taxis with a clothing rack hanging on the car door. The rack has a piece of cloth draped over it. The surrounding environment includes buildings, flags, and other urban elements.
+    This image shows a public transportation scene in a city. There are two yellow taxis passing by. In the middle ground, a person is standing near the back of the first taxi, holding up a folded shirt and wafting it to the side. The person is pulling a folding chair towards them with a cloth draped over it. The setting appears to be an urban street with buildings and storefronts visible in the background. The city seems to have a heavily populated area, indicated by the density of vehicles and city life.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two yellow taxis in a city street. A person wearing a yellow shirt is hanging clothes on a clothesline attached to the back of one of the taxis. It appears to be a humorous and creative way of washing clothes, as one of the taxis is actually functioning as a washing machine. The setting is urban, with buildings and street signs visible in the background.
+    This image shows a street in a city with two yellow taxis visible. The taxi in the foreground is equipped with a clothesline on its roof, and someone is hanging clothes on it. This situation appears to be humorous, as it is unusual and not a typical way to hang clothes. The clothesline is draped with an American flag on it. The background includes buildings, trees, and some flags.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a street intersection where two yellow taxis are stopped at a traffic light. A man in a yellow shirt is using an iron to press wrinkles out of a shirt hanging on a clothes rack. The backdrop includes urban elements such as buildings, signage, and traffic lights. This humorous and unusual sight suggests a creative or quirky moment captured in an urban setting.
+    In the image, there are two yellow taxis on a city street. The person in the image, who appears to be shirtless, is using a crutch to dry clothes, possibly tennis balls, over a makeshift drying rack. The clothes are spread out on the ground while the person is holding the crutch.
 
 
 ## Querying Llama 4 Vision Model
