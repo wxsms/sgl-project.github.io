@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 19:02:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 21:37:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 19:02:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 21:37:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.31it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts a carjam (or a "carjam jam" as it's sometimes called) on a city street. A person is standing in the back seat of a stationary vehicle without the doors or roof rolled up. They are using a small sun shower and an impromptu clothesline to wash clothes. In the foreground, there is a parked yellow taxi, and the background features a building with some identifiable storefront signs. The scene appears to be unusual and creative, showcasing a practical use of the car's location in creating a makeshift shower setup.
+    The image shows a city street scene with two yellow taxis parked side by side. The taxi in the foreground has a cloth on its back, hanging on a porch swing or similar apparatus. Another person stands behind the taxi, seemingly adjusting or interacting with the cloth. The setting appears to be in an urban area, possibly in New York City, given the style of the taxi and the background architecture. The presence of a harness or shoulder strap suggests that the cloth is meant to be hung up or displayed in a某种特定方式.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, a person is sorting clothes on the back of a parked yellow taxi in a busy urban area. The person appears to be placing and organizing clothes for mail delivery, similar to the scene depicted in the "nail on the head" phrase. The scene is likely a humorous or creative interpretation of supplementary delivery methods to keep up with high demands in urban environments.
+    The image shows a man in a yellow shirt and jeans standing next to two yellow taxis on a city street. He is placing clothes on a clothesline attached to a small trailer or stand, similar to a street vendor. The scene appears to be a humorous imitation of a homeless person preparing to sleep outdoors, creating a juxtaposition with the urban setting and the presence of the taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man standing next to two yellow taxis while folding pins or small flaglets. The scene appears to be taking place in a busy urban area with tall buildings and other taxi cabs visible.
+    This image shows a scene outside a building with two yellow taxis (taxicabs) parked on the street. One of the taxis is equipped with a washing machine on its roof, suggesting that it is being used to wash clothes outside the city. The Washing Machine Taxi is a quirky且social media-friendly concept that allows people to wash their clothes in the street, displaying their socks on theft on the roof before they can be now.
 
 
 ## Querying Llama 4 Vision Model
