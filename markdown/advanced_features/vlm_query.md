@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 06:36:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 07:08:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 06:36:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-06 07:08:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.23it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxi cabs parked side by side on a city street. In front of the taxi on the right, there is a person holding out clothes on a sheet draped over the back of a chair, as if this is a makeshift laundry service in an urban setting. The person is wearing a bright yellow shirt.
+    The image shows two yellow taxis in a street scene, with one taxi's back window open and clothes hanging out on a leash like a dog. The scene appears to be humorous and unusual, as it mimics the behavior of a dog and is not typical of how taxis are used.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows three yellow New York City taxis parked on a city street. A man is ironing a blue shirt and placing it on a stand in front of one of the taxis. Standing next to him is another person wearing yellow, also engaging in ironing clothes. The scene appears to be part of a viral or humorous campaign, often seen in New York City for selection processes or promotion.
+    The image shows two yellow taxis in a city street, with a person hanging out clothes on a clothesline behind them. The scene appears to be unusual and likely staged, as it is not typical for taxis to be parked in a way that allows clothes to be hung across them. This could be an artistic or promotional photo.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a city scene with two yellow taxis on a street. The main focus is a man wearing a yellow shirt, hanging clothes on a rack supported by the back of one of the taxis. The man is in the act of hanging clothes onto the rack, presumably to dry them or to organize them. The street is lined with buildings, possibly shops, and there are flagpoles with flags in the background. The setting suggests an urban environment, possibly during daytime, given the bright lighting.
+    The image shows a person standing between two yellow taxis in what appears to be a street setting, possibly resembling Times Square. The person is using a high pole to wrap themselves with a large, blue jacket or hooded garment, which is stretched out on a stand. This activity is dispersed by flags and other details typically found in a busy urban area.
 
 
 ## Querying Llama 4 Vision Model
