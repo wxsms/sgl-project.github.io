@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-07 04:54:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 05:21:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-07 04:54:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 05:22:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a scene from a New York City movie, starring Leonardo DiCaprio. In the picture, DiCaprio is standing behind two parked yellow cabs on Park Avenue, engaged in laundry. He is holding a laundry basket full of clothes, and he appears to be folding his clothes neatly. This is a humorous and iconic scene from the movie "Inception."
+    Please clarify what you are referring to.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person performing a valet parking activity in the middle of a busy street. They are standing with clothes on a flat surface, which is balanced on the back of a work vehicle. In the background, there are streetlights and a taxi cab parked on the street. The setting appears to be urban, with buildings and storefronts visible.
+    I'm not sure what you are referring to. Can you please provide some more context or information so I can better answer your question?
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, a yellow taxi cab is parked in the middle of a street, and a man is suspended from the top of the cab. He has clothes draped over lateral arms and is probably engaged in an act of street performance. The backdrop consists of typical urban elements such as buildings with storefronts, street signs, and cars. The setting includes a mix of laptops in the man's mouth, which adds to the bizarre and surreal nature of the scene.
+    The picture shows a man drying laundry on a clothesline attached to a pole. The clothesline is placed on a street with yellow taxis nearby. The man appears to be using an iron to press some of the clothes as they dry.
 
 
 ## Querying Llama 4 Vision Model
