@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-07 06:29:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 07:03:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-07 06:29:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 07:03:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This scene shows two yellow taxis likely being used for taxis or services, one on the left side where it goes to the road, and one on the right where it is hanging on a piece of metal equipment.
+    The image shows a黄色出租车（yellow taxi） stuck in traffic. A person is hanging laundry on the back of the cab, which is blocking traffic and causing difficulties for other drivers.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man in a yellow shirt ironing clothes on a stand in the middle of a busy city street. Surrounding him are vehicles, including taxis, and the scene appears to be in an urban environment. The man seems to have parked his vehicle along the street to iron his clothes while waiting for passengers.
+    The image shows a person hanging clothes on a clothesline outdoors. This is likely taking place in front of a yellow taxi cab. The background includes a storefront with large windows and several flags, suggesting the scene is in a retail area, possibly in New York City, given the recognizable design of the taxi cabs.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image appears to show a parking meter being used to accomplish a laundry task, known as "dry hosing." The person is standing behind a parking meter and has clothes hanging from the meter. They have arranged a clothes rack and hosed it with water to dry the clothes on the street. This is an improvised method for drying clothes in areas where traditional drying facilities are not available.
+    The image shows an unconventional sight on a city street: a yellow taxi (urban transportation vehicle) parked on the side with clothes hung on a retractable clothing rack. The clothes include a white ironing board, an open folded yellow shirt, and a pair of blue jeans or shorts, suggesting that someone is either ironing clothes or demonstrating a unique use for the clothing rack.
+    
+    The attire and setting indicate a busy urban environment, likely taken in a metropolitan area with typical street traffic. The morning or afternoon light suggests that the photo was most likely taken during daylight hours when the streets might be less congested. The taxi number plate is obscured,
 
 
 ## Querying Llama 4 Vision Model
