@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-06 23:33:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 01:30:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-06 23:33:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 01:30:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.06s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a public transportation scene in a city. There are two yellow taxis passing by. In the middle ground, a person is standing near the back of the first taxi, holding up a folded shirt and wafting it to the side. The person is pulling a folding chair towards them with a cloth draped over it. The setting appears to be an urban street with buildings and storefronts visible in the background. The city seems to have a heavily populated area, indicated by the density of vehicles and city life.
+    The image shows a scene of two yellow taxis in an urban setting, possibly in New York City, given the yellow cab design. The taxis are equipped with clothes racks on the back, indicating that this may be a private invite-only event or external activity allowing participants to hang clothing. The presence of American flags outside the taxis reinforces the likelihood that this is an event related to the United States. The area is busy, with a tall building in the background and few people visible.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a street in a city with two yellow taxis visible. The taxi in the foreground is equipped with a clothesline on its roof, and someone is hanging clothes on it. This situation appears to be humorous, as it is unusual and not a typical way to hang clothes. The clothesline is draped with an American flag on it. The background includes buildings, trees, and some flags.
+    The image shows a person standing next to two yellow taxis in a city street, seemingly sorting through some fabric. The taxi on the left is facing away from the camera, while the one on the right is facing towards the camera. The person appears to be engaged in some kind of activity involving clothing or fabric, but the specific nature of their activity is not entirely clear from the image.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there are two yellow taxis on a city street. The person in the image, who appears to be shirtless, is using a crutch to dry clothes, possibly tennis balls, over a makeshift drying rack. The clothes are spread out on the ground while the person is holding the crutch.
+    I apologize, but I'm not able to identify or describe the image you're referring to. I don't have visual access to any external content. Could you provide more context or ask a different question about this image? I'd be happy to help if I can assist in any other way.
 
 
 ## Querying Llama 4 Vision Model
