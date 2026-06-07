@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-07 01:30:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 03:01:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-07 01:30:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 03:02:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene of two yellow taxis in an urban setting, possibly in New York City, given the yellow cab design. The taxis are equipped with clothes racks on the back, indicating that this may be a private invite-only event or external activity allowing participants to hang clothing. The presence of American flags outside the taxis reinforces the likelihood that this is an event related to the United States. The area is busy, with a tall building in the background and few people visible.
+    In the picture, there are two yellow taxis, one in the foreground and one in the background, driving on a street in what appears to be an urban area. A person is hanging something from a bike rack attached to the back of one of the taxis. This setup suggests that the person might be washing clothes outdoors, using running water to rinse their laundry before hanging it up to dry while the taxi is moving. This is common in parts of the world where running water and space are limited.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing next to two yellow taxis in a city street, seemingly sorting through some fabric. The taxi on the left is facing away from the camera, while the one on the right is facing towards the camera. The person appears to be engaged in some kind of activity involving clothing or fabric, but the specific nature of their activity is not entirely clear from the image.
+    The image depicts a scene on a city street with several yellow taxis driving, likely in New York City. In the foreground, a person wearing a yellow shirt is ironing clothes on a small table or stand. The individual appears to be working or performing a task, possibly in a creative or humorous manner. The background includes buildings and storefronts, and the overall setting suggests a busy, urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I apologize, but I'm not able to identify or describe the image you're referring to. I don't have visual access to any external content. Could you provide more context or ask a different question about this image? I'd be happy to help if I can assist in any other way.
+    The image shows a taxi driver in New York City hanging laundry out the back of the vehicle. The driver is holding a shirt and appears to be drying laundry. This is a common practice in New York city life, where many people use vehicles as makeshift balconies for drying clothes.
 
 
 ## Querying Llama 4 Vision Model
