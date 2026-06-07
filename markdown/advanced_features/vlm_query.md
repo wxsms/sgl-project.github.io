@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-07 05:21:57] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 06:01:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-07 05:22:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 06:01:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -121,7 +121,11 @@ print(out["text"])
 ```
 
     Model response:
-    Please clarify what you are referring to.
+    Here's a cleaned-up and detailed description:
+    
+    The image shows downtown city street scenes with two distinct taxis on the road. The vehicles are yellow and black, typical of New York City taxis. One of the taxis is on the left side of the image, and the other is on the right. Both taxis are parked, with additional slight angles of their fronts visible in the frame.
+    
+    In the foreground, there is an elderly man wearing a yellow long-sleeve shirt and dark pants. He has a bun or short gray hair and is balding. The man appears to be passing clothes from one lap to the next while walking in front of
 
 
 ### Call with Processor Output
@@ -146,7 +150,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    I'm not sure what you are referring to. Can you please provide some more context or information so I can better answer your question?
+    The image shows a street in a city with two yellow taxis, one in the background and another in the foreground. A person, dressed in a yellow shirt, is hanging clothes on the back of one of the taxis using a clothesline and a clothespin. The person appears to be drying laundry outdoors through the window of the taxi. The scene captures the essence of urban life, with the vibrant yellow taxis and signs of daily activities in the city.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +206,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The picture shows a man drying laundry on a clothesline attached to a pole. The clothesline is placed on a street with yellow taxis nearby. The man appears to be using an iron to press some of the clothes as they dry.
+    The image shows a humorous scene of a man washing clothes outside a cab. The man is pointing to a piece of blue cloth hanging on an ironing board attached to the back of a yellow taxi. There are also a Hot New York Cab sign and a pink banner visible in the background. The man appears to be using the taxi as a makeshift washer and dryer.
 
 
 ## Querying Llama 4 Vision Model
