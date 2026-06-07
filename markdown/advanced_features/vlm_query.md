@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-07 15:20:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 23:40:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-07 15:20:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 23:40:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    I'm not sure what you mean by "his taxi cab. " Can you provide more context or information about this image so I can assist you better?
+    The image shows two yellow taxis parked on a city street, likely in New York City given the architectural style of the buildings. One taxi has a person wearing a bright-colored shirt and a yellow vest hanging pieces of blue fabric or tarps on the side of the vehicle. The person appears to be refueling or discussing something with the driver, as there is a fuel pump visible on the cab. The scene conveys a moment of interaction between a driver and a passenger, possibly a vendor or worker, as the fabric is preparing for use or has just been unloaded.
 
 
 ### Call with Processor Output
@@ -146,7 +146,12 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person outside two yellow taxis in a parking lot. The person is out of focus and appears to be dressed in casual work attire. The back of the right-side taxi has a sign on it with a triangular shape. There are also various items, including a pair of roller skates, hanging from the taxicab behind the sign. It seems to be an unconventional parking situation, possibly serving as a safe shadowy area or a reference point for parking.
+    The image shows a sidewalk scene with two men engaged in an unusual activity. One man, dressed casually in jeans and a long-sleeved shirt, appears to be hanging a piece of clothing on a string that is attached to the back of a taxi. The taxi, a typical yellow Cab of New York City, is driving along the street.
+    
+    There are several notable details in the image:
+    
+    1. **Conditions of the Clothing**: The clothes being hung are blue and appear to be wet or dirty.
+    2. **Location**: The scene is taken on a busy street in what looks like New York City, as indicated by the cab and the
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +207,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears that the image shows a scene with two yellow taxis on a city street. There is also a person hanging clothes on a line behind one of the taxis. The background includes some storefronts and some orange and pink banners hanging above them.
+    The image shows a yellow taxi cab in a lane of traffic. The driver is engaged in doing laundry. The taxi stop has broken poles on both sides, creating a unstable and dangerous situation. The driver holds a clothesline, and several pieces of dry-cleaning are slung on it. A window screen with layers of clothes is hanging between the cars, adding to the chaos. In the background, there are PBMs (public drunkeness mills) visible.
 
 
 ## Querying Llama 4 Vision Model
