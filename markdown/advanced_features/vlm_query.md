@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-07 03:01:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 04:54:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-07 03:02:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 04:54:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.05it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.42it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.13it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the picture, there are two yellow taxis, one in the foreground and one in the background, driving on a street in what appears to be an urban area. A person is hanging something from a bike rack attached to the back of one of the taxis. This setup suggests that the person might be washing clothes outdoors, using running water to rinse their laundry before hanging it up to dry while the taxi is moving. This is common in parts of the world where running water and space are limited.
+    This image shows a scene from a New York City movie, starring Leonardo DiCaprio. In the picture, DiCaprio is standing behind two parked yellow cabs on Park Avenue, engaged in laundry. He is holding a laundry basket full of clothes, and he appears to be folding his clothes neatly. This is a humorous and iconic scene from the movie "Inception."
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image depicts a scene on a city street with several yellow taxis driving, likely in New York City. In the foreground, a person wearing a yellow shirt is ironing clothes on a small table or stand. The individual appears to be working or performing a task, possibly in a creative or humorous manner. The background includes buildings and storefronts, and the overall setting suggests a busy, urban environment.
+    The image shows a person performing a valet parking activity in the middle of a busy street. They are standing with clothes on a flat surface, which is balanced on the back of a work vehicle. In the background, there are streetlights and a taxi cab parked on the street. The setting appears to be urban, with buildings and storefronts visible.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a taxi driver in New York City hanging laundry out the back of the vehicle. The driver is holding a shirt and appears to be drying laundry. This is a common practice in New York city life, where many people use vehicles as makeshift balconies for drying clothes.
+    In the image, a yellow taxi cab is parked in the middle of a street, and a man is suspended from the top of the cab. He has clothes draped over lateral arms and is probably engaged in an act of street performance. The backdrop consists of typical urban elements such as buildings with storefronts, street signs, and cars. The setting includes a mix of laptops in the man's mouth, which adds to the bizarre and surreal nature of the scene.
 
 
 ## Querying Llama 4 Vision Model
