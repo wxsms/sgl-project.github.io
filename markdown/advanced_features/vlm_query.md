@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-07 07:03:26] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 07:43:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-07 07:03:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 07:43:59] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a黄色出租车（yellow taxi） stuck in traffic. A person is hanging laundry on the back of the cab, which is blocking traffic and causing difficulties for other drivers.
+    The image shows a man drying laundry near a street with cars, including a taxi. It appears to be a humorous or unusual scene, combining everyday activities with urban elements.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person hanging clothes on a clothesline outdoors. This is likely taking place in front of a yellow taxi cab. The background includes a storefront with large windows and several flags, suggesting the scene is in a retail area, possibly in New York City, given the recognizable design of the taxi cabs.
+    The image depicts a scene of an outdoor laundry service being provided by a person dressed in a yellow jacket. The individual is hanging laundry on a clothesline attached to the back of a yellow sports utility vehicle (SUV), which is likely a taxi cab. The taxi is parked on a street with other background details such as buildings, street signs, and a red flag. The setup is unusual and unusual for typical outdoor laundry services, making it a distinctive scene.
 
 
 ### Call with Precomputed Embeddings
@@ -202,9 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows an unconventional sight on a city street: a yellow taxi (urban transportation vehicle) parked on the side with clothes hung on a retractable clothing rack. The clothes include a white ironing board, an open folded yellow shirt, and a pair of blue jeans or shorts, suggesting that someone is either ironing clothes or demonstrating a unique use for the clothing rack.
-    
-    The attire and setting indicate a busy urban environment, likely taken in a metropolitan area with typical street traffic. The morning or afternoon light suggests that the photo was most likely taken during daylight hours when the streets might be less congested. The taxi number plate is obscured,
+    The image shows a person using a clothespin to hang a shirt onto a bench. The person is riding in a такси (taxi). The background includes urban elements such as other taxis on the street and multi-story buildings with a storefront. The person appears to be drying clothes in an unconventional manner using the back of a passing taxi during a rainy or windy day.
 
 
 ## Querying Llama 4 Vision Model
