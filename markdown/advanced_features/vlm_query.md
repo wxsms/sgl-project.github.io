@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-07 06:01:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 06:29:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-07 06:01:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 06:29:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
     Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.01it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
 
 
 
@@ -121,11 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    Here's a cleaned-up and detailed description:
-    
-    The image shows downtown city street scenes with two distinct taxis on the road. The vehicles are yellow and black, typical of New York City taxis. One of the taxis is on the left side of the image, and the other is on the right. Both taxis are parked, with additional slight angles of their fronts visible in the frame.
-    
-    In the foreground, there is an elderly man wearing a yellow long-sleeve shirt and dark pants. He has a bun or short gray hair and is balding. The man appears to be passing clothes from one lap to the next while walking in front of
+    This scene shows two yellow taxis likely being used for taxis or services, one on the left side where it goes to the road, and one on the right where it is hanging on a piece of metal equipment.
 
 
 ### Call with Processor Output
@@ -150,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street in a city with two yellow taxis, one in the background and another in the foreground. A person, dressed in a yellow shirt, is hanging clothes on the back of one of the taxis using a clothesline and a clothespin. The person appears to be drying laundry outdoors through the window of the taxi. The scene captures the essence of urban life, with the vibrant yellow taxis and signs of daily activities in the city.
+    The image shows a man in a yellow shirt ironing clothes on a stand in the middle of a busy city street. Surrounding him are vehicles, including taxis, and the scene appears to be in an urban environment. The man seems to have parked his vehicle along the street to iron his clothes while waiting for passengers.
 
 
 ### Call with Precomputed Embeddings
@@ -206,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a humorous scene of a man washing clothes outside a cab. The man is pointing to a piece of blue cloth hanging on an ironing board attached to the back of a yellow taxi. There are also a Hot New York Cab sign and a pink banner visible in the background. The man appears to be using the taxi as a makeshift washer and dryer.
+    This image appears to show a parking meter being used to accomplish a laundry task, known as "dry hosing." The person is standing behind a parking meter and has clothes hanging from the meter. They have arranged a clothes rack and hosed it with water to dry the clothes on the street. This is an improvised method for drying clothes in areas where traditional drying facilities are not available.
 
 
 ## Querying Llama 4 Vision Model
