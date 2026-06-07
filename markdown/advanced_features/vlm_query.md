@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-07 09:58:03] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 15:20:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-07 09:58:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-07 15:20:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.08s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.08it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.06it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man in a yellow shirt raising a blue American flag above a street sign on a high gantry in New York City. He appears to be commemorating the American Airlines Flight 587 disaster, where American Airlines Flight 587 was a partially disbanded and partially rebuilt 747 snowy variant aircraft en route from London to Miami bound for New York City when it flew into ahw in Belle Harbor, Queens side by side with a TWA Express 747 coming from Calcutta.
+    I'm not sure what you mean by "his taxi cab. " Can you provide more context or information about this image so I can assist you better?
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person hanging clothes on a row of taxis on a city street. The background includes tall buildings, streetlights, and other urban elements. The person appears to be using a clothesline attached to the taxis.
+    The image shows a person outside two yellow taxis in a parking lot. The person is out of focus and appears to be dressed in casual work attire. The back of the right-side taxi has a sign on it with a triangular shape. There are also various items, including a pair of roller skates, hanging from the taxicab behind the sign. It seems to be an unconventional parking situation, possibly serving as a safe shadowy area or a reference point for parking.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there is a man wearing a yellow shirt and light blue jeans hanging clothes on a clothesline set up in front of two yellow taxis on a city street. The man is manually drying some clothes on an ironing board placed behind one of the taxis. The street appears to be in a busy urban area with buildings and flags visible in the background.
+    It appears that the image shows a scene with two yellow taxis on a city street. There is also a person hanging clothes on a line behind one of the taxis. The background includes some storefronts and some orange and pink banners hanging above them.
 
 
 ## Querying Llama 4 Vision Model
