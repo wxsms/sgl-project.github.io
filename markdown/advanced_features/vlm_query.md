@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 20:56:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 21:53:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 20:56:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 21:53:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi, likely a New York City taxi given thearsity of flag warming us the capital flag of New York. The taxi is parked on the street, and two people are working out the back. 
+    The image shows a street scene in an urban area with two yellow taxis. A person is hanging clothes on a bar with hooks for dried clothes on aaksi (a fishing rod). The person is using a bar and pegs or hooks to hang clothes, which is not typical for outdoor drying methods, suggesting a clever and unconventional way to dry clothes on a busy street. The background includes city buildings and other vehicles, indicating a bustling urban environment.
 
 
 ### Call with Processor Output
@@ -146,13 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image appears to show a person in a bright yellow shirt performing an unusual act on a city street. The individual is hanging clothes from the rear of an SUV that is driving through the city. This scene typically does not occur in regular settings for several reasons:
-    
-    1. **Street Cleaning:**
-       - There areCleaners hung behind W. Neptune St. This suggests that the person might be cleaning windows or other reflective surfaces as part of street cleaning activities.
-      
-    2. **Car Wash Business:**
-       - UrbanTrends points towards Car! Wash locations of a Carlarının 3702 W Neңles. This might
+    The image shows a scene from the iconic "The Taxi Driver" movie, which starred Robert De Niro. The setting is a busy street, likely in New York City, with yellow taxis passing by. Near the foreground, there's a man wearing a yellow shirt who has clothes drying on a laundry district hanger. He is rinsing clothes with a stream of water from a back 注射器 注射器, a typical setting in the film to represent the daily life of a boxer. The scene captures the fast-paced andunque 에經濟 following the Sanders campaign努力 toward their goal of election victory.
 
 
 ### Call with Precomputed Embeddings
@@ -208,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxicab in a typical city street setting. The cab is parked next to a sidewalk with another pedestrian walking by. There are some colorful flags or banners hanging from buildings and poles in the background. The scene appears to be in an urban environment.
+    The image shows a yellow taxi cab with a person hanging an umbrella on a tray attached to the rear of the taxi. The scene appears to be in an urban area with buildings and other taxis in the background.
 
 
 ## Querying Llama 4 Vision Model
