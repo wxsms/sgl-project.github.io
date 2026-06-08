@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 06:19:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 06:57:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 06:19:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 06:57:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene on a street where a person is using a small table to hang laundry outdoors, likely hanging to dry. This is an unusual sight, as laundry is usually air-dried using a clothesline or spread out on the ground. In the background, there are two yellow taxis, which adds to the urban environment of the scene.
+    The image shows a street scene in New York City with two yellow taxis. One taxi appears to have a long piece of luggage draped over its unfolded back windshield. This unusual sight suggests that parking space might be very tight on the street.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxicab in New York City that has been modified to hang laundry on, known as "Hi-Line Ads." This is a platform for artists to create large-scale advertisements by using the space on the taxi’s side windows to display their work. The cab is parked on a street, and the design is visible as a fun and creative way to market local businesses or products.
+    The image shows a person standing at the back of a stationary yellow taxi, folding laundry. The taxi is a yellow Ford Explorer with a신 ribbon attached to the back. The background includes a few storefronts with large windows, and the scene appears to be set in an urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person drying clothes on a clothesline outside a taxi. The scenario is unusual because typically clothes would be washed and aired out inside a building. The person is covered in drying laundry, which suggests they are either performing a clothing-washing at an unusual location, or it could also be seen industriously setting up or maintaining something around their typical attire.
+    The image shows a yellow taxi cab with a person standing inside the backseat. The person is printing a T-shirt that is laid out on a table attached to the back of the cab. The scene appears to be taking place on a street, and there are streetlights visible in the background.
 
 
 ## Querying Llama 4 Vision Model
