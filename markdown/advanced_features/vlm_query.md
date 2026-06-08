@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 15:14:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 15:51:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 15:14:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 15:51:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.52s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.32s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.23s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxi cabs parked in a busy city street. One of the cabs is equipped with a makeshift clothesline attached to its rear windows, stretching across the back of the vehicle. The clotheslines are used to dry clothes. The background includes urban elements such as buildings, storefronts, and other vehicles, indicating a bustling city environment. The presence of the clotheslines on the taxis suggests that residents or drivers are using them to干洗衣物.
+    The image shows a yellow taxi cab with a special attachment that is drying clothes outside. The post is a humorous or creative illumination for cleanliness in the public.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person wearing a yellow shirt and using a clothespin to dry a piece of cloth on a metal stand, which is placed between two yellow taxi cabs on a city street. The cloth appears to be wet and is draped over the clothespin, while the taxi and another vehicle behind are visible. The background includes tall buildings and street lamps.
+    The image shows a yellow taxi cab with a person standing next to it. The person is using a clothesline to hang clothes, suggesting that they are likely drying clothes in the street or in an urban area. The scene appears to be happening in a city, as indicated by the surrounding buildings and the presence of flags in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image appears to show a person wearing a yellow shirt, who is standing on the back of a yellow taxi. They are hanging or shuffling clothes on a line to dry, not actually folding them. This is a humorous and somewhat unusual scene, as clothesline drying is typically done from a standing or sitting position on the sidewalk or steps of a building, rather than lying on the back of a moving vehicle.
+    The image shows a man dressed as Santa Claus walking in a street, behind a double yellow line, which is commonly used to mark stop lines in roadways. He is wearing a yellow jacket, blue jeans and pointy black shoes and Santa hat. His arms are full of parcels. The man walks in front of a taxi from New York, blue taxis in the city are usually driven by a driver of ethnic American origin so Santa has not been dressed like a man or a woman with dark skin, rather dressed in Christmas clothes.
 
 
 ## Querying Llama 4 Vision Model
