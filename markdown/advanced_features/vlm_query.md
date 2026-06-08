@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 08:10:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 09:02:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 08:10:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 09:02:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked side by side on a street in an urban area. The person in the back taxi is ironing clothes on the back of the cab. The street is lined with buildings and streetlights, and there are other vehicles in the background. The scene appears to be humorous, as it depicts someone ironing clothes while driving.
+    The image depicts several yellow taxis (taxicabs) parked on the street. One of the taxis has a person wearing a yellow shirt using a laundry dolly to hang clothes to dry on its rear end. The scene appears to be in an urban area, likely a city with a high density of taxis given the distinctive yellow color. The taxi in the background has an American flag in the back window, and there are other urban buildings visible in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene with two yellow taxis in a busy urban street. The person in the image appears to be hanging up laundry (jackets) from a clothesline that is attached to the back of one of the taxis. This creative use of public spaces to干洗 is a unique and recognizable event, often known as the "Couching of the Taxis" or "Taxi Cab Clothesline" event. This event is maintained annually in New York City.
+    The image shows two yellow cab-style vehicles parked on a city street. These vehicles appear to be mobile dry cleaning stores, as clothes are drying on an exposed clothesline attached to the vehicle. The clotheslines are hung to dry clothes that the customers presumably have left to be cleaned, adding a distinctive and creative element to the urban scene. This kind of mobile market operations is relatively uncommon and adds an interesting visual element to the typical urban landscape.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene in a city street, likely New York City, with a yellow taxis driving by. In the center of the image, there is a man using a clothes iron to dry clean a shirt or similar fabric. This creative image uses a merry-go-round (a flat swivel seat or cart fixed to the skateboard so that it can deliver large parcels) as the drying rack, demonstrating a unique and humorous approach to sharing public space (in this case, the street) for cleaning tasks. The clothes iron is held over the cloth to transform the clothing into a drying rack.
+    This image shows a creative and humorous act of "vacuuming" the back of a yellow taxi cab. The person standing next to the vehicles appears to be using a vacuum cleaner to clean windows, while standing on a fold-up camp stool. This is a novelty stunt, likely done for fun or for entertainment. The scene is set on a city street with other urban elements in the background.
 
 
 ## Querying Llama 4 Vision Model
