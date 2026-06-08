@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 20:14:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 20:28:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 20:14:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 20:28:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxi cabs on a city street. A person is standing between the two cabs, holding a purple scarf or cloth on a clothesline. The scene is apparently humorous, as it suggests someone attempting to dry clothes in the middle of traffic, although this might not be so funny to all eyes. The background features buildings with招商 (Sino-British Joint Venture) signs, indicating a bustling urban environment.
+    The image shows a yellow taxicab performing a creative act by using a tent to dry clothes. The scenario is amusing and unusual, as it involves repurposing public vehicles for an unconventional method of drying laundry outdoors.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene where a person standing on a street is drying clothes using a clothesline. There are two yellow taxis parked on either side of the street, in front of a building with a signboard. The person is holding a piece of laundry, and the clothes are blowing in the wind. The overall setting appears to be an urban environment, possibly in a city like New York, given the style of the taxis.
+    The image shows two yellow Cabs driving down the street.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in a city street with a person standing behind a makeshift clothesline. The clothesline on a bicycle appears to be used for hanging items to dry. This setup is unusual in an urban environment and indicates that the person might be drying laundry outdoors, likely on a salsa drumsdale lawn, which sounds incorrect. The setting could possibly be a more casual or unconventional environment like a temporary event or a creative idea.
+    The image depicts a scene on a city street, likely in New York City, given the presence of yellow taxis and other identifying elements of the area. A man is using a folding chair as a portable clothesline to hang laundry out to dry near a taxi stand. The man appears to be drying clothes on the street, and the scene suggests a humorous or unexpected moment in an everyday urban setting.
 
 
 ## Querying Llama 4 Vision Model
