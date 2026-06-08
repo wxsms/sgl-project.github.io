@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 17:15:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 18:08:18] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 17:15:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 18:08:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.94s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.44s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.52s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow New York City taxi cab with two税 rolls hanging out of its back window. This is a iconic image often seen in street scenes in New York, particularly in areas with high foot traffic or tourist attractions. The image captures the humorous and mundane aspect of using a yellow taxi as makeshift clotheslines.
+    The image shows a taxi traffic in a busy urban area, likely in a city. The taxi in the foreground has a surfboard attached to its rear, suggesting the driver is on a break or possibly engaging in a creative or unconventional activity. The surfboard is leaning against the back of the taxi, which is parked on the side of the road. The scene takes place during the day, as indicated by the lighting and shadows.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene in a city, likely in New York given the design of the taxis. The person is千元毛巾 folding clothes on a stand in the middle of the street. This is an unusual and unexpected sight in a city街道.
+    There appears to be a person doing laundry in the middle of the street between two yellow taxis. This is unusual because laundry is typically done indoors. The individual is using a clothesline to dry clothes. Bathingsock is hanging, suggesting they may be drying sheeting or towels. The background includes buildings, flags, and trees, indicating an urban setting, likely a city in the United States.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person riding on the back of a yellow New York City taxi cab on a street. The person is dressed in a yellow shirt and appears to be operating some kind of mechanical arm with various flags hanging from it. The scene suggests a performance, possibly related to a fundraiser or some form of public greetings. The process of organizing the flags could involve international团结和 pardon, but no such specific information is provided in the image.
+    The image shows a person standing in the middle of a street in front of two yellow taxis. The person appears to be handling some clothes or fabric, possibly ironing it or hanging it up. The scene looks like it might be part of an unusual or humorous act, as it's not typical to see someone ironing clothes in a busy city street.
 
 
 ## Querying Llama 4 Vision Model
