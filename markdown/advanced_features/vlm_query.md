@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 04:29:52] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 06:19:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 04:29:55] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 06:19:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a humorous and unusual pairing of two New York City taxis, which are typically yellow. In the middle of the street, there's a man wearing a yellow shirt and blue jeans hanging clothes on the back of one taxi cab. This setup creates a absurd sight, making one think how in New York, even taxi drivers joke about their mundane tasks being considered a piece of fine art.
+    The image shows a scene on a street where a person is using a small table to hang laundry outdoors, likely hanging to dry. This is an unusual sight, as laundry is usually air-dried using a clothesline or spread out on the ground. In the background, there are two yellow taxis, which adds to the urban environment of the scene.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with several yellow taxis (cab taxis) parked or driving, likely in a busy urban area. One taxi is open with several items draped over the back windows to dry, possibly a jacket and a bag. The surrounding area seems to be in a city with buildings and flags in the background.
+    The image shows a taxicab in New York City that has been modified to hang laundry on, known as "Hi-Line Ads." This is a platform for artists to create large-scale advertisements by using the space on the taxi’s side windows to display their work. The cab is parked on a street, and the design is visible as a fun and creative way to market local businesses or products.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person standing behind a rack with clothes draped over it, seemingly working as a street vendor or performer in a city environment. The background features a yellow taxi, and the setting appears to be an urban area with a brick building and various signs, includingAmerican and/or US flags.
+    The image shows a person drying clothes on a clothesline outside a taxi. The scenario is unusual because typically clothes would be washed and aired out inside a building. The person is covered in drying laundry, which suggests they are either performing a clothing-washing at an unusual location, or it could also be seen industriously setting up or maintaining something around their typical attire.
 
 
 ## Querying Llama 4 Vision Model
