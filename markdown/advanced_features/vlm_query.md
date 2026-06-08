@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 09:57:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 10:19:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 09:57:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 10:19:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.22s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man dressed as a cab driver, holding a broom and a cleaning cloth. He is standing next to a yellow taxi and a traditional red and yellow New York cab. This scene humorously depicts a person dressed in a costume模仿了一个出租车司机，手里拿着尘帚和清洁布。他站在一辆黄色出租车和一辆传统的红色和黄色纽约出租车旁边。
+    The image shows a scene from a parody or humorous advertisement reminiscent of “Spy Kids.” A character, likely сконструкыф (student of sigma), is hanging various articles of clothing on clotheslines attached to the back of a yellow taxi cab. The setting is likely a busy city street with tall buildings and vehicles in the background. The clothing is arranged in a manner that seems both valued and absurd, making this a humorous and exaggerated depiction rather than a realistic scene.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you have described is of an unusual and humorous scene happening on a street. In this particular image there is no particular point of interest.
+    The image shows a person hanging wet clothes on a ribbon or a piece of cloth, which is then secured on top of a yellow and black vehicle, likely a taxi. The person is standing on the sidewalk while performing this task. The yellow and black vehicle appears to be a taxi cab, which is typically used as a part of New York City's iconic taxi factor.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The photo shows a person wearing sunglasses performing a trick outside a store. They are balancing multiple objects on a stick held between their legs, which appears to be a challenge or performance. The background includes several yellow taxis lined up on the street, and flags hanging outside a nearby building. The scene suggests an urban environment, likely from New York City, given the style of the taxis and the overall urban setting.
+    The image shows two yellow taxis parked on the street, likely in an urban area. A man is hanging clothes on a makeshift clothesline that is attached to the back of one of the taxis. The image appears to be a humorous or creative photo setup, likely intended for social media or as a memorable photo session.
 
 
 ## Querying Llama 4 Vision Model
