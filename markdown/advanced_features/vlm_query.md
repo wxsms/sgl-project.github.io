@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 18:55:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 20:14:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 18:55:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 20:14:28] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.02s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.12it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.10it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a creatively dressed-up scene with two yellow taxis in the background. One taxi has been painted over to resemble a blue leather jacket, and a man is dressed up in a yellow long-sleeve shirt and blue jeans, holding up a bannister for the jacket. This is a humorous and visual pun, maintaining the intent of a real cab while presenting it as if it were a vehicle with a bannister-like feature attached. The street setting is urban, likely in the United States, where yellow taxis are commonly used for transportation.
+    The image shows two yellow taxi cabs on a city street. A person is standing between the two cabs, holding a purple scarf or cloth on a clothesline. The scene is apparently humorous, as it suggests someone attempting to dry clothes in the middle of traffic, although this might not be so funny to all eyes. The background features buildings with招商 (Sino-British Joint Venture) signs, indicating a bustling urban environment.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like the image shows two yellow taxis parked on a street in a city. The person in the background is hanging clothes on a clothesline attached to the rear of a судеб that second cab. The clothesline is extended horizontally, with several pieces of laundry hanging from it. The environment appears to be urban, with tall buildings and some greenery in the background. There are also some banners or flags visible around the area.
+    The image shows a scene where a person standing on a street is drying clothes using a clothesline. There are two yellow taxis parked on either side of the street, in front of a building with a signboard. The person is holding a piece of laundry, and the clothes are blowing in the wind. The overall setting appears to be an urban environment, possibly in a city like New York, given the style of the taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a person hanging clothes on the back of a yellow city taxi. This is an unusual practice, as most people hang clothing to dry on clotheslines or in indoor drying racks. In this context, the person is likely engaging in a creative or humorous act, possibly part of a performance or an artistic expression.
+    The image shows a scene in a city street with a person standing behind a makeshift clothesline. The clothesline on a bicycle appears to be used for hanging items to dry. This setup is unusual in an urban environment and indicates that the person might be drying laundry outdoors, likely on a salsa drumsdale lawn, which sounds incorrect. The setting could possibly be a more casual or unconventional environment like a temporary event or a creative idea.
 
 
 ## Querying Llama 4 Vision Model
