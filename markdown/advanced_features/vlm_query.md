@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 20:28:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 20:56:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 20:28:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 20:56:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.27it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxicab performing a creative act by using a tent to dry clothes. The scenario is amusing and unusual, as it involves repurposing public vehicles for an unconventional method of drying laundry outdoors.
+    The image shows a yellow taxi, likely a New York City taxi given thearsity of flag warming us the capital flag of New York. The taxi is parked on the street, and two people are working out the back. 
 
 
 ### Call with Processor Output
@@ -146,7 +146,13 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow Cabs driving down the street.
+    The image appears to show a person in a bright yellow shirt performing an unusual act on a city street. The individual is hanging clothes from the rear of an SUV that is driving through the city. This scene typically does not occur in regular settings for several reasons:
+    
+    1. **Street Cleaning:**
+       - There areCleaners hung behind W. Neptune St. This suggests that the person might be cleaning windows or other reflective surfaces as part of street cleaning activities.
+      
+    2. **Car Wash Business:**
+       - UrbanTrends points towards Car! Wash locations of a Carlarının 3702 W Neңles. This might
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +208,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image depicts a scene on a city street, likely in New York City, given the presence of yellow taxis and other identifying elements of the area. A man is using a folding chair as a portable clothesline to hang laundry out to dry near a taxi stand. The man appears to be drying clothes on the street, and the scene suggests a humorous or unexpected moment in an everyday urban setting.
+    The image shows a yellow taxicab in a typical city street setting. The cab is parked next to a sidewalk with another pedestrian walking by. There are some colorful flags or banners hanging from buildings and poles in the background. The scene appears to be in an urban environment.
 
 
 ## Querying Llama 4 Vision Model
