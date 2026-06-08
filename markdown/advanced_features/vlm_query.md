@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 13:28:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 15:14:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 13:28:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 15:14:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.52s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.23s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a unusual scene where a metric flagpole is being used to dry clothes on what appears to be a flatbed inside a vehicle, specifically a yellow and white expressway service van or a taxi. This is unusual because flagpoles are typically outside and used for national or regional flags, not clotheslines. The presence of thepee *"metric flagpole"* suggests it might be a metric sign for Measurements. The taxi cab is parked on the street with a few buildings in the background.
+    The image shows two yellow taxi cabs parked in a busy city street. One of the cabs is equipped with a makeshift clothesline attached to its rear windows, stretching across the back of the vehicle. The clotheslines are used to dry clothes. The background includes urban elements such as buildings, storefronts, and other vehicles, indicating a bustling city environment. The presence of the clotheslines on the taxis suggests that residents or drivers are using them to干洗衣物.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with two yellow taxis parked side by side. A person is unfolding a blue raincoat on the back of one of the cars. The person is holding the raincoat open with both hands, and the raincoat is displayed on a small stand or nearby structure. The scene appears to be outside a building, and there are storefronts visible in the background. The person is dressed in a yellow shirt.
+    The image shows a person wearing a yellow shirt and using a clothespin to dry a piece of cloth on a metal stand, which is placed between two yellow taxi cabs on a city street. The cloth appears to be wet and is draped over the clothespin, while the taxi and another vehicle behind are visible. The background includes tall buildings and street lamps.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene with several yellow taxis. In the foreground, there is a man wearing a yellow shirt, standing next to a machine that appears to be used for collecting tolls or parking tickets. He seems to be brief-handling or dispensing something from the machine, possibly money or coins. The background includes more cars and some pedestrians, indicating a busy urban environment. The setting suggests that this location is part of a larger interconnected network of transportation hubs, where taxis pick up and drop off passengers, and sometimes bill collectors and drivers interact with customers.
+    This image appears to show a person wearing a yellow shirt, who is standing on the back of a yellow taxi. They are hanging or shuffling clothes on a line to dry, not actually folding them. This is a humorous and somewhat unusual scene, as clothesline drying is typically done from a standing or sitting position on the sidewalk or steps of a building, rather than lying on the back of a moving vehicle.
 
 
 ## Querying Llama 4 Vision Model
