@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 12:54:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 13:28:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 12:54:47] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 13:28:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.10it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows two yellow taxis stopped on a city street. In the background, there are buildings with large windows and a few people walking by. The street appears to be quite busy. It seems like the taxis are stationary, possibly due to traffic or pedestrians. The setting indicates an urban environment, possibly in a major city.
+    The image shows a unusual scene where a metric flagpole is being used to dry clothes on what appears to be a flatbed inside a vehicle, specifically a yellow and white expressway service van or a taxi. This is unusual because flagpoles are typically outside and used for national or regional flags, not clotheslines. The presence of thepee *"metric flagpole"* suggests it might be a metric sign for Measurements. The taxi cab is parked on the street with a few buildings in the background.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image you provided depicts a scene in a busy urban area, likely in New York City. There are two bright yellow taxis—the iconic New York City taxis with the New York City flag on the roof—parked on the street. In the center of the photo, a person wearing a yellow shirt and blue pants is ironing fabric on a triangular metal stand placed next to one of the cabs. The scene appears to be staged for humor, as it is highly unusual to see such activity taking place while waiting for passengers. The background shows buildings, storefronts, and the bustling city vibe typical of Manhattan.
+    The image shows a scene on a city street with two yellow taxis parked side by side. A person is unfolding a blue raincoat on the back of one of the cars. The person is holding the raincoat open with both hands, and the raincoat is displayed on a small stand or nearby structure. The scene appears to be outside a building, and there are storefronts visible in the background. The person is dressed in a yellow shirt.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image you provided shows a man wearing a bright yellow shirt standing in front of two yellow cars on a city street. The man appears to be using a hanger to dry laundry, which is unusual and typically not associated with city environments. This scene seems to be an interesting or unusual photograph capturing a moment in time in an urban setting.
+    The image shows a street scene with several yellow taxis. In the foreground, there is a man wearing a yellow shirt, standing next to a machine that appears to be used for collecting tolls or parking tickets. He seems to be brief-handling or dispensing something from the machine, possibly money or coins. The background includes more cars and some pedestrians, indicating a busy urban environment. The setting suggests that this location is part of a larger interconnected network of transportation hubs, where taxis pick up and drop off passengers, and sometimes bill collectors and drivers interact with customers.
 
 
 ## Querying Llama 4 Vision Model
