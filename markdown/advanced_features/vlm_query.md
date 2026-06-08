@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 11:16:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 12:21:23] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 11:16:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 12:21:27] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.46s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.11it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis in New York City, driving on a street. In the foreground, a person is standing next to the cabs, hanging up laundry on a jersey and standing on a wooden stick, likely in an attempt to dry or display the laundry. This is a common urban scene where people try to take advantage of space during the congested city traffic.
+    The image shows two yellow taxis on a city street. The uniforms are reflected in the windows of the vehicles, indicating that they are taxis likely involved in maintenance or cleaning. The context suggests that the taxis might be displaying their uniforms for promotion or representation purposes, which is a common practice in many cities.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person ironing clothes on a hanger outside of a store. The store's sign reads "Michael's," indicating that it's a store selling ironing accessories. The person is next to two yellow taxis, one in front of the store and another behind them. The scene appears to depict ironing, a household chore, taking place in an urban setting.
+    The image shows a scene on a city street where a person is ironing clothes on a folding industrial ironing board. The person is smiling and appears to be in the middle of photographing the act. This is a humorous and unusual setting, as people do not typically iron clothes outdoors, especially in avenida. 
+    
+    Behind the person, there is a yellow car, possibly a taxi or a specially modified vehicle for airless ironing. Beachrock.com indicated that this might be related to an urban airless ironing demonstration or exhibition, often performed for entertaining or advertising purposes. Beachrock provided additional context for this image if needed.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It appears to be a spontaneous outdoor display or performance where a man in a yellow shirt is dressed in an apron and appears to be ironing some clothes on a stick. The scene is outdoors, likely in a city street, with yellow taxis nearby. The man is standing beside a white, there-like structure, and the clothing he's ironing looks like it has been ironed already and laid out neatly. There's a sense of humor and street performance art here, as it's not a typical use of such an apron.
+    In the picture, a yellow taxi cab is parked on a street with a person hanging laundry on a clothesline attached to the cab. The person is visible from the back, holding the laundry line and adjusting the clothes. The street appears to be in an urban area, with other taxis and a few buildings in the background. The scene is quite unusual, capturing a moment where an everyday activity (like hanging clothes) is being done in an unconventional manner on a busy city street. The use of public transportation symbolized by the taxi adds a layer of humor and whimsy to the image.
 
 
 ## Querying Llama 4 Vision Model
