@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 15:51:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 17:15:41] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 15:51:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 17:15:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.32s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.05s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi cab with a special attachment that is drying clothes outside. The post is a humorous or creative illumination for cleanliness in the public.
+    The image shows a yellow New York City taxi cab with two税 rolls hanging out of its back window. This is a iconic image often seen in street scenes in New York, particularly in areas with high foot traffic or tourist attractions. The image captures the humorous and mundane aspect of using a yellow taxi as makeshift clotheslines.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab with a person standing next to it. The person is using a clothesline to hang clothes, suggesting that they are likely drying clothes in the street or in an urban area. The scene appears to be happening in a city, as indicated by the surrounding buildings and the presence of flags in the background.
+    The image shows a street scene in a city, likely in New York given the design of the taxis. The person is千元毛巾 folding clothes on a stand in the middle of the street. This is an unusual and unexpected sight in a city街道.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man dressed as Santa Claus walking in a street, behind a double yellow line, which is commonly used to mark stop lines in roadways. He is wearing a yellow jacket, blue jeans and pointy black shoes and Santa hat. His arms are full of parcels. The man walks in front of a taxi from New York, blue taxis in the city are usually driven by a driver of ethnic American origin so Santa has not been dressed like a man or a woman with dark skin, rather dressed in Christmas clothes.
+    The image shows a person riding on the back of a yellow New York City taxi cab on a street. The person is dressed in a yellow shirt and appears to be operating some kind of mechanical arm with various flags hanging from it. The scene suggests a performance, possibly related to a fundraiser or some form of public greetings. The process of organizing the flags could involve international团结和 pardon, but no such specific information is provided in the image.
 
 
 ## Querying Llama 4 Vision Model
