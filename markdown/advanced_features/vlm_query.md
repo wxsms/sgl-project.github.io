@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 09:02:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 09:57:30] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 09:02:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 09:57:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.32it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.22s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.00s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image depicts several yellow taxis (taxicabs) parked on the street. One of the taxis has a person wearing a yellow shirt using a laundry dolly to hang clothes to dry on its rear end. The scene appears to be in an urban area, likely a city with a high density of taxis given the distinctive yellow color. The taxi in the background has an American flag in the back window, and there are other urban buildings visible in the background.
+    The image shows a man dressed as a cab driver, holding a broom and a cleaning cloth. He is standing next to a yellow taxi and a traditional red and yellow New York cab. This scene humorously depicts a person dressed in a costume模仿了一个出租车司机，手里拿着尘帚和清洁布。他站在一辆黄色出租车和一辆传统的红色和黄色纽约出租车旁边。
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow cab-style vehicles parked on a city street. These vehicles appear to be mobile dry cleaning stores, as clothes are drying on an exposed clothesline attached to the vehicle. The clotheslines are hung to dry clothes that the customers presumably have left to be cleaned, adding a distinctive and creative element to the urban scene. This kind of mobile market operations is relatively uncommon and adds an interesting visual element to the typical urban landscape.
+    The image you have described is of an unusual and humorous scene happening on a street. In this particular image there is no particular point of interest.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a creative and humorous act of "vacuuming" the back of a yellow taxi cab. The person standing next to the vehicles appears to be using a vacuum cleaner to clean windows, while standing on a fold-up camp stool. This is a novelty stunt, likely done for fun or for entertainment. The scene is set on a city street with other urban elements in the background.
+    The photo shows a person wearing sunglasses performing a trick outside a store. They are balancing multiple objects on a stick held between their legs, which appears to be a challenge or performance. The background includes several yellow taxis lined up on the street, and flags hanging outside a nearby building. The scene suggests an urban environment, likely from New York City, given the style of the taxis and the overall urban setting.
 
 
 ## Querying Llama 4 Vision Model
