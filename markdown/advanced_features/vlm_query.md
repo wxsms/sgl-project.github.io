@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 06:57:51] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 07:55:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 06:57:54] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 07:56:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene in New York City with two yellow taxis. One taxi appears to have a long piece of luggage draped over its unfolded back windshield. This unusual sight suggests that parking space might be very tight on the street.
+    This image shows two taxis parked on a city street. The taxi in the foreground is adorned with an American flag and public holidays flags, while the second taxi in the background is visible with an American flag and another flag. Both cabs are yellow and belong to the New York City cab fleet, which is well-known for its distinctive color and design. The scene appears to be set in an urban environment, possibly in New York City, given the typology of the taxis.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing at the back of a stationary yellow taxi, folding laundry. The taxi is a yellow Ford Explorer with a신 ribbon attached to the back. The background includes a few storefronts with large windows, and the scene appears to be set in an urban area.
+    The image shows a taxi in New York City with someone spreading out a sheet on the back of the vehicle. This is an iconic and humorous photo, often called the "Taxi Rule," which was most famously captured in a viral video by sketch comedy group "<i>Sky の サイズ http://www.dailymotion.com/video/xwppw1_ny-taxis-tрейн- Cycling>Co-Funycast2 and their YouTube channel "Schtroumpf Prisonnier," which has over 1.6 million subscribers.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab with a person standing inside the backseat. The person is printing a T-shirt that is laid out on a table attached to the back of the cab. The scene appears to be taking place on a street, and there are streetlights visible in the background.
+    This is a humorous pose of a man drying clothes on a street sign, with his legs and feet positioned directly beneath the sign. He is balancing clothes on the sign, appearing to make a point about the precariousness of drying clothes on high streets.
 
 
 ## Querying Llama 4 Vision Model
