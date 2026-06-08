@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 07:55:58] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 08:10:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 07:56:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-08 08:10:22] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.18it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows two taxis parked on a city street. The taxi in the foreground is adorned with an American flag and public holidays flags, while the second taxi in the background is visible with an American flag and another flag. Both cabs are yellow and belong to the New York City cab fleet, which is well-known for its distinctive color and design. The scene appears to be set in an urban environment, possibly in New York City, given the typology of the taxis.
+    The image shows two yellow taxis parked side by side on a street in an urban area. The person in the back taxi is ironing clothes on the back of the cab. The street is lined with buildings and streetlights, and there are other vehicles in the background. The scene appears to be humorous, as it depicts someone ironing clothes while driving.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxi in New York City with someone spreading out a sheet on the back of the vehicle. This is an iconic and humorous photo, often called the "Taxi Rule," which was most famously captured in a viral video by sketch comedy group "<i>Sky の サイズ http://www.dailymotion.com/video/xwppw1_ny-taxis-tрейн- Cycling>Co-Funycast2 and their YouTube channel "Schtroumpf Prisonnier," which has over 1.6 million subscribers.
+    This image shows a scene with two yellow taxis in a busy urban street. The person in the image appears to be hanging up laundry (jackets) from a clothesline that is attached to the back of one of the taxis. This creative use of public spaces to干洗 is a unique and recognizable event, often known as the "Couching of the Taxis" or "Taxi Cab Clothesline" event. This event is maintained annually in New York City.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This is a humorous pose of a man drying clothes on a street sign, with his legs and feet positioned directly beneath the sign. He is balancing clothes on the sign, appearing to make a point about the precariousness of drying clothes on high streets.
+    The image depicts a scene in a city street, likely New York City, with a yellow taxis driving by. In the center of the image, there is a man using a clothes iron to dry clean a shirt or similar fabric. This creative image uses a merry-go-round (a flat swivel seat or cart fixed to the skateboard so that it can deliver large parcels) as the drying rack, demonstrating a unique and humorous approach to sharing public space (in this case, the street) for cleaning tasks. The clothes iron is held over the cloth to transform the clothing into a drying rack.
 
 
 ## Querying Llama 4 Vision Model
