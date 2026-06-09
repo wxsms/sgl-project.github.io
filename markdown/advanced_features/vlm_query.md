@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 09:11:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 12:08:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 09:11:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 12:08:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi cab (as seen in New York City) attached to a clothes drying rack. It seems like a humorous and unusual setup, usually not found in normal urban environments. This could be an intentional effort for a creative photo or a stunt.
+    The image shows a scene in what appears to be a city street, likely in New York City given the presence of yellow cabs. A person is midair or floating above the back of a yellow taxi, which has a cloth or flag attached to it. The taxi is parked on the street, and there are buildings and other vehicles in the background. The person seems to be engaging in some kind of performance art or stunt, utilizing the taxi as a makeshift stage or prop.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing in the middle of a busy street, likely a city, and they are showcasing a cloth hanging in front of them. This type of street performance is sometimes seen in urban areas. The person is holding a ledge or pole that has a piece of cloth stretched along it. The vehicle behind them appears to be a yellow taxi, suggesting that the performance might be taking place to draw attention to the cloth or to advertise something. It is important to be cautious in such situations, as public performances could attract unexpected or unwelcoming reactions from drivers and pedestrians.
+    This image shows a unusual scene in an urban setting. A person dressed in yellow is using a suitcase that appears to be repurposed into a tripod desk. This person is holding a piece of yellow clothing and seems to be either putting it on or taking it off. The scene is set on a street with tall buildings in the background, and it appears to be a sunny day. To the left of the person, there is a yellow taxi cab, and to the right, there is a car with its particular features visible. The overall setting suggests an unexpected and playful moment, possibly in a city where outdoor activities are common.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,14 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. The taxi has its front doors open, and the driver or front passenger is hanging laundry (such as clothing) from the various wipers of the taxi. This is an unusual and humorous scene as laundry is not typically hanging from the side of a taxi. The background includes other vehicles, pedestrians, and urban elements such as buildings, flags, and streetlights.
+    The image shows a scene with a fire hydrant that is elevated far above the street. This is an unusual and likely intentional installation, as fire hydrants are typically on the ground level and are intended for emergency use and maintenance of water supply systems, not for artistic displays.
+    
+    The height of the fire hydrant could either be:
+    
+    1. Prop placement above the ground level to fool the illusion or
+    2. Pranksters installing a taller-than-usual fire hydrant as a humorous or controversial statement.
+    
+    The specific reason for this arrangement isn't clear from the image alone, but it is certainly an unconventional setup.
 
 
 ## Querying Llama 4 Vision Model
