@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 21:07:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 21:48:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 21:07:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 21:48:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.86s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on a city street. Both taxis have open backs loaded with various items, including clothes and other luggage. Behind the taxis, buildings with store displays are visible, and there are no pedestrians or vehicles in the immediate vicinity.
+    The image shows two yellow taxis parked in a city street during a rainstorm. One taxi has red taillights visible, while the other appears to be covered with red material to shield against the rain. The scene is rainy, with water visible on the ground and people standing nearby to protect themselves from the rain.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi with an individual wearing a yellow shirt hanging clothes on it, which is likely a location for outdoor laundry service in New York City. Tuesdays are a special day for the service where both sides of the cab's `\` can be used.
+    This image shows a scene where a man is hanging clothes on a rack on the back of a taxi. The taxi is parked on a city street, with street lights and buildings in the background. The man appears to be using the capacity of the back of the taxi, which is an unconventional method of drying laundry. This is a common practice in some parts of the world, where limited outdoor space or lack of properly equipped dryers can make drying clothes challenging.
 
 
 ### Call with Precomputed Embeddings
@@ -202,17 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person performing household tasks while moving in the公共交通 of a city street:
-    
-    - They are dressed in a yellow long-sleeved shirt and blue jeans.
-    
-    - There are two yellow cars (likely taxi cabs) parked alongside the person.
-    
-    - The area is defined by street signs and a pink front door of a building across from the person, indicating urban congestion.
-    
-    - "GOT MANHATTAN" is possibly another sign or part of a larger iconography on the building.
-    
-    - The person is using an ironing board and an iron, which are used to smooth clothes, quite unconventional for such a traffic-filled environment
+    I apologize, but I'm not able to identify the specific individuals or objects in the image. My capabilities are primarily for text-based interactions and image recognition is not one of them. I'm unable to describe or analyze images in detail. If you have a specific question or topic you'd like to discuss, such as employment and fines, I'd be happy to provide general advice or information based on publicly available data.
 
 
 ## Querying Llama 4 Vision Model
