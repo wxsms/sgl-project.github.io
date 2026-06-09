@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 06:48:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 08:07:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 06:48:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 08:07:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.36s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.32s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man walking alongside a yellow car (likely a taxi) in an urban environment. The man is holding a laundry basket full of clothes on本当 맛 있고, he appears to be dressed casually. There are other details of the setting, such as buildings and street lights.
+    The image shows two yellow taxis and a person standing between them, presumably in a New York City parking lot. The person appears to be hanging laundry out to dry, with a clothesline between the two taxis. The scene is typical in urban environments where spaces are often used for various purposes, including drying laundry.
 
 
 ### Call with Processor Output
@@ -146,7 +146,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis being used as portable washers. They have clothes hung across their roofs to dry after being overspray cleaned from the rain. This is a humorous scene, as it mimics a dryer typically found inside a home.
+    The photo shows a scene from what appears to be a special event in New York City, likely a parody or prank. A man dressed in a parking attendant's uniform, complete with a yellow shirt, blue jeans, and a red hat, is曳着 drying clothes on a small tripod. This act seems to mimic the actions of a real named man named Robert Alpert, who daredevilly dangles a flag on his vehicle. The reality is that this person is not Alpert, just representing his persona.
+    
+    Behind the dryer, which is cradling several blue shirts, are two yellow sedans, which look like yellow taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in a busy urban area, likely a city street. There is a yellow taxi parked on the road. The taxi appears to have rolled over, and a person wearing a yellow shirt is hanging clothes on the chain of the unfolded taxi's back seat. The street has buildings, some with glass windows, and there are red and yellow banners hanging in the background. The scene seems unusual and unexpected, as it is not typical to see a taxi being unfolded for a washing cycle.
+    The image shows a New York City taxicab in a parking space next to a street intersection. The cab is yellow, which is a characteristic color of taxi cabs in New York City. The scene is urban, with buildings and other vehicles in the background, and it appears to be during a sunny day.
 
 
 ## Querying Llama 4 Vision Model
