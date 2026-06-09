@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 18:32:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 19:45:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 18:32:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 19:45:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows pedestrians at an busy intersection, with a yellow taxi cars – one on each input as the vehicle turns right out of frame. The signal color is not visible in the given description, so it's unclear which direction the vehicles are turning.
+    In the image, a yellow taxi cab is parked in New York City. The scene appears to be unusual because someone is attempting to dry clothes on the back of the taxi, which is not a typical use for a vehicle. This image captures a moment of everyday urban life in New York, but it also showcases the quirky and sometimes humorous antics that can happen in such a busy city.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    A yellow taxi raises a flag for Blood Drive at the Park Avenue Plaza in New York city.
+    The image shows a man in a yellow shirt drying clothes outdoors on a sidewalk between two yellow taxicabs in an urban setting. The street corner is lined with pedestrians, and there are buildings featuring brick-gray facades. The scene suggests a humorous or unusual use of space, as it seems doesn't typically occur in such an environment. The main observations here though are: 1) yellow taxis being parked side by side on a city street; 2) drying clothes, typically associated with domestic activities, being done outside rather than indoors; 3) the presence of multiple pedestrians near the curb, indicating an urban area; 4)
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in a city street with two yellow commercial vehicles visible, likely cabs or taxis, parked alongside the curb. The scene has a humorous and surreal twist: a person in a yellow shirt is hanging a piece of laundry outside of one of the taxis using the side mirror as a makeshift clothesline. This setup is unusual because it is highly improbable that a person would want to hang laundry outside a vehicle.
+    This image shows a person ironing clothes on a pickup truck hitch outdoors. There are several yellow taxis nearby, and the scene appears to be taking place on a city street, likely in New York City given the presence of the iconic yellow cabs. The person is standing next to the truck, wearing a yellow shirt, and holding an iron in one hand and a cloth in the other.
 
 
 ## Querying Llama 4 Vision Model
