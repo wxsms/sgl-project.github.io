@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 21:48:09] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 22:11:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 21:48:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 22:11:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked in a city street during a rainstorm. One taxi has red taillights visible, while the other appears to be covered with red material to shield against the rain. The scene is rainy, with water visible on the ground and people standing nearby to protect themselves from the rain.
+    The image shows two yellow taxis parked on a city street. One taxi's back window is open, and it is appears to have a piece of clothing hanging out of it. This is unusual, as one would usually expect clothing to be stored inside the vehicle rather than exposed to the elements. The scene also features a cyclist passing the taxis, with a small triangular road sign with the number "25" near the background. The environment includes urban elements such as buildings, street lights, and traffic signs, indicating an urban setting.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene where a man is hanging clothes on a rack on the back of a taxi. The taxi is parked on a city street, with street lights and buildings in the background. The man appears to be using the capacity of the back of the taxi, which is an unconventional method of drying laundry. This is a common practice in some parts of the world, where limited outdoor space or lack of properly equipped dryers can make drying clothes challenging.
+    The picture shows a man dressed as a "Pink Panther" humorously jumping back into a taxi. The background includes an urban street with other taxis and a few pedestrians. It appears to be taking place in a busy city environment, likely during a special event or promotion.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    I apologize, but I'm not able to identify the specific individuals or objects in the image. My capabilities are primarily for text-based interactions and image recognition is not one of them. I'm unable to describe or analyze images in detail. If you have a specific question or topic you'd like to discuss, such as employment and fines, I'd be happy to provide general advice or information based on publicly available data.
+    The image shows a man hanging laundry on a clothesline on the back of a yellow taxi. The scenario is humorous because instead of using a clothesline near his home to dry laundry, he chose to use the back of a stationary taxi.
 
 
 ## Querying Llama 4 Vision Model
