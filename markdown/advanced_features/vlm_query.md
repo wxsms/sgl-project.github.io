@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 12:26:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 15:29:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 12:26:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 15:29:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.17it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there are two yellow taxis. One taxi appears to be parked, and a man is standing beside it, hanging what looks like flat irons or clothes hangers on a rack. Another taxi is seen behind the first one, also painted in yellow. The scene is taken on a street with commercial buildings and storefronts in the background. The presence of the hanging items suggests that this could be an unusual or less common occurrence of activities in the context of taxi maneuvers.
+    This image shows a scene on a city street featuring two taxis moving along the road. One taxi is yellow and has a person standing outside of it, possibly performing laundry-related tasks such as folding a piece of cloth or drying a garment on a makeshift clothesline attached to the back of the cab. The background includes urban street elements like buildings, storefronts, and traffic signs, indicating an active and bustling city environment. The attire of the person, including a bright yellow shirt, adds a pop of color to the scene.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person in a yellow shirt pushing a makeshift cart full of clothes across what appears to be a city street. The person seems to be holding a checkered shirt in one hand and an iron in the other. They are walking past two yellow cabs, which are typical of the New York City cab scene. The background includes urban elements such as storefronts, pedestrians, and traffic lights. This scene is quite unusual, as one would not expect to see someone ironing clothes in this setting.
+    The image shows a costumed individual dressed in a yellow shirt, with their hands put into the areas designated for taxi drivers to adjust their rearview mirror. This traditional activity involves taxi drivers taking off theirkerchief or visor during maneuvers, to allow their mirrors more stability. The scenario is taking place in a productive city scene with interconnected roads, pedestrians carrying bags and urban structures including storefronts. The person in the lookalike is an actor imitating택出租车司机, or taxi driver, dressed in very similar attire and perhaps gear that enables a somewhat distant resemblance.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a taxi being washed outdoors. There are clothes hanging across it, indicating that cleaning services are making use of the taxi during the wash process.
+    The image shows two yellow taxis parked along the side of a busy city street. In the foreground, a man is standing between the taxis, holding a folding iron and some folded clothes in his arms. He appears to be ironing clothes and drying them on an ironing board set up between the two vehicles. The scene is set in an urban environment with buildings and street lights visible in the background. The man is wearing a yellow shirt that matches the color of the taxis.
 
 
 ## Querying Llama 4 Vision Model
