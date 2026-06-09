@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 22:49:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 23:18:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 22:49:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 23:18:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.04s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.45s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.54s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The picture shows two yellow taxis with small, makeshift clotheslines attached to the back of the drivDisney cars. People from disabilities are taking advantage of those unusual clotheslines to Iron their clothes streakega.
+    The picture shows a man using a cart to pull or drag aА couple of taxi cabs (Yellow cabs in New York) that appear to be stuck together on a sidewalk or street. The man is laughing, indicating he is probably intentionally breaking up the taxis in a lighthearted way. This is typically done in programs where taxi drivers and the city try to think of creative ways to get involved in urban rescue or gentling efforts.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi driving down a city street with another taxi pulling a clothing rack behind it. People hanging their laundry out of the window of the second taxi suggest that the street might be particularly busy, possibly with traffic. This unusual sight can occur in areas experiencing heavy pedestrian or vehicle traffic, as pedestrians often complain that parked vehicles block the sidewalks and there isn't enough room for walking. This type of prank or practical joke is also common among locals in some parts of the world.
+    This image shows a man hanging laundry out on a clothesline attached to the back of a yellow taxi cab. The taxi cab is parked on a city street with a building and pedestrians in the background. There are flags and a store sign visible, suggesting an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person magnetically attaching laundry (customer’s clothes) to the rear of a yellow taxi in New York City. The taxi is parked on a city street, and another taxi can be seen in the background. The scene suggests that the magnet is being used to help the customer carry their laundry conveniently.
+    The image shows a person using a folding clothes rack to dry their clothing in the middle of a busy city street. The scene is being captured by a taxi driving parallel to the rack. The background includes other urban elements such as buildings, flags, and street lamps. This humorous and innovative approach to drying clothes illustrates a common urban obstacle faced by many people when trying to dry their laundry.
 
 
 ## Querying Llama 4 Vision Model
