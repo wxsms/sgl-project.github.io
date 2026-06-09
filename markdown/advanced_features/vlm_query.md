@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 17:35:00] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 18:32:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 17:35:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 18:32:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.24it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a yellow taxi in New York City. One person is operating a clothesline on the back of the taxi, lining and drying clothes. There are various clothes hanging on the clothesline, and the taxi is navigating through the city streets. This scene is quite unusual, as taxis are typically used for transporting people, not for purposes like clothing drying.
+    The image shows pedestrians at an busy intersection, with a yellow taxi cars – one on each input as the vehicle turns right out of frame. The signal color is not visible in the given description, so it's unclear which direction the vehicles are turning.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two taxis on a city street, likely in New York City, given the yellow cabs with distinctive designs. The most striking element is a person in an orange raincoat who appears to be "*" painting or spraying the entire length of the taxi姐姐 side. This is a humorous and unusual sight, as taxis typically do not require "*" painting. The person is using a long, narrow brush or painting device to apply "*". The surrounding environment includes street signs, a building with large windows, and several traffic lights. The overall setting suggests an outdoor event or demonstration taking place in mid-town New York.
+    A yellow taxi raises a flag for Blood Drive at the Park Avenue Plaza in New York city.
 
 
 ### Call with Precomputed Embeddings
@@ -202,12 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in a city with several elements present:
-    
-    1. **Yellow Cabs**: There are two yellow taxis on the street, which are typically iconic symbols of New York City taxi service.
-    2. **Person with Laundry**: A person is standing on the street with a laundry basket full of clothes. They have a sign above it that reads "Clothes for L(has). Final Dance."
-    3. **Miscellaneous Items**: There are various other items and people in the background, but the main focus is on the person with the laundry basket.
-    4. **Cityscape**: The background includes buildings and some banners or flags
+    The image shows a scene in a city street with two yellow commercial vehicles visible, likely cabs or taxis, parked alongside the curb. The scene has a humorous and surreal twist: a person in a yellow shirt is hanging a piece of laundry outside of one of the taxis using the side mirror as a makeshift clothesline. This setup is unusual because it is highly improbable that a person would want to hang laundry outside a vehicle.
 
 
 ## Querying Llama 4 Vision Model
