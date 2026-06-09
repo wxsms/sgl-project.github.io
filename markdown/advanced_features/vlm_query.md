@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 23:18:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 23:32:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 23:18:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 23:32:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.04s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.26it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.45s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.54s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The picture shows a man using a cart to pull or drag aА couple of taxi cabs (Yellow cabs in New York) that appear to be stuck together on a sidewalk or street. The man is laughing, indicating he is probably intentionally breaking up the taxis in a lighthearted way. This is typically done in programs where taxi drivers and the city try to think of creative ways to get involved in urban rescue or gentling efforts.
+    The image shows a man wearing a yellow shirt and glasses standing next to a yellow taxi. He is operating a clothesline mounted on the back of the taxi, which is holding two pieces of clothing, likely jumpers or sweaters. This is an unusual and humorous scene, capturing the man using a taxi as a晒晒溙峰家アプリの服饰线 from the perspective of the car.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a man hanging laundry out on a clothesline attached to the back of a yellow taxi cab. The taxi cab is parked on a city street with a building and pedestrians in the background. There are flags and a store sign visible, suggesting an urban setting.
+    The image shows a scene from a movie called "The Hangover." In this scene, a man is jigging while another man is feeding him clothes. The context of this scene is part of a neon-bright, chaotic, and humorous sequence that takes place during a microphone presentation or street performance. The misplaced clothing and the energetic movements suggest a comedic backdrop to the movie's plot.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person using a folding clothes rack to dry their clothing in the middle of a busy city street. The scene is being captured by a taxi driving parallel to the rack. The background includes other urban elements such as buildings, flags, and street lamps. This humorous and innovative approach to drying clothes illustrates a common urban obstacle faced by many people when trying to dry their laundry.
+    This image shows an iconic scene from the TV show "It's Not Me, It's You." It depicts a long-haired man, referred to as Flashdance Joe, hanging out clothes on the back of a taxi in New York City. The taxi is yellow, which was the standard color for New York City taxis at the time. The scene is part of a skit where Joe hangs out his laundry, thinking he's washing it, while the taxi is driven by a洗脸 Laundry man. The setting and the whimsical process of hanging out laundry suggest a humorous take on laundry day in the business world.
 
 
 ## Querying Llama 4 Vision Model
