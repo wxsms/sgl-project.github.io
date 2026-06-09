@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-08 22:06:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 01:28:04] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-08 22:06:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 01:28:08] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.13it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.23it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked side by side on a street. Behind them, there is a cityscape with tall buildings and lamp posts. One person is actively drying clothes on the back of the taxi using a clothesline attached to the car's hatch. The scene appears to be set in an urban area, possibly the United States, given the style of the houses in the background.
+    The image shows two yellow taxis in a city street. In the foreground, a man is using a clothesline to hang laundry outside the back of one of the taxis. This scene seems whimsical and humorous, as it's often unusual to see people outdoors brightly dressed in yellow while scraping or cleaning the bottom of a taxi cab.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the picture, a person is hanging clothes on the back of two yellow taxis. The person appears to be hanging the clothes out to dry, possibly in an urban setting. The clothes are clipped to a clothesline attached to the back of the taxis. In the background, there are buildings and a bit of greenery, suggesting an outdoor environment.
+    In the image, there are two yellow taxis driving on a city street. The most striking element is a man dressed in a yellow shirt, tie, and white pants, who appears to be engaged in a humorous act by placing clothing, including what looks like a pair of red soles, on a rack-like structure that is attached to the back of one of the taxis. This man is mimicking the appearance of a "fresh clean"に関する clothing rack, which is a common sight on city streets when taxis are dropped off with fresh clothes. The yellow shirt and red soles, along with the clothing rack, combine to create a humorous
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person in a yellow shirt and black pants using the hood of a yellow taxi to hang clothes on. This is commonly known as a clothesline or hanging clothes. The setting appears to be in a city street, possibly New York City, given the presence of Broadway signs in the background.
+    The image shows a person washing clothes in the back of a yellow taxi cab. This can be unusual because in many places, people wash clothes in car trunks or windows. The scene appears to be in an urban area with buildings and a storefront in the background.
 
 
 ## Querying Llama 4 Vision Model
