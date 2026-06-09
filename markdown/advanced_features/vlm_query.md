@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 22:11:38] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 22:49:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 22:11:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 22:49:48] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.08it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis parked on a city street. One taxi's back window is open, and it is appears to have a piece of clothing hanging out of it. This is unusual, as one would usually expect clothing to be stored inside the vehicle rather than exposed to the elements. The scene also features a cyclist passing the taxis, with a small triangular road sign with the number "25" near the background. The environment includes urban elements such as buildings, street lights, and traffic signs, indicating an urban setting.
+    The picture shows two yellow taxis with small, makeshift clotheslines attached to the back of the drivDisney cars. People from disabilities are taking advantage of those unusual clotheslines to Iron their clothes streakega.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The picture shows a man dressed as a "Pink Panther" humorously jumping back into a taxi. The background includes an urban street with other taxis and a few pedestrians. It appears to be taking place in a busy city environment, likely during a special event or promotion.
+    The image shows a yellow taxi driving down a city street with another taxi pulling a clothing rack behind it. People hanging their laundry out of the window of the second taxi suggest that the street might be particularly busy, possibly with traffic. This unusual sight can occur in areas experiencing heavy pedestrian or vehicle traffic, as pedestrians often complain that parked vehicles block the sidewalks and there isn't enough room for walking. This type of prank or practical joke is also common among locals in some parts of the world.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man hanging laundry on a clothesline on the back of a yellow taxi. The scenario is humorous because instead of using a clothesline near his home to dry laundry, he chose to use the back of a stationary taxi.
+    The image shows a person magnetically attaching laundry (customer’s clothes) to the rear of a yellow taxi in New York City. The taxi is parked on a city street, and another taxi can be seen in the background. The scene suggests that the magnet is being used to help the customer carry their laundry conveniently.
 
 
 ## Querying Llama 4 Vision Model
