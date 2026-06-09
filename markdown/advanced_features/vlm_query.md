@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 12:08:07] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 12:26:32] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 12:08:10] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 12:26:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.22it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.20it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene in what appears to be a city street, likely in New York City given the presence of yellow cabs. A person is midair or floating above the back of a yellow taxi, which has a cloth or flag attached to it. The taxi is parked on the street, and there are buildings and other vehicles in the background. The person seems to be engaging in some kind of performance art or stunt, utilizing the taxi as a makeshift stage or prop.
+    In the image, there are two yellow taxis. One taxi appears to be parked, and a man is standing beside it, hanging what looks like flat irons or clothes hangers on a rack. Another taxi is seen behind the first one, also painted in yellow. The scene is taken on a street with commercial buildings and storefronts in the background. The presence of the hanging items suggests that this could be an unusual or less common occurrence of activities in the context of taxi maneuvers.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a unusual scene in an urban setting. A person dressed in yellow is using a suitcase that appears to be repurposed into a tripod desk. This person is holding a piece of yellow clothing and seems to be either putting it on or taking it off. The scene is set on a street with tall buildings in the background, and it appears to be a sunny day. To the left of the person, there is a yellow taxi cab, and to the right, there is a car with its particular features visible. The overall setting suggests an unexpected and playful moment, possibly in a city where outdoor activities are common.
+    The image shows a person in a yellow shirt pushing a makeshift cart full of clothes across what appears to be a city street. The person seems to be holding a checkered shirt in one hand and an iron in the other. They are walking past two yellow cabs, which are typical of the New York City cab scene. The background includes urban elements such as storefronts, pedestrians, and traffic lights. This scene is quite unusual, as one would not expect to see someone ironing clothes in this setting.
 
 
 ### Call with Precomputed Embeddings
@@ -202,14 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with a fire hydrant that is elevated far above the street. This is an unusual and likely intentional installation, as fire hydrants are typically on the ground level and are intended for emergency use and maintenance of water supply systems, not for artistic displays.
-    
-    The height of the fire hydrant could either be:
-    
-    1. Prop placement above the ground level to fool the illusion or
-    2. Pranksters installing a taller-than-usual fire hydrant as a humorous or controversial statement.
-    
-    The specific reason for this arrangement isn't clear from the image alone, but it is certainly an unconventional setup.
+    The image shows a taxi being washed outdoors. There are clothes hanging across it, indicating that cleaning services are making use of the taxi during the wash process.
 
 
 ## Querying Llama 4 Vision Model
