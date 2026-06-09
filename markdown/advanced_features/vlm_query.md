@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 19:45:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 21:07:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 19:45:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 21:07:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.86s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.25s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.34s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, a yellow taxi cab is parked in New York City. The scene appears to be unusual because someone is attempting to dry clothes on the back of the taxi, which is not a typical use for a vehicle. This image captures a moment of everyday urban life in New York, but it also showcases the quirky and sometimes humorous antics that can happen in such a busy city.
+    The image shows two yellow taxis parked on a city street. Both taxis have open backs loaded with various items, including clothes and other luggage. Behind the taxis, buildings with store displays are visible, and there are no pedestrians or vehicles in the immediate vicinity.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man in a yellow shirt drying clothes outdoors on a sidewalk between two yellow taxicabs in an urban setting. The street corner is lined with pedestrians, and there are buildings featuring brick-gray facades. The scene suggests a humorous or unusual use of space, as it seems doesn't typically occur in such an environment. The main observations here though are: 1) yellow taxis being parked side by side on a city street; 2) drying clothes, typically associated with domestic activities, being done outside rather than indoors; 3) the presence of multiple pedestrians near the curb, indicating an urban area; 4)
+    The image shows a yellow taxi with an individual wearing a yellow shirt hanging clothes on it, which is likely a location for outdoor laundry service in New York City. Tuesdays are a special day for the service where both sides of the cab's `\` can be used.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,17 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a person ironing clothes on a pickup truck hitch outdoors. There are several yellow taxis nearby, and the scene appears to be taking place on a city street, likely in New York City given the presence of the iconic yellow cabs. The person is standing next to the truck, wearing a yellow shirt, and holding an iron in one hand and a cloth in the other.
+    The image shows a person performing household tasks while moving in the公共交通 of a city street:
+    
+    - They are dressed in a yellow long-sleeved shirt and blue jeans.
+    
+    - There are two yellow cars (likely taxi cabs) parked alongside the person.
+    
+    - The area is defined by street signs and a pink front door of a building across from the person, indicating urban congestion.
+    
+    - "GOT MANHATTAN" is possibly another sign or part of a larger iconography on the building.
+    
+    - The person is using an ironing board and an iron, which are used to smooth clothes, quite unconventional for such a traffic-filled environment
 
 
 ## Querying Llama 4 Vision Model
