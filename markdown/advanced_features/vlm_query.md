@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 04:45:02] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 05:32:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 04:45:05] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 05:32:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.07s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a man using the back of a yellow taxi to hang laundry on a clothesline. This is a creative and humorous scene that adds a touch of humor to an otherwise ordinary street setting.
+    The image depicts a humorous and unusual scene involving a yellow taxi. Two people are hanging clothes on a clothesline attached to the roof of the taxi. The hanging clothes in the middle of the road on the back of the taxi are remarkable and unexpected.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    What do you see in the picture?
+    This image shows a scene of a taxi driver performing laundry on the back of his vehicle. The taxi appears to be parked or moving slowly on a city street. There is a laundry cart attached to the rear of the taxi with clothes hung on a clothesline. The clothes seem to be clothespins, and the driver is hanging them up in the back of the vehicle.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man standing behind a stand covered with a variety of American flags, displaying them in the center of a street. In the background, there are two taxis, one yellow and one blue, parked on the street. The scene appears to be in an urban environment, possibly New York City, given the style of the taxis and the general appearance. The man seems to be anachronistic, as American flags on trees seems to be a modern-day display.
+    The image shows a person HANDLEING wash.
 
 
 ## Querying Llama 4 Vision Model
