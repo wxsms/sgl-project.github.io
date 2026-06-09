@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-09 08:07:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 09:11:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-09 08:07:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-09 09:11:49] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.16it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxis and a person standing between them, presumably in a New York City parking lot. The person appears to be hanging laundry out to dry, with a clothesline between the two taxis. The scene is typical in urban environments where spaces are often used for various purposes, including drying laundry.
+    The image shows a yellow taxi cab (as seen in New York City) attached to a clothes drying rack. It seems like a humorous and unusual setup, usually not found in normal urban environments. This could be an intentional effort for a creative photo or a stunt.
 
 
 ### Call with Processor Output
@@ -146,9 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The photo shows a scene from what appears to be a special event in New York City, likely a parody or prank. A man dressed in a parking attendant's uniform, complete with a yellow shirt, blue jeans, and a red hat, is曳着 drying clothes on a small tripod. This act seems to mimic the actions of a real named man named Robert Alpert, who daredevilly dangles a flag on his vehicle. The reality is that this person is not Alpert, just representing his persona.
-    
-    Behind the dryer, which is cradling several blue shirts, are two yellow sedans, which look like yellow taxis.
+    The image shows a person standing in the middle of a busy street, likely a city, and they are showcasing a cloth hanging in front of them. This type of street performance is sometimes seen in urban areas. The person is holding a ledge or pole that has a piece of cloth stretched along it. The vehicle behind them appears to be a yellow taxi, suggesting that the performance might be taking place to draw attention to the cloth or to advertise something. It is important to be cautious in such situations, as public performances could attract unexpected or unwelcoming reactions from drivers and pedestrians.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a New York City taxicab in a parking space next to a street intersection. The cab is yellow, which is a characteristic color of taxi cabs in New York City. The scene is urban, with buildings and other vehicles in the background, and it appears to be during a sunny day.
+    The image shows a yellow taxi cab parked on a city street. The taxi has its front doors open, and the driver or front passenger is hanging laundry (such as clothing) from the various wipers of the taxi. This is an unusual and humorous scene as laundry is not typically hanging from the side of a taxi. The background includes other vehicles, pedestrians, and urban elements such as buildings, flags, and streetlights.
 
 
 ## Querying Llama 4 Vision Model
