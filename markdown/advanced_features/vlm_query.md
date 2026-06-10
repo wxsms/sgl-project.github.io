@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-10 03:39:12] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 03:59:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 03:39:16] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 03:59:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.05s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.04it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
 
 
 
@@ -121,7 +121,9 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a scene where a man is drying laundry on the hood of a yellow SUV, which is parked on a city street. This is an unusual and humorous situation because typically, cars are not used for drying clothes. The SUV is parked next to a taxi, both of which are in the background. The scene is set in an urban environment with buildings and other vehicles in the background.
+    In the image, there are two yellow taxis driving down a city street. The taxi on the left has a attachment on its rear window for drying cleaning items, a practice used by a janitor to dry the clothes he has been working on while cleaning the taxis. The man is using an iron to mend a piece of fabric, typically overalls or jeans, which he has been working on for quite some time. This practice of drying cleaning items is quite unusual and is performed by individuals who are specialized in doing this for clients.  
+    
+    The blue belongings consist of overalls or jeans, and the man is using an iron to mend or prepare
 
 
 ### Call with Processor Output
@@ -146,7 +148,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man in a yellow shirt hanging clothes on a clothesline attached to the back of a yellow taxi. This is likely a setup for a public showing of clothes washing and drying, which is a common activity in certain communities, especially among older adults or those interested in sustainable living. The presence of the taxi suggests that this might be taking place in a metropolitan area, possibly in New York City, given the style of the taxi. The clothesline is holding a blue towel and a white item, possibly a shirt or a piece of clothing.
+    This image shows a prominently featured yellow taxi cab in a city environment, likely indicating an urban setting. The taxi is equipped with dolly skates, serving as makeshift wheels, which is not common for regular taxis. There are also two small red poles that resemble mailboxes or some other form of vertical installation, positioned beside the taxi. The scene is set in front of a building with a few hanging flags, indicating a possibly celebratory event or municipal activity.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +204,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene with two yellow taxis. One taxi is directly in front of the other, and there is a person standing on a rack between them. The person appears to be hanging up items on the rack, possibly as part of a street edge trash pickup or something of that nature. There are also various pink banners hanging from the street lamps, adding a colorful element to the scene.
+    It looks like there is a person sitting on a seat attached to the back of a taxi. This is often portrayed as a joke where the taxi driver is on top of the cab, making it look like the person is riding in the backseat. This type of visual can be humorous or satirical, often used in print media, songs, or advertisements.
 
 
 ## Querying Llama 4 Vision Model
