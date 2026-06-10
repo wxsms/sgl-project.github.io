@@ -32,9 +32,9 @@ wait_for_server(f"http://localhost:{port}", process=embedding_process)
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.52s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.32s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.12s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.18s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.01it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.04s/it]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
