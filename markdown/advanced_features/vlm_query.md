@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-10 01:48:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 03:15:01] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 01:48:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 03:15:06] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.10s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.48s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.58s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The picture shows two yellow taxis parked on a city street. One taxi has a machine on its back that appears to be used for repairing or cleaning ladies' garments. This is unusual and doesn't align with typical actions involved in fixing or cleaning ladies'Garment. The setting seems to depict a scenario where the machine is malfunctioning or being illegally used.
+    The image shows a man in a yellow shirt using the back of a city taxi to hang clothes, endorsing the environmentally friendly practice of drying laundry outdoors rather than using dryer bags. This is often seen in urban areas where space is limited and the practice is popular in cities like New York City. The scene likely depicts a neighborhood friendly环保动作 or city lifestyle icon.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This photograph depicts a young man in a yellow sweatshirt standing near two yellow taxis on a street. He has just learned to fold clothes using the cloth outstretched from the racks of the windows of a shopping mall. Editor’s note: This particular experience might not be to your liking, perhaps consider photonics-related content.
+    The image shows two yellow taxis parked side by side on a city street. A person is standing between the two taxis, holding a pair of blue jeans hanging from a clothes rack. The individual appears to be hanging or adjusting the jeans, possibly as part of a creative or humorous act. The background includes urban elements such as buildings and some street signs.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a person using a laundry dryer on the back of a yellow cab. The person appears to be moving, possibly folding or airing out clothes, while simultaneously driving the vehicle. Typically, outdoor laundry dryers are not a common sight in urban areas, making this unusual activity in a busy city street a noteworthy moment.
+    This image shows a candid and humorous moment where a man is hanging out laundry on a city sidewalk. The scene is set on a busy street, likely in a large urban area, given the presence of yellow taxis and other vehicles. The man is standing next to one of the taxis, holding out a cloth to dry, which appears to be hanging from the back of the taxi. This is an unusual and somewhat surreal sight, especially given the context.
 
 
 ## Querying Llama 4 Vision Model
