@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-10 01:16:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 01:48:46] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 01:16:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 01:48:50] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.10s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.48s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:03<00:00,  1.58s/it]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxi cabs parked on a city street. One of the cabs has a horse rinsing机 модель on the back, which appears to be a artificial horse used for a fundraising event or demonstration. The horse is spraying water from a hose, and there are also flags and some other items attached to the back of the cab, possibly related to the event.
+    The picture shows two yellow taxis parked on a city street. One taxi has a machine on its back that appears to be used for repairing or cleaning ladies' garments. This is unusual and doesn't align with typical actions involved in fixing or cleaning ladies'Garment. The setting seems to depict a scenario where the machine is malfunctioning or being illegally used.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street with two iconic yellow cabs, one of which has been modified with clothes spread out on a tripod. The person in the background is ironing the clothes, likely as a humorous or creative act. This scene appears to be a staged event or a performance art piece. The background includes typical urban elements like buildings and pedestrians, indicating a busy city environment. The style of the image is structured, with the cabs positioned parallel to each other and the person's action as the focal point.
+    This photograph depicts a young man in a yellow sweatshirt standing near two yellow taxis on a street. He has just learned to fold clothes using the cloth outstretched from the racks of the windows of a shopping mall. Editor’s note: This particular experience might not be to your liking, perhaps consider photonics-related content.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi in New York City. A person is standing next to the taxi, using a clothes rack to hang clothes on the open trunk of the car. This scene is unusual, as taxis are typically not used for laundry purposes.
+    This image shows a person using a laundry dryer on the back of a yellow cab. The person appears to be moving, possibly folding or airing out clothes, while simultaneously driving the vehicle. Typically, outdoor laundry dryers are not a common sight in urban areas, making this unusual activity in a busy city street a noteworthy moment.
 
 
 ## Querying Llama 4 Vision Model
