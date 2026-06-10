@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=ef6d16ff"></script>
+    <script src="../../_static/documentation_options.js?v=d1ac419c"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -558,9 +558,9 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.61it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:12&lt;00:00,  4.64it/s]
-Capturing num tokens (num_tokens=4 avail_mem=26.28 GB): 100%|██████████| 58/58 [00:10&lt;00:00,  5.56it/s]
+<span class="ansi-yellow-intense-fg ansi-bold">&#39;--disable-cuda-graph&#39; is deprecated and will be removed in a future release. Use &#39;--cuda-graph-backend-{decode,prefill}=disabled&#39; instead.</span>
+<span class="ansi-yellow-intense-fg ansi-bold">&#39;--cuda-graph-max-bs&#39; is deprecated and will be removed in a future release. Use &#39;--cuda-graph-max-bs-decode&#39; instead.</span>
+Multi-thread loading shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -576,7 +576,7 @@ Capturing num tokens (num_tokens=4 avail_mem=26.28 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:30399
+Server started on http://localhost:35382
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -593,7 +593,7 @@ Server started on http://localhost:30399
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-06-10 03:54:53] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-06-10 04:40:08] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -625,7 +625,7 @@ Server started on http://localhost:30399
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here are three countries and their capitals:<br><br>1. **France - Paris**<br>2. **India - New Delhi**<br>3. **Australia - Canberra**</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries with their capitals:<br><br>1. **Germany** - Berlin<br>2. **France** - Paris<br>3. **Japan** - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -655,13 +655,13 @@ Server started on http://localhost:30399
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here is a list of three countries and their respective capitals:<br><br>1. **France** - Paris<br>2. **Australia** - Canberra<br>3. **Brazil** - Brasília</strong></div>
+<strong style='color: #00008B;'>Certainly! Here's a list of three countries along with their capitals:<br><br>1. **Germany** - Capital: Berlin<br>2. **France** - Capital: Paris<br>3. **Japan** - Capital: Tokyo</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here is another list of three countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Japan** - Tokyo<br>3. **Mexico** - Mexico City</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **Italy** - Capital: Rome<br>2. **Australia** - Capital: Canberra<br>3. **Canada** - Capital: Ottawa</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -703,7 +703,7 @@ Server started on http://localhost:30399
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2. <br><br>Let's calculate it:<br><br>2 * 2 = 4<br><br>Therefore, 2 * 2 equals 4. No calculator was needed in this case, as it's a simple multiplication.</strong></div>
+<strong style='color: #00008B;'>2 * 2. <br><br>Let's solve this:<br>2 * 2 = 4<br><br>There's no need to use a calculator for this simple multiplication problem. The answer is 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -743,7 +743,7 @@ Server started on http://localhost:30399
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>### 1. Balanced Diet<br>- **Importance**: Essential for overall health and well-being.<br>- **Components**:<br>  - **Macronutrients**: Carbohydrates, proteins, and fats.<br>  - **Micronutrients**: Vitamins and minerals.<br>  - **Variety**: Fruits, vegetables, lean proteins, whole grains, and healthy fats.<br>- **Healthy Choices**: Avoid processed foods, excessive sugars, salts, and unhealthy fats.<br>- **Importance of Hydration**: Ensure you drink plenty of water to support bodily functions.<br><br>### 2. Regular Exercise<br>- **Importance**: Crucial for physical and mental health.<br>- **Benefits**:<br>  - Improved cardiovascular health.<br>  - Stronger muscles and bones.<br>  - Reduced risk of chronic diseases (e.g., obesity, diabetes, heart disease).<br>  - Weight management through calorie burning and muscle building.<br>  - Enhanced mood, reduced stress, anxiety, and depression.<br>- **Recommended Amount**: Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week.<br><br>By incorporating these tips into your lifestyle, you can significantly improve your health and overall quality of life.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet:** A balanced diet is essential for maintaining good health. It should include a variety of nutrients from various food groups such as fruits, vegetables, whole grains, lean proteins, and healthy fats. Avoiding excessive consumption of sugars, salts, and unhealthy fats can help prevent chronic diseases.<br><br>2. **Regular Exercise:** Engaging in regular physical activity is crucial for overall health and well-being. This can include a mix of aerobic exercises (like walking, running, cycling, or swimming), strength training (like weight lifting or bodyweight exercises), and flexibility exercises (like yoga or stretching). Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week. Consistency is key to achieving and maintaining good health.<br><br>Do you need more detailed information on either of these topics, or any specific exercises or dietary recommendations?</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -816,7 +816,7 @@ Server started on http://localhost:30399
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Cedar",<br>        "core": "Phoenix feather",<br>        "length": 11.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Narwhal"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Walnut",<br>        "core": "Phoenix Feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Grinning Ghost"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -851,7 +851,7 @@ Server started on http://localhost:30399
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 16.84it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 12.05it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -973,11 +973,13 @@ The capital of France is Paris.&lt;|im_end|&gt;
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:54: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
+<span class="ansi-yellow-intense-fg ansi-bold">&#39;--disable-cuda-graph&#39; is deprecated and will be removed in a future release. Use &#39;--cuda-graph-backend-{decode,prefill}=disabled&#39; instead.</span>
+<span class="ansi-yellow-intense-fg ansi-bold">&#39;--cuda-graph-max-bs&#39; is deprecated and will be removed in a future release. Use &#39;--cuda-graph-max-bs-decode&#39; instead.</span>
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-06-10 03:55:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+[2026-06-10 04:40:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
 [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-[2026-06-10 03:55:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
-Multi-thread loading shards: 100% Completed | 5/5 [00:04&lt;00:00,  1.00it/s]
+[2026-06-10 04:40:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend=&#34;torchvision&#34;` instead of `use_fast=True`, or `backend=&#34;pil&#34;` instead of `use_fast=False`.
+Multi-thread loading shards: 100% Completed | 5/5 [00:04&lt;00:00,  1.05it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -993,7 +995,7 @@ Multi-thread loading shards: 100% Completed | 5/5 [00:04&lt;00:00,  1.00it/s]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31649
+Server started on http://localhost:36563
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1009,7 +1011,7 @@ Server started on http://localhost:31649
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-06-10 03:55:46] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-06-10 04:41:04] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1043,7 +1045,7 @@ Server started on http://localhost:31649
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a person performing a unique task on the side of a busy street. The individual is using a vacuum cleaner to presumably vacuum or clean an ironing board on the back of a moving yellow SUV. The ironing board is set up with some clothes on it, suggesting that this person might be simultaneously ironing and cleaning — an unusual and somewhat humorous scene. The person is also wearing a yellow shirt, which matches the color of the van they are interacting with. The background includes a yellow taxi, city buildings, and a tree, indicating this is taking place in an urban area.</strong></div>
+<strong style='color: #00008B;'>The image depicts a person standing on the rear of a yellow taxi, ironing a large blue shirt or cloth that is stretched on an item transport bar. The scene takes place on a busy street with other vehicles in the background, including another yellow taxi and a few other cars. The person appears to be creatively using the taxi for excessive ironing or cleaning. The wet film from the iron is being captured by the tarp or cloth over the shirt. This is likely meant to be a form of public art or a humorous display.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:

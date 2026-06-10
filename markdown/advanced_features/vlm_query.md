@@ -99,18 +99,31 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-10 03:59:33] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 04:44:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 03:59:37] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 04:44:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.17it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+
+
+      0%|          | 0/20 [00:00<?, ?it/s]Capturing batches (bs=128 avail_mem=47.00 GB):   0%|          | 0/20 [00:00<?, ?it/s]
+
+    Capturing batches (bs=128 avail_mem=47.00 GB):   5%|▌         | 1/20 [00:01<00:23,  1.24s/it]Capturing batches (bs=120 avail_mem=46.93 GB):   5%|▌         | 1/20 [00:01<00:23,  1.24s/it]Capturing batches (bs=112 avail_mem=46.93 GB):   5%|▌         | 1/20 [00:01<00:23,  1.24s/it]Capturing batches (bs=104 avail_mem=46.93 GB):   5%|▌         | 1/20 [00:01<00:23,  1.24s/it]Capturing batches (bs=104 avail_mem=46.93 GB):  20%|██        | 4/20 [00:01<00:04,  3.68it/s]Capturing batches (bs=96 avail_mem=46.93 GB):  20%|██        | 4/20 [00:01<00:04,  3.68it/s] Capturing batches (bs=88 avail_mem=46.93 GB):  20%|██        | 4/20 [00:01<00:04,  3.68it/s]
+
+    Capturing batches (bs=80 avail_mem=46.93 GB):  20%|██        | 4/20 [00:01<00:04,  3.68it/s]Capturing batches (bs=80 avail_mem=46.93 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.63it/s]Capturing batches (bs=72 avail_mem=46.92 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.63it/s]Capturing batches (bs=64 avail_mem=46.92 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.63it/s]Capturing batches (bs=56 avail_mem=46.92 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.63it/s]Capturing batches (bs=56 avail_mem=46.92 GB):  50%|█████     | 10/20 [00:01<00:01,  9.50it/s]Capturing batches (bs=48 avail_mem=46.92 GB):  50%|█████     | 10/20 [00:01<00:01,  9.50it/s]
+
+    Capturing batches (bs=40 avail_mem=46.92 GB):  50%|█████     | 10/20 [00:01<00:01,  9.50it/s]Capturing batches (bs=32 avail_mem=46.91 GB):  50%|█████     | 10/20 [00:01<00:01,  9.50it/s]Capturing batches (bs=32 avail_mem=46.91 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.17it/s]Capturing batches (bs=24 avail_mem=46.91 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.17it/s]Capturing batches (bs=16 avail_mem=46.91 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.17it/s]
+
+    Capturing batches (bs=12 avail_mem=46.91 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.17it/s]Capturing batches (bs=12 avail_mem=46.91 GB):  80%|████████  | 16/20 [00:01<00:00, 13.56it/s]Capturing batches (bs=8 avail_mem=46.91 GB):  80%|████████  | 16/20 [00:01<00:00, 13.56it/s] Capturing batches (bs=4 avail_mem=46.91 GB):  80%|████████  | 16/20 [00:02<00:00, 13.56it/s]Capturing batches (bs=2 avail_mem=46.91 GB):  80%|████████  | 16/20 [00:02<00:00, 13.56it/s]Capturing batches (bs=2 avail_mem=46.91 GB):  95%|█████████▌| 19/20 [00:02<00:00, 15.83it/s]Capturing batches (bs=1 avail_mem=46.90 GB):  95%|█████████▌| 19/20 [00:02<00:00, 15.83it/s]
+
+    Capturing batches (bs=1 avail_mem=46.90 GB): 100%|██████████| 20/20 [00:02<00:00,  9.40it/s]
 
 
 
@@ -121,9 +134,7 @@ print(out["text"])
 ```
 
     Model response:
-    In the image, there are two yellow taxis driving down a city street. The taxi on the left has a attachment on its rear window for drying cleaning items, a practice used by a janitor to dry the clothes he has been working on while cleaning the taxis. The man is using an iron to mend a piece of fabric, typically overalls or jeans, which he has been working on for quite some time. This practice of drying cleaning items is quite unusual and is performed by individuals who are specialized in doing this for clients.  
-    
-    The blue belongings consist of overalls or jeans, and the man is using an iron to mend or prepare
+    This image shows a yellow taxi in New York City. The taxi has an additional item draped over its rear, resembling clothes or laundry. The setting appears to be from the "NYC Speakers' Bureau's Flatiron Blocking" event, commonly known as the "desking" event, where individuals choose to sit on the back of an upright cab instead of using proper seating.
 
 
 ### Call with Processor Output
@@ -148,7 +159,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a prominently featured yellow taxi cab in a city environment, likely indicating an urban setting. The taxi is equipped with dolly skates, serving as makeshift wheels, which is not common for regular taxis. There are also two small red poles that resemble mailboxes or some other form of vertical installation, positioned beside the taxi. The scene is set in front of a building with a few hanging flags, indicating a possibly celebratory event or municipal activity.
+    The image shows a person standing beside several yellow and orange taxis, which are typical of New York City. The person is hanging a checkered shirt on a metal pole, which seems to be a street vendor stall. The scene is likely in a busy city area, given the presence of multiple cabs and the urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -204,7 +215,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    It looks like there is a person sitting on a seat attached to the back of a taxi. This is often portrayed as a joke where the taxi driver is on top of the cab, making it look like the person is riding in the backseat. This type of visual can be humorous or satirical, often used in print media, songs, or advertisements.
+    The image shows a man dressed in a bright yellow shirt and shoes, standing on the side of a street in what appears to be a New York City setting. He is using a clothes iron to press some items that are held up on a small stand in front of him. Behind him, there is a yellow taxi driving by. The person's face is obscured by his shirt and the fact that he is sitting as if on an object, which may be a piece of clothing or a hat. The street appears to be in the middle of the day, and there are some subway signs visible in the background.
 
 
 ## Querying Llama 4 Vision Model
