@@ -99,31 +99,29 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-10 05:59:39] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 06:20:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 05:59:42] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 06:20:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.19it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
-      0%|          | 0/20 [00:00<?, ?it/s]Capturing batches (bs=128 avail_mem=69.46 GB):   0%|          | 0/20 [00:00<?, ?it/s]
+      0%|          | 0/20 [00:00<?, ?it/s]Capturing batches (bs=128 avail_mem=55.16 GB):   0%|          | 0/20 [00:00<?, ?it/s]
 
-    Capturing batches (bs=128 avail_mem=69.46 GB):   5%|▌         | 1/20 [00:01<00:24,  1.32s/it]Capturing batches (bs=120 avail_mem=55.04 GB):   5%|▌         | 1/20 [00:01<00:24,  1.32s/it]Capturing batches (bs=112 avail_mem=55.04 GB):   5%|▌         | 1/20 [00:01<00:24,  1.32s/it]Capturing batches (bs=112 avail_mem=55.04 GB):  15%|█▌        | 3/20 [00:01<00:06,  2.51it/s]Capturing batches (bs=104 avail_mem=55.02 GB):  15%|█▌        | 3/20 [00:01<00:06,  2.51it/s]
+    Capturing batches (bs=128 avail_mem=55.16 GB):   5%|▌         | 1/20 [00:01<00:21,  1.13s/it]Capturing batches (bs=120 avail_mem=53.78 GB):   5%|▌         | 1/20 [00:01<00:21,  1.13s/it]Capturing batches (bs=112 avail_mem=53.77 GB):   5%|▌         | 1/20 [00:01<00:21,  1.13s/it]Capturing batches (bs=104 avail_mem=53.77 GB):   5%|▌         | 1/20 [00:01<00:21,  1.13s/it]Capturing batches (bs=104 avail_mem=53.77 GB):  20%|██        | 4/20 [00:01<00:03,  4.00it/s]Capturing batches (bs=96 avail_mem=53.77 GB):  20%|██        | 4/20 [00:01<00:03,  4.00it/s] Capturing batches (bs=88 avail_mem=53.77 GB):  20%|██        | 4/20 [00:01<00:03,  4.00it/s]
 
-    Capturing batches (bs=96 avail_mem=55.02 GB):  15%|█▌        | 3/20 [00:01<00:06,  2.51it/s] Capturing batches (bs=96 avail_mem=55.02 GB):  25%|██▌       | 5/20 [00:01<00:03,  4.37it/s]Capturing batches (bs=88 avail_mem=55.02 GB):  25%|██▌       | 5/20 [00:01<00:03,  4.37it/s]Capturing batches (bs=80 avail_mem=55.00 GB):  25%|██▌       | 5/20 [00:01<00:03,  4.37it/s]Capturing batches (bs=72 avail_mem=54.52 GB):  25%|██▌       | 5/20 [00:01<00:03,  4.37it/s]
+    Capturing batches (bs=80 avail_mem=53.77 GB):  20%|██        | 4/20 [00:01<00:03,  4.00it/s]Capturing batches (bs=80 avail_mem=53.77 GB):  35%|███▌      | 7/20 [00:01<00:01,  7.01it/s]Capturing batches (bs=72 avail_mem=53.77 GB):  35%|███▌      | 7/20 [00:01<00:01,  7.01it/s]Capturing batches (bs=64 avail_mem=53.77 GB):  35%|███▌      | 7/20 [00:01<00:01,  7.01it/s]Capturing batches (bs=56 avail_mem=53.76 GB):  35%|███▌      | 7/20 [00:01<00:01,  7.01it/s]Capturing batches (bs=56 avail_mem=53.76 GB):  50%|█████     | 10/20 [00:01<00:01,  9.98it/s]Capturing batches (bs=48 avail_mem=53.76 GB):  50%|█████     | 10/20 [00:01<00:01,  9.98it/s]
 
-    Capturing batches (bs=72 avail_mem=54.52 GB):  40%|████      | 8/20 [00:01<00:01,  7.52it/s]Capturing batches (bs=64 avail_mem=54.36 GB):  40%|████      | 8/20 [00:01<00:01,  7.52it/s]Capturing batches (bs=56 avail_mem=54.36 GB):  40%|████      | 8/20 [00:01<00:01,  7.52it/s]Capturing batches (bs=48 avail_mem=54.35 GB):  40%|████      | 8/20 [00:01<00:01,  7.52it/s]Capturing batches (bs=48 avail_mem=54.35 GB):  55%|█████▌    | 11/20 [00:01<00:00, 10.57it/s]Capturing batches (bs=40 avail_mem=54.35 GB):  55%|█████▌    | 11/20 [00:01<00:00, 10.57it/s]Capturing batches (bs=32 avail_mem=54.35 GB):  55%|█████▌    | 11/20 [00:01<00:00, 10.57it/s]
+    Capturing batches (bs=40 avail_mem=53.76 GB):  50%|█████     | 10/20 [00:01<00:01,  9.98it/s]Capturing batches (bs=32 avail_mem=53.76 GB):  50%|█████     | 10/20 [00:01<00:01,  9.98it/s]Capturing batches (bs=32 avail_mem=53.76 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.60it/s]Capturing batches (bs=24 avail_mem=53.75 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.60it/s]Capturing batches (bs=16 avail_mem=53.75 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.60it/s]
 
-    Capturing batches (bs=24 avail_mem=54.35 GB):  55%|█████▌    | 11/20 [00:01<00:00, 10.57it/s]Capturing batches (bs=24 avail_mem=54.35 GB):  70%|███████   | 14/20 [00:02<00:00, 13.30it/s]Capturing batches (bs=16 avail_mem=54.35 GB):  70%|███████   | 14/20 [00:02<00:00, 13.30it/s]Capturing batches (bs=12 avail_mem=54.35 GB):  70%|███████   | 14/20 [00:02<00:00, 13.30it/s]Capturing batches (bs=12 avail_mem=54.35 GB):  80%|████████  | 16/20 [00:02<00:00, 14.13it/s]Capturing batches (bs=8 avail_mem=54.35 GB):  80%|████████  | 16/20 [00:02<00:00, 14.13it/s] 
-
-    Capturing batches (bs=4 avail_mem=54.34 GB):  80%|████████  | 16/20 [00:02<00:00, 14.13it/s]Capturing batches (bs=2 avail_mem=54.34 GB):  80%|████████  | 16/20 [00:02<00:00, 14.13it/s]Capturing batches (bs=2 avail_mem=54.34 GB):  95%|█████████▌| 19/20 [00:02<00:00, 16.91it/s]Capturing batches (bs=1 avail_mem=54.34 GB):  95%|█████████▌| 19/20 [00:02<00:00, 16.91it/s]Capturing batches (bs=1 avail_mem=54.34 GB): 100%|██████████| 20/20 [00:02<00:00,  8.80it/s]
+    Capturing batches (bs=16 avail_mem=53.75 GB):  75%|███████▌  | 15/20 [00:01<00:00, 13.26it/s]Capturing batches (bs=12 avail_mem=53.75 GB):  75%|███████▌  | 15/20 [00:01<00:00, 13.26it/s]Capturing batches (bs=8 avail_mem=53.75 GB):  75%|███████▌  | 15/20 [00:01<00:00, 13.26it/s] Capturing batches (bs=4 avail_mem=53.75 GB):  75%|███████▌  | 15/20 [00:01<00:00, 13.26it/s]Capturing batches (bs=4 avail_mem=53.75 GB):  90%|█████████ | 18/20 [00:01<00:00, 15.97it/s]Capturing batches (bs=2 avail_mem=53.75 GB):  90%|█████████ | 18/20 [00:01<00:00, 15.97it/s]Capturing batches (bs=1 avail_mem=53.75 GB):  90%|█████████ | 18/20 [00:01<00:00, 15.97it/s]Capturing batches (bs=1 avail_mem=53.75 GB): 100%|██████████| 20/20 [00:02<00:00,  9.95it/s]
 
 
 
@@ -134,7 +132,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows a street scene with two yellow cabs in New York City. One of the cabs has a_MSJ знак staked into the vehicle. The other image is a ayrı 다에라 of one of the taxis with wrought iron straps hung on the rear side.
+    The image shows two yellow and black taxis parked on a street. There is also a man in a yellow shirt holding a donkey on a piece of clothe, possibly as a form of protest or publicity stunt. The setting appears to be in an urban area with shops and buildings visible in the background.
 
 
 ### Call with Processor Output
@@ -159,7 +157,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man standing on a city street, holding up laundry items to resemble a road sign. The sign reads "PARKING" in large, bold letters. This humorous scene is likely meant to convey that parking should be done in designated areas only, rather than being used for other purposes like being a more pronounceable sign for vehicles to follow.
+    The image shows a humorous scene where a person, dressed in a yellow shirt, is pretending to iron clothes on a moving yellow taxi cab. This is a common sight in the United States, often painted on car windows or shown in traffic. The person has clothes draped over the taxi and appears to be pretending to iron them, maintaining his balance and composure despite the moving vehicle. The setting looks like a city street, possibly in New York, given the typical yellow cabs.
 
 
 ### Call with Precomputed Embeddings
@@ -215,7 +213,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a person in a yellow shirt ironing a piece of clothing on a spike behind a yellow taxi. There are also two flags in the background.
+    The image shows a yellow taxi parked on the street in a city. A person is hanging clothes on the penultimate post of a bus stop sign, which is placed alongside the taxi. The background includes several advertisements and other taxis, indicating an urban setting.
 
 
 ## Querying Llama 4 Vision Model
