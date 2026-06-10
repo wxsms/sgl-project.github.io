@@ -99,18 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-10 01:01:15] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 01:16:53] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 01:01:20] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 01:16:56] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.15it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -121,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow taxi cabs stopped on a city street. One taxi is equipped with a water sys, me insternehvehicle to wash clothes. The person is using the system to launder the clothes, which are hanging from a makeshift clothesline. This method of washing clothes on a city street is an innovative idea, likely used to clean clothing without requiring access to a laundromat or personal washing facilities.
+    The image shows two yellow taxi cabs parked on a city street. One of the cabs has a horse rinsing机 модель on the back, which appears to be a artificial horse used for a fundraising event or demonstration. The horse is spraying water from a hose, and there are also flags and some other items attached to the back of the cab, possibly related to the event.
 
 
 ### Call with Processor Output
@@ -146,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows two yellow taxis in a city street, parked alongside each other. In the foreground, a man is ironing clothes on a luggage cart amidst the traffic. The scene is unusual, as it is not typical to see someone ironing clothes in a busy city street next to cabs. The man is dressed in casual clothing and is concentrating on ironing multiple pieces of clothing on the cart.
+    The image shows a scene on a city street with two iconic yellow cabs, one of which has been modified with clothes spread out on a tripod. The person in the background is ironing the clothes, likely as a humorous or creative act. This scene appears to be a staged event or a performance art piece. The background includes typical urban elements like buildings and pedestrians, indicating a busy city environment. The style of the image is structured, with the cabs positioned parallel to each other and the person's action as the focal point.
 
 
 ### Call with Precomputed Embeddings
@@ -202,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a humorous scene where a dress is drying on a clothesline attached to the rear of a taxi in New York City. The taxi is yellow and has another sign "出租" (taxis only) on the windshield, and there is a Chevyانت american emoji next to it. Behind the taxi, a New York Bank of Commerce building is visible with colorful flags and a bright sky.
+    The image shows a yellow taxi in New York City. A person is standing next to the taxi, using a clothes rack to hang clothes on the open trunk of the car. This scene is unusual, as taxis are typically not used for laundry purposes.
 
 
 ## Querying Llama 4 Vision Model
