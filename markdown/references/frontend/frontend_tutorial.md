@@ -34,13 +34,13 @@ print(f"Server started on http://localhost:{port}")
 
     Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.35it/s]
+    Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.43it/s]
 
-    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.32it/s]
+    Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.16it/s]
 
-    Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.09it/s]
+    Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.22it/s]
 
-    Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.15it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.17it/s]
+    Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.27it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -51,7 +51,7 @@ print(f"Server started on http://localhost:{port}")
 <strong style='color: #00008B;'><br><br>        NOTE: Typically, the server runs in a separate terminal.<br>        In this notebook, we run the server and notebook code together, so their outputs are combined.<br>        To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>        To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>        We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>        </strong>
 
 
-    Server started on http://localhost:35382
+    Server started on http://localhost:34061
 
 
 Set the default backend. Note: Besides the local server, you may use also `OpenAI` or other API endpoints.
@@ -61,7 +61,7 @@ Set the default backend. Note: Besides the local server, you may use also `OpenA
 set_default_backend(RuntimeEndpoint(f"http://localhost:{port}"))
 ```
 
-    [2026-06-10 04:40:08] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
+    [2026-06-10 05:06:02] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
 
 
 ## Basic Usage
@@ -84,7 +84,7 @@ print_highlight(state["answer"])
 ```
 
 
-<strong style='color: #00008B;'>Sure, here are three countries with their capitals:<br><br>1. **Germany** - Berlin<br>2. **France** - Paris<br>3. **Japan** - Tokyo</strong>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Japan** - Tokyo</strong>
 
 
 ## Multi-turn Dialog
@@ -109,11 +109,11 @@ print_highlight(state["second_answer"])
 ```
 
 
-<strong style='color: #00008B;'>Certainly! Here's a list of three countries along with their capitals:<br><br>1. **Germany** - Capital: Berlin<br>2. **France** - Capital: Paris<br>3. **Japan** - Capital: Tokyo</strong>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France - Paris**<br>2. **Japan - Tokyo**<br>3. **Australia - Canberra** (Note that while many people associate Australia with Sydney or Melbourne as the capital, Canberra is the official capital city.)</strong>
 
 
 
-<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **Italy** - Capital: Rome<br>2. **Australia** - Capital: Canberra<br>3. **Canada** - Capital: Ottawa</strong>
+<strong style='color: #00008B;'>Certainly! Here is another list of three countries and their capitals:<br><br>1. **Germany - Berlin**<br>2. **India - New Delhi**<br>3. **Canada - Ottawa**</strong>
 
 
 ## Control flow
@@ -148,7 +148,7 @@ print_highlight(state["expression"])
 
 
 
-<strong style='color: #00008B;'>2 * 2. <br><br>Let's solve this:<br>2 * 2 = 4<br><br>There's no need to use a calculator for this simple multiplication problem. The answer is 4.</strong>
+<strong style='color: #00008B;'>2 * 2.<br><br>To calculate this, you don't necessarily need a physical calculator, but you can easily do it in your head or on a piece of paper.<br><br>2 * 2 = 4<br><br>So, the answer is 4.</strong>
 
 
 ## Parallelism
@@ -183,7 +183,7 @@ print_highlight(state["summary"])
 ```
 
 
-<strong style='color: #00008B;'>1. **Balanced Diet:** A balanced diet is essential for maintaining good health. It should include a variety of nutrients from various food groups such as fruits, vegetables, whole grains, lean proteins, and healthy fats. Avoiding excessive consumption of sugars, salts, and unhealthy fats can help prevent chronic diseases.<br><br>2. **Regular Exercise:** Engaging in regular physical activity is crucial for overall health and well-being. This can include a mix of aerobic exercises (like walking, running, cycling, or swimming), strength training (like weight lifting or bodyweight exercises), and flexibility exercises (like yoga or stretching). Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week. Consistency is key to achieving and maintaining good health.<br><br>Do you need more detailed information on either of these topics, or any specific exercises or dietary recommendations?</strong>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of nutrient-dense foods that include fruits, vegetables, lean proteins, whole grains, and healthy fats. This ensures you get all the necessary vitamins, minerals, and other nutrients essential for good health.<br>2. **Regular Exercise**: Engaging in physical activities like walking, running, cycling, or yoga to maintain physical fitness, boost mood, and reduce stress. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with muscle-strengthening exercises on two or more days.<br><br>These tips are essential for maintaining overall health and well-being.</strong>
 
 
 ## Constrained Decoding
@@ -247,7 +247,7 @@ print_highlight(state["json_output"])
 ```
 
 
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Walnut",<br>        "core": "Phoenix Feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Grinning Ghost"<br>}</strong>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": " HOLi Wood",<br>        "core": " phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "stag",<br>    "bogart": "hagrid"<br>}</strong>
 
 
 ## Batching 
@@ -277,11 +277,9 @@ for i, state in enumerate(states):
 
       0%|          | 0/3 [00:00<?, ?it/s]
 
-     33%|███▎      | 1/3 [00:00<00:00,  6.35it/s]
+    100%|██████████| 3/3 [00:00<00:00, 25.79it/s]
 
-     67%|██████▋   | 2/3 [00:00<00:00, 10.06it/s]
-
-    100%|██████████| 3/3 [00:00<00:00, 12.05it/s]
+    100%|██████████| 3/3 [00:00<00:00, 25.58it/s]
 
     
 
@@ -397,24 +395,24 @@ print(f"Server started on http://localhost:{port}")
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 04:40:36] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 05:06:21] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 04:40:45] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 05:06:25] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  20% Completed | 1/5 [00:01<00:04,  1.19s/it]
+    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:03,  1.28it/s]
 
-    Multi-thread loading shards:  40% Completed | 2/5 [00:02<00:03,  1.10s/it]
+    Multi-thread loading shards:  40% Completed | 2/5 [00:01<00:02,  1.23it/s]
 
-    Multi-thread loading shards:  60% Completed | 3/5 [00:03<00:02,  1.12s/it]
+    Multi-thread loading shards:  60% Completed | 3/5 [00:02<00:01,  1.19it/s]
 
-    Multi-thread loading shards:  80% Completed | 4/5 [00:04<00:01,  1.09s/it]
+    Multi-thread loading shards:  80% Completed | 4/5 [00:03<00:00,  1.19it/s]
 
-    Multi-thread loading shards: 100% Completed | 5/5 [00:04<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:04<00:00,  1.05it/s]
+    Multi-thread loading shards: 100% Completed | 5/5 [00:03<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:03<00:00,  1.36it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -425,7 +423,7 @@ print(f"Server started on http://localhost:{port}")
 <strong style='color: #00008B;'><br><br>        NOTE: Typically, the server runs in a separate terminal.<br>        In this notebook, we run the server and notebook code together, so their outputs are combined.<br>        To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>        To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>        We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>        </strong>
 
 
-    Server started on http://localhost:36563
+    Server started on http://localhost:35392
 
 
 
@@ -433,7 +431,7 @@ print(f"Server started on http://localhost:{port}")
 set_default_backend(RuntimeEndpoint(f"http://localhost:{port}"))
 ```
 
-    [2026-06-10 04:41:04] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
+    [2026-06-10 05:06:40] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
 
 
 Ask a question about an image.
@@ -457,7 +455,7 @@ print_highlight(state["answer"])
 
 
 
-<strong style='color: #00008B;'>The image depicts a person standing on the rear of a yellow taxi, ironing a large blue shirt or cloth that is stretched on an item transport bar. The scene takes place on a busy street with other vehicles in the background, including another yellow taxi and a few other cars. The person appears to be creatively using the taxi for excessive ironing or cleaning. The wet film from the iron is being captured by the tarp or cloth over the shirt. This is likely meant to be a form of public art or a humorous display.</strong>
+<strong style='color: #00008B;'>The image shows a man dressed in a yellow shirt, bending over a small table mounted on the back of a yellow taxi. The table appears to be holding an iron and some blue fabric, possibly pants, being ironed. The man is treating the Lackawanna, New York, city street, behind his car, by standing on the vehicle and balancing on it while ironing. This activity is typically done as a form of advertising or awareness-raising, and the man appears to be either advocating for or reminding people about the duties of the taximeters' assistants ("nachiachers") in Lackawanna.</strong>
 
 
 

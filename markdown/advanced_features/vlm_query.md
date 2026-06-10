@@ -99,31 +99,31 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-10 04:44:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 05:02:31] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 04:44:19] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-10 05:02:35] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.12it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:01<00:01,  1.01s/it]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.21it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.09it/s]
 
 
-      0%|          | 0/20 [00:00<?, ?it/s]Capturing batches (bs=128 avail_mem=47.00 GB):   0%|          | 0/20 [00:00<?, ?it/s]
+      0%|          | 0/20 [00:00<?, ?it/s]Capturing batches (bs=128 avail_mem=32.68 GB):   0%|          | 0/20 [00:00<?, ?it/s]
 
-    Capturing batches (bs=128 avail_mem=47.00 GB):   5%|▌         | 1/20 [00:01<00:23,  1.24s/it]Capturing batches (bs=120 avail_mem=46.93 GB):   5%|▌         | 1/20 [00:01<00:23,  1.24s/it]Capturing batches (bs=112 avail_mem=46.93 GB):   5%|▌         | 1/20 [00:01<00:23,  1.24s/it]Capturing batches (bs=104 avail_mem=46.93 GB):   5%|▌         | 1/20 [00:01<00:23,  1.24s/it]Capturing batches (bs=104 avail_mem=46.93 GB):  20%|██        | 4/20 [00:01<00:04,  3.68it/s]Capturing batches (bs=96 avail_mem=46.93 GB):  20%|██        | 4/20 [00:01<00:04,  3.68it/s] Capturing batches (bs=88 avail_mem=46.93 GB):  20%|██        | 4/20 [00:01<00:04,  3.68it/s]
+    Capturing batches (bs=128 avail_mem=32.68 GB):   5%|▌         | 1/20 [00:01<00:23,  1.21s/it]Capturing batches (bs=120 avail_mem=32.61 GB):   5%|▌         | 1/20 [00:01<00:23,  1.21s/it]Capturing batches (bs=112 avail_mem=32.61 GB):   5%|▌         | 1/20 [00:01<00:23,  1.21s/it]Capturing batches (bs=104 avail_mem=32.61 GB):   5%|▌         | 1/20 [00:01<00:23,  1.21s/it]Capturing batches (bs=104 avail_mem=32.61 GB):  20%|██        | 4/20 [00:01<00:04,  3.73it/s]Capturing batches (bs=96 avail_mem=32.61 GB):  20%|██        | 4/20 [00:01<00:04,  3.73it/s] Capturing batches (bs=88 avail_mem=32.61 GB):  20%|██        | 4/20 [00:01<00:04,  3.73it/s]
 
-    Capturing batches (bs=80 avail_mem=46.93 GB):  20%|██        | 4/20 [00:01<00:04,  3.68it/s]Capturing batches (bs=80 avail_mem=46.93 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.63it/s]Capturing batches (bs=72 avail_mem=46.92 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.63it/s]Capturing batches (bs=64 avail_mem=46.92 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.63it/s]Capturing batches (bs=56 avail_mem=46.92 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.63it/s]Capturing batches (bs=56 avail_mem=46.92 GB):  50%|█████     | 10/20 [00:01<00:01,  9.50it/s]Capturing batches (bs=48 avail_mem=46.92 GB):  50%|█████     | 10/20 [00:01<00:01,  9.50it/s]
+    Capturing batches (bs=80 avail_mem=32.61 GB):  20%|██        | 4/20 [00:01<00:04,  3.73it/s]Capturing batches (bs=80 avail_mem=32.61 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.68it/s]Capturing batches (bs=72 avail_mem=32.60 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.68it/s]Capturing batches (bs=64 avail_mem=32.60 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.68it/s]Capturing batches (bs=56 avail_mem=32.60 GB):  35%|███▌      | 7/20 [00:01<00:01,  6.68it/s]Capturing batches (bs=56 avail_mem=32.60 GB):  50%|█████     | 10/20 [00:01<00:01,  9.55it/s]Capturing batches (bs=48 avail_mem=32.60 GB):  50%|█████     | 10/20 [00:01<00:01,  9.55it/s]
 
-    Capturing batches (bs=40 avail_mem=46.92 GB):  50%|█████     | 10/20 [00:01<00:01,  9.50it/s]Capturing batches (bs=32 avail_mem=46.91 GB):  50%|█████     | 10/20 [00:01<00:01,  9.50it/s]Capturing batches (bs=32 avail_mem=46.91 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.17it/s]Capturing batches (bs=24 avail_mem=46.91 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.17it/s]Capturing batches (bs=16 avail_mem=46.91 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.17it/s]
+    Capturing batches (bs=40 avail_mem=32.60 GB):  50%|█████     | 10/20 [00:01<00:01,  9.55it/s]Capturing batches (bs=32 avail_mem=32.59 GB):  50%|█████     | 10/20 [00:01<00:01,  9.55it/s]Capturing batches (bs=32 avail_mem=32.59 GB):  65%|██████▌   | 13/20 [00:01<00:00, 11.93it/s]Capturing batches (bs=24 avail_mem=32.59 GB):  65%|██████▌   | 13/20 [00:01<00:00, 11.93it/s]Capturing batches (bs=16 avail_mem=32.59 GB):  65%|██████▌   | 13/20 [00:01<00:00, 11.93it/s]
 
-    Capturing batches (bs=12 avail_mem=46.91 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.17it/s]Capturing batches (bs=12 avail_mem=46.91 GB):  80%|████████  | 16/20 [00:01<00:00, 13.56it/s]Capturing batches (bs=8 avail_mem=46.91 GB):  80%|████████  | 16/20 [00:01<00:00, 13.56it/s] Capturing batches (bs=4 avail_mem=46.91 GB):  80%|████████  | 16/20 [00:02<00:00, 13.56it/s]Capturing batches (bs=2 avail_mem=46.91 GB):  80%|████████  | 16/20 [00:02<00:00, 13.56it/s]Capturing batches (bs=2 avail_mem=46.91 GB):  95%|█████████▌| 19/20 [00:02<00:00, 15.83it/s]Capturing batches (bs=1 avail_mem=46.90 GB):  95%|█████████▌| 19/20 [00:02<00:00, 15.83it/s]
+    Capturing batches (bs=16 avail_mem=32.59 GB):  75%|███████▌  | 15/20 [00:01<00:00, 12.49it/s]Capturing batches (bs=12 avail_mem=32.59 GB):  75%|███████▌  | 15/20 [00:01<00:00, 12.49it/s]Capturing batches (bs=8 avail_mem=32.59 GB):  75%|███████▌  | 15/20 [00:01<00:00, 12.49it/s] Capturing batches (bs=4 avail_mem=32.59 GB):  75%|███████▌  | 15/20 [00:02<00:00, 12.49it/s]Capturing batches (bs=4 avail_mem=32.59 GB):  90%|█████████ | 18/20 [00:02<00:00, 14.78it/s]Capturing batches (bs=2 avail_mem=32.58 GB):  90%|█████████ | 18/20 [00:02<00:00, 14.78it/s]Capturing batches (bs=1 avail_mem=32.58 GB):  90%|█████████ | 18/20 [00:02<00:00, 14.78it/s]
 
-    Capturing batches (bs=1 avail_mem=46.90 GB): 100%|██████████| 20/20 [00:02<00:00,  9.40it/s]
+    Capturing batches (bs=1 avail_mem=32.58 GB): 100%|██████████| 20/20 [00:02<00:00,  9.31it/s]
 
 
 
@@ -134,7 +134,7 @@ print(out["text"])
 ```
 
     Model response:
-    This image shows a yellow taxi in New York City. The taxi has an additional item draped over its rear, resembling clothes or laundry. The setting appears to be from the "NYC Speakers' Bureau's Flatiron Blocking" event, commonly known as the "desking" event, where individuals choose to sit on the back of an upright cab instead of using proper seating.
+    The image shows a taxi and an Uber vehicle in New York City. The taxi is yellow, a traditional color for cabs in New York, and is associated with Uber. The Uber vehicle is typically black, but oddly this one is painted yellow. The scene likely captures the competition between the traditional yellow cab and the newer Uber vehicle, which is often seen as less favorable by some.
 
 
 ### Call with Processor Output
@@ -159,7 +159,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a person standing beside several yellow and orange taxis, which are typical of New York City. The person is hanging a checkered shirt on a metal pole, which seems to be a street vendor stall. The scene is likely in a busy city area, given the presence of multiple cabs and the urban environment.
+    In the picture, a person is standing on a diced square of cement in front of two yellow taxis. The person is using a long stick to stretch out two sheets of blue fabric, which are draped over a horizontal bar resting on the ground. The blue fabric appears to be wet and floating on a block of water. The water extends down from the taxi on the right and up onto the person's feet. The scene suggests that this person is performing an unusual act, likely part of a public performance or demonstration. 
+    
+    The taxis provide a contrasting background to the straightforward setting of the water and fabric. There are also не visible details about the
 
 
 ### Call with Precomputed Embeddings
@@ -215,7 +217,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a man dressed in a bright yellow shirt and shoes, standing on the side of a street in what appears to be a New York City setting. He is using a clothes iron to press some items that are held up on a small stand in front of him. Behind him, there is a yellow taxi driving by. The person's face is obscured by his shirt and the fact that he is sitting as if on an object, which may be a piece of clothing or a hat. The street appears to be in the middle of the day, and there are some subway signs visible in the background.
+    The image shows a street scene in a city, possibly New York, based on the abundance of taxis. The main focus is a person hanging clothes on a clothesline makeshift stand. The clothesline consists of a piece of wood, a wire, and some fabric, with clothes being displayed on it. In the background, there are yellow taxis, tall buildings with red banners, and urban street elements like lamps and street signs.
 
 
 ## Querying Llama 4 Vision Model
