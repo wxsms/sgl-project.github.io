@@ -99,29 +99,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
-    [2026-06-10 06:20:14] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-13 00:22:29] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     [transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
-    [2026-06-10 06:20:17] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+    [2026-06-13 00:22:34] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.14it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.07it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.30it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
-
-
-      0%|          | 0/20 [00:00<?, ?it/s]Capturing batches (bs=128 avail_mem=55.16 GB):   0%|          | 0/20 [00:00<?, ?it/s]
-
-    Capturing batches (bs=128 avail_mem=55.16 GB):   5%|▌         | 1/20 [00:01<00:21,  1.13s/it]Capturing batches (bs=120 avail_mem=53.78 GB):   5%|▌         | 1/20 [00:01<00:21,  1.13s/it]Capturing batches (bs=112 avail_mem=53.77 GB):   5%|▌         | 1/20 [00:01<00:21,  1.13s/it]Capturing batches (bs=104 avail_mem=53.77 GB):   5%|▌         | 1/20 [00:01<00:21,  1.13s/it]Capturing batches (bs=104 avail_mem=53.77 GB):  20%|██        | 4/20 [00:01<00:03,  4.00it/s]Capturing batches (bs=96 avail_mem=53.77 GB):  20%|██        | 4/20 [00:01<00:03,  4.00it/s] Capturing batches (bs=88 avail_mem=53.77 GB):  20%|██        | 4/20 [00:01<00:03,  4.00it/s]
-
-    Capturing batches (bs=80 avail_mem=53.77 GB):  20%|██        | 4/20 [00:01<00:03,  4.00it/s]Capturing batches (bs=80 avail_mem=53.77 GB):  35%|███▌      | 7/20 [00:01<00:01,  7.01it/s]Capturing batches (bs=72 avail_mem=53.77 GB):  35%|███▌      | 7/20 [00:01<00:01,  7.01it/s]Capturing batches (bs=64 avail_mem=53.77 GB):  35%|███▌      | 7/20 [00:01<00:01,  7.01it/s]Capturing batches (bs=56 avail_mem=53.76 GB):  35%|███▌      | 7/20 [00:01<00:01,  7.01it/s]Capturing batches (bs=56 avail_mem=53.76 GB):  50%|█████     | 10/20 [00:01<00:01,  9.98it/s]Capturing batches (bs=48 avail_mem=53.76 GB):  50%|█████     | 10/20 [00:01<00:01,  9.98it/s]
-
-    Capturing batches (bs=40 avail_mem=53.76 GB):  50%|█████     | 10/20 [00:01<00:01,  9.98it/s]Capturing batches (bs=32 avail_mem=53.76 GB):  50%|█████     | 10/20 [00:01<00:01,  9.98it/s]Capturing batches (bs=32 avail_mem=53.76 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.60it/s]Capturing batches (bs=24 avail_mem=53.75 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.60it/s]Capturing batches (bs=16 avail_mem=53.75 GB):  65%|██████▌   | 13/20 [00:01<00:00, 12.60it/s]
-
-    Capturing batches (bs=16 avail_mem=53.75 GB):  75%|███████▌  | 15/20 [00:01<00:00, 13.26it/s]Capturing batches (bs=12 avail_mem=53.75 GB):  75%|███████▌  | 15/20 [00:01<00:00, 13.26it/s]Capturing batches (bs=8 avail_mem=53.75 GB):  75%|███████▌  | 15/20 [00:01<00:00, 13.26it/s] Capturing batches (bs=4 avail_mem=53.75 GB):  75%|███████▌  | 15/20 [00:01<00:00, 13.26it/s]Capturing batches (bs=4 avail_mem=53.75 GB):  90%|█████████ | 18/20 [00:01<00:00, 15.97it/s]Capturing batches (bs=2 avail_mem=53.75 GB):  90%|█████████ | 18/20 [00:01<00:00, 15.97it/s]Capturing batches (bs=1 avail_mem=53.75 GB):  90%|█████████ | 18/20 [00:01<00:00, 15.97it/s]Capturing batches (bs=1 avail_mem=53.75 GB): 100%|██████████| 20/20 [00:02<00:00,  9.95it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]
 
 
 
@@ -132,7 +121,7 @@ print(out["text"])
 ```
 
     Model response:
-    The image shows two yellow and black taxis parked on a street. There is also a man in a yellow shirt holding a donkey on a piece of clothe, possibly as a form of protest or publicity stunt. The setting appears to be in an urban area with shops and buildings visible in the background.
+    The image shows a scene in a city street, featuring two yellow taxis parked side by side. A person is standing behind one of the taxis on a makeshift晾衣架, likely using it to hang dryer sheets or something similar. The setting appears to be urban, with buildings and storefronts in the background.
 
 
 ### Call with Processor Output
@@ -157,7 +146,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a humorous scene where a person, dressed in a yellow shirt, is pretending to iron clothes on a moving yellow taxi cab. This is a common sight in the United States, often painted on car windows or shown in traffic. The person has clothes draped over the taxi and appears to be pretending to iron them, maintaining his balance and composure despite the moving vehicle. The setting looks like a city street, possibly in New York, given the typical yellow cabs.
+    The image depicts a scene on a city street with two yellow taxis. The man in the image is standing on the sidewalk, handling an iron on a metal frame positioned on the back of one of the taxis. The iron is set up to iron clothes, and the man appears to be demonstrating or explaining the process to passersby. This is likely a setup for an event or a marketing stunt to give people a unique experience.
 
 
 ### Call with Precomputed Embeddings
@@ -213,7 +202,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi parked on the street in a city. A person is hanging clothes on the penultimate post of a bus stop sign, which is placed alongside the taxi. The background includes several advertisements and other taxis, indicating an urban setting.
+    The image shows a yellow taxi cab parked on a city street, with two people visible: one is standing near the cab, and the other is seated inside, sitting on an ironing board. The person standing appears to be ironing clothes, and the umbrella they are using is placed on the ironing board. This unusual scene is not a common sight on a taxi's front license plate, typically it would be blank or decorative. The other person inside the cab seems to be either watching or assisting. This scenario creates a humorous and unexpected visual that contrasts with the typical image of drivers maneuvering their vehicles.
 
 
 ## Querying Llama 4 Vision Model
